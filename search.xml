@@ -34,7 +34,17 @@
   <entry>
     <title>所有文章目录</title>
     <url>/2021/03/18/README/</url>
-    <content><![CDATA[<p>目前共有31篇文章： # 人生规划 - <em>毕业论文</em> - <a href="https://github.com/MissFreak/writings/blob/main/graduation-thesis.md">毕业论文准备</a></p>
+    <content><![CDATA[<center>
+目前共有31篇文章：
+</center>
+<span id="more"></span>
+<h1 id="人生规划">人生规划</h1>
+<ul>
+<li><em>毕业论文</em>
+<ul>
+<li><a href="https://github.com/MissFreak/writings/blob/main/graduation-thesis.md">毕业论文准备</a></li>
+</ul></li>
+</ul>
 <h1 id="代码">代码</h1>
 <ul>
 <li><em>文本处理</em>
