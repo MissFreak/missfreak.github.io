@@ -3,125 +3,281 @@
   <entry>
     <title>欢迎来到我的自然语言处理笔记！</title>
     <url>/cover-page/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2332757001&amp;auto=1&amp;height=90">
-</iframe>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=380 height=110 src="//music.163.com/outchain/player?type=0&id=2332757001&auto=1&height=90"></iframe>
+
+
 <center>
-<p>『 好奇心造就诗人与科学家。』 <br> Knowledge of languages is the doorway to wisdom. – Roger Bacon <br> 在这里，我疯狂探索语言与机器的奥秘，把毕生的知识与经验，记录在册！ <br> 关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~</p>
-<a href="https://github.com/MissFreak/writings/blob/main/README.md">所有文章目录</a>
+『 好奇心造就诗人与科学家。』
+<br>
+Knowledge of languages is the doorway to wisdom. – Roger Bacon
+<br>
+在这里，我疯狂探索语言与机器的奥秘，把毕生的知识与经验，记录在册！
+<br>
+关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
+
+<p><a href="https://github.com/MissFreak/writings/blob/main/README.md">所有文章目录</a></p>
 </center>
-<p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
+
+<img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg">
+
+
 <span id="more"></span>
-<p><font size="3" color="grey"> 你好，我是鸽鸽！ 2015年9月，我从乡村走进北外，专业英语； 2019年6月，保研本校攻读语言学，我却从那时起偷偷自学了计算机； 2019年至今，虽时有迷茫，但始终热爱python； 2021年3月，我决心开发自己的网络应用程序和NLP应用。 尽管作为小白仍在边缘徘徊，但我立志不断下苦功夫，直到对得起当初坚持梦想的自己！ 潜心技术，执着于此，人生足矣！ </font></p>
-<hr />
-<h1 id="发誓">发誓</h1>
-<ul>
+
+<font size="3" color="grey">
+你好，我是鸽鸽！
+2015年9月，我从乡村走进北外，专业英语；
+2019年6月，保研本校攻读语言学，我却从那时起偷偷自学了计算机；
+2019年至今，虽时有迷茫，但始终热爱python；
+2021年3月，我决心开发自己的网络应用程序和NLP应用。
+尽管作为小白仍在边缘徘徊，但我立志不断下苦功夫，直到对得起当初坚持梦想的自己！
+潜心技术，执着于此，人生足矣！
+</font>
+
+<hr>
+<h1 id="发誓"><a href="#发誓" class="headerlink" title="发誓"></a>发誓</h1><ul>
 <li>不看视频、电视剧浪费时间！累了就听听歌学学歌，或者出去玩耍~</li>
 </ul>
-<h1 id="我的技能树">我的技能树</h1>
-<h2 id="技术">技术</h2>
-<ul>
+<h1 id="我的技能树"><a href="#我的技能树" class="headerlink" title="我的技能树"></a>我的技能树</h1><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><ul>
 <li>python - 网站flask - SQL - 爬虫 - 机器学习sklearn、pytorch</li>
 </ul>
-<h2 id="语言学">语言学</h2>
-<ul>
+<h2 id="语言学"><a href="#语言学" class="headerlink" title="语言学"></a>语言学</h2><ul>
 <li>心理语言学、认知语言学 - 句法、语义 - 二语习得</li>
 </ul>
-<h1 id="想法">想法</h1>
-<p>作为一名文字语言工作者，为自己设计一款应用，可以汇集天下的名词艳句！我还是挺文艺和热爱美学的人吧，梦想着能通过技术开发自己的产品。</p>
+<h1 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h1><p>作为一名文字语言工作者，为自己设计一款应用，可以汇集天下的名词艳句！我还是挺文艺和热爱美学的人吧，梦想着能通过技术开发自己的产品。</p>
 <p>看了一个帖子，有人写了一个音乐网站，最后还是没熬到第四年。人生很漫长，总有一天会把梦想全部实现的吧，现在先把nlp中的信息抽取做好！</p>
 ]]></content>
   </entry>
   <entry>
     <title>所有文章目录</title>
-    <url>/README/</url>
-    <content><![CDATA[<center>
-目前共有31篇文章：
-</center>
-<span id="more"></span>
-<h1 id="人生规划">人生规划</h1>
+    <url>/all-posts/</url>
+    <content><![CDATA[<center>目前共有32篇文章：</center><span id="more"></span>
+# 人生规划
+- _毕业论文_
+    - [毕业论文准备](http://nlpcourse.cn/graduation-thesis)
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li><p><em>文本处理</em></p>
 <ul>
-<li><em>毕业论文</em>
-<ul>
-<li><a href="https://github.com/MissFreak/writings/blob/main/graduation-thesis.md">毕业论文准备</a></li>
-</ul></li>
+<li><p><a href="http://nlpcourse.cn/json">用python处理json数据</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/pdf">PDF文件处理大全</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/txt">纯文本文件的处理</a></p>
+</li>
 </ul>
-<h1 id="代码">代码</h1>
+</li>
+<li><p><em>编辑器</em></p>
 <ul>
-<li><em>文本处理</em>
+<li><a href="http://nlpcourse.cn/atom">从小白到起飞，一站解决Atom编辑器各种骚操作</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><ul>
+<li><p><a href="http://nlpcourse.cn/all-posts">所有文章目录</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/content">我的电脑文件目录管理</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/cover-page">欢迎来到我的自然语言处理笔记！</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/hello-world">Hello World</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/hexo-next">Hexo博客Next主题搭建全过程</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/information-retrieval">information retrieval</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/README">所有文章目录</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/web-dev-all">网站开发需要的工具：前端和后端</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/wiki-api">好用的API集锦</a></p>
+</li>
+</ul>
+<h1 id="网站开发"><a href="#网站开发" class="headerlink" title="网站开发"></a>网站开发</h1><ul>
+<li><p><em>django</em></p>
 <ul>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/json.md">用python处理json数据</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/pdf.md">PDF文件处理大全</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/txt.md">纯文本文件的处理</a></p></li>
-</ul></li>
-<li><em>编辑器</em>
+<li><a href="http://nlpcourse.cn/django-1">Django网站开发全过程实录-1</a></li>
+</ul>
+</li>
+<li><p><em>flask</em></p>
+<ul>
+<li><p><a href="http://nlpcourse.cn/flask-2">一文读懂Flask Web开发实战！</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/flask-api-1">基础：用flask搭建RESTful API</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/flask-api-2">部署Flask开发的API到Heroku</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/flask-api-3">如何在curl和python中使用API</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/flask-web">一个人开发信息检索与抽取网站的全过程</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/flask">flask干货总结</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h1><ul>
+<li><p><em>依存分析</em></p>
+<ul>
+<li><p><a href="http://nlpcourse.cn/dependency-parsing-2">《自然语言处理综论》第14章-依存分析（上）</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/dependency-parsing-3">《自然语言处理综论》第14章-依存分析（中）</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/dependency-parsing">英文依存句法分析</a></p>
+</li>
+</ul>
+</li>
+<li><p><em>信息抽取</em></p>
+<ul>
+<li><a href="http://nlpcourse.cn/information-retrieval-1">信息抽取技术综述</a></li>
+</ul>
+</li>
+<li><p><em>命名实体识别</em></p>
+<ul>
+<li><p><a href="http://nlpcourse.cn/named-entity-recognition-2">英文文献的命名实体识别（中）</a></p>
+</li>
+<li><p><a href="http://nlpcourse.cn/named-entity-recognition">英文文献的命名实体识别（上）</a></p>
+</li>
+</ul>
+</li>
+<li><p><em>正则表达式</em></p>
+<ul>
+<li><a href="http://nlpcourse.cn/regex-1">正则表达式进阶</a></li>
+</ul>
+</li>
+<li><p><em>词性标注</em></p>
+<ul>
+<li><a href="http://nlpcourse.cn/pos-tagging">英文词性标记（POS Tagging）</a></li>
+</ul>
+</li>
+<li><p><em>语料库</em></p>
+<ul>
+<li><a href="http://nlpcourse.cn/corpus">语料库资源大全</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="语言学"><a href="#语言学" class="headerlink" title="语言学"></a>语言学</h1><ul>
+<li><em>心理语言学</em><ul>
+<li><a href="http://nlpcourse.cn/psycho-linguistics">心理语言学：资源和知识整理</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>所有文章目录</title>
+    <url>/README/</url>
+    <content><![CDATA[<center>目前共有31篇文章：</center><span id="more"></span>
+# 人生规划
+- _毕业论文_
+    - [毕业论文准备](https://github.com/MissFreak/writings/blob/main/graduation-thesis.md)
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><ul>
+<li><p><em>文本处理</em></p>
+<ul>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/json.md">用python处理json数据</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/pdf.md">PDF文件处理大全</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/txt.md">纯文本文件的处理</a></p>
+</li>
+</ul>
+</li>
+<li><p><em>编辑器</em></p>
 <ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/atom.md">从小白到起飞，一站解决Atom编辑器各种骚操作</a></li>
-</ul></li>
 </ul>
-<h1 id="未分类">未分类</h1>
-<ul>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/content.md">我的电脑文件目录管理</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/cover-page.md">欢迎来到我的自然语言处理笔记！</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/hello-world.md">Hello World</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/hexo-next.md">Hexo博客Next主题搭建全过程</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/information-retrieval.md">information retrieval</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/README.md">所有文章目录</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/resources.md">免费好用网站软件资源集锦：从学习、办公到娱乐</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/web-dev-all.md">网站开发需要的工具：前端和后端</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/wiki-api.md">好用的API集锦</a></p></li>
+</li>
 </ul>
-<h1 id="网站开发">网站开发</h1>
-<ul>
-<li><em>django</em>
+<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><ul>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/content.md">我的电脑文件目录管理</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/cover-page.md">欢迎来到我的自然语言处理笔记！</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/hello-world.md">Hello World</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/hexo-next.md">Hexo博客Next主题搭建全过程</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/information-retrieval.md">information retrieval</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/README.md">所有文章目录</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/resources.md">免费好用网站软件资源集锦：从学习、办公到娱乐</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/web-dev-all.md">网站开发需要的工具：前端和后端</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/wiki-api.md">好用的API集锦</a></p>
+</li>
+</ul>
+<h1 id="网站开发"><a href="#网站开发" class="headerlink" title="网站开发"></a>网站开发</h1><ul>
+<li><p><em>django</em></p>
 <ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/django-1.md">Django网站开发全过程实录-1</a></li>
-</ul></li>
-<li><em>flask</em>
-<ul>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-2.md">一文读懂Flask Web开发实战！</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-api-1.md">基础：用flask搭建RESTful API</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-api-2.md">部署Flask开发的API到Heroku</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-api-3.md">如何在curl和python中使用API</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-web.md">一个人开发信息检索与抽取网站的全过程</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask.md">flask干货总结</a></p></li>
-</ul></li>
 </ul>
-<h1 id="自然语言处理">自然语言处理</h1>
+</li>
+<li><p><em>flask</em></p>
 <ul>
-<li><em>依存分析</em>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-2.md">一文读懂Flask Web开发实战！</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-api-1.md">基础：用flask搭建RESTful API</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-api-2.md">部署Flask开发的API到Heroku</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-api-3.md">如何在curl和python中使用API</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask-web.md">一个人开发信息检索与抽取网站的全过程</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/flask.md">flask干货总结</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h1><ul>
+<li><p><em>依存分析</em></p>
 <ul>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/dependency-parsing-2.md">《自然语言处理综论》第14章-依存分析（上）</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/dependency-parsing-3.md">《自然语言处理综论》第14章-依存分析（中）</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/dependency-parsing.md">英文依存句法分析</a></p></li>
-</ul></li>
-<li><em>信息抽取</em>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/dependency-parsing-2.md">《自然语言处理综论》第14章-依存分析（上）</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/dependency-parsing-3.md">《自然语言处理综论》第14章-依存分析（中）</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/dependency-parsing.md">英文依存句法分析</a></p>
+</li>
+</ul>
+</li>
+<li><p><em>信息抽取</em></p>
 <ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/information-retrieval-1.md">信息抽取技术综述</a></li>
-</ul></li>
-<li><em>命名实体识别</em>
+</ul>
+</li>
+<li><p><em>命名实体识别</em></p>
 <ul>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/named-entity-recognition-2.md">英文文献的命名实体识别（中）</a></p></li>
-<li><p><a href="https://github.com/MissFreak/writings/blob/main/named-entity-recognition.md">英文文献的命名实体识别（上）</a></p></li>
-</ul></li>
-<li><em>正则表达式</em>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/named-entity-recognition-2.md">英文文献的命名实体识别（中）</a></p>
+</li>
+<li><p><a href="https://github.com/MissFreak/writings/blob/main/named-entity-recognition.md">英文文献的命名实体识别（上）</a></p>
+</li>
+</ul>
+</li>
+<li><p><em>正则表达式</em></p>
 <ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/regex-1.md">正则表达式进阶</a></li>
-</ul></li>
-<li><em>词性标注</em>
+</ul>
+</li>
+<li><p><em>词性标注</em></p>
 <ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/pos-tagging.md">英文词性标记（POS Tagging）</a></li>
-</ul></li>
-<li><em>语料库</em>
+</ul>
+</li>
+<li><p><em>语料库</em></p>
 <ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/corpus.md">语料库资源大全</a></li>
-</ul></li>
 </ul>
-<h1 id="语言学">语言学</h1>
-<ul>
-<li><em>心理语言学</em>
-<ul>
+</li>
+</ul>
+<h1 id="语言学"><a href="#语言学" class="headerlink" title="语言学"></a>语言学</h1><ul>
+<li><em>心理语言学</em><ul>
 <li><a href="https://github.com/MissFreak/writings/blob/main/psycho-linguistics.md">心理语言学：资源和知识整理</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 ]]></content>
   </entry>
@@ -381,199 +537,186 @@
     <title>《自然语言处理综论》第14章-依存分析（上）</title>
     <url>/dependency-parsing-2/</url>
     <content><![CDATA[<center>
-<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/14.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/14.pdf</i>
+<br>
+<i>译者：鸽鸽（自己学习使用，非商业用途）</i>
 </center>
-<hr />
-<p>前两章的重点是<strong>上下文无关语法</strong>（context-free grammars）<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>，及其用于自动生成基于成分的表征。 我们在这里介绍另一种称为<strong>依存语法</strong>（dependency grammars）的语法形式主义派系，它在当代语音和语言处理系统中极其重要。 在这些形式主义中，短语成分（phrasal constituents）和短语结构规则（phrase-structure rules）并不直接发挥作用。相反，一个句子的句法结构，仅根据句中单词（或词元lemmas）以及单词间存在的一组关联的有向二元语法关系来描述。</p>
-下图展示了标准的依存分析风格的句法图示。
-<center>
-<img src="https://i.loli.net/2021/03/17/3XaE6umlQIgpZrs.png"  alt="" width="700" />
-</center>
+
+<hr>
+<p>前两章的重点是<strong>上下文无关语法</strong>（context-free grammars）<a href="%E4%B9%9F%E7%A7%B0%E4%B8%BA%E7%9F%AD%E8%AF%AD%E7%BB%93%E6%9E%84%E8%AF%AD%E6%B3%95" title="phrase-structure grammar">^1</a>，及其用于自动生成基于成分的表征。 我们在这里介绍另一种称为<strong>依存语法</strong>（dependency grammars）的语法形式主义派系，它在当代语音和语言处理系统中极其重要。 在这些形式主义中，短语成分（phrasal constituents）和短语结构规则（phrase-structure rules）并不直接发挥作用。相反，一个句子的句法结构，仅根据句中单词（或词元lemmas）以及单词间存在的一组关联的有向二元语法关系来描述。</p>
+<p>下图展示了标准的依存分析风格的句法图示。</p>
+<center><img src="https://i.loli.net/2021/03/17/3XaE6umlQIgpZrs.png"  alt="" width="700" /></center>
+
 <p>在句子上方，用从<strong>头部</strong>（heads）到<strong>依存项</strong>（dependents）的有向的标记弧来表示单词之间的关系。我们称之为<strong>类型依存结构</strong>（typed dependency structure），因为标签是从固定的语法关系清单中提取的。它还包括一个根（root）节点，显式地标记句法树的根，即整个结构的中心。</p>
 <span id="more"></span>
+
 <p>图14.1显示了与第12章中给出的相应短语结构分析相同的依存分析及树形结构。注意依存分析中没有对应短语成分或词汇类别的节点；<strong>其内部结构仅由句子中词汇项之间的定向关系组成。</strong>这些关系<strong>直接编码重要信息</strong>，这些信息往往隐藏在更复杂的短语结构分析中。例如，动词prefer的<strong>论元</strong>（arguments）在依存结构中直接链接到它，而在短语结构树中它们与主动词的连接不那么紧密。类似地，flight的修饰语morning和Denver在依存结构中直接与之链接。</p>
-<center>
-<img src="https://i.loli.net/2021/03/17/c1yRPAQCefvESZW.png"  alt="" width="700" />
-</center>
+<center><img src="https://i.loli.net/2021/03/17/c1yRPAQCefvESZW.png"  alt="" width="700" /></center>
+
 <p><strong>依存语法的一个主要优势是能够处理形态丰富、词序相对自由（free word order）的语言。</strong>例如，捷克语的词序可能比英语灵活得多；宾语可能出现在位置状语之前或之后。短语结构语法会需要为解析树中每个可能出现这样一个状语短语的位置单独制定一条规则。基于依存关系的方法只用一种连接类型来表示这种特殊的状语关系。因此，依存分析的方法抽象出了词序信息，只表示解析所需的信息。</p>
 <p>使用依存分析的另一个实际性的动机是，<strong>头部-依存（head-dependent）关系</strong>提供了一种近似于谓词及其论元之间的语义关系，这使得它们对指代消歧、自动问答和信息提取之类的许多应用都能产生直接的帮助。基于成分（constituent-based）的语法解析也提供了类似的信息，但通常必须通过诸如第12章讨论的中心语规则等技术从树中提炼出来。</p>
 <p>在下面的章节，我们将更详细地讨论依存分析中使用的关系清单，以及这些依存结构的形式基础。然后我们将继续讨论用于自动生成这些结构的主流算法派系。最后，我们将讨论如何评估依存分析器，并指出它们在语言处理中应用的一些方式。</p>
-<h1 id="依存关系">14.1 依存关系</h1>
-<p>传统语言学的语法关系概念为构成这些依存结构的二元语法关系提供了基础。这些头关系（head relations）的参数由一个<strong>头部</strong>（heads）和一个<strong>依存项</strong>（dependents）组成。在第12章和附录C中，我们已经在成分结构的语境下中讨论过头部的依存项这个概念。在那里，一个成分的头部是一个更大成分的中心组织词（例如名词短语中的关键名词，或动词短语中的动词）。成分中其余的词都是其头部的直接或间接的依存项。在基于依存关系的方法中，通过直接将头部与紧靠头部的词连接起来，绕过成分结构，使头部-依存关系变得明确。</p>
+<h1 id="14-1-依存关系"><a href="#14-1-依存关系" class="headerlink" title="14.1 依存关系"></a>14.1 依存关系</h1><p>传统语言学的语法关系概念为构成这些依存结构的二元语法关系提供了基础。这些头关系（head relations）的参数由一个<strong>头部</strong>（heads）和一个<strong>依存项</strong>（dependents）组成。在第12章和附录C中，我们已经在成分结构的语境下中讨论过头部的依存项这个概念。在那里，一个成分的头部是一个更大成分的中心组织词（例如名词短语中的关键名词，或动词短语中的动词）。成分中其余的词都是其头部的直接或间接的依存项。在基于依存关系的方法中，通过直接将头部与紧靠头部的词连接起来，绕过成分结构，使头部-依存关系变得明确。</p>
 <p>除了指定头部-依存对，依存语法还允许我们根据依存项相对于头部的作用，进一步划分语法关系种类或<strong>语法功能</strong>（grammatical function）。我们熟悉的主语、直接宾语和间接宾语等概念都是可能会想到的关系种类。在英语中，这些概念虽然与一个词在句中的位置和成分类型密切相关，但不起决定性作用，因此与短语结构树中提供的信息重复累赘。然而，在更灵活的语言中，直接编码这些语法关系中的信息是至关重要的，因为基于短语的成分句法提供的帮助很小。</p>
 <p>毫不奇怪，语言学家们已经发明了远远超出我们熟悉的主语和宾语概念的关系分类学。虽然不同的理论之间大相径庭，但有足够的共性使其发展出一个在计算上有用的标准。<strong>通用依存关系</strong>（Universal Dependencies）项目（Nivre et al.，2016）提供了一个语言驱动的、利于计算的、跨语言适用的依存关系清单。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Clausal Argument Relations</th>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>NSUBJ</td>
 <td>Nominal subject</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DOBJ</td>
 <td>Direct object</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>IOBJ</td>
 <td>Indirect object</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CCOMP</td>
 <td>Clausal complement</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XCOMP</td>
 <td>Open clausal complement</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Nominal Modifier Relations</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>NMOD</td>
 <td>Nominal modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AMOD</td>
 <td>Adjectival modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>NUMMOD</td>
 <td>Numeric modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td>APPOS</td>
 <td>Appositional modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>DET</td>
 <td>Determiner</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CASE</td>
 <td>Prepositions, postpositions and other case markers</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>Other Notable Relations</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td>CONJ</td>
 <td>Conjunct</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CC</td>
 <td>Coordinating conjunction</td>
 </tr>
-</tbody>
-</table>
-<center>
-<i>图14.2 通用依存关系集中的部分依存关系 (de Marneffe et al., 2014)</i>
-</center>
+</tbody></table>
+<center><i>图14.2 通用依存关系集中的部分依存关系  (de Marneffe et al., 2014)</i></center>
+
 <p>图14.2显示了这项工作中的关系子集。图 14.3 提供了一些例句来说明选定的关系。通用依存方案中所有关系的来由超出了本章的范围，但常用关系的核心集可以分成两组：描述与谓语（通常是动词）有关的句法角色的子句关系（clausal relations），以及对头部修饰词进行分类的修饰关系（modifier relations）。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Relation</th>
 <th>Examples with <em>head</em> and dependent</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>NSUBJ</td>
 <td><strong>United</strong> <em>canceled</em> the flight.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DOBJ</td>
 <td>United <em>diverted</em> the <strong>flight</strong> to Reno.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td>We <em>booked</em> her the first <strong>flight</strong> to Miami.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>IOBJ</td>
 <td>We <em>booked</em> <strong>her</strong> the flight to Miami.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>NMOD</td>
 <td>We took the <strong>morning</strong> <em>flight</em>.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AMOD</td>
 <td>Book the <strong>cheapest</strong> <em>flight</em>.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>NUMMOD</td>
 <td>Before the storm JetBlue canceled <strong>1000</strong> <em>flights</em>.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>APPOS</td>
 <td><em>United</em>, a <strong>unit</strong> of UAL, matched the fares.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>DET</td>
 <td><strong>The</strong> <em>flight</em> was canceled.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><strong>Which</strong> <em>flight</em> was delayed?</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CONJ</td>
 <td>We <em>flew</em> to Denver and <strong>drove</strong> to Steamboat.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CC</td>
 <td>We flew to Denver <strong>and</strong> <em>drove</em> to Steamboat.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CASE</td>
 <td>Book the flight <strong>through</strong> <em>Houston</em>.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>Figure 14.3 Examples of core Universal Dependency relations.</p>
 <p>参考以下例句，子句关系NSUBJ和DOBJ分别表示主语和谓语cancel的直接宾语，而NMOD、DET和CASE关系表示名词flights和Houston的修饰语。</p>
-<p><img src="https://i.loli.net/2021/03/17/XgwzFkLVSdaIfDj.png" /></p>
-<h1 id="依存形式主义">14.2 依存形式主义</h1>
-<p>在最普通的形式中，我们讨论的依存关系结构仅仅是有向图，即由一组顶点<span class="math inline">\(V\)</span>和一组有序的顶点对<span class="math inline">\(A\)</span>组成的结构<span class="math inline">\(G=(V, A)\)</span>，我们称之为弧（arcs）。</p>
-<p>大多数情况下，我们假设顶点集<span class="math inline">\(V\)</span>完全对应于给定句子中单词的集合。然而，它们也可能对应于标点符号，或者当处理形态复杂的语言时，顶点集可能由词干和词缀组成。弧线集<span class="math inline">\(A\)</span>捕获了<span class="math inline">\(V\)</span>中元素之间的头部-依存关系和语法功能关系。</p>
+<p><img src="https://i.loli.net/2021/03/17/XgwzFkLVSdaIfDj.png"></p>
+<h1 id="14-2-依存形式主义"><a href="#14-2-依存形式主义" class="headerlink" title="14.2 依存形式主义"></a>14.2 依存形式主义</h1><p>在最普通的形式中，我们讨论的依存关系结构仅仅是有向图，即由一组顶点$V$和一组有序的顶点对$A$组成的结构$G=(V, A)$，我们称之为弧（arcs）。</p>
+<p>大多数情况下，我们假设顶点集$V$完全对应于给定句子中单词的集合。然而，它们也可能对应于标点符号，或者当处理形态复杂的语言时，顶点集可能由词干和词缀组成。弧线集$A$捕获了$V$中元素之间的头部-依存关系和语法功能关系。</p>
 <p>对这些依存结构的进一步限制是针对底层语法理论或形式主义的。其中比较常见的限制是，这些结构必须是连接的、有一个指定的根节点，并且是无环或平面的。与本章讨论的解析方法最相关的是对有根树的常见的、以计算为目的的限制。也就是说，<strong>依存树</strong>（dependency tree）是一个满足以下约束的有向图。</p>
-<ol type="1">
+<ol>
 <li>有一个指定的根结点，它没有传入弧。</li>
 <li>除根节点外，每个顶点恰好有一个传出弧。</li>
-<li>从根节点到<span class="math inline">\(V\)</span>中的每个顶点有一条唯一的路径。</li>
+<li>从根节点到$V$中的每个顶点有一条唯一的路径。</li>
 </ol>
 <p>综上所述，这些约束条件保证了每个词都有一个头，依存结构是连接的，并且有唯一的根节点，从这个根节点可以沿着唯一的定向路径到句子中的每个词。</p>
-<h2 id="投射性">14.2.1 投射性</h2>
-<p><strong>投射性</strong>（projectivity）的概念施加了一个额外的约束条件，这个约束条件来自于输入（input）中词的顺序。如果在句子中<strong>存在一条从头部到位于头部和依存项之间的每个词的路径</strong>，那么就说这条从头部到依存项的弧线具有投射性。如果组成依存树的所有弧线都有投射性，那么就可以说它是投射的。到目前为止，我们看到的所有依存树都是投射的。然而，有许多完全合乎规则的结构会生成非投射树，特别是在词序相对灵活的语言中。</p>
+<h2 id="14-2-1-投射性"><a href="#14-2-1-投射性" class="headerlink" title="14.2.1 投射性"></a>14.2.1 投射性</h2><p><strong>投射性</strong>（projectivity）的概念施加了一个额外的约束条件，这个约束条件来自于输入（input）中词的顺序。如果在句子中<strong>存在一条从头部到位于头部和依存项之间的每个词的路径</strong>，那么就说这条从头部到依存项的弧线具有投射性。如果组成依存树的所有弧线都有投射性，那么就可以说它是投射的。到目前为止，我们看到的所有依存树都是投射的。然而，有许多完全合乎规则的结构会生成非投射树，特别是在词序相对灵活的语言中。</p>
 <p>请看下面的例子。</p>
-<p><img src="https://i.loli.net/2021/03/17/2Jicfx1AThkBFId.png" /></p>
+<p><img src="https://i.loli.net/2021/03/17/2Jicfx1AThkBFId.png"></p>
 <p>在这个例子中，从flight到它的修饰词was的弧线是非投射的，因为从flight到中间的单词this和morning没有路径。正如我们从这张图中看到的，投射性（和非投射性）可以通过画树的方式来检测。<strong>如果能画出没有交叉边的依存树，那么它就是投射性的。</strong>在这里，如果不跨越连接morning和它的头部的弧线，就无法将flight和它的依存项was联系起来。</p>
 <p>我们对投射性的关注来自于两个相关的问题。首先，最广泛使用的英语依存关系树库是通过使用中心语查找规则从短语结构树库中自动导出的（第12章）。以这种方式生成的树是保证投射性的，因为它们是由上下文无关语法生成的。第二，最广泛使用的一系列解析算法存在计算上的限制。第14.4节中讨论的基于转换的方法只能生成投射树，因此任何具有非投射结构的句子都必然会出错。这个限制是第14.5节中描述的更灵活的基于图的解析方法的动机之一。</p>
-<h1 id="依存树库">14.3 依存树库</h1>
-<p>与基于成分的方法一样，树库（treebanks）在依存分析器（dependency parsers）的开发和评估中起着至关重要的作用。<strong>依存树库</strong>（dependency treebanks）的创建方法与第12章中讨论的方法类似——让人类标注者直接为给定的语料库生成依存结构，或者使用自动解析器（automatic parsers ）提供初始解析，然后让标注者手动修正这些解析器。我们也可以用一个确定性过程<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>（deterministic process）通过标注中心语规则将现有的基于成分的树库翻译成依存树。</p>
+<h1 id="14-3-依存树库"><a href="#14-3-依存树库" class="headerlink" title="14.3 依存树库"></a>14.3 依存树库</h1><p>与基于成分的方法一样，树库（treebanks）在依存分析器（dependency parsers）的开发和评估中起着至关重要的作用。<strong>依存树库</strong>（dependency treebanks）的创建方法与第12章中讨论的方法类似——让人类标注者直接为给定的语料库生成依存结构，或者使用自动解析器（automatic parsers ）提供初始解析，然后让标注者手动修正这些解析器。我们也可以用一个确定性过程[^2]（deterministic process）通过标注中心语规则将现有的基于成分的树库翻译成依存树。</p>
+<p>[^2]: 译者注：对应<a href="https://baike.baidu.com/item/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B">随机过程（<em>Stochastic Process</em>）</a></p>
 <p>大多形态丰富的语言（如捷克语、印地语和芬兰语）都已经建立了直接标注的依存树库用于依存分析，其中捷克语的Prague依存树库（Bejcek et al., 2013）是最著名的工作。主流英语依存树库主要是从现有资源中提取出来的，比如Penn树库的华尔街日报部分（Marcus等人，1993）。最近的OntoNotes项目（Hovy et al. 2006, Weischedel et al. 2011）扩展了这种方法，超越了传统的新闻文本，涵盖了英语、汉语和阿拉伯语的电话对话、网络日志、usenet新闻组、广播和脱口秀。</p>
 <p>从成分结构到依存结构的翻译过程有两个子任务：识别结构中所有的头部-依存关系，以及正确识别这些关系的种类。第一个任务主要依赖于第12章中讨论的中心语规则（head rules）的使用，这些规则最早是为词汇化概率解析器（ lexicalized probabilistic parsers）而开发的(Magerman 1994, Collins 1999, Collins 2003)。下面是Xia和Palmer（2001）提出的一个简单有效的算法。</p>
-<ol type="1">
+<ol>
 <li>使用适当的中心语规则，标记短语结构中每个节点的头部子节点。</li>
 <li>在依存结构中，让每个非头部子节点的头部依存于头部子节点的头部。</li>
 </ol>
 <p>当一个短语结构解析包含了额外的语法关系和函数标签形式的信息时，如在Penn Treebank的情况下，这些标签可以用来标记生成的树的边。当应用于图14.4中的解析树时，这种算法将产生例14.4中的依存结构。这些提取方法的主要缺点是它们受到原始结构树中存在的信息的限制。其中最重要的问题是未能将形态学信息与短语结构树整合在一起，不能轻易地表示非宾语结构，以及大多数名词短语缺乏内部结构，这反映在大多数树库语法通常所使用的平面规则中。由于这些原因，除了英语之外，大多数依存树库都是直接靠人类标注者开发的。</p>
 <p><strong>本章剩余内容见：<a href="http://nlpcourse.cn/2021/03/17/dependency-parsing-3/">《自然语言处理综论》第14章-依存分析（中）</a></strong></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>也称为短语结构语法 (phrase-structure grammar)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>译者注：对应<a href="https://baike.baidu.com/item/随机过程">随机过程（<em>Stochastic Process</em>）</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 ]]></content>
       <categories>
         <category>自然语言处理</category>
@@ -961,40 +1104,6 @@
       </tags>
   </entry>
   <entry>
-    <title>纯文本文件的处理</title>
-    <url>/txt/</url>
-    <content><![CDATA[<h1 id="获取文章目录">获取文章目录</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">file_path = <span class="string">r&#x27;D:\project\hexo-final\source\_posts&#x27;</span></span><br><span class="line">lst = os.listdir(file_path)</span><br><span class="line">post_list = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># obtain the titles and categories of all posts</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> lst:</span><br><span class="line">	<span class="comment"># make sure it is a markdown file</span></span><br><span class="line">	<span class="keyword">if</span> filename[-<span class="number">3</span>:] == <span class="string">&#x27;.md&#x27;</span>:</span><br><span class="line">		<span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, filename), encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">			s = f.read()</span><br><span class="line"></span><br><span class="line">		<span class="comment"># create a dict that stores attributes: title and category_1 and category_2</span></span><br><span class="line">		post_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the title</span></span><br><span class="line">		match_title = re.search(<span class="string">r&#x27;(?&lt;=title: ).*(?=\n)&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">if</span> match_title:</span><br><span class="line">			title = match_title.group().strip(<span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			title = filename</span><br><span class="line"></span><br><span class="line">		<span class="comment"># convert into linked title</span></span><br><span class="line">		linked_title = <span class="string">&#x27;[&#123;&#125;](https://github.com/MissFreak/writings/blob/main/&#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(title, filename)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the categories</span></span><br><span class="line">		match_categories = re.search(<span class="string">r&#x27;categories:\n- (.*)\n- (.*)\n&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">try</span>:</span><br><span class="line">			category_1 = match_categories.group(<span class="number">1</span>)</span><br><span class="line">			category_2 = match_categories.group(<span class="number">2</span>)</span><br><span class="line">		<span class="keyword">except</span>:</span><br><span class="line">			category_1 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line">			category_2 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># save into a list</span></span><br><span class="line">		post_dict[<span class="string">&#x27;title&#x27;</span>] = linked_title</span><br><span class="line">		post_dict[<span class="string">&#x27;category_1&#x27;</span>] = category_1</span><br><span class="line">		post_dict[<span class="string">&#x27;category_2&#x27;</span>] = category_2</span><br><span class="line">		post_list.append(post_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sort and group by the first category</span></span><br><span class="line">get_first_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_1&#x27;</span>)</span><br><span class="line">group_1 = itertools.groupby(<span class="built_in">sorted</span>(post_list, key=get_first_category), get_first_category)</span><br><span class="line">num_post = <span class="built_in">len</span>(post_list)</span><br><span class="line"></span><br><span class="line">content = <span class="string">&#x27;# 目录\n这里是我的博客，目前共有&#123;&#125;篇文章：\n&#x27;</span>.<span class="built_in">format</span>(num_post)</span><br><span class="line"><span class="keyword">for</span> k1,v1 <span class="keyword">in</span> group_1:</span><br><span class="line">	<span class="comment"># add the first category into content</span></span><br><span class="line">	content += (<span class="string">&#x27;## &#x27;</span>+k1+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">	<span class="comment"># sort and group by the first category</span></span><br><span class="line">	get_second_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_2&#x27;</span>)</span><br><span class="line">	group_2 = itertools.groupby(<span class="built_in">sorted</span>(v1, key=get_second_category), get_second_category)</span><br><span class="line">	<span class="keyword">for</span> k2,v2 <span class="keyword">in</span> group_2:</span><br><span class="line">		<span class="comment"># add the second category into content</span></span><br><span class="line">		<span class="keyword">if</span> k2 != <span class="string">&#x27;未分类&#x27;</span>:</span><br><span class="line">			content += (<span class="string">&#x27;- _&#x27;</span>+k2+<span class="string">&#x27;_\n&#x27;</span>)</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;\t- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># write the content into md file</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, <span class="string">&#x27;README.md&#x27;</span>), <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(content)</span><br></pre></td></tr></table></figure>
-<h1 id="正则表达式">正则表达式</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">cha1 = re.search(pattern, txt_string).group()</span><br><span class="line">print(re.findall(<span class="string">r&#x27;蓝色&#x27;</span>, cha1))</span><br><span class="line"></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见[^蓝色]*(蓝色)*.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">match = re.search(pattern, txt_string)</span><br><span class="line"><span class="keyword">if</span> match:</span><br><span class="line">    print(match.groups())</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h1 id="分离章节">分离章节</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\ng\n&#x27;</span>)</span><br><span class="line">chapters = pattern.split(txt_string)[<span class="number">6</span>:]</span><br><span class="line"></span><br><span class="line">cha8 = chapters[<span class="number">7</span>]</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\nn\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\n&#123;2,&#125;&#x27;</span>, <span class="string">&#x27;\n&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line"><span class="comment"># print(repr(cha8))</span></span><br><span class="line">print(cha8)</span><br></pre></td></tr></table></figure>
-<h1 id="去除字符">去除字符</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，请加入，谢谢啦啦嗯&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;嗯啦&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h1 id="表格pytablewriter">表格：<a href="https://github.com/thombashi/pytablewriter/">pytablewriter</a></h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MarkdownTableWriter, ExcelXlsxTableWriter, UnicodeTableWriter, JavaScriptTableWriter, JsonTableWriter, HtmlTableWriter</span><br></pre></td></tr></table></figure>
-<p>先获得matrix：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27;: &#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># 行分隔符和列分隔符</span></span><br><span class="line">print(matrix)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo2.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27; &#x27;</span>, <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># split on first occurrence</span></span><br><span class="line">print(matrix)</span><br></pre></td></tr></table></figure>
-<p>然后生成相应的表格：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
-<h2 id="markdown表格">markdown表格</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># s = spacy.explain(&#x27;``&#x27;)</span></span><br><span class="line"><span class="comment"># print(repr(s))</span></span><br><span class="line">lst1 = <span class="string">&#x27;`$`, `&#x27;</span><span class="string">&#x27;`, `,`, `-LRB-`, `-RRB-`, `.`, `:`, `ADD`, `AFX`, `CC`, `CD`, `DT`, `EX`, `FW`, `HYPH`, `IN`, `JJ`, `JJR`, `JJS`, `LS`, `MD`, `NFP`, `NN`, `NNP`, `NNPS`, `NNS`, `PDT`, `POS`, `PRP`, `PRP$`, `RB`, `RBR`, `RBS`, `RP`, `SYM`, `TO`, `UH`, `VB`, `VBD`, `VBG`, `VBN`, `VBP`, `VBZ`, `WDT`, `WP`, `WP$`, `WRB`, `XX`&#x27;</span>.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">lst2 = [spacy.explain(i.strip(<span class="string">&#x27; `&#x27;</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> lst1]</span><br><span class="line"><span class="comment"># print(lst2)</span></span><br><span class="line"></span><br><span class="line">matrix = np.column_stack((lst1, lst2)).tolist()</span><br><span class="line"><span class="comment"># print(type(matrix))</span></span><br><span class="line"><span class="comment"># print(matrix)</span></span><br><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
-<h2 id="csv">csv</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    writer = pytablewriter.CsvTableWriter()</span><br><span class="line">    writer.headers = [<span class="string">&quot;int&quot;</span>, <span class="string">&quot;float&quot;</span>, <span class="string">&quot;str&quot;</span>, <span class="string">&quot;bool&quot;</span>, <span class="string">&quot;mix&quot;</span>, <span class="string">&quot;time&quot;</span>]</span><br><span class="line">    writer.value_matrix = [</span><br><span class="line">        [<span class="number">0</span>,   <span class="number">0.1</span>,      <span class="string">&quot;hoge&quot;</span>, <span class="literal">True</span>,   <span class="number">0</span>,      <span class="string">&quot;2017-01-01 03:04:05+0900&quot;</span>],</span><br><span class="line">        [<span class="number">2</span>,   <span class="string">&quot;-2.23&quot;</span>,  <span class="string">&quot;foo&quot;</span>,  <span class="literal">False</span>,  <span class="literal">None</span>,   <span class="string">&quot;2017-12-23 45:01:23+0900&quot;</span>],</span><br><span class="line">        [<span class="number">3</span>,   <span class="number">0</span>,        <span class="string">&quot;bar&quot;</span>,  <span class="string">&quot;true&quot;</span>,  <span class="string">&quot;inf&quot;</span>, <span class="string">&quot;2017-03-03 33:44:55+0900&quot;</span>],</span><br><span class="line">        [-<span class="number">10</span>, -<span class="number">9.9</span>,     <span class="string">&quot;&quot;</span>,     <span class="string">&quot;FALSE&quot;</span>, <span class="string">&quot;nan&quot;</span>, <span class="string">&quot;2017-01-01 00:00:00+0900&quot;</span>],</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    writer.write_table()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<h2 id="其他格式">其他格式</h2>
-<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/json.html">JSON</a></p>
-<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/html.html">HTML</a></p>
-]]></content>
-      <categories>
-        <category>代码</category>
-        <category>文本处理</category>
-      </categories>
-      <tags>
-        <tag>txt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>免费好用网站软件资源集锦：从学习、办公到娱乐</title>
     <url>/resources/</url>
     <content><![CDATA[<p>截止至2021/3/15日均可用。 # 娱乐</p>
@@ -1042,6 +1151,41 @@
 ]]></content>
       <tags>
         <tag>资源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>纯文本文件的处理</title>
+    <url>/txt/</url>
+    <content><![CDATA[<h1 id="获取文章目录"><a href="#获取文章目录" class="headerlink" title="获取文章目录"></a>获取文章目录</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">file_path = <span class="string">r&#x27;D:\project\hexo-final\source\_posts&#x27;</span></span><br><span class="line">lst = os.listdir(file_path)</span><br><span class="line">post_list = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># obtain the titles and categories of all posts</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> lst:</span><br><span class="line">	<span class="comment"># make sure it is a markdown file</span></span><br><span class="line">	<span class="keyword">if</span> filename[-<span class="number">3</span>:] == <span class="string">&#x27;.md&#x27;</span>:</span><br><span class="line">		<span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, filename), encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">			s = f.read()</span><br><span class="line"></span><br><span class="line">		<span class="comment"># create a dict that stores attributes: title and category_1 and category_2</span></span><br><span class="line">		post_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the title</span></span><br><span class="line">		match_title = re.search(<span class="string">r&#x27;(?&lt;=title: ).*(?=\n)&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">if</span> match_title:</span><br><span class="line">			title = match_title.group().strip(<span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			title = filename</span><br><span class="line"></span><br><span class="line">		<span class="comment"># convert into linked title</span></span><br><span class="line">		linked_title = <span class="string">&#x27;[&#123;&#125;](https://github.com/MissFreak/writings/blob/main/&#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(title, filename)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the categories</span></span><br><span class="line">		match_categories = re.search(<span class="string">r&#x27;categories:\n- (.*)\n- (.*)\n&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">try</span>:</span><br><span class="line">			category_1 = match_categories.group(<span class="number">1</span>)</span><br><span class="line">			category_2 = match_categories.group(<span class="number">2</span>)</span><br><span class="line">		<span class="keyword">except</span>:</span><br><span class="line">			category_1 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line">			category_2 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># save into a list</span></span><br><span class="line">		post_dict[<span class="string">&#x27;title&#x27;</span>] = linked_title</span><br><span class="line">		post_dict[<span class="string">&#x27;category_1&#x27;</span>] = category_1</span><br><span class="line">		post_dict[<span class="string">&#x27;category_2&#x27;</span>] = category_2</span><br><span class="line">		post_list.append(post_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sort and group by the first category</span></span><br><span class="line">get_first_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_1&#x27;</span>)</span><br><span class="line">group_1 = itertools.groupby(<span class="built_in">sorted</span>(post_list, key=get_first_category), get_first_category)</span><br><span class="line">num_post = <span class="built_in">len</span>(post_list)</span><br><span class="line"></span><br><span class="line">content = <span class="string">&#x27;# 目录\n这里是我的博客，目前共有&#123;&#125;篇文章：\n&#x27;</span>.<span class="built_in">format</span>(num_post)</span><br><span class="line"><span class="keyword">for</span> k1,v1 <span class="keyword">in</span> group_1:</span><br><span class="line">	<span class="comment"># add the first category into content</span></span><br><span class="line">	content += (<span class="string">&#x27;## &#x27;</span>+k1+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">	<span class="comment"># sort and group by the first category</span></span><br><span class="line">	get_second_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_2&#x27;</span>)</span><br><span class="line">	group_2 = itertools.groupby(<span class="built_in">sorted</span>(v1, key=get_second_category), get_second_category)</span><br><span class="line">	<span class="keyword">for</span> k2,v2 <span class="keyword">in</span> group_2:</span><br><span class="line">		<span class="comment"># add the second category into content</span></span><br><span class="line">		<span class="keyword">if</span> k2 != <span class="string">&#x27;未分类&#x27;</span>:</span><br><span class="line">			content += (<span class="string">&#x27;- _&#x27;</span>+k2+<span class="string">&#x27;_\n&#x27;</span>)</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;\t- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># write the content into md file</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, <span class="string">&#x27;README.md&#x27;</span>), <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(content)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">cha1 = re.search(pattern, txt_string).group()</span><br><span class="line">print(re.findall(<span class="string">r&#x27;蓝色&#x27;</span>, cha1))</span><br><span class="line"></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见[^蓝色]*(蓝色)*.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">match = re.search(pattern, txt_string)</span><br><span class="line"><span class="keyword">if</span> match:</span><br><span class="line">    print(match.groups())</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h1 id="分离章节"><a href="#分离章节" class="headerlink" title="分离章节"></a>分离章节</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\ng\n&#x27;</span>)</span><br><span class="line">chapters = pattern.split(txt_string)[<span class="number">6</span>:]</span><br><span class="line"></span><br><span class="line">cha8 = chapters[<span class="number">7</span>]</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\nn\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\n&#123;2,&#125;&#x27;</span>, <span class="string">&#x27;\n&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line"><span class="comment"># print(repr(cha8))</span></span><br><span class="line">print(cha8)</span><br></pre></td></tr></table></figure>
+
+<h1 id="去除字符"><a href="#去除字符" class="headerlink" title="去除字符"></a>去除字符</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，请加入，谢谢啦啦嗯&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;嗯啦&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="表格：pytablewriter"><a href="#表格：pytablewriter" class="headerlink" title="表格：pytablewriter"></a>表格：<a href="https://github.com/thombashi/pytablewriter/">pytablewriter</a></h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MarkdownTableWriter, ExcelXlsxTableWriter, UnicodeTableWriter, JavaScriptTableWriter, JsonTableWriter, HtmlTableWriter</span><br></pre></td></tr></table></figure>
+
+<p>先获得matrix：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27;: &#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># 行分隔符和列分隔符</span></span><br><span class="line">print(matrix)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo2.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27; &#x27;</span>, <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># split on first occurrence</span></span><br><span class="line">print(matrix)</span><br></pre></td></tr></table></figure>
+
+<p>然后生成相应的表格：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
+
+<h2 id="markdown表格"><a href="#markdown表格" class="headerlink" title="markdown表格"></a>markdown表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># s = spacy.explain(&#x27;``&#x27;)</span></span><br><span class="line"><span class="comment"># print(repr(s))</span></span><br><span class="line">lst1 = <span class="string">&#x27;`$`, `&#x27;</span><span class="string">&#x27;`, `,`, `-LRB-`, `-RRB-`, `.`, `:`, `ADD`, `AFX`, `CC`, `CD`, `DT`, `EX`, `FW`, `HYPH`, `IN`, `JJ`, `JJR`, `JJS`, `LS`, `MD`, `NFP`, `NN`, `NNP`, `NNPS`, `NNS`, `PDT`, `POS`, `PRP`, `PRP$`, `RB`, `RBR`, `RBS`, `RP`, `SYM`, `TO`, `UH`, `VB`, `VBD`, `VBG`, `VBN`, `VBP`, `VBZ`, `WDT`, `WP`, `WP$`, `WRB`, `XX`&#x27;</span>.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">lst2 = [spacy.explain(i.strip(<span class="string">&#x27; `&#x27;</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> lst1]</span><br><span class="line"><span class="comment"># print(lst2)</span></span><br><span class="line"></span><br><span class="line">matrix = np.column_stack((lst1, lst2)).tolist()</span><br><span class="line"><span class="comment"># print(type(matrix))</span></span><br><span class="line"><span class="comment"># print(matrix)</span></span><br><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
+
+<h2 id="csv"><a href="#csv" class="headerlink" title="csv"></a>csv</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    writer = pytablewriter.CsvTableWriter()</span><br><span class="line">    writer.headers = [<span class="string">&quot;int&quot;</span>, <span class="string">&quot;float&quot;</span>, <span class="string">&quot;str&quot;</span>, <span class="string">&quot;bool&quot;</span>, <span class="string">&quot;mix&quot;</span>, <span class="string">&quot;time&quot;</span>]</span><br><span class="line">    writer.value_matrix = [</span><br><span class="line">        [<span class="number">0</span>,   <span class="number">0.1</span>,      <span class="string">&quot;hoge&quot;</span>, <span class="literal">True</span>,   <span class="number">0</span>,      <span class="string">&quot;2017-01-01 03:04:05+0900&quot;</span>],</span><br><span class="line">        [<span class="number">2</span>,   <span class="string">&quot;-2.23&quot;</span>,  <span class="string">&quot;foo&quot;</span>,  <span class="literal">False</span>,  <span class="literal">None</span>,   <span class="string">&quot;2017-12-23 45:01:23+0900&quot;</span>],</span><br><span class="line">        [<span class="number">3</span>,   <span class="number">0</span>,        <span class="string">&quot;bar&quot;</span>,  <span class="string">&quot;true&quot;</span>,  <span class="string">&quot;inf&quot;</span>, <span class="string">&quot;2017-03-03 33:44:55+0900&quot;</span>],</span><br><span class="line">        [-<span class="number">10</span>, -<span class="number">9.9</span>,     <span class="string">&quot;&quot;</span>,     <span class="string">&quot;FALSE&quot;</span>, <span class="string">&quot;nan&quot;</span>, <span class="string">&quot;2017-01-01 00:00:00+0900&quot;</span>],</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    writer.write_table()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他格式"><a href="#其他格式" class="headerlink" title="其他格式"></a>其他格式</h2><p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/json.html">JSON</a></p>
+<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/html.html">HTML</a></p>
+]]></content>
+      <categories>
+        <category>代码</category>
+        <category>文本处理</category>
+      </categories>
+      <tags>
+        <tag>txt</tag>
       </tags>
   </entry>
   <entry>
@@ -1171,23 +1315,25 @@
   <entry>
     <title>Hexo博客Next主题搭建全过程</title>
     <url>/hexo-next/</url>
-    <content><![CDATA[<p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。我把这些文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章）。 <span id="more"></span></p>
-<h1 id="博客的初始化">博客的初始化</h1>
-<p>关于怎么部署参考：https://zhuanlan.zhihu.com/p/26625249</p>
+    <content><![CDATA[<p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。我把这些文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章）。</p>
+<span id="more"></span>
+
+<h1 id="博客的初始化"><a href="#博客的初始化" class="headerlink" title="博客的初始化"></a>博客的初始化</h1><p>关于怎么部署参考：<a href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd hexo-final</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
 <p>完成以上步骤后，我们看到目前的插件如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-- hexo-generator-archive@1.0.0</span><br><span class="line">+-- hexo-generator-category@1.0.0</span><br><span class="line">+-- hexo-generator-index@2.0.0</span><br><span class="line">+-- hexo-generator-tag@1.0.0</span><br><span class="line">+-- hexo-renderer-ejs@1.0.0</span><br><span class="line">+-- hexo-renderer-marked@4.0.0</span><br><span class="line">+-- hexo-renderer-stylus@2.0.1</span><br><span class="line">+-- hexo-server@2.0.0</span><br><span class="line">+-- hexo-theme-landscape@0.0.3</span><br><span class="line">&#96;-- hexo@5.4.0</span><br></pre></td></tr></table></figure>
 <p>我们需要安装其他插件：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-- hexo-browsersync@0.3.0</span><br><span class="line">+-- hexo-deployer-git@3.0</span><br><span class="line">+-- hexo-generator-index-pin-top@0.2.2</span><br><span class="line">+-- hexo-generator-searchdb@1.3.3</span><br><span class="line">+-- hexo-related-popular-posts@5.0.1</span><br><span class="line">+-- hexo-renderer-pandoc@0.3.0</span><br><span class="line">+-- hexo-symbols-count-time@0.7.1</span><br></pre></td></tr></table></figure>
-<p>安装方式： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure> 安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl）复制粘贴过来。</p>
-<h2 id="网上的教程">网上的教程</h2>
-<p>图片操作： https://davidwells.io/snippets/how-to-align-images-in-markdown https://www.w3schools.com/html/html_images.asp</p>
-<p>其他美化： https://huangpiao.tech/2019/01/24/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</p>
+<p>安装方式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure>
+<p>安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl）复制粘贴过来。</p>
+<h2 id="网上的教程"><a href="#网上的教程" class="headerlink" title="网上的教程"></a>网上的教程</h2><p>图片操作：<br><a href="https://davidwells.io/snippets/how-to-align-images-in-markdown">https://davidwells.io/snippets/how-to-align-images-in-markdown</a><br><a href="https://www.w3schools.com/html/html_images.asp">https://www.w3schools.com/html/html_images.asp</a></p>
+<p>其他美化：<br><a href="https://huangpiao.tech/2019/01/24/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">https://huangpiao.tech/2019/01/24/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</a></p>
 <p>Markdown进阶：</p>
-<p>https://blog.csdn.net/thither_shore/article/details/52181464</p>
-<p>https://unnamed42.github.io/2015-12-02-Markdown%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F.html</p>
-<p>https://blog.csdn.net/m0_37925202/article/details/80461714</p>
-<p>Markdown使用html https://www.wuchenxu.com/2015/12/30/Markdown-html-compare/</p>
+<p><a href="https://blog.csdn.net/thither_shore/article/details/52181464">https://blog.csdn.net/thither_shore/article/details/52181464</a></p>
+<p><a href="https://unnamed42.github.io/2015-12-02-Markdown%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F.html">https://unnamed42.github.io/2015-12-02-Markdown%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F.html</a></p>
+<p><a href="https://blog.csdn.net/m0_37925202/article/details/80461714">https://blog.csdn.net/m0_37925202/article/details/80461714</a></p>
+<p>Markdown使用html<br><a href="https://www.wuchenxu.com/2015/12/30/Markdown-html-compare/">https://www.wuchenxu.com/2015/12/30/Markdown-html-compare/</a></p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
@@ -1258,120 +1404,28 @@
       </tags>
   </entry>
   <entry>
-    <title>用python处理json数据</title>
-    <url>/json/</url>
-    <content><![CDATA[<blockquote>
-<p><a href="https://baike.baidu.com/item/JSON">JSON</a>(<a href="https://baike.baidu.com/item/JavaScript">JavaScript</a> Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 <a href="https://baike.baidu.com/item/ECMAScript">ECMAScript</a> (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科</p>
-</blockquote>
-<p>编码和解码JSON数据的过程相当于把同一样东西翻译成中文和日语。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">json_str = &#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;example&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="comment"># 序列化json</span></span><br><span class="line">json_str = json.dumps(params, sort_keys=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 反序列化json</span></span><br><span class="line">dict_json = json.loads(json_str)</span><br></pre></td></tr></table></figure>
+    <title>英文文献的命名实体识别（上）</title>
+    <url>/named-entity-recognition/</url>
+    <content><![CDATA[<p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
+<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a href="https://www.nltk.org/">NLTK</a>，<a href="https://spacy.io/">SpaCy</a>和<a href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
 <span id="more"></span>
-<h1 id="序列化json">序列化JSON</h1>
-<h2 id="将python对象转换为json">将Python对象转换为JSON</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Python</th>
-<th>JSON格式</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>dict</code></td>
-<td><code>object</code></td>
-</tr>
-<tr class="even">
-<td><code>list</code>， <code>tuple</code></td>
-<td><code>array</code></td>
-</tr>
-<tr class="odd">
-<td><code>str</code></td>
-<td><code>string</code></td>
-</tr>
-<tr class="even">
-<td><code>int</code>，<code>long</code>，<code>float</code></td>
-<td><code>number</code></td>
-</tr>
-<tr class="odd">
-<td><code>True</code></td>
-<td><code>true</code></td>
-</tr>
-<tr class="even">
-<td><code>False</code></td>
-<td><code>false</code></td>
-</tr>
-<tr class="odd">
-<td><code>None</code></td>
-<td><code>null</code></td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&quot;president&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Zaphod Beeblebrox&quot;</span>,</span><br><span class="line">        <span class="string">&quot;species&quot;</span>: <span class="string">&quot;Betelgeusian&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">type</span>(data)</span><br><span class="line"><span class="comment">#&lt;class &#x27;dict&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存为json文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data_file.json&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> write_file:</span><br><span class="line">    json.dump(data, write_file)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者将序列化的JSON数据写入python字符串对象</span></span><br><span class="line">json_string = json.dumps(data)</span><br><span class="line"><span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="一些有用的关键字参数">一些有用的关键字参数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">json.dumps(data, indent=<span class="number">4</span>, sort_keys = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p>indent定义缩进的级别；如果<em>sort_keys</em>为true，则字典的输出将按key排序。</p>
-<h1 id="反序列化json读取json数据">反序列化JSON：读取JSON数据</h1>
-<h2 id="将json编码的数据转换为python对象">将JSON编码的数据转换为Python对象</h2>
-<table>
-<thead>
-<tr class="header">
-<th>JSON</th>
-<th>Python</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>object</code></td>
-<td><code>dict</code></td>
-</tr>
-<tr class="even">
-<td><code>array</code></td>
-<td><code>list</code></td>
-</tr>
-<tr class="odd">
-<td><code>string</code></td>
-<td><code>str</code></td>
-</tr>
-<tr class="even">
-<td><code>number</code> (int)</td>
-<td><code>int</code></td>
-</tr>
-<tr class="odd">
-<td><code>number</code> (real)</td>
-<td><code>float</code></td>
-</tr>
-<tr class="even">
-<td><code>true</code></td>
-<td><code>True</code></td>
-</tr>
-<tr class="odd">
-<td><code>false</code></td>
-<td><code>False</code></td>
-</tr>
-<tr class="even">
-<td><code>null</code></td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="从文件中读取">从文件中读取</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data_file.json&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> read_file:</span><br><span class="line">    data = json.load(read_file)</span><br><span class="line"><span class="built_in">type</span>(data)</span><br><span class="line"><span class="comment"># &lt;class &#x27;list&#x27;&gt;</span></span><br><span class="line"><span class="built_in">type</span>(data[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="从字符串创建">从字符串创建</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">json_string = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    &quot;researcher&quot;: &#123;</span></span><br><span class="line"><span class="string">        &quot;name&quot;: &quot;Ford Prefect&quot;,</span></span><br><span class="line"><span class="string">        &quot;species&quot;: &quot;Betelgeusian&quot;,</span></span><br><span class="line"><span class="string">        &quot;relatives&quot;: [</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">                &quot;name&quot;: &quot;Zaphod Beeblebrox&quot;,</span></span><br><span class="line"><span class="string">                &quot;species&quot;: &quot;Betelgeusian&quot;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">data = json.loads(json_string)</span><br></pre></td></tr></table></figure>
-<h2 id="从api获取">从API获取</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span>)</span><br><span class="line">todos = json.loads(response.text)</span><br><span class="line">todos == response.json()</span><br></pre></td></tr></table></figure>
-<p>这里的伪json数据适合用来练习。</p>
-<h1 id="遍历json字符串">遍历JSON字符串</h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">items &#x3D; data.items()</span><br><span class="line">for key, value in items:</span><br><span class="line">    print(str(key) + &#39;&#x3D;&#39; + str(value))</span><br></pre></td></tr></table></figure>
-<p><strong>参考文献：</strong></p>
-<p>https://realpython.com/python-json/</p>
+
+<h2 id="学术文献"><a href="#学术文献" class="headerlink" title="学术文献"></a>学术文献</h2><p><a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full">用于生物医学信息提取的命名实体识别和关系检测</a></p>
+<p><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3321-4">使用具有上下文信息的深度神经网络进行生物医学命名实体识别</a></p>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0885230815300504">用于命名实体识别工具的多领域评估框架</a></p>
+<p><a href="https://devopedia.org/named-entity-recognition#Wang-et-al.-2019">命名实体识别</a></p>
+<p><a href="https://paperswithcode.com/task/named-entity-recognition-ner">带代码的文献</a></p>
+<h1 id="如何训练NER分类器"><a href="#如何训练NER分类器" class="headerlink" title="如何训练NER分类器"></a>如何训练NER分类器</h1><p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
+<p>$$<br>\begin{array}{c}<br>\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \<br>=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \<br>\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \<br>=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \<br>\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}<br>\end{array}<br>$$</p>
 ]]></content>
       <categories>
-        <category>代码</category>
-        <category>文本处理</category>
+        <category>自然语言处理</category>
+        <category>命名实体识别</category>
       </categories>
       <tags>
-        <tag>json</tag>
+        <tag>nlp</tag>
+        <tag>NER</tag>
       </tags>
   </entry>
   <entry>
@@ -1380,26 +1434,16 @@
     <content><![CDATA[<p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
 <p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a href="https://www.nltk.org/">NLTK</a>，<a href="https://spacy.io/">SpaCy</a>和<a href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
 <span id="more"></span>
-<h2 id="学术文献">学术文献</h2>
-<p>https://livebook.manning.com/book/natural-language-processing-in-action/chapter-11/</p>
-<p>https://github.com/AmoDinho/datacamp-python-data-science-track/blob/master/Natural%20Language%20Processing%20Fundamentals%20in%20Python/Chapter%203%20-Named-entity%20recognition.py</p>
-<p>https://www.sciencedirect.com/topics/computer-science/named-entity-recognition</p>
-<p>https://www.nltk.org/book/ch07.html</p>
+
+<h2 id="学术文献"><a href="#学术文献" class="headerlink" title="学术文献"></a>学术文献</h2><p><a href="https://livebook.manning.com/book/natural-language-processing-in-action/chapter-11/">https://livebook.manning.com/book/natural-language-processing-in-action/chapter-11/</a></p>
+<p><a href="https://github.com/AmoDinho/datacamp-python-data-science-track/blob/master/Natural%20Language%20Processing%20Fundamentals%20in%20Python/Chapter%203%20-Named-entity%20recognition.py">https://github.com/AmoDinho/datacamp-python-data-science-track/blob/master/Natural%20Language%20Processing%20Fundamentals%20in%20Python/Chapter%203%20-Named-entity%20recognition.py</a></p>
+<p><a href="https://www.sciencedirect.com/topics/computer-science/named-entity-recognition">https://www.sciencedirect.com/topics/computer-science/named-entity-recognition</a></p>
+<p><a href="https://www.nltk.org/book/ch07.html">https://www.nltk.org/book/ch07.html</a></p>
 <p>明天要翻译的文献：信息抽取</p>
-<p>https://web.stanford.edu/~jurafsky/slp3/17.pdf</p>
-<h1 id="如何训练ner分类器">如何训练NER分类器</h1>
-<p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
-<h2 id="评估">评估</h2>
-<p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
-<p><span class="math display">\[
-\begin{array}{c}
-\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \\
-\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \\
-\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}
-\end{array}
-\]</span></p>
+<p><a href="https://web.stanford.edu/~jurafsky/slp3/17.pdf">https://web.stanford.edu/~jurafsky/slp3/17.pdf</a></p>
+<h1 id="如何训练NER分类器"><a href="#如何训练NER分类器" class="headerlink" title="如何训练NER分类器"></a>如何训练NER分类器</h1><p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
+<p>$$<br>\begin{array}{c}<br>\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \<br>=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \<br>\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \<br>=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \<br>\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}<br>\end{array}<br>$$</p>
 ]]></content>
       <categories>
         <category>自然语言处理</category>
@@ -1437,41 +1481,6 @@
       </categories>
       <tags>
         <tag>pdf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英文文献的命名实体识别（上）</title>
-    <url>/named-entity-recognition/</url>
-    <content><![CDATA[<p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
-<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a href="https://www.nltk.org/">NLTK</a>，<a href="https://spacy.io/">SpaCy</a>和<a href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
-<span id="more"></span>
-<h2 id="学术文献">学术文献</h2>
-<p><a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full">用于生物医学信息提取的命名实体识别和关系检测</a></p>
-<p><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3321-4">使用具有上下文信息的深度神经网络进行生物医学命名实体识别</a></p>
-<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0885230815300504">用于命名实体识别工具的多领域评估框架</a></p>
-<p><a href="https://devopedia.org/named-entity-recognition#Wang-et-al.-2019">命名实体识别</a></p>
-<p><a href="https://paperswithcode.com/task/named-entity-recognition-ner">带代码的文献</a></p>
-<h1 id="如何训练ner分类器">如何训练NER分类器</h1>
-<p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
-<h2 id="评估">评估</h2>
-<p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
-<p><span class="math display">\[
-\begin{array}{c}
-\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \\
-\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \\
-\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}
-\end{array}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>自然语言处理</category>
-        <category>命名实体识别</category>
-      </categories>
-      <tags>
-        <tag>nlp</tag>
-        <tag>NER</tag>
       </tags>
   </entry>
   <entry>
@@ -1668,6 +1677,116 @@
       </categories>
       <tags>
         <tag>psycholinguistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用python处理json数据</title>
+    <url>/json/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://baike.baidu.com/item/JSON">JSON</a>(<a href="https://baike.baidu.com/item/JavaScript">JavaScript</a> Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 <a href="https://baike.baidu.com/item/ECMAScript">ECMAScript</a> (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科</p>
+</blockquote>
+<p>编码和解码JSON数据的过程相当于把同一样东西翻译成中文和日语。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">json_str = &#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;example&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="comment"># 序列化json</span></span><br><span class="line">json_str = json.dumps(params, sort_keys=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 反序列化json</span></span><br><span class="line">dict_json = json.loads(json_str)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h1 id="序列化JSON"><a href="#序列化JSON" class="headerlink" title="序列化JSON"></a>序列化JSON</h1><h2 id="将Python对象转换为JSON"><a href="#将Python对象转换为JSON" class="headerlink" title="将Python对象转换为JSON"></a>将Python对象转换为JSON</h2><table>
+<thead>
+<tr>
+<th>Python</th>
+<th>JSON格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>dict</code></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><code>list</code>， <code>tuple</code></td>
+<td><code>array</code></td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>int</code>，<code>long</code>，<code>float</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>True</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>False</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>None</code></td>
+<td><code>null</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&quot;president&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Zaphod Beeblebrox&quot;</span>,</span><br><span class="line">        <span class="string">&quot;species&quot;</span>: <span class="string">&quot;Betelgeusian&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">type</span>(data)</span><br><span class="line"><span class="comment">#&lt;class &#x27;dict&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存为json文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data_file.json&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> write_file:</span><br><span class="line">    json.dump(data, write_file)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者将序列化的JSON数据写入python字符串对象</span></span><br><span class="line">json_string = json.dumps(data)</span><br><span class="line"><span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="一些有用的关键字参数"><a href="#一些有用的关键字参数" class="headerlink" title="一些有用的关键字参数"></a>一些有用的关键字参数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">json.dumps(data, indent=<span class="number">4</span>, sort_keys = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>indent定义缩进的级别；如果<em>sort_keys</em>为true，则字典的输出将按key排序。</p>
+<h1 id="反序列化JSON：读取JSON数据"><a href="#反序列化JSON：读取JSON数据" class="headerlink" title="反序列化JSON：读取JSON数据"></a>反序列化JSON：读取JSON数据</h1><h2 id="将JSON编码的数据转换为Python对象"><a href="#将JSON编码的数据转换为Python对象" class="headerlink" title="将JSON编码的数据转换为Python对象"></a>将JSON编码的数据转换为Python对象</h2><table>
+<thead>
+<tr>
+<th>JSON</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>object</code></td>
+<td><code>dict</code></td>
+</tr>
+<tr>
+<td><code>array</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>str</code></td>
+</tr>
+<tr>
+<td><code>number</code> (int)</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>number</code> (real)</td>
+<td><code>float</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>null</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody></table>
+<h2 id="从文件中读取"><a href="#从文件中读取" class="headerlink" title="从文件中读取"></a>从文件中读取</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data_file.json&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> read_file:</span><br><span class="line">    data = json.load(read_file)</span><br><span class="line"><span class="built_in">type</span>(data)</span><br><span class="line"><span class="comment"># &lt;class &#x27;list&#x27;&gt;</span></span><br><span class="line"><span class="built_in">type</span>(data[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="从字符串创建"><a href="#从字符串创建" class="headerlink" title="从字符串创建"></a>从字符串创建</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">json_string = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    &quot;researcher&quot;: &#123;</span></span><br><span class="line"><span class="string">        &quot;name&quot;: &quot;Ford Prefect&quot;,</span></span><br><span class="line"><span class="string">        &quot;species&quot;: &quot;Betelgeusian&quot;,</span></span><br><span class="line"><span class="string">        &quot;relatives&quot;: [</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">                &quot;name&quot;: &quot;Zaphod Beeblebrox&quot;,</span></span><br><span class="line"><span class="string">                &quot;species&quot;: &quot;Betelgeusian&quot;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">data = json.loads(json_string)</span><br></pre></td></tr></table></figure>
+
+<h2 id="从API获取"><a href="#从API获取" class="headerlink" title="从API获取"></a>从API获取</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span>)</span><br><span class="line">todos = json.loads(response.text)</span><br><span class="line">todos == response.json()</span><br></pre></td></tr></table></figure>
+
+<p>这里的伪json数据适合用来练习。</p>
+<h1 id="遍历JSON字符串"><a href="#遍历JSON字符串" class="headerlink" title="遍历JSON字符串"></a>遍历JSON字符串</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">items &#x3D; data.items()</span><br><span class="line">for key, value in items:</span><br><span class="line">    print(str(key) + &#39;&#x3D;&#39; + str(value))</span><br></pre></td></tr></table></figure>
+
+<p><strong>参考文献：</strong></p>
+<p><a href="https://realpython.com/python-json/">https://realpython.com/python-json/</a></p>
+]]></content>
+      <categories>
+        <category>代码</category>
+        <category>文本处理</category>
+      </categories>
+      <tags>
+        <tag>json</tag>
       </tags>
   </entry>
   <entry>
