@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一站到底解决IDE搭建问题！从基础设置、插件安装、snippets填充、到github版本控制、代码调试……本文将不断更新以求完善！  安装文本编辑器Atom 入坑Sublime、VSCode无数次后，还是回头选择了Atom IDE，因为它颜值惊艳、操作便捷、界面简单，除了许多编辑器都有的代码折叠和自动补全，还自带原生Markdown支持！！！这漂亮的实时预览和代码高亮真让人春心荡漾！并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从小白到起飞，一站解决Atom编辑器各种骚操作">
+<meta property="og:url" content="http://nlpcourse.cn/2021/03/18/atom/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="一站到底解决IDE搭建问题！从基础设置、插件安装、snippets填充、到github版本控制、代码调试……本文将不断更新以求完善！  安装文本编辑器Atom 入坑Sublime、VSCode无数次后，还是回头选择了Atom IDE，因为它颜值惊艳、操作便捷、界面简单，除了许多编辑器都有的代码折叠和自动补全，还自带原生Markdown支持！！！这漂亮的实时预览和代码高亮真让人春心荡漾！并">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-e2e305deea69303a19d71da452138945_b.png">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-62a1e257adc2ca9978dee539798d3342_b.png">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-873f85f52366e6ab44b3eda548930102_b.png">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-d5d6ec618868382045aa1044eae6e988_b.png">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-4d43fef791abc2195246b9621b37f4b9_b.gif">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-6daf82cf178c578fd4cf4c19da68cb88_b.png">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-6e1aa37602728c2eb6bdc8701b013270_b.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-713ea328565e6babf7e9559c20bc2e8b_b.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-e0ed2bebdccf67e44a7c2bb61ff7b26b_b.gif">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-692783c713218dc64a68c8faca88c096_b.png">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-12f773fb3a40b67afa0a432aa3dbc9b2_b.png">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-9c4fd8ff9abd02d7cbb3f6566bf0549d_b.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-cdcf68324e69b094ea314250405b9e9b_b.gif">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-a579e162c502f89da0d9036ac21abfb8_b.png">
+<meta property="article:published_time" content="2021-03-18T01:46:05.468Z">
+<meta property="article:modified_time" content="2021-03-17T14:21:36.669Z">
+<meta property="article:author" content="鸽鸽">
+<meta property="article:tag" content="atom">
+<meta property="article:tag" content="editor">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-e2e305deea69303a19d71da452138945_b.png">
+
+<link rel="canonical" href="http://nlpcourse.cn/2021/03/18/atom/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>从小白到起飞，一站解决Atom编辑器各种骚操作 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">30</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/2021/03/18/atom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从小白到起飞，一站解决Atom编辑器各种骚操作
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-17 22:21:36" itemprop="dateModified" datetime="2021-03-17T22:21:36+08:00">2021-03-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BB%A3%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">代码</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BB%A3%E7%A0%81/%E7%BC%96%E8%BE%91%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">编辑器</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>一站到底解决IDE搭建问题！从基础设置、插件安装、snippets填充、到github版本控制、代码调试……本文将不断更新以求完善！</p>
+</blockquote>
+<h2 id="安装文本编辑器atom">安装文本编辑器Atom</h2>
+<p>入坑Sublime、VSCode无数次后，还是回头选择了Atom IDE，因为它颜值惊艳、操作便捷、界面简单，除了许多编辑器都有的<strong>代码折叠</strong>和<strong>自动补全</strong>，还自带原生Markdown支持！！！这漂亮的实时预览和代码高亮真让人春心荡漾！并且，插件非常丰富！ <span id="more"></span> 于是，果断选择Atom作为本博主的<strong>创作神器</strong>，为Python开发之旅保驾护航！</p>
+<p>官网一键安装：<a target="_blank" rel="noopener" href="https://atom.io/">AtomSetup-x64</a></p>
+<p>确认操作系统无误，点击download，打开下载好的AtomSetup-x64.exe，极速体验！</p>
+<figure>
+<img src="https://pic2.zhimg.com/v2-e2e305deea69303a19d71da452138945_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><em>缺点是启动速度不如sublime</em></p>
+<h2 id="安装插件失足卡顿的惨痛经历">安装插件：失足卡顿的惨痛经历</h2>
+<p>此时你一定急不可耐地冲向Install a Package，风风火火地下载了一堆插件：minimap用来预览全貌，atom-beautify用来格式化（想到令人头痛的html），file-icons小图标好可爱呀，material主题貌似很热门吼，markdown-preview-enhanced吊打我的Typora呢（Typora是我常用的md编辑器），script可以运行代码嗷，autocomplete-python自动补全呢，python-autopep8调格式也不错哟，linter-flake8检查语法错误呢，Hydrogen简直是jupyter的孪生姐妹……你在界面乐此不疲地倒腾……</p>
+<p>A few hours later...</p>
+<p>突然，你意识到此时的atom一片混乱卡顿缓慢，再也不是当初清纯活泼的模样！你蹙起眉，两行清泪润湿了乌黑的下眼眶！</p>
+<p>一怒之下，你卸载了atom，并剿杀了一切软件残留：<a target="_blank" rel="noopener" href="https://cn.compbs.com/how-uninstall-atom-windows">如何彻底删除atom</a>，<a target="_blank" rel="noopener" href="https://www.coder.work/article/552966">如何更彻底地删除</a>！</p>
+<h2 id="正确的打开方式是什么">正确的打开方式是什么？</h2>
+<p>正文从这里开始！</p>
+<p>那么，配置环境和安装插件的正确方式是什么呢？</p>
+<ol type="1">
+<li>打开Editor Settings，<strong>勾选Scroll Past End和Show Indent Guide，设置Tab Length为4，Font Size为20</strong>，护眼第一啦！</li>
+<li>主题我喜欢atom自带的<strong>One Light，</strong>打开themes-&gt;One Light UI-&gt;Settings-&gt;<strong>Font Size设置为15</strong>，语法主题我选择<strong>Monokai</strong>。还是为了护眼！码字时还可以随时ctrl+和ctrl-调整字体大小。</li>
+<li>下载插件：<strong>minimap、file-icons、atom-beautify、markdown-preview-enhanced、python-autopep8、markdown-writer</strong>。大道至简，这是我目前选择的基础组件，可能以后会更新！进入python-autopep8-&gt;Settings，勾选Format On Save。</li>
+</ol>
+<figure>
+<img src="https://pic3.zhimg.com/v2-62a1e257adc2ca9978dee539798d3342_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><em>atom-material-syntax-dark语法主题也好看，只是Python语法高亮略丑，就不放了</em></p>
+<p>个人认为，<strong>编辑器只需提供高效、舒适的代码体验即可</strong>，各种花里胡哨的功能比较鸡肋，反而会加重的负担。</p>
+<p><a target="_blank" rel="noopener" href="https://atom.io/themes/list?direction=desc&amp;sort=downloads">atom热门主题排行榜</a>：material、monokai、seti。</p>
+<p><a target="_blank" rel="noopener" href="https://atom.io/packages/list?direction=desc&amp;sort=stars">atom热门插件排行榜</a>：minimap、file-icons、atom-beautify、linter、script。</p>
+<p><strong>下面重点来了，下载插件的方式！！！</strong></p>
+<p>打开cmd，执行以下命令（apm是Atom Package Manager的缩写）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install autopep8</span><br><span class="line">apm install monokai, minimap, file-icons, atom-beautify, markdown-preview-enhanced, python-autopep8</span><br></pre></td></tr></table></figure>
+<p>如果一起下载速度太慢，也可以apm install <package_name>分开下载。</p>
+<p>晃悠了一杯茶的时间，已经全部done啦！Voila！</p>
+<p>重启Atom，Ctrl+Shift+P打开Settings-&gt;Packages，是不是整齐陈列着我们要的插件呢？（不知为什么ctrl+逗号不能打开settings）</p>
+<p>码上行动叭！！！</p>
+<figure>
+<img src="https://pic3.zhimg.com/v2-873f85f52366e6ab44b3eda548930102_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><em>这是最终的windows界面</em></p>
+<p>另外，有童鞋选择github上面的源码git clone，然后cd进文件夹、npm install来安装，也不错呢~</p>
+<p>对了，卸载插件的话，apm uninstall <package_name> 就好啦！</p>
+<p>----------2021-03-04更新---------</p>
+<h2 id="代码填充功能snippets">代码填充功能Snippets</h2>
+<p>当我们需要重复使用一套模板时，不如试试<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2ee34d8da142">Atom自带的Snippets代码块功能</a>，这种快捷填充，省去了重复码字的时间。打开终端输入下面指令，用atom打开snippets.cson：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atom C:\Users\用户名\.atom\snippets.cson</span><br></pre></td></tr></table></figure>
+<p>可以看到目前空空如也，在这个文件里面打“snip”，然后敲下tab键，会跳出来用于创建snippets的snippets（像套娃一样耶）。换上你想存储的代码块吧，示例如下：</p>
+<figure>
+<img src="https://pic1.zhimg.com/v2-d5d6ec618868382045aa1044eae6e988_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>以后每次想插入代码块，直接输我们预设的“暗号”，然后按tab键即可，迅如闪电呀！</p>
+<p><strong>注意</strong>：snippets只在相应语言中有效！并且，除了常见的Python、Java、JS等，<strong>其他有些语言是不支持snippets功能的</strong>，此时有两种方法：</p>
+<ol type="1">
+<li>通过apm install language-语言，安装相应语言的支持包；</li>
+<li>将.source.语言 改成* 。</li>
+</ol>
+<p>我比较建议第二种方法。</p>
+<p>另外，mardown中输入table、img、L等按下tab键，可以快捷插入表格、图片、链接等。</p>
+<figure>
+<img src="https://pic2.zhimg.com/v2-4d43fef791abc2195246b9621b37f4b9_b.gif" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>成功啦，美滋滋~</p>
+<h2 id="代码调试">代码调试</h2>
+<p>暂时用不到，先占个坑，下次完善！</p>
+<h2 id="使用github远程版本控制">使用Github远程版本控制</h2>
+<p>又解锁atom连接github和git啦！赶紧更新日志！</p>
+<p>话说，atom本来就是github开发的编辑器好嘛！我们来测试下好用吗！</p>
+<p>Github注册无须多言吧，我创建了一个新的repository，命名blog，用来云端存储我的写作素材与稿件。这时我们看到页面提供了一系列指令：</p>
+<figure>
+<img src="https://pic1.zhimg.com/v2-6daf82cf178c578fd4cf4c19da68cb88_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><em>这里其实是blog仓库，但我为了演示又重新建了名为test的仓库</em></p>
+<p>我们只需要打开windows系统的git bash，一句一句输入。我输入的是以下指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">echo &quot;#blog&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;MissFreak&#x2F;blog.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<p>成功后，在Atom打开blog这个文件夹（也就是你想要进行版本控制的项目），我们看到右侧显示github登录界面，提示我们打开github.atom.io，复制GitHub token到Atom的登录表单。Success！</p>
+<figure>
+<img src="https://pic1.zhimg.com/v2-6e1aa37602728c2eb6bdc8701b013270_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>接下来就随心所欲地增改文件，然后stage all-&gt;commit to main-&gt;pull 吧！</p>
+<p>终于不用在终端敲指令，也可以和Github Desktop说拜拜啦！</p>
+<figure>
+<img src="https://pic4.zhimg.com/v2-713ea328565e6babf7e9559c20bc2e8b_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><strong>参考资料：</strong><a target="_blank" rel="noopener" href="https://flight-manual.atom.io/using-atom/sections/github-package/">Atom Documentation-GitHub package</a></p>
+<h2 id="你可能不知道的快捷键">你可能不知道的快捷键</h2>
+<table>
+<thead>
+<tr class="header">
+<th>功能</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>在所有项目文件中查找字符串</td>
+<td>Ctrl + Shift + f</td>
+</tr>
+<tr class="even">
+<td>打开导航栏的File、Edit、View等</td>
+<td>Alt+导航栏首字母</td>
+</tr>
+<tr class="odd">
+<td>向上/下移动该行</td>
+<td>Ctrl + up/down</td>
+</tr>
+</tbody>
+</table>
+<p><a target="_blank" rel="noopener" href="https://yanyinhong.github.io/2017/07/23/Atom-keyboard-shortcuts/">Windows环境下的Atom快捷键</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1549978931.html">mac下Atom编辑器快捷键大全</a></p>
+<figure>
+<img src="https://pic4.zhimg.com/v2-e0ed2bebdccf67e44a7c2bb61ff7b26b_b.gif" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><em>在项目所有文件中搜索“正则”</em></p>
+<p>----------2021-03-04更新---------</p>
+<h2 id="html神器">HTML神器</h2>
+<p>又屁颠屁颠跑来更新啦，虽然只有我一个人自娱自乐。</p>
+<p>Python开发网站离不开的插件，亲测好用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apm install atom-html-preview, pigments, highlight-selected, autoclose-html-plus, color-picker, color-tabs</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<figure>
+<img src="https://pic3.zhimg.com/v2-692783c713218dc64a68c8faca88c096_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="markdown神器">Markdown神器</h2>
+<p>还有，大家赶紧把这款神器mardown-preview-enhanced用起来吧，功能齐全到不可想象！<strong>可以折叠一级、二级、三级标题，专注于当前标题下的内容！（但是我刚用了貌似会卡）</strong></p>
+<p>可以运行代码，并渲染运行结果：</p>
+<figure>
+<img src="https://pic3.zhimg.com/v2-12f773fb3a40b67afa0a432aa3dbc9b2_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>各种流程图、结构图：</p>
+<figure>
+<img src="https://pic2.zhimg.com/v2-9c4fd8ff9abd02d7cbb3f6566bf0549d_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>甚至制作幻灯片：</p>
+<figure>
+<img src="https://pic4.zhimg.com/v2-cdcf68324e69b094ea314250405b9e9b_b.gif" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>还有太多亮瞎眼的操作不一一列举，详情请戳：https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/</p>
+<p>VScode也可以用~真的很想把sublime扔进垃圾桶了！虽然sublime打开速度确实快！</p>
+<h2 id="terminal-神器">Terminal 神器</h2>
+<p>我又发现了一款终端程序包，terminal-plus！可以更改主题、查看终端当前运行的命令进程！用颜色标记状态图标和排序！从文本编辑器插入并运行文本！还有太多功能大家自己查阅！再次挖到宝贝啦！</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jeremyramin/terminal-plus">jeremyramin/terminal-plus</a></p>
+<figure>
+<img src="https://pic1.zhimg.com/v2-a579e162c502f89da0d9036ac21abfb8_b.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>总结：我目前安装的插件和主题如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├── atom-beautify@0.33.4</span><br><span class="line">├── atom-html-preview@0.2.6</span><br><span class="line">├── autoclose-html-plus@0.27.2</span><br><span class="line">├── color-picker@2.3.0</span><br><span class="line">├── color-tabs@0.1.8</span><br><span class="line">├── file-icons@2.1.46</span><br><span class="line">├── highlight-selected@0.17.0</span><br><span class="line">├── markdown-preview-enhanced@0.18.8</span><br><span class="line">├── markdown-writer@2.11.11</span><br><span class="line">├── minimap@4.39.9</span><br><span class="line">├── monokai@0.27.0</span><br><span class="line">├── pigments@0.40.6</span><br><span class="line">├── python-autopep8@0.1.3</span><br><span class="line">└── python-tools@0.6.9</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="鸽鸽 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/2021/03/18/atom/" title="从小白到起飞，一站解决Atom编辑器各种骚操作">http://nlpcourse.cn/2021/03/18/atom/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/atom/" rel="tag"># atom</a>
+              <a href="/tags/editor/" rel="tag"># editor</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/18/content/" rel="prev" title="我的电脑文件目录管理">
+      <i class="fa fa-chevron-left"></i> 我的电脑文件目录管理
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8atom"><span class="nav-number">1.</span> <span class="nav-text">安装文本编辑器Atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E5%A4%B1%E8%B6%B3%E5%8D%A1%E9%A1%BF%E7%9A%84%E6%83%A8%E7%97%9B%E7%BB%8F%E5%8E%86"><span class="nav-number">2.</span> <span class="nav-text">安装插件：失足卡顿的惨痛经历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">3.</span> <span class="nav-text">正确的打开方式是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%A1%AB%E5%85%85%E5%8A%9F%E8%83%BDsnippets"><span class="nav-number">4.</span> <span class="nav-text">代码填充功能Snippets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">代码调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8github%E8%BF%9C%E7%A8%8B%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="nav-number">6.</span> <span class="nav-text">使用Github远程版本控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">7.</span> <span class="nav-text">你可能不知道的快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html%E7%A5%9E%E5%99%A8"><span class="nav-number">8.</span> <span class="nav-text">HTML神器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown%E7%A5%9E%E5%99%A8"><span class="nav-number">9.</span> <span class="nav-text">Markdown神器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#terminal-%E7%A5%9E%E5%99%A8"><span class="nav-number">10.</span> <span class="nav-text">Terminal 神器</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">51k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
