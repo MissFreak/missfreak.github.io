@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="依存分析是根据句子中单词之间的依存关系来分析句子语法结构的过程。  在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在&#39;rainy weather&#39;这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即">
+  <meta name="description" content="依存分析是根据句子中单词之间的依存关系来分析句子语法结构的过程。  在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在’rainy weather’这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即形容词">
 <meta property="og:type" content="article">
 <meta property="og:title" content="英文依存句法分析">
 <meta property="og:url" content="http://nlpcourse.cn/dependency-parsing/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="依存分析是根据句子中单词之间的依存关系来分析句子语法结构的过程。  在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在&#39;rainy weather&#39;这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即">
+<meta property="og:description" content="依存分析是根据句子中单词之间的依存关系来分析句子语法结构的过程。  在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在’rainy weather’这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即形容词">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/03/16/JtlAKsfoXhZwLjP.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/16/dInSpW2aBw1Dg4u.png">
@@ -277,22 +277,16 @@
         <blockquote>
 <p>依存分析是根据句子中单词之间的依存关系来分析句子语法结构的过程。</p>
 </blockquote>
-<p>在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在'rainy weather'这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即形容词修饰语。我们可以用依存关系箭头标注语法关系： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">     root</span><br><span class="line">      |</span><br><span class="line">      | +-------dobj---------+</span><br><span class="line">      | |                    |</span><br><span class="line">nsubj | |   +------det-----+ | +-----nmod------+</span><br><span class="line">+--+  | |   |              | | |               |</span><br><span class="line">|  |  | |   |      +-nmod-+| | |      +-case-+ |</span><br><span class="line">+  |  + |   +      +      || + |      +      | |</span><br><span class="line">I  prefer  the  morning   flight  through  Denver</span><br></pre></td></tr></table></figure></p>
+<p>在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在’rainy weather’这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即形容词修饰语。我们可以用依存关系箭头标注语法关系：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">     root</span><br><span class="line">      |</span><br><span class="line">      | +-------dobj---------+</span><br><span class="line">      | |                    |</span><br><span class="line">nsubj | |   +------det-----+ | +-----nmod------+</span><br><span class="line">+--+  | |   |              | | |               |</span><br><span class="line">|  |  | |   |      +-nmod-+| | |      +-case-+ |</span><br><span class="line">+  |  + |   +      +      || + |      +      | |</span><br><span class="line">I  prefer  the  morning   flight  through  Denver</span><br></pre></td></tr></table></figure>
 <p>也可以表示为依存句法树（Dependency Tree Graph）：</p>
-<p><img src="https://i.loli.net/2021/03/16/JtlAKsfoXhZwLjP.png" /></p>
+<p><img src="https://i.loli.net/2021/03/16/JtlAKsfoXhZwLjP.png" alt=""></p>
 <p>图片来源：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/66268929">CS224N笔记(五):Dependency Parsing</a></p>
-<h1 id="通用依存关系">通用依存关系</h1>
+<h1>通用依存关系</h1>
 <p>截至目前，UD项目的通用依存关系共有37个，这些关系的完整<a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/">列表</a>可以在这里查看并深入研究。</p>
 <table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th><strong>Nominals</strong></th>
 <th><strong>Clauses</strong></th>
@@ -301,35 +295,35 @@
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>Core arguments</strong></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/nsubj.html">nsubj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/obj.html">obj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/iobj.html">iobj</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/csubj.html">csubj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/ccomp.html">ccomp</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/xcomp.html">xcomp</a></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Non-core dependents</strong></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/obl.html">obl</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/vocative.html">vocative</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/expl.html">expl</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/dislocated.html">dislocated</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/advcl.html">advcl</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/advmod.html">advmod</a>* <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/discourse.html">discourse</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/aux_.html">aux</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/cop.html">cop</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/mark.html">mark</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>Nominal dependents</strong></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/nmod.html">nmod</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/appos.html">appos</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/nummod.html">nummod</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/acl.html">acl</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/amod.html">amod</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/det.html">det</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/clf.html">clf</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/case.html">case</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Coordination</strong></td>
 <td><strong>MWE</strong></td>
 <td><strong>Loose</strong></td>
 <td><strong>Special</strong></td>
 <td><strong>Other</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/conj.html">conj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/cc.html">cc</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/fixed.html">fixed</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/flat.html">flat</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/compound.html">compound</a></td>
 <td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/list.html">list</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/parataxis.html">parataxis</a></td>
@@ -341,207 +335,209 @@
 <p>此外还有一些基于特定语言的依存关系。斯坦福依存分析定义了接近50个依存关系，具体的定义可参考：<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/dependencies_manual.pdf">Stanford typed dependencies manual</a>。</p>
 <p>关于依存句法分析，也可以参考Daniel Jurafsky的经典NLP书籍Speech and Language Processing相关<a target="_blank" rel="noopener" href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">章节</a>。</p>
 <span id="more"></span>
-<h1 id="工具推荐">工具推荐</h1>
-<h2 id="stanford-parser句法分析">Stanford Parser句法分析</h2>
+<h1>工具推荐</h1>
+<h2 id="Stanford-Parser句法分析">Stanford Parser句法分析</h2>
 <p>比较有名的工具是Stanford Parser，我们可以在<a target="_blank" rel="noopener" href="http://nlp.stanford.edu:8080/corenlp/">这里</a>在线使用并进行可视化。</p>
 <p>或者安装斯坦福的Python NLP软件包<a target="_blank" rel="noopener" href="https://stanfordnlp.github.io/stanza/installation_usage.html">Stanza</a>，里面集成了<a target="_blank" rel="noopener" href="https://stanfordnlp.github.io/stanza/depparse.html">依存关系分析</a>工具。</p>
 <p>如何解决download()下载异常的问题可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/superyangtze/article/details/105252193">这里</a>。</p>
 <p>我们可以进行词性标注：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> stanza</span><br><span class="line"><span class="comment"># stanza.download(&#x27;en&#x27;)</span></span><br><span class="line">nlp = stanza.Pipeline(<span class="string">&#x27;en&#x27;</span>)</span><br><span class="line">doc = nlp(<span class="string">&#x27;It took me more than two hours to translate a few pages of English.&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> sentence <span class="keyword">in</span> doc.sentences:</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> sentence.words:</span><br><span class="line">        print(word.text, word.lemma, word.pos)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">It it PRON</span></span><br><span class="line"><span class="string">took take VERB</span></span><br><span class="line"><span class="string">me I PRON</span></span><br><span class="line"><span class="string">more more ADJ</span></span><br><span class="line"><span class="string">than than ADP</span></span><br><span class="line"><span class="string">two two NUM</span></span><br><span class="line"><span class="string">hours hour NOUN</span></span><br><span class="line"><span class="string">to to PART</span></span><br><span class="line"><span class="string">translate translate VERB</span></span><br><span class="line"><span class="string">a a DET</span></span><br><span class="line"><span class="string">few few ADJ</span></span><br><span class="line"><span class="string">pages page NOUN</span></span><br><span class="line"><span class="string">of of ADP</span></span><br><span class="line"><span class="string">English English PROPN</span></span><br><span class="line"><span class="string">. . PUNCT</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>以及依存句法分析： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> stanza</span><br><span class="line"><span class="comment"># stanza.download(&#x27;en&#x27;)</span></span><br><span class="line">nlp = stanza.Pipeline(<span class="string">&#x27;en&#x27;</span>)</span><br><span class="line">doc = nlp(<span class="string">&#x27;It took me more than two hours to translate a few pages of English.&#x27;</span>)</span><br><span class="line">print(*[<span class="string">f&#x27;id: <span class="subst">&#123;word.<span class="built_in">id</span>&#125;</span>\tword: <span class="subst">&#123;word.text&#125;</span>\thead id: <span class="subst">&#123;word.head&#125;</span>\thead: <span class="subst">&#123;sent.words[word.head-<span class="number">1</span>].text <span class="keyword">if</span> word.head &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;root&quot;</span>&#125;</span>\tdeprel: <span class="subst">&#123;word.deprel&#125;</span>&#x27;</span> <span class="keyword">for</span> sent <span class="keyword">in</span> doc.sentences <span class="keyword">for</span> word <span class="keyword">in</span> sent.words], sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="built_in">id</span>: <span class="number">1</span>	word: It	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: expl</span><br><span class="line"><span class="built_in">id</span>: <span class="number">2</span>	word: took	head <span class="built_in">id</span>: <span class="number">0</span>	head: root	deprel: root</span><br><span class="line"><span class="built_in">id</span>: <span class="number">3</span>	word: me	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: iobj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">4</span>	word: more	head <span class="built_in">id</span>: <span class="number">6</span>	head: two	deprel: advmod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">5</span>	word: than	head <span class="built_in">id</span>: <span class="number">4</span>	head: more	deprel: fixed</span><br><span class="line"><span class="built_in">id</span>: <span class="number">6</span>	word: two	head <span class="built_in">id</span>: <span class="number">7</span>	head: hours	deprel: nummod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">7</span>	word: hours	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: obj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">8</span>	word: to	head <span class="built_in">id</span>: <span class="number">9</span>	head: translate	deprel: mark</span><br><span class="line"><span class="built_in">id</span>: <span class="number">9</span>	word: translate	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: csubj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">10</span>	word: a	head <span class="built_in">id</span>: <span class="number">12</span>	head: pages	deprel: det</span><br><span class="line"><span class="built_in">id</span>: <span class="number">11</span>	word: few	head <span class="built_in">id</span>: <span class="number">12</span>	head: pages	deprel: amod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">12</span>	word: pages	head <span class="built_in">id</span>: <span class="number">9</span>	head: translate	deprel: obj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">13</span>	word: of	head <span class="built_in">id</span>: <span class="number">14</span>	head: English	deprel: case</span><br><span class="line"><span class="built_in">id</span>: <span class="number">14</span>	word: English	head <span class="built_in">id</span>: <span class="number">12</span>	head: pages	deprel: nmod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">15</span>	word: .	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: punct</span><br></pre></td></tr></table></figure> ## Spacy依存句法分析</p>
+<p>以及依存句法分析：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> stanza</span><br><span class="line"><span class="comment"># stanza.download(&#x27;en&#x27;)</span></span><br><span class="line">nlp = stanza.Pipeline(<span class="string">&#x27;en&#x27;</span>)</span><br><span class="line">doc = nlp(<span class="string">&#x27;It took me more than two hours to translate a few pages of English.&#x27;</span>)</span><br><span class="line">print(*[<span class="string">f&#x27;id: <span class="subst">&#123;word.<span class="built_in">id</span>&#125;</span>\tword: <span class="subst">&#123;word.text&#125;</span>\thead id: <span class="subst">&#123;word.head&#125;</span>\thead: <span class="subst">&#123;sent.words[word.head-<span class="number">1</span>].text <span class="keyword">if</span> word.head &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;root&quot;</span>&#125;</span>\tdeprel: <span class="subst">&#123;word.deprel&#125;</span>&#x27;</span> <span class="keyword">for</span> sent <span class="keyword">in</span> doc.sentences <span class="keyword">for</span> word <span class="keyword">in</span> sent.words], sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="built_in">id</span>: <span class="number">1</span>	word: It	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: expl</span><br><span class="line"><span class="built_in">id</span>: <span class="number">2</span>	word: took	head <span class="built_in">id</span>: <span class="number">0</span>	head: root	deprel: root</span><br><span class="line"><span class="built_in">id</span>: <span class="number">3</span>	word: me	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: iobj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">4</span>	word: more	head <span class="built_in">id</span>: <span class="number">6</span>	head: two	deprel: advmod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">5</span>	word: than	head <span class="built_in">id</span>: <span class="number">4</span>	head: more	deprel: fixed</span><br><span class="line"><span class="built_in">id</span>: <span class="number">6</span>	word: two	head <span class="built_in">id</span>: <span class="number">7</span>	head: hours	deprel: nummod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">7</span>	word: hours	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: obj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">8</span>	word: to	head <span class="built_in">id</span>: <span class="number">9</span>	head: translate	deprel: mark</span><br><span class="line"><span class="built_in">id</span>: <span class="number">9</span>	word: translate	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: csubj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">10</span>	word: a	head <span class="built_in">id</span>: <span class="number">12</span>	head: pages	deprel: det</span><br><span class="line"><span class="built_in">id</span>: <span class="number">11</span>	word: few	head <span class="built_in">id</span>: <span class="number">12</span>	head: pages	deprel: amod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">12</span>	word: pages	head <span class="built_in">id</span>: <span class="number">9</span>	head: translate	deprel: obj</span><br><span class="line"><span class="built_in">id</span>: <span class="number">13</span>	word: of	head <span class="built_in">id</span>: <span class="number">14</span>	head: English	deprel: case</span><br><span class="line"><span class="built_in">id</span>: <span class="number">14</span>	word: English	head <span class="built_in">id</span>: <span class="number">12</span>	head: pages	deprel: nmod</span><br><span class="line"><span class="built_in">id</span>: <span class="number">15</span>	word: .	head <span class="built_in">id</span>: <span class="number">2</span>	head: took	deprel: punct</span><br></pre></td></tr></table></figure>
+<h2 id="Spacy依存句法分析">Spacy依存句法分析</h2>
 <p>我们也可以使用Spacy进行依存句法分析并画出句法树。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $python -m spacy download en_core_web_sm</span></span><br><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line">nlp=spacy.load(<span class="string">&#x27;en_core_web_sm&#x27;</span>)</span><br><span class="line">text=<span class="string">&#x27;It took me more than two hours to translate a few pages of English.&#x27;</span></span><br><span class="line"><span class="keyword">for</span> token <span class="keyword">in</span> nlp(text):</span><br><span class="line">	print(token.text,<span class="string">&#x27;=&gt;&#x27;</span>,token.dep_,<span class="string">&#x27;=&gt;&#x27;</span>,token.head.text)</span><br></pre></td></tr></table></figure>
 <p>输出结果如下，对比stanza的结果，还是有明显差异，例如此处it被标记为<code>nsubj</code>，但其实这种情况下it是虚词expletive（我们都学过形式主语），不担任谓词的语义角色，因此应该标记为expl。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">It &#x3D;&gt; nsubj &#x3D;&gt; took</span><br><span class="line">took &#x3D;&gt; ROOT &#x3D;&gt; took</span><br><span class="line">me &#x3D;&gt; dative &#x3D;&gt; took</span><br><span class="line">more &#x3D;&gt; amod &#x3D;&gt; two</span><br><span class="line">than &#x3D;&gt; quantmod &#x3D;&gt; two</span><br><span class="line">two &#x3D;&gt; nummod &#x3D;&gt; hours</span><br><span class="line">hours &#x3D;&gt; dobj &#x3D;&gt; took</span><br><span class="line">to &#x3D;&gt; aux &#x3D;&gt; translate</span><br><span class="line">translate &#x3D;&gt; xcomp &#x3D;&gt; took</span><br><span class="line">a &#x3D;&gt; det &#x3D;&gt; pages</span><br><span class="line">few &#x3D;&gt; amod &#x3D;&gt; pages</span><br><span class="line">pages &#x3D;&gt; dobj &#x3D;&gt; translate</span><br><span class="line">of &#x3D;&gt; prep &#x3D;&gt; pages</span><br><span class="line">English &#x3D;&gt; pobj &#x3D;&gt; of</span><br><span class="line">. &#x3D;&gt; punct &#x3D;&gt; took</span><br></pre></td></tr></table></figure>
 <p>画图的方法参考<a target="_blank" rel="noopener" href="https://spacy.io/usage/visualizers">spacy可视化工具</a>，如果是在sublime text之类的编辑器内运行代码，我们需要打开浏览器地址http://localhost:5000/查看画图的结果。如果是jupyter notebook，则可以直接显示图像。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">from</span> spacy <span class="keyword">import</span> displacy</span><br><span class="line"></span><br><span class="line">nlp = spacy.load(<span class="string">&quot;en_core_web_sm&quot;</span>)</span><br><span class="line">doc = nlp(<span class="string">&quot;It took me more than two hours to translate a few pages of English.&quot;</span>)</span><br><span class="line">displacy.serve(doc, style=<span class="string">&quot;dep&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/03/16/dInSpW2aBw1Dg4u.png" /></p>
+<p><img src="https://i.loli.net/2021/03/16/dInSpW2aBw1Dg4u.png" alt=""></p>
 <p>spacy中的依存关系有45个，完整的标签如下，具体的定义可以参考：<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/dependencies_manual.pdf">Stanford typed dependencies manual</a>。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>标签</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>ROOT</code></td>
 <td>root</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>acl</code></td>
 <td>clausal modifier of noun (adjectival clause)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>acomp</code></td>
 <td>adjectival complement</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>advcl</code></td>
 <td>adverbial clause modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>advmod</code></td>
 <td>adverbial modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>agent</code></td>
 <td>agent</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>amod</code></td>
 <td>adjectival modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>appos</code></td>
 <td>appositional modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>attr</code></td>
 <td>attribute</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>aux</code></td>
 <td>auxiliary</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>auxpass</code></td>
 <td>auxiliary (passive)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>case</code></td>
 <td>case marking</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>cc</code></td>
 <td>coordinating conjunction</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>ccomp</code></td>
 <td>clausal complement</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>compound</code></td>
 <td>compound</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>conj</code></td>
 <td>conjunct</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>csubj</code></td>
 <td>clausal subject</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>csubjpass</code></td>
 <td>clausal subject (passive)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>dative</code></td>
 <td>dative</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>dep</code></td>
 <td>unclassified dependent</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>det</code></td>
 <td>determiner</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>dobj</code></td>
 <td>direct object</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>expl</code></td>
 <td>expletive</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>intj</code></td>
 <td>interjection</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>mark</code></td>
 <td>marker</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>meta</code></td>
 <td>meta modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>neg</code></td>
 <td>negation modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>nmod</code></td>
 <td>modifier of nominal</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>npadvmod</code></td>
 <td>noun phrase as adverbial modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>nsubj</code></td>
 <td>nominal subject</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>nsubjpass</code></td>
 <td>nominal subject (passive)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>nummod</code></td>
 <td>numeric modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>oprd</code></td>
 <td>object predicate</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>parataxis</code></td>
 <td>parataxis</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>pcomp</code></td>
 <td>complement of preposition</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>pobj</code></td>
 <td>object of preposition</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>poss</code></td>
 <td>possession modifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>preconj</code></td>
 <td>pre-correlative conjunction</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>predet</code></td>
 <td>predeterminer</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>prep</code></td>
 <td>prepositional modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>prt</code></td>
 <td>particle</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>punct</code></td>
 <td>punctuation</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>quantmod</code></td>
 <td>modifier of quantifier</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>relcl</code></td>
 <td>relative clause modifier</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>xcomp</code></td>
 <td>open clausal complement</td>
 </tr>
@@ -557,19 +553,19 @@
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\dependency-parsing-2\" rel="bookmark">《自然语言处理综论》第14章-依存分析（上）</a></div>
+      <div class="popular-posts-title"><a href="\dependency-parsing-1\" rel="bookmark">《自然语言处理综论》第14章-依存分析（上）</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\dependency-parsing-3\" rel="bookmark">《自然语言处理综论》第14章-依存分析（中）</a></div>
+      <div class="popular-posts-title"><a href="\dependency-parsing-2\" rel="bookmark">《自然语言处理综论》第14章-依存分析（中）</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\information-retrieval\" rel="bookmark">信息抽取技术综述</a></div>
+      <div class="popular-posts-title"><a href="\information-retrieval-2\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（中）</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\information-retrieval-1\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（上）</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\named-entity-recognition-2\" rel="bookmark">英文文献的命名实体识别（中）</a></div>
+      <div class="popular-posts-title"><a href="\information-retrieval\" rel="bookmark">信息抽取技术综述</a></div>
     </li>
   </ul>
 
@@ -627,8 +623,8 @@
       <i class="fa fa-chevron-left"></i> 正则表达式进阶
     </a></div>
       <div class="post-nav-item">
-    <a href="/corpus/" rel="next" title="语料库资源大全">
-      语料库资源大全 <i class="fa fa-chevron-right"></i>
+    <a href="/dependency-parsing-1/" rel="next" title="《自然语言处理综论》第14章-依存分析（上）">
+      《自然语言处理综论》第14章-依存分析（上） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -688,7 +684,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E4%BE%9D%E5%AD%98%E5%85%B3%E7%B3%BB"><span class="nav-number">1.</span> <span class="nav-text">通用依存关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90"><span class="nav-number">2.</span> <span class="nav-text">工具推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stanford-parser%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">2.1.</span> <span class="nav-text">Stanford Parser句法分析</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">通用依存关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">工具推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stanford-Parser%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">2.1.</span> <span class="nav-text">Stanford Parser句法分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spacy%E4%BE%9D%E5%AD%98%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">2.2.</span> <span class="nav-text">Spacy依存句法分析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -781,7 +777,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
         

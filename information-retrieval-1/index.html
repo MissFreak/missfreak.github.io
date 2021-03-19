@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of En">
+  <meta name="description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of England">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《自然语言处理综论》第17章-信息抽取（上）">
 <meta property="og:url" content="http://nlpcourse.cn/information-retrieval-1/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of En">
+<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of England">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/03/18/senloyDcQAGipId.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/18/B5QEbCoyKd6ZsFi.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png">
 <meta property="article:published_time" content="2021-03-18T01:46:05.452Z">
-<meta property="article:modified_time" content="2021-03-18T14:26:17.169Z">
+<meta property="article:modified_time" content="2021-03-19T06:44:19.610Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="nlp">
 <meta property="article:tag" content="IR">
@@ -220,10 +220,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-18 09:46:05 / 修改时间：22:26:17" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-19 14:44:19" itemprop="dateModified" datetime="2021-03-19T14:44:19+08:00">2021-03-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -271,111 +277,110 @@
 
       
         <center>
-<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i>
+<br>
+<i>译者：鸽鸽（自己学习使用，非商业用途）</i>
 </center>
-<hr />
+<hr>
 <blockquote>
-<p><em>I am the very model of a modern Major-General,</em> <em>I’ve information vegetable, animal, and mineral,</em> <em>I know the kings of England, and I quote the fights historical</em> <em>From Marathon to Waterloo, in order categorical...</em></p>
+<p><em>I am the very model of a modern Major-General,</em><br>
+<em>I’ve information vegetable, animal, and mineral,</em><br>
+<em>I know the kings of England, and I quote the fights historical</em><br>
+<em>From Marathon to Waterloo, in order categorical…</em></p>
 <p>Gilbert and Sullivan, Pirates of Penzance</p>
 </blockquote>
-<h1 id="关系提取">17.1 关系提取</h1>
+<h1>17.1 关系提取</h1>
 <p>假设我们已经检测到了样本文本中的命名实体（也许使用了第8章的技术），并想识别出检测到的实体之间的关系：</p>
 <blockquote>
 <p>以高油价为由，[ORG联合航空公司]表示，[时间周五]它已将飞往一些同样由低成本航空公司服务的城市的航班的票价每往返提高了[MONEY 6美元]。发言人[per蒂姆-瓦格纳]表示，[ORG美国航空]是[ORG AMR Corp.]的一个单位，立即配合这一举措。ORG美联航]，[ORG UAL Corp.]的一个单位，说增加生效[时间周四]，适用于它与折扣航空公司竞争的大多数航线，如[LOC芝加哥]到[LOC达拉斯]和[LOC丹佛]到[LOC旧金山]。<em>(机翻结果)</em></p>
 </blockquote>
-<p><img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/></p>
+<img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/>
 <span id="more"></span>
 <p>例如，这段文本告诉我们，Tim Wagner是American Airlines的发言人，United是UAL Corp.的一个单位，American是AMR的一个单位。这些二元关系是更通用关系的实例，比如part-of或employes，它们在新闻风格的文本中出现得相当频繁。图17.1列出了ACE关系提取评估中使用的17种关系，图17.2显示了一些关系的样例。我们还可以提取更多的特定领域的关系，比如航空路线的概念。例如从这个文本中我们可以得出美联航有到芝加哥、达拉斯、丹佛和旧金山的航线。</p>
-<center>
-<img src="https://i.loli.net/2021/03/18/B5QEbCoyKd6ZsFi.png"  alt="" width="700" />
-</center>
+<center><img src="https://i.loli.net/2021/03/18/B5QEbCoyKd6ZsFi.png"  alt="" width="700" /></center>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Relations</th>
 <th>Types Examples</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Physical-Located</td>
 <td>PER-GPE He was in Tennessee</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Part-Whole-Subsidiary</td>
 <td>ORG-ORG XYZ, the parent company of ABC</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Person-Social-Family</td>
 <td>PER-PER Yoko鈥檚 husband John</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Org-AFF-Founder</td>
-<td>PER-ORG Steve Jobs, co-founder of Apple...</td>
+<td>PER-ORG Steve Jobs, co-founder of Apple…</td>
 </tr>
 </tbody>
 </table>
 <p>Figure 17.2 Semantic relations with examples and the named entity types they involve.</p>
 <p>这些关系很好地对应了我们在第15章中引入的模型理论概念，为逻辑形式的含义提供了基础。也就是说，一个关系由一系列有序的元组组成，基于一个领域的元素。在大多数标准的信息提取应用中，领域元素对应于文本中出现的命名实体，对应于指代消歧产生的基础实体，或者对应于从领域本体中选择的实体。图 17.3 显示了一个基于模型的视图，可以从我们的运行示例中提取实体和关系的集合。</p>
 <table>
-<colgroup>
-<col style="width: 60%" />
-<col style="width: 39%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Domain领域</th>
-<th><span class="math inline">\(D = {a,b, c,d, e, f,g,h,i}\)</span>元素</th>
+<th>$D = {a,b, c,d, e, f,g,h,i}$元素</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>United, UAL, American Airlines, AMR</td>
-<td><span class="math inline">\(a,b, c,d\)</span></td>
+<td>$a,b, c,d$</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Tim Wagner</td>
-<td><span class="math inline">\(e\)</span></td>
+<td>$e$</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Chicago, Dallas, Denver, and San Francisco</td>
-<td><span class="math inline">\(f,g,h,i\)</span></td>
+<td>$f,g,h,i$</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Classes类别</strong></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>United, UAL, American, and AMR are organizations</td>
-<td><span class="math inline">\(Org = {a,b, c,d}\)</span></td>
+<td>$Org = {a,b, c,d}$</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Tim Wagner is a person</td>
-<td><span class="math inline">\(Pers = {e}\)</span></td>
+<td>$Pers = {e}$</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Chicago, Dallas, Denver, and San Francisco are places</td>
-<td><span class="math inline">\(Loc = { f,g,h,i}\)</span></td>
+<td>$Loc = { f,g,h,i}$</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Relations关系</strong></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>United is a unit of UAL</td>
-<td><span class="math inline">\(PartOf = {&lt;a,b&gt;,&lt;c,d&gt;}\)</span></td>
+<td>$PartOf = {&lt;a,b&gt;,&lt;c,d&gt;}$</td>
 </tr>
-<tr class="even">
+<tr>
 <td>American is a unit of AMR</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Tim Wagner works for American Airlines</td>
-<td><span class="math inline">\(OrgAff = {&lt;c, e&gt;}\)</span></td>
+<td>$OrgAff = {&lt;c, e&gt;}$</td>
 </tr>
-<tr class="even">
+<tr>
 <td>United serves Chicago, Dallas, Denver, and San Francisco</td>
-<td><span class="math inline">\(Serves = {&lt;a, f&gt;,&lt;a,g&gt;,&lt;a,h&gt;,&lt;a,i&gt;}\)</span></td>
+<td>$Serves = {&lt;a, f&gt;,&lt;a,g&gt;,&lt;a,h&gt;,&lt;a,i&gt;}$</td>
 </tr>
 </tbody>
 </table>
@@ -383,34 +388,34 @@
 <p>许多其他领域都定义了关系集。例如美国国家医学图书馆的统一医学语言系统（UMLS）有一个网络，定义了134个大的主题类别、实体类型和54个实体之间的关系，示例如下。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Entity</th>
 <th>Relation</th>
 <th>Entity</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Injury</td>
 <td>disrupts</td>
 <td>Physiological Function</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bodily Location</td>
 <td>location-of</td>
 <td>Biologic Function</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Anatomical Structure</td>
 <td>part-of</td>
 <td>Organism</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Pharmacologic Substance</td>
 <td>causes</td>
 <td>Pathological Function</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Pharmacologic Substance</td>
 <td>treats</td>
 <td>Pathologic Function</td>
@@ -427,17 +432,17 @@
 <p>Echocardiography, Doppler Diagnoses Acquired stenosis</p>
 <p>超声心动图，多普勒诊断获得性狭窄</p>
 </blockquote>
-<p>维基百科也提供了大量的关系，这些关系来自于<u>信息框</u>(infoboxes)，即与某些维基百科文章相关的结构化表格。例如，维基百科上斯坦福（Stanford）的信息框包括诸如state = "California"或president = "Marc Tessier-Lavigne"这样的结构化事实。这些事实可以转化为president-of或located-in，或转化为一种称为<u>RDF</u>（Resource Description Framework，资源描述框架）的元语言中的关系。一个<u>RDF triple</u>是实体-关系-实体构成的元组，被称为主-谓-宾（subject-predicate-object）表达式。下面是一个RDF三元组的实例：</p>
+<p>维基百科也提供了大量的关系，这些关系来自于信息框(infoboxes)，即与某些维基百科文章相关的结构化表格。例如，维基百科上斯坦福（Stanford）的信息框包括诸如state = &quot;California&quot;或president = &quot;Marc Tessier-Lavigne&quot;这样的结构化事实。这些事实可以转化为president-of或located-in，或转化为一种称为<u>RDF</u>（Resource Description Framework，资源描述框架）的元语言中的关系。一个RDF triple是实体-关系-实体构成的元组，被称为主-谓-宾（subject-predicate-object）表达式。下面是一个RDF三元组的实例：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>subject</th>
 <th>predicate</th>
 <th>object</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Golden Gate Park</td>
 <td>location</td>
 <td>San Francisco</td>
@@ -446,57 +451,58 @@
 </table>
 <p>例如众包的DBpedia (Bizer et al., 2009) 是一个从维基百科衍生出来的本体，包含超过20亿个RDF三元组。另一个来自维基百科信息框的数据集Freebase (Bollacker et al., 2008)，现在是Wikidata的一部分 (Vrandeciˇ c and Kr ´ otzsch, 2014)，涵盖了人员和他们的国籍或位置以及他们出现在的其他位置之间的关系。WordNet 或其他本体提供了有用的本体关系，描述了词或概念之间的层级关系。例如WordNet在类之间有is-a或hypernym的关系：</p>
 <blockquote>
-<p>Giraffe is-a ruminant is-a ungulate is-a mammal is-a vertebrate ...</p>
+<p>Giraffe is-a ruminant is-a ungulate is-a mammal is-a vertebrate …</p>
 <p>长颈鹿是反刍动物是蹄类动物是哺乳动物是脊椎动物</p>
 </blockquote>
 <p>WordNet也有个体和类之间的Instance-of关系，例如San Francisco就和city处于Instance-of关系。提取这些关系是扩展或构建本体的重要步骤。</p>
 <p>最后，有一些大型的数据集，其中包含了手动标注的句子和它们的关系，用于训练和测试关系提取器。TACRED数据集 (Zhang et al., 2017) 包含106,264个关于特定人或组织的关系三元组的例子，在来自年度TAC知识库人口（TAC KBP）挑战赛的新闻和网络文本的句子中标记得来。TACRED包含41种关系类型（如per:出生城市、org:子公司、org:成员、per:配偶），以及一个无关系标签；如图17.4所示。大约80%的例子都被标注为无关系；拥有足够的负数据对于训练监督分类器非常重要。</p>
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 49%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Example</th>
 <th>Entity Types Label</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Carey will succeed <strong>Cathleen P. Black</strong>, who held the position for 15 years and will take on a new role as <u>chairwoman</u> of Hearst Magazines, the company said.</td>
 <td><strong>PERSON</strong>/<u>TITLE</u><br/>Relation: <em>per:title</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Irene Morgan Kirkaldy</strong>, who was born and reared in <u>Baltimore</u>, lived on Long Island and ran a child-care center in Queens with her second husband, Stanley Kirkaldy.</td>
 <td><strong>PERSON</strong>/<u>CITY</u><br/>Relation: <em>per:city of birth</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>Baldwin</strong> declined further comment, and said JetBlue chief <u>executive</u> Dave Barger was unavailable.</td>
 <td>Types: <strong>PERSON</strong>/<u>TITLE</u><br/>Relation: <em>no relation</em></td>
 </tr>
 </tbody>
 </table>
 <p>SemEval 2010任务8也推出了一个标准数据集，检测命名词（nominal）之间的关系 (Hendrickx et al., 2009)。该数据集有10,717个例子，每个例子都有一个命名词对（未分类），手工标注为9个定向关系之一，比如产品-生产者<em>product-producer</em> (一家工厂生产西装 <em>a factory manufactures suits</em>) ，或者成分-整体<em>component-whole</em> (我的公寓有一个大厨房 <em>my apartment has a large kitchen</em>)。</p>
-<h1 id="关系提取算法">17.2 关系提取算法</h1>
+<h1>17.2 关系提取算法</h1>
 <p>关系提取的算法主要有五类：<strong>手写模式</strong>、监督机器学习、<strong>半监督</strong>（通过<strong>bootstrapping</strong>和通过远端监督）和<strong>无监督</strong>。我们将在接下来的章节中分别介绍这些算法。</p>
-<h2 id="使用模式提取关系">17.2.1 使用模式提取关系</h2>
+<h2 id="17-2-1-使用模式提取关系">17.2.1 使用模式提取关系</h2>
 <p>最早也是目前常用的关系提取算法是词法-句法模式（ <strong>lexico-syntactic pattern</strong>），最早是由Hearst（1992a）开发的，因此通常被称为<u>Hearst模式</u>。看看以下句子：</p>
 <blockquote>
 <p>Agar is a substance prepared from a mixture of red algae, such as Gelidium, for laboratory or industrial use.</p>
 <p>琼脂是一种由红藻（如Gelidium）混合制备的物质，用于实验室或工业用途。</p>
 </blockquote>
-<p>赫斯特指出，大多数人类读者不会知道Gelidium是什么，但他们可以很容易推断出它是一种红藻（下义词）。她认为以下词法-句法模式： <span class="math display">\[
-N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \text { or }) N P_{i}\right\}, i \geq 1
-\]</span> 意味着以下语义 <span class="math display">\[
-\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)
-\]</span> 让我们可以推断 <span class="math display">\[
-\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)
-\]</span></p>
-<p>图17.5显示了Hearst(1992a, 1998)提出的五种模式，用于推断连词关系；我们将NP<sub>H</sub>显示为parent/hyponym。现代版本的基于模式的方法通过增加命名实体约束来扩展它。例如，如果我们的目标是回答关于 "谁在哪个组织中担任什么职务 "的问题，我们可以使用如下模式。</p>
-<p><img src="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png" width="500"/></p>
+<p>赫斯特指出，大多数人类读者不会知道Gelidium是什么，但他们可以很容易推断出它是一种红藻（下义词）。她认为以下词法-句法模式：<br>
+$$<br>
+N P_{0} \text { such as } N P_{1}\left{, N P_{2} \ldots,(\text { and } \mid \text { or }) N P_{i}\right}, i \geq 1<br>
+$$<br>
+意味着以下语义<br>
+$$<br>
+\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)<br>
+$$<br>
+让我们可以推断<br>
+$$<br>
+\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)<br>
+$$</p>
+<p>图17.5显示了Hearst(1992a, 1998)提出的五种模式，用于推断连词关系；我们将NP~H~显示为parent/hyponym。现代版本的基于模式的方法通过增加命名实体约束来扩展它。例如，如果我们的目标是回答关于 &quot;谁在哪个组织中担任什么职务 &quot;的问题，我们可以使用如下模式。</p>
+<img src="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png" width="500"/>
 <p>手工构建的模式具有高精度的优势，并且可以针对特定领域进行定制。但另一方面，它们通常是低召回率的，而且如果要创建所有可能的模式，工作量很大。</p>
-<h2 id="通过监督学习进行关系提取">17.2.2 通过监督学习进行关系提取</h2>
+<h2 id="17-2-2-通过监督学习进行关系提取">17.2.2 通过监督学习进行关系提取</h2>
 <p>监督机器学习的关系提取方法遵循的是一种大家现在应该很熟悉的方案。选择一组固定的关系和实体，用关系和实体手工标注训练语料，然后用标注后的文本来训练分类器标注一个未出现过的测试集。</p>
 <p>最直接的方法，如图17.6所示：(1) 找到命名的实体对(通常在同一个句子中)；(2): 对每对实体进行关系分类。分类器可以使用任何监督技术（逻辑回归、RNN、Transformer、随机森林等）。一个可选的中间过滤分类器可以用来加快处理速度，通过二元决策判定给定的一对实体是否相关（通过任何关系）。它的训练对象是直接从标注语料中的所有关系中提取的正例，以及从未被标注为关系的句内实体对中产生的负例。</p>
 <p>基于特征的有监督的关系分类器。让我们考虑基于特征的分类器（如逻辑回归或随机森林）的样本特征，从这个句子中对美国航空公司（Mention 1，或M1）和Tim Wagner（Mention 2，M2）之间的关系进行分类。</p>
@@ -505,38 +511,58 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
 </blockquote>
 <p>这些包括词的特征（如词嵌入、one-hot、无论是否提取词干<em>stemming</em>）：</p>
 <ul>
-<li><p>M1和M2的词头及其连接词 <em>The headwords of M1 and M2 and their concatenation</em></p>
-<p><strong>Airlines Wagner Airlines-Wagner</strong></p></li>
-<li><p>M1和M2的词袋和二元语法 <em>Bag-of-words and bigrams in M1 and M2</em></p>
-<p><strong>American, Airlines, Tim, Wagner, American Airlines, Tim Wagner</strong></p></li>
-<li><p>特定位置的词和二元语法 <em>Words or bigrams in particular positions</em></p>
+<li>
+<p>M1和M2的词头及其连接词 <em>The headwords of M1 and M2 and their concatenation</em></p>
+<p><strong>Airlines Wagner Airlines-Wagner</strong></p>
+</li>
+<li>
+<p>M1和M2的词袋和二元语法 <em>Bag-of-words and bigrams in M1 and M2</em></p>
+<p><strong>American, Airlines, Tim, Wagner, American Airlines, Tim Wagner</strong></p>
+</li>
+<li>
+<p>特定位置的词和二元语法 <em>Words or bigrams in particular positions</em></p>
 <p>M2: <strong>-1 spokesman</strong></p>
-<p>M2: <strong>+1 said</strong></p></li>
-<li><p>M1和M2之间的词袋或二元语法 <em>Bag of words or bigrams between M1 and M2</em>:</p>
-<p><strong>a, AMR, of, immediately, matched, move, spokesman, the, unit</strong></p></li>
+<p>M2: <strong>+1 said</strong></p>
+</li>
+<li>
+<p>M1和M2之间的词袋或二元语法 <em>Bag of words or bigrams between M1 and M2</em>:</p>
+<p><strong>a, AMR, of, immediately, matched, move, spokesman, the, unit</strong></p>
+</li>
 </ul>
 <p>以及命名实体特征：</p>
 <ul>
-<li><p>命名实体类型及其连接词 Named-entity types and their concatenation</p>
-<p>(M1: <strong>ORG</strong>, M2: PER, M1M2: <strong>ORG-PER</strong>)</p></li>
+<li>
+<p>命名实体类型及其连接词 Named-entity types and their concatenation</p>
+<p>(M1: <strong>ORG</strong>, M2: PER, M1M2: <strong>ORG-PER</strong>)</p>
+</li>
 </ul>
-<p><img src="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png" width="700"/></p>
+<img src="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png" width="700"/>
 <ul>
-<li><p>M1和M2的实体级别（从集合NAME、NOMINAL、PRONOUN中选择）。 M1: NAME [it or he would be PRONOUN]</p>
-<p>M2: NAME [the company would be NOMINAL]</p></li>
-<li><p>参数之间的实体数量（在本例中，对于AMR）。</p></li>
+<li>
+<p>M1和M2的实体级别（从集合NAME、NOMINAL、PRONOUN中选择）。<br>
+M1: NAME [it or he would be PRONOUN]</p>
+<p>M2: NAME [the company would be NOMINAL]</p>
+</li>
+<li>
+<p>参数之间的实体数量（在本例中，对于AMR）。</p>
+</li>
 </ul>
 <p>句法结构是一个有用的信号，通常表示为依存关系或穿越实体之间的树的成分语法路径。</p>
 <ul>
-<li><p>M1和M2之间的成分路径 <strong>NP ↑ NP ↑ S ↑ S ↓ NP</strong></p></li>
-<li><p>依存树路径</p>
-<p><strong>Airlines ←sub<sub>j</sub> matched ←comp said →sub<sub>j</sub> Wagner</strong></p></li>
+<li>
+<p>M1和M2之间的成分路径<br>
+<strong>NP ↑ NP ↑ S ↑ S ↓ NP</strong></p>
+</li>
+<li>
+<p>依存树路径</p>
+<p><strong>Airlines ←sub~j~ matched ←comp said →sub~j~ Wagner</strong></p>
+</li>
 </ul>
 <p><strong>神经监督关系分类器</strong> 关系提取的神经模型同样将任务视为监督分类。让我们考虑一个应用于TACRED关系提取数据集和任务的典型系统（Zhang等人，2017）。在TACRED中，提供一个句子和其中的两个spans：一个主语，即人或组织，一个宾语，即任何其他实体。任务是从42个TAC关系中分配一个关系（或者没有关系）。</p>
-<p>一个典型的Transformer-encoder算法，如图17.7所示，简单的说就是把一个像BERT这样的预训练编码器，在句子表示的基础上增加一个线性层（例如BERT[CLS]token），这个线性层被微调为1-of-N分类器，以分配43个标签中的一个。BERT编码器的输入是部分去词汇化的；主语和宾语实体在输入中被其NER标签所取代。这有助于保持系统对单个词项的过度拟合 (Zhang et al., 2017) 。当使用BERT类型的Transformers进行关系提取时，使用BERT的版本，如RoBERTa (Liu et al., 2019) 或SPANbert (Joshi et al., 2020)，有助于使用BERT的版本，这些版本没有用[SEP]标记分隔的两个序列，而是从单个长序列的句子形成输入。</p>
+<p>一个典型的Transformer-encoder算法，如图17.7所示，简单的说就是把一个像BERT这样的预训练编码器，在句子表示的基础上增加一个线性层（例如BERT[CLS]token），这个线性层被微调为1-of-N分类器，以分配43个标签中的一个。BERT编码器的输入是部分去词汇化的；主语和宾语实体在输入中被其NER标签所取代。这有助于保持系统对单个词项的过度拟合 (Zhang et al., 2017) 。当使用BERT类型的Transformers进行关系提取时，使用BERT的版本，如RoBERTa (Liu et al., 2019) 或SPANbert  (Joshi et al., 2020)，有助于使用BERT的版本，这些版本没有用[SEP]标记分隔的两个序列，而是从单个长序列的句子形成输入。</p>
 <p>一般来说，如果测试集与训练集足够相似，如果有足够多的手工标注数据，监督关系提取系统可以获得很高的准确率。但对一个庞大的训练集进行标注是非常昂贵的，而且监督模型也很脆弱：它们不能很好地泛化到不同的文本类型。由于这个原因，关系提取的很多研究都集中在我们接下来要讲的半监督和无监督方法上。</p>
-<hr />
-<p><strong>本章剩余内容见：《自然语言处理综论》第17章-信息抽取（中）</strong></p>
+<hr>
+<p><strong>本章剩余内容见：<a href="http://nlpcourse.cn/information-retrieval-2/">《自然语言处理综论》第17章-信息抽取（中）</a></strong></p>
 
     </div>
 
@@ -547,19 +573,19 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval-2\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（中）</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\information-retrieval\" rel="bookmark">信息抽取技术综述</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\dependency-parsing-2\" rel="bookmark">《自然语言处理综论》第14章-依存分析（上）</a></div>
+      <div class="popular-posts-title"><a href="\dependency-parsing-1\" rel="bookmark">《自然语言处理综论》第14章-依存分析（上）</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\dependency-parsing\" rel="bookmark">英文依存句法分析</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\named-entity-recognition-2\" rel="bookmark">英文文献的命名实体识别（中）</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\pos-tagging\" rel="bookmark">英文词性标记（POS Tagging）</a></div>
     </li>
   </ul>
 
@@ -613,12 +639,12 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/named-entity-recognition-2/" rel="prev" title="英文文献的命名实体识别（中）">
-      <i class="fa fa-chevron-left"></i> 英文文献的命名实体识别（中）
+    <a href="/information-retrieval/" rel="prev" title="信息抽取技术综述">
+      <i class="fa fa-chevron-left"></i> 信息抽取技术综述
     </a></div>
       <div class="post-nav-item">
-    <a href="/information-retrieval/" rel="next" title="信息抽取技术综述">
-      信息抽取技术综述 <i class="fa fa-chevron-right"></i>
+    <a href="/hexo-next/" rel="next" title="Hexo博客Next主题搭建全过程">
+      Hexo博客Next主题搭建全过程 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -678,7 +704,7 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">17.1 关系提取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">17.2 关系提取算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%BC%8F%E6%8F%90%E5%8F%96%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">17.2.1 使用模式提取关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E8%BF%9B%E8%A1%8C%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96"><span class="nav-number">2.2.</span> <span class="nav-text">17.2.2 通过监督学习进行关系提取</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">17.1 关系提取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">17.2 关系提取算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#17-2-1-%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%BC%8F%E6%8F%90%E5%8F%96%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">17.2.1 使用模式提取关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-2-2-%E9%80%9A%E8%BF%87%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E8%BF%9B%E8%A1%8C%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96"><span class="nav-number">2.2.</span> <span class="nav-text">17.2.2 通过监督学习进行关系提取</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -771,7 +797,7 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
         

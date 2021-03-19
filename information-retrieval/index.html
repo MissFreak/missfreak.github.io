@@ -254,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -273,13 +273,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>信息抽取是指从非结构化或半结构化文本中寻找结构化信息的任务。它是文本挖掘的一项重要任务，在自然语言处理、信息检索和网络挖掘等各个领域得到了广泛的研究。 <span id="more"></span> <strong>信息抽取(Information Extraction, IE)的两个基本任务：</strong></p>
+        <p>信息抽取是指从非结构化或半结构化文本中寻找结构化信息的任务。它是文本挖掘的一项重要任务，在自然语言处理、信息检索和网络挖掘等各个领域得到了广泛的研究。</p>
+<span id="more"></span>
+<p><strong>信息抽取(Information Extraction, IE)的两个基本任务：</strong></p>
 <ul>
-<li><p><strong>命名实体识别</strong>：识别实体的名称，如人、组织和地点。</p></li>
-<li><p><strong>关系抽取</strong>：提取实体之间的语义关系，如FounderOf和HeadquarteredIn。</p></li>
+<li>
+<p><strong>命名实体识别</strong>：识别实体的名称，如人、组织和地点。</p>
+</li>
+<li>
+<p><strong>关系抽取</strong>：提取实体之间的语义关系，如FounderOf和HeadquarteredIn。</p>
+</li>
 </ul>
 <p>本文，我们将对过去几十年命名实体识别和关系抽取方面的主要工作进行综述。</p>
-<h1 id="信息抽取系统">信息抽取系统</h1>
+<h1>信息抽取系统</h1>
 <p>命名实体识别、指代消歧和关系抽取等任务，是成熟的、特定领域的信息提取系统的基本支持组件。</p>
 <p>例如，给定下面的英文句子，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In 1998, Larry Page and Sergey Brin founded Google Inc.</span><br><span class="line">1998年，Larry Page和Sergey Brin创立了Google公司。</span><br></pre></td></tr></table></figure>
@@ -298,12 +304,12 @@
 <p>在本章中，我们将重点关注信息提取中最基本的两个任务，即命名实体识别和关系提取。这两个任务的最先进的解决方案都依赖于统计机器学习方法。我们还讨论了传统上没有引起太多关注的无监督信息提取。本章的其余部分组织如下。第2节讨论了当前命名实体识别的方法，包括基于规则的方法和统计学习方法。第3节讨论了完全监督环境和弱监督环境下的关系提取。然后，我们在第4节讨论了无监督的关系发现和开放的信息提取。在第5节中，我们讨论了信息提取系统的评估。最后我们在第6节中总结。</p>
 <h2 id="模板填充"><strong>模板填充</strong></h2>
 <p>如图的恐怖主义模板中，左边是槽位子集，右边是槽位填充值。</p>
-<p>其中一些槽位填充值，如"Enrique Ormazabal Ormazabal"和 "商人"是直接从文本中提取的，而其他的槽位填充值，如抢劫、完成、枪支等则是根据文档从对应槽位的预定义值集中选择的。</p>
-<p><img width=500 src="https://i.loli.net/2021/03/09/An4ryIzRKLDSTsg.png"/></p>
-<h1 id="有监督的方法">有监督的方法</h1>
+<p>其中一些槽位填充值，如&quot;Enrique Ormazabal Ormazabal&quot;和 &quot;商人&quot;是直接从文本中提取的，而其他的槽位填充值，如抢劫、完成、枪支等则是根据文档从对应槽位的预定义值集中选择的。</p>
+<img width=500 src="https://i.loli.net/2021/03/09/An4ryIzRKLDSTsg.png"/>
+<h1>有监督的方法</h1>
 <p>传统的信息提取任务对提取信息的结构有明确的定义，例如命名实体的类型、关系的类型、或者模板槽。在某些场景下，我们事先并不知道我们想要提取的信息结构，而希望从大型语料库中挖掘这样的结构。例如，从一组地震新闻文章中，我们可能希望自动发现地震的日期、时间、震中、震级和伤亡是新闻文章中报道的最重要的信息。</p>
 <p>最近已经有一些关于这类无监督信息提取问题的研究，但总体上沿着这个方向的工作仍然有限。另一个新的方向是开放信息提取，系统要从Web这样一个庞大的、多样化的语料库中提取所有有用的实体关系。这种系统的输出不仅包括关系中涉及的论据，还包括从文本中提取的关系的描述。最近在这个方向上取得的进展包括TextRunner[6]、Woe[66]和ReVerb[29]等系统。</p>
-<h1 id="无监督的方法">无监督的方法</h1>
+<h1>无监督的方法</h1>
 <h2 id="现存系统">现存系统</h2>
 <p>TextRunner</p>
 <p>Woe</p>
@@ -314,15 +320,15 @@
 <p>DeJong的FRUMP计划</p>
 <h2 id="监督学习算法">监督学习算法</h2>
 <h2 id="序列标注方法">序列标注方法</h2>
-<h1 id="命名实体识别">命名实体识别</h1>
+<h1>命名实体识别</h1>
 <p><strong>命名实体</strong>：指代某种现实世界实体的词语序列，例如“California,” “Steve Jobs” and “Apple Inc.”。</p>
 <p><strong>命名实体识别（NER）</strong>：从自由形式的文本中识别出命名实体，并将其分类为一组预定义的类型，如人名、组织和地点。</p>
 <p>命名实体识别是信息提取中最基本的任务。关系和事件提取等更复杂的任务，需要准确的命名实体识别作为基础。</p>
-<p>通常情况下，这项任务不能简单地通过与预先编译的地名录进行字符串匹配来完成，因为给定实体类型的命名实体通常不会形成一个封闭的集合，任何地名录都是不完整的。另一个原因是，命名实体的类型可能取决于上下文。例如，"JFK "可能指的是 "John F. Kennedy"这个人或者"JFK International Airport "这个地点，或任何其他具有相同缩写的实体。为了确定在特定文档中出现的 "JFK "的实体类型，必须考虑其上下文。</p>
+<p>通常情况下，这项任务不能简单地通过与预先编译的地名录进行字符串匹配来完成，因为给定实体类型的命名实体通常不会形成一个封闭的集合，任何地名录都是不完整的。另一个原因是，命名实体的类型可能取决于上下文。例如，&quot;JFK &quot;可能指的是 &quot;John F. Kennedy&quot;这个人或者&quot;JFK International Airport &quot;这个地点，或任何其他具有相同缩写的实体。为了确定在特定文档中出现的 &quot;JFK &quot;的实体类型，必须考虑其上下文。</p>
 <p>NER已有多个评估项目，包括自动内容提取(ACE)项目、2002年和2003年自然语言学习会议(CoNLL)的共享任务[63]、BioCreAtIvE(Critical Assessment of Information Extraction Systems in Biology)挑战评估[2]。</p>
 <p>最常研究的命名实体类型是人名、组织和地点，这是由MUC-6首次定义的。这些类型足够通用，对许多应用领域都有用。日期、时间、货币值和百分比等表达式的提取，也是由MUC-6引入的，通常也是在NER下研究的，尽管严格来说这些表达式不是命名实体。除了这些一般的实体类型外，其他类型的实体通常是针对特定领域和应用而定义的。例如，GENIA语料库使用细粒度的本体对生物实体进行分类[52]。在在线搜索和广告中，产品名称的提取是一项有用的任务。</p>
 <p>参考文献：</p>
-<p>https://zhuanlan.zhihu.com/p/266056681</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266056681">https://zhuanlan.zhihu.com/p/266056681</a></p>
 
     </div>
 
@@ -333,19 +339,19 @@
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval-2\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（中）</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\information-retrieval-1\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（上）</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\dependency-parsing-2\" rel="bookmark">《自然语言处理综论》第14章-依存分析（上）</a></div>
+      <div class="popular-posts-title"><a href="\dependency-parsing-1\" rel="bookmark">《自然语言处理综论》第14章-依存分析（上）</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\dependency-parsing\" rel="bookmark">英文依存句法分析</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\named-entity-recognition-2\" rel="bookmark">英文文献的命名实体识别（中）</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\pos-tagging\" rel="bookmark">英文词性标记（POS Tagging）</a></div>
     </li>
   </ul>
 
@@ -399,12 +405,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/information-retrieval-1/" rel="prev" title="《自然语言处理综论》第17章-信息抽取（上）">
-      <i class="fa fa-chevron-left"></i> 《自然语言处理综论》第17章-信息抽取（上）
+    <a href="/json/" rel="prev" title="用python处理json数据">
+      <i class="fa fa-chevron-left"></i> 用python处理json数据
     </a></div>
       <div class="post-nav-item">
-    <a href="/hexo-next/" rel="next" title="Hexo博客Next主题搭建全过程">
-      Hexo博客Next主题搭建全过程 <i class="fa fa-chevron-right"></i>
+    <a href="/information-retrieval-1/" rel="next" title="《自然语言处理综论》第17章-信息抽取（上）">
+      《自然语言处理综论》第17章-信息抽取（上） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -464,7 +470,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">信息抽取系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%A1%AB%E5%85%85"><span class="nav-number">1.1.</span> <span class="nav-text">模板填充</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E7%9B%91%E7%9D%A3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">有监督的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">无监督的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E5%AD%98%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.1.</span> <span class="nav-text">现存系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AF%E8%AF%AD%E8%A7%A3%E9%87%8A"><span class="nav-number">3.2.</span> <span class="nav-text">术语解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">监督学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">序列标注方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">命名实体识别</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">信息抽取系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%A1%AB%E5%85%85"><span class="nav-number">1.1.</span> <span class="nav-text">模板填充</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">有监督的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">无监督的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E5%AD%98%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.1.</span> <span class="nav-text">现存系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AF%E8%AF%AD%E8%A7%A3%E9%87%8A"><span class="nav-number">3.2.</span> <span class="nav-text">术语解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">监督学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">序列标注方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">命名实体识别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,7 +563,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
         

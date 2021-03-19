@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>821</span>
+              <span>886</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -270,30 +270,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>除了自己构建API，我们也可能需要使用其他网站提供的API。 <span id="more"></span></p>
-<h1 id="在curl中使用api">在curl中使用API</h1>
-<p>我们以学术检索网站<a target="_blank" rel="noopener" href="https://api.semanticscholar.org/">semantic scholar</a>为例，查找某论文的信息，并保存为JSON文件<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。</p>
+        <p>除了自己构建API，我们也可能需要使用其他网站提供的API。</p>
+<span id="more"></span>
+<h1>在curl中使用API</h1>
+<p>我们以学术检索网站<a target="_blank" rel="noopener" href="https://api.semanticscholar.org/">semantic scholar</a>为例，查找某论文的信息，并保存为JSON文件[^1]。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;api.semanticscholar.org&#x2F;v1&#x2F;paper&#x2F;10.1038&#x2F;nrn3241 &gt; paper1.json</span><br></pre></td></tr></table></figure>
-<p>但此时的json数据结构并不整洁，我们用python格式化json字符串并保存在paper2.json<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>。</p>
+<p>但此时的json数据结构并不整洁，我们用python格式化json字符串并保存在paper2.json[^2]。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m json.tool paper1.json paper2.json</span><br></pre></td></tr></table></figure>
-<p>或者一步到位<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>：</p>
+<p>或者一步到位<a href="%5B%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8A%E6%BC%82%E4%BA%AE%E5%9C%B0%E6%89%93%E5%8D%B0JSON%E7%9A%84%E6%9C%80%E4%BD%B3%E6%96%B9%E6%B3%95%5D(https://skorks.com/2013/04/the-best-way-to-pretty-print-json-on-the-command-line/)">^3</a>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;api.semanticscholar.org&#x2F;v1&#x2F;paper&#x2F;10.1038&#x2F;nrn3241 | python -mjson.tool &gt; paper3.json</span><br></pre></td></tr></table></figure>
 <p>如果仅仅是想显示为Pretty Print打印出来，把后面的filename.json去掉即可。</p>
-<h1 id="用python获取api数据">用python获取API数据</h1>
-<p>依旧是这个例子，我们将返回的数据转成字典格式<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>：</p>
+<h1>用python获取API数据</h1>
+<p>依旧是这个例子，我们将返回的数据转成字典格式[^4]：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">&quot;https://api.semanticscholar.org/v1/paper/10.1038/nrn3241&quot;</span>)</span><br><span class="line">response_dic = response.json() <span class="comment"># if the result was written in JSON format, if not it raises an error</span></span><br></pre></td></tr></table></figure>
-<p>更多requests相关参考<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>。</p>
+<p>更多requests相关参考[^5]。</p>
 <p><strong>参考文献：</strong></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">curl 的用法指南</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/json.html">python json官方文档</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p><a target="_blank" rel="noopener" href="https://skorks.com/2013/04/the-best-way-to-pretty-print-json-on-the-command-line/">在命令行上漂亮地打印JSON的最佳方法</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p><a target="_blank" rel="noopener" href="https://jzchangmark.wordpress.com/2016/06/12/%E9%80%8F%E9%81%8E-curl%E3%80%81python%E3%80%81postman-%E4%BE%86-request-api/">透过curl、Python、Postman 来Request API</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p><a target="_blank" rel="noopener" href="https://www.w3schools.com/python/ref_requests_response.asp">python请求</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+<p>[^1]:<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">curl 的用法指南</a></p>
+<p>[^2]: <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/json.html">python json官方文档</a></p>
+<p>[^4]: <a target="_blank" rel="noopener" href="https://jzchangmark.wordpress.com/2016/06/12/%E9%80%8F%E9%81%8E-curl%E3%80%81python%E3%80%81postman-%E4%BE%86-request-api/">透过curl、Python、Postman 来Request API</a><br>
+[^5]: <a target="_blank" rel="noopener" href="https://www.w3schools.com/python/ref_requests_response.asp">python请求</a><br>
+[^6]: <a target="_blank" rel="noopener" href="https://docs.github.com/en/rest">Github API</a><br>
+[^7]: <a target="_blank" rel="noopener" href="https://blog.csdn.net/raymondsage/article/details/87883661?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control">干货贴！Github上超过百赞的爬虫脚本合集</a><br>
+[^8]: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/32225726">有哪些好玩的免费的API接口?</a></p>
 
     </div>
 
@@ -428,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8curl%E4%B8%AD%E4%BD%BF%E7%94%A8api"><span class="nav-number">1.</span> <span class="nav-text">在curl中使用API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8python%E8%8E%B7%E5%8F%96api%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">用python获取API数据</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">在curl中使用API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">用python获取API数据</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -521,7 +519,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
         

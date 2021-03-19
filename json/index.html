@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 ECMAScript (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科  编码和解">
+  <meta name="description" content="JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 ECMAScript (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科  编码和解码JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用python处理json数据">
 <meta property="og:url" content="http://nlpcourse.cn/json/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 ECMAScript (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科  编码和解">
+<meta property="og:description" content="JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 ECMAScript (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科  编码和解码JS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-18T01:46:05.452Z">
 <meta property="article:modified_time" content="2021-03-17T14:24:52.976Z">
@@ -276,41 +276,41 @@
 <p>编码和解码JSON数据的过程相当于把同一样东西翻译成中文和日语。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">json_str = &#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;example&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="comment"># 序列化json</span></span><br><span class="line">json_str = json.dumps(params, sort_keys=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 反序列化json</span></span><br><span class="line">dict_json = json.loads(json_str)</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h1 id="序列化json">序列化JSON</h1>
-<h2 id="将python对象转换为json">将Python对象转换为JSON</h2>
+<h1>序列化JSON</h1>
+<h2 id="将Python对象转换为JSON">将Python对象转换为JSON</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Python</th>
 <th>JSON格式</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>dict</code></td>
 <td><code>object</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>list</code>， <code>tuple</code></td>
 <td><code>array</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>str</code></td>
 <td><code>string</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>int</code>，<code>long</code>，<code>float</code></td>
 <td><code>number</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>True</code></td>
 <td><code>true</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>False</code></td>
 <td><code>false</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>None</code></td>
 <td><code>null</code></td>
 </tr>
@@ -320,45 +320,45 @@
 <h2 id="一些有用的关键字参数">一些有用的关键字参数</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.dumps(data, indent=<span class="number">4</span>, sort_keys = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <p>indent定义缩进的级别；如果<em>sort_keys</em>为true，则字典的输出将按key排序。</p>
-<h1 id="反序列化json读取json数据">反序列化JSON：读取JSON数据</h1>
-<h2 id="将json编码的数据转换为python对象">将JSON编码的数据转换为Python对象</h2>
+<h1>反序列化JSON：读取JSON数据</h1>
+<h2 id="将JSON编码的数据转换为Python对象">将JSON编码的数据转换为Python对象</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>JSON</th>
 <th>Python</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>object</code></td>
 <td><code>dict</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>array</code></td>
 <td><code>list</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>string</code></td>
 <td><code>str</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>number</code> (int)</td>
 <td><code>int</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>number</code> (real)</td>
 <td><code>float</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>true</code></td>
 <td><code>True</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>false</code></td>
 <td><code>False</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>null</code></td>
 <td><code>None</code></td>
 </tr>
@@ -368,13 +368,13 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data_file.json&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> read_file:</span><br><span class="line">    data = json.load(read_file)</span><br><span class="line"><span class="built_in">type</span>(data)</span><br><span class="line"><span class="comment"># &lt;class &#x27;list&#x27;&gt;</span></span><br><span class="line"><span class="built_in">type</span>(data[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="从字符串创建">从字符串创建</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">json_string = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    &quot;researcher&quot;: &#123;</span></span><br><span class="line"><span class="string">        &quot;name&quot;: &quot;Ford Prefect&quot;,</span></span><br><span class="line"><span class="string">        &quot;species&quot;: &quot;Betelgeusian&quot;,</span></span><br><span class="line"><span class="string">        &quot;relatives&quot;: [</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">                &quot;name&quot;: &quot;Zaphod Beeblebrox&quot;,</span></span><br><span class="line"><span class="string">                &quot;species&quot;: &quot;Betelgeusian&quot;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">data = json.loads(json_string)</span><br></pre></td></tr></table></figure>
-<h2 id="从api获取">从API获取</h2>
+<h2 id="从API获取">从API获取</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span>)</span><br><span class="line">todos = json.loads(response.text)</span><br><span class="line">todos == response.json()</span><br></pre></td></tr></table></figure>
 <p>这里的伪json数据适合用来练习。</p>
-<h1 id="遍历json字符串">遍历JSON字符串</h1>
+<h1>遍历JSON字符串</h1>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items &#x3D; data.items()</span><br><span class="line">for key, value in items:</span><br><span class="line">    print(str(key) + &#39;&#x3D;&#39; + str(value))</span><br></pre></td></tr></table></figure>
 <p><strong>参考文献：</strong></p>
-<p>https://realpython.com/python-json/</p>
+<p><a target="_blank" rel="noopener" href="https://realpython.com/python-json/">https://realpython.com/python-json/</a></p>
 
     </div>
 
@@ -432,12 +432,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pos-tagging/" rel="prev" title="英文词性标记（POS Tagging）">
-      <i class="fa fa-chevron-left"></i> 英文词性标记（POS Tagging）
+    <a href="/named-entity-recognition-2/" rel="prev" title="英文文献的命名实体识别（中）">
+      <i class="fa fa-chevron-left"></i> 英文文献的命名实体识别（中）
     </a></div>
       <div class="post-nav-item">
-    <a href="/named-entity-recognition-2/" rel="next" title="英文文献的命名实体识别（中）">
-      英文文献的命名实体识别（中） <i class="fa fa-chevron-right"></i>
+    <a href="/information-retrieval/" rel="next" title="信息抽取技术综述">
+      信息抽取技术综述 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -497,7 +497,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96json"><span class="nav-number">1.</span> <span class="nav-text">序列化JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86python%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E4%B8%BAjson"><span class="nav-number">1.1.</span> <span class="nav-text">将Python对象转换为JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">一些有用的关键字参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96json%E8%AF%BB%E5%8F%96json%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">反序列化JSON：读取JSON数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86json%E7%BC%96%E7%A0%81%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%BApython%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.</span> <span class="nav-text">将JSON编码的数据转换为Python对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96"><span class="nav-number">2.2.</span> <span class="nav-text">从文件中读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9B%E5%BB%BA"><span class="nav-number">2.3.</span> <span class="nav-text">从字符串创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Eapi%E8%8E%B7%E5%8F%96"><span class="nav-number">2.4.</span> <span class="nav-text">从API获取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%8D%E5%8E%86json%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">遍历JSON字符串</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">序列化JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86Python%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E4%B8%BAJSON"><span class="nav-number">1.1.</span> <span class="nav-text">将Python对象转换为JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">一些有用的关键字参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">反序列化JSON：读取JSON数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86JSON%E7%BC%96%E7%A0%81%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%BAPython%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.</span> <span class="nav-text">将JSON编码的数据转换为Python对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96"><span class="nav-number">2.2.</span> <span class="nav-text">从文件中读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9B%E5%BB%BA"><span class="nav-number">2.3.</span> <span class="nav-text">从字符串创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8EAPI%E8%8E%B7%E5%8F%96"><span class="nav-number">2.4.</span> <span class="nav-text">从API获取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">遍历JSON字符串</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -590,7 +590,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
         
