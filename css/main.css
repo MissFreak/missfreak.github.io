@@ -1216,7 +1216,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a1f7b5;
+  background: #da038a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2627,17 +2627,17 @@ code {
   margin-right: 3px;
   font-size: 1.2em;
 }
-p a {
+p > a {
   color: #009688;
   border-bottom: none;
   border-bottom: 1px solid #009688;
 }
-p a:hover {
+p > a:hover {
   color: #9c27b0;
   border-bottom: none;
   border-bottom: 1px solid #9c27b0;
 }
-.post-body u {
+.post-body p > u {
   display: inline;
   padding: 0.2em 0.6em 0.3em;
   font-size: 80%;
@@ -2651,7 +2651,7 @@ p a:hover {
   background-color: #ab47bc;
   text-decoration: none;
 }
-.post-body strong {
+.post-body p > strong {
   color: #009688;
 }
 blockquote {
@@ -2711,16 +2711,7 @@ img {
 .posts-expand .post-body img {
   margin-left: auto;
 }
-.posts-expand .post-tags {
-  text-align: center;
-}
-.footer-inner {
-  text-align: center;
-}
-.pagination {
-  text-align: center;
-}
-.post-button {
+.posts-expand .post-tags .pagination .post-button .footer-inner {
   text-align: center;
 }
 .menu .menu-item .badge {

@@ -239,7 +239,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>886</span>
+              <span>821</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>除了自己构建API，我们也可能需要使用其他网站提供的API。</p>
+          <p>除了自己构建API，我们也可能需要使用其他网站提供的API。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/flask-api-3/#more" rel="contents">
@@ -359,10 +359,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1>我的网站开发学习</h1>
+          <h1 id="我的网站开发学习">我的网站开发学习</h1>
 <p>我不会使用css或js文件，因为我只专注于python后端开发，前端基本都省去，只用bootstrap，但是要精通bootstrap哟！</p>
 <p>计划：</p>
-<ol>
+<ol type="1">
 <li>完成检索功能，包括错误检测。检索成语、句子、词语等等。</li>
 <li>其他小插件的完善</li>
 <li>重点是毕业论文</li>
@@ -429,7 +429,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -448,7 +448,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。我把这些文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章）。</p>
+          <p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。我把这些文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章）。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/hexo-next/#more" rel="contents">
@@ -508,7 +508,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-19 14:44:19" itemprop="dateModified" datetime="2021-03-19T14:44:19+08:00">2021-03-19</time>
+                <time title="修改时间：2021-03-19 15:09:10" itemprop="dateModified" datetime="2021-03-19T15:09:10+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -550,24 +550,19 @@
 
       
           <center>
-<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i>
-<br>
-<i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
 </center>
-<hr>
+<hr />
 <blockquote>
-<p><em>I am the very model of a modern Major-General,</em><br>
-<em>I’ve information vegetable, animal, and mineral,</em><br>
-<em>I know the kings of England, and I quote the fights historical</em><br>
-<em>From Marathon to Waterloo, in order categorical…</em></p>
+<p><em>I am the very model of a modern Major-General,</em> <em>I’ve information vegetable, animal, and mineral,</em> <em>I know the kings of England, and I quote the fights historical</em> <em>From Marathon to Waterloo, in order categorical...</em></p>
 <p>Gilbert and Sullivan, Pirates of Penzance</p>
 </blockquote>
-<h1>17.1 关系提取</h1>
+<h1 id="关系提取">17.1 关系提取</h1>
 <p>假设我们已经检测到了样本文本中的命名实体（也许使用了第8章的技术），并想识别出检测到的实体之间的关系：</p>
 <blockquote>
 <p>以高油价为由，[ORG联合航空公司]表示，[时间周五]它已将飞往一些同样由低成本航空公司服务的城市的航班的票价每往返提高了[MONEY 6美元]。发言人[per蒂姆-瓦格纳]表示，[ORG美国航空]是[ORG AMR Corp.]的一个单位，立即配合这一举措。ORG美联航]，[ORG UAL Corp.]的一个单位，说增加生效[时间周四]，适用于它与折扣航空公司竞争的大多数航线，如[LOC芝加哥]到[LOC达拉斯]和[LOC丹佛]到[LOC旧金山]。<em>(机翻结果)</em></p>
 </blockquote>
-<img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/>
+<p><img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/information-retrieval-1/#more" rel="contents">
@@ -649,7 +644,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -668,7 +663,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>信息抽取是指从非结构化或半结构化文本中寻找结构化信息的任务。它是文本挖掘的一项重要任务，在自然语言处理、信息检索和网络挖掘等各个领域得到了广泛的研究。</p>
+          <p>信息抽取是指从非结构化或半结构化文本中寻找结构化信息的任务。它是文本挖掘的一项重要任务，在自然语言处理、信息检索和网络挖掘等各个领域得到了广泛的研究。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/information-retrieval/#more" rel="contents">
@@ -777,6 +772,102 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/json/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/named-entity-recognition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/named-entity-recognition/" class="post-title-link" itemprop="url">英文文献的命名实体识别（上）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-18 09:46:05 / 修改时间：12:52:45" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">命名实体识别</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>924</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
+<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a target="_blank" rel="noopener" href="https://www.nltk.org/">NLTK</a>，<a target="_blank" rel="noopener" href="https://spacy.io/">SpaCy</a>和<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a target="_blank" rel="noopener" href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a target="_blank" rel="noopener" href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a target="_blank" rel="noopener" href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/named-entity-recognition/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -970,7 +1061,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1>Pdfplumber：PDF文件预处理</h1>
+          <h1 id="pdfplumberpdf文件预处理">Pdfplumber：PDF文件预处理</h1>
 <h2 id="用pdfminer把pdf转为txt">用pdfminer把pdf转为txt</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pdfminer.high_level <span class="keyword">import</span> extract_text</span><br><span class="line">file_path = <span class="string">r&#x27;D:\pdf-file\Psychology_of_Language.pdf&#x27;</span></span><br><span class="line">text = extract_text(file_path, page_numbers=<span class="built_in">range</span>(<span class="number">33</span>,<span class="number">35</span>))</span><br></pre></td></tr></table></figure>
           <!--noindex-->
@@ -1001,7 +1092,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/named-entity-recognition/">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/psycho-linguistics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1015,7 +1106,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/named-entity-recognition/" class="post-title-link" itemprop="url">英文文献的命名实体识别（上）</a>
+            <a href="/psycho-linguistics/" class="post-title-link" itemprop="url">心理语言学：资源和知识整理</a>
         </h2>
 
         <div class="post-meta">
@@ -1024,21 +1115,27 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-18 09:46:05 / 修改时间：12:52:45" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-17 22:23:56" itemprop="dateModified" datetime="2021-03-17T22:23:56+08:00">2021-03-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">语言学</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">命名实体识别</span></a>
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E5%BF%83%E7%90%86%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">心理语言学</span></a>
                 </span>
             </span>
 
@@ -1048,7 +1145,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>920</span>
+              <span>9</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1067,120 +1164,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
-<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a target="_blank" rel="noopener" href="https://www.nltk.org/">NLTK</a>，<a target="_blank" rel="noopener" href="https://spacy.io/">SpaCy</a>和<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a target="_blank" rel="noopener" href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a target="_blank" rel="noopener" href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a target="_blank" rel="noopener" href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/named-entity-recognition/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
+          <h1 id="心理语言学知识大纲">心理语言学知识大纲</h1>
 
-    
-    
-    
-      
-
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/pos-tagging/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="鸽鸽">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鸽婆打字机">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pos-tagging/" class="post-title-link" itemprop="url">英文词性标记（POS Tagging）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-17 22:23:25" itemprop="dateModified" datetime="2021-03-17T22:23:25+08:00">2021-03-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8/" itemprop="url" rel="index"><span itemprop="name">词性标注</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1>词性标记（POS Tagging）</h1>
-<p>POS标签大致分为两种：通用POS标签和细粒度POS标签。</p>
-<h2 id="跨语言的通用POS标签">跨语言的通用POS标签</h2>
-<p>通用依存关系（<a target="_blank" rel="noopener" href="https://universaldependencies.org/">UD</a>）是一个致力于开发跨语言树库标注的项目，为不同语言标注一致的语法<a href="%5B%E8%AF%8D%E6%80%A7%E6%A0%87%E8%AE%B0%E5%92%8C%E4%BE%9D%E5%AD%98%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90%5D(https://www.analyticsvidhya.com/blog/2020/07/part-of-speechpos-tagging-dependency-parsing-and-constituency-parsing-in-nlp/#:~:text=Dependency%20parsing%20is%20the%20process,tags%20are%20the%20dependency%20tags.)">^1</a>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/pos-tagging/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

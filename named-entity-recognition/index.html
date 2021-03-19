@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。 我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括NLTK，SpaCy和Stanford NER。如何用这些工具实现，参考命名实体识别：NLP从业">
+  <meta name="description" content="命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。 我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括NLTK，SpaCy和Stanford NER。如何用这些工具实现，参考命名实体识别：NLP从">
 <meta property="og:type" content="article">
 <meta property="og:title" content="英文文献的命名实体识别（上）">
 <meta property="og:url" content="http://nlpcourse.cn/named-entity-recognition/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。 我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括NLTK，SpaCy和Stanford NER。如何用这些工具实现，参考命名实体识别：NLP从业">
+<meta property="og:description" content="命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。 我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括NLTK，SpaCy和Stanford NER。如何用这些工具实现，参考命名实体识别：NLP从">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-18T01:46:05.452Z">
 <meta property="article:modified_time" content="2021-03-18T04:52:45.306Z">
@@ -246,7 +246,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>920</span>
+              <span>924</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -274,19 +274,19 @@
 <p><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/abs/pii/S0885230815300504">用于命名实体识别工具的多领域评估框架</a></p>
 <p><a target="_blank" rel="noopener" href="https://devopedia.org/named-entity-recognition#Wang-et-al.-2019">命名实体识别</a></p>
 <p><a target="_blank" rel="noopener" href="https://paperswithcode.com/task/named-entity-recognition-ner">带代码的文献</a></p>
-<h1>如何训练NER分类器</h1>
+<h1 id="如何训练ner分类器">如何训练NER分类器</h1>
 <p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
 <h2 id="评估">评估</h2>
 <p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a target="_blank" rel="noopener" href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
-<p>$$<br>
-\begin{array}{c}<br>
-\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \<br>
-=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \<br>
-\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \<br>
-=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \<br>
-\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}<br>
-\end{array}<br>
-$$</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \\
+=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \\
+\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \\
+=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \\
+\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}
+\end{array}
+\]</span></p>
 
     </div>
 
@@ -363,12 +363,12 @@ $$</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pos-tagging/" rel="prev" title="英文词性标记（POS Tagging）">
-      <i class="fa fa-chevron-left"></i> 英文词性标记（POS Tagging）
+    <a href="/named-entity-recognition-2/" rel="prev" title="英文文献的命名实体识别（中）">
+      <i class="fa fa-chevron-left"></i> 英文文献的命名实体识别（中）
     </a></div>
       <div class="post-nav-item">
-    <a href="/pdf/" rel="next" title="PDF文件处理大全">
-      PDF文件处理大全 <i class="fa fa-chevron-right"></i>
+    <a href="/json/" rel="next" title="用python处理json数据">
+      用python处理json数据 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -428,7 +428,7 @@ $$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE"><span class="nav-number">1.</span> <span class="nav-text">学术文献</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text">如何训练NER分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text">评估</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE"><span class="nav-number">1.</span> <span class="nav-text">学术文献</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83ner%E5%88%86%E7%B1%BB%E5%99%A8"><span class="nav-number"></span> <span class="nav-text">如何训练NER分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text">评估</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
