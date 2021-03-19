@@ -1216,7 +1216,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #148752;
+  background: #deffbd;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2556,6 +2556,7 @@ p a:hover {
   vertical-align: baseline;
   border-radius: 5px;
   background-color: #8e24aa;
+  text-decoration: none;
 }
 .post-body strong {
   color: #009688;
@@ -2576,4 +2577,32 @@ table {
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+}
+td,
+th {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.category_1 details > summary {
+  background-color: #fff;
+  color: #000;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  border-radius: 0;
+}
+details > summary {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin: 0.5em;
+  display: inline-block;
+  border-radius: 10px;
+}
+details {
+  display: inline-block;
 }
