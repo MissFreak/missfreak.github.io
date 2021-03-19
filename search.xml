@@ -11,272 +11,117 @@
 <summary>
 人生规划
 </summary>
-<blockquote>
 <details open>
 <summary>
 毕业论文
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/graduation-thesis">毕业论文准备</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/graduation-thesis">毕业论文准备</a><br>
 </details>
-</blockquote>
 </details>
 <details class="category_1">
 <summary>
 代码
 </summary>
-<blockquote>
 <details open>
 <summary>
 Git
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/git">Git和Github常用操作大全</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/git">Git和Github常用操作大全</a><br>
 </details>
 <details open>
 <summary>
 文本处理
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/json">用python处理json数据</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/pdf">PDF文件处理大全</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/txt">纯文本文件的处理</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/json">用python处理json数据</a><br> <a href="http://nlpcourse.cn/pdf">PDF文件处理大全</a><br> <a href="http://nlpcourse.cn/txt">纯文本文件的处理</a><br>
 </details>
 <details open>
 <summary>
 编辑器
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/atom">从小白到起飞，一站解决Atom编辑器各种骚操作</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/atom">从小白到起飞，一站解决Atom编辑器各种骚操作</a><br>
 </details>
-</blockquote>
 </details>
 <details class="category_1">
 <summary>
 未分类
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/all-posts">目前共有33篇文章</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/content">我的电脑文件目录管理</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/hello-world">Hello World</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/hexo-next">Hexo博客Next主题搭建全过程</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/web-dev-all">网站开发需要的工具：前端和后端</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/wiki-api">好用的API集锦</a>
-</li>
-</ul>
-</blockquote>
+<br><a href="http://nlpcourse.cn/all-posts">目前共有33篇文章</a><br> <a href="http://nlpcourse.cn/content">我的电脑文件目录管理</a><br> <a href="http://nlpcourse.cn/hello-world">Hello World</a><br> <a href="http://nlpcourse.cn/hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="http://nlpcourse.cn/resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="http://nlpcourse.cn/web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="http://nlpcourse.cn/wiki-api">好用的API集锦</a><br>
 </details>
-</blockquote>
 </details>
 <details class="category_1">
 <summary>
 网站开发
 </summary>
-<blockquote>
 <details open>
 <summary>
 django
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/django-1">Django网站开发全过程实录-1</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/django-1">Django网站开发全过程实录-1</a><br>
 </details>
 <details open>
 <summary>
 flask
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/flask-2">一文读懂Flask Web开发实战！</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/flask-api-1">基础：用flask搭建RESTful API</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/flask-api-2">部署Flask开发的API到Heroku</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/flask-api-3">如何在curl和python中使用API</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/flask-web">一个人开发信息检索与抽取网站的全过程</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/flask">flask干货总结</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/flask-2">一文读懂Flask Web开发实战！</a><br> <a href="http://nlpcourse.cn/flask-api-1">基础：用flask搭建RESTful API</a><br> <a href="http://nlpcourse.cn/flask-api-2">部署Flask开发的API到Heroku</a><br> <a href="http://nlpcourse.cn/flask-api-3">如何在curl和python中使用API</a><br> <a href="http://nlpcourse.cn/flask-web">一个人开发信息检索与抽取网站的全过程</a><br> <a href="http://nlpcourse.cn/flask">flask干货总结</a><br>
 </details>
-</blockquote>
 </details>
 <details class="category_1">
 <summary>
 自然语言处理
 </summary>
-<blockquote>
 <details open>
 <summary>
 依存分析
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/dependency-parsing-2">《自然语言处理综论》第14章-依存分析（上）</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/dependency-parsing-3">《自然语言处理综论》第14章-依存分析（中）</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/dependency-parsing">英文依存句法分析</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/dependency-parsing-2">《自然语言处理综论》第14章-依存分析（上）</a><br> <a href="http://nlpcourse.cn/dependency-parsing-3">《自然语言处理综论》第14章-依存分析（中）</a><br> <a href="http://nlpcourse.cn/dependency-parsing">英文依存句法分析</a><br>
 </details>
 <details open>
 <summary>
 信息抽取
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/information-retrieval-1">信息抽取技术综述</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/information-retrieval">《自然语言处理综论》第17章-信息抽取（上）</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/information-retrieval-1">信息抽取技术综述</a><br> <a href="http://nlpcourse.cn/information-retrieval">《自然语言处理综论》第17章-信息抽取（上）</a><br>
 </details>
 <details open>
 <summary>
 命名实体识别
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/named-entity-recognition-2">英文文献的命名实体识别（中）</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/named-entity-recognition">英文文献的命名实体识别（上）</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/named-entity-recognition-2">英文文献的命名实体识别（中）</a><br> <a href="http://nlpcourse.cn/named-entity-recognition">英文文献的命名实体识别（上）</a><br>
 </details>
 <details open>
 <summary>
 正则表达式
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/regex-1">正则表达式进阶</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/regex-1">正则表达式进阶</a><br>
 </details>
 <details open>
 <summary>
 词性标注
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/pos-tagging">英文词性标记（POS Tagging）</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/pos-tagging">英文词性标记（POS Tagging）</a><br>
 </details>
 <details open>
 <summary>
 语料库
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/corpus">语料库资源大全</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/corpus">语料库资源大全</a><br>
 </details>
-</blockquote>
 </details>
 <details class="category_1">
 <summary>
 语言学
 </summary>
-<blockquote>
 <details open>
 <summary>
 心理语言学
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/psycho-linguistics">心理语言学：资源和知识整理</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/psycho-linguistics">心理语言学：资源和知识整理</a><br>
 </details>
 <details open>
 <summary>
 语言测试
 </summary>
-<blockquote>
-<ul>
-<li>
-<a href="http://nlpcourse.cn/language-assessment">语言测试Syllabus</a>
-</li>
-<li>
-<a href="http://nlpcourse.cn/language-assessment2">语言测试glossary</a>
-</li>
-</ul>
-</blockquote>
+<br> <a href="http://nlpcourse.cn/language-assessment">语言测试Syllabus</a><br> <a href="http://nlpcourse.cn/language-assessment2">语言测试glossary</a><br>
 </details>
-</blockquote>
 </details>
 <br><br>关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
 </center>
@@ -460,18 +305,6 @@ flask
       <tags>
         <tag>atom</tag>
         <tag>editor</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的电脑文件目录管理</title>
-    <url>/content/</url>
-    <content><![CDATA[<h1 id="目录文件管理">目录文件管理</h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">corpus # 语料库文件</span><br><span class="line">code # 我写的代码</span><br><span class="line">learn # github上的代码实例</span><br><span class="line">hexo (posts) # 我的博客</span><br><span class="line">search-site # 我的网站</span><br><span class="line">files # 思维导图等文件</span><br></pre></td></tr></table></figure>
-<p>参考：</p>
-<p>https://blog.csdn.net/Soul_Programmer_Swh/article/details/82109838</p>
-]]></content>
-      <tags>
-        <tag>files</tag>
       </tags>
   </entry>
   <entry>
