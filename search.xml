@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目前共有33篇文章</title>
+    <title>目前共有34篇文章</title>
     <url>/all-posts/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2112262923&amp;auto=1&amp;height=90">
 </iframe>
@@ -73,13 +73,13 @@ flask
 <summary>
 依存分析
 </summary>
-<br> <a href="http://nlpcourse.cn/dependency-parsing-2">《自然语言处理综论》第14章-依存分析（上）</a><br> <a href="http://nlpcourse.cn/dependency-parsing-3">《自然语言处理综论》第14章-依存分析（中）</a><br> <a href="http://nlpcourse.cn/dependency-parsing">英文依存句法分析</a><br>
+<br> <a href="http://nlpcourse.cn/dependency-parsing-1">《自然语言处理综论》第14章-依存分析（上）</a><br> <a href="http://nlpcourse.cn/dependency-parsing-2">《自然语言处理综论》第14章-依存分析（中）</a><br> <a href="http://nlpcourse.cn/dependency-parsing">英文依存句法分析</a><br>
 </details>
 <details open>
 <summary>
 信息抽取
 </summary>
-<br> <a href="http://nlpcourse.cn/information-retrieval-1">信息抽取技术综述</a><br> <a href="http://nlpcourse.cn/information-retrieval">《自然语言处理综论》第17章-信息抽取（上）</a><br>
+<br> <a href="http://nlpcourse.cn/information-retrieval-1">《自然语言处理综论》第17章-信息抽取（上）</a><br> <a href="http://nlpcourse.cn/information-retrieval-2">《自然语言处理综论》第17章-信息抽取（中）</a><br> <a href="http://nlpcourse.cn/information-retrieval">信息抽取技术综述</a><br>
 </details>
 <details open>
 <summary>
