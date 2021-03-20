@@ -129,12 +129,6 @@ flask
 ]]></content>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/test/</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
     <title>《自然语言处理综论》第17章-信息抽取（中）</title>
     <url>/information-retrieval-2/</url>
     <content><![CDATA[<center>
@@ -180,6 +174,85 @@ flask
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>语料库资源大全</title>
+    <url>/corpus/</url>
+    <content><![CDATA[<h1 id="现存语料库">现存语料库</h1>
+<h2 id="词语">词语</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">条目</th>
+<th style="text-align: left;">长度</th>
+<th style="text-align: left;">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">汉字</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">16142</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">词语</td>
+<td style="text-align: left;">2~3</td>
+<td style="text-align: left;">264434</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">成语</td>
+<td style="text-align: left;">4~5</td>
+<td style="text-align: left;">31648</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">歇后语</td>
+<td style="text-align: left;">6+</td>
+<td style="text-align: left;">14032</td>
+</tr>
+</tbody>
+</table>
+<p>新华网成语、歇后语和词语：https://github.com/pwxcoo/chinese-xinhua</p>
+<p>查询接口：https://github.com/netnr/zidian</p>
+<p>近反义词：https://github.com/guotong1988/chinese_dictionary</p>
+<span id="more"></span>
+<h2 id="句子">句子</h2>
+<p>微博短句、句子迷</p>
+<h3 id="idea">idea</h3>
+<p>除了欣赏，也可以收集美句美文，并表达不同心情和志趣。</p>
+<h2 id="文章">文章</h2>
+<p>新闻：https://github.com/aceimnorstuvwxz/toutiao-text-classfication-dataset</p>
+<p>微信公众号语料库：https://github.com/nonamestreet/weixin_public_corpus</p>
+<p>每行文章，是JSON格式，名称是微信公众号名字，帐户是微信公众号ID，标题是译文，内容是正文。</p>
+<h3 id="idea-1">idea</h3>
+<p>文本分类！主题建模！可以按照风格分类！</p>
+<h2 id="名字">名字</h2>
+<p>豆瓣影视和书籍的名字</p>
+<p>微信、知乎文章标题</p>
+<p>书名号</p>
+<h3 id="idea-2">idea</h3>
+<p>抓取所有名字，动态展现，且按照不同风格分类！就叫标题网！</p>
+<p>功能：帮助大家取名、让标题更吸引人、更有文采！并研究怎样的文章更吸引读者。</p>
+<h2 id="诗词">诗词</h2>
+<p>中华古诗词数据库：</p>
+<p>https://github.com/chinese-poetry/chinese-poetry</p>
+<h2 id="维基百科">维基百科</h2>
+<p>信息检索？</p>
+<h2 id="学术语料">学术语料</h2>
+<p>信息检索？</p>
+<h1 id="抓取原则">抓取原则</h1>
+<h2 id="频率tf-idf">频率tf-idf</h2>
+<h2 id="打分">打分</h2>
+<ul>
+<li>通过文章和书籍的阅读量和点赞</li>
+</ul>
+]]></content>
+      <categories>
+        <category>自然语言处理</category>
+        <category>语料库</category>
+      </categories>
+      <tags>
+        <tag>corpus</tag>
       </tags>
   </entry>
   <entry>
@@ -341,85 +414,6 @@ flask
       <tags>
         <tag>atom</tag>
         <tag>editor</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>语料库资源大全</title>
-    <url>/corpus/</url>
-    <content><![CDATA[<h1 id="现存语料库">现存语料库</h1>
-<h2 id="词语">词语</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">条目</th>
-<th style="text-align: left;">长度</th>
-<th style="text-align: left;">数量</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">汉字</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">16142</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">词语</td>
-<td style="text-align: left;">2~3</td>
-<td style="text-align: left;">264434</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">成语</td>
-<td style="text-align: left;">4~5</td>
-<td style="text-align: left;">31648</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">歇后语</td>
-<td style="text-align: left;">6+</td>
-<td style="text-align: left;">14032</td>
-</tr>
-</tbody>
-</table>
-<p>新华网成语、歇后语和词语：https://github.com/pwxcoo/chinese-xinhua</p>
-<p>查询接口：https://github.com/netnr/zidian</p>
-<p>近反义词：https://github.com/guotong1988/chinese_dictionary</p>
-<span id="more"></span>
-<h2 id="句子">句子</h2>
-<p>微博短句、句子迷</p>
-<h3 id="idea">idea</h3>
-<p>除了欣赏，也可以收集美句美文，并表达不同心情和志趣。</p>
-<h2 id="文章">文章</h2>
-<p>新闻：https://github.com/aceimnorstuvwxz/toutiao-text-classfication-dataset</p>
-<p>微信公众号语料库：https://github.com/nonamestreet/weixin_public_corpus</p>
-<p>每行文章，是JSON格式，名称是微信公众号名字，帐户是微信公众号ID，标题是译文，内容是正文。</p>
-<h3 id="idea-1">idea</h3>
-<p>文本分类！主题建模！可以按照风格分类！</p>
-<h2 id="名字">名字</h2>
-<p>豆瓣影视和书籍的名字</p>
-<p>微信、知乎文章标题</p>
-<p>书名号</p>
-<h3 id="idea-2">idea</h3>
-<p>抓取所有名字，动态展现，且按照不同风格分类！就叫标题网！</p>
-<p>功能：帮助大家取名、让标题更吸引人、更有文采！并研究怎样的文章更吸引读者。</p>
-<h2 id="诗词">诗词</h2>
-<p>中华古诗词数据库：</p>
-<p>https://github.com/chinese-poetry/chinese-poetry</p>
-<h2 id="维基百科">维基百科</h2>
-<p>信息检索？</p>
-<h2 id="学术语料">学术语料</h2>
-<p>信息检索？</p>
-<h1 id="抓取原则">抓取原则</h1>
-<h2 id="频率tf-idf">频率tf-idf</h2>
-<h2 id="打分">打分</h2>
-<ul>
-<li>通过文章和书籍的阅读量和点赞</li>
-</ul>
-]]></content>
-      <categories>
-        <category>自然语言处理</category>
-        <category>语料库</category>
-      </categories>
-      <tags>
-        <tag>corpus</tag>
       </tags>
   </entry>
   <entry>
@@ -1905,6 +1899,20 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       </tags>
   </entry>
   <entry>
+    <title>一文读懂Flask Web开发实战！</title>
+    <url>/flask-2/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>flask</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础：用flask搭建RESTful API</title>
     <url>/flask-api-1/</url>
     <content><![CDATA[<p><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>是目前发展最迅速的 Python 框架之一，它是一个微型的 Python 开发的 Web 框架，基于<a href="https://www.oschina.net/p/werkzeug">Werkzeug</a> WSGI工具箱和<a href="https://www.oschina.net/p/jinja">Jinja2</a> 模板引擎。以下是用flask来构建 RESTful API 的全过程实录，力求完整、准确、无误地记录每个操作步骤与细节。我用的是windows系统，但我也会提到其他系统的操作。 <span id="more"></span> # 环境搭建与工具安装</p>
@@ -1961,20 +1969,6 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       <tags>
         <tag>flask</tag>
         <tag>api</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一文读懂Flask Web开发实战！</title>
-    <url>/flask-2/</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>网站开发</category>
-        <category>flask</category>
-      </categories>
-      <tags>
-        <tag>web</tag>
-        <tag>flask</tag>
       </tags>
   </entry>
   <entry>
