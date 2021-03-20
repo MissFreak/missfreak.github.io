@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/test/</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
     <title>目前共有34篇文章</title>
     <url>/all-posts/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2112262923&amp;auto=1&amp;height=90">
@@ -133,6 +127,60 @@ flask
 </center>
 <p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/test/</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
+    <title>《自然语言处理综论》第17章-信息抽取（中）</title>
+    <url>/information-retrieval-2/</url>
+    <content><![CDATA[<center>
+<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+</center>
+<hr />
+<blockquote>
+<p><em>I am the very model of a modern Major-General,</em> <em>I’ve information vegetable, animal, and mineral,</em> <em>I know the kings of England, and I quote the fights historical</em> <em>From Marathon to Waterloo, in order categorical...</em></p>
+<p>Gilbert and Sullivan, Pirates of Penzance</p>
+</blockquote>
+<h1 id="关系提取">17.1 关系提取</h1>
+<p>假设我们已经检测到了样本文本中的命名实体（也许使用了第8章的技术），并想识别出检测到的实体之间的关系：</p>
+<blockquote>
+<p>以高油价为由，[ORG联合航空公司]表示，[时间周五]它已将飞往一些同样由低成本航空公司服务的城市的航班的票价每往返提高了[MONEY 6美元]。发言人[per蒂姆-瓦格纳]表示，[ORG美国航空]是[ORG AMR Corp.]的一个单位，立即配合这一举措。ORG美联航]，[ORG UAL Corp.]的一个单位，说增加生效[时间周四]，适用于它与折扣航空公司竞争的大多数航线，如[LOC芝加哥]到[LOC达拉斯]和[LOC丹佛]到[LOC旧金山]。<em>(机翻结果)</em></p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/></p>
+<span id="more"></span>
+<hr />
+<p><strong>本章剩余内容见：《自然语言处理综论》第17章-信息抽取（下）</strong></p>
+]]></content>
+      <categories>
+        <category>自然语言处理</category>
+        <category>信息抽取</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+        <tag>IR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git和Github常用操作大全</title>
+    <url>/git/</url>
+    <content><![CDATA[<blockquote>
+<p>Git是目前世界上最先进的分布式版本控制系统（没有之一）。Git的功能有版本控制（版本管理、远程仓库、分支协作）。GitHub是一个非常流行的全球代码托管平台.</p>
+</blockquote>
+<p>参考：<a href="https://blog.csdn.net/Python_Ai_Road/article/details/109476021">30分钟吃掉Git和GitHub常用操作</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line">git add -A </span><br><span class="line">git add . </span><br><span class="line">git add <span class="built_in">next</span>/_config.yml</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;comment&quot;</span> </span><br><span class="line"></span><br><span class="line">git remote add origin https://github.com/XX/XX</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line">git clone https://github.com/XX/XX  ../XX</span><br><span class="line">    </span><br><span class="line">git remote -v</span><br><span class="line">git remote rm origin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除git</span></span><br><span class="line">rm -rf .git</span><br><span class="line"></span><br><span class="line">git reset HEAD^ <span class="comment">#可以回退到上一个版本。</span></span><br><span class="line">git reset HEAD^^ <span class="comment">#可以回退到上上个版本。</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>代码</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>从小白到起飞，一站解决Atom编辑器各种骚操作</title>
@@ -585,21 +633,6 @@ flask
       </tags>
   </entry>
   <entry>
-    <title>《自然语言处理综论》第14章-依存分析（中）</title>
-    <url>/dependency-parsing-2/</url>
-    <content><![CDATA[<h1 id="基于转换的依存分析">14.4 基于转换的依存分析</h1>
-<p>我们的第一个依存分析方法是由一种基于堆栈的方法启发的，这种方法被称为shift-reduce parsing，最初是为分析程序语言而开发的(Aho and Ullman, 1972)。这个经典的方法简单而优雅，采用了一个上下文无关语法、一个堆栈和一个待解析的标记列表。输入的标记被连续地移动到堆栈上，堆栈的前两个元素与语法中的右侧规则进行匹配；当发现匹配时，匹配的元素在堆栈上被匹配的规则左侧的非终端替换（还原）。在将这种方法改编为依存性解析时，我们放弃了对语法的明确使用，并改变了reduce操作，使其不是在解析树上添加一个非终端，而是引入了一个词与其头部之间的依存关系。更具体地说，reduce操作被两种可能的操作所取代：在堆栈顶部的词和它下面的词之间断言一个词头依存关系，或者反之。图14.5说明了这种解析器的基本操作。 配置 在基于过渡的解析中，一个关键的元素是配置的概念，它由一个堆栈、一个词或标记的输入缓冲区和一组代表依存树的关系组成。在这个框架下，解析过程由一个通过可能配置空间的过渡序列组成。这个过程的目标是找到一个最终的配置，在这个配置中，所有的词都已经被计算在内，并且已经合成了一个合适的依存树。 为了实现这样的搜索，我们将定义一组过渡运算符，当它们应用于一个配置时，会产生新的配置。考虑到这个设置，我们可以将解析器的操作看作是在配置空间中搜索从起始状态到目标状态的过渡序列。在这个过程的开始，我们创建一个初始配置，其中堆栈包含ROOT节点，t</p>
-]]></content>
-      <categories>
-        <category>自然语言处理</category>
-        <category>依存分析</category>
-      </categories>
-      <tags>
-        <tag>nlp</tag>
-        <tag>dependency</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>英文依存句法分析</title>
     <url>/dependency-parsing/</url>
     <content><![CDATA[<blockquote>
@@ -886,228 +919,136 @@ flask
       </tags>
   </entry>
   <entry>
-    <title>Django网站开发全过程实录-1</title>
-    <url>/django-1/</url>
-    <content><![CDATA[<p>网站一般需要实现三种基本功能：<strong>连接数据库、处理用户请求、页面设计的删改</strong>。Django的优势在于将这些功能设计成独立的模块，形成一套web框架。利用Django框架开发网站，能让我们专注于编写应用程序而无需重新造轮子。 <span id="more"></span> Django 采用了 <strong>MVT 的软件设计模式</strong>，即<strong>模型</strong>（Model）、<strong>视图</strong>（View）和<strong>模板</strong>（Template）。这种设计模式的优势在于<strong>各个组件松散结合</strong>，每个APP应用都有明确的目的，并且可独立更改而不影响其它部分。如此，使得页面设计与业务逻辑互不影响。同时，Django是一套出色的<strong>动态内容管理系统</strong>，擅长动态提供数据库驱动的信息。</p>
-<p>以下是我使用Django 3.1.7搭建网站过程的实录，力求完整、准确、无误地记录每个操作步骤与细节。</p>
-<h2 id="环境搭建与工具安装"><strong>环境搭建与工具安装</strong></h2>
-<blockquote>
-<p><em>参考：</em><a href="https://stormsha.com/article/2026/"><em>https://stormsha.com/article/2026/</em></a></p>
-</blockquote>
-<p>我们需要在合适的目录内创建一个<strong>虚拟环境</strong>（用virtualenv, virtualenvwrapper皆可，参考<a href="https://blog.csdn.net/a200822146085/article/details/89048172">virtualenvwrapper的使用</a>），我给它取名为webdev。</p>
-<p>在该虚拟环境，安装<strong>django</strong>和<strong>psycopg2</strong>工具包（用于管理PostgreSQL数据库）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install virtualenv, virtualenvwrapper-win</span><br><span class="line">mkvirtualenv webdev</span><br><span class="line">workon webdev</span><br><span class="line">pip install django</span><br><span class="line">pip install psycopg2</span><br><span class="line">pip list</span><br><span class="line">pip freeze</span><br><span class="line"></span><br><span class="line"># 如果需要退出或删除虚拟环境</span><br><span class="line">deactivate</span><br><span class="line">rmvirtualenv webdev</span><br></pre></td></tr></table></figure>
-<p><strong>安装数据库：</strong></p>
-<p>Django支持四种数据库：PostgreSQL、SQLite 3、MySQL、Oracle。</p>
-<p>我选择PostgreSQL，它比MySQL更适合Django，Django的创建者如是说：</p>
-<blockquote>
-<p>如果您不受任何遗留系统的束缚，并且可以自由选择数据库后端，那么我们建议您使用PostgreSQL，它可以在成本、功能、速度和稳定性之间取得很好的平衡。（《 Django权威指南》第15页）</p>
-</blockquote>
-<p>PostgreSQL的安装步骤参考：https://www.runoob.com/postgresql/windows-install-postgresql.html</p>
-<p>打开后设置语言为中文，然后关闭。</p>
-<h2 id="创建项目project"><strong>创建项目（project）</strong></h2>
-<p>下面在刚刚的虚拟环境webdev内创建一个项目mysite（你可以选择任意其他名字），项目是我们所建立的网站上所有应用程序的集合，并共用一套数据库配置。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd webdev</span><br><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
-<p>我们看到新建了一个文件夹mysite及下面的子文件夹mysite/mysite：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysite&#x2F;</span><br><span class="line">    manage.py</span><br><span class="line">    mysite&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py</span><br><span class="line">        urls.py</span><br><span class="line">        asgi.py</span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>
-<p>我们可以把子文件夹mysite/mysite视为整个项目的配置，其中的settings.py和urls.py这两个文件是我们以后需要经常修改的。</p>
-<h2 id="启动服务器server"><strong>启动服务器（server）</strong></h2>
-<p>启动服务器，服务器会监测你的代码更新并自动加载，所以无须重启才看到效果：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd mysite</span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
-<p>在settings.py内将语言改成中文，时区改为上海：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LANGUAGE_CODE &#x3D; &#39;zh-hans&#39;</span><br><span class="line"></span><br><span class="line">TIME_ZONE &#x3D; &#39;Asia&#x2F;Shanghai&#39;</span><br></pre></td></tr></table></figure>
-<p>刷新浏览器看到中文页面。</p>
-<p>我们可以指定服务器的端口和IP地址。比如，把地址设为自己的IP地址（例如192.168.1.110）或0.0.0.0，让联网的其他计算机可见：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py runserver 0.0.0.0:8000</span><br></pre></td></tr></table></figure>
-<p>使用Windows的用户用ipconfig命令获取本地网络中的IP 地址，然后复制到setting.py中，比如我是这个：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALLOWED_HOSTS &#x3D; [&#39;192.168.1.110&#39;]</span><br></pre></td></tr></table></figure>
-<p>于是，在其他电脑或手机浏览器打开 http://192.168.1.110:8000/ 就可以访问啦！完美！不过网站还在开发中，就不要随便开放共享啦~</p>
-<h2 id="创建应用程序app"><strong>创建应用程序（APP）</strong></h2>
-<p><strong>项目和应用的区分：</strong></p>
+    <title>正则表达式进阶</title>
+    <url>/regex-1/</url>
+    <content><![CDATA[<p>至此，我们已经建立了正则表达式的思维框架（参见「<a href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">正则表达式入门</a>」），以及如何用python中的re模块编译正则表达式来匹配文本（参见「<a href="https://mp.weixin.qq.com/s/ibNb0rOSnBr4YC0PzCyIBA">Python实操篇</a>」）。尽管此时我们已经可以流畅地编写和使用它，但我们需要一些进阶知识，让我们的正则表达式更准确和精练。本文使用的语言依然是python。 <span id="more"></span></p>
+<p><strong>全文概览：</strong></p>
+<p>1.分组与捕获：<code>MatchObject.group()</code>的奥秘</p>
+<p>2.四种类型的环视：匹配位置，而非匹配文本</p>
+<p>3.贪婪与非贪婪：匹配优先 VS 忽略优先</p>
+<h1 id="分组与捕获">分组与捕获</h1>
+<p>在「<a href="https://mp.weixin.qq.com/s/ibNb0rOSnBr4YC0PzCyIBA">Python实操篇</a>」我们讲到<code>MatchObject</code>的方法<code>group()</code>可以返回匹配的整个字符串，但这并不全面。本节，我们将谈谈括号的一个关键功能：捕获（capturing）。</p>
+<p><strong>捕获</strong>就是用括号提取文本以便后续访问，我们可以把这个过程想象成“闰土捕鸟”，把每个括号里的鸟儿都抓起来放进“笼子”。</p>
+<p>而捕获进所有“笼子”里的内容，正是通过<code>MatchObject.groups()</code>访问。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.search(<span class="string">r&quot;(\w+) (\w+)&quot;</span>, <span class="string">&quot;John Smith&quot;</span>).groups()</span><br><span class="line"><span class="comment"># 输出：(&#x27;John&#x27;, &#x27;Smith&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>我们可以通过索引来访问每个“笼子”，<code>group(0)</code>返回整个正则表达式匹配的文本，相当于编号为0的隐式捕获，而<code>group(1)</code>、<code>group(2)</code>则按顺序返回显式捕获分组。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">m = re.search(<span class="string">r&quot;(\w+) (\w+)&quot;</span>, <span class="string">&quot;John Smith&quot;</span>)</span><br><span class="line">m.group(<span class="number">0</span>) <span class="comment"># 输出：&#x27;John Smith&#x27;</span></span><br><span class="line">m.group(<span class="number">1</span>)  <span class="comment"># 输出：&#x27;John&#x27;</span></span><br><span class="line">m.group(<span class="number">2</span>)  <span class="comment"># 输出：&#x27;Smith&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>你可能会想到「<a href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">入门篇</a>」讲过的<strong>反向引用</strong>，在python中我们依然可以使用序号<code>\1</code>、<code>\2</code>来引用捕获的组别。下面这个例子将“数字-字母”组成的产品ID进行替换，变成了“字母-数字”的形式。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&quot;(\d+)-(\w+)&quot;</span>)</span><br><span class="line">pattern.sub(<span class="string">r&quot;\2-\1&quot;</span>, <span class="string">&quot;1-a\n20-baer\n34-afcr&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;a-1\nbaer-20\nafcr-34&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>我们也可以给每个“笼子”取上名字，即<strong>命名捕获</strong>，在python正则表达式中表示为<code>(?P&lt;name&gt;pattern)</code>，依然是通过<code>group()</code>访问单个“笼子”。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&quot;(?P&lt;first&gt;\w+) (?P&lt;last&gt;\w+)&quot;</span>)</span><br><span class="line">match = pattern.search(<span class="string">&quot;John Smith&quot;</span>)</span><br><span class="line">match.group(<span class="string">&quot;first&quot;</span>) <span class="comment"># 输出：&#x27;John&#x27;</span></span><br><span class="line">match.group(<span class="string">&quot;last&quot;</span>) <span class="comment"># 输出：&#x27;Smith&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>需要注意，在<code>sub()</code>替换操作中，如果用名称来引用组别，我们需要写成<code>\g&lt;name&gt;</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&quot;(?P&lt;country&gt;\d+)-(?P&lt;id&gt;\w+)&quot;</span>)</span><br><span class="line">pattern.sub(<span class="string">r&quot;\g&lt;id&gt;-\g&lt;country&gt;&quot;</span>, <span class="string">&quot;1-a\n20-baer\n34-afcr&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;a-1\nbaer-20\nafcr-34&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>当然，很多时候我们使用括号不是为了捕获，而仅仅是为了<strong>分组</strong>，即用于构建子表达式、多选结构或者量词作用的对象。此时，我们可以使用<strong>非捕获型括号</strong><code>(?:)</code>，告诉正则引擎，不需要提取括号内的任何信息。非捕获型括号能够提高效率、节约内存，不浪费咱们的“笼子”。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.search(<span class="string">r&quot;gr(a|e)y&quot;</span>, <span class="string">&quot;gray&quot;</span>).groups()</span><br><span class="line"><span class="comment"># 输出：(&#x27;a&#x27;,)</span></span><br><span class="line">re.search(<span class="string">r&quot;gr(?:a|e)y&quot;</span>, <span class="string">&quot;gray&quot;</span>).groups()</span><br><span class="line"><span class="comment"># 输出：()</span></span><br></pre></td></tr></table></figure>
+<h1 id="四种类型的环视">四种类型的环视</h1>
+<p><strong>环视</strong>（Look Around）是正则表达式最强大的技术之一。我们可以把环视想象成前视镜和后视镜，<strong>顺序环视</strong>就是向前看（从左到右），<strong>逆序环视</strong>就是向后看（从右到左）。通过左右环视，我们进行“闰土捕鸟”的位置会更精确，确保匹配内容的上下文满足特定要求。</p>
+<p>以下是四种类型的环视：</p>
+<table>
+<thead>
+<tr class="header">
+<th>类型</th>
+<th>正则表达式</th>
+<th>匹配成功的条件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>肯定顺序环视</td>
+<td>(?=……)</td>
+<td>子表达式能够匹配右侧文本</td>
+</tr>
+<tr class="even">
+<td>否定顺序环视</td>
+<td>(?!……)</td>
+<td>子表达式不能匹配右侧文本</td>
+</tr>
+<tr class="odd">
+<td>肯定逆序环视</td>
+<td>(?&lt;=……)</td>
+<td>子表达式能够匹配左侧文本</td>
+</tr>
+<tr class="even">
+<td>否定逆序环视</td>
+<td>(?&lt;!……)</td>
+<td>子表达式不能匹配左侧文本</td>
+</tr>
+</tbody>
+</table>
+<p>我们要注意，环视相当于作用于匹配位置的附加条件、不占用任何字符。因此它和分界符类似，是一种<strong>零宽度断言</strong>（zero-width assertions）。我们拿肯定顺序环视举例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;(?=fox)&#x27;</span>)</span><br><span class="line">result = pattern.search(<span class="string">&quot;The quick brown fox jumps over the lazy dog&quot;</span>)</span><br><span class="line">result.span()</span><br><span class="line"><span class="comment">#输出 (16, 16)</span></span><br></pre></td></tr></table></figure>
+<p>我们发现，表达式<code>(?=fox)</code>只匹配fox之前的位置，也就是索引16。</p>
+<p><img src="C:\Users\13607\AppData\Roaming\Typora\typora-user-images\image-20210218222948086.png" alt="image-20210218222948086" style="zoom: 33%;" /></p>
+<p>环视的作用不可小觑，我们可以精准定位，并剔除多余字符，保留更加干净、准确的匹配文本。下面的例子定位<code>&lt;p&gt;</code>标签的同时，只匹配标签里的内容。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;(?&lt;=&lt;p&gt;)[^&lt;]+(?=&lt;p&gt;)&#x27;</span>)</span><br><span class="line">pattern.search(<span class="string">&quot;&lt;p&gt;test&lt;p&gt;&quot;</span>).group(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;test&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>环视的另一典型应用就是将文本变成逗号分隔的货币形式：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\d&#123;1,3&#125;(?=(\d&#123;3&#125;)+(?!\d))&#x27;</span>)</span><br><span class="line">pattern.sub(<span class="string">r&#x27;\g&lt;0&gt;,&#x27;</span>, <span class="string">&quot;123456789&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;123,456,789&#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="贪婪与非贪婪">贪婪与非贪婪</h1>
+<p>在「<a href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">入门篇</a>」中，我们接触了量词，但并未讲到贪婪与非贪婪的区别。</p>
+<p>在python的re模块中，量词默认为<strong>贪婪模式</strong>：尽可能多地匹配更长的字符串。这就是为什么，<code>.*</code>通常会匹配到一行文本的末尾。如果要采用<strong>非贪婪模式</strong>，我们可以在量词后添加一个额外的问号，例如<code>??</code>、<code>*?</code>或<code>+?</code>，使得匹配的长度最小。这两种模式又称为<strong>匹配优先</strong>和<strong>忽略优先</strong>。</p>
 <ul>
-<li><strong>应用</strong>是用于执行某项具体操作的程序，<strong>项目</strong>是特定网站的配置和应用程序的集合。</li>
-<li><strong>多对多的关系</strong>：一个项目可以包含多个应用程序，一个应用程序可以用在多个项目中。</li>
+<li><p>贪婪量词（Greedy quantifiers）：<code>?</code>, <code>*</code>, <code>+</code>, <code>&#123;num,num&#125;</code></p></li>
+<li><p>非贪婪/懒惰量词（Lazy quantifiers）：<code>??</code>, <code>*?</code>, <code>+?</code> , <code>&#123;num,num&#125;?</code></p></li>
 </ul>
-<p>应用放在任意路径都可以，但我们一般放在<strong>manage.py文件相同的目录</strong>中，与mysite子文件夹平行。在这里我创建一个成语检索的app，名为idiom：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py startapp idiom</span><br></pre></td></tr></table></figure>
-<p>看看这个应用程序下有哪些文件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">idiom&#x2F;</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    migrations&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">    models.py</span><br><span class="line">    tests.py</span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>
-<h2 id="编写视图views"><strong>编写视图（views）</strong></h2>
-<p>下面为这个应用程序idiom添砖加瓦，分为三个步骤：</p>
-<ol type="1">
-<li>创建视图函数</li>
-<li>将视图函数映射到APP的urls</li>
-<li>将APP中的urls连入网站的根urls</li>
-</ol>
-<p>这样看逻辑可能更清晰：视图函数 --&gt; APP的urls --&gt; 网站的urls</p>
-<h2 id="创建视图函数"><strong>创建视图函数</strong></h2>
-<p>打开文件idiom/views.py ，加入以下Python代码，<strong>创建index视图函数</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    return HttpResponse(&quot;Hello, world. You&#39;re at the idiom index.&quot;)</span><br></pre></td></tr></table></figure>
-<h2 id="映射到app的urls"><strong>映射到APP的urls</strong></h2>
-<p>要调用该视图，我们要将其映射到URL，为此，我们需要添加一个URL配置（URLconf）。<strong>URLconf</strong>相当于网站的目录，也就是<strong>URL模式与视图函数之间的映射表</strong>。</p>
-<p>我们在idiom应用的目录下创建一个名为urls.py的文件，windows操作如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type nul&gt;urls.py</span><br></pre></td></tr></table></figure>
-<p>看看现在的应用目录：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">idiom&#x2F;</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    migrations&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">    models.py</span><br><span class="line">    tests.py</span><br><span class="line">    urls.py</span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>
-<p>然后在idiom/urls.py这个空文件中加入以下代码，将index视图映射到APP的url模式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from django.urls import path</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    path(&#39;&#39;, views.index, name&#x3D;&#39;index&#39;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h2 id="连入网站的urls"><strong>连入网站的urls</strong></h2>
-<p>下一步是将根URLconf（mysite/urls.py）指向idiom.urls模块，使得网站域名连接到app的url。我们打开mysite/urls.py，修改为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from django.contrib import admin</span><br><span class="line">from django.urls import include, path</span><br><span class="line"></span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    path(&#39;idiom&#x2F;&#39;, include(&#39;idiom.urls&#39;)),</span><br><span class="line">    path(&#39;admin&#x2F;&#39;, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>该include()功能允许引用其他URLconf，这样我们就将刚刚创建的index视图连接到了网站的URLconf。</p>
-<p>也就是说，目前我们可以打开两个网址：</p>
-<p><a href="http://127.0.0.1:8000/idiom/">http://example.com/idiom/</a></p>
-<p><a href="http://127.0.0.1:8000/idiom/">http://example.com/admin/</a></p>
-<p>注意idiom和admin在引用URL模式时的区别：除了admin.site.urls（用于管理后台），我们引用其他URL模式时，都应使用include()。</p>
-<p>最后，验证下是否正常运行：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
-<p>打开http://127.0.0.1:8000/idiom/ ，可以看到 Hello, world. You're at the idiom index. 这行文字。</p>
-<h2 id="urlconf的工作原理"><strong>URLconf的工作原理</strong></h2>
-<p>Django允许我们根据需要设计每个应用程序的URL，通过创建<strong>URLconf</strong>（URL配置）。</p>
-<p>在 idiom和mysite文件夹下的urls.py中，我们都使用了<a href="https://docs.djangoproject.com/en/3.1/ref/urls/#django.urls.path">path()</a>函数，这个函数有两个必需的参数 route和view。</p>
-<p>path（<em>route</em>，<em>view</em>，<em>kwargs = None</em>，<em>name = None</em>）</p>
+<p>比如，如果要匹配引号内的内容，会得到下面的结果：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&#x27;The name &quot;McDonald\&#x27;s&quot; ! is said &quot;makudonarudo&quot;in Japanese.&#x27;</span></span><br><span class="line">re.search(<span class="string">r&#x27;&quot;.*&quot;&#x27;</span>, s).group()</span><br><span class="line"><span class="comment"># 输出：&#x27;&quot;McDonald\&#x27;s&quot; is said &quot;makudonarudo&quot;&#x27;</span></span><br><span class="line">re.search(<span class="string">r&#x27;&quot;.*?&quot;&#x27;</span>, s).group()</span><br><span class="line"><span class="comment"># 输出：&#x27;&quot;McDonald\&#x27;s&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>事实上，还有第三种量词，但目前python并不支持：</p>
 <ul>
-<li>route是包含URL模式的字符串，比如目前我们有idiom/和admin/。在处理请求时，Django从第一个模式开始，沿列表的顺序，将请求的URL（域名后的部分）与每个模式进行比较，直到找到匹配的URL。这个字符串支持用尖括号匹配和捕获URL的一部分并将其作为关键字参数发送到视图，</li>
-<li>view就是指定的视图函数，也可以是一个<a href="https://docs.djangoproject.com/en/3.1/ref/urls/#django.urls.include">django.urls.include()</a>。kwargs参数允许我们将其他参数传递给视图函数。</li>
-<li>name不是必须的，但是命名URL的好处是便于在Django中的其他地方（尤其是在模板内部）明确地引用它。</li>
+<li>占有量词（Possessive quantifiers）：<code>?+</code>, <code>*+</code>, <code>++</code>, <code>&#123;num,num&#125;+</code></li>
 </ul>
-<p>参考：<a href="https://docs.djangoproject.com/en/3.1/ref/urls/#django.urls.path">django.urls functions for use in URLconfs</a></p>
+<p>占有量词与贪婪量词类似，只是它们从不会交还已经匹配的字符。当然，我们也可以用固化分组<code>(?&gt;...)</code>来代替，比如<code>!.++</code>其实等同于<code>(?&gt;!.+)</code>。然而，固化分组在python中同样不被支持，所以此处不过多讨论。</p>
+<p>以上です！</p>
+<p>整理完python正则表达式的进阶知识，相信你已经能得心应手解决很多问题。但是，要真正打造高效、规范、美妙的正则表达式，我们仍需要了解正则引擎的原理，以及一些平衡法则、以及测试和优化的技巧，我们下篇再谈！</p>
 ]]></content>
       <categories>
-        <category>网站开发</category>
-        <category>django</category>
+        <category>自然语言处理</category>
+        <category>正则表达式</category>
       </categories>
       <tags>
-        <tag>django</tag>
-        <tag>web</tag>
+        <tag>regex</tag>
       </tags>
   </entry>
   <entry>
-    <title>基础：用flask搭建RESTful API</title>
-    <url>/flask-api-1/</url>
-    <content><![CDATA[<p><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>是目前发展最迅速的 Python 框架之一，它是一个微型的 Python 开发的 Web 框架，基于<a href="https://www.oschina.net/p/werkzeug">Werkzeug</a> WSGI工具箱和<a href="https://www.oschina.net/p/jinja">Jinja2</a> 模板引擎。以下是用flask来构建 RESTful API 的全过程实录，力求完整、准确、无误地记录每个操作步骤与细节。我用的是windows系统，但我也会提到其他系统的操作。 <span id="more"></span> # 环境搭建与工具安装</p>
-<p>首先依然是创建虚拟环境并安装 flask 和 <a href="https://flask-restful.readthedocs.io/en/latest/">flask-restful</a> package。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkvirtualenv flask-api</span><br><span class="line">pip install flask</span><br><span class="line">pip install flask-restful</span><br></pre></td></tr></table></figure>
-<h1 id="使用flask搭建api">使用flask搭建API</h1>
-<h2 id="最简单的flask应用">最简单的flask应用</h2>
-<p>新建一个python脚本，linux用touch，windows操作如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">workon flask-api <span class="comment"># 激活虚拟环境</span></span><br><span class="line">D:</span><br><span class="line"><span class="built_in">type</span> nul&gt;hello.py <span class="comment"># 新建文件</span></span><br><span class="line">atom hello.py <span class="comment"># 用atom编辑器打开</span></span><br></pre></td></tr></table></figure>
-<p>粘贴以下代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)  </span><span class="comment"># 把Flask对象中的route()函数作为一个装饰器，增强该函数的功能</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello, World!&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>再打开 Command Prompt 输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set FLASK_APP&#x3D;hello.py</span><br><span class="line">set FLASK_ENV&#x3D;development</span><br><span class="line">flask run</span><br></pre></td></tr></table></figure>
-<p>按下快捷键Alt+Shift+=左右分屏，输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl http://127.0.0.1:5000/</span><br><span class="line">curl -v http://127.0.0.1:5000/</span><br></pre></td></tr></table></figure>
-<p>输出如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">&lt; Content-Type: text&#x2F;html; charset&#x3D;utf-8</span><br><span class="line">&lt; Content-Length: 13</span><br><span class="line">...</span><br><span class="line">&lt;</span><br><span class="line">Hello, World!* Closing connection 0</span><br></pre></td></tr></table></figure>
-<p>我们发现返回的是html类型，而不是通常从 RESTful API 获得的 json 文件，于是修改hello.py的代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;about&#x27;</span>: <span class="string">&#x27;Hello, World!&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#或者：</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(about=<span class="string">&#x27;Hello, World!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>调试模式下，服务器会监测你的代码更新并自动加载，所以无须重启才看到效果。这时curl得到json file：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">&lt; Content-Type: application&#x2F;json</span><br><span class="line">&lt; Content-Length: 31</span><br><span class="line">...</span><br><span class="line">&lt;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;hello&quot;: &quot;Hello, World!&quot;</span><br><span class="line">&#125;</span><br><span class="line">* Closing connection 0</span><br></pre></td></tr></table></figure>
-<h2 id="通过url传递参数">通过URL传递参数</h2>
-<p>我们可以通过url传递参数给flask api，例如<code>/&lt;int:num&gt;/</code></p>
-<p>将hello.py修改为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify, request</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/multi/&lt;int:num&gt;&#x27;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>]</span>) </span><span class="comment"># methods一般默认为GET</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_multiply10</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;result&#x27;</span>: num*<span class="number">10</span>&#125;) <span class="comment"># 返回数字乘以10后的结果</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p>然后在cmd输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;multi&#x2F;10</span><br></pre></td></tr></table></figure>
-<p>我们得到10乘以10后的结果：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;result&quot;: 100</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然，我们也可以在浏览器内访问以下地址：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;multi&#x2F;10</span><br></pre></td></tr></table></figure>
-<h2 id="使用post方法">使用POST方法</h2>
-<p>这一小节我们将使用POST method。</p>
-<p>在hello.py中加入以下代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>, methods=[<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;POST&quot;</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="keyword">if</span> (request.method == <span class="string">&quot;POST&quot;</span>):</span><br><span class="line">        some_json = request.get_json()</span><br><span class="line">        <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;You sent&#x27;</span>: some_json&#125;), <span class="number">201</span> <span class="comment"># 如果是post则返回post内容</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> jsonify(&#123;<span class="string">&quot;about&quot;</span>: <span class="string">&quot;Hello World!&quot;</span>&#125;) <span class="comment"># 如果是get则返回hello world</span></span><br></pre></td></tr></table></figure>
-<p>现在，我们可以发送如下curl请求并返回POST的内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl -H &quot;Content-Type: application&#x2F;json&quot; -X POST -d &#39;&#123;&quot;name&quot;:&quot;Example&quot;,&quot;email&quot;:&quot;example@example.com&quot;&#125;&#39; http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;</span><br></pre></td></tr></table></figure>
-<p>注意：Windows的命令行不支持单引号、且需要将双引号转义，所以需要改成：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl -H &quot;Content-Type: application&#x2F;json&quot; -X POST -d &quot;&#123;\&quot;name\&quot;:\&quot;Example\&quot;,\&quot;email\&quot;:\&quot;example@example.com\&quot;&#125;&quot; http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;</span><br></pre></td></tr></table></figure>
-<p>因此，Windows用户建议在git bash上完成以上操作。</p>
-<h1 id="使用flask-restful搭建api">使用flask-restful搭建API</h1>
-<p>我们把hello.py修改为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request</span><br><span class="line"><span class="keyword">from</span> flask_restful <span class="keyword">import</span> Resource, Api</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">api = Api(app)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span>(<span class="params">Resource</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self</span>):</span></span><br><span class="line">        some_json = request.get_json()</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&#x27;You sent&#x27;</span>: some_json&#125;, <span class="number">201</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Multi</span>(<span class="params">Resource</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self, num</span>):</span></span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&#x27;result&#x27;</span>: num*<span class="number">10</span>&#125;</span><br><span class="line"></span><br><span class="line">api.add_resource(HelloWorld, <span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">api.add_resource(Multi, <span class="string">&#x27;/multi/&lt;int:num&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>以上代码实现完全相同的功能，不过看起来更简洁和舒服。</p>
-<p>参考教程：</p>
-<p>https://www.youtube.com/watch?v=s_ht4AKnWZg</p>
-<p>参考文献：</p>
-<p>https://blog.csdn.net/weixin_41010198/article/details/85230424#API_3</p>
+    <title>纯文本文件的处理</title>
+    <url>/txt/</url>
+    <content><![CDATA[<h1 id="正则表达式">正则表达式</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">cha1 = re.search(pattern, txt_string).group()</span><br><span class="line">print(re.findall(<span class="string">r&#x27;蓝色&#x27;</span>, cha1))</span><br><span class="line"></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见[^蓝色]*(蓝色)*.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">match = re.search(pattern, txt_string)</span><br><span class="line"><span class="keyword">if</span> match:</span><br><span class="line">    print(match.groups())</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h1 id="获取文章目录">获取文章目录</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">file_path = <span class="string">r&#x27;D:\project\hexo-final\source\_posts&#x27;</span></span><br><span class="line"><span class="comment"># 这里要修改</span></span><br><span class="line"><span class="comment"># weblink = &#x27;https://github.com/MissFreak/writings/blob/main/&#x27;</span></span><br><span class="line">weblink = <span class="string">&#x27;http://nlpcourse.cn/&#x27;</span></span><br><span class="line">lst = os.listdir(file_path)</span><br><span class="line">post_list = []</span><br><span class="line"><span class="comment"># 这里要修改</span></span><br><span class="line">md_name = <span class="string">&#x27;all-posts.md&#x27;</span></span><br><span class="line"><span class="comment"># md_name = &#x27;README.md&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># obtain the titles and categories of all posts</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> lst:</span><br><span class="line">	<span class="comment"># make sure it is a markdown file</span></span><br><span class="line">	<span class="keyword">if</span> filename[-<span class="number">3</span>:] == <span class="string">&#x27;.md&#x27;</span>:</span><br><span class="line">		<span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, filename), encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">			s = f.read()</span><br><span class="line"></span><br><span class="line">		<span class="comment"># create a dict that stores attributes: title and category_1 and category_2</span></span><br><span class="line">		post_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the title</span></span><br><span class="line">		match_title = re.search(<span class="string">r&#x27;(?&lt;=title: ).*(?=\n)&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">if</span> match_title:</span><br><span class="line">			title = match_title.group().strip(<span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			title = filename</span><br><span class="line"></span><br><span class="line">		<span class="comment"># convert into linked title</span></span><br><span class="line">        <span class="comment"># 这里要修改</span></span><br><span class="line">		<span class="comment"># linked_title = &#x27;[&#123;&#125;](&#123;&#125;&#123;&#125;)&#x27;.format(title, weblink, filename)</span></span><br><span class="line">		linked_title = <span class="string">&#x27;[&#123;&#125;](&#123;&#125;&#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(title, weblink, filename[:-<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the categories</span></span><br><span class="line">		match_categories = re.search(<span class="string">r&#x27;categories:\n- (.*)\n- (.*)\n&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">try</span>:</span><br><span class="line">			category_1 = match_categories.group(<span class="number">1</span>)</span><br><span class="line">			category_2 = match_categories.group(<span class="number">2</span>)</span><br><span class="line">		<span class="keyword">except</span>:</span><br><span class="line">			category_1 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line">			category_2 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># save into a list</span></span><br><span class="line">		post_dict[<span class="string">&#x27;title&#x27;</span>] = linked_title</span><br><span class="line">		post_dict[<span class="string">&#x27;category_1&#x27;</span>] = category_1</span><br><span class="line">		post_dict[<span class="string">&#x27;category_2&#x27;</span>] = category_2</span><br><span class="line">		post_list.append(post_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sort and group by the first category</span></span><br><span class="line">get_first_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_1&#x27;</span>)</span><br><span class="line">group_1 = itertools.groupby(<span class="built_in">sorted</span>(post_list, key=get_first_category), get_first_category)</span><br><span class="line">num_post = <span class="built_in">len</span>(post_list)</span><br><span class="line"></span><br><span class="line">content = <span class="string">&#x27;---\ntitle: 所有文章目录\n---\n&lt;center&gt;目前共有&#123;&#125;篇文章：&lt;/center&gt;\n&lt;!-- more --&gt;\n\n&#x27;</span>.<span class="built_in">format</span>(num_post)</span><br><span class="line"><span class="keyword">for</span> k1,v1 <span class="keyword">in</span> group_1:</span><br><span class="line">	<span class="comment"># add the first category into content</span></span><br><span class="line">	content += (<span class="string">&#x27;# &#x27;</span>+k1+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">	<span class="comment"># sort and group by the first category</span></span><br><span class="line">	get_second_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_2&#x27;</span>)</span><br><span class="line">	group_2 = itertools.groupby(<span class="built_in">sorted</span>(v1, key=get_second_category), get_second_category)</span><br><span class="line">	<span class="keyword">for</span> k2,v2 <span class="keyword">in</span> group_2:</span><br><span class="line">		<span class="comment"># add the second category into content</span></span><br><span class="line">		<span class="keyword">if</span> k2 != <span class="string">&#x27;未分类&#x27;</span>:</span><br><span class="line">			content += (<span class="string">&#x27;- _&#x27;</span>+k2+<span class="string">&#x27;_\n&#x27;</span>)</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;\t- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line">print(content)</span><br><span class="line"><span class="comment"># write the content into md file</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, md_name), <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(content)</span><br></pre></td></tr></table></figure>
+<h1 id="分离章节">分离章节</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\ng\n&#x27;</span>)</span><br><span class="line">chapters = pattern.split(txt_string)[<span class="number">6</span>:]</span><br><span class="line"></span><br><span class="line">cha8 = chapters[<span class="number">7</span>]</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\nn\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\n&#123;2,&#125;&#x27;</span>, <span class="string">&#x27;\n&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line"><span class="comment"># print(repr(cha8))</span></span><br><span class="line">print(cha8)</span><br></pre></td></tr></table></figure>
+<h1 id="去除字符">去除字符</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，请加入，谢谢啦啦嗯&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;嗯啦&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="表格pytablewriter">表格：<a href="https://github.com/thombashi/pytablewriter/">pytablewriter</a></h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MarkdownTableWriter, ExcelXlsxTableWriter, UnicodeTableWriter, JavaScriptTableWriter, JsonTableWriter, HtmlTableWriter</span><br></pre></td></tr></table></figure>
+<p>先获得matrix：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27;: &#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># 行分隔符和列分隔符</span></span><br><span class="line">print(matrix)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo2.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27; &#x27;</span>, <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># split on first occurrence</span></span><br><span class="line">print(matrix)</span><br></pre></td></tr></table></figure>
+<p>然后生成相应的表格：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
+<h2 id="markdown表格">markdown表格</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># s = spacy.explain(&#x27;``&#x27;)</span></span><br><span class="line"><span class="comment"># print(repr(s))</span></span><br><span class="line">lst1 = <span class="string">&#x27;`$`, `&#x27;</span><span class="string">&#x27;`, `,`, `-LRB-`, `-RRB-`, `.`, `:`, `ADD`, `AFX`, `CC`, `CD`, `DT`, `EX`, `FW`, `HYPH`, `IN`, `JJ`, `JJR`, `JJS`, `LS`, `MD`, `NFP`, `NN`, `NNP`, `NNPS`, `NNS`, `PDT`, `POS`, `PRP`, `PRP$`, `RB`, `RBR`, `RBS`, `RP`, `SYM`, `TO`, `UH`, `VB`, `VBD`, `VBG`, `VBN`, `VBP`, `VBZ`, `WDT`, `WP`, `WP$`, `WRB`, `XX`&#x27;</span>.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">lst2 = [spacy.explain(i.strip(<span class="string">&#x27; `&#x27;</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> lst1]</span><br><span class="line"><span class="comment"># print(lst2)</span></span><br><span class="line"></span><br><span class="line">matrix = np.column_stack((lst1, lst2)).tolist()</span><br><span class="line"><span class="comment"># print(type(matrix))</span></span><br><span class="line"><span class="comment"># print(matrix)</span></span><br><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
+<h2 id="csv">csv</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    writer = pytablewriter.CsvTableWriter()</span><br><span class="line">    writer.headers = [<span class="string">&quot;int&quot;</span>, <span class="string">&quot;float&quot;</span>, <span class="string">&quot;str&quot;</span>, <span class="string">&quot;bool&quot;</span>, <span class="string">&quot;mix&quot;</span>, <span class="string">&quot;time&quot;</span>]</span><br><span class="line">    writer.value_matrix = [</span><br><span class="line">        [<span class="number">0</span>,   <span class="number">0.1</span>,      <span class="string">&quot;hoge&quot;</span>, <span class="literal">True</span>,   <span class="number">0</span>,      <span class="string">&quot;2017-01-01 03:04:05+0900&quot;</span>],</span><br><span class="line">        [<span class="number">2</span>,   <span class="string">&quot;-2.23&quot;</span>,  <span class="string">&quot;foo&quot;</span>,  <span class="literal">False</span>,  <span class="literal">None</span>,   <span class="string">&quot;2017-12-23 45:01:23+0900&quot;</span>],</span><br><span class="line">        [<span class="number">3</span>,   <span class="number">0</span>,        <span class="string">&quot;bar&quot;</span>,  <span class="string">&quot;true&quot;</span>,  <span class="string">&quot;inf&quot;</span>, <span class="string">&quot;2017-03-03 33:44:55+0900&quot;</span>],</span><br><span class="line">        [-<span class="number">10</span>, -<span class="number">9.9</span>,     <span class="string">&quot;&quot;</span>,     <span class="string">&quot;FALSE&quot;</span>, <span class="string">&quot;nan&quot;</span>, <span class="string">&quot;2017-01-01 00:00:00+0900&quot;</span>],</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    writer.write_table()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h2 id="其他格式">其他格式</h2>
+<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/json.html">JSON</a></p>
+<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/html.html">HTML</a></p>
 ]]></content>
       <categories>
-        <category>网站开发</category>
-        <category>flask</category>
+        <category>代码</category>
+        <category>文本处理</category>
       </categories>
       <tags>
-        <tag>flask</tag>
-        <tag>api</tag>
+        <tag>txt</tag>
       </tags>
   </entry>
   <entry>
-    <title>一文读懂Flask Web开发实战！</title>
-    <url>/flask-2/</url>
-    <content><![CDATA[
+    <title>好用的API集锦</title>
+    <url>/wiki-api/</url>
+    <content><![CDATA[<h1 id="wikipedia-python库">Wikipedia Python库</h1>
+<p><strong>Wikipedia</strong>是一个Python库，可轻松访问和解析Wikipedia中的数据，搜索Wikipedia、获取文章摘要、从页面获取链接和图像等数据等等。Wikipedia封装了<a href="https://www.mediawiki.org/wiki/API">MediaWiki API，</a>因此您可以专注于使用Wikipedia数据，而不是获取数据。 <span id="more"></span></p>
 ]]></content>
-      <categories>
-        <category>网站开发</category>
-        <category>flask</category>
-      </categories>
       <tags>
-        <tag>web</tag>
-        <tag>flask</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>部署Flask开发的API到Heroku</title>
-    <url>/flask-api-2/</url>
-    <content><![CDATA[<p>上篇文章我们介绍了如何用flask开发简单的web api，下面我们把它部署到heroku上，方便更多人使用。 <span id="more"></span></p>
-<p><strong>步骤总结：</strong></p>
-<ul>
-<li><p>注册<a href="https://signup.heroku.com/">Heroku帐号</a></p></li>
-<li><p>下载客户端</p></li>
-<li><p>在本地命令行登录</p>
-<ul>
-<li>如果出现IP Address Mismatch，复制并粘贴<code>heroku login -i</code>到终端，用邮箱密码登录</li>
-</ul></li>
-<li><p>创建应用</p>
-<ul>
-<li>``` heroku apps:create flask-microblog <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">- 初始化</span><br><span class="line">  </span><br><span class="line">  - &#96;&#96;&#96;</span><br><span class="line">    mkdir flask-api</span><br><span class="line">    cd flask-api</span><br><span class="line">    git init</span><br></pre></td></tr></table></figure></li>
-</ul></li>
-<li><p>编写应用代码</p>
-<ul>
-<li>run.py</li>
-<li>requirements.txt</li>
-<li><code>echo web: gunicorn run:app &gt; Procfile</code>
-<ul>
-<li><code>web: gunicorn &lt;filename&gt;:&lt;main method name&gt;</code></li>
-</ul></li>
-<li>用<code>tree/F</code>检验上述文件是否齐全</li>
-</ul></li>
-<li><p>部署应用</p>
-<ul>
-<li><p>关联github，自动部署</p></li>
-<li><pre><code>  git add .
-  git commit -m &quot;Initialize repo&quot;
-  git push -u origin master</code></pre></li>
-</ul></li>
-<li><p>访问应用地址：https://nlp-ch.herokuapp.com/</p></li>
-</ul>
-<p><strong>参考文献：</strong></p>
-<p>官方教程：</p>
-<p>https://devcenter.heroku.com/articles/getting-started-with-python</p>
-<p>以及这些博客：</p>
-<p>https://noviachen.github.io/posts/b4cb2e1c.html</p>
-<p>https://wizardforcel.gitbooks.io/the-flask-mega-tutorial-2017-zh/content/docs/18.html</p>
-<p>http://www.bjhee.com/flask-heroku.html</p>
-<p>windows上部署参考（建议使用git bash）：https://caijialinxx.github.io/2018/07/25/deploy-on-heroku/</p>
-<p>git bash创建并编辑文件参考：https://blog.csdn.net/qq_34289537/article/details/53994070</p>
-<p>windows cmd常用命令参考：https://www.jianshu.com/p/80c3ac7bea8f</p>
-<p>上传文件到github: https://www.jianshu.com/p/5227f837070b</p>
-]]></content>
-      <categories>
-        <category>网站开发</category>
-        <category>flask</category>
-      </categories>
-      <tags>
-        <tag>flask</tag>
         <tag>api</tag>
       </tags>
   </entry>
@@ -1180,88 +1121,30 @@ flask
       </tags>
   </entry>
   <entry>
-    <title>flask干货总结</title>
-    <url>/flask/</url>
-    <content><![CDATA[<h1 id="flask">Flask</h1>
-<blockquote>
-<p>在一个Web应用里，客户端和服务器上的Flask程序的交互可以简单概括为以下几步：</p>
-<p>1）用户在浏览器输入URL访问某个资源。</p>
-<p>2）Flask接收用户请求并分析请求的URL。</p>
-<p>3）为这个URL找到对应的处理函数。</p>
-<p>4）执行函数并生成响应，返回给浏览器。</p>
-<p>5）浏览器接收并解析响应，将信息显示在页面中。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span id="more"></span></p>
-</blockquote>
-<h1 id="术语解释">术语解释</h1>
-<ul>
-<li>路由：作为动词时，含义是“按某路线发送”，即调用与请求URL对应的视图函数。</li>
-<li>视图函数（view function）：处理请求并生成响应的函数。当用户访问URL时会触发视图函数，该函数可执行任意操作，比如从数据库中获取信息，获取请求信息，对用户输入的数据进行计算和处理等。最后，视图函数返回的值将作为响应的主体，一般来说就是HTML页面。</li>
-<li>模板：包含程序页面的HTML文件。</li>
-<li>静态文件：需要在HTML文件中加载的CSS和Java Script文件，以及图片、字体文件等资源文件。</li>
-<li>模板文件存放在项目根目录中的templates文件夹中，静态文件存放在static文件夹下，这两个文件夹需要和包含程序实例的模块处于同一个目录下。</li>
-<li>HTTP（Hypertext TransferProtocol，超文本传输协议）定义了服务器和客户端之间信息交流的格式和传递方式，它是万维网（World Wide Web）中数据交换的基础。</li>
-<li>WSGI：将HTTP格式的请求数据转换成Flask程序能够使用的Python数据，并把python程序的响应经过WSGI转换生成HTTP响应。</li>
-<li>URL中的查询字符串用来向指定的资源传递参数。查询字符串从问号?开始，以键值对的形式写出，多个键值对之间使用&amp;分隔。</li>
-<li>这种浏览器与服务器之间交互的数据被称为报文（message），请求时浏览器发送的数据被称为请求报文（request message），而服务器返回的数据被称为响应报文（responsemessage）。</li>
-<li>请求报文由请求的方法、URL、协议版本、首部字段（header）以及内容实体组成。</li>
-<li>报文由报文首部和报文主体组成，两者由空行分隔，请求报文的主体一般为空。如果URL中包含查询字符串，或是提交了表单，那么报文主体将会是查询字符串和表单数据。</li>
-<li>用来映射到数据库表的Python类通常被称为数据库模型（model），一个数据库模型类对应数据库中的一个表。所有的模型类都需要继承Flask-SQLAlchemy提供的db.Model基类。</li>
-</ul>
-<h1 id="架构">架构</h1>
-<p>在MVC架构中，程序被分为三个组件：数据处理（Model）、用户界面（View）、交互逻辑（Controller）。</p>
-<p>如果想要使用Flask来编写一个MVC架构的程序，那么视图函数可以作为控制器（Controller），视图（View）则是使用Jinja2渲染的HTML模板，而模型（Model）可以使用其他库来实现。</p>
-<p>参考文献：</p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p><a href="https://book.douban.com/subject/30310340/">《Flask Web开发实战》</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+    <title>Hexo博客Next主题搭建全过程</title>
+    <url>/hexo-next/</url>
+    <content><![CDATA[<p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。 <span id="more"></span></p>
+<h1 id="博客的初始化">博客的初始化</h1>
+<p>关于怎么部署参考：https://zhuanlan.zhihu.com/p/26625249</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd hexo-final</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<p>完成以上步骤后，我们看到目前的插件如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-- hexo-generator-archive@1.0.0</span><br><span class="line">+-- hexo-generator-category@1.0.0</span><br><span class="line">+-- hexo-generator-index@2.0.0</span><br><span class="line">+-- hexo-generator-tag@1.0.0</span><br><span class="line">+-- hexo-renderer-ejs@1.0.0</span><br><span class="line">+-- hexo-renderer-marked@4.0.0</span><br><span class="line">+-- hexo-renderer-stylus@2.0.1</span><br><span class="line">+-- hexo-server@2.0.0</span><br><span class="line">+-- hexo-theme-landscape@0.0.3</span><br><span class="line">&#96;-- hexo@5.4.0</span><br></pre></td></tr></table></figure>
+<p>我们需要安装其他插件，我使用pandoc渲染markdown，它也用于typora的渲染，可以很好地支持数学公式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-- hexo-browsersync@0.3.0</span><br><span class="line">+-- hexo-deployer-git@3.0</span><br><span class="line">+-- hexo-generator-index-pin-top@0.2.2</span><br><span class="line">+-- hexo-generator-searchdb@1.3.3</span><br><span class="line">+-- hexo-related-popular-posts@5.0.1</span><br><span class="line">+-- hexo-renderer-pandoc@0.3.0</span><br><span class="line">+-- hexo-symbols-count-time@0.7.1</span><br><span class="line">+-- hexo-hide-posts@0.1.1</span><br></pre></td></tr></table></figure>
+<p>安装方式： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure> 安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl，这是我的个性化设置）复制粘贴过来即可。</p>
+<h1 id="使用hexo还是hugo">使用Hexo还是Hugo</h1>
+<p>3月19日，我又尝试了hugo，的确渲染速度很快、有很多漂亮的主题，并且很多主题都有详细的文档，而且hugo是按照文件夹结构生成侧边栏的目录，非常适合做文档和电子书！但缺点是很多主题不能折叠侧边栏，提供沉浸式阅读体验，所以我还是放弃了hugo，可能以后遇到喜欢的主题还是会迁移到hugo吧。</p>
+<h1 id="最终我的博客页面外观">最终我的博客页面外观</h1>
+<p>我花了很多时间去研究怎样让博客更美观和简洁，其实有很多是无用功，所以3月19日我正式敲定了目前的版本，并不再继续进行博客主题的个性化配置。以下是博客文章的截图：</p>
+<p><img src="https://i.loli.net/2021/03/19/MjEKeWoSuidzVxT.png"/></p>
+<p>主色调为蓝绿色，辅以紫色，我把最终的配置文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章），并不再修改。</p>
+<p>但是我经常用typora撰写笔记，因此<code>_post</code>文件夹下经常会更新，所以我写完文章有时会打开server，确认渲染无误，然后保存好写的文章。每隔一天或一周，我就hexo d一下，这样不至于操作太频繁。我可能也会使用<a href="https://novnan.github.io/Hexo/hexo-draft/">draft功能</a>。同时，我将_post文件夹同步在github上，经常push到这个repo。由此，我的博客配置和文章都得以云端保存了。</p>
+<p>好啦，终于不用浪费时间在网站美工啦！专心写文章吧！</p>
 ]]></content>
-      <categories>
-        <category>网站开发</category>
-        <category>flask</category>
-      </categories>
       <tags>
-        <tag>web</tag>
-        <tag>flask</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Git和Github常用操作大全</title>
-    <url>/git/</url>
-    <content><![CDATA[<blockquote>
-<p>Git是目前世界上最先进的分布式版本控制系统（没有之一）。Git的功能有版本控制（版本管理、远程仓库、分支协作）。GitHub是一个非常流行的全球代码托管平台.</p>
-</blockquote>
-<p>参考：<a href="https://blog.csdn.net/Python_Ai_Road/article/details/109476021">30分钟吃掉Git和GitHub常用操作</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line">git add -A </span><br><span class="line">git add . </span><br><span class="line">git add <span class="built_in">next</span>/_config.yml</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;comment&quot;</span> </span><br><span class="line"></span><br><span class="line">git remote add origin https://github.com/XX/XX</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line">git clone https://github.com/XX/XX  ../XX</span><br><span class="line">    </span><br><span class="line">git remote -v</span><br><span class="line">git remote rm origin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除git</span></span><br><span class="line">rm -rf .git</span><br><span class="line"></span><br><span class="line">git reset HEAD^ <span class="comment">#可以回退到上一个版本。</span></span><br><span class="line">git reset HEAD^^ <span class="comment">#可以回退到上上个版本。</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>代码</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>《自然语言处理综论》第17章-信息抽取（上）</title>
@@ -1546,62 +1429,6 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       </tags>
   </entry>
   <entry>
-    <title>Hexo博客Next主题搭建全过程</title>
-    <url>/hexo-next/</url>
-    <content><![CDATA[<p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。 <span id="more"></span></p>
-<h1 id="博客的初始化">博客的初始化</h1>
-<p>关于怎么部署参考：https://zhuanlan.zhihu.com/p/26625249</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd hexo-final</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-<p>完成以上步骤后，我们看到目前的插件如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-- hexo-generator-archive@1.0.0</span><br><span class="line">+-- hexo-generator-category@1.0.0</span><br><span class="line">+-- hexo-generator-index@2.0.0</span><br><span class="line">+-- hexo-generator-tag@1.0.0</span><br><span class="line">+-- hexo-renderer-ejs@1.0.0</span><br><span class="line">+-- hexo-renderer-marked@4.0.0</span><br><span class="line">+-- hexo-renderer-stylus@2.0.1</span><br><span class="line">+-- hexo-server@2.0.0</span><br><span class="line">+-- hexo-theme-landscape@0.0.3</span><br><span class="line">&#96;-- hexo@5.4.0</span><br></pre></td></tr></table></figure>
-<p>我们需要安装其他插件，我使用pandoc渲染markdown，它也用于typora的渲染，可以很好地支持数学公式。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-- hexo-browsersync@0.3.0</span><br><span class="line">+-- hexo-deployer-git@3.0</span><br><span class="line">+-- hexo-generator-index-pin-top@0.2.2</span><br><span class="line">+-- hexo-generator-searchdb@1.3.3</span><br><span class="line">+-- hexo-related-popular-posts@5.0.1</span><br><span class="line">+-- hexo-renderer-pandoc@0.3.0</span><br><span class="line">+-- hexo-symbols-count-time@0.7.1</span><br><span class="line">+-- hexo-hide-posts@0.1.1</span><br></pre></td></tr></table></figure>
-<p>安装方式： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure> 安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl，这是我的个性化设置）复制粘贴过来即可。</p>
-<h1 id="使用hexo还是hugo">使用Hexo还是Hugo</h1>
-<p>3月19日，我又尝试了hugo，的确渲染速度很快、有很多漂亮的主题，并且很多主题都有详细的文档，而且hugo是按照文件夹结构生成侧边栏的目录，非常适合做文档和电子书！但缺点是很多主题不能折叠侧边栏，提供沉浸式阅读体验，所以我还是放弃了hugo，可能以后遇到喜欢的主题还是会迁移到hugo吧。</p>
-<h1 id="最终我的博客页面外观">最终我的博客页面外观</h1>
-<p>我花了很多时间去研究怎样让博客更美观和简洁，其实有很多是无用功，所以3月19日我正式敲定了目前的版本，并不再继续进行博客主题的个性化配置。以下是博客文章的截图：</p>
-<p><img src="https://i.loli.net/2021/03/19/MjEKeWoSuidzVxT.png"/></p>
-<p>主色调为蓝绿色，辅以紫色，我把最终的配置文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章），并不再修改。</p>
-<p>但是我经常用typora撰写笔记，因此<code>_post</code>文件夹下经常会更新，所以我写完文章有时会打开server，确认渲染无误，然后保存好写的文章。每隔一天或一周，我就hexo d一下，这样不至于操作太频繁。我可能也会使用<a href="https://novnan.github.io/Hexo/hexo-draft/">draft功能</a>。同时，我将_post文件夹同步在github上，经常push到这个repo。由此，我的博客配置和文章都得以云端保存了。</p>
-<p>好啦，终于不用浪费时间在网站美工啦！专心写文章吧！</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《自然语言处理综论》第17章-信息抽取（中）</title>
-    <url>/information-retrieval-2/</url>
-    <content><![CDATA[<center>
-<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
-</center>
-<hr />
-<blockquote>
-<p><em>I am the very model of a modern Major-General,</em> <em>I’ve information vegetable, animal, and mineral,</em> <em>I know the kings of England, and I quote the fights historical</em> <em>From Marathon to Waterloo, in order categorical...</em></p>
-<p>Gilbert and Sullivan, Pirates of Penzance</p>
-</blockquote>
-<h1 id="关系提取">17.1 关系提取</h1>
-<p>假设我们已经检测到了样本文本中的命名实体（也许使用了第8章的技术），并想识别出检测到的实体之间的关系：</p>
-<blockquote>
-<p>以高油价为由，[ORG联合航空公司]表示，[时间周五]它已将飞往一些同样由低成本航空公司服务的城市的航班的票价每往返提高了[MONEY 6美元]。发言人[per蒂姆-瓦格纳]表示，[ORG美国航空]是[ORG AMR Corp.]的一个单位，立即配合这一举措。ORG美联航]，[ORG UAL Corp.]的一个单位，说增加生效[时间周四]，适用于它与折扣航空公司竞争的大多数航线，如[LOC芝加哥]到[LOC达拉斯]和[LOC丹佛]到[LOC旧金山]。<em>(机翻结果)</em></p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/></p>
-<span id="more"></span>
-<hr />
-<p><strong>本章剩余内容见：《自然语言处理综论》第17章-信息抽取（下）</strong></p>
-]]></content>
-      <categories>
-        <category>自然语言处理</category>
-        <category>信息抽取</category>
-      </categories>
-      <tags>
-        <tag>nlp</tag>
-        <tag>IR</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>信息抽取技术综述</title>
     <url>/information-retrieval/</url>
     <content><![CDATA[<p>信息抽取是指从非结构化或半结构化文本中寻找结构化信息的任务。它是文本挖掘的一项重要任务，在自然语言处理、信息检索和网络挖掘等各个领域得到了广泛的研究。 <span id="more"></span> <strong>信息抽取(Information Extraction, IE)的两个基本任务：</strong></p>
@@ -1782,41 +1609,6 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       </tags>
   </entry>
   <entry>
-    <title>英文文献的命名实体识别（上）</title>
-    <url>/named-entity-recognition/</url>
-    <content><![CDATA[<p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
-<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a href="https://www.nltk.org/">NLTK</a>，<a href="https://spacy.io/">SpaCy</a>和<a href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
-<span id="more"></span>
-<h2 id="学术文献">学术文献</h2>
-<p><a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full">用于生物医学信息提取的命名实体识别和关系检测</a></p>
-<p><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3321-4">使用具有上下文信息的深度神经网络进行生物医学命名实体识别</a></p>
-<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0885230815300504">用于命名实体识别工具的多领域评估框架</a></p>
-<p><a href="https://devopedia.org/named-entity-recognition#Wang-et-al.-2019">命名实体识别</a></p>
-<p><a href="https://paperswithcode.com/task/named-entity-recognition-ner">带代码的文献</a></p>
-<h1 id="如何训练ner分类器">如何训练NER分类器</h1>
-<p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
-<h2 id="评估">评估</h2>
-<p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
-<p><span class="math display">\[
-\begin{array}{c}
-\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \\
-\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \\
-\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}
-\end{array}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>自然语言处理</category>
-        <category>命名实体识别</category>
-      </categories>
-      <tags>
-        <tag>nlp</tag>
-        <tag>NER</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>英文文献的命名实体识别（中）</title>
     <url>/named-entity-recognition-2/</url>
     <content><![CDATA[<p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
@@ -1882,16 +1674,38 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       </tags>
   </entry>
   <entry>
-    <title>心理语言学：资源和知识整理</title>
-    <url>/psycho-linguistics/</url>
-    <content><![CDATA[<h1 id="心理语言学知识大纲">心理语言学知识大纲</h1>
+    <title>英文文献的命名实体识别（上）</title>
+    <url>/named-entity-recognition/</url>
+    <content><![CDATA[<p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
+<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a href="https://www.nltk.org/">NLTK</a>，<a href="https://spacy.io/">SpaCy</a>和<a href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
+<span id="more"></span>
+<h2 id="学术文献">学术文献</h2>
+<p><a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full">用于生物医学信息提取的命名实体识别和关系检测</a></p>
+<p><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-3321-4">使用具有上下文信息的深度神经网络进行生物医学命名实体识别</a></p>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0885230815300504">用于命名实体识别工具的多领域评估框架</a></p>
+<p><a href="https://devopedia.org/named-entity-recognition#Wang-et-al.-2019">命名实体识别</a></p>
+<p><a href="https://paperswithcode.com/task/named-entity-recognition-ner">带代码的文献</a></p>
+<h1 id="如何训练ner分类器">如何训练NER分类器</h1>
+<p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
+<h2 id="评估">评估</h2>
+<p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \\
+=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \\
+\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \\
+=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \\
+\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}
+\end{array}
+\]</span></p>
 ]]></content>
       <categories>
-        <category>语言学</category>
-        <category>心理语言学</category>
+        <category>自然语言处理</category>
+        <category>命名实体识别</category>
       </categories>
       <tags>
-        <tag>psycholinguistics</tag>
+        <tag>nlp</tag>
+        <tag>NER</tag>
       </tags>
   </entry>
   <entry>
@@ -2078,137 +1892,323 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       </tags>
   </entry>
   <entry>
-    <title>纯文本文件的处理</title>
-    <url>/txt/</url>
-    <content><![CDATA[<h1 id="正则表达式">正则表达式</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">cha1 = re.search(pattern, txt_string).group()</span><br><span class="line">print(re.findall(<span class="string">r&#x27;蓝色&#x27;</span>, cha1))</span><br><span class="line"></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;第一 初见[^蓝色]*(蓝色)*.*第二 再见&#x27;</span>, re.DOTALL)</span><br><span class="line">match = re.search(pattern, txt_string)</span><br><span class="line"><span class="keyword">if</span> match:</span><br><span class="line">    print(match.groups())</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h1 id="获取文章目录">获取文章目录</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">file_path = <span class="string">r&#x27;D:\project\hexo-final\source\_posts&#x27;</span></span><br><span class="line"><span class="comment"># 这里要修改</span></span><br><span class="line"><span class="comment"># weblink = &#x27;https://github.com/MissFreak/writings/blob/main/&#x27;</span></span><br><span class="line">weblink = <span class="string">&#x27;http://nlpcourse.cn/&#x27;</span></span><br><span class="line">lst = os.listdir(file_path)</span><br><span class="line">post_list = []</span><br><span class="line"><span class="comment"># 这里要修改</span></span><br><span class="line">md_name = <span class="string">&#x27;all-posts.md&#x27;</span></span><br><span class="line"><span class="comment"># md_name = &#x27;README.md&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># obtain the titles and categories of all posts</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> lst:</span><br><span class="line">	<span class="comment"># make sure it is a markdown file</span></span><br><span class="line">	<span class="keyword">if</span> filename[-<span class="number">3</span>:] == <span class="string">&#x27;.md&#x27;</span>:</span><br><span class="line">		<span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, filename), encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">			s = f.read()</span><br><span class="line"></span><br><span class="line">		<span class="comment"># create a dict that stores attributes: title and category_1 and category_2</span></span><br><span class="line">		post_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the title</span></span><br><span class="line">		match_title = re.search(<span class="string">r&#x27;(?&lt;=title: ).*(?=\n)&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">if</span> match_title:</span><br><span class="line">			title = match_title.group().strip(<span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			title = filename</span><br><span class="line"></span><br><span class="line">		<span class="comment"># convert into linked title</span></span><br><span class="line">        <span class="comment"># 这里要修改</span></span><br><span class="line">		<span class="comment"># linked_title = &#x27;[&#123;&#125;](&#123;&#125;&#123;&#125;)&#x27;.format(title, weblink, filename)</span></span><br><span class="line">		linked_title = <span class="string">&#x27;[&#123;&#125;](&#123;&#125;&#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(title, weblink, filename[:-<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">		<span class="comment"># get the categories</span></span><br><span class="line">		match_categories = re.search(<span class="string">r&#x27;categories:\n- (.*)\n- (.*)\n&#x27;</span>, s)</span><br><span class="line">		<span class="keyword">try</span>:</span><br><span class="line">			category_1 = match_categories.group(<span class="number">1</span>)</span><br><span class="line">			category_2 = match_categories.group(<span class="number">2</span>)</span><br><span class="line">		<span class="keyword">except</span>:</span><br><span class="line">			category_1 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line">			category_2 = <span class="string">&#x27;未分类&#x27;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># save into a list</span></span><br><span class="line">		post_dict[<span class="string">&#x27;title&#x27;</span>] = linked_title</span><br><span class="line">		post_dict[<span class="string">&#x27;category_1&#x27;</span>] = category_1</span><br><span class="line">		post_dict[<span class="string">&#x27;category_2&#x27;</span>] = category_2</span><br><span class="line">		post_list.append(post_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sort and group by the first category</span></span><br><span class="line">get_first_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_1&#x27;</span>)</span><br><span class="line">group_1 = itertools.groupby(<span class="built_in">sorted</span>(post_list, key=get_first_category), get_first_category)</span><br><span class="line">num_post = <span class="built_in">len</span>(post_list)</span><br><span class="line"></span><br><span class="line">content = <span class="string">&#x27;---\ntitle: 所有文章目录\n---\n&lt;center&gt;目前共有&#123;&#125;篇文章：&lt;/center&gt;\n&lt;!-- more --&gt;\n\n&#x27;</span>.<span class="built_in">format</span>(num_post)</span><br><span class="line"><span class="keyword">for</span> k1,v1 <span class="keyword">in</span> group_1:</span><br><span class="line">	<span class="comment"># add the first category into content</span></span><br><span class="line">	content += (<span class="string">&#x27;# &#x27;</span>+k1+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">	<span class="comment"># sort and group by the first category</span></span><br><span class="line">	get_second_category = <span class="keyword">lambda</span> dct: dct.get(<span class="string">&#x27;category_2&#x27;</span>)</span><br><span class="line">	group_2 = itertools.groupby(<span class="built_in">sorted</span>(v1, key=get_second_category), get_second_category)</span><br><span class="line">	<span class="keyword">for</span> k2,v2 <span class="keyword">in</span> group_2:</span><br><span class="line">		<span class="comment"># add the second category into content</span></span><br><span class="line">		<span class="keyword">if</span> k2 != <span class="string">&#x27;未分类&#x27;</span>:</span><br><span class="line">			content += (<span class="string">&#x27;- _&#x27;</span>+k2+<span class="string">&#x27;_\n&#x27;</span>)</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;\t- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> v2:</span><br><span class="line">				<span class="comment"># add the title into content</span></span><br><span class="line">				content += (<span class="string">&#x27;- &#x27;</span>+i[<span class="string">&#x27;title&#x27;</span>]+<span class="string">&#x27;\n\n&#x27;</span>)</span><br><span class="line">print(content)</span><br><span class="line"><span class="comment"># write the content into md file</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(file_path, md_name), <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(content)</span><br></pre></td></tr></table></figure>
-<h1 id="分离章节">分离章节</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">file_path = <span class="string">r&#x27;D:\books\Psychology_of_Language.txt&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt_string = f.read()</span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\ng\n&#x27;</span>)</span><br><span class="line">chapters = pattern.split(txt_string)[<span class="number">6</span>:]</span><br><span class="line"></span><br><span class="line">cha8 = chapters[<span class="number">7</span>]</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\nn\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;\n&#123;2,&#125;&#x27;</span>, <span class="string">&#x27;\n&#x27;</span>, cha8)</span><br><span class="line">cha8 = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, cha8)</span><br><span class="line"><span class="comment"># print(repr(cha8))</span></span><br><span class="line">print(cha8)</span><br></pre></td></tr></table></figure>
-<h1 id="去除字符">去除字符</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，\n 请加入，谢谢\n\n\n&#x27;</span></span><br><span class="line">print(ss.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">ss = <span class="string">&#x27;我的电话是18827038663，也是微信号，请加入，谢谢啦啦嗯&#x27;</span></span><br><span class="line">print(ss.strip(<span class="string">&#x27;嗯啦&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<h1 id="表格pytablewriter">表格：<a href="https://github.com/thombashi/pytablewriter/">pytablewriter</a></h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MarkdownTableWriter, ExcelXlsxTableWriter, UnicodeTableWriter, JavaScriptTableWriter, JsonTableWriter, HtmlTableWriter</span><br></pre></td></tr></table></figure>
-<p>先获得matrix：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27;: &#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># 行分隔符和列分隔符</span></span><br><span class="line">print(matrix)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;tempo2.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	s = f.read()</span><br><span class="line">matrix = [i.split(<span class="string">&#x27; &#x27;</span>, <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> s.split(<span class="string">&#x27;\n&#x27;</span>)] <span class="comment"># split on first occurrence</span></span><br><span class="line">print(matrix)</span><br></pre></td></tr></table></figure>
-<p>然后生成相应的表格：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
-<h2 id="markdown表格">markdown表格</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># s = spacy.explain(&#x27;``&#x27;)</span></span><br><span class="line"><span class="comment"># print(repr(s))</span></span><br><span class="line">lst1 = <span class="string">&#x27;`$`, `&#x27;</span><span class="string">&#x27;`, `,`, `-LRB-`, `-RRB-`, `.`, `:`, `ADD`, `AFX`, `CC`, `CD`, `DT`, `EX`, `FW`, `HYPH`, `IN`, `JJ`, `JJR`, `JJS`, `LS`, `MD`, `NFP`, `NN`, `NNP`, `NNPS`, `NNS`, `PDT`, `POS`, `PRP`, `PRP$`, `RB`, `RBR`, `RBS`, `RP`, `SYM`, `TO`, `UH`, `VB`, `VBD`, `VBG`, `VBN`, `VBP`, `VBZ`, `WDT`, `WP`, `WP$`, `WRB`, `XX`&#x27;</span>.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">lst2 = [spacy.explain(i.strip(<span class="string">&#x27; `&#x27;</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> lst1]</span><br><span class="line"><span class="comment"># print(lst2)</span></span><br><span class="line"></span><br><span class="line">matrix = np.column_stack((lst1, lst2)).tolist()</span><br><span class="line"><span class="comment"># print(type(matrix))</span></span><br><span class="line"><span class="comment"># print(matrix)</span></span><br><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line">writer = pytablewriter.MarkdownTableWriter()</span><br><span class="line">writer.value_matrix = matrix</span><br><span class="line">writer.write_table()</span><br></pre></td></tr></table></figure>
-<h2 id="csv">csv</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytablewriter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    writer = pytablewriter.CsvTableWriter()</span><br><span class="line">    writer.headers = [<span class="string">&quot;int&quot;</span>, <span class="string">&quot;float&quot;</span>, <span class="string">&quot;str&quot;</span>, <span class="string">&quot;bool&quot;</span>, <span class="string">&quot;mix&quot;</span>, <span class="string">&quot;time&quot;</span>]</span><br><span class="line">    writer.value_matrix = [</span><br><span class="line">        [<span class="number">0</span>,   <span class="number">0.1</span>,      <span class="string">&quot;hoge&quot;</span>, <span class="literal">True</span>,   <span class="number">0</span>,      <span class="string">&quot;2017-01-01 03:04:05+0900&quot;</span>],</span><br><span class="line">        [<span class="number">2</span>,   <span class="string">&quot;-2.23&quot;</span>,  <span class="string">&quot;foo&quot;</span>,  <span class="literal">False</span>,  <span class="literal">None</span>,   <span class="string">&quot;2017-12-23 45:01:23+0900&quot;</span>],</span><br><span class="line">        [<span class="number">3</span>,   <span class="number">0</span>,        <span class="string">&quot;bar&quot;</span>,  <span class="string">&quot;true&quot;</span>,  <span class="string">&quot;inf&quot;</span>, <span class="string">&quot;2017-03-03 33:44:55+0900&quot;</span>],</span><br><span class="line">        [-<span class="number">10</span>, -<span class="number">9.9</span>,     <span class="string">&quot;&quot;</span>,     <span class="string">&quot;FALSE&quot;</span>, <span class="string">&quot;nan&quot;</span>, <span class="string">&quot;2017-01-01 00:00:00+0900&quot;</span>],</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    writer.write_table()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<h2 id="其他格式">其他格式</h2>
-<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/json.html">JSON</a></p>
-<p><a href="https://pytablewriter.readthedocs.io/en/latest/pages/examples/table_format/text/html.html">HTML</a></p>
+    <title>心理语言学：资源和知识整理</title>
+    <url>/psycho-linguistics/</url>
+    <content><![CDATA[<h1 id="心理语言学知识大纲">心理语言学知识大纲</h1>
 ]]></content>
       <categories>
-        <category>代码</category>
-        <category>文本处理</category>
+        <category>语言学</category>
+        <category>心理语言学</category>
       </categories>
       <tags>
-        <tag>txt</tag>
+        <tag>psycholinguistics</tag>
       </tags>
   </entry>
   <entry>
-    <title>正则表达式进阶</title>
-    <url>/regex-1/</url>
-    <content><![CDATA[<p>至此，我们已经建立了正则表达式的思维框架（参见「<a href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">正则表达式入门</a>」），以及如何用python中的re模块编译正则表达式来匹配文本（参见「<a href="https://mp.weixin.qq.com/s/ibNb0rOSnBr4YC0PzCyIBA">Python实操篇</a>」）。尽管此时我们已经可以流畅地编写和使用它，但我们需要一些进阶知识，让我们的正则表达式更准确和精练。本文使用的语言依然是python。 <span id="more"></span></p>
-<p><strong>全文概览：</strong></p>
-<p>1.分组与捕获：<code>MatchObject.group()</code>的奥秘</p>
-<p>2.四种类型的环视：匹配位置，而非匹配文本</p>
-<p>3.贪婪与非贪婪：匹配优先 VS 忽略优先</p>
-<h1 id="分组与捕获">分组与捕获</h1>
-<p>在「<a href="https://mp.weixin.qq.com/s/ibNb0rOSnBr4YC0PzCyIBA">Python实操篇</a>」我们讲到<code>MatchObject</code>的方法<code>group()</code>可以返回匹配的整个字符串，但这并不全面。本节，我们将谈谈括号的一个关键功能：捕获（capturing）。</p>
-<p><strong>捕获</strong>就是用括号提取文本以便后续访问，我们可以把这个过程想象成“闰土捕鸟”，把每个括号里的鸟儿都抓起来放进“笼子”。</p>
-<p>而捕获进所有“笼子”里的内容，正是通过<code>MatchObject.groups()</code>访问。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.search(<span class="string">r&quot;(\w+) (\w+)&quot;</span>, <span class="string">&quot;John Smith&quot;</span>).groups()</span><br><span class="line"><span class="comment"># 输出：(&#x27;John&#x27;, &#x27;Smith&#x27;)</span></span><br></pre></td></tr></table></figure>
-<p>我们可以通过索引来访问每个“笼子”，<code>group(0)</code>返回整个正则表达式匹配的文本，相当于编号为0的隐式捕获，而<code>group(1)</code>、<code>group(2)</code>则按顺序返回显式捕获分组。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">m = re.search(<span class="string">r&quot;(\w+) (\w+)&quot;</span>, <span class="string">&quot;John Smith&quot;</span>)</span><br><span class="line">m.group(<span class="number">0</span>) <span class="comment"># 输出：&#x27;John Smith&#x27;</span></span><br><span class="line">m.group(<span class="number">1</span>)  <span class="comment"># 输出：&#x27;John&#x27;</span></span><br><span class="line">m.group(<span class="number">2</span>)  <span class="comment"># 输出：&#x27;Smith&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>你可能会想到「<a href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">入门篇</a>」讲过的<strong>反向引用</strong>，在python中我们依然可以使用序号<code>\1</code>、<code>\2</code>来引用捕获的组别。下面这个例子将“数字-字母”组成的产品ID进行替换，变成了“字母-数字”的形式。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&quot;(\d+)-(\w+)&quot;</span>)</span><br><span class="line">pattern.sub(<span class="string">r&quot;\2-\1&quot;</span>, <span class="string">&quot;1-a\n20-baer\n34-afcr&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;a-1\nbaer-20\nafcr-34&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>我们也可以给每个“笼子”取上名字，即<strong>命名捕获</strong>，在python正则表达式中表示为<code>(?P&lt;name&gt;pattern)</code>，依然是通过<code>group()</code>访问单个“笼子”。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&quot;(?P&lt;first&gt;\w+) (?P&lt;last&gt;\w+)&quot;</span>)</span><br><span class="line">match = pattern.search(<span class="string">&quot;John Smith&quot;</span>)</span><br><span class="line">match.group(<span class="string">&quot;first&quot;</span>) <span class="comment"># 输出：&#x27;John&#x27;</span></span><br><span class="line">match.group(<span class="string">&quot;last&quot;</span>) <span class="comment"># 输出：&#x27;Smith&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>需要注意，在<code>sub()</code>替换操作中，如果用名称来引用组别，我们需要写成<code>\g&lt;name&gt;</code>：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&quot;(?P&lt;country&gt;\d+)-(?P&lt;id&gt;\w+)&quot;</span>)</span><br><span class="line">pattern.sub(<span class="string">r&quot;\g&lt;id&gt;-\g&lt;country&gt;&quot;</span>, <span class="string">&quot;1-a\n20-baer\n34-afcr&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;a-1\nbaer-20\nafcr-34&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>当然，很多时候我们使用括号不是为了捕获，而仅仅是为了<strong>分组</strong>，即用于构建子表达式、多选结构或者量词作用的对象。此时，我们可以使用<strong>非捕获型括号</strong><code>(?:)</code>，告诉正则引擎，不需要提取括号内的任何信息。非捕获型括号能够提高效率、节约内存，不浪费咱们的“笼子”。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.search(<span class="string">r&quot;gr(a|e)y&quot;</span>, <span class="string">&quot;gray&quot;</span>).groups()</span><br><span class="line"><span class="comment"># 输出：(&#x27;a&#x27;,)</span></span><br><span class="line">re.search(<span class="string">r&quot;gr(?:a|e)y&quot;</span>, <span class="string">&quot;gray&quot;</span>).groups()</span><br><span class="line"><span class="comment"># 输出：()</span></span><br></pre></td></tr></table></figure>
-<h1 id="四种类型的环视">四种类型的环视</h1>
-<p><strong>环视</strong>（Look Around）是正则表达式最强大的技术之一。我们可以把环视想象成前视镜和后视镜，<strong>顺序环视</strong>就是向前看（从左到右），<strong>逆序环视</strong>就是向后看（从右到左）。通过左右环视，我们进行“闰土捕鸟”的位置会更精确，确保匹配内容的上下文满足特定要求。</p>
-<p>以下是四种类型的环视：</p>
-<table>
-<thead>
-<tr class="header">
-<th>类型</th>
-<th>正则表达式</th>
-<th>匹配成功的条件</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>肯定顺序环视</td>
-<td>(?=……)</td>
-<td>子表达式能够匹配右侧文本</td>
-</tr>
-<tr class="even">
-<td>否定顺序环视</td>
-<td>(?!……)</td>
-<td>子表达式不能匹配右侧文本</td>
-</tr>
-<tr class="odd">
-<td>肯定逆序环视</td>
-<td>(?&lt;=……)</td>
-<td>子表达式能够匹配左侧文本</td>
-</tr>
-<tr class="even">
-<td>否定逆序环视</td>
-<td>(?&lt;!……)</td>
-<td>子表达式不能匹配左侧文本</td>
-</tr>
-</tbody>
-</table>
-<p>我们要注意，环视相当于作用于匹配位置的附加条件、不占用任何字符。因此它和分界符类似，是一种<strong>零宽度断言</strong>（zero-width assertions）。我们拿肯定顺序环视举例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;(?=fox)&#x27;</span>)</span><br><span class="line">result = pattern.search(<span class="string">&quot;The quick brown fox jumps over the lazy dog&quot;</span>)</span><br><span class="line">result.span()</span><br><span class="line"><span class="comment">#输出 (16, 16)</span></span><br></pre></td></tr></table></figure>
-<p>我们发现，表达式<code>(?=fox)</code>只匹配fox之前的位置，也就是索引16。</p>
-<p><img src="C:\Users\13607\AppData\Roaming\Typora\typora-user-images\image-20210218222948086.png" alt="image-20210218222948086" style="zoom: 33%;" /></p>
-<p>环视的作用不可小觑，我们可以精准定位，并剔除多余字符，保留更加干净、准确的匹配文本。下面的例子定位<code>&lt;p&gt;</code>标签的同时，只匹配标签里的内容。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;(?&lt;=&lt;p&gt;)[^&lt;]+(?=&lt;p&gt;)&#x27;</span>)</span><br><span class="line">pattern.search(<span class="string">&quot;&lt;p&gt;test&lt;p&gt;&quot;</span>).group(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;test&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>环视的另一典型应用就是将文本变成逗号分隔的货币形式：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\d&#123;1,3&#125;(?=(\d&#123;3&#125;)+(?!\d))&#x27;</span>)</span><br><span class="line">pattern.sub(<span class="string">r&#x27;\g&lt;0&gt;,&#x27;</span>, <span class="string">&quot;123456789&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：&#x27;123,456,789&#x27;</span></span><br></pre></td></tr></table></figure>
-<h1 id="贪婪与非贪婪">贪婪与非贪婪</h1>
-<p>在「<a href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">入门篇</a>」中，我们接触了量词，但并未讲到贪婪与非贪婪的区别。</p>
-<p>在python的re模块中，量词默认为<strong>贪婪模式</strong>：尽可能多地匹配更长的字符串。这就是为什么，<code>.*</code>通常会匹配到一行文本的末尾。如果要采用<strong>非贪婪模式</strong>，我们可以在量词后添加一个额外的问号，例如<code>??</code>、<code>*?</code>或<code>+?</code>，使得匹配的长度最小。这两种模式又称为<strong>匹配优先</strong>和<strong>忽略优先</strong>。</p>
+    <title>基础：用flask搭建RESTful API</title>
+    <url>/flask-api-1/</url>
+    <content><![CDATA[<p><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>是目前发展最迅速的 Python 框架之一，它是一个微型的 Python 开发的 Web 框架，基于<a href="https://www.oschina.net/p/werkzeug">Werkzeug</a> WSGI工具箱和<a href="https://www.oschina.net/p/jinja">Jinja2</a> 模板引擎。以下是用flask来构建 RESTful API 的全过程实录，力求完整、准确、无误地记录每个操作步骤与细节。我用的是windows系统，但我也会提到其他系统的操作。 <span id="more"></span> # 环境搭建与工具安装</p>
+<p>首先依然是创建虚拟环境并安装 flask 和 <a href="https://flask-restful.readthedocs.io/en/latest/">flask-restful</a> package。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkvirtualenv flask-api</span><br><span class="line">pip install flask</span><br><span class="line">pip install flask-restful</span><br></pre></td></tr></table></figure>
+<h1 id="使用flask搭建api">使用flask搭建API</h1>
+<h2 id="最简单的flask应用">最简单的flask应用</h2>
+<p>新建一个python脚本，linux用touch，windows操作如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">workon flask-api <span class="comment"># 激活虚拟环境</span></span><br><span class="line">D:</span><br><span class="line"><span class="built_in">type</span> nul&gt;hello.py <span class="comment"># 新建文件</span></span><br><span class="line">atom hello.py <span class="comment"># 用atom编辑器打开</span></span><br></pre></td></tr></table></figure>
+<p>粘贴以下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)  </span><span class="comment"># 把Flask对象中的route()函数作为一个装饰器，增强该函数的功能</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello, World!&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>再打开 Command Prompt 输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set FLASK_APP&#x3D;hello.py</span><br><span class="line">set FLASK_ENV&#x3D;development</span><br><span class="line">flask run</span><br></pre></td></tr></table></figure>
+<p>按下快捷键Alt+Shift+=左右分屏，输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl http://127.0.0.1:5000/</span><br><span class="line">curl -v http://127.0.0.1:5000/</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">&lt; Content-Type: text&#x2F;html; charset&#x3D;utf-8</span><br><span class="line">&lt; Content-Length: 13</span><br><span class="line">...</span><br><span class="line">&lt;</span><br><span class="line">Hello, World!* Closing connection 0</span><br></pre></td></tr></table></figure>
+<p>我们发现返回的是html类型，而不是通常从 RESTful API 获得的 json 文件，于是修改hello.py的代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;about&#x27;</span>: <span class="string">&#x27;Hello, World!&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#或者：</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(about=<span class="string">&#x27;Hello, World!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>调试模式下，服务器会监测你的代码更新并自动加载，所以无须重启才看到效果。这时curl得到json file：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">&lt; Content-Type: application&#x2F;json</span><br><span class="line">&lt; Content-Length: 31</span><br><span class="line">...</span><br><span class="line">&lt;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;hello&quot;: &quot;Hello, World!&quot;</span><br><span class="line">&#125;</span><br><span class="line">* Closing connection 0</span><br></pre></td></tr></table></figure>
+<h2 id="通过url传递参数">通过URL传递参数</h2>
+<p>我们可以通过url传递参数给flask api，例如<code>/&lt;int:num&gt;/</code></p>
+<p>将hello.py修改为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify, request</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/multi/&lt;int:num&gt;&#x27;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>]</span>) </span><span class="comment"># methods一般默认为GET</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_multiply10</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;result&#x27;</span>: num*<span class="number">10</span>&#125;) <span class="comment"># 返回数字乘以10后的结果</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>然后在cmd输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;multi&#x2F;10</span><br></pre></td></tr></table></figure>
+<p>我们得到10乘以10后的结果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;result&quot;: 100</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，我们也可以在浏览器内访问以下地址：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;multi&#x2F;10</span><br></pre></td></tr></table></figure>
+<h2 id="使用post方法">使用POST方法</h2>
+<p>这一小节我们将使用POST method。</p>
+<p>在hello.py中加入以下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>, methods=[<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;POST&quot;</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="keyword">if</span> (request.method == <span class="string">&quot;POST&quot;</span>):</span><br><span class="line">        some_json = request.get_json()</span><br><span class="line">        <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;You sent&#x27;</span>: some_json&#125;), <span class="number">201</span> <span class="comment"># 如果是post则返回post内容</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> jsonify(&#123;<span class="string">&quot;about&quot;</span>: <span class="string">&quot;Hello World!&quot;</span>&#125;) <span class="comment"># 如果是get则返回hello world</span></span><br></pre></td></tr></table></figure>
+<p>现在，我们可以发送如下curl请求并返回POST的内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl -H &quot;Content-Type: application&#x2F;json&quot; -X POST -d &#39;&#123;&quot;name&quot;:&quot;Example&quot;,&quot;email&quot;:&quot;example@example.com&quot;&#125;&#39; http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;</span><br></pre></td></tr></table></figure>
+<p>注意：Windows的命令行不支持单引号、且需要将双引号转义，所以需要改成：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl -H &quot;Content-Type: application&#x2F;json&quot; -X POST -d &quot;&#123;\&quot;name\&quot;:\&quot;Example\&quot;,\&quot;email\&quot;:\&quot;example@example.com\&quot;&#125;&quot; http:&#x2F;&#x2F;127.0.0.1:5000&#x2F;</span><br></pre></td></tr></table></figure>
+<p>因此，Windows用户建议在git bash上完成以上操作。</p>
+<h1 id="使用flask-restful搭建api">使用flask-restful搭建API</h1>
+<p>我们把hello.py修改为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request</span><br><span class="line"><span class="keyword">from</span> flask_restful <span class="keyword">import</span> Resource, Api</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">api = Api(app)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span>(<span class="params">Resource</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self</span>):</span></span><br><span class="line">        some_json = request.get_json()</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&#x27;You sent&#x27;</span>: some_json&#125;, <span class="number">201</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Multi</span>(<span class="params">Resource</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self, num</span>):</span></span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&#x27;result&#x27;</span>: num*<span class="number">10</span>&#125;</span><br><span class="line"></span><br><span class="line">api.add_resource(HelloWorld, <span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">api.add_resource(Multi, <span class="string">&#x27;/multi/&lt;int:num&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>以上代码实现完全相同的功能，不过看起来更简洁和舒服。</p>
+<p>参考教程：</p>
+<p>https://www.youtube.com/watch?v=s_ht4AKnWZg</p>
+<p>参考文献：</p>
+<p>https://blog.csdn.net/weixin_41010198/article/details/85230424#API_3</p>
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>flask</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一文读懂Flask Web开发实战！</title>
+    <url>/flask-2/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>flask</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>部署Flask开发的API到Heroku</title>
+    <url>/flask-api-2/</url>
+    <content><![CDATA[<p>上篇文章我们介绍了如何用flask开发简单的web api，下面我们把它部署到heroku上，方便更多人使用。 <span id="more"></span></p>
+<p><strong>步骤总结：</strong></p>
 <ul>
-<li><p>贪婪量词（Greedy quantifiers）：<code>?</code>, <code>*</code>, <code>+</code>, <code>&#123;num,num&#125;</code></p></li>
-<li><p>非贪婪/懒惰量词（Lazy quantifiers）：<code>??</code>, <code>*?</code>, <code>+?</code> , <code>&#123;num,num&#125;?</code></p></li>
-</ul>
-<p>比如，如果要匹配引号内的内容，会得到下面的结果：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&#x27;The name &quot;McDonald\&#x27;s&quot; ! is said &quot;makudonarudo&quot;in Japanese.&#x27;</span></span><br><span class="line">re.search(<span class="string">r&#x27;&quot;.*&quot;&#x27;</span>, s).group()</span><br><span class="line"><span class="comment"># 输出：&#x27;&quot;McDonald\&#x27;s&quot; is said &quot;makudonarudo&quot;&#x27;</span></span><br><span class="line">re.search(<span class="string">r&#x27;&quot;.*?&quot;&#x27;</span>, s).group()</span><br><span class="line"><span class="comment"># 输出：&#x27;&quot;McDonald\&#x27;s&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>事实上，还有第三种量词，但目前python并不支持：</p>
+<li><p>注册<a href="https://signup.heroku.com/">Heroku帐号</a></p></li>
+<li><p>下载客户端</p></li>
+<li><p>在本地命令行登录</p>
 <ul>
-<li>占有量词（Possessive quantifiers）：<code>?+</code>, <code>*+</code>, <code>++</code>, <code>&#123;num,num&#125;+</code></li>
+<li>如果出现IP Address Mismatch，复制并粘贴<code>heroku login -i</code>到终端，用邮箱密码登录</li>
+</ul></li>
+<li><p>创建应用</p>
+<ul>
+<li>``` heroku apps:create flask-microblog <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">- 初始化</span><br><span class="line">  </span><br><span class="line">  - &#96;&#96;&#96;</span><br><span class="line">    mkdir flask-api</span><br><span class="line">    cd flask-api</span><br><span class="line">    git init</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>编写应用代码</p>
+<ul>
+<li>run.py</li>
+<li>requirements.txt</li>
+<li><code>echo web: gunicorn run:app &gt; Procfile</code>
+<ul>
+<li><code>web: gunicorn &lt;filename&gt;:&lt;main method name&gt;</code></li>
+</ul></li>
+<li>用<code>tree/F</code>检验上述文件是否齐全</li>
+</ul></li>
+<li><p>部署应用</p>
+<ul>
+<li><p>关联github，自动部署</p></li>
+<li><pre><code>  git add .
+  git commit -m &quot;Initialize repo&quot;
+  git push -u origin master</code></pre></li>
+</ul></li>
+<li><p>访问应用地址：https://nlp-ch.herokuapp.com/</p></li>
 </ul>
-<p>占有量词与贪婪量词类似，只是它们从不会交还已经匹配的字符。当然，我们也可以用固化分组<code>(?&gt;...)</code>来代替，比如<code>!.++</code>其实等同于<code>(?&gt;!.+)</code>。然而，固化分组在python中同样不被支持，所以此处不过多讨论。</p>
-<p>以上です！</p>
-<p>整理完python正则表达式的进阶知识，相信你已经能得心应手解决很多问题。但是，要真正打造高效、规范、美妙的正则表达式，我们仍需要了解正则引擎的原理，以及一些平衡法则、以及测试和优化的技巧，我们下篇再谈！</p>
+<p><strong>参考文献：</strong></p>
+<p>官方教程：</p>
+<p>https://devcenter.heroku.com/articles/getting-started-with-python</p>
+<p>以及这些博客：</p>
+<p>https://noviachen.github.io/posts/b4cb2e1c.html</p>
+<p>https://wizardforcel.gitbooks.io/the-flask-mega-tutorial-2017-zh/content/docs/18.html</p>
+<p>http://www.bjhee.com/flask-heroku.html</p>
+<p>windows上部署参考（建议使用git bash）：https://caijialinxx.github.io/2018/07/25/deploy-on-heroku/</p>
+<p>git bash创建并编辑文件参考：https://blog.csdn.net/qq_34289537/article/details/53994070</p>
+<p>windows cmd常用命令参考：https://www.jianshu.com/p/80c3ac7bea8f</p>
+<p>上传文件到github: https://www.jianshu.com/p/5227f837070b</p>
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>flask</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>flask干货总结</title>
+    <url>/flask/</url>
+    <content><![CDATA[<h1 id="flask">Flask</h1>
+<blockquote>
+<p>在一个Web应用里，客户端和服务器上的Flask程序的交互可以简单概括为以下几步：</p>
+<p>1）用户在浏览器输入URL访问某个资源。</p>
+<p>2）Flask接收用户请求并分析请求的URL。</p>
+<p>3）为这个URL找到对应的处理函数。</p>
+<p>4）执行函数并生成响应，返回给浏览器。</p>
+<p>5）浏览器接收并解析响应，将信息显示在页面中。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span id="more"></span></p>
+</blockquote>
+<h1 id="术语解释">术语解释</h1>
+<ul>
+<li>路由：作为动词时，含义是“按某路线发送”，即调用与请求URL对应的视图函数。</li>
+<li>视图函数（view function）：处理请求并生成响应的函数。当用户访问URL时会触发视图函数，该函数可执行任意操作，比如从数据库中获取信息，获取请求信息，对用户输入的数据进行计算和处理等。最后，视图函数返回的值将作为响应的主体，一般来说就是HTML页面。</li>
+<li>模板：包含程序页面的HTML文件。</li>
+<li>静态文件：需要在HTML文件中加载的CSS和Java Script文件，以及图片、字体文件等资源文件。</li>
+<li>模板文件存放在项目根目录中的templates文件夹中，静态文件存放在static文件夹下，这两个文件夹需要和包含程序实例的模块处于同一个目录下。</li>
+<li>HTTP（Hypertext TransferProtocol，超文本传输协议）定义了服务器和客户端之间信息交流的格式和传递方式，它是万维网（World Wide Web）中数据交换的基础。</li>
+<li>WSGI：将HTTP格式的请求数据转换成Flask程序能够使用的Python数据，并把python程序的响应经过WSGI转换生成HTTP响应。</li>
+<li>URL中的查询字符串用来向指定的资源传递参数。查询字符串从问号?开始，以键值对的形式写出，多个键值对之间使用&amp;分隔。</li>
+<li>这种浏览器与服务器之间交互的数据被称为报文（message），请求时浏览器发送的数据被称为请求报文（request message），而服务器返回的数据被称为响应报文（responsemessage）。</li>
+<li>请求报文由请求的方法、URL、协议版本、首部字段（header）以及内容实体组成。</li>
+<li>报文由报文首部和报文主体组成，两者由空行分隔，请求报文的主体一般为空。如果URL中包含查询字符串，或是提交了表单，那么报文主体将会是查询字符串和表单数据。</li>
+<li>用来映射到数据库表的Python类通常被称为数据库模型（model），一个数据库模型类对应数据库中的一个表。所有的模型类都需要继承Flask-SQLAlchemy提供的db.Model基类。</li>
+</ul>
+<h1 id="架构">架构</h1>
+<p>在MVC架构中，程序被分为三个组件：数据处理（Model）、用户界面（View）、交互逻辑（Controller）。</p>
+<p>如果想要使用Flask来编写一个MVC架构的程序，那么视图函数可以作为控制器（Controller），视图（View）则是使用Jinja2渲染的HTML模板，而模型（Model）可以使用其他库来实现。</p>
+<p>参考文献：</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><a href="https://book.douban.com/subject/30310340/">《Flask Web开发实战》</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>flask</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django网站开发全过程实录-1</title>
+    <url>/django-1/</url>
+    <content><![CDATA[<p>网站一般需要实现三种基本功能：<strong>连接数据库、处理用户请求、页面设计的删改</strong>。Django的优势在于将这些功能设计成独立的模块，形成一套web框架。利用Django框架开发网站，能让我们专注于编写应用程序而无需重新造轮子。 <span id="more"></span> Django 采用了 <strong>MVT 的软件设计模式</strong>，即<strong>模型</strong>（Model）、<strong>视图</strong>（View）和<strong>模板</strong>（Template）。这种设计模式的优势在于<strong>各个组件松散结合</strong>，每个APP应用都有明确的目的，并且可独立更改而不影响其它部分。如此，使得页面设计与业务逻辑互不影响。同时，Django是一套出色的<strong>动态内容管理系统</strong>，擅长动态提供数据库驱动的信息。</p>
+<p>以下是我使用Django 3.1.7搭建网站过程的实录，力求完整、准确、无误地记录每个操作步骤与细节。</p>
+<h2 id="环境搭建与工具安装"><strong>环境搭建与工具安装</strong></h2>
+<blockquote>
+<p><em>参考：</em><a href="https://stormsha.com/article/2026/"><em>https://stormsha.com/article/2026/</em></a></p>
+</blockquote>
+<p>我们需要在合适的目录内创建一个<strong>虚拟环境</strong>（用virtualenv, virtualenvwrapper皆可，参考<a href="https://blog.csdn.net/a200822146085/article/details/89048172">virtualenvwrapper的使用</a>），我给它取名为webdev。</p>
+<p>在该虚拟环境，安装<strong>django</strong>和<strong>psycopg2</strong>工具包（用于管理PostgreSQL数据库）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install virtualenv, virtualenvwrapper-win</span><br><span class="line">mkvirtualenv webdev</span><br><span class="line">workon webdev</span><br><span class="line">pip install django</span><br><span class="line">pip install psycopg2</span><br><span class="line">pip list</span><br><span class="line">pip freeze</span><br><span class="line"></span><br><span class="line"># 如果需要退出或删除虚拟环境</span><br><span class="line">deactivate</span><br><span class="line">rmvirtualenv webdev</span><br></pre></td></tr></table></figure>
+<p><strong>安装数据库：</strong></p>
+<p>Django支持四种数据库：PostgreSQL、SQLite 3、MySQL、Oracle。</p>
+<p>我选择PostgreSQL，它比MySQL更适合Django，Django的创建者如是说：</p>
+<blockquote>
+<p>如果您不受任何遗留系统的束缚，并且可以自由选择数据库后端，那么我们建议您使用PostgreSQL，它可以在成本、功能、速度和稳定性之间取得很好的平衡。（《 Django权威指南》第15页）</p>
+</blockquote>
+<p>PostgreSQL的安装步骤参考：https://www.runoob.com/postgresql/windows-install-postgresql.html</p>
+<p>打开后设置语言为中文，然后关闭。</p>
+<h2 id="创建项目project"><strong>创建项目（project）</strong></h2>
+<p>下面在刚刚的虚拟环境webdev内创建一个项目mysite（你可以选择任意其他名字），项目是我们所建立的网站上所有应用程序的集合，并共用一套数据库配置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd webdev</span><br><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
+<p>我们看到新建了一个文件夹mysite及下面的子文件夹mysite/mysite：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysite&#x2F;</span><br><span class="line">    manage.py</span><br><span class="line">    mysite&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py</span><br><span class="line">        urls.py</span><br><span class="line">        asgi.py</span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>
+<p>我们可以把子文件夹mysite/mysite视为整个项目的配置，其中的settings.py和urls.py这两个文件是我们以后需要经常修改的。</p>
+<h2 id="启动服务器server"><strong>启动服务器（server）</strong></h2>
+<p>启动服务器，服务器会监测你的代码更新并自动加载，所以无须重启才看到效果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd mysite</span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p>在settings.py内将语言改成中文，时区改为上海：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LANGUAGE_CODE &#x3D; &#39;zh-hans&#39;</span><br><span class="line"></span><br><span class="line">TIME_ZONE &#x3D; &#39;Asia&#x2F;Shanghai&#39;</span><br></pre></td></tr></table></figure>
+<p>刷新浏览器看到中文页面。</p>
+<p>我们可以指定服务器的端口和IP地址。比如，把地址设为自己的IP地址（例如192.168.1.110）或0.0.0.0，让联网的其他计算机可见：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py runserver 0.0.0.0:8000</span><br></pre></td></tr></table></figure>
+<p>使用Windows的用户用ipconfig命令获取本地网络中的IP 地址，然后复制到setting.py中，比如我是这个：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALLOWED_HOSTS &#x3D; [&#39;192.168.1.110&#39;]</span><br></pre></td></tr></table></figure>
+<p>于是，在其他电脑或手机浏览器打开 http://192.168.1.110:8000/ 就可以访问啦！完美！不过网站还在开发中，就不要随便开放共享啦~</p>
+<h2 id="创建应用程序app"><strong>创建应用程序（APP）</strong></h2>
+<p><strong>项目和应用的区分：</strong></p>
+<ul>
+<li><strong>应用</strong>是用于执行某项具体操作的程序，<strong>项目</strong>是特定网站的配置和应用程序的集合。</li>
+<li><strong>多对多的关系</strong>：一个项目可以包含多个应用程序，一个应用程序可以用在多个项目中。</li>
+</ul>
+<p>应用放在任意路径都可以，但我们一般放在<strong>manage.py文件相同的目录</strong>中，与mysite子文件夹平行。在这里我创建一个成语检索的app，名为idiom：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py startapp idiom</span><br></pre></td></tr></table></figure>
+<p>看看这个应用程序下有哪些文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">idiom&#x2F;</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    migrations&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">    models.py</span><br><span class="line">    tests.py</span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>
+<h2 id="编写视图views"><strong>编写视图（views）</strong></h2>
+<p>下面为这个应用程序idiom添砖加瓦，分为三个步骤：</p>
+<ol type="1">
+<li>创建视图函数</li>
+<li>将视图函数映射到APP的urls</li>
+<li>将APP中的urls连入网站的根urls</li>
+</ol>
+<p>这样看逻辑可能更清晰：视图函数 --&gt; APP的urls --&gt; 网站的urls</p>
+<h2 id="创建视图函数"><strong>创建视图函数</strong></h2>
+<p>打开文件idiom/views.py ，加入以下Python代码，<strong>创建index视图函数</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    return HttpResponse(&quot;Hello, world. You&#39;re at the idiom index.&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="映射到app的urls"><strong>映射到APP的urls</strong></h2>
+<p>要调用该视图，我们要将其映射到URL，为此，我们需要添加一个URL配置（URLconf）。<strong>URLconf</strong>相当于网站的目录，也就是<strong>URL模式与视图函数之间的映射表</strong>。</p>
+<p>我们在idiom应用的目录下创建一个名为urls.py的文件，windows操作如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type nul&gt;urls.py</span><br></pre></td></tr></table></figure>
+<p>看看现在的应用目录：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">idiom&#x2F;</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    migrations&#x2F;</span><br><span class="line">        __init__.py</span><br><span class="line">    models.py</span><br><span class="line">    tests.py</span><br><span class="line">    urls.py</span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>
+<p>然后在idiom/urls.py这个空文件中加入以下代码，将index视图映射到APP的url模式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from django.urls import path</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    path(&#39;&#39;, views.index, name&#x3D;&#39;index&#39;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="连入网站的urls"><strong>连入网站的urls</strong></h2>
+<p>下一步是将根URLconf（mysite/urls.py）指向idiom.urls模块，使得网站域名连接到app的url。我们打开mysite/urls.py，修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from django.contrib import admin</span><br><span class="line">from django.urls import include, path</span><br><span class="line"></span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    path(&#39;idiom&#x2F;&#39;, include(&#39;idiom.urls&#39;)),</span><br><span class="line">    path(&#39;admin&#x2F;&#39;, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>该include()功能允许引用其他URLconf，这样我们就将刚刚创建的index视图连接到了网站的URLconf。</p>
+<p>也就是说，目前我们可以打开两个网址：</p>
+<p><a href="http://127.0.0.1:8000/idiom/">http://example.com/idiom/</a></p>
+<p><a href="http://127.0.0.1:8000/idiom/">http://example.com/admin/</a></p>
+<p>注意idiom和admin在引用URL模式时的区别：除了admin.site.urls（用于管理后台），我们引用其他URL模式时，都应使用include()。</p>
+<p>最后，验证下是否正常运行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p>打开http://127.0.0.1:8000/idiom/ ，可以看到 Hello, world. You're at the idiom index. 这行文字。</p>
+<h2 id="urlconf的工作原理"><strong>URLconf的工作原理</strong></h2>
+<p>Django允许我们根据需要设计每个应用程序的URL，通过创建<strong>URLconf</strong>（URL配置）。</p>
+<p>在 idiom和mysite文件夹下的urls.py中，我们都使用了<a href="https://docs.djangoproject.com/en/3.1/ref/urls/#django.urls.path">path()</a>函数，这个函数有两个必需的参数 route和view。</p>
+<p>path（<em>route</em>，<em>view</em>，<em>kwargs = None</em>，<em>name = None</em>）</p>
+<ul>
+<li>route是包含URL模式的字符串，比如目前我们有idiom/和admin/。在处理请求时，Django从第一个模式开始，沿列表的顺序，将请求的URL（域名后的部分）与每个模式进行比较，直到找到匹配的URL。这个字符串支持用尖括号匹配和捕获URL的一部分并将其作为关键字参数发送到视图，</li>
+<li>view就是指定的视图函数，也可以是一个<a href="https://docs.djangoproject.com/en/3.1/ref/urls/#django.urls.include">django.urls.include()</a>。kwargs参数允许我们将其他参数传递给视图函数。</li>
+<li>name不是必须的，但是命名URL的好处是便于在Django中的其他地方（尤其是在模板内部）明确地引用它。</li>
+</ul>
+<p>参考：<a href="https://docs.djangoproject.com/en/3.1/ref/urls/#django.urls.path">django.urls functions for use in URLconfs</a></p>
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>django</category>
+      </categories>
+      <tags>
+        <tag>django</tag>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《自然语言处理综论》第14章-依存分析（中）</title>
+    <url>/dependency-parsing-2/</url>
+    <content><![CDATA[<h1 id="基于转换的依存分析">14.4 基于转换的依存分析</h1>
+<p>我们的第一个依存分析方法是由一种基于堆栈的方法启发的，这种方法被称为shift-reduce parsing，最初是为分析程序语言而开发的(Aho and Ullman, 1972)。这个经典的方法简单而优雅，采用了一个上下文无关语法、一个堆栈和一个待解析的标记列表。输入的标记被连续地移动到堆栈上，堆栈的前两个元素与语法中的右侧规则进行匹配；当发现匹配时，匹配的元素在堆栈上被匹配的规则左侧的非终端替换（还原）。在将这种方法改编为依存性解析时，我们放弃了对语法的明确使用，并改变了reduce操作，使其不是在解析树上添加一个非终端，而是引入了一个词与其头部之间的依存关系。更具体地说，reduce操作被两种可能的操作所取代：在堆栈顶部的词和它下面的词之间断言一个词头依存关系，或者反之。图14.5说明了这种解析器的基本操作。 配置 在基于过渡的解析中，一个关键的元素是配置的概念，它由一个堆栈、一个词或标记的输入缓冲区和一组代表依存树的关系组成。在这个框架下，解析过程由一个通过可能配置空间的过渡序列组成。这个过程的目标是找到一个最终的配置，在这个配置中，所有的词都已经被计算在内，并且已经合成了一个合适的依存树。 为了实现这样的搜索，我们将定义一组过渡运算符，当它们应用于一个配置时，会产生新的配置。考虑到这个设置，我们可以将解析器的操作看作是在配置空间中搜索从起始状态到目标状态的过渡序列。在这个过程的开始，我们创建一个初始配置，其中堆栈包含ROOT节点，t</p>
 ]]></content>
       <categories>
         <category>自然语言处理</category>
-        <category>正则表达式</category>
+        <category>依存分析</category>
       </categories>
       <tags>
-        <tag>regex</tag>
+        <tag>nlp</tag>
+        <tag>dependency</tag>
       </tags>
   </entry>
   <entry>
-    <title>好用的API集锦</title>
-    <url>/wiki-api/</url>
-    <content><![CDATA[<h1 id="wikipedia-python库">Wikipedia Python库</h1>
-<p><strong>Wikipedia</strong>是一个Python库，可轻松访问和解析Wikipedia中的数据，搜索Wikipedia、获取文章摘要、从页面获取链接和图像等数据等等。Wikipedia封装了<a href="https://www.mediawiki.org/wiki/API">MediaWiki API，</a>因此您可以专注于使用Wikipedia数据，而不是获取数据。 <span id="more"></span></p>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <tags>
-        <tag>api</tag>
-      </tags>
   </entry>
 </search>
