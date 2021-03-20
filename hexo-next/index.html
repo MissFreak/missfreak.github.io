@@ -7,7 +7,7 @@
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <meta name="baidu-site-verification" content="code-352GeplFhq" />
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -261,23 +261,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。</p>
-<span id="more"></span>
-<h1>博客的初始化</h1>
-<p>关于怎么部署参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
+        <p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。 <span id="more"></span></p>
+<h1 id="博客的初始化">博客的初始化</h1>
+<p>关于怎么部署参考：https://zhuanlan.zhihu.com/p/26625249</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-final</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
 <p>完成以上步骤后，我们看到目前的插件如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+-- hexo-generator-archive@1.0.0</span><br><span class="line">+-- hexo-generator-category@1.0.0</span><br><span class="line">+-- hexo-generator-index@2.0.0</span><br><span class="line">+-- hexo-generator-tag@1.0.0</span><br><span class="line">+-- hexo-renderer-ejs@1.0.0</span><br><span class="line">+-- hexo-renderer-marked@4.0.0</span><br><span class="line">+-- hexo-renderer-stylus@2.0.1</span><br><span class="line">+-- hexo-server@2.0.0</span><br><span class="line">+-- hexo-theme-landscape@0.0.3</span><br><span class="line">&#96;-- hexo@5.4.0</span><br></pre></td></tr></table></figure>
 <p>我们需要安装其他插件，我使用pandoc渲染markdown，它也用于typora的渲染，可以很好地支持数学公式。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-- hexo-browsersync@0.3.0</span><br><span class="line">+-- hexo-deployer-git@3.0</span><br><span class="line">+-- hexo-generator-index-pin-top@0.2.2</span><br><span class="line">+-- hexo-generator-searchdb@1.3.3</span><br><span class="line">+-- hexo-related-popular-posts@5.0.1</span><br><span class="line">+-- hexo-renderer-pandoc@0.3.0</span><br><span class="line">+-- hexo-symbols-count-time@0.7.1</span><br><span class="line">+-- hexo-hide-posts@0.1.1</span><br></pre></td></tr></table></figure>
-<p>安装方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure>
-<p>安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl，这是我的个性化设置）复制粘贴过来即可。</p>
-<h1>使用Hexo还是Hugo</h1>
+<p>安装方式： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure> 安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl，这是我的个性化设置）复制粘贴过来即可。</p>
+<h1 id="使用hexo还是hugo">使用Hexo还是Hugo</h1>
 <p>3月19日，我又尝试了hugo，的确渲染速度很快、有很多漂亮的主题，并且很多主题都有详细的文档，而且hugo是按照文件夹结构生成侧边栏的目录，非常适合做文档和电子书！但缺点是很多主题不能折叠侧边栏，提供沉浸式阅读体验，所以我还是放弃了hugo，可能以后遇到喜欢的主题还是会迁移到hugo吧。</p>
-<h1>最终我的博客页面外观</h1>
+<h1 id="最终我的博客页面外观">最终我的博客页面外观</h1>
 <p>我花了很多时间去研究怎样让博客更美观和简洁，其实有很多是无用功，所以3月19日我正式敲定了目前的版本，并不再继续进行博客主题的个性化配置。以下是博客文章的截图：</p>
-<img src="https://i.loli.net/2021/03/19/MjEKeWoSuidzVxT.png"/>
+<p><img src="https://i.loli.net/2021/03/19/MjEKeWoSuidzVxT.png"/></p>
 <p>主色调为蓝绿色，辅以紫色，我把最终的配置文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章），并不再修改。</p>
 <p>但是我经常用typora撰写笔记，因此<code>_post</code>文件夹下经常会更新，所以我写完文章有时会打开server，确认渲染无误，然后保存好写的文章。每隔一天或一周，我就hexo d一下，这样不至于操作太频繁。我可能也会使用<a target="_blank" rel="noopener" href="https://novnan.github.io/Hexo/hexo-draft/">draft功能</a>。同时，我将_post文件夹同步在github上，经常push到这个repo。由此，我的博客配置和文章都得以云端保存了。</p>
 <p>好啦，终于不用浪费时间在网站美工啦！专心写文章吧！</p>
@@ -339,12 +336,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/information-retrieval-1/" rel="prev" title="《自然语言处理综论》第17章-信息抽取（上）">
-      <i class="fa fa-chevron-left"></i> 《自然语言处理综论》第17章-信息抽取（上）
+    <a href="/information-retrieval/" rel="prev" title="信息抽取技术综述">
+      <i class="fa fa-chevron-left"></i> 信息抽取技术综述
     </a></div>
       <div class="post-nav-item">
-    <a href="/flask-api-3/" rel="next" title="如何在curl和python中使用API">
-      如何在curl和python中使用API <i class="fa fa-chevron-right"></i>
+    <a href="/information-retrieval-1/" rel="next" title="《自然语言处理综论》第17章-信息抽取（上）">
+      《自然语言处理综论》第17章-信息抽取（上） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -404,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">博客的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">使用Hexo还是Hugo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">最终我的博客页面外观</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">博客的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E8%BF%98%E6%98%AFhugo"><span class="nav-number">2.</span> <span class="nav-text">使用Hexo还是Hugo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%A4%96%E8%A7%82"><span class="nav-number">3.</span> <span class="nav-text">最终我的博客页面外观</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
