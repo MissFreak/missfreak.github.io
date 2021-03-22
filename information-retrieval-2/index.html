@@ -18,24 +18,25 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of En">
+  <meta name="description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.2 关系抽取算法 关系抽取的算法主要有五类：手写的模式、监督机器学习、半监督（通过bootstrapping和通过远程监督）以及无监督。我们将在接下来的章节中分别介绍这些算法。 17.2.1 使用模式抽取关系 最早并且现在依">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《自然语言处理综论》第17章-信息抽取（中）">
 <meta property="og:url" content="http://nlpcourse.cn/information-retrieval-2/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of En">
+<meta property="og:description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.2 关系抽取算法 关系抽取的算法主要有五类：手写的模式、监督机器学习、半监督（通过bootstrapping和通过远程监督）以及无监督。我们将在接下来的章节中分别介绍这些算法。 17.2.1 使用模式抽取关系 最早并且现在依">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/03/18/senloyDcQAGipId.png">
+<meta property="og:image" content="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png">
+<meta property="og:image" content="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png">
 <meta property="article:published_time" content="2021-03-19T06:04:16.716Z">
-<meta property="article:modified_time" content="2021-03-19T06:29:09.439Z">
+<meta property="article:modified_time" content="2021-03-22T13:28:12.568Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="nlp">
 <meta property="article:tag" content="IR">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/03/18/senloyDcQAGipId.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png">
 
 <link rel="canonical" href="http://nlpcourse.cn/information-retrieval-2/">
 
@@ -84,7 +85,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -131,22 +132,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">28</span></a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -223,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-19 14:04:16 / 修改时间：14:29:09" itemprop="dateCreated datePublished" datetime="2021-03-19T14:04:16+08:00">2021-03-19</time>
+              <time title="创建时间：2021-03-19 14:04:16" itemprop="dateCreated datePublished" datetime="2021-03-19T14:04:16+08:00">2021-03-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-22 21:28:12" itemprop="dateModified" datetime="2021-03-22T21:28:12+08:00">2021-03-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -254,14 +256,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>599</span>
+              <span>8.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -274,20 +276,170 @@
 
       
         <center>
-<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+<i>英文原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
 </center>
 <hr />
+<h1 id="关系抽取算法">17.2 关系抽取算法</h1>
+<p>关系抽取的算法主要有五类：<strong>手写的模式</strong>、<strong>监督机器学习</strong>、<strong>半监督</strong>（通过<strong>bootstrapping</strong>和通过<strong>远程监督</strong>）以及<strong>无监督</strong>。我们将在接下来的章节中分别介绍这些算法。</p>
+<h2 id="使用模式抽取关系">17.2.1 使用模式抽取关系</h2>
+<p>最早并且现在依然常用的关系抽取算法是词法-句法模式（ <strong>lexico-syntactic pattern</strong>），由Hearst（1992a）第一个开发，因此通常被称为<u>Hearst patterns</u>。例如以下句子：</p>
 <blockquote>
-<p><em>I am the very model of a modern Major-General,</em> <em>I’ve information vegetable, animal, and mineral,</em> <em>I know the kings of England, and I quote the fights historical</em> <em>From Marathon to Waterloo, in order categorical...</em></p>
-<p>Gilbert and Sullivan, Pirates of Penzance</p>
+<p>Agar is a substance prepared from a mixture of red algae, such as Gelidium, for laboratory or industrial use.</p>
+<p>琼脂是一种由红藻（如Gelidium）混合制备的物质，用于实验室或工业用途。</p>
 </blockquote>
-<h1 id="关系提取">17.1 关系提取</h1>
-<p>假设我们已经检测到了样本文本中的命名实体（也许使用了第8章的技术），并想识别出检测到的实体之间的关系：</p>
-<blockquote>
-<p>以高油价为由，[ORG联合航空公司]表示，[时间周五]它已将飞往一些同样由低成本航空公司服务的城市的航班的票价每往返提高了[MONEY 6美元]。发言人[per蒂姆-瓦格纳]表示，[ORG美国航空]是[ORG AMR Corp.]的一个单位，立即配合这一举措。ORG美联航]，[ORG UAL Corp.]的一个单位，说增加生效[时间周四]，适用于它与折扣航空公司竞争的大多数航线，如[LOC芝加哥]到[LOC达拉斯]和[LOC丹佛]到[LOC旧金山]。<em>(机翻结果)</em></p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/></p>
+<p>赫斯特指出，大多数人类读者不会知道Gelidium是什么，但他们可以很容易推断出它是一种红藻（的<u>下义词</u><em>hyponym</em>）。她认为以下词法-句法模式：</p>
+<p><span class="math display">\[
+N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \text { or }) N P_{i}\right\}, i \geq 1
+\]</span></p>
+<p>意味着以下语义 <span class="math display">\[
+\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)
+\]</span> 让我们可以推断出 <span class="math display">\[
+hyponym(Gelidium,red algae)
+\]</span></p>
+<table>
+<caption>Figure 17.5 Hand-built lexico-syntactic patterns for finding hypernyms, using {} to mark optionality (Hearst 1992a, Hearst 1998).</caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>NP {, NP}* {,} (and|or) other NP<sub>H</sub></th>
+<th>temples, treasuries, and other important <strong>civic buildings</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NP<sub>H</sub> such as {NP,}* {(or|and)} NP</td>
+<td><strong>red algae</strong> such as Gelidium</td>
+</tr>
+<tr class="even">
+<td>such NPH as {NP,}* {(or|and)} NP</td>
+<td>such <strong>authors</strong> as Herrick, Goldsmith, and Shakespeare</td>
+</tr>
+<tr class="odd">
+<td>NP<sub>H</sub> {,} including {NP,}* {(or|and)} NP</td>
+<td><strong>common-law countries</strong>, including Canada and England</td>
+</tr>
+<tr class="even">
+<td>NP<sub>H</sub> {,} especially {NP}* {(or|and)} NP</td>
+<td><strong>European countries</strong>, especially France, England, and Spain</td>
+</tr>
+</tbody>
+</table>
 <span id="more"></span>
+<p>图17.5显示了Hearst(1992a, 1998)提出的五种模式，用于推断上下位关系；我们用NP<sub>H</sub>表示parent/hyponym。现代版本的基于模式的方法通过增加命名实体约束来扩展它。例如，如果我们的目标是回答关于“谁在哪个组织中担任什么职务”的问题，我们可以使用如下模式。</p>
+<p><img src="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png" width="500"/></p>
+<p>手工构建的模式具有高精度的优势，并且可以针对特定领域进行定制。但另一方面，它们通常是低召回率的，而且如果要创建所有可能的模式，工作量很大。</p>
+<h2 id="通过监督学习进行关系抽取">17.2.2 通过监督学习进行关系抽取</h2>
+<p>监督机器学习的关系抽取方法遵循的是一种大家现在应该很熟悉的方案。选择一组固定的关系和实体，用这些关系和实体手动标注训练语料，然后用标注后的文本来训练分类器标注一个未出现过的测试集。</p>
+<p>最直接的方法，如图17.6所示：(1) 找到命名的实体对(通常在同一个句子中)；(2) 为每对实体进行关系分类。分类器可以使用任何有监督的技术（逻辑回归、RNN、Transformer、随机森林等）。</p>
+<p>一个可选的中间过滤分类器可以用来加快处理速度，通过二元决策判定给定的一对实体是否相关（通过任何关系）。它的训练对象是直接从标注语料中的所有关系中抽取的正例，以及从未标注关系的句内实体对中生成的负例。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">FINDRELATIONS</span><span class="params">(words)</span> returns relations</span></span><br><span class="line">	relations←nil</span><br><span class="line">	entities←FINDENTITIES(words)</span><br><span class="line">	forall entity pairs &lt;e1, e2&gt; in entities <span class="keyword">do</span></span><br><span class="line">	<span class="keyword">if</span> RELATED?(e1, e2)</span><br><span class="line">		relations←relations+CLASSIFYRELATION(e1, e2)</span><br></pre></td></tr></table></figure>
+<p>基于特征的监督关系分类器。让我们考虑基于特征的分类器（如逻辑回归或随机森林）的样本特征，对这个句子中的<em>美国航空公司</em>（Mention 1，或M1）和<em>Tim Wagner</em>（Mention 2，M2）之间的关系进行分类。</p>
+<blockquote>
+<p>(17.5) <strong>American Airlines</strong>, a unit of AMR, immediately matched the move, spokesman <strong>Tim Wagner</strong> said</p>
+</blockquote>
+<p>这些包括词的特征（如词嵌入、one-hot、无论是否抽取词干<em>stemming</em>）：</p>
+<blockquote>
+<ul>
+<li><p>M1和M2的词头及其连接</p>
+<p><strong>Airlines Wagner Airlines-Wagner</strong></p></li>
+<li><p>M1和M2的词袋和二元语法</p>
+<p><strong>American, Airlines, Tim, Wagner, American Airlines, Tim Wagner</strong></p></li>
+<li><p>特定位置的词和二元语法</p>
+<p>M2: <strong>-1 spokesman</strong></p>
+<p>M2: <strong>+1 said</strong></p></li>
+<li><p>M1和M2之间的词袋或二元语法</p>
+<p><strong>a, AMR, of, immediately, matched, move, spokesman, the, unit</strong></p></li>
+</ul>
+</blockquote>
+<p>以及<strong>命名实体</strong>特征：</p>
+<blockquote>
+<ul>
+<li><p>命名实体类型及其连接 Named-entity types and their concatenation</p>
+<p>(M1: <strong>ORG</strong>, M2: PER, M1M2: <strong>ORG-PER</strong>)</p></li>
+<li><p>M1和M2的实体级别（从集合NAME、NOMINAL、PRONOUN中选择）。</p>
+<p>M1: NAME [it or he would be PRONOUN]</p>
+<p>M2: NAME [the company would be NOMINAL]</p></li>
+<li><p>参数之间的实体数量（在本例中，对于AMR）。</p></li>
+</ul>
+</blockquote>
+<p><strong>句法结构</strong>是一个有用的信号，通常表示为依存关系或穿越实体之间的树的成分<strong>句法路径</strong>。</p>
+<blockquote>
+<ul>
+<li><p>M1和M2之间的成分路径</p>
+<p><strong>NP ↑ NP ↑ S ↑ S ↓ NP</strong></p></li>
+<li><p>依存树路径</p>
+<p><strong>Airlines ←sub<sub>j</sub> matched ←comp said →sub<sub>j</sub> Wagner</strong></p></li>
+</ul>
+</blockquote>
+<p><strong>神经监督关系分类器</strong> 关系抽取的神经模型同样将这个任务视为监督分类。让我们考虑一个应用于TACRED关系抽取数据集和任务的典型系统 (Zhang et al., 2017) 。在TACRED中，提供一个句子和其中的两个spans：主语，即人或组织；宾语，即任何其他实体。任务是从42个TAC关系中分配一个关系（或者没有关系）。</p>
+<p>一个典型的Transformer-encoder算法，如图17.7所示，简单的说就是把一个像BERT这样的预训练编码器，在句子表示的基础上增加一个线性层（例如BERT [CLS] token），这个线性层被微调为1-of-N分类器，以分配43个标注中的一个。BERT编码器的输入是部分去词汇化的；主语和宾语实体在输入中被其NER标注所取代。这有助于保持系统不会对单个词项过度拟合 (Zhang et al., 2017) 。当使用BERT类型的Transformers进行关系抽取时，使用类似RoBERTa (Liu et al., 2019) 或SPANbert (Joshi et al., 2020) 这样的BERT版本会很有帮助，这些版本没有用[SEP]标记分隔的两个序列，而是从单个长序列的句子形成输入。</p>
+<p><img src="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png" width="700"/></p>
+<p>一般来说，如果测试集与训练集足够相似，并且有足够多的手工标注数据，监督关系抽取系统可以获得很高的准确率。但对一个庞大的训练集进行标注是非常昂贵的，而且监督模型也很脆弱：它们不能很好地泛化到不同的文本类型。由于这个原因，关系抽取的很多研究都集中在我们接下来要讲的半监督和无监督方法上。</p>
+<h2 id="通过-bootstrapping-进行半监督关系抽取">17.2.3 通过 Bootstrapping 进行半监督关系抽取</h2>
+<p>监督机器学习假设我们有大量的标注数据。不幸的是，这很昂贵。但假设我们只有一些高精度的<u>种子模式</u>，就像第17.2.1节中的那些，或者可能有一些<u>种子元组</u>。这已经足够boostrap一个分类器了！<u>Bootstrapping</u>继续在种子对中抽取实体，然后找到包含这两个实体的句子（通过网络或者我们使用的任何数据集）。从所有这些句子中，我们抽取并概括出实体周围的上下文，以学习新的模式。图17.8给出了一个基本算法。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">BOOTSTRAP</span><span class="params">(Relation R)</span> returns <span class="keyword">new</span> relation tuples</span></span><br><span class="line">	tuples←Gather a set of seed tuples that have relation R</span><br><span class="line">	iterate</span><br><span class="line">		sentences←find sentences that contain entities in tuples</span><br><span class="line">		patterns←generalize the context between <span class="keyword">and</span> around entities in sentences</span><br><span class="line">		newpairs←use patterns to grep <span class="keyword">for</span> more tuples</span><br><span class="line">		newpairs←newpairs with high confidence</span><br><span class="line">		tuples←tuples + newpairs</span><br><span class="line">	<span class="keyword">return</span> tuples</span><br></pre></td></tr></table></figure>
+<p>假设我们需要创建一个航空公司/枢纽对的列表，我们只知道Ryanair在Charleroi有一个枢纽。我们可以使用这个种子事实来发现新的模式，在我们的语料库中找到这个关系的其他提及。我们搜索Ryanair、Charleroi和hub在某种程度上接近的术语。也许我们会发现以下一组句子。</p>
+<blockquote>
+<p>(17.6) Budget airline Ryanair, which uses Charleroi as a hub, scrapped all weekend flights out of the airport.</p>
+<p>以沙勒罗瓦为枢纽的低价航空公司Ryanair取消了所有周末从机场起飞的航班。</p>
+<p>(17.7) All flights in and out of Ryanair’s hub at Charleroi airport were grounded on Friday...</p>
+<p>所有进出沙勒罗伊机场枢纽的航班都在周五停飞。</p>
+<p>(17.8) A spokesman at Charleroi, a main hub for Ryanair, estimated that 8000 passengers had already been affected.</p>
+<p>瑞安航空的核心枢纽查勒罗伊的一位发言人估计，已经有8000名乘客受到影响。</p>
+</blockquote>
+<p>从这些结果中，我们可以利用实体提及之间的上下文单词、提及一之前的词、提及二之后的词，以及两个提及的命名实体类型，还有其他可能的特征，来抽取如下的通用模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F; [ORG], which uses [LOC] as a hub &#x2F; </span><br><span class="line">&#x2F; [ORG]’s hub at [LOC] &#x2F; </span><br><span class="line">&#x2F; [LOC], a main hub for [ORG] &#x2F;</span><br></pre></td></tr></table></figure>
+<p>这些新的模式可以继而用来搜索更多的元组。Bootstrapping系统还为新的元组分配了<u>置信度值</u>（confidence values），以避免<u>语义漂移</u>（semantic drift）。在语义漂移中，一个错误的模式会导致错误元组的引入，而这些元组又会导致不正确的模式的建立，使得抽取关系的意义发生漂移。</p>
+<p>比如下面的例子。</p>
+<blockquote>
+<p>(17.9) Sydney has a ferry hub at Circular Quay.</p>
+<p>(17.9) 悉尼在环形码头有一个轮渡枢纽。</p>
+</blockquote>
+<p>如果被接受为正例，这个表达式可能导致元组<span class="math inline">\(&lt;Sydney,CircularQuay&gt;\)</span>的错误引入。基于这个元组的模式可能会将更多的错误传播到数据库中。模式的置信度值基于两个因素的平衡：模式相对于当前元组集的性能，以及模式就在文档集中产生的匹配数量而言的生产率。更正式的表达是，给定一个文档集 <span class="math inline">\(D\)</span>，一个当前的元组集 <span class="math inline">\(T\)</span>，以及一个建议的模式 <span class="math inline">\(p\)</span>，我们需要跟踪两个因素：</p>
+<ul>
+<li><p><span class="math inline">\(hits(p)\)</span>：在<span class="math inline">\(D\)</span>中查找时，<span class="math inline">\(p\)</span>所匹配的<span class="math inline">\(T\)</span>中的元组集</p></li>
+<li><p><span class="math inline">\(finds(p)\)</span>：<span class="math inline">\(p\)</span>在<span class="math inline">\(D\)</span>中找到的元组的总集</p></li>
+</ul>
+<p>下面的公式平衡了这些考虑因素 (Riloff and Jones, 1999)： <span class="math display">\[
+\operatorname{Conf}_{R \log F}(p)=\frac{|\operatorname{hits}(p)|}{|\operatorname{finds}(p)|} \log (|\operatorname{finds}(p)|)
+\]</span> 这个度量标准一般经过标准化处理，产生一个概率。我们可以通过结合D中与该元组相匹配的所有模式<span class="math inline">\(P&#39;\)</span>中支持该元组的证据来评估所提出的新元组的置信度 (Agichtein and Granoisy-or vano, 2000)。结合这种证据的一种方法是<u>noisy-or</u>技术。假设一个给定的元组是由P中的一个模式子集支持的，每个模式都有自己的置信度，正如上面的度量所示。在noisy-or模型中，我们做了两个基本假设。首先，如果一个提出的元组是假的，它的所有支持模式一定是错误的；其次，它们各自失败的来源都是独立的。如果我们不严格地将我们的置信度视为概率，那么任何单个模式p失败的概率为<span class="math inline">\(1-Conf(p)\)</span>；一个元组的所有支持模式出错的概率是它们单个失败概率的乘积，因此我们对一个新元组的置信度有以下公式。 <span class="math display">\[
+\operatorname{Conf}(t)=1-\prod_{p \in P^{\prime}}(1-\operatorname{Conf}(p))
+\]</span> 在bootstrapping过程中，为接受新的模式和元组设置保守的置信度阈值，有助于防止系统偏离目标关系。</p>
+<h2 id="关系抽取的远程监督">17.2.4 关系抽取的远程监督</h2>
+<p>虽然手工标注文本的关系标注成本很高，但是有一些方法可以找到间接的训练数据来源。<u>远程监督</u>方法 <em>distant supervision</em> (Mintz et al., 2009) 结合了bootstrapping和监督学习的优点。远程监督不是只用少量的种子，而是使用一个大型数据库来获取大量的种子实例，从所有这些例子中创建大量的噪声模式特征，然后将它们结合在一个监督分类器中。例如，假设我们要学习人与出生城市之间的出生地关系。在基于种子的方法中，我们一开始可能只有5个例子。但基于维基百科的数据库，如DBPedia或Freebase，有数万个许多关系的例子；包括超过10万个出生地的例子（<span class="math inline">\(&lt;Edwin Hubble，Marshfield&gt;\)</span>，<span class="math inline">\(&lt;Albert Einstein，Ulm&gt;\)</span>等）。下一步是在大量的文本上运行命名实体标注器-——Mintz et al. (2009) 使用了维基百科上的80万篇文章，并抽取出所有具有两个命名实体的元组相匹配的句子，比如：</p>
+<blockquote>
+<p>...Hubble was born in Marshfield...</p>
+<p>...Einstein, born (1879), Ulm...</p>
+<p>...Hubble’s birthplace in Marshfield...</p>
+</blockquote>
+<p>现在可以从这些数据中抽取训练实例，每个相同的元组&lt;关系，实体1，实体2&gt;都有一个训练实例。因此，每个元组都会有一个训练实例，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;born-in, Edwin Hubble, Marshfield&gt;</span><br><span class="line">&lt;born-in, Albert Einstein, Ulm&gt;</span><br><span class="line">&lt;born-year, Albert Einstein, 1879&gt;</span><br></pre></td></tr></table></figure>
+<p>等等。</p>
+<p>然后我们可以应用基于特征或神经网络的分类。对于基于特征的分类，标准的监督关系抽取特征，比如两个提及的命名实体标注，提及之间的词和依赖路径，以及相邻的词。每个元组都会有从许多训练实例中收集到的特征；像<span class="math inline">\(&lt;born-in,Albert Einstein,Ulm&gt;\)</span>这样的单个训练实例的特征向量将含有来自许多提到Einstein和Ulm的不同句子的词法和句法特征）。</p>
+<p>因为远程监督有非常大的训练集，所以它也能够使用非常丰富的特征，这些特征是这些单个特征的联合体。所以我们会抽取出成千上万的模式，这些模式会将实体类型与中间的单词或依赖路径结合在一起，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PER was born in LOC </span><br><span class="line">PER, born (XXXX), LOC </span><br><span class="line">PER’s birthplace in LOC</span><br></pre></td></tr></table></figure>
+<p>回到我们的运行示例，对于这个句子：</p>
+<blockquote>
+<p>(17.12) American Airlines, a unit of AMR, immediately matched the move, spokesman Tim Wagner said</p>
+</blockquote>
+<p>我们将学习丰富的连词特征，比如：</p>
+<blockquote>
+<p>M1 = ORG &amp; M2 = PER &amp; nextword=“said”&amp; path= <strong>NP ↑ NP ↑ S ↑ S ↓ NP</strong></p>
+</blockquote>
+<p>结果是一个监督分类器，它有大量丰富的特征集用于检测关系。由于并不是每个测试句子都会有一个训练关系，所以分类器还需要能够将一个例子标记为无关系。这个标注是通过随机选择在任何Freebase关系中都未出现的实体对，抽取它们的特征，并为每个这样的元组建立一个特征向量来训练的。最终的算法在如图17.9所示。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function DISTANT <span class="title">SUPERVISION</span><span class="params">(Database D, Text T)</span> returns relation classifier C</span></span><br><span class="line"><span class="function">	foreach relation R</span></span><br><span class="line"><span class="function">		foreach <span class="title">tuple</span> <span class="params">(e1,e2)</span> of entities with relation R in D</span></span><br><span class="line">			sentences←Sentences in T that contain e1 and e2</span><br><span class="line">			f←Frequent features in sentences</span><br><span class="line">			observations←observations + <span class="keyword">new</span> training tuple (e1, e2, f, R)</span><br><span class="line">		C←Train supervised classifier on observations</span><br><span class="line">	<span class="keyword">return</span> C</span><br></pre></td></tr></table></figure>
+<p>远程监督享有我们所探讨的每一种方法的优势。像监督分类一样，远程监督使用一个具有大量特征的分类器，并通过详细的手工创建的知识进行监督。和基于模式的分类器一样，它可以利用高精度的证据来证明实体之间的关系。事实上，远程监督系统学习的模式就像早期关系抽取器手工构建的模式一样。例如Snow et al. (2005)的is-a或hypernym抽取系统使用来自WordNet的hypernym/hyponym NP对作为远程监督，然后从大量的文本中学习新的模式。他们的系统精确地产生了Hearst（1992a）最初的5个模板模式，但也导致了包括这4个模式在内的7万个额外的模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NPH like NP Many hormones like leptin... </span><br><span class="line">NPH called NP ...using a markup language called XHTML </span><br><span class="line">NP is a NPH Ruby is a programming language... </span><br><span class="line">NP, a NPH IBM, a company with a long...</span><br></pre></td></tr></table></figure>
+<p>这种同时使用大量特征的能力意味着，与基于种子的系统中模式的迭代扩展不同，没有语义漂移的发生。与无监督分类一样，它不使用有标注的训练语料库，而是依赖于非常大量的无标注数据，因此对训练语料库中的体裁问题不敏感。远程监督的另一个优势是，它可以创建训练元组，以便与神经网络分类器一起使用，而神经网络分类器不需要特征。远程监督的主要问题是，它往往会产生低精度的结果，因此目前的研究重点是如何提高精度。此外，远程监督只能帮助抽取已经存在的足够大的数据库的关系。如果要在没有数据集的情况下抽取新的关系，或者新领域的关系，就必须使用纯无监督的方法。</p>
+<h2 id="关系抽取的评估">17.2.6 关系抽取的评估</h2>
+<p><strong>有监督</strong>的关系抽取系统是通过使用带有人类标注的gold-standard关系的测试集并计算精度、召回率和 F-measure 来评估的。标注精度和召回率要求系统正确分类关系，而未标注的方法只是衡量系统检测相关实体的能力。</p>
+<p><strong>半监督</strong>和<strong>无监督</strong>方法更难评估，因为它们是从网络或大型文本中抽取全新的关系。由于这些方法使用了非常多的文本，所以通常不可能只在一个小的标注测试集上运行它们，因此不可能预先标注出一个正确的关系实例的gold set。</p>
+<p>对于这些方法，可以通过从输出中随机抽取一个关系样本来（仅仅是）近似精确性，并让人检查这些关系的准确性。通常，这种方法侧重于从文本中抽取的<strong>元组</strong>，而不是关系的<strong>提及</strong>；系统不需要检测每一个关系的提及来正确评分。相反，评估是基于系统完成任务时数据库中包含的元组集。也就是说，我们想知道系统是否能发现 Ryanair 在 Charleroi 有一个枢纽；我们并不关心它发现了多少次。那么，估计的精度<span class="math inline">\(\hat{P}\)</span> 就是： <span class="math display">\[
+\hat{P}=\frac{\# \text { of correctly extracted relation tuples in the sample }}{\text { total } \# \text { of extracted relation tuples in the sample. }}
+\]</span> 另一种能给我们提供一点召回信息的方法是计算不同召回级别的精度。假设我们的系统能够对它所产生的关系进行排序（按照概率或置信度），我们可以分别计算前1000个新关系、前10000个新关系、前100000个新关系的精度等等。在每一种情况下，我们都会从该集合中随机抽取一个样本。这将向我们展示当我们抽取越来越多的元组时，精度曲线的表现。但是没有办法直接评估召回率。</p>
 <hr />
 <p><strong>本章剩余内容见：《自然语言处理综论》第17章-信息抽取（下）</strong></p>
 
@@ -369,7 +521,10 @@
     <a href="/git/" rel="prev" title="Git和Github常用操作大全">
       <i class="fa fa-chevron-left"></i> Git和Github常用操作大全
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/cognitive-linguistics/" rel="next" title="认知语言学大纲">
+      认知语言学大纲 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -428,7 +583,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">17.1 关系提取</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">17.2 关系抽取算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%BC%8F%E6%8A%BD%E5%8F%96%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">17.2.1 使用模式抽取关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E8%BF%9B%E8%A1%8C%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96"><span class="nav-number">1.2.</span> <span class="nav-text">17.2.2 通过监督学习进行关系抽取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-bootstrapping-%E8%BF%9B%E8%A1%8C%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96"><span class="nav-number">1.3.</span> <span class="nav-text">17.2.3 通过 Bootstrapping 进行半监督关系抽取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%9B%91%E7%9D%A3"><span class="nav-number">1.4.</span> <span class="nav-text">17.2.4 关系抽取的远程监督</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96%E7%9A%84%E8%AF%84%E4%BC%B0"><span class="nav-number">1.5.</span> <span class="nav-text">17.2.6 关系抽取的评估</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -444,20 +599,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -515,13 +670,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">73k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">1:07</span>
 </div>
 
         
@@ -559,12 +714,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/muse.js"></script>

@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next&#x2F;_config.yml以及custom_file_path（当然还有css&#x2F;images和source）。其中custom_file_path设置为styles.styl，用于修改文章内链接">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/03/19/MjEKeWoSuidzVxT.png">
 <meta property="article:published_time" content="2021-03-18T01:46:05.452Z">
-<meta property="article:modified_time" content="2021-03-19T15:22:57.481Z">
+<meta property="article:modified_time" content="2021-03-20T04:33:47.975Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="markdown">
@@ -84,7 +84,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -131,22 +131,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">28</span></a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -231,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-19 23:22:57" itemprop="dateModified" datetime="2021-03-19T23:22:57+08:00">2021-03-19</time>
+                <time title="修改时间：2021-03-20 12:33:47" itemprop="dateModified" datetime="2021-03-20T12:33:47+08:00">2021-03-20</time>
               </span>
 
           
@@ -247,7 +242,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,7 +262,8 @@
 
       
         <p>经过三次不明觉厉的error崩盘导致我重新初始化博客（不知道哪里出错所以只有推倒重来），2021年3月18日博客终于配置完毕。在此记录全过程。最后一次配置，我只修改了三个文件：_config.yml和next/_config.yml以及custom_file_path（当然还有css/images和source）。其中custom_file_path设置为styles.styl，用于<strong>修改文章内链接文本样式</strong>、<strong>文章内单行代码的样式设置</strong>等等，需要在custom_file_path中加入这个地址。 <span id="more"></span></p>
-<h1 id="博客的初始化">博客的初始化</h1>
+<h1 id="hexo博客">Hexo博客</h1>
+<h2 id="博客的初始化">博客的初始化</h2>
 <p>关于怎么部署参考：https://zhuanlan.zhihu.com/p/26625249</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-final</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
 <p>完成以上步骤后，我们看到目前的插件如下：</p>
@@ -275,14 +271,20 @@
 <p>我们需要安装其他插件，我使用pandoc渲染markdown，它也用于typora的渲染，可以很好地支持数学公式。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-- hexo-browsersync@0.3.0</span><br><span class="line">+-- hexo-deployer-git@3.0</span><br><span class="line">+-- hexo-generator-index-pin-top@0.2.2</span><br><span class="line">+-- hexo-generator-searchdb@1.3.3</span><br><span class="line">+-- hexo-related-popular-posts@5.0.1</span><br><span class="line">+-- hexo-renderer-pandoc@0.3.0</span><br><span class="line">+-- hexo-symbols-count-time@0.7.1</span><br><span class="line">+-- hexo-hide-posts@0.1.1</span><br></pre></td></tr></table></figure>
 <p>安装方式： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line">npm install 插件 --save</span><br></pre></td></tr></table></figure> 安装完毕后，我们把_config.yml和next/_config.yml以及css/images和source中的文件（注意有_data/styles.styl，这是我的个性化设置）复制粘贴过来即可。</p>
-<h1 id="使用hexo还是hugo">使用Hexo还是Hugo</h1>
+<h2 id="使用hexo还是hugo">使用Hexo还是Hugo</h2>
 <p>3月19日，我又尝试了hugo，的确渲染速度很快、有很多漂亮的主题，并且很多主题都有详细的文档，而且hugo是按照文件夹结构生成侧边栏的目录，非常适合做文档和电子书！但缺点是很多主题不能折叠侧边栏，提供沉浸式阅读体验，所以我还是放弃了hugo，可能以后遇到喜欢的主题还是会迁移到hugo吧。</p>
-<h1 id="最终我的博客页面外观">最终我的博客页面外观</h1>
+<h2 id="最终我的博客页面外观">最终我的博客页面外观</h2>
 <p>我花了很多时间去研究怎样让博客更美观和简洁，其实有很多是无用功，所以3月19日我正式敲定了目前的版本，并不再继续进行博客主题的个性化配置。以下是博客文章的截图：</p>
 <p><img src="https://i.loli.net/2021/03/19/MjEKeWoSuidzVxT.png"/></p>
 <p>主色调为蓝绿色，辅以紫色，我把最终的配置文件备份在github地址：_config.yml，next/_config.yml，next/source/css/images和source（source中有styles.styl和我写的文章），并不再修改。</p>
 <p>但是我经常用typora撰写笔记，因此<code>_post</code>文件夹下经常会更新，所以我写完文章有时会打开server，确认渲染无误，然后保存好写的文章。每隔一天或一周，我就hexo d一下，这样不至于操作太频繁。我可能也会使用<a target="_blank" rel="noopener" href="https://novnan.github.io/Hexo/hexo-draft/">draft功能</a>。同时，我将_post文件夹同步在github上，经常push到这个repo。由此，我的博客配置和文章都得以云端保存了。</p>
-<p>好啦，终于不用浪费时间在网站美工啦！专心写文章吧！</p>
+<h2 id="百度和谷歌搜索">百度和谷歌搜索</h2>
+<p>使用dns配置完成了百度认证，使用html完成了谷歌认证，但目前还不能搜到我的网站。不过这不重要，以后再publicize吧。</p>
+<h1 id="我的写作工具">我的写作工具</h1>
+<p>我用Typora写作，记录零碎的想法、翻译、笔记、代码等，但是<strong>上传网站后访问速度有点慢</strong>，所以一般我会用本地服务器查看笔记。手机的话，我会使用知乎或微信或csdn查看，所以<strong>重要的文章需要同步到各个网站</strong>。可能之后网站优化就好了~</p>
+<p>各大同步地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">知乎、微信、csdn、hexo、github</span><br></pre></td></tr></table></figure>
+<p>好啦，终于不用浪费时间在网站美工和找工具上啦！专心写文章吧！</p>
 
     </div>
 
@@ -406,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">博客的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E8%BF%98%E6%98%AFhugo"><span class="nav-number">2.</span> <span class="nav-text">使用Hexo还是Hugo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%A4%96%E8%A7%82"><span class="nav-number">3.</span> <span class="nav-text">最终我的博客页面外观</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">博客的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E8%BF%98%E6%98%AFhugo"><span class="nav-number">1.2.</span> <span class="nav-text">使用Hexo还是Hugo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%A4%96%E8%A7%82"><span class="nav-number">1.3.</span> <span class="nav-text">最终我的博客页面外观</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6%E5%92%8C%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2"><span class="nav-number">1.4.</span> <span class="nav-text">百度和谷歌搜索</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7"><span class="nav-number">2.</span> <span class="nav-text">我的写作工具</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,20 +424,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -493,13 +495,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">73k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">1:07</span>
 </div>
 
         
@@ -537,12 +539,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/muse.js"></script>

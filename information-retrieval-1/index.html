@@ -18,27 +18,26 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of En">
+  <meta name="description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《自然语言处理综论》第17章-信息抽取（上）">
 <meta property="og:url" content="http://nlpcourse.cn/information-retrieval-1/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of En">
+<meta property="og:description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）    I am the very model of a modern Major-General, I’ve information vegetable, animal, and mineral, I know the kings of">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/13607/AppData/Roaming/Typora/typora-user-images/image-20210321212530121.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/18/senloyDcQAGipId.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/18/B5QEbCoyKd6ZsFi.png">
-<meta property="og:image" content="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png">
-<meta property="og:image" content="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png">
 <meta property="article:published_time" content="2021-03-18T01:46:05.452Z">
-<meta property="article:modified_time" content="2021-03-19T07:09:10.933Z">
+<meta property="article:modified_time" content="2021-03-22T13:32:20.063Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="nlp">
 <meta property="article:tag" content="IR">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/03/18/senloyDcQAGipId.png">
+<meta name="twitter:image" content="c:/Users/13607/AppData/Roaming/Typora/typora-user-images/image-20210321212530121.png">
 
 <link rel="canonical" href="http://nlpcourse.cn/information-retrieval-1/">
 
@@ -87,7 +86,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -134,22 +133,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">28</span></a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -234,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-19 15:09:10" itemprop="dateModified" datetime="2021-03-19T15:09:10+08:00">2021-03-19</time>
+                <time title="修改时间：2021-03-22 21:32:20" itemprop="dateModified" datetime="2021-03-22T21:32:20+08:00">2021-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.9k</span>
+              <span>5.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -283,25 +277,35 @@
 
       
         <center>
-<i>原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+<i>英文原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
 </center>
 <hr />
 <blockquote>
 <p><em>I am the very model of a modern Major-General,</em> <em>I’ve information vegetable, animal, and mineral,</em> <em>I know the kings of England, and I quote the fights historical</em> <em>From Marathon to Waterloo, in order categorical...</em></p>
 <p>Gilbert and Sullivan, Pirates of Penzance</p>
 </blockquote>
-<h1 id="关系提取">17.1 关系提取</h1>
+<p>假设你是一家跟踪航空公司股票的投资公司分析师。你的任务是确定航空公司机票价格上涨的公告与他们股票第二天的表现之间的关系（如果有的话）。关于股票价格的历史数据很容易得到，但是航空公司的公告呢？你至少需要知道航空公司的名称、提议票价上涨的性质、公告的日期，可能还需要知道其他航空公司的反应。幸运的是，这些都可以在新闻文章中找到，比如这一条。</p>
+<span id="more"></span>
+<p>美国联合航空公司（United Airlines）周五表示，以高燃油价格为理由，已将飞往一些城市的往返机票价格提高了6美元，而这些航班也由成本较低的航空公司提供服务。发言人蒂姆-瓦格纳（Tim Wagner）表示，AMR Corp.旗下的美国航空（American Airlines）立即配合这一举措。美国联合航空公司（UAL Corp.）旗下的联合航空公司（United）表示，涨价于周四生效，适用于该公司与折扣航空公司竞争的大部分航线，如芝加哥至达拉斯、丹佛至旧金山等。</p>
+<p>本章介绍了从文本中提取有限种类的语义内容的技术。这种信息提取过程（IE）将嵌入文本中的非结构化信息提取信息转换为结构化数据，例如用于填充关系数据库以实现进一步处理。关系提取与填充关系数据库有着密切的联系。事实上，知识图谱，即结构化关系数据库的数据集，是搜索引擎向用户展示信息的一种常见方式。</p>
+<p>接下来，我们讨论与事件相关的三个任务。事件提取是找到这些实体参与的事件，比如在我们的样本文本中，<em>United</em>（”美联航“）和<em>American</em>（”美航“）的票价上涨以及报道事件<em>said</em>（”说“）和<em>cite</em>（”引用“）。需要指代消歧（第22章）来弄清文本中哪些事件提及是指同一个事件；在我们的运行示例中，<em>increase</em>的两次出现和短语<em>the move</em>都是指同一个事件。</p>
+<p>为了弄清文本中事件发生的时间，我们提取时间表达式，比如一周中的几天（周五和周四）；相对表达式，比如从现在起或明年起；以及时刻，比如下午3点半。这些表达式必须归一化到特定的日历日期或时间上，以便定位事件的时间。在我们的示例任务中，这将使我们能够将周五与美联航宣布的时间联系起来，将周四与前一天的票价上涨联系起来，并生成一条时间线，其中美联航的宣布紧随票价上涨，而美航的宣布紧随这两个事件。</p>
+<p>最后，许多文本描述了反复出现的模式化事件或情境。模板填充的任务就是在文档中找到这样的情况，并填充到模板槽中。这些槽位填充物可能由直接从文本中提取的文本片段组成，也可能是通过额外处理从文本元素中推断出来的概念，如时间、金额或本体实体。我们的航空公司文本就是这种模式化情境的一个例子，因为航空公司经常会提高票价，然后等着看竞争对手是否跟进。在这种情况下，我们可以将美联航确定为最初提高票价的牵头航空公司，6美元为金额，周四为涨价日期，而美航则为跟风的航空公司，从而得到如下的填充模板。</p>
+<figure>
+<img src="C:\Users\13607\AppData\Roaming\Typora\typora-user-images\image-20210321212530121.png" alt="image-20210321212530121" /><figcaption aria-hidden="true">image-20210321212530121</figcaption>
+</figure>
+<h1 id="关系抽取">17.1 关系抽取</h1>
 <p>假设我们已经检测到了样本文本中的命名实体（也许使用了第8章的技术），并想识别出检测到的实体之间的关系：</p>
 <blockquote>
 <p>以高油价为由，[ORG联合航空公司]表示，[时间周五]它已将飞往一些同样由低成本航空公司服务的城市的航班的票价每往返提高了[MONEY 6美元]。发言人[per蒂姆-瓦格纳]表示，[ORG美国航空]是[ORG AMR Corp.]的一个单位，立即配合这一举措。ORG美联航]，[ORG UAL Corp.]的一个单位，说增加生效[时间周四]，适用于它与折扣航空公司竞争的大多数航线，如[LOC芝加哥]到[LOC达拉斯]和[LOC丹佛]到[LOC旧金山]。<em>(机翻结果)</em></p>
 </blockquote>
 <p><img src="https://i.loli.net/2021/03/18/senloyDcQAGipId.png" width="700"/></p>
-<span id="more"></span>
 <p>例如，这段文本告诉我们，Tim Wagner是American Airlines的发言人，United是UAL Corp.的一个单位，American是AMR的一个单位。这些二元关系是更通用关系的实例，比如part-of或employes，它们在新闻风格的文本中出现得相当频繁。图17.1列出了ACE关系提取评估中使用的17种关系，图17.2显示了一些关系的样例。我们还可以提取更多的特定领域的关系，比如航空路线的概念。例如从这个文本中我们可以得出美联航有到芝加哥、达拉斯、丹佛和旧金山的航线。</p>
 <center>
 <img src="https://i.loli.net/2021/03/18/B5QEbCoyKd6ZsFi.png"  alt="" width="700" />
 </center>
 <table>
+<caption>Figure 17.2 Semantic relations with examples and the named entity types they involve.</caption>
 <thead>
 <tr class="header">
 <th>Relations</th>
@@ -327,7 +331,6 @@
 </tr>
 </tbody>
 </table>
-<p>Figure 17.2 Semantic relations with examples and the named entity types they involve.</p>
 <p>这些关系很好地对应了我们在第15章中引入的模型理论概念，为逻辑形式的含义提供了基础。也就是说，一个关系由一系列有序的元组组成，基于一个领域的元素。在大多数标准的信息提取应用中，领域元素对应于文本中出现的命名实体，对应于指代消歧产生的基础实体，或者对应于从领域本体中选择的实体。图 17.3 显示了一个基于模型的视图，可以从我们的运行示例中提取实体和关系的集合。</p>
 <table>
 <colgroup>
@@ -490,65 +493,6 @@
 </tbody>
 </table>
 <p>SemEval 2010任务8也推出了一个标准数据集，检测命名词（nominal）之间的关系 (Hendrickx et al., 2009)。该数据集有10,717个例子，每个例子都有一个命名词对（未分类），手工标注为9个定向关系之一，比如产品-生产者<em>product-producer</em> (一家工厂生产西装 <em>a factory manufactures suits</em>) ，或者成分-整体<em>component-whole</em> (我的公寓有一个大厨房 <em>my apartment has a large kitchen</em>)。</p>
-<h1 id="关系提取算法">17.2 关系提取算法</h1>
-<p>关系提取的算法主要有五类：<strong>手写模式</strong>、监督机器学习、<strong>半监督</strong>（通过<strong>bootstrapping</strong>和通过远端监督）和<strong>无监督</strong>。我们将在接下来的章节中分别介绍这些算法。</p>
-<h2 id="使用模式提取关系">17.2.1 使用模式提取关系</h2>
-<p>最早也是目前常用的关系提取算法是词法-句法模式（ <strong>lexico-syntactic pattern</strong>），最早是由Hearst（1992a）开发的，因此通常被称为<u>Hearst模式</u>。看看以下句子：</p>
-<blockquote>
-<p>Agar is a substance prepared from a mixture of red algae, such as Gelidium, for laboratory or industrial use.</p>
-<p>琼脂是一种由红藻（如Gelidium）混合制备的物质，用于实验室或工业用途。</p>
-</blockquote>
-<p>赫斯特指出，大多数人类读者不会知道Gelidium是什么，但他们可以很容易推断出它是一种红藻（下义词）。她认为以下词法-句法模式：</p>
-<p><span class="math display">\[
-N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \text { or }) N P_{i}\right\}, i \geq 1
-\]</span></p>
-<p>意味着以下语义 <span class="math display">\[
-\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)
-\]</span> 让我们可以推断 <span class="math display">\[
-\forall N P_{i}, i \geq 1, \text { hyponym }\left(N P_{i}, N P_{0}\right)
-\]</span></p>
-<p>图17.5显示了Hearst(1992a, 1998)提出的五种模式，用于推断连词关系；我们将NP<sub>H</sub>显示为parent/hyponym。现代版本的基于模式的方法通过增加命名实体约束来扩展它。例如，如果我们的目标是回答关于 "谁在哪个组织中担任什么职务 "的问题，我们可以使用如下模式。</p>
-<p><img src="https://i.loli.net/2021/03/18/iyZINETdVrXG3cn.png" width="500"/></p>
-<p>手工构建的模式具有高精度的优势，并且可以针对特定领域进行定制。但另一方面，它们通常是低召回率的，而且如果要创建所有可能的模式，工作量很大。</p>
-<h2 id="通过监督学习进行关系提取">17.2.2 通过监督学习进行关系提取</h2>
-<p>监督机器学习的关系提取方法遵循的是一种大家现在应该很熟悉的方案。选择一组固定的关系和实体，用关系和实体手工标注训练语料，然后用标注后的文本来训练分类器标注一个未出现过的测试集。</p>
-<p>最直接的方法，如图17.6所示：(1) 找到命名的实体对(通常在同一个句子中)；(2): 对每对实体进行关系分类。分类器可以使用任何监督技术（逻辑回归、RNN、Transformer、随机森林等）。一个可选的中间过滤分类器可以用来加快处理速度，通过二元决策判定给定的一对实体是否相关（通过任何关系）。它的训练对象是直接从标注语料中的所有关系中提取的正例，以及从未被标注为关系的句内实体对中产生的负例。</p>
-<p>基于特征的有监督的关系分类器。让我们考虑基于特征的分类器（如逻辑回归或随机森林）的样本特征，从这个句子中对美国航空公司（Mention 1，或M1）和Tim Wagner（Mention 2，M2）之间的关系进行分类。</p>
-<blockquote>
-<p>(17.5) American Airlines, a unit of AMR, immediately matched the move, spokesman Tim Wagner said</p>
-</blockquote>
-<p>这些包括词的特征（如词嵌入、one-hot、无论是否提取词干<em>stemming</em>）：</p>
-<ul>
-<li><p>M1和M2的词头及其连接词 <em>The headwords of M1 and M2 and their concatenation</em></p>
-<p><strong>Airlines Wagner Airlines-Wagner</strong></p></li>
-<li><p>M1和M2的词袋和二元语法 <em>Bag-of-words and bigrams in M1 and M2</em></p>
-<p><strong>American, Airlines, Tim, Wagner, American Airlines, Tim Wagner</strong></p></li>
-<li><p>特定位置的词和二元语法 <em>Words or bigrams in particular positions</em></p>
-<p>M2: <strong>-1 spokesman</strong></p>
-<p>M2: <strong>+1 said</strong></p></li>
-<li><p>M1和M2之间的词袋或二元语法 <em>Bag of words or bigrams between M1 and M2</em>:</p>
-<p><strong>a, AMR, of, immediately, matched, move, spokesman, the, unit</strong></p></li>
-</ul>
-<p>以及命名实体特征：</p>
-<ul>
-<li><p>命名实体类型及其连接词 Named-entity types and their concatenation</p>
-<p>(M1: <strong>ORG</strong>, M2: PER, M1M2: <strong>ORG-PER</strong>)</p></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/18/mpbfZs9QJoPnv7a.png" width="700"/></p>
-<ul>
-<li><p>M1和M2的实体级别（从集合NAME、NOMINAL、PRONOUN中选择）。 M1: NAME [it or he would be PRONOUN]</p>
-<p>M2: NAME [the company would be NOMINAL]</p></li>
-<li><p>参数之间的实体数量（在本例中，对于AMR）。</p></li>
-</ul>
-<p>句法结构是一个有用的信号，通常表示为依存关系或穿越实体之间的树的成分语法路径。</p>
-<ul>
-<li><p>M1和M2之间的成分路径 <strong>NP ↑ NP ↑ S ↑ S ↓ NP</strong></p></li>
-<li><p>依存树路径</p>
-<p><strong>Airlines ←sub<sub>j</sub> matched ←comp said →sub<sub>j</sub> Wagner</strong></p></li>
-</ul>
-<p><strong>神经监督关系分类器</strong> 关系提取的神经模型同样将任务视为监督分类。让我们考虑一个应用于TACRED关系提取数据集和任务的典型系统（Zhang等人，2017）。在TACRED中，提供一个句子和其中的两个spans：一个主语，即人或组织，一个宾语，即任何其他实体。任务是从42个TAC关系中分配一个关系（或者没有关系）。</p>
-<p>一个典型的Transformer-encoder算法，如图17.7所示，简单的说就是把一个像BERT这样的预训练编码器，在句子表示的基础上增加一个线性层（例如BERT[CLS]token），这个线性层被微调为1-of-N分类器，以分配43个标签中的一个。BERT编码器的输入是部分去词汇化的；主语和宾语实体在输入中被其NER标签所取代。这有助于保持系统对单个词项的过度拟合 (Zhang et al., 2017) 。当使用BERT类型的Transformers进行关系提取时，使用BERT的版本，如RoBERTa (Liu et al., 2019) 或SPANbert (Joshi et al., 2020)，有助于使用BERT的版本，这些版本没有用[SEP]标记分隔的两个序列，而是从单个长序列的句子形成输入。</p>
-<p>一般来说，如果测试集与训练集足够相似，如果有足够多的手工标注数据，监督关系提取系统可以获得很高的准确率。但对一个庞大的训练集进行标注是非常昂贵的，而且监督模型也很脆弱：它们不能很好地泛化到不同的文本类型。由于这个原因，关系提取的很多研究都集中在我们接下来要讲的半监督和无监督方法上。</p>
 <hr />
 <p><strong>本章剩余内容见：<a href="http://nlpcourse.cn/information-retrieval-2/">《自然语言处理综论》第17章-信息抽取（中）</a></strong></p>
 
@@ -692,7 +636,7 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">17.1 关系提取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">17.2 关系提取算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%BC%8F%E6%8F%90%E5%8F%96%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.</span> <span class="nav-text">17.2.1 使用模式提取关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E8%BF%9B%E8%A1%8C%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96"><span class="nav-number">2.2.</span> <span class="nav-text">17.2.2 通过监督学习进行关系提取</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">17.1 关系抽取</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -708,20 +652,20 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -779,13 +723,13 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">73k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">1:07</span>
 </div>
 
         
@@ -823,12 +767,8 @@ N P_{0} \text { such as } N P_{1}\left\{, N P_{2} \ldots,(\text { and } \mid \te
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/muse.js"></script>
