@@ -21,21 +21,20 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。 我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括NLTK，SpaCy和Stanford NER。如何用这些工具实现，参考命名实体识别：NLP从">
+  <meta name="description" content="字符——（翻译过程）——二进制数字 这个过程实际就是一个字符如何对应一个特定数字的标准，这个标准称之为字符编码。 字符编码发展史与编码类型 ASCII 码（美国标准信息交换码） ASCII 码一共规定了128个字符的编码，比如空格SPACE是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后">
 <meta property="og:type" content="article">
-<meta property="og:title" content="英文文献的命名实体识别（中）">
-<meta property="og:url" content="http://nlpcourse.cn/named-entity-recognition-2/index.html">
+<meta property="og:title" content="文本编码格式大全">
+<meta property="og:url" content="http://nlpcourse.cn/encoding/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。 我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括NLTK，SpaCy和Stanford NER。如何用这些工具实现，参考命名实体识别：NLP从">
+<meta property="og:description" content="字符——（翻译过程）——二进制数字 这个过程实际就是一个字符如何对应一个特定数字的标准，这个标准称之为字符编码。 字符编码发展史与编码类型 ASCII 码（美国标准信息交换码） ASCII 码一共规定了128个字符的编码，比如空格SPACE是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-18T01:46:05.452Z">
-<meta property="article:modified_time" content="2021-03-18T04:52:50.126Z">
+<meta property="article:published_time" content="2021-04-12T09:28:53.185Z">
+<meta property="article:modified_time" content="2021-04-15T13:19:24.358Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="nlp">
-<meta property="article:tag" content="NER">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nlpcourse.cn/named-entity-recognition-2/">
+<link rel="canonical" href="http://nlpcourse.cn/encoding/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>英文文献的命名实体识别（中） | 鸽婆打字机</title>
+  <title>文本编码格式大全 | 鸽婆打字机</title>
   
 
 
@@ -129,17 +128,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -194,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/named-entity-recognition-2/">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/encoding/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -207,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          英文文献的命名实体识别（中）
+          文本编码格式大全
         </h1>
 
         <div class="post-meta">
@@ -216,10 +215,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-18 09:46:05 / 修改时间：12:52:50" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+              <time title="创建时间：2021-04-12 17:28:53" itemprop="dateCreated datePublished" datetime="2021-04-12T17:28:53+08:00">2021-04-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-15 21:19:24" itemprop="dateModified" datetime="2021-04-15T21:19:24+08:00">2021-04-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -230,7 +235,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">命名实体识别</span></a>
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E9%A2%84%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">预处理</span></a>
                 </span>
             </span>
 
@@ -247,7 +252,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -266,29 +271,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
-<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a target="_blank" rel="noopener" href="https://www.nltk.org/">NLTK</a>，<a target="_blank" rel="noopener" href="https://spacy.io/">SpaCy</a>和<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a target="_blank" rel="noopener" href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a target="_blank" rel="noopener" href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a target="_blank" rel="noopener" href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
+        <p><strong>字符——（翻译过程）——二进制数字</strong></p>
+<p>这个过程实际就是一个字符如何对应一个特定数字的标准，这个标准称之为字符编码。</p>
+<h2 id="字符编码发展史与编码类型">字符编码发展史与编码类型</h2>
+<h3 id="ascii-码美国标准信息交换码">ASCII 码（美国标准信息交换码）</h3>
+<p>ASCII 码一共规定了128个字符的编码，比如空格SPACE是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的一位统一规定为0。</p>
 <span id="more"></span>
-<h2 id="学术文献">学术文献</h2>
-<p>https://livebook.manning.com/book/natural-language-processing-in-action/chapter-11/</p>
-<p>https://github.com/AmoDinho/datacamp-python-data-science-track/blob/master/Natural%20Language%20Processing%20Fundamentals%20in%20Python/Chapter%203%20-Named-entity%20recognition.py</p>
-<p>https://www.sciencedirect.com/topics/computer-science/named-entity-recognition</p>
-<p>https://www.nltk.org/book/ch07.html</p>
-<p>明天要翻译的文献：信息抽取</p>
-<p>https://web.stanford.edu/~jurafsky/slp3/17.pdf</p>
-<h1 id="如何训练ner分类器">如何训练NER分类器</h1>
-<p>通常使用BIO表示法，该表示法区分实体的开始（B）和内部（I），O标记非实体。NER往往需要特定领域的训练，尤其是更细粒度的NER。</p>
-<h2 id="评估">评估</h2>
-<p><em>F-Score</em>是用于评估NER的一种常用度量，它是Precision和Recall的组合。Precision, recall, and F-Score are defined as follows (<a target="_blank" rel="noopener" href="https://www.frontiersin.org/articles/10.3389/fcell.2020.00673/full#B21">Campos et al., 2012</a>):</p>
-<p><span class="math display">\[
-\begin{array}{c}
-\text { Precision }=\frac{\text { Relevant Names Recognized }}{\text { Total Names Recognized }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Positives }} \\
-\text { Recall }=\frac{\text { Relevant Names Recognized }}{\text { Relevant Names in Corpus }} \\
-=\frac{\text { True Positives }}{\text { True Positives+False Negatives }} \\
-\text { F-score }=2 \times \frac{\text { Precision } \times \text { Recall }}{\text { Precision+Recáll }}
-\end{array}
-\]</span></p>
+<h3 id="非-ascii-编码">非 ASCII 编码</h3>
+<p>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用 ASCII 码表示。于是，一些欧洲国家就决定，利用字节中闲置的最高位编入新的符号。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使用的编码体系，可以表示最多256个符号。</p>
+<h3 id="gb2312-码">GB2312 码</h3>
+<p>中文字符的每个字节最高位规定为 1，这便是 GB2312 编码。</p>
+<h3 id="unicode">Unicode</h3>
+<p>可以想象，如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失。<u>这就是 Unicode，就像它的名字都表示的，这是一种所有符号的编码。</u></p>
+<p>Unicode 当然是一个很大的集合，现在的规模可以容纳100多万个符号。每个符号的编码都不一样，比如，<code>U+0639</code>表示阿拉伯字母<code>Ain</code>，<code>U+0041</code>表示英语的大写字母<code>A</code>，<code>U+4E25</code>表示汉字<code>严</code>。具体的符号对应表，可以查询<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.unicode.org%2F">unicode.org</a>，或者专门的<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.chi2ko.com%2Ftool%2FCJK.htm">汉字对应表</a>。</p>
+<h3 id="unicode-的问题">Unicode 的问题</h3>
+<p>这对于存储来说是极大的浪费，文本文件的大小会因此大出二三倍，这是无法接受的。</p>
+<h3 id="utf-8">UTF-8</h3>
+<p><strong>重复一遍，这里的关系是，UTF-8 是 Unicode 的实现方式之一。</strong></p>
+<p>UTF-8 最大的一个特点，就是它是一种<strong>变长</strong>的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</p>
+<p>UTF-8 的编码规则很简单，只有二条：</p>
+<p>1）对于单字节的符号，字节的第一位设为<code>0</code>，后面7位为这个符号的 Unicode 码。因此对于英语字母，UTF-8 编码和 ASCII 码是相同的。</p>
+<p>2）对于<code>n</code>字节的符号（<code>n &gt; 1</code>），第一个字节的前<code>n</code>位都设为<code>1</code>，第<code>n + 1</code>位设为<code>0</code>，后面字节的前两位一律设为<code>10</code>。剩下的没有提及的二进制位，全部为这个符号的 Unicode 码。</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/51b40820848a">Python编码避坑指南——编码基础知识</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/ysocean/p/6850811.html">Java 字符编码与解码</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36972314/article/details/79745438">Python常见字符编码及其之间的转换</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017075323632896">字符串和编码python</a></p>
 
     </div>
 
@@ -299,7 +307,10 @@
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\named-entity-recognition\" rel="bookmark">英文文献的命名实体识别（上）</a></div>
+      <div class="popular-posts-title"><a href="\spacy-1\" rel="bookmark">spaCy超强指南之文本预处理和语言特征表</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval-3\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（下）</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\information-retrieval-2\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（中）</a></div>
@@ -309,9 +320,6 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\dependency-parsing\" rel="bookmark">英文依存句法分析</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\information-retrieval-1\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（上）</a></div>
     </li>
   </ul>
 
@@ -324,7 +332,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://nlpcourse.cn/named-entity-recognition-2/" title="英文文献的命名实体识别（中）">http://nlpcourse.cn/named-entity-recognition-2/</a>
+    <a href="http://nlpcourse.cn/encoding/" title="文本编码格式大全">http://nlpcourse.cn/encoding/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -356,7 +364,6 @@
           
           <div class="post-tags">
               <a href="/tags/nlp/" rel="tag"><i class="fa fa-tag"></i> nlp</a>
-              <a href="/tags/NER/" rel="tag"><i class="fa fa-tag"></i> NER</a>
           </div>
 
         
@@ -365,12 +372,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pdf/" rel="prev" title="PDF文件处理大全">
-      <i class="fa fa-chevron-left"></i> PDF文件处理大全
+    <a href="/programming-methodology/" rel="prev" title="编程方法论">
+      <i class="fa fa-chevron-left"></i> 编程方法论
     </a></div>
       <div class="post-nav-item">
-    <a href="/json/" rel="next" title="用python处理json数据">
-      用python处理json数据 <i class="fa fa-chevron-right"></i>
+    <a href="/finite-state-machines/" rel="next" title="有限状态机">
+      有限状态机 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -430,7 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE"><span class="nav-number">1.</span> <span class="nav-text">学术文献</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83ner%E5%88%86%E7%B1%BB%E5%99%A8"><span class="nav-number"></span> <span class="nav-text">如何训练NER分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text">评估</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E5%8F%91%E5%B1%95%E5%8F%B2%E4%B8%8E%E7%BC%96%E7%A0%81%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">字符编码发展史与编码类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ascii-%E7%A0%81%E7%BE%8E%E5%9B%BD%E6%A0%87%E5%87%86%E4%BF%A1%E6%81%AF%E4%BA%A4%E6%8D%A2%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">ASCII 码（美国标准信息交换码）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E-ascii-%E7%BC%96%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">非 ASCII 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gb2312-%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">GB2312 码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unicode"><span class="nav-number">1.4.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unicode-%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.5.</span> <span class="nav-text">Unicode 的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utf-8"><span class="nav-number">1.6.</span> <span class="nav-text">UTF-8</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -446,20 +453,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -517,13 +524,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">73k</span>
+    <span title="站点总字数">98k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:07</span>
+    <span title="站点阅读时长">1:30</span>
 </div>
 
         
@@ -616,64 +623,24 @@
 
 
 
-
-
-  
-
-  
-      
-
 <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
 </script>
 
-    
+
+  
+
+  
 
   
 

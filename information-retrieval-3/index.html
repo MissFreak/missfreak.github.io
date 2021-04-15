@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.3 抽取时间 时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推理。在本节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《自然语言处理综论》第17章-信息抽取（下）">
+<meta property="og:url" content="http://nlpcourse.cn/information-retrieval-3/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.3 抽取时间 时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推理。在本节">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-22T13:36:16.758Z">
+<meta property="article:modified_time" content="2021-04-13T12:18:23.652Z">
+<meta property="article:author" content="鸽鸽">
+<meta property="article:tag" content="nlp">
+<meta property="article:tag" content="IR">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/information-retrieval-3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>《自然语言处理综论》第17章-信息抽取（下） | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">21</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/information-retrieval-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《自然语言处理综论》第17章-信息抽取（下）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-22 21:36:16" itemprop="dateCreated datePublished" datetime="2021-03-22T21:36:16+08:00">2021-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-13 20:18:23" itemprop="dateModified" datetime="2021-04-13T20:18:23+08:00">2021-04-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" itemprop="url" rel="index"><span itemprop="name">信息抽取</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>
+<i>英文原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i>
+<br>
+<i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+</center>
+<hr>
+<h1>17.3 抽取时间</h1>
+<p>时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推理。在本节中，我们将同时考虑时间表达式的提取和归一化。</p>
+<span id="more"></span>
+<h2 id="17-3-1-时间表达式的提取">17.3.1 时间表达式的提取</h2>
+<p>时间表达式是指绝对时间点、相对时间、持续时间以及这些的集合。<strong>绝对</strong>（absolute）时间表达式是指那些可以直接相对映射到日历日期、一天中的时间或两者都有的表达式。<strong>相对</strong>（Relative）时间表达式通过其他一些参考点映射到特定的时间（如从上周二开始一周的持续时间）。最后，<strong>持续时间</strong>（durations）表示不同粒度的时间跨度（秒、分、天、周、世纪等）。图17.11列出了这些类别中的一些时间表达式样本。</p>
+<table>
+<thead>
+<tr>
+<th>Absolute</th>
+<th>Relative</th>
+<th>Durations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>April 24, 1916</td>
+<td>yesterday</td>
+<td>four hours</td>
+</tr>
+<tr>
+<td>The summer of ’77</td>
+<td>next semester</td>
+<td>three weeks</td>
+</tr>
+<tr>
+<td>10:15 AM</td>
+<td>two weeks from yesterday</td>
+<td>six days</td>
+</tr>
+<tr>
+<td>The 3rd quarter of 2006</td>
+<td>last quarter</td>
+<td>the last three quarters</td>
+</tr>
+</tbody>
+</table>
+<p>: Figure 17.11 Examples of absolute, relational and durational temporal expressions.</p>
+<p>时间表达式是以时间词汇触发器<u>lexical triggers</u>为中心的语法结构。词汇触发器可以是名词、专有名词、形容词和副词；完整的时间表达式由它们的短语投射组成：名词短语、形容词短语和副词短语。图17.12提供了示例。</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noun</td>
+<td>morning, noon, night, winter, dusk, dawn</td>
+</tr>
+<tr>
+<td>Proper Noun</td>
+<td>January, Monday, Ides, Easter, Rosh Hashana, Ramadan, Tet</td>
+</tr>
+<tr>
+<td>Adjective</td>
+<td>recent, past, annual, former</td>
+</tr>
+<tr>
+<td>Adverb</td>
+<td>hourly, daily, monthly, yearly</td>
+</tr>
+</tbody>
+</table>
+<p>: Figure 17.12 Examples of temporal lexical triggers.</p>
+<p>让我们看看TimeML标注方案，其中时间表达式用XML标签、TIMEX3和该标签的各种属性进行标注（Pustejovsky et al.2005，Ferro et al.2005）。下面的示例说明了此方案的基本用法（我们将对属性的讨论推迟到第17.3.2节）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A fare increase initiated &lt;TIMEX3&gt;last week&lt;&#x2F;TIMEX3&gt; by UAL Corp’s United Airlines was matched by competitors over &lt;TIMEX3&gt;the weekend&lt;&#x2F;TIMEX3&gt;, marking the second successful fare increase in &lt;TIMEX3&gt;two weeks&lt;&#x2F;TIMEX3&gt;.</span><br></pre></td></tr></table></figure>
+<p>时间表达式识别任务包括查找与这些时间表达式对应的所有文本跨度的开始和结束。基于规则的时间表达式识别方法使用级联自动机来识别复杂度不断提高的模式。首先标记词性，然后根据包含触发词（如二月）或类（如月份）的模式，从前一阶段的结果中识别出越来越大的语块。图17.13给出了一个基于规则的系统的片段。</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yesterday/today/tomorrow</span></span><br><span class="line">$string =˜ s/((($OT+the$CT+\s+)?$OT+day$CT+\s+$OT+(before|after)$CT+\s+)?$OT+$TERelDayExpr$CT+</span><br><span class="line">(\s+$OT+(morning|afternoon|evening|night)$CT+)?)/&lt;TIMEX$tever TYPE=\<span class="string">&quot;DATE\&quot;&gt;$1</span></span><br><span class="line"><span class="string">&lt;\/TIMEX$tever&gt;/gio;</span></span><br><span class="line"><span class="string">$string =˜ s/($OT+\w+$CT+\s+)&lt;TIMEX$tever TYPE=\&quot;DATE\&quot;[ˆ&gt;]*&gt;($OT+(Today|Tonight)$CT+)</span></span><br><span class="line"><span class="string">&lt;\/TIMEX$tever&gt;/$1$4/gso;</span></span><br><span class="line"><span class="string"># this (morning/afternoon/evening)</span></span><br><span class="line"><span class="string">$string =˜ s/(($OT+(early|late)$CT+\s+)?$OT+this$CT+\s*$OT+(morning|afternoon|evening)$CT+)/</span></span><br><span class="line"><span class="string">&lt;TIMEX$tever TYPE=\&quot;DATE\&quot;&gt;$1&lt;\/TIMEX$tever&gt;/gosi;</span></span><br><span class="line"><span class="string">$string =˜ s/(($OT+(early|late)$CT+\s+)?$OT+last$CT+\s*$OT+night$CT+)/&lt;TIMEX$tever</span></span><br><span class="line"><span class="string">TYPE=\&quot;DATE\&quot;&gt;$1&lt;\/TIMEX$tever&gt;/gsio;</span></span><br></pre></td></tr></table></figure>
+<p>: Figure 17.13 Perl fragment from the GUTime temporal tagging system in Tarsqi (Verhagen et al., 2005).</p>
+<p>序列标记方法遵循与命名实体标记相同的IOB方案，使用I、O和B标签标记TIMEX3分隔的时间表达式的内部、外部或开头的单词，如下所示：</p>
+<p>A O fare O increase O initiated O last B week I by O UAL O Corp’s… O</p>
+<p>从标记（token）及其上下文中提取特征，并训练统计序列标注器（可以使用任何序列模型）。图17.14列出了时间标注中使用的标准特征。时间表达式识别器使用通常的recall、precision和F-measure进行评估。所有这些非常词汇化的方法的一个主要困难是避免触发假阳性的表达式：</p>
+<blockquote>
+<p>(17.15) 1984 tells the story of Winston Smith…</p>
+<p>(17.16) …U2’s classic Sunday Bloody Sunday</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Token</td>
+<td>The target token to be labeled</td>
+</tr>
+<tr>
+<td>Tokens in window</td>
+<td>Bag of tokens in the window around a target</td>
+</tr>
+<tr>
+<td>Shape</td>
+<td>Character shape features</td>
+</tr>
+<tr>
+<td>POS</td>
+<td>Parts of speech of target and window words</td>
+</tr>
+<tr>
+<td>Chunk tags</td>
+<td>Base phrase chunk tag for target and words in a window</td>
+</tr>
+<tr>
+<td>Lexical triggers</td>
+<td>Presence in a list of temporal terms</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>: Figure 17.14 Typical features used to train IOB-style temporal expression taggers.</p>
+<h2 id="17-3-2-时间归一化">17.3.2 时间归一化</h2>
+<p>时间归一化是将时间表达式映射到特定时间点或持续时间的时间规范化的过程。时间点与日历日期、一天中的时间或两者都对应。持续时间主要由时间长度组成，但也可能包括关于起点和终点的信息。标准化时间用ISO 8601标准中的值属性表示，该标准用于编码时间值（ISO86012004）。图17.15再现了我们前面的示例，其中添加了值属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;TIMEX3 i d &#x3D; ’ ’ t 1 ’ ’ t y p e &#x3D;”DATE” v a l u e &#x3D;” 2007 −07 −02 ” f u n cti o n I n D o c u m e nt &#x3D;”CREATION TIME”</span><br><span class="line">&gt; J u l y 2 , 2007 &lt;&#x2F;TIMEX3&gt; A f a r e i n c r e a s e i n i t i a t e d &lt;TIMEX3 i d &#x3D;” t 2 ” t y p e &#x3D;”DATE”</span><br><span class="line">v a l u e &#x3D;” 2007 −W26” a nc h o rTime ID &#x3D;” t 1 ”&gt;l a s t week&lt;&#x2F;TIMEX3&gt; by U nit e d A i r l i n e s was</span><br><span class="line">matc he d by c o m p e t i t o r s o v e r &lt;TIMEX3 i d &#x3D;” t 3 ” t y p e &#x3D;”DURATION” v a l u e &#x3D;”P1WE”</span><br><span class="line">a nc h o rTime ID &#x3D;” t 1 ”&gt; t h e weekend &lt;&#x2F;TIMEX3&gt; , ma r ki n g t h e s e c o n d s u c c e s s f u l f a r e</span><br><span class="line">i n c r e a s e i n &lt;TIMEX3 i d &#x3D;” t 4 ” t y p e &#x3D;”DURATION” v a l u e &#x3D;”P2W” a nc h o rTime ID &#x3D;” t 1 ”&gt; two</span><br><span class="line">weeks &lt;&#x2F;TIMEX3&gt;.</span><br></pre></td></tr></table></figure>
+<p>: Figure 17.15 TimeML markup including normalized values for temporal expressions.</p>
+<p>此文本的日期行或文档日期为2007年7月2日。这种表达式的ISO表示为YYYY-MM-DD，在本例中为2007-07-02。我们示例文本中的时间表达式的编码都从这个日期开始，这里显示为VALUE属性的值。</p>
+<p>正文中的第一个时间表达式是指一年中的某个特定星期。在ISO标准中，周数从01到53，一年中的第一周是一年中第一个星期四。这些周用模板yyyywnn表示。我们的文件日期的ISO周是第27周；因此上周的值表示为 “2007-W26”。</p>
+<p>下一个时间表达式是周末。ISO周从周一开始；因此，周末发生在一周的末尾，并且完全包含在一周内。周末被视为持续时间，因此value属性的值必须是一个长度。持续时间根据模式Pnx表示，其中n是表示长度的整数，x表示单位，如P3Y表示三年，P2D表示两天。在本例中，一个周末被捕获为P1WE。在这种情况下，也有足够的信息锚定这个特定的周末作为一个特定的一周的一部分。这些信息编码在ANCHORTIMEID属性中。最后，短语two weeks还表示作为P2W捕获的持续时间。图17.16描述了表示其他时间和持续时间的一些基本方法。更多细节请参考ISO8601（2004）、Ferro等人（2005）和Pustejovsky等人（2005）。当前大多数时间标准化方法都是基于规则的（Chang和Manning 2012，Strotgen和Gertz 2013）。匹配时态表达式的模式与语义分析过程相关联。就像构图一样</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">猜你喜欢</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval-2\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（中）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval-1\" rel="bookmark">《自然语言处理综论》第17章-信息抽取（上）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval\" rel="bookmark">信息抽取技术综述</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\information-retrieval-4\" rel="bookmark">信息抽取</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\spacy-1\" rel="bookmark">spaCy超强指南之文本预处理和语言特征表</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/information-retrieval-3/" title="《自然语言处理综论》第17章-信息抽取（下）">http://nlpcourse.cn/information-retrieval-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/nlp/" rel="tag"><i class="fa fa-tag"></i> nlp</a>
+              <a href="/tags/IR/" rel="tag"><i class="fa fa-tag"></i> IR</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/cognitive-linguistics/" rel="prev" title="认知语言学大纲">
+      <i class="fa fa-chevron-left"></i> 认知语言学大纲
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/scraping/" rel="next" title="Python爬虫代码-全">
+      Python爬虫代码-全 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">17.3 抽取时间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#17-3-1-%E6%97%B6%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%8F%90%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">17.3.1 时间表达式的提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-3-2-%E6%97%B6%E9%97%B4%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">17.3.2 时间归一化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">98k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:30</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
