@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nlpcourse.cn/syntax-1/</loc>
+    
+    <lastmod>2021-04-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/psycho-linguistics/</loc>
+    
+    <lastmod>2021-04-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/semantics-terms/</loc>
+    
+    <lastmod>2021-04-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/pdf-explained/</loc>
+    
+    <lastmod>2021-04-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/ir-project-1/</loc>
+    
+    <lastmod>2021-04-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/pandas/</loc>
+    
+    <lastmod>2021-04-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/sentence-segmentation/</loc>
+    
+    <lastmod>2021-04-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/scraping/</loc>
+    
+    <lastmod>2021-04-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/json/</loc>
+    
+    <lastmod>2021-04-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://nlpcourse.cn/finite-state-machines/</loc>
     
     <lastmod>2021-04-15</lastmod>
@@ -100,13 +163,6 @@
   </url>
   
   <url>
-    <loc>http://nlpcourse.cn/scraping/</loc>
-    
-    <lastmod>2021-03-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nlpcourse.cn/information-retrieval-2/</loc>
     
     <lastmod>2021-03-23</lastmod>
@@ -129,13 +185,6 @@
   
   <url>
     <loc>http://nlpcourse.cn/cognitive-linguistics/</loc>
-    
-    <lastmod>2021-03-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nlpcourse.cn/psycho-linguistics/</loc>
     
     <lastmod>2021-03-22</lastmod>
     
@@ -185,13 +234,6 @@
   
   <url>
     <loc>http://nlpcourse.cn/dependency-parsing-2/</loc>
-    
-    <lastmod>2021-03-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nlpcourse.cn/json/</loc>
     
     <lastmod>2021-03-17</lastmod>
     
@@ -291,7 +333,7 @@
 
   <url>
     <loc>http://nlpcourse.cn/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -299,175 +341,203 @@
   
   <url>
     <loc>http://nlpcourse.cn/tags/atom/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/editor/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/linguistics/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/corpus/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/nlp/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/dependency/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/django/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/web/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/flask/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/api/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/git/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/hexo/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/markdown/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/IR/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/json/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/NER/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/pdf/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/pos/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/psycholinguistics/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/regex/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/web-scraping/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/txt/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/information-theory/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/methodology/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/tags/spaCy/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/tags/sentence-segmentation/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/tags/pandas/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/tags/semantics/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/tags/syntax/</loc>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -476,147 +546,189 @@
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E4%BB%A3%E7%A0%81/%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E8%AE%A4%E7%9F%A5%E8%AF%AD%E8%A8%80%E5%AD%A6/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E8%AF%AD%E6%96%99%E5%BA%93/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BE%9D%E5%AD%98%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E4%BB%A3%E7%A0%81/Git/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/django/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E4%BB%A3%E7%A0%81/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/flask/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E5%BF%83%E7%90%86%E8%AF%AD%E8%A8%80%E5%AD%A6/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E4%BB%A3%E7%A0%81/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E6%95%B0%E5%AD%A6/%E4%BF%A1%E6%81%AF%E8%AE%BA/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://nlpcourse.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    <lastmod>2021-04-15</lastmod>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/categories/%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/categories/%E9%A1%B9%E7%9B%AE/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%8F%A5%E5%AD%90%E5%88%87%E5%88%86/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/categories/%E4%BB%A3%E7%A0%81/pandas/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E8%AF%AD%E4%B9%89/</loc>
+    <lastmod>2021-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E5%8F%A5%E6%B3%95/</loc>
+    <lastmod>2021-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

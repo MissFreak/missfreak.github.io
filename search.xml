@@ -140,6 +140,879 @@ flask
 ]]></content>
   </entry>
   <entry>
+    <title>语义学术语大全</title>
+    <url>/semantics-terms/</url>
+    <content><![CDATA[<h1 id="chapter-1">Chapter 1</h1>
+<h3 id="the-meaningfulness-of-language-is-an-instance-of-the-meaningfulness-of-behaviour">The meaningfulness of language is an instance of the meaningfulness of behaviour</h3>
+<p>The meaningfulness of language can be seen as just one instance of the meaningfulness of human behaviour and communication in general, and is one of the systems of structured meaningfulness studied in semiotics.</p>
+<h3 id="meaning-is-a-very-vague-term">‘Meaning’ is a very vague term</h3>
+<p>‘Meaning’ is a very vague term: in English it refers to a variety of different relations between the world, language and speakers. Most languages do not have precise equivalents for the English term ‘meaning’, and some use a very different stock of lexical resources to talk about meaning-like phenomena.</p>
+<h3 id="the-semiotic-triangle">The semiotic triangle</h3>
+<p>For the purposes of linguistics, we can isolate three particularly important factors relevant to the study of meaning: the psychology of speakers, which creates and interprets language, the referent of the language expression as projected by the language user’s psychology, and the linguistic expression itself: these three points constitute the semiotic triangle.</p>
+<h3 id="lexemes">Lexemes</h3>
+<p>In providing a semantic description of a language, we do not need to treat all the variant morphological forms of a single word separately. Instead, we describe the meanings of a language’s lexemes, or the abstract units which unite all the morphological variants of a single word.</p>
+<h3 id="sense-reference-denotation-and-connotation">Sense, reference, denotation and connotation</h3>
+<p>There are several different aspects of the meaning of a lexeme: its referent on any one occasion of use, its denotation, which is the set of all its referents, and its sense, or the abstract, general meaning which can be translated from one language to another, paraphrased, or defined in a dictionary. Connotation names those aspects of meaning which do not affect a word’s sense, reference or denotation, but which have to do with secondary factors such as its emotional force, its level of formality, its character as a euphemism, etc.</p>
+<h3 id="compositionality">Compositionality</h3>
+<p>Meaning is often compositional, which means that the meanings of sentences are made up, or composed, of the meanings of their constituent lexemes.</p>
+<h3 id="sentence-and-utterance-meaning">Sentence and utterance meaning</h3>
+<p>Sentence meaning is the compositional meaning of the sentence as constructed out of the meanings of its individual component lexemes. Utterance meaning is the meaning which the words have on a particular occasion of use in the particular context in which they occur. Semantics studies sentence meaning, whereas pragmatics studies utterance meaning and other aspects of language use.</p>
+<h3 id="object-language-and-metalanguage">Object language and metalanguage</h3>
+<p>In analysing meaning we distinguish the object language, or the language whose meanings are being described, from the metalanguage, the language in which we describe these meanings.</p>
+<h3 id="explanations-of-meaning-in-terms-of-meanings-are-circular">Explanations of meaning in terms of meanings are circular</h3>
+<p>When we propose a definition in a metalanguage as an analysis of the meaning of an object language term, the more basic questions, ‘what is meaning?’ and ‘what is it to understand a meaning?’ are left unanswered. All definitions of meaning in language, therefore, are ultimately circular because they use one kind of meaning to explain another.</p>
+<h3 id="four-ways-of-breaking-the-circle">Four ways of breaking the circle</h3>
+<p>　There are four important answers to the question ‘what is meaning?’: the referential/denotational theory of meaning, the conceptual theory of meaning, the brain states theory and the use theory. We do not have to categorically choose between these theories. Instead, recognizing that the notion of meaning in linguistics is a way of talking about the factors which explain language use, we can see referents, concepts, brain states and uses as all relevant to this task.</p>
+<h1 id="chapter-2">Chapter 2</h1>
+<h3 id="meaning-definition-and-the-mental-lexicon">Meaning, definition and the mental lexicon</h3>
+<p>The concept of a word’s meaning is closely linked to the concept of definition. Many linguists identify the task of linguistic semantics with the task of describing the entries stored in the mental lexicon, a stock of words and meanings stored in long-term memory: the definition</p>
+<p>of a word is part of its entry in the mental lexicon, and the process of matching a meaning with a word-form is assumed to be analogous to that involved in consulting a dictionary. In order to serve the purposes of serious linguistic description, the definitions in the lexicon must be much more detailed than is usual in ordinary dictionaries.</p>
+<h3 id="what-units-need-to-receive-definition">What units need to receive definition?</h3>
+<p>Any attempt to analyse the meanings of language must specify what the meaning-bearing units are. Individual lexemes are the central examples of units with individually describable meanings. Morphemes also have meanings, as do phrasal verbs and compounds.</p>
+<p>　Ambiguities about the level of grammatical structure to which meaning is correctly attributed are not infrequent: sound symbolism and idioms exemplify cases where the correct level for the analysis of a meaning may not be clear.</p>
+<h3 id="real-and-nominal-definition">Real and nominal definition</h3>
+<h3 id="we-can-distinguish-two-types-of-definition">We can distinguish two types of definition:</h3>
+<p>definition of the essence of a thing (real definition), or definition of the meaning of a word (nominal definition).</p>
+<p>Most linguists take nominal definition to be the type that is of interest to linguistic semantic research.</p>
+<h3 id="cognitive-and-extensional-definition">Cognitive and extensional definition</h3>
+<p>A nominal definition may be of two types:</p>
+<p>cognitive (aimed to inculcate an understanding of the word’s correct use), or extensional (aimed at delimiting the denotation of the word).</p>
+<p>​</p>
+<h1 id="chapter-3">Chapter 3</h1>
+<h3 id="the-basic-question-meaning-and-context">The basic question: meaning and context</h3>
+<p>One of the main questions to be answered by any theory of meaning concerns the scope of an expression’s meaning: how much of the total effect of an expression is to be attributed to its meaning, and how much to the context in which it occurs?</p>
+<p>We can distinguish two essential types of context:</p>
+<p>the external or real-world context to which linguistic expressions refer, and the interpersonal context of linguistic action in which any utterance is placed.</p>
+<h3 id="external-context-sense-and-reference">External context: sense and reference</h3>
+<p>Frege distinguished an expression’s reference, which concerns the entities which the expression is about, from its sense, which is the way in which we grasp or understand its referent. In the Fregean view, two crucial features of sense are as follows:</p>
+<p>sense is what our minds ‘grasp’ when we understand the meaning of a word; sense determines reference; words’ referents are identified through their senses.</p>
+<p>Truth has a central place in Frege’s semantics. To know the sense of a sentence is, for Frege, to know how the sentence could be assigned a value as true or false: to know what the conditions are that would make it true or false. Knowledge of a sentence’s truth conditions allows us to determine, by looking at the sentence’s referents, whether the world actually is the way the sentence represents it, and thus whether or not the sentence is therefore true.</p>
+<h3 id="predication-and-deixis">Predication and deixis</h3>
+<p>As well as referring, linguistic expressions can often be used to predicate (attribute properties). Verbs, for example, are characteristically limited to this function. Deictic expressions (otherwise known as deictics or indexicals) are defined as those which make reference to some aspect of the context of utterance as an essential part of their meaning. Examples of deictics in English include the words I, you and here. The languages of the world show a large variety of deictic systems.</p>
+<h3 id="knowledge-of-meaning-and-knowledge-of-facts">Knowledge of meaning and knowledge of facts</h3>
+<p>Since reference is an important part of the meaning of many words, many linguists have wanted to distinguish knowledge we have of a word’s meaning (sense) from knowledge we might have about its referent. This is the distinction between lexical (‘dictionary’) knowledge and factual (‘encyclopaedic’) knowledge.</p>
+<p>　The distinction enables an economical description of word meanings, but is often criticized: the boundary between dictionary and encyclopaedia seems to be so highly permeable as to be nonexistent.</p>
+<h1 id="chapter-4">Chapter 4</h1>
+<h3 id="interpersonal-context">Interpersonal context</h3>
+<p>The relations between language and context are not limited to those in which a linguistic expression describes a preexisting world. The assertion of facts about the world is just one of the acts which we can use language to perform: we also ask questions, issue orders and make requests. In these types of speech act, truth is not a relevant parameter in the appreciation of meaning.</p>
+<h3 id="austin-and-searle-on-speech-acts">Austin and Searle on speech acts</h3>
+<p>Austin’s theory of speech acts distinguished three types of act we perform in any utterance:</p>
+<p>the locutionary act is the act of saying something, i.e. the act of expressing the basic, literal meanings of the words chosen</p>
+<p>the illocutionary act is the act performed in saying something, i.e. the act of using words to achieve such goals as warning, promising, guaranteeing, etc.</p>
+<p>the perlocutionary act is the act performed by saying something, i.e. the act of producing an effect in the hearer by means of the utterance.</p>
+<p>Considerations of truth and falsity are simply irrelevant for many types of illocutionary act. Austin distinguished constative utterances like snow is white, which have the illocutionary force of simply stating something, from performative utterances like I apologize, which themselves bring about the state of affairs they mention. Fregean truth conditions are relevant to constatives but not to performatives. Instead of truth conditions, performative utterances have felicity conditions. Typical felicity conditions for many types of constative and performative utterance were described by Searle.</p>
+<h3 id="grice-on-implicature">Grice on implicature</h3>
+<p>Grice recast the study of the relations between language and context by highlighting the central role of intention to meaning, and developed a theory of implicature and conversational maxims which described the relation between sentence and utterance (speaker) meaning. Grice’s main contribution is the four conversational maxims of Quality, Quantity, Manner and Relevance. Many implied meanings result from speakers’ deliberate infringement of these maxims.</p>
+<h3 id="relevance-theory">Relevance theory</h3>
+<p>Relevance Theory, finally, represents a third tradition which challenges some of the central presuppositions of the study of meaning. According to Relevance Theorists, the production and understanding of utterances is explained as the result of a universal comprehension procedure which consists in selecting the most relevant aspects of a word’s meaning in a given situation. There is no distinction between literal and non-literal meaning, and what meanings are activated by a word is highly dependent on the particular context in which it is uttered.</p>
+<h1 id="chapter-5">Chapter 5</h1>
+<p>As well as knowing a word’s definitional meaning, a competent speaker knows how it relates to other words of the language. Five important types of lexical relation have been identified.</p>
+<h3 id="antonymy">Antonymy</h3>
+<p>Antonymy (oppositeness) may be characterized as a relationship of incompatibility between two terms with respect to some given dimension of contrast. The principal distinction to be made in discussion of antonymy is between gradable (e.g. hot–cold) and non-gradable (e.g. married–unmarried) antonyms, i.e. antonyms which do and do not admit a midpoint.</p>
+<h3 id="meronymy">Meronymy</h3>
+<p>Meronymy is the relation of part to whole: hand is a meronym of arm, seed is a meronym of fruit, blade is a meronym of knife. Not all languages seem to have an unambiguous means of lexicalizing the concept PART OF, but meronymy is often at the origin of various polysemy patterns in languages.</p>
+<h3 id="hyponymy-and-taxonomy">Hyponymy and taxonomy</h3>
+<p>Hyponymy and taxonomy (kind of-ness) define different types of class-inclusion hierarchies; hyponymy is an important structural principle in many languages with classifiers, while taxonomy has been argued to be basic to the classification and naming of biological species.</p>
+<h3 id="synonymy">Synonymy</h3>
+<p>Synonymy is frequently claimed to exist between different expressions of the same language, but genuine lexical synonyms prove extremely hard to find: once their combinatorial environments have been fully explored, proposed lexical synonyms often prove not to be such.</p>
+<h3 id="componential-analysis">Componential analysis</h3>
+<p>The importance of appreciating a lexeme’s semantic relations in order to understand its meaning is one of the motivations for a componential approach to semantic analysis. Componential analysis analyses meaning in terms of binary features (i.e. features with only two possible values, + or –), and represents a translation into semantics of the principles of structuralist phonological analysis. As a type of definitional analysis, componential analysis inherits the failings of traditional</p>
+<p>definitions, and words for which it proves hard to couch definitions are also hard to analyse componentially.</p>
+<h3 id="polysemy-and-monosemy">Polysemy and monosemy</h3>
+<p>Theoretical and ordinary description of meaning would both be impossible without the recognition of separate senses within the same word. Words with several related senses are described as polysemous. Polysemy contrasts simultaneously with monosemy, the case where a word has a single meaning, and homonymy, the case where two unrelated words happen to share the same phonological form. In spite of the intuitive obviousness of these distinctions, there are many instances where it is not clear whether a word should be analysed as polysemous or monosemous, and no absolute criteria have ever been proposed which will successfully discriminate them.</p>
+<h1 id="chapter-6">Chapter 6</h1>
+<h3 id="the-nature-and-importance-of-logic">The nature and importance of logic</h3>
+<p>Logic investigates the properties of valid arguments and chains of reasoning, and specifies the conditions which arguments must meet in order to be valid. It is important to linguists for three principal reasons:</p>
+<ul>
+<li><p>it constitutes one of the oldest and most developed traditions of the study of meaning</p></li>
+<li><p>it is at the heart of formal and computational theories of semantics</p></li>
+<li><p>certain logical concepts, like ¬ or ), provide an interesting point of contrast with their natural language equivalents.</p></li>
+</ul>
+<h3 id="logical-form-validity-and-soundness">Logical form, validity and soundness</h3>
+<p>Logic analyses the underlying logical structure of arguments, known as their logical form. This is independent of the way in which the argument happens to be phrased in any given language. We distinguished between valid and sound arguments:</p>
+<ul>
+<li><p>Valid arguments are ones in which, if the premises are true, the conclusion must also be true.</p></li>
+<li><p>Sound arguments are valid arguments which have true premises.</p></li>
+</ul>
+<h3 id="propositional-logic">Propositional logic</h3>
+<p>　Propositional logic is the branch of logic that studies relations between propositions. A proposition is something which serves as the premise or conclusion of an argument. In propositional logic, special importance is given to the four propositional connectives or operators not, and, or and if . . . then. These connectives are truth-functional. This means that whether the propositions to which they are added are true or not depends solely on the truth of the original propositions. The values or meanings of the operators can be specified in the form of truth tables, which display the way in which logical connectives affect the truth of the propositions in which they appear.</p>
+<h3 id="logic-as-representation-and-as-perfection-of-meaning">Logic as representation and as perfection of meaning</h3>
+<p>The truth-functional definitions of the propositional connectives are quite often counterintuitive and unnatural. None of the operators corresponds perfectly with any English equivalent. The clash between the meanings of the logical connectives and their ordinary language equivalents reveals a contrast between two different interpretations of the nature of logic: logic as a representation and as a perfection of meaning.</p>
+<h3 id="predicate-logic">Predicate logic</h3>
+<p>‘Some’ and ‘all’ are the basic notions of predicate logic. Predicate logic studies the logical form of propositions involving three kinds of expression:</p>
+<ul>
+<li><p>singular terms or individual constants, which refer to individuals (whether things or people). Singular terms are symbolized by lower case letters.</p></li>
+<li><p>predicates, which represent properties or relations, such as ‘primate’, ‘hairy’ or ‘adore’. Predicates are symbolized by upper case letters.</p></li>
+<li><p>quantifiers, like ‘some’ ( ) and ‘all’ ( ).</p></li>
+</ul>
+<p>　Predicates have a certain number of arguments. An argument is the individual or individuals to which the property or relation expressed by the predicate is attributed.</p>
+<p>　　is called the existential quantifier. ( x) is read as ‘there is at least one x, such that’. is called the universal quantifier. ( x) is read ‘for every x, it is the case that’. Quantification may be single or multiple. A singly quantified proposition contains only a single quantifier. A multiply quantified proposition contains several. Propositions with both the universal and the existential quantifiers allow for the disambiguation of sentences like everyone loves someone.</p>
+<h3 id="reference-truth-and-models">Reference, truth and models</h3>
+<p>For logical approaches to semantics, reference and truth are the principal semantic facts: the most important thing about the meaning of a word is what it refers to, and the most important thing about a sentence is whether or not it is true. The model of a set of logical formulae is a set of statements showing what each expression of the formula refers to in some possible world (6.5). The referent of a logical expression is called its extension:</p>
+<ul>
+<li><p>The extension of an individual constant (singular term) is simply the individual entity which the constant picks out.</p></li>
+<li><p>The extension of a one-place predicate is the entire set of individuals to which the predicate applies. The predicate ‘tall’, for instance, applies to all tall entities.</p></li>
+<li><p>The extension of a two-place predicate like ‘respect’ will be the set of all pairs of individuals such that the first respects the second.</p></li>
+</ul>
+<p>In general, we can say that the extension of an n-place predicate is an ordered n-tuple of entities.</p>
+<h3 id="relations-between-propositions">Relations between propositions</h3>
+<p>Entailment is the relation between propositions where the truth of the first guarantees the truth of the second. Presupposition is the relation between two propositions p and q, such that both p and ¬p entail q. A contradictory is a pair of propositions which always have opposite truth values. Pairs of propositions which cannot both be true but can both be false are called contraries. Pairs of propositions which cannot be simultaneously false, but can be simultaneously true are called subcontraries.</p>
+<h3 id="meaning-postulates">Meaning postulates</h3>
+<p>The theory of meaning postulates uses logical notions to describe the relations which a word has with other members of the same vocabulary, and constitutes a possible alternative to the decompositional modes of meaning analysis.</p>
+<h3 id="russell-on-definite-descriptions">Russell on definite descriptions</h3>
+<p>Russell’s theory of definite descriptions offers an analysis in logical terms of the meaning of propositions involving the English determiner the, according to which such propositions contain disguised quantifications.</p>
+<h3 id="is-logic-relevant-to-the-semantics-of-natural-language">Is logic relevant to the semantics of natural language?</h3>
+<p>In the course of the chapter we saw a number of reasons to doubt that logical tools provide an appropriate model of the meanings involved in natural language. These include: - the existence of incompatibilities between logical operators and their natural language equivalents</p>
+<ul>
+<li>the orientation of logic to reference and truth, which are only some of the considerations relevant to natural language.</li>
+</ul>
+<p>However, many linguists in favour of logical approaches to semantics would claim that:</p>
+<ul>
+<li><p>in its attention to declarative sentences a logical approach promises a formalization of an important subset of natural language sentences, and that</p></li>
+<li><p>a logical approach permits a degree of rigour and formalization which entirely outstrips that of the more descriptive approaches to meaning.</p></li>
+</ul>
+<h1 id="chapter-7">Chapter 7</h1>
+<h3 id="two-views-of-categorization">Two views of categorization</h3>
+<p>Categorization is a fundamental psychological process: the human mind can class different things in the world in the same category, and denote them with a single term. Since words can be seen as the names of categories, categorization has been a major focus of investigations of word meaning. Linguists and psychologists typically contrast two views of categorization:</p>
+<ul>
+<li><p>the classical view, on which membership of a given category is an either-or property, with no in-between cases. For example, on the classical view, something either is or is not a flower, or a lie, or red.</p></li>
+<li><p>the prototype view, on which a category is structured in terms of a central tendency. On this view, categories like FLOWER, LIE or RED each have more and less central (prototypical) members.</p></li>
+</ul>
+<h3 id="problems-with-classical-categorization">Problems with classical categorization</h3>
+<p>The classical view of categorization is rejected by many semanticists since it seems unable to account for basic semantic phenomena, such as the following:</p>
+<ul>
+<li><p>There are categories in which some members are better exemplars of the category than others.</p></li>
+<li><p>There are categories in which the boundaries of membership are not clearcut: it is not always possible to say whether or not something is a member of the category.</p></li>
+</ul>
+<h3 id="problems-with-prototype-categorization">Problems with prototype categorization</h3>
+<p>The prototype view is certainly able to account for these facts, but is open to several questions and problems:</p>
+<ul>
+<li><p>how do we identify the relevant attributes in a category?</p></li>
+<li><p>how can we account for the boundaries of prototype categories?</p></li>
+<li><p>how much of the vocabulary is structured according to prototype categories? - prototype semantics may simply absolve the semanticist from the serious effort of lexical description</p></li>
+<li><p>the evidence for prototypes may be metalinguistic in nature</p></li>
+</ul>
+<h3 id="cognitivist-approaches-to-semantics">Cognitivist approaches to semantics</h3>
+<p>Cognitivist approaches to semantics are directly inspired by prototype theory. These approaches have four important commitments:</p>
+<ul>
+<li><p>an identification between meaning and conceptual structure</p></li>
+<li><p>a rejection of the syntax–semantics distinction</p></li>
+<li><p>a rejection of the semantics–pragmatics distinction</p></li>
+<li><p>a rejection of a modular approach to language</p></li>
+</ul>
+<h3 id="icms-and-image-schemas">ICMs and image schemas</h3>
+<p>A central notion in cognitive semantics is that linguistic meaning depends on encyclopaedic knowledge structures stored in long-term memory. Lakoff (1987) calls these idealized cognitive models (ICMs), and sees prototype effects as explained by them. ICMs can be thought of as theories of particular subjects – the implicit knowledge we have about the objects, relations and processes named in language. The knowledge structures typically involve image schemas, such as CONTAINMENT, SOURCE-PATH-GOAL, FORCE, BALANCE and so on. These are organizing structures of our experience and understanding at the level of bodily perception and movement. They are usually represented diagrammatically. Image schemas are particularly useful as representations of the meanings of prepositions.</p>
+<h3 id="metaphor">Metaphor</h3>
+<p>Metaphor is stressed in much cognitive semantics as an inherent aspect of language structure. Cognitive semantics shows that metaphor is not the exception in language: metaphorical ways of talking are just as widespread as ‘literal’ ones. The normal way of referring to many domains of meaning, such as that of obligation in English, is metaphorical. Lakoff and Johnson’s conceptual theory of metaphor proposes that metaphor is a cognitive process which helps us to conceptualize our experience by setting up correspondences between easily understood things like burdens and hard to understand things like obligations. A metaphorical mapping allows knowledge about the metaphor’s source or vehicle domain (burdens) to be applied to the target (obligations) in a way that fundamentally determines or influences the conceptualization of the target.</p>
+<h3 id="metonymy">Metonymy</h3>
+<p>Another important cognitive process is metonymy: the concepts related by a metonymy can be understood as contiguous to (neighbouring) each other, either conceptually or in the real world.</p>
+<h3 id="semantic-extension-and-radial-categories">Semantic extension and radial categories</h3>
+<p>Metaphor and metonymy constitute the principal mechanisms of semantic extension, as seen in expressions like head of a queue, head of cattle and so on. This type of structure, where there is a central case and conventionalized variations on it which cannot be predicted by general rules, is called a radial structure. For head, the central case is represented by uses consistent with the ICM described above, and the variations are the metaphoric and metonymic extensions.</p>
+<h3 id="problems-with-cognitive-semantics">Problems with cognitive semantics</h3>
+<p>Cognitive approaches to semantics have proven very popular, but can be criticized for three main reasons:</p>
+<ul>
+<li><p>the ambiguity of diagrammatic representations</p></li>
+<li><p>the problem of determining a lexical item’s core meaning, and</p></li>
+<li><p>the indeterminate and speculative nature of the analyses.</p></li>
+</ul>
+<h1 id="chapter-8">Chapter 8</h1>
+<h3 id="jackendoff-conceptual-semantics">Jackendoff: Conceptual Semantics</h3>
+<p>Jackendoff’s Conceptual Semantics shares with cognitive semantics a commitment to analysing meaning as inherently linked to conceptualization. Its most important difference from cognitive semantics is that it uses a formalism.</p>
+<h3 id="decomposition-and-conceptual-primitives">Decomposition and conceptual primitives</h3>
+<p>Jackendoff claims that a decompositional method is necessary to explore conceptual structure, in which the concepts underlying word meaning are broken down into their smallest elements: conceptual primitives envisaged as the semantic equivalents of phonological features. Conceptual Semantics posits ‘a finite set of mental primitives and a finite set of principles of mental combination’ governing their interaction. The conceptual structure of a lexical item is an element with zero or more open argument slots, which are filled by the syntactic complements of the lexical item. Jackendoff’s system permits interesting connections to be made between apparently unrelated meanings, but can be criticized for the apparently somewhat arbitrary nature of the conceptual constituents it recognizes.</p>
+<h3 id="modelling-meaning-computationally">Modelling meaning computationally</h3>
+<p>Computers come closer than any other artificial system to matching the complexity and interconnectedness of the human brain, and it has often been assumed that the attempt to simulate human linguistic ability computationally will teach us important lessons about the way language is processed in real-life minds/brains. This is particularly true of studies of words and their meanings, though it is important not to push the mind–computer analogy too far.</p>
+<h3 id="wordnet-and-the-lexicon">WordNet and the lexicon</h3>
+<p>The most comprehensive attempt to model lexical knowledge on a computer is WordNet, an online lexical database which sets out to represent and organize lexical semantic information in a psychologically realistic form that facilitates maximally efficient digital manipulation. The main organizational unit in WordNet is the synset. Synsets are groupings of near-synonyms, arranged into hyponymic/taxonomic trees called inheritance hierarchies. Each term in an inheritance hierarchy ‘inherits’ the information associated with its hypernyms: this gives the user immediate access to the full range of information associated with a lexical item.</p>
+<h3 id="word-sense-disambiguation">Word sense disambiguation</h3>
+<p>One of the hardest problems in computer simulations of natural language processing is the problem of word-sense disambiguation. Computers must know how to distinguish between the different senses of ambiguous words like bank if they are to be able to process language correctly. We discussed two main approaches to this task:</p>
+<ul>
+<li><p>selectional restriction approaches, which use selectional restrictions to weed out improperly formed semantic representations; and</p></li>
+<li><p>the contextual approach, in which the computer assesses the words surrounding the target word, and chooses the appropriate sense on the basis of the other words in this immediate context.</p></li>
+</ul>
+<p>Both approaches are in their infancy and programs using them significantly underperform humans.</p>
+<h3 id="pustejovsky-and-qualia-structure">Pustejovsky and qualia structure</h3>
+<p>　Pustejovsky attempts to solve a number of problems in word-sense disambiguation by proposing a richer structure for nominal entries in the lexicon. He claims that the meaning of nouns is best modelled by the notion of qualia structure. A noun’s qualia structure consists of four roles, the constitutive, formal, telic and agentive roles. The key element of Pustejovsky’s theory is that each of these roles can operate independently within the semantics of a clause. For example, we know that a fast car is one that moves quickly, and a fast motorway is one on which cars can move quickly, since fast applies to the telic role of the noun: the role that refers to the function or purpose which the referent fulfils.</p>
+<h1 id="chapter-9">Chapter 9</h1>
+<h3 id="what-parts-of-speech-a-language-has-is-a-matter-of-interpretation">What parts of speech a language has is a matter of interpretation</h3>
+<p>There are usually several different plausible interpretations of the part of speech categories (lexical categories, grammatical categories) of any language.</p>
+<h3 id="morphological-and-distributional-criteria-for-parts-of-speech">Morphological and distributional criteria for parts of speech</h3>
+<p>Some languages have clear morphological criteria for assigning words to parts of speech: we can divide up the classes on the basis of what affixes they appear with. In languages without clear morphology, a distributional approach to parts of speech can sometimes be used to classify parts of speech on the basis of the way they pattern in sentences. Both morphological and distributional methods for part of speech classification are unreliable. In any case, both presuppose a preexisting decision about how the parts of speech are to be defined.</p>
+<h3 id="semantic-definitions-of-parts-of-speech">Semantic definitions of parts of speech</h3>
+<p>The same problem affects semantic definitions of parts of speech: we cannot appeal to thingness, eventhood and so on as criteria for grammatical category, since they are not known independently of the very grammatical features which they are supposed to establish.</p>
+<h3 id="multicategoriality">Multicategoriality</h3>
+<p>Many languages show widespread multicategoriality (roots which may appear as different parts of speech). We can think of nouns and verbs as ‘slots’ or contexts available in each clause, each of which comes associated with the appropriate grammatical machinery. The grammatical slots themselves can be seen as the carriers of the nounhood or verbhood which the word ends up acquiring.</p>
+<h3 id="hopper-and-thompson-parts-of-speech-and-discourse-function">Hopper and Thompson: parts of speech and discourse function</h3>
+<p>Hopper and Thompson suggest that parts of speech can be understood as prototype categories defined by their discourse functions. The difference in the grammatical options available to a given occurrence of a noun or verb correlates with its discourse function in a given context – the closer the noun or verb is to playing its prototypical discourse role, the closer it comes to exhibiting the full range of grammatical possibilities of its class. It is open to question whether the discourse function definition of parts of speech is any less problematic than the semantic definitions it replaces.</p>
+<h3 id="tense">Tense</h3>
+<p>Tense is the name of the class of grammatical markers used to signal the location of situations in time. Three basic temporal divisions are relevant to the representation of time in language: what is happening now, what will happen afterwards, and what has already happened. Some languages display a three-way division between past, present and future, with each tense marked separately on the verb. Others have a two-way distinction; either between past and non-past, or (more rarely) future and non-future. Perfect tenses are often described in terms of relevance to the speech situation, but this definition is problematic.</p>
+<h3 id="aspect">Aspect</h3>
+<p>Aspect is the grammatical category which expresses differences in the way time is presented in events. Aspectual categories express the internal temporal constituency of an event; whether the event is viewed from the distance, as a single unanalysable whole (perfective aspect), or from closeup, so that the distinct stages of the event can be seen individually (imperfective aspect). The perfective/imperfective distinction has nothing to do with the actual nature of the event, but is all about how the event is construed by the speaker. In particular, it is independent of the actual duration of the event in question.</p>
+<h3 id="tense-is-deictic-aspect-isnt">Tense is deictic, aspect isn’t</h3>
+<p>A major difference between tense and aspect is that tense is deictic and aspect isn’t.</p>
+<p>　The particular time reference of any tense therefore has to be anchored deictically in the moment of utterance.</p>
+<h3 id="aktionsart">Aktionsart</h3>
+<p>Aktionsart is the term for an event’s inherent aspectual classification.</p>
+<h3 id="many-researchers-claim-that-events-can-be-classified-into-five-basic">Many researchers claim that events can be classified into five basic</h3>
+<p>Aktionsart classes:</p>
+<ul>
+<li><p>states</p></li>
+<li><p>activities</p></li>
+<li><p>accomplishments</p></li>
+<li><p>achievements, and</p></li>
+<li><p>semelfactives</p></li>
+</ul>
+<p>These classes show significant interaction effects with perfective and imperfective meanings. The five Aktionsart classes can be summarized along the dimensions of whether they are static (whether they refer to unchanging states or to occurrences), telicity (whether they have an inherent endpoint) and punctuality (whether they are conceived of as consisting of internal temporal parts):</p>
+<p>State [+static], [−telic], [−punctual]</p>
+<p>Activity [−static], [−telic], [−punctual]</p>
+<p>Achievement [−static], [+telic], [+punctual]</p>
+<p>Accomplishment [−static], [+telic], [−punctual]</p>
+<p>Semelfactive [−static], [−telic], [+punctual]</p>
+<h3 id="the-internal-structure-of-achievements">The internal structure of achievements</h3>
+<p>Botne showed that achievement verbs have a more complex temporal-ity than was originally assumed. What is punctual about achievement verbs like find, die, notice, or recognize is their nucleus; in addition to this nucleus, a verb may contain a preceding onset phase or a subsequent coda phase. Languages differ in the temporal phases surrounding the central nucleus.</p>
+<h3 id="tense-and-aspect-less-languages">Tense and aspect-less languages</h3>
+<p>Some languages lack any grammatical means of expressing tense– aspect contrasts. In such languages, the relevant contrasts will be achieved through non-grammatical (lexical and pragmatic) means. The complete absence of grammatical coding of tense and aspect is not uncommon in the languages of the world.</p>
+<h1 id="chapter-10">Chapter 10</h1>
+<h3 id="the-linking-problem">The linking problem</h3>
+<p>The linking problem is the problem of accounting for the relations between a verb and its associated noun phrases. According to the traditional generative understanding, the lexical entries for verbs include a specification of the types of argument they have associated with them. It was assumed that the possible arguments of all verbs could be classified into a small number of classes, called thematic roles, theta-roles, participant roles or semantic roles. Typical roles include agent, patient/ theme, goal, source, location, instrument, beneficiary and experiencer. Some roles are more likely to be coded as subject, and others as object. It was suggested that it is possible to rank the different roles in an order which shows their relative accessibility to subject position.</p>
+<h3 id="problems-with-thematic-roles">Problems with thematic roles</h3>
+<p>There are three main problems with thematic roles:</p>
+<ul>
+<li><p>The arguments of many verbs seem hard to assign to any of the conventional thematic roles.</p></li>
+<li><p>There are also many occasions where an argument could be assigned to several thematic roles.</p></li>
+<li><p>It has not proven possible to formulate a universal thematic hierarchy ranking these roles.</p></li>
+</ul>
+<h3 id="proto-roles">Proto-roles</h3>
+<p>Dowty (1991) suggested that the different participant roles are cluster concepts, like Roschean prototypes, and that thematic roles are based on entailments of verb-meanings. The argument with the most Proto-Agent entailments will be coded as subject, and the one with the most Proto-Patient entailments as object.</p>
+<h3 id="thematic-roles-and-conceptual-structure">Thematic roles and conceptual structure</h3>
+<p>Jackendoff’s theory of semantic representation dispenses completely with theta-roles, and derives argument structure directly from the semantics of the verb. This means that the thematic hierarchy can be completely restated in terms of underlying conceptual configurations. In Jackendoff’s theory of conceptual structure, selectional restrictions are also specified directly by the conceptual structure: they are not extra information which needs to be learnt in addition to the meaning of the verbs themselves.</p>
+<h3 id="verb-classes-and-alternations">Verb classes and alternations</h3>
+<p>Many verbs show several different argument structures. These different types of argument structure are known as alternations. They include the causative, middle, resultative, conative and others. Levin and Hovav proposed that which alternations a verb participates in is explained by its underlying semantic structure. On their theory, verbs fall into semantically defined classes, which all show similar syntactic behaviour with respect to their alternations.</p>
+<h3 id="the-meaning-of-constructions">The meaning of constructions</h3>
+<p>Words are not the only meaning-bearing units in grammar. Semantic representations are also associated with constructions. Goldberg put forward a constructional account of the syntax–semantics interface, in which arguments can be subcategorized by the construction itself. Not all verbs can appear in all constructions. A verb’s meaning determines whether it is compatible with a given construction. The constructional account reduces the proliferation of verb-senses.</p>
+<h1 id="chapter-11">Chapter 11</h1>
+<h3 id="diachronic-and-cross-linguistic-meaning-comparison-presupposes-a-correct-metalanguage">Diachronic and cross-linguistic meaning comparison presupposes a correct metalanguage</h3>
+<p>Claims about the variation or change of given meanings necessitate a particular metalanguage in which the meanings can be described, a situation which immediately introduces complications since there is not yet any agreement about what the correct metalanguage for semantic description is. Linguistics in general, and semantic theory in particular, assume that languages are mutually translatable in a way that preserves important meaning components.</p>
+<h3 id="importance-of-polysemy-in-meaning-change">Importance of polysemy in meaning change</h3>
+<p>　Meaning change crucially involves polysemy. A word does not suddenly change from meaning A to meaning B in a single move; instead, the change happens via an intermediate stage in which the word has both A and B among its meanings.</p>
+<h3 id="the-traditional-classification-of-semantic-change">The traditional classification of semantic change</h3>
+<p>The traditional classification of semantic change recognized the following six types:</p>
+<ul>
+<li><p>Specialization (narrowing), in which a word narrows its range of reference</p></li>
+<li><p>Generalization (broadening), in which a word’s meaning changes to encompass a wider class of referents</p></li>
+<li><p>Pejorization, in which a word takes on a meaning with a less favourable evaluative force</p></li>
+<li><p>Ameliorization, in which a word takes on a meaning with a more favourable evaluative force</p></li>
+<li><p>Metonymy, the process of sense-extension in which a word shifts to a contiguous meaning</p></li>
+<li><p>Metaphor, changes based on similarity or analogy</p></li>
+</ul>
+<h3 id="conventionalization-of-implicature">Conventionalization of implicature</h3>
+<p>Much modern work on semantic change examines pathways and regularities of semantic change, stressing the role of the conventionalization of implicature. This is the theory that semantic change occurs through the progressive strengthening of the implicatures of expressions in particular contexts, until the implicated meaning becomes part of the expression’s literal meaning. These explanations can supersede ones based on the traditional categories.</p>
+<h3 id="subjectification">Subjectification</h3>
+<p>　An important tendency in semantic change is subjectification. This is the tendency for meanings to ‘become increasingly based in the speaker’s subjective belief state/attitude toward the proposition’.</p>
+<p>　 Perception verbs and the mind-as-body metaphor</p>
+<p>Viberg (1984) found a strong cross-linguistic hierarchy governed the polysemies of perception verbs. The visual modality of perception is always the source but never the target of processes of polysemy. The mind-as-body metaphor is a possible explanation of the extension of ‘see’ verbs to ‘know/understand’ in Indo-European languages, but is not universal: many languages draw their ‘know’ verb from verbs for hearing.</p>
+<h3 id="grammaticalization">Grammaticalization</h3>
+<p>One particular context for semantic change is grammaticalization, the process by which open-class content words turn into closed-class function forms. They do this by losing elements of their meaning, and by a restriction in their possible grammatical contexts. Study of these processes has revealed a number of regular pathways which recur again and again in the world’s languages linking particular open-class lexemes with particular grammaticalized functions.</p>
+<h3 id="corpus-studies-of-meaning-variation">Corpus studies of meaning variation</h3>
+<p>The seeds of semantic change are found in synchronic meaning variation in everyday discourse. Corpora are useful for semantic analysis because they can reveal unsuspected patterns of collocation (regular word combination). Many words cluster in predictable collocational patterns. Studies of collocation can give surprising results: for example, corpus investigation reveals that cause is not used neutrally, but has a strong tendency to be associated with negative events.</p>
+<h3 id="semantic-typology">Semantic typology</h3>
+<p>Because of the problems of determining universals of sense, semantic typology concentrates on the question of cross-linguistic regularities in denotation or extension (11.4).</p>
+<h3 id="typology-of-body-part-reference">Typology of body-part reference</h3>
+<p>The human body is a basic and universal aspect of our experience, but there are remarkably few cross-linguistic generalizations that hold about the semantics of body-part terms.</p>
+<h3 id="typology-of-colour-reference">Typology of colour-reference</h3>
+<p>Colour terms have been an important site of cross-linguistic investigation. Berlin and Kay hypothesized that each language has a set of basic colour terms (BCTs). Basic colour terms in all languages target a restricted range of colours, but the boundaries between these targets vary widely. The number of BCTs in a language makes it possible to predict exactly what the basic colour terms are, and Berlin and Kay proposed seven types of language, classified according to the number of BCTs. Berlin and Kay’s findings have been broadly confirmed, but</p>
+<p>there are some significant counterexamples to their typology, as well as fundamental criticisms of their methodology which cast doubt on the significance of their approach.</p>
+<h3 id="deictic-motion-typology">Deictic motion typology</h3>
+<p>Meanings in the domain of deictic motion, the actions expressed in</p>
+<p>English as ‘coming’ and ‘going’, also vary widely cross-linguistically.</p>
+<h3 id="typology-of-motion-path-and-manner-lexicalization">Typology of motion, path and manner lexicalization</h3>
+<p>　Talmy (1985) compared how different languages lexicalize the four elements of motion, path, figure and manner in motion verbs. Talmy proposed a major typological division between verb-framed and satellite-framed languages. In verb-framed languages the path component is lexicalized in the verb root itself. In satellite-framed languages it is lexicalized in a satellite element. As well as verb- and satellite-framed languages, some linguists claim that there is a third type, equipollent languages, in which both path and manner are treated in the same way. Talmy’s typology has been widely discussed, and the distinction between verb- and satellite-framing is often invoked as a way of characterizing how different languages distribute motion information in the clause. It has been challenged, however, on the grounds that it artificially targets an abstract motion component in verbs whose meaning is actually much less abstract.</p>
+<h3 id="the-typology-of-spatial-reference">The typology of spatial reference</h3>
+<p>A frame of reference is ‘the internally consistent system of projecting regions of space onto a figure-ground relationship in order to establish specification of location’ (Pederson et al. 1998: 571). Languages with a relative frame of reference use spatial expressions with meanings like ‘in front of me/behind me’ and ‘to my left/right’. Other languages contain an absolute frame of reference. This is a system of spatial location which does not depend on the position of a speech participant, but is anchored instead in unchanging features of the geography, like uphill/ downhill distinctions, or in the cardinal directions (north, south, east, west). The least common frame of reference in the languages of the world is the intrinsic frame of reference. This system only makes reference to intrinsic features of figure and ground: ‘the man is at the side of the tree, the tree is at the chest/face/back of the man’ and so on.</p>
+<h3 id="the-relation-of-language-and-thought">The relation of language and thought</h3>
+<p>Differences in semantic typology raise the question of the influence between language and thought. Whorf believed that the grammatical categories of one’s language determine the categories of broader cognition. This idea is known as linguistic determinism or the linguistic relativity hypothesis. Thinking in general must be distinguished from thinking for speaking. The grammatical categories of a language must determine thinking for speaking. The interesting question is whether they also determine general cognition. Research has found a statistically very highly reliable correlation between the prevailing frame of spatial reference used in a language and the types of response in non-linguistic cognitive tasks. These suggest a limited influence of language on general cognition. There are many other domains, however, where such an effect is not observed.</p>
+]]></content>
+      <categories>
+        <category>语言学</category>
+        <category>语义</category>
+      </categories>
+      <tags>
+        <tag>linguistics</tag>
+        <tag>semantics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PDF相关知识大全</title>
+    <url>/pdf-explained/</url>
+    <content><![CDATA[<h1 id="pdf是什么">Pdf是什么</h1>
+<p>Portable Document Format，由Adobe 公司于1993 年提出的一种文件规范，主要是为了让同一份文件在不同的装置、硬体或作业系统上皆有相同的呈现效果，达到跨平台皆可使用的目的。</p>
+]]></content>
+      <categories>
+        <category>代码</category>
+        <category>文本处理</category>
+      </categories>
+      <tags>
+        <tag>pdf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>句法学术语大全</title>
+    <url>/syntax-1/</url>
+    <content><![CDATA[<h1 id="chapter-1">Chapter 1</h1>
+<ul>
+<li><p><strong>Syntax:</strong> The level of linguistic organization that mediates between sounds and meaning, where words are organized into phrases and sentences.</p></li>
+<li><p><strong>Language (capital L):</strong> The psychological ability of humans to produce and understand a particular language. Also called the Human Language Capacity or i-Language. This is the object of study in this book.</p></li>
+</ul>
+<p>language (lowercase l): A language like English or French. These are the particular instances of the human Language. The data sources we use to examine Language are languages. Also called e-language.</p>
+<ul>
+<li><p><strong>Generative Grammar:</strong> A theory of linguistics in which grammar is viewed as a cognitive faculty. Language is generated by a set of rules or procedures. The version of generative grammar we are looking at here is primarily the Principles and Parameters approach (P&amp;P) touching occasionally on Minimalism.</p></li>
+<li><p><strong>The Scientific Method:</strong> Observe some data, make generalizations about that data, draw a hypothesis, test the hypothesis against more data.</p></li>
+<li><p><strong>Falsifiable Prediction:</strong> To prove that a hypothesis is correct you have to look for the data that would prove it wrong. The prediction that might prove a hypothesis wrong is said to be falsifiable.</p></li>
+<li><p><strong>Grammar:</strong> Not what you learned in school. This is the set of rules that generate a language.</p></li>
+<li><p><strong>Prescriptive Grammar:</strong> The grammar rules as taught by so-called “language experts”. These rules, often inaccurate descriptively, prescribe how people should talk/write, rather than describe what they actually do.</p></li>
+<li><p><strong>Descriptive Grammar:</strong> A scientific grammar that describes, rather than prescribes, how people talk/write.</p></li>
+<li><p><strong>Anaphor:</strong> A word that ends in -self or -selves (a better definition will be given in chapter 5).</p></li>
+<li><p><strong>Antecedent:</strong> The noun an anaphor refers to.</p></li>
+</ul>
+<p>Asterisk (*): The mark used to mark syntactically ill-formed (unacceptable or ungrammatical) sentences. The hash mark, pound, or number sign (#) is used to mark semantically strange, but syntactically well-formed, sentences.</p>
+<ul>
+<li><p><strong>Gender (grammatical):</strong> Masculine vs. Feminine vs. Neuter. Does not have to be identical to the actual sex of the referent. For example, a dog might be female, but we can refer to it with the neuter pronoun it. Similarly, boats don’t have a sex, but are grammatically feminine.</p></li>
+<li><p><strong>Number:</strong> The quantity of individuals or things described by a noun. English distinguishes singular (e.g., a cat) from plural (e.g., cats). Other languages have more or less complicated number systems.</p></li>
+<li><p><strong>Person:</strong> The perspective of the participants in the conversation. The speaker or speakers (I, me, we, us) are called the first person. The addressee(s) (you) is called the second person. Anyone else (those not involved in the conversation) (he, him, she, her, it, they, them) is referred to as the third person.</p></li>
+<li><p><strong>Case:</strong> The form a noun takes depending upon its position in the sentence. We discuss this more in chapter 11.</p></li>
+<li><p><strong>Nominative:</strong> The form of a noun in subject position (I, you, he, she, it, we, they).</p></li>
+<li><p><strong>Accusative:</strong> The form of a noun in object position (me, you, him, her, it, us, them).</p></li>
+</ul>
+<p>Corpus (pl. Corpora): A collection of real-world language data.</p>
+<ul>
+<li><p><strong>Native Speaker Judgments (Intuitions):</strong> Information about the subconscious knowledge of a language. This information is tapped by means of the grammaticality judgment task.</p></li>
+<li><p><strong>Semantic Judgment:</strong> A judgment about the meaning of a sentence, often relying on our knowledge of the context in which the sentence was uttered.</p></li>
+<li><p><strong>Syntactic Judgment:</strong> A judgment about the form or structure of a sentence.</p></li>
+<li><p><strong>Garden Path Sentence:</strong> A sentence with a strong ambiguity in structure that makes it hard to understand.</p></li>
+<li><p><strong>Center Embedding:</strong> A sentence in which a relative clause consisting of a subject and a verb is placed between the main clause subject and verb. E.g., The house [Bill built] leans to the left.</p></li>
+<li><p><strong>Parsing:</strong> The mental tools a listener uses to process and understand a sentence.</p></li>
+<li><p><strong>Competence:</strong> What you know about your language.</p></li>
+<li><p><strong>Performance:</strong> The real-world behaviors that are a consequence of what you know about your language.</p></li>
+<li><p><strong>Learning:</strong> The gathering of conscious knowledge (like linguistics or chemistry).</p></li>
+<li><p><strong>Acquisition:</strong> The gathering of subconscious information (like language).</p></li>
+<li><p><strong>Innate:</strong> Hardwired or builtin, an instinct.</p></li>
+<li><p><strong>Recursion:</strong> The ability to embed structures iteratively inside one another. Allows us to produce sentences we’ve never heard before.</p></li>
+<li><p><strong>Universal Grammar (UG):</strong> The innate (or instinctual) part of each language’s grammar.</p></li>
+<li><p><strong>The Logical Problem of Language Acquisition:</strong> The proof that an infinite system like human language cannot be learned on the basis of observed data – an argument for UG.</p></li>
+<li><p><strong>Underdetermination of the Data:</strong> The idea that we know things about our language that we could not have possibly learned – an argument for UG.</p></li>
+<li><p><strong>Universal:</strong> A property found in all the languages of the world.</p></li>
+<li><p><strong>Bioprogram Hypothesis:</strong> The idea that creole languages share similar features because of an innate basic setting for language.</p></li>
+<li><p><strong>Observationally Adequate Grammar:</strong> A grammar that accounts for observed real-world data (such as corpora).</p></li>
+<li><p><strong>Descriptively Adequate Grammar:</strong> A grammar that accounts for observed real-world data and native speaker judgments.</p></li>
+<li><p><strong>Explanatorily Adequate Grammar:</strong> A grammar that accounts for observed real-world data and native speaker judgments and offers an explanation for the facts of language acquisition.</p></li>
+</ul>
+<p>　</p>
+<h1 id="chapter-2">Chapter 2</h1>
+<p>Parts of Speech (a.k.a. Word Class, Syntactic Categories): The labels we give to constituents (N, V, Adj, Adv, D, P, C, T, Neg, Conj). These determine the position of the word in the sentence.</p>
+<ul>
+<li><p><strong>Distribution:</strong> Parts of speech are determined based on their distribution. We have both morphological distribution (what affixes are found on the word) and syntactic distribution (what other words are nearby).</p></li>
+<li><p><strong>Complementary Distribution:</strong> When you have two categories</p></li>
+</ul>
+<ol start="4" type="i">
+<li></li>
+</ol>
+<p>and they never appear in the same environment (context), you have</p>
+<p>complementary distribution. Typically complementary distribution</p>
+<p>means that the two categories are subtypes of a larger class.</p>
+<ul>
+<li>**Parts of speech that are Open Class can take new members</li>
+</ul>
+<p>or coinages:** N, V, Adj, Adv.</p>
+<ul>
+<li><strong>Parts of speech that are Closed Class don’t allow new coinages:</strong> D, P, Conj, C, T, Neg, and the pronoun and anaphor subcategories of N.</li>
+</ul>
+<p>Lexical Categories express the content of the sentence. N (including pronouns), V, Adj, Adv.</p>
+<ol start="7" type="i">
+<li></li>
+</ol>
+<ul>
+<li><p><strong>Functional Categories contain the grammatical information in a sentence:</strong> D, P, Conj, T, Neg, C.</p></li>
+<li><p><strong>Subcategories:</strong> The major parts of speech can often be divided up into subtypes. These are called subcategories.</p></li>
+</ul>
+<p>Feature Notations on major categories are a mechanism for indicating subcategories.</p>
+<p>Plurality refers to the number of nouns. It is usually indicated in English with an -s suffix. Plural nouns in English do not require a determiner.</p>
+<p>Count vs. Mass: Count nouns can appear with determiners and the quantifier many. Mass nouns appear with much and usually don’t have articles.</p>
+<p>The Predicate defines the relation between the individuals being talked about and some fact about them, as well as relations among the arguments.</p>
+<ul>
+<li><strong>Argument Structure:</strong> The number of arguments that a predicate takes.</li>
+</ul>
+<p>The Arguments are the entities that are participating in the predicate relation.</p>
+<ul>
+<li><p><strong>Intransitive:</strong> A predicate that takes only one argument.</p></li>
+<li><p><strong>Transitive:</strong> A predicate that takes two arguments.</p></li>
+<li><p><strong>Ditransitive:</strong> A predicate that takes three arguments.</p></li>
+</ul>
+<h1 id="chapter-3">Chapter 3</h1>
+<ul>
+<li><p><strong>Constituent:</strong> A group of words that function together as a unit.</p></li>
+<li><p><strong>Hierarchical Structure:</strong> Constituents in a sentence are embedded inside of other constituents.</p></li>
+<li><p><strong>Syntactic Trees and Bracketed Diagrams:</strong> These are means of representing constituency. They are generated by rules.</p></li>
+<li><p>English Phrase Structure Rules</p></li>
+</ul>
+<ol type="a">
+<li>CP</li>
+</ol>
+<ol start="3" type="A">
+<li>TP</li>
+</ol>
+<ol start="2" type="a">
+<li>TP</li>
+</ol>
+<p>{NP/CP} (T) VP</p>
+<p>​</p>
+<ol start="3" type="a">
+<li><p>VP (AdvP+) V (NP) ({NP/CP}) (AdvP+) (PP+) (AdvP+)</p></li>
+<li><p>NP (D) (AdjP+) N (PP+) (CP)</p></li>
+</ol>
+<ul>
+<li>PP P (NP)</li>
+</ul>
+<ol start="6" type="a">
+<li><p>AdjP (AdvP) Adj</p></li>
+<li><p>AdvP (AdvP) Adv</p></li>
+<li><p>XP XP conj XP</p></li>
+</ol>
+<ul>
+<li><p>**X X conj X</p></li>
+<li><p><strong>Head:</strong>** The word that gives its category to the phrase.</p></li>
+<li><p><strong>Recursion:</strong> The possibility of loops in the phrase structure rules</p></li>
+</ul>
+<p>that allow infinitely long sentences, and explain the creativity of language.</p>
+<ul>
+<li><p><strong>The Principle of Modification:</strong> If an XP (that is, a phrase with some category X) modifies some head Y, then XP must be a sister to Y (i.e., a daughter of YP).</p></li>
+<li><p><strong>Constituency Tests:</strong> Tests that show that a group of words functions as a unit. There are four major constituency tests given here: movement, coordination, standalone, and replacement.</p></li>
+</ul>
+<h1 id="chapter-4">Chapter 4</h1>
+<ul>
+<li><p><strong>Branch:</strong> A line connecting two parts of a tree.</p></li>
+<li><p><strong>Node:</strong> The end of a branch.</p></li>
+<li><p><strong>Label:</strong> The name given to a node (e.g., N, NP, TP, etc.).</p></li>
+<li><p><strong>(Proper) Domination:</strong> Node A dominates node B if and only if A is higher up in the tree than B and if you can trace a branch from A to B going only downwards.</p></li>
+<li><p><strong>Immediate Domination:</strong> Node A immediately dominates node B if there is no intervening node G that is dominated by A, but dominates B. (In other words, A is the first node that dominates B.)</p></li>
+<li><p>A is the Mother of B if A immediately dominates B.</p></li>
+<li><p>B is the Daughter of A if B is immediately dominated by A.</p></li>
+<li><p><strong>Sisters:</strong> Two nodes that share the same mother.</p></li>
+<li><p><strong>Root Node (revised):</strong> The node that dominates everything, but is dominated by nothing. (The node that is no node’s daughter.)</p></li>
+<li><p><strong>Terminal Node (revised):</strong> A node that dominates nothing. (A node that is not a mother.)</p></li>
+<li><p><strong>Non-terminal Node (revised):</strong> A node that dominates something. (A node that is a mother.)</p></li>
+<li><p><strong>Exhaustive Domination:</strong> Node A exhaustively dominates a set of terminal nodes {B, C, ..., D} provided it dominates all the members of the set (so that there is no member of the set that is not dominated by</p></li>
+</ul>
+<p>and there is no terminal node G dominated by A that is not a member of the set.</p>
+<ul>
+<li><p><strong>Constituent:</strong> A set of terminal nodes exhaustively dominated by a particular node.</p></li>
+<li><p><strong>Constituent of:</strong> A is a constituent of B if and only if B dominates A.</p></li>
+<li><p><strong>Immediate Constituent of:</strong> A is an immediate constituent of B if and only if B immediately dominates A.</p></li>
+<li><p><strong>Sister Precedence:</strong> Node A sister-precedes node B if and only if both are immediately dominated by the same node, and A appears to the left of B.</p></li>
+<li><p><strong>Precedence:</strong> Node A precedes node B if and only if neither A dominates B nor B dominates A and A or some node dominating A sister-precedes B or some node dominating B.</p></li>
+<li><p><strong>No Crossing Branches Constraint:</strong> If node X precedes another node Y then X and all nodes dominated by X must precede Y and all nodes dominated by Y.</p></li>
+<li><p><strong>Immediate Precedence:</strong> A immediately precedes B if there is no node G that follows A but precedes B.</p></li>
+<li><p><strong>C-command (informal):</strong> A node c-commands its sisters and all the daughters (and granddaughters, and great-granddaughters, etc.) of its sisters.</p></li>
+<li><p><strong>C-command (formal):</strong> Node A c-commands node B if every node dominating A also dominates B and neither A nor B dominates the other.</p></li>
+<li><p><strong>Symmetric C-command:</strong> A symmetrically c-commands B if A c-commands B and B c-commands A.</p></li>
+<li><p><strong>Asymmetric C-command:</strong> A asymmetrically c-commands B if A c-commands B but B does not c-command A.</p></li>
+<li><p><strong>Government:</strong> Node A governs node B if A c-commands B, and there is no node G such that G is c-commanded by A and G asymmetrically c-commands B.</p></li>
+<li><p><strong>Phrase-government:</strong> If A is a phrase, then the categories that count for G in the above definition must also be phrases.</p></li>
+<li><p><strong>Head-government:</strong> If A is a head (word), then the categories that count for G in the above definition must also be heads.</p></li>
+<li><p><strong>Subject (preliminary):</strong> NP or CP daughter of TP.</p></li>
+<li><p><strong>Object of Preposition (preliminary):</strong> NP daughter of PP.</p></li>
+<li><p><strong>Direct Object:</strong></p></li>
+</ul>
+<p>With verbs of type V[NP__NP], V[NP__ CP] and V[NP__ NP PP], the NP or CP daughter of VP.</p>
+<p>With verbs of type V[NP __ NP {NP/CP}], an NP or CP daughter of VP that is preceded by an NP daughter of VP.</p>
+<ul>
+<li><strong>Indirect Object (preliminary):</strong></li>
+</ul>
+<p>With verbs of type V[NP__ NP PP], the PP daughter of VP immediately preceded by an NP daughter of VP.</p>
+<p>With verbs of type V[NP __ NP {NP/CP}], the NP daughter of VP immediately preceded by V (i.e., the first NP daughter of VP).</p>
+<ul>
+<li><strong>Oblique:</strong> any NP/PP in the sentence that is not a subject, direct object of a preposition, direct object, or indirect object.</li>
+</ul>
+<h1 id="chapter-5">Chapter 5</h1>
+<ul>
+<li><p><strong>R-expression:</strong> An NP that gets its meaning by referring to an entity in the world.</p></li>
+<li><p><strong>Anaphor:</strong> An NP that obligatorily gets its meaning from another NP in the sentence.</p></li>
+<li><p><strong>Pronoun:</strong> An NP that may (but need not) get its meaning from another NP in the sentence.</p></li>
+<li><p><strong>Antecedent:</strong> The element that binds a pronoun, anaphor or R-expression. When this element c-commands another coindexed NP, it is a binder of that NP.</p></li>
+<li><p><strong>Index:</strong> A subscript mark that indicates what an NP refers to.</p></li>
+<li><p><strong>Coindexed:</strong> Two NPs that have the same index (i, j, k, etc.) are said to be coindexed.</p></li>
+<li><p><strong>Corefer:</strong> Two NPs that are coindexed are said to corefer (refer to the same entity in the world).</p></li>
+<li><p><strong>Binding:</strong> A binds B if and only if A c-commands B and A and B are coindexed. A is the binder, B is the bindee.</p></li>
+<li><p><strong>Locality Constraint:</strong> A constraint on the grammar, such that two syntactic entities must be “local” or near to one another.</p></li>
+<li><p><strong>Binding Domain:</strong> The clause (for our purposes).</p></li>
+<li><p><strong>Free:</strong> Not bound.</p></li>
+<li><p>The Binding Principles</p></li>
+<li><p><strong>Principle A:</strong> An anaphor must be bound in its binding domain.</p></li>
+<li><p><strong>Principle B:</strong> A pronoun must be free in its binding domain.</p></li>
+<li><p><strong>Principle C:</strong> An R-expression must be free.</p></li>
+</ul>
+<h1 id="chapter-6">Chapter 6</h1>
+<ul>
+<li><p><strong>Specifier:</strong> Sister to X', daughter of XP.</p></li>
+<li><p><strong>Adjunct:</strong> Sister to X', daughter of X'.</p></li>
+<li><p><strong>Complement:</strong> Sister to X, daughter of X'.</p></li>
+<li><p><strong>Head:</strong> The word that gives its category to the phrase.</p></li>
+<li><p><strong>Projection:</strong> The string of elements associated with a head that bear the same category as the head (N, N', N', N', NP, etc.).</p></li>
+<li><p><strong>Maximal Projection:</strong> The topmost projection in a phrase (XP).</p></li>
+<li><p><strong>Intermediate Projection:</strong> Any projection that is neither the head nor the phrase (i.e., all the X' levels).</p></li>
+<li><p><strong>One-replacement:</strong> Replacement of an N' node with one.</p></li>
+<li><p><strong>Do-so-replacement:</strong> Replacement of a V' with do so.</p></li>
+</ul>
+<ol start="24" type="a">
+<li>Specifier Rule: XP (YP) X' or XP X' (YP)</li>
+</ol>
+<ol start="11" type="i">
+<li><p>Adjunct Rule: X' X' (ZP) or X' (ZP) X'</p></li>
+<li><p>Complement Rule: X' X (WP) or X' (WP) X</p></li>
+</ol>
+<ul>
+<li><p><strong>Additional Rules:</strong></p></li>
+<li><p>**CP (C) TP</p></li>
+</ul>
+<p>XP XP Conj XP</p>
+<p>TP</p>
+<p>X'</p>
+<p>NP (T) VP</p>
+<p>X' Conj X'</p>
+<p>X X Conj X</p>
+<ul>
+<li><p><strong>Parameterization:</strong>** The idea that there is a fixed set of possibilities in terms of structure (such as the options in the X-bar framework), and people acquiring a language choose from among those possibilities.</p></li>
+<li><p><strong>Principle of Modification (revised):</strong> If a YP modifies some head X, then YP must be a sister to X or a projection of X (i.e., X’ or XP).</p></li>
+</ul>
+<h1 id="chapter-7">Chapter 7</h1>
+<ul>
+<li><strong>Determiner Phrase (DP):</strong> D is not in the specifier of NP. D heads its</li>
+</ul>
+<p>own phrase: [DP [D' D NP]].</p>
+<ul>
+<li><strong>Complementizer Phrase (CP):</strong> C is the head of CP and is obligatory in all clauses, although sometimes phonologically null:</li>
+</ul>
+<p>[CP [C' C TP ]].</p>
+<ul>
+<li><p><strong>Tense Phrase (TP):</strong> T is the head of TP and is obligatory in all clauses. Sometimes it involves lowering of the affix to the V. The subject DP occupies the specifier position: [TP DPsubject [T' T VP ]].</p></li>
+<li><p><strong>Free Genitive/of-Genitive:</strong> Possessed of the possessor.</p></li>
+<li><p><strong>Construct Genitive/’s-Genitive:</strong> Possessor ’s possessed.</p></li>
+<li><p><strong>Subject:</strong> A DP that has the property indicated by the predicate phrase. What the sentence is about. In most sentences, this surfaces in the specifier of TP.</p></li>
+<li><p><strong>Predicate Phrase:</strong> A group of words that attributes a property to the subject. (In most sentences this is the VP, although not necessarily so.)</p></li>
+<li><p><strong>Clause:</strong> A subject and a predicate phrase (always a CP in our system).</p></li>
+<li><p><strong>Root, Matrix, or Main Clause:</strong> A clause (CP) that isn’t dominated by anything.</p></li>
+<li><p><strong>Embedded Clause/Subordinate Clause:</strong> A clause inside of another.</p></li>
+<li><p><strong>Specifier Clause:</strong> An embedded clause in a specifier position.</p></li>
+<li><p><strong>Adjunct Clause:</strong> An embedded clause in an adjunct position.</p></li>
+<li><p><strong>Complement Clause:</strong> An embedded clause in a complement position.</p></li>
+<li><p><strong>Tenseless or Non-finite Clause:</strong> A clause that isn’t tensed (e.g., I want [Mary to leave]).</p></li>
+<li><p><strong>Tensed or Finite Clause:</strong> A clause that is tensed.</p></li>
+<li><p><strong>Yes/No Question:</strong> A question that can be answered with a yes, a no or a maybe.</p></li>
+<li><p><strong>Subject-Aux Inversion:</strong> A means of indicating a yes/no question. Involves movement of T to Ø[+Q] complementizer for morpho-phonological reasons.</p></li>
+<li><p><strong>Affix Lowering:</strong> An old analysis of how past and present tense</p></li>
+</ul>
+<p>suffixes get on the verb: The lowering of inflectional suffixes to attach to their verb. Now largely replaced by an analysis where T is null and selects for a VP complement that is correctly inflected.</p>
+<h1 id="chapter-8">Chapter 8</h1>
+<ul>
+<li><p><strong>Selectional Restrictions:</strong> Semantic restrictions on arguments.</p></li>
+<li><p><strong>Thematic Relations:</strong> Semantic relations between a predicate and an argument – used as a means of encoding selectional restrictions.</p></li>
+<li><p><strong>Agent:</strong> The doer of an action (under some definitions must be capable of volition).</p></li>
+<li><p><strong>Experiencer:</strong> The argument that perceives an event or state.</p></li>
+<li><p><strong>Theme:</strong> The element that is perceived, experienced, or undergoing the action or change of state</p></li>
+<li><p><strong>Goal:</strong> The end point of a movement.</p></li>
+<li><p><strong>Recipient:</strong> A special kind of goal, found with verbs of possession</p></li>
+<li><p><strong>Source:</strong> The starting point of a movement.</p></li>
+<li><p><strong>Location:</strong> The place where an action or state occurs.</p></li>
+<li><p><strong>Instrument:</strong> A tool with which an action is performed.</p></li>
+<li><p><strong>Beneficiary:</strong> The entity for whose benefit the action is performed.</p></li>
+<li><p><strong>Proposition:</strong> The thematic relation assigned to clauses.</p></li>
+<li><p><strong>Theta Role:</strong> A bundle of thematic relations associated with a particular argument (DPs, PPs, or CPs).</p></li>
+<li><p><strong>Theta Grid:</strong> The schematic representation of the argument structure of a predicate, where the theta roles are listed.</p></li>
+<li><p><strong>External Theta Role:</strong> The theta role associated with subjects.</p></li>
+<li><p><strong>Internal Theta Role:</strong> The theta role associated with other arguments.</p></li>
+<li><p><strong>The Theta Criterion:</strong></p></li>
+</ul>
+<p>Each argument is assigned one and only one theta role.</p>
+<p>Each theta role is assigned to one and only one argument.</p>
+<ul>
+<li><p><strong>Lexical Item:</strong> Another way of saying “word”. A lexical item is an entry in the mental dictionary.</p></li>
+<li><p><strong>The Projection Principle:</strong> Lexical information (like theta roles) is syntactically represented at all levels.</p></li>
+<li><p><strong>Expletive (or Pleonastic) Pronoun:</strong> A pronoun (usually it or there) without a theta role. Usually found in subject position.</p></li>
+<li><p><strong>Extended Projection Principle (EPP):</strong> All clauses must have subjects. Lexical information is syntactically represented.</p></li>
+<li><p><strong>Expletive Insertion:</strong> Insert an expletive pronoun into the specifier of TP.</p></li>
+<li><p><strong>The Lexicon:</strong> The mental dictionary or list of words. Contains all irregular and memorized information about language, including the argument structure (theta grid) of predicates.</p></li>
+<li><p><strong>The Computational Component:</strong> The combinatorial, rule-based part of the mind. Where the rules and filters are found.</p></li>
+</ul>
+<h1 id="chapter-9">Chapter 9</h1>
+<ul>
+<li><p>Theta Grids can contain material other than theta roles, such as features.</p></li>
+<li><p><strong>[±FINITE]:</strong> A feature of complementizers that indicates if the clause is finite or not. That is [+FINITE].</p></li>
+<li><p><strong>[±Q]:</strong> A feature of complementizers that indicates if the clause is a question or not. If and whether are [+Q].</p></li>
+<li><p><strong>[±INFINITIVE]:</strong> Not to be confused with [±FINITE], this is a feature of T nodes. To is [+INFINITIVE].</p></li>
+<li><p><strong>[±PLURAL]:</strong> A feature of N heads indicating number.</p></li>
+<li><p><strong>[±PROPER]:</strong> The feature associated with proper names.</p></li>
+<li><p><strong>[±PRONOUN]:</strong> The feature associated with pronouns.</p></li>
+<li><p><strong>[±COUNT]:</strong> This feature distinguishes count nouns from mass nouns.</p></li>
+<li><p>Tense refers to the time of an event relative to the time at which the sentence is either spoken or written.</p></li>
+<li><p><strong>The Event Time:</strong> The time at which the event described by the predicate occurs.</p></li>
+<li><p><strong>The Assertion Time:</strong> The time at which the sentence is said.</p></li>
+<li><p><strong>Past Tense:</strong> The event time happened before the assertion time.</p></li>
+<li><p><strong>Present Tense:</strong> The event time is the same as the assertion time.</p></li>
+<li><p><strong>Future Tense:</strong> The event time happens after the assertion time.</p></li>
+<li><p><strong>Preterite:</strong> the special form of verbs in the past tense.</p></li>
+<li><p><strong>Futurates:</strong> the future tense usage of a present tense verb.</p></li>
+<li><p><strong>Aspect:</strong> a temporal relation that makes reference to some point other than the speech time, then looking at when the event happens relative to that reference point.</p></li>
+<li><p><strong>Perfect:</strong> the aspect when the time of the event occurs before some reference point. Haveperf + participle.</p></li>
+<li><p><strong>Participle:</strong> A particular form of the verb used in perfects and passives. It is often formed by suffixing –en or –ed, although other irregular methods are found too. Same thing as past participle.</p></li>
+<li><p><strong>Gerund:</strong> A particular form of the verb used in progressives. It is normally formed by suffixing –ing. Traditionally called the present participle.</p></li>
+<li><p><strong>Progressive:</strong> An aspect where the event time and the reference time overlap and the event is ongoing. beprog + gerund.</p></li>
+<li><p><strong>Voice:</strong> An inflection that indicates the number of arguments and position of arguments that a verb uses.</p></li>
+<li><p><strong>Active:</strong> A type of voice where the agent or experiencer of the sentence is in subject position and the theme is in the object position. Actives in English are unmarked morphologically.</p></li>
+<li><p><strong>Passive:</strong> A type of voice where the theme of the sentence is in subject position. Passives are always marked in English by the combination of a be auxiliary and a participle.</p></li>
+<li><p><strong>Mood:</strong> An inflectional category that refers to the speaker’s perspective on the event, indicating possibility, probability, necessity, or obligation.</p></li>
+<li><p><strong>Possessive Have:</strong> A main verb use of have, which indicates possession.</p></li>
+<li><p><strong>Copular Be:</strong> A main verb use of be, where the subject is attributed a certain property or is identified with a particular role.</p></li>
+<li><p><strong>Main Verb Do:</strong> The use of the verb do to indicate accomplishments.</p></li>
+<li><p><strong>Modals:</strong> Verbs that can only appear before negation and never take tense inflection. Auxiliaries, by contrast, can follow negation and can bear tense inflection.</p></li>
+<li><p>[FORM] Features indicate the form of complements. Possible values include bare, participle, gerund, preterite, and present.</p></li>
+<li><p><strong>Do-support:</strong> The use of the auxiliary do to bear tense features in the context of negation. This do is of category T.</p></li>
+<li><p><strong>Affix Hopping:</strong> An alternative analysis of multiple auxiliary constructions, where affixes associated with particular tenses, aspects, and voice are generated as part of the same word as the relevant auxiliary, but then “hop” one verbal element to the right.</p></li>
+</ul>
+<h1 id="chapter-10">Chapter 10</h1>
+<ul>
+<li><p><strong>Transformation:</strong> A rule that takes an X-bar-generated structure and changes it in restricted ways.</p></li>
+<li><p><strong>D-structure:</strong> The level of the derivation created by the base. No transformations have yet applied.</p></li>
+<li><p><strong>S-structure:</strong> The output of transformations. The form you perform judgments on.</p></li>
+<li><p><strong>V T Movement:</strong> Move the head V to the head T (motivated by morphology).</p></li>
+<li><p><strong>Verb Movement Parameter:</strong> All verbs raise (French) or only auxiliaries raise (English).</p></li>
+<li><p><strong>The VP-internal Subject Hypothesis:</strong> Subjects are generated in the specifier of the voice-headed VP.</p></li>
+<li><p><strong>T C Movement:</strong> Move T to C when there is a phonologically empty Ø[+Q] complementizer.</p></li>
+<li><p><strong>Do-support:</strong> When there is no other option for supporting inflectional affixes, insert the dummy verb do into T.</p></li>
+</ul>
+<h1 id="chapter-11">Chapter 11</h1>
+<ul>
+<li><p><strong>The Locality Constraint on Theta Role Assignment:</strong> Theta roles are assigned within the clause containing the predicate that introduces them (i.e., the VP or other predicate).</p></li>
+<li><p><strong>DP Movement:</strong> Move a DP to a specifier position.</p></li>
+<li><p><strong>Raising:</strong> A specific instance of DP movement. The DP moves from the specifier of an embedded non-finite T to the specifier of a finite T in the main clause where it can get Case.</p></li>
+<li><p><strong>case (lowercase c):</strong> The special form DPs get depending upon their place in the sentence.</p></li>
+<li><p><strong>Case (capital C):</strong> Licensing for DPs: NOM is found on the specifier of finite T. ACC is found on the complement of transitive V.</p></li>
+<li><p><strong>The Case Filter:</strong> All DPs must be marked with Case.</p></li>
+<li><p><strong>Passives:</strong> A particular verb form where the external argument (often the agent or experiencer) is suppressed and the theme appears in subject position. The movement of the theme is also an instance of DP movement.</p></li>
+<li><p><strong>Burzio’s Generalization:</strong> If a verb does not have an external argument (i.e., is passive or unaccusative), then it can’t assign accusative Case.</p></li>
+<li><p><strong>Unaccusatives:</strong> Inherently passive verbs like arrive.</p></li>
+</ul>
+<h1 id="chapter-12">Chapter 12</h1>
+<ul>
+<li><p><strong>Wh-movement:</strong> Move a wh-phrase to the specifier of CP to check a [+WH] feature in C.</p></li>
+<li><p><strong>Wanna-contraction:</strong> The contraction of want and to, which does not apply across a wh-trace.</p></li>
+<li><p><strong>That-trace Effect:</strong> Movement of a wh-phrase from subject position in English is disallowed when that trace is preceded by the complementizer that.</p></li>
+<li><p><strong>That-trace Filter:</strong> *[CP that t …]</p></li>
+<li><p><strong>Relative Clause:</strong> A CP that modifies a noun. These always have a “missing” element in them that corresponds to some kind of wh-element.</p></li>
+<li><p><strong>Factive Clause:</strong> A clause that is the complement to a factive verb (know, claim, recall, etc.), or to a factive noun (knowledge, claim, fact, recollection, etc.).</p></li>
+<li><p><strong>Operator (Op):</strong> The wh-element in relative clauses without an overt wh-phrase.</p></li>
+<li><p><strong>Restrictive Relative Clause:</strong> A relative clause that restricts the meaning of a noun as a modifier. Adjoined to N’.</p></li>
+<li><p><strong>Nonrestrictive Relative Clause:</strong> A relative clause that adds additional parenthetical commentary about a noun. Adjoined to D’.</p></li>
+<li><p><strong>Island:</strong> A phrase that contains (dominates) the wh-phrase, and that you may not move out of.</p></li>
+<li><p><strong>The Complex DP Constraint:</strong> *whi [ … [DP … ti … ] …]</p></li>
+<li><p><strong>Wh-island Constraint:</strong> *whi [ … [CP whk [ … ti … ] … ] …]</p></li>
+<li><p><strong>The Subject Condition:</strong> *whi … [TP [CP … ti … ] T …]</p></li>
+<li><p><strong>Coordinate Structure Constraint:</strong> <em>whi … [XP [XP … ti … ] conj [XP … ]] … or </em>whi … [XP [XP … ] conj [XP … ti … ]] … or *whi … [XP [XP … ] conj ti] …</p></li>
+</ul>
+<p>or *whi … [XP ti conj [XP … ]] …</p>
+<ul>
+<li><p><strong>Minimal Link Condition (MLC) (intuitive version):</strong> Move to the closest potential landing site.</p></li>
+<li><p><strong>Whin-situ:</strong> When a wh-phrase does not move.</p></li>
+<li><p><strong>Echo Questions and Intonational Questions:</strong> Question forms that are licensed by the phonology (intonation and stress) and not by the syntax, although they may involve a special C.</p></li>
+</ul>
+<h1 id="chapter-13">Chapter 13</h1>
+<ul>
+<li><p><strong>Move (very informal version):</strong> Move something somewhere.</p></li>
+<li><p><strong>Full Interpretation:</strong> Features must be checked in a local configuration.</p></li>
+<li><p><strong>Local Configuration:</strong></p></li>
+</ul>
+<p>[WH], [NOM] features: specifier–head configuration.</p>
+<p>[ACC] features: head–complement configuration.</p>
+<p>[PAST] etc., [Q] features: head–head configuration.</p>
+<ul>
+<li><p><strong>Logical Form (LF):</strong> The semantic/interpretive system.</p></li>
+<li><p><strong>Phonetic Form (PF):</strong> The overt component of grammar.</p></li>
+<li><p><strong>SPELLOUT:</strong> The point at which the derivation divides into form (PF) and meaning structures (LF).</p></li>
+<li><p><strong>Overt Movement:</strong> Movement between D-structure and SPELLOUT.</p></li>
+<li><p><strong>Covert Movement:</strong> Movement between SPELLOUT and LF.</p></li>
+<li><p><strong>Universal Quantifier ( ):</strong> A word such as every, each, all, any. Identifies all the members of a set.</p></li>
+<li><p><strong>Existential Quantifier ( ):</strong> A word like some, or a. Identifies at least one member of a set.</p></li>
+<li><p><strong>Scope:</strong> A quantifier’s scope is the range of material it c-commands.</p></li>
+<li><p>Wide vs. Narrow Scope: Wide scope is when one particular</p></li>
+</ul>
+<p>quantifier c-commands another quantifier. Narrow scope is the opposite.</p>
+<ul>
+<li><strong>Quantifier Raising (QR):</strong> A covert instance of Move that moves quantifiers.</li>
+</ul>
+<h1 id="chapter-14">Chapter 14</h1>
+<ul>
+<li><p><strong>Light Verbs (Little v):</strong> the higher part of a complex verb, usually meaning CAUSE (or LOCATE, in the case of ditransitive double object verbs).</p></li>
+<li><p><strong>Object Shift:</strong> the phenomenon where accusatively marked objects shift leftwards.</p></li>
+<li><p><strong>AgrO:</strong> the head that checks accusative Case in the split VP system.</p></li>
+</ul>
+<p>　</p>
+<h1 id="chapter-15">Chapter 15</h1>
+<ul>
+<li><p><strong>PRO (Big PRO):</strong> A null (silent) DP found in Caseless positions.</p></li>
+<li><p><strong>pro (Little pro or Baby pro):</strong> A null (silent) DP often found in languages with “rich” agreement. pro does get Case.</p></li>
+<li><p><strong>Clausal Subject Construction:</strong> A sentence where a clause appears in the specifier of TP.</p></li>
+<li><p><strong>Extraposition (Expletive Subject):</strong> A sentence where there is an expletive in the subject position and a clausal complement.</p></li>
+<li><p><strong>Subject-to-subject Raising:</strong> A kind of DP movement where the subject of an embedded non-finite clause moves to the specifier of TP of the main clause to get nominative Case.</p></li>
+<li><p><strong>Subject-to-object Raising (also called Exceptional Case Marking or ECM):</strong> A kind of DP movement where the subject of an embedded non-finite clause moves to the specifier of AgrO in the main clause to get accusative Case.</p></li>
+<li><p><strong>Control Theory:</strong> The theory that governs how PRO gets its meaning.</p></li>
+<li><p><strong>Pragmatics:</strong> The science that looks at how language and knowledge of the world interact.</p></li>
+<li><p><strong>Subject Control (also called Equi):</strong> A sentence where there is a PRO in the embedded non-finite clause that is controlled by the subject argument of the main clause.</p></li>
+<li><p><strong>Object Control:</strong> A sentence where there is a PRO in the embedded</p></li>
+</ul>
+<p>non-finite clause that is controlled by the object argument of the main clause.</p>
+<ul>
+<li><p>Obligatory vs. Optional Control: Obligatory control is when the PRO must be controlled. Optional control is when the DP can be controlled or not.</p></li>
+<li><p><strong>PROarb:</strong> Uncontrolled PRO takes an “arbitrary” reference.</p></li>
+<li><p><strong>Null Subject Parameter:</strong> The parameter switch that distinguishes languages like English, which require an overt subject, from languages like Italian that don’t, and allow pro.</p></li>
+</ul>
+<h1 id="chapter-16">Chapter 16</h1>
+<ul>
+<li><p><strong>Ellipsis:</strong> A construction that omits a constituent when it is identical to a string that has previously been uttered.</p></li>
+<li><p><strong>VP Ellipsis:</strong> A process that omits a VP (or vP) under identity with a previously uttered identical VP, normally in a conjunction. (E.g., I will eat a squid sandwich and you will too.)</p></li>
+<li><p><strong>Antecedent-Contained Deletion (ACD):</strong> A kind of ellipsis where the antecedent of the ellipsis contains the ellipsis site. (E.g., She read every book that I did.)</p></li>
+<li><p><strong>Pseudogapping:</strong> A variety of ellipsis where the accusative object is not omitted, but the rest of the VP is. (E.g., Dan can’t prove Paul innocent but he can prove Della innocent.)</p></li>
+<li><p><strong>Comparative Deletion:</strong> The deletion in a comparative construction; often more than just a VP is missing. We did not attempt an account of comparative deletion in this chapter. (E.g., I’ve read more books than you [have read books].)</p></li>
+<li><p><strong>Comparative Subdeletion:</strong> A kind of comparative deletion that is effectively equivalent to one kind of pseudogapping. (E.g., I’ve eaten more popcorn than you have eaten fries.)</p></li>
+<li><p><strong>Stripping:</strong> An ellipsis process where only one argument remains and the rest of the clause is elided. (E.g., Frank read the Times last night, or maybe the Post.)</p></li>
+<li><p><strong>N-ellipsis:</strong> The deletion of some part of a DP, typically including the N head. (E.g., I read these three books not those two ____.)</p></li>
+<li><p><strong>Sluicing:</strong> A kind of ellipsis, where a TP is elided after a wh-phrase (E.g., I saw someone come into the room, but I don’t remember who ____.)</p></li>
+<li><p><strong>LF-copying hypothesis:</strong> The idea that VP ellipsis consists of a null pronominal VP that is replaced by a copy of its antecedent after SPELLOUT and before LF.</p></li>
+<li><p><strong>PF-deletion hypothesis:</strong> The idea that VP ellipsis targets a fully structured VP, which is deleted under identity with an antecedent after SPELLOUT and before PF.</p></li>
+<li><p><strong>Sloppy Identity:</strong> In an ellipsis structure an elided pronoun or anaphor takes its reference from a local subject (e.g., where John loves his father and Bill does too has an interpretation where Bill loves Bill’s father).</p></li>
+<li><p><strong>Strict Identity:</strong> In an ellipsis structure an elided pronoun or anaphor takes its reference from the subject in the antecedent clause (e.g., where John loves his father and Bill does too has an interpretation where Bill loves John’s father).</p></li>
+<li><p><strong>Preposition Stranding:</strong> The phenomenon in English and related languages where prepositions do not move with the wh-phrase. (E.g., Who did you take a picture of?)</p></li>
+<li><p><strong>Sag’s Analysis of ACD:</strong> To avoid infinite regress, the quantified DP undergoes covert QR to the top of the clause, which places it outside of the VP that is its antecedent.</p></li>
+<li><p><strong>Hornstein’s Analysis of ACD:</strong> To avoid infinite regress, the DP undergoes DP movement to the specifier of AgrOP, which places it outside of the (lowest) VP that is its antecedent.</p></li>
+<li><p><strong>Lasnik’s Analysis of Pseudogapping (Ellipsis Analysis):</strong> To explain why accusative objects survive ellipsis in pseudogapping structures, the accusative object moves to the specifier of AgrOP, which places it outside the VP that is elided. Normal VP ellipsis is really vP ellipsis.</p></li>
+<li><p><strong>Across-the-Board Movement (ATB):</strong> The movement, typically of a wh-phrase, that appears to originate in two different conjoined VPs or clauses (e.g., Who did [Evan despise ti] and [Calvin adore ti?])</p></li>
+<li><p><strong>Agbayani and Zoerner’s Analysis of Pseudogapping (ATB Analysis):</strong> Pseudogapping is not VP ellipsis; instead, it is the overt ATB head movement of a V head in two different phrases into a single little v node. The second trace of this movement corresponds to the “ellipsis” site in pseudogapping.</p></li>
+</ul>
+<h1 id="chapter-17">Chapter 17</h1>
+<ul>
+<li><p><strong>The Copy Theory of Movement:</strong> Movement is a two-part operation. First, the moved element is copied and put into the surface position; second, the original is made silent.</p></li>
+<li><p><strong>Chain:</strong> The moved copy and all its traces.</p></li>
+<li><p><strong>Potential Antecedent:</strong> A DP in the specifier of TP or another DP. The potential antecedent cannot be the anaphor or pronoun itself, nor can it be a DP that contains the anaphor or pronoun.</p></li>
+<li><p><strong>Binding Principle A (final):</strong> One copy of an anaphor in a chain must be bound within the smallest CP or DP containing it and a potential antecedent.</p></li>
+<li><p><strong>Binding Principle B (Dialect 1):</strong> A pronoun must be free within the smallest CP or DP containing it.</p></li>
+<li><p><strong>Binding Principle B (Dialect 2):</strong> A pronoun must be free within the smallest DP (with a filled specifier) or CP containing it.</p></li>
+</ul>
+<h1 id="chapter-18">Chapter 18</h1>
+<ul>
+<li><p><strong>Polysynthesis:</strong> The phenomenon where all the required arguments of a verb surface as morphemes on that verb.</p></li>
+<li><p><strong>Syntax-free Hypothesis:</strong> A hypothesis where polysynthetic languages are said to lack a syntactic component. All the work of the grammar is done by the morphology instead.</p></li>
+<li><p><strong>Polysynthesis Parameter:</strong> Every argument of a head must be related to a morpheme in the word that contains the head.</p></li>
+<li><p><strong>Radical Pro-drop Hypothesis:</strong> A hypothesis about polysynthetic languages, where the morphemes on a verb are agreement morphemes related to null pro arguments.</p></li>
+<li><p><strong>Incorporation:</strong> A phenomenon where the direct object appears as part of the inflected verb.</p></li>
+<li><p><strong>The Empty Category Principle:</strong> Traces must be c-commanded by the moved element (their antecedents).</p></li>
+<li><p><strong>Scrambling:</strong> A movement rule that positions DPs in specifier of FocusP or TopicP.</p></li>
+<li><p><strong>Topics:</strong> DPs that represent given (old) information in the discourse.</p></li>
+<li><p><strong>Information Focus:</strong> The new information in a discourse.</p></li>
+<li><p><strong>Contrastive Focus:</strong> A phrase that is presented in contrast to a previously expressed idea.</p></li>
+<li><p><strong>Non-configurationality:</strong> Non-configurational languages exhibit very free word order, discontinuous constituents, and missing DP arguments.</p></li>
+<li><p><strong>The Dual-Structure Hypothesis:</strong> The idea that syntax is divided into two structures.</p></li>
+<li><p><strong>Hale’s Phrase Structure Rule for Non-configurational Languages:</strong> TP XTZ+</p></li>
+<li><p><strong>The Pronominal Argument Parameter:</strong> Only pronouns can function as the arguments of predicates.</p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>语言学</category>
+        <category>句法</category>
+      </categories>
+      <tags>
+        <tag>linguistics</tag>
+        <tag>syntax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pandas的一些常用操作</title>
+    <url>/pandas/</url>
+    <content><![CDATA[<h1 id="代码">代码</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.set_option(<span class="string">&#x27;display.max_colwidth&#x27;</span>,<span class="literal">None</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>代码</category>
+        <category>pandas</category>
+      </categories>
+      <tags>
+        <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英文句子切分的要点和工具</title>
+    <url>/sentence-segmentation/</url>
+    <content><![CDATA[<h1 id="英文句子切分的规则">英文句子切分的规则</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line">nlp = spacy.load(<span class="string">&#x27;en_core_web_sm&#x27;</span>)</span><br><span class="line">text = <span class="string">&quot;This \n This is Ms. Right&#x27;s first sentence.\n\nNext: is numbered list？\n1.Hello World!\n2.Hello World2!\n3.Hello World!&quot;</span></span><br><span class="line">text_sentences = nlp(text)</span><br><span class="line"><span class="keyword">for</span> sentence <span class="keyword">in</span> text_sentences.sents:</span><br><span class="line">    print(<span class="string">&#x27;句子：&#x27;</span>+sentence.text)</span><br></pre></td></tr></table></figure>
+<p>一般句子以<code>.?!</code>结尾，但<code>.</code>有时也出现在句中。</p>
+]]></content>
+      <categories>
+        <category>自然语言处理</category>
+        <category>句子切分</category>
+      </categories>
+      <tags>
+        <tag>sentence segmentation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>信息抽取-Pilot Study</title>
+    <url>/ir-project-1/</url>
+    <content><![CDATA[<p>这个周末要把项目雏形做出来，在这里记录实验全过程、用到的资料和数据等，代码我放到了github。</p>
+<h1 id="第一步建立学术文献语料库">第一步：建立学术文献语料库</h1>
+<h2 id="下载pdf文件">1.1 下载pdf文件</h2>
+<p>在pilot study中我们只选取ACL中前100篇top cited papers，获取文章列表及pdf的<a href="https://github.com/MissFreak/academic-information-retrieval/blob/main/corpus/get-papers.py">完整代码</a>。</p>
+<table>
+<colgroup>
+<col style="width: 88%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>title</th>
+<th>citation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Neural Machine Translation of Rare Words with Subword Units</td>
+<td>3461</td>
+</tr>
+<tr class="even">
+<td>Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks.</td>
+<td>2405</td>
+</tr>
+<tr class="odd">
+<td>End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF.</td>
+<td>1823</td>
+</tr>
+<tr class="even">
+<td>Get To The Point: Summarization with Pointer-Generator Networks.</td>
+<td>1351</td>
+</tr>
+<tr class="odd">
+<td>OpenNMT: Open-Source Toolkit for Neural Machine Translation.</td>
+<td>1286</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="格式转化与数据清洗">1.2 格式转化与数据清洗</h2>
+<p>把pdf转化为txt，去掉hyphen和newline。</p>
+<p>然后切分句子，把这些句子保存在csv中。</p>
+<h1 id="第二步抽取术语">第二步：抽取术语</h1>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>信息抽取</category>
+      </categories>
+  </entry>
+  <entry>
     <title>spaCy超强指南之文本预处理和语言特征表</title>
     <url>/spacy-1/</url>
     <content><![CDATA[<h1 id="语言特征表token属性">语言特征表：token属性</h1>
@@ -432,8 +1305,16 @@ H(x) = E_{x \sim P}[I(x)] = -E_{x \sim P}[logP(x)]
   <entry>
     <title>Python爬虫代码-全</title>
     <url>/scraping/</url>
-    <content><![CDATA[<h1 id="爬取网站音视频文件并整合">爬取网站音视频文件并整合</h1>
-<p>https://www.naturalreaders.com/online/</p>
+    <content><![CDATA[<h1>常用框架、工具和代码</h1>
+<h2 id="框架">框架</h2>
+<p>熟悉scrapy框架、pyspider框架等。</p>
+<h1>期待完成的项目</h1>
+<h2 id="多媒体">多媒体</h2>
+<h3 id="爬取网站音视频文件并整合">爬取网站音视频文件并整合</h3>
+<p><a href="https://www.naturalreaders.com/online/">https://www.naturalreaders.com/online/</a></p>
+<h2 id="文本">文本</h2>
+<h3 id="爬取Aminer文献的标题和pdf文件">爬取Aminer文献的标题和pdf文件</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ACL.html&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    html = f.read()</span><br><span class="line"><span class="comment"># print(&#x27;读取到以下html内容：&#123;&#125;...&#x27;.format(html[:20]))</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">ua = UserAgent()</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lst = re.split(<span class="string">&#x27;&lt;/?script.*&gt;&#x27;</span>, html)</span><br><span class="line"><span class="keyword">for</span> string <span class="keyword">in</span> lst:</span><br><span class="line">	<span class="keyword">if</span> <span class="string">&quot;g_initialProps&quot;</span> <span class="keyword">in</span> string:</span><br><span class="line">		json_file = re.sub(<span class="string">&#x27;undefined&#x27;</span>, <span class="string">&#x27;&quot;undefined&quot;&#x27;</span>, string.split(<span class="string">&#x27;;&#x27;</span>, <span class="number">1</span>)[<span class="number">1</span>].split(<span class="string">&#x27;= &#x27;</span>)[-<span class="number">1</span>].rsplit(<span class="string">&#x27;;&#x27;</span>, <span class="number">1</span>)[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">dict_json = json.loads(json_file)</span><br><span class="line">top_cited_papers = dict_json[<span class="string">&#x27;rank&#x27;</span>][<span class="string">&#x27;confInfo&#x27;</span>][<span class="string">&#x27;top_cited_papers&#x27;</span>]</span><br><span class="line"></span><br><span class="line">lst_of_ids = [paper[<span class="string">&#x27;id&#x27;</span>] <span class="keyword">for</span> paper <span class="keyword">in</span> top_cited_papers]</span><br><span class="line">lst_of_titles = [paper[<span class="string">&#x27;title&#x27;</span>] <span class="keyword">for</span> paper <span class="keyword">in</span> top_cited_papers]</span><br><span class="line">print(<span class="built_in">len</span>(lst_of_ids))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lst_of_ids[<span class="number">1</span>:])):</span><br><span class="line">	page_link = <span class="string">&#x27;https://www.aminer.cn/pub/&#123;&#125;/&#x27;</span>.<span class="built_in">format</span>(lst_of_ids[i])</span><br><span class="line">	headers = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: ua.random&#125; <span class="comment"># 更换headers来应对反爬虫</span></span><br><span class="line">	bs = BeautifulSoup(requests.get(page_link).content, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">	pdf_link = <span class="string">&quot;http://&quot;</span> + bs.find(<span class="string">&#x27;iframe&#x27;</span>)[<span class="string">&#x27;src&#x27;</span>].split(<span class="string">&#x27;file=//&#x27;</span>)[-<span class="number">1</span>]</span><br><span class="line">	print(pdf_link)</span><br><span class="line">	<span class="keyword">with</span> <span class="built_in">open</span>(lst_of_titles[i] +<span class="string">&#x27;.pdf&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">		print(<span class="string">&#x27;Downloading...&#x27;</span>)</span><br><span class="line">		headers = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: ua.random&#125;</span><br><span class="line">		response = requests.get(pdf_link, headers=headers)</span><br><span class="line">		f.write(response.content)</span><br><span class="line">	print(<span class="string">&#x27;Downloaded: &#x27;</span>+ lst_of_titles[i])</span><br><span class="line">	time.sleep(random.random()*<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>代码</category>
@@ -2328,9 +3209,14 @@ hyponym(Gelidium,red algae)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span>)</span><br><span class="line">todos = json.loads(response.text)</span><br><span class="line">todos == response.json()</span><br></pre></td></tr></table></figure>
 <p>这里的伪json数据适合用来练习。</p>
 <h1 id="遍历json字符串">遍历JSON字符串</h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">items &#x3D; data.items()</span><br><span class="line">for key, value in items:</span><br><span class="line">    print(str(key) + &#39;&#x3D;&#39; + str(value))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">items = data.items()</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> items:</span><br><span class="line">    print(<span class="built_in">str</span>(key) + <span class="string">&#x27;=&#x27;</span> + <span class="built_in">str</span>(value))</span><br></pre></td></tr></table></figure>
+<h1 id="从网上下载的json文件">从网上下载的json文件</h1>
+<p>有时候网上的json文件会有错误，比如某些字符串没有加双引号等等。我们要注意JSON中的名称-值对列表被花括号包裹，<strong>名称必须被双引号包裹，而值并不是总是需要被双引号包裹。当值是字符串时，必须使用双引号。</strong>而在json中，还有数字、布尔值（true false）、数组、对象、null等其他数据类型，而这些都不应该被双引号包裹。</p>
 <p><strong>参考文献：</strong></p>
+<p>《JSON必知必会》</p>
+<p>https://www.jianshu.com/p/63dd4c77ad29</p>
 <p>https://realpython.com/python-json/</p>
+<p>https://blog.csdn.net/qq_33017925/article/details/87488200</p>
 ]]></content>
       <categories>
         <category>代码</category>
@@ -2590,125 +3476,8 @@ hyponym(Gelidium,red algae)
   <entry>
     <title>心理语言学：资源和知识整理</title>
     <url>/psycho-linguistics/</url>
-    <content><![CDATA[<h1 id="心理语言学知识大纲">心理语言学知识大纲</h1>
-<p><strong><em>*COURSE TITLE: Psycholinguistics (2020*</em><em>*-2021 spring*</em></strong> <strong><em>*semester)*</em></strong></p>
-<p>Instructor: Zhaohong Wu Email: wuzhaohong@bfsu.edu.cn</p>
-<p>Students: 2nd year Classroom hours: 2 hours / week</p>
-<p>Class time and place: 10:10-12:00 Mon., 310 SEIS</p>
-<p>Office hours: 15:10-17:00 Thur. (by appointment), 202 SEIS</p>
-<p><strong><em>*A. OBJECTIVES*</em></strong></p>
-<p>Introduce students to the psycholinguistic research and research methods of language comprehension, language production and language acquisition.</p>
-<p><strong><em>*B. ORGANIZATION*</em></strong></p>
-<p>The first meeting will provide an introduction to sentence/language processing.</p>
-<p>The next three weeks will be general introductions to the three areas of psycholinguistics: language comprehension, language production, and L1 language acquisition.</p>
-<p>Two weeks will be devoted to psycholinguistic methods and experimental design.</p>
-<p>The next two weeks will be on statistical analysis using SPSS and R.</p>
-<p>After that, for the remaining weeks, each course period will be organized around a question that has driven study of language comprehension, production, or acquisition. Required readings for the class will address the day’s topic from multiple perspectives. Class periods will begin with an introduction about the topic and theories by Zhaohong, and the remainder will be class discussion of the readings, facilitated by students.</p>
-<p>Three students will collaboratively facilitate each class discussion per week. This will involve helping to choose the readings for that week and leading discussion based on your ideas and the discussion questions contributed by others.</p>
-<p>Possible topics:</p>
-<ol type="1">
-<li><p>What role does prediction play in comprehension?</p></li>
-<li><p>What role does experience with language play in comprehension?</p></li>
-<li><p>What role does priming play in normal language comprehension/production?</p></li>
-<li><p>What is the role of syntax/ linguistics formalisms in language processing?</p></li>
-<li><p>How does prosody affect the way we understand language? Is there such a thing as implicit prosody and does it affect comprehension during reading?</p></li>
-<li><p>Do speakers/writers maintain a model of what their interlocutor knows? How much do speakers/ writers take their listeners/readers into account when they’re producing language?</p></li>
-<li><p>Is the processing of languages with very different syntactic properties (head-final languages, etc.) done very differently? How do people process head-final languages?</p></li>
-<li><p>How is figurative language processed?</p></li>
-<li><p>How do (and which) individual differences affect language processing (and why)? (e.g. working memory, executive functioning, social orientation)</p></li>
-<li><p>What role do disfluencies play in language comprehension/production?</p></li>
-<li><p>What information do learners use to determine the meanings of novel words?</p></li>
-<li><p>What are the individual differences in first and second language acquisition?</p></li>
-<li><p>Are there cognitive consequences of bilingualism?</p></li>
-<li><p>Does a bilingual speaker have one or two lexicons? How are words in the two languages linked to each other and to the conceptual system?</p></li>
-<li><p>What are the first language effects in learning a second language?</p></li>
-</ol>
-<p><strong><em>*C. SCHEDULE*</em></strong></p>
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 93%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Psycholinguistics, a general introduction (Carroll, Chapter 1)</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Language Comprehension (Carrol, Chapter 4 &amp; 6)</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Language Production (Carrol, Chapter 8)</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Language Acquisition (Carrol, Chapter 10 &amp; 12) UG parameter, statistical learning(frequency, use statistical information to segment speech into words), rule learning (generalize a rule from the inputs), topic+comment, overgeneralization, undergeneralizaiton, reduction; reinforecement or imitation; active construction of a grammar theory; social interaction theory; UG-based approach: phrase structure rules; comlementizer ; transforamtions; minimal link condition for wh-movement; neuroplacity</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Psycholinguistic Methods and Experimental Design</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Psycholinguistic Methods and Experimental Design</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Statistical analyses</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Statistical analyses</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Leading discussion: Topic 1</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Leading discussion: Topic 2</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Leading discussion: Topic 3</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>Leading discussion: Topic 4</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>Leading discussion: Topic 5</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>Leading discussion: Topic 6</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>Individual project presentation</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>Individual project discussion</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>*D.*</em></strong> <strong><em>*REQUIRED READINGS*</em></strong> <strong><em>*(*</em><em>*RELEVANT CHAPTERS)*</em></strong></p>
-<p>Carroll, David W. (2008) <strong>Psychology of Language.</strong> 5th edition. Thomson Wadsworth</p>
-<p><strong><em>*E*</em><em>*. ASSESSMENT:*</em></strong></p>
-<p>l Final term paper: 50%</p>
-<p>l Participation in class: 15%</p>
-<p>l Leading discussion: 30%</p>
-<p>l Final project presentation: 5%</p>
+    <content><![CDATA[<h1 id="心理语言学术语glossary">心理语言学术语（Glossary）</h1>
+<p>Absolute terms Spatial terms that refer to the location of an object in space irrespective of the location of a person (for example, north/south). Accommodation A phonological process in which elements that are shifted or deleted are adapted to their errorinduced environments. Acoustic phonetics The branch of phonetics that specifies the acoustic characteristics associated with each speech sound. Acquired dyslexia A form of reading disability in a previously literate person who has sustained brain damage. Active processing A collection of activities that includes relating new information to information we have in permanent memory, asking questions of the material, and writing summaries or outlines of the material. Active voice A sentence in which the surface structure subject is also the deep structure or logical subject of the sentence, such as The woman scolded the child. Addition A speech error in which linguistic material is added, as in I didn’t explain this clarefully enough [carefully enough]. Affricate A consonant that begins with complete closure of the vocal tract followed by gradual release of air pressure, such as the ch in church. Agent The thematic or semantic role corresponding to an individual who performs a given action, such as the manager in The manager opened the store. Agrammatic speech Speech in which there is a lack of grammatical structure, such as the absence of grammatical morphemes and function words. Agrammatism See agrammatic speech. Agraphia An aphasia characterized by the inability to write. Alexia An aphasia characterized by the inability to comprehend written or printed words. Alphabet A writing system in which each letter is supposed to represent a phoneme. Alveolar A consonant articulated at the alveolar ridge, such as the d in dog. Ambiguity A property of language in which a word or sentence may be interpreted in more than one way. See also deepstructure ambiguity, lexical ambiguity, and phrase ambiguity. American Sign Language (ASL) The form of sign language used in the United States. It is a complete language distinct from oral languages. Anaphor A linguistic expression that refers back to prior information in discourse. Anaphoric reference A form of reference cohesion in which one linguistic expression refers back to prior information in discourse. Angular gyrus Believed to serve as an association area in the brain that connects one region with another; particularly important for the association of visual stimuli with linguistic symbols. Damage to the angular gyrus leads to both alexia and agraphia. Animacy A semantic feature denoting whether an object is alive. Anomalous suspense In narrative comprehension, the experience of suspense when the reader already knows how a story will turn out. Antecedent Prior information in discourse. Anticipation A speech error in which a later word or sound takes the place of an earlier one. Anticipatory coarticulation Type of coarticulation in which the shape of the vocal tract for a given speech sound is influenced by upcoming sounds. Anticipatory retracing Selfrepair in which the speaker traces back to some point prior to an error. Previously correct material is repeated along with the corrected material. See also fresh start and instant repair. Aphasia A language or speech disorder caused by brain damage. Arbitrariness A feature of language in which there is no direct resemblance between words and their referents. Arcuate fasciculus The primary pathway in the brain between Wernicke’s area and Broca’s area. Articulatory phonetics The branch of phonetics that specifies the articulatory gestures associated with each speech sound. Aspiration A puff of air that accompanies the production of certain speech sounds. Aspiration is phonemic in some languages but not in English. Assertion A communicative act in which a person draws the attention of another person to a particular object—for example, a child showing a toy to an adult as if to say This is mine. Assertions may be made through words or gestures. Assimilation A phonological process in which one speech sound is replaced by another that is similar to sounds elsewhere in the utterance. Associative chain theory A theory favored by behaviorists that explains the formulation of a sentence as a chain of associations between the individual words in the sentence. Attemptsuppressing signal A cue given by a speaker to indicate to a listener that he or she is not finished. Attributive relations Relations between words that indicate the attributes of a given word, such as round as an attribute for ball. Auditory level A level of speech perception in which the speech signal is represented in terms of frequency, intensity, and temporal attributes. Automaticity A property of cognitive processes that do not require any processing capacity. Automatic process An activity that does not require any processing capacity. Autonoetic consciousness A form of consciousness in which one experiences time, as past, present, or future. Auxiliary verb A ‘‘helping verb.’’ A verb such as is, do, or can used in conjunction with the main verb in a sentence, such as Kim is gardening this afternoon. Baby talk See motherese. Background In discourse processing, information that was introduced or discussed earlier and is no longer the focus of discussion. Basic child grammar The grammatical characteristics of early child language, such as telegraphic speech, found in numerous languages. Basic color term A term that refers to color and that is only one morpheme, not contained within another color, and not restricted to a small number of referents. Basiclevel term A term that refers to a category in which there are broad similarities among exemplars. Behaviorism The doctrine that states that the proper concern of psychology should be the objective study of behavior rather than the study of the mind. Bilabial A consonant articulated at the mouth such as the b in big. Bilingual firstlanguage acquisition When children acquire two languages at the same time. Binaural perception A procedure in which the same stimulus is presented to the two ears. Blend A speech error in which two or more words are combined. Bottomup processing A process in which lowerlevel processes are carried out without influence from higherlevel processes (for example, perception of phonemes being uninfluenced by the words in which they appear). Bound morpheme A unit of meaning that exists only when combined or bound to a free morpheme. Bridging A process in which the listener or reader draws inferences to build a ‘‘bridge’’ between the current utterance and preceding utterances. Broca’s aphasia An aphasia characterized by deficits in language production. Also called expressive aphasia. Broca’s area A brain region in the frontal lobe of the left hemisphere. Damage to this region leads to Broca’s aphasia. Bystanders Individuals who are openly present but not part of a conversation. Cataphoric reference A form of reference cohesion in which one linguistic expression refers to information yet to be introduced in discourse. Categorical perception The inability to discriminate sounds within a phonemic category. Categorysize effect The fact that it takes longer to semantically verify a statement of the form An A is a B if B is a larger semantic category. Categoryspecific dissociations In aphasia, the selective inability to retrieve certain categories of words, such as fruits or vegetables, while retaining the ability to recognize and use other word categories. Childdirected speech Speech addressed to children. See also motherese. Childhood amnesia The inability of adults to remember the first few years of life. Also called infantile amnesia. Chunking Grouping individual pieces of information into larger units. A shortterm memory strategy. Closedclass words See function words. Coalescence A phonological process in which phonemes from different syllables are combined into a single syllable. Coarticulation The process of articulating more than one speech sound at a time. Codability The length of a verbal expression. Cognitive constraint A bias that children are assumed to use to infer the meanings of words. Cognitive economy A characteristic of semantic memory in which information is only represented once within a semantic network. Cognitive science The branch of science devoted to the study of the mind; consists of the fields of psychology, artificial intelligence, neuroscience, linguistics, philosophy, and adjacent disciplines. Coherence The degree to which different parts of a text are connected to one another. Coherence exists at both local and global levels of discourse. Cohesion Local coherence relations between adjacent sentences in discourse. GLOSSARY 423 Cohort model A model of auditory word recognition in which listeners are assumed to develop a group of candidates, a word initial cohort, and then determine which member of that cohort corresponds to the presented word. Common ground The shared understanding of those involved in the conversation. Communicative competence The skill associated with using a language appropriately and effectively in various social situations. Complement A noun phrase that includes a verb—for example, you sat down in I see you sat down. Complex sentence A sentence that expresses more than one proposition. Conceptual complexity See semantic complexity. Conceptual metaphor theory In figurative language comprehension, the position that we comprehend figurative language in terms of underlying conceptual metaphors. For example, we might comprehend the metaphor We’re spinning our wheels in terms of the conceptual metaphor LOVE IS A JOURNEY. Conduction aphasia An aphasia characterized by the inability to repeat what one has heard. Conjunctive cohesion A form of cohesion in which we express a relationship between sentences or phrases by using conjunctions such as and, or, and but. Connected discourse See discourse. Connectionist model A model of cognitive/linguistic processes that assumes (1) a vast interconnected network of information nodes in which each node influences and is influenced by a large number of adjacent nodes and 　parallel processing of information. Also called parallel distributed processing. Connotation The aspect of meaning suggested by a word but not strictly part of the word’s dictionary definition. See also denotation. Consonant A speech sound in which the vocal tract is partially or fully closed during production. Constituent A grammatical unit such as a noun or verb phrase. Constraintbased model A model of sentence comprehension in which we simultaneously use all available information (semantic, syntactic, contextual, and so forth) in our initial parsing of a sentence. Content word A word (such as a noun, a verb, or an adjective) that plays a primary role in the meaning of a sentence. See also function word. Contextconditioned variation The fact that the acoustic parameters associated with a given speech sound vary with its phonetic context. Contextualized language Language that is related to the immediate context. Contralateral The arrangement in the nervous system in which one half of the brain controls the other half of the body. Controlled process An activity that requires processing capacity. Convention A shared assumption about communication. Coordination A sentence in which two or more simple sentences are linked by a coordinating expression such as and, or, or but—for example, Lake Superior is beautiful, but it is cold. Also refers to words in the lexicon that are at the same level in a hierarchy, such as sparrow and robin. Copula The verb to be used as the main verb in a sentence such as Miguel is wonderful. Corpus callosum A band of fibers that connects the two cerebral hemispheres. Counterfactual reasoning The ability to reason about an event that is contrary to fact. Count noun A noun that takes the plural morpheme and refers to an object with clear boundaries, such as a stick. Also called an individual noun. Creole The language developed by children who have been exposed to a pidgin as their native language. Critical period hypothesis The view that there is a period early in life in which we are especially prepared to acquire a language. Decontextualized language Language that is separated in time or place from its referent. Deep structure The level of linguistic structure assumed in transformational grammar that expresses the underlying semantic meaning of a sentence. Deepstructure ambiguity A form of ambiguity in which a sentence may be derived from two different deep structures. Default value The value of a parameter that a child is hypothesized to be born with. Deferred imitation Imitation of a behavior that was observed some time earlier. De´ja` vu The erroneous feeling that one has experienced a particular event before. Deletion A speech error in which something is left out. Denotation The dictionary definition of a word. See also connotation. Dental A consonant articulated at the teeth, such as the th in thin. Derivation The series of linguistic rules needed to generate a sentence. Derivational morpheme A bound morpheme that is added to a free morpheme to create a new word. For example, ness turns good (an adjective) into goodness (a noun). Derivational theory of complexity The theory that states that the psychological complexity of a sentence is directly proportional to the length of its derivation. Descriptive adequacy The extent to which a grammar can provide a structural description of a sentence. See also explanatory adequacy and observational adequacy. Determiner A part of speech that quantifies or specifies a count noun, such as the in The cat ate the plant. Dichotic listening task An experimental task in which different stimuli are simultaneously presented to the two ears. Differentiation The number of words in a semantic domain. Discontinuous constituent A grammatical constituent in which some elements are separated, such as picked and up in George picked the baby up. Discourse A group of sentences combined in a meaningful manner. Discreteness A semantic feature denoting whether an object has definite outlines or boundaries. For example, a tree is + discrete, whereas air is – discrete. Dishabituation The recovery of the strength of a habituated response when a novel stimulus is presented. Displacement A feature of language in which words are separated in space and time from their referents. Distinctive feature The specification of the differences between speech sounds in terms of individual contrasts. Duality of patterning A feature of a communication system in which a small number of meaningless units can be combined into a large number of meaningful units. Duplex perception An experimental technique in which formant transitions are presented to one ear and steady states to the other. Eavesdroppers Individuals who listen in on conversations without the participants’ awareness. Elaboration The process of relating incoming information to information already stored in permanent memory. Ellipsis A form of cohesion in which a previous item is dropped from subsequent sentences but its presence is assumed. Empiricism The branch of philosophy that emphasizes the use of controlled observation and the belief that experience shapes human behavior. Episode A component of a story grammar. Episodic memory The division of permanent memory in which personally experienced information is stored. Evoked potential Measurement of electrical activity in a region of the brain following presentation of a stimulus. Exaptation Evolutionary process in which preexisting physical structures are used for new functions. Exchange A speech error in which two sounds or words change places with one another. Excitatory interaction In a connectionist model, the tendency for one unit’s activation to increase the activation of other units. Explanatory adequacy The extent to which a grammar can explain the facts of language acquisition. See also descriptive adequacy and observational adequacy. Explicit knowledge Knowledge of how to perform various acts. See also tacit knowledge. Expository discourse A type of discourse in which the writer’s goal is to convey information about the subject matter. Expressive aphasia See Broca’s aphasia. Expressive strategy A style of child language characterized by low noun/pronoun ratio, poor articulation, clear intonation, and relatively long utterances. Eye–voice span The lag between eye position and voice when reading aloud, about six or seven words. False recognition error When a subject believes that an item was presented during a study although it was not. Fast mapping The process of acquiring new words rapidly. Feature level A level of written language perception in which a visual stimulus is represented in terms of the GLOSSARY 425 physical features that comprise a letter of the alphabet, such as a vertical line, a curved line, and so on. Felicity condition A condition that must be present for a speech act to be understood as sincere or valid. Feral children Children who have grown up without human companionship in the wild. Figurative language Language that means one thing literally but is taken to mean something different. Fis phenomenon When a child mispronounces a word yet correctly distinguishes between child and adult versions of that word. Fixation The time spent focused at a given location during reading; the time between eye movements. Focal color The most representative example of a basic color. Foreground In discourse processing, information that is currently being discussed or explained. Formal complexity See syntactic complexity. Formant A concentrated band of energy found in the sound spectrograms of phonemes. Formant transition A rapid increase or decrease in frequency at the beginning of a formant. Free morpheme A unit of meaning that can stand alone. Fresh start A form of Selfrepair in which the speaker replaces the original syntactic structure with a new one. See also anticipatory retracing and instant repair. Fricative A consonant in which the vocal tract is partially closed during articulation, such as the f in fat. Functional magnetic resonance imaging (f MRI) A method of imaging brain structure and brain activity. Functional relations Relations among words that indicate what can be done with the referent of a word. For example, words such as sitting, rest, and rocking indicate what can be done with a chair. Function word A word such as an article, preposition, or conjunction that plays a secondary role in the meaning of a sentence. See also content word. Garden path sentence A sentence in which the comprehender assumes a particular meaning of a word or phrase but discovers later that the assumption was incorrect, forcing the comprehender to backtrack and reinterpret the sentence. Genre A category of discourse characterized by a particular form or content, such as the genre for fairy tales. Given information Information that the speaker assumes the listener already knows. Given/new strategy A comprehension strategy in which utterances are analyzed into given and new components and the new information is stored in memory with previously received information. Global structure See macrostructure. Glottis The opening between the vocal cords. Grammar In linguistics, a theory of language or set of hypotheses about how language is organized. Grammatical gender The grammatical property in which languages identify objects as masculine, feminine, and sometimes neuter. Grammatical morpheme See bound morpheme. Grapheme A printed letter of the alphabet. Ground In metaphor, the implied similarity between tenor and vehicle. Habituation The decline in a response to a stimulus following repeated presentation of the stimulus. Head parameter A grammatical feature that specifies the position of the head of a phrase (noun in noun phrase, verb in verb phrase, and so on). Hemispherectomy A surgical procedure in which one of the cerebral hemispheres is removed. Holistic processing A style of processing, associated with the right cerebral hemisphere, that is global in nature. Holophrase A oneword utterance used by a child to express more than the meaning attributed to the word by adults. Homesign A form of gestural communication invented by deaf children who are not exposed to a sign language. Hominids The family of species that includes modernday human beings. Also called hominins. Homophone A word that is pronounced the same as another word but means something different, such as to and two. Hypernymy A semantic relationship in which a word is a subordinate of another. For example, animal is a hypernym of dog. Hyponymy A semantic relationship in which a word is a superordinate of another. For example, collie is a hyponym of dog. Iconicity A characteristic of language in which words resemble their referents. Idiomorph A sound or sound sequence used consistently by a child to refer to someone or something even though it is not the sound sequence conventionally used in the language for that purpose. Illocutionary force In speech act theory, the action that is performed by a speaker in uttering a sentence. Immediacy principle The principle that we immediately interpret words as we encounter them. Incremental processing The notion that we are planning one portion of our utterance as we articulate another portion. Indirect speech act A speech act in which the literal utterance meaning is not the same as the speaker’s meaning. Induction A process of reasoning from the specific to the general. For instance, if all of the specific horses we have seen are brown, then we might induce that all horses are brown. Inference A proposition drawn by the listener or reader. Inflectional morpheme A bound morpheme that is added to a free morpheme to express grammatical contrasts in sentences. English examples include the plural and past tense morphemes. Inhibitory interaction In a connectionist model, the tendency for one unit’s activation to decrease the activation of other units. Initiationreplyevaluation sequence A form of discourse used in classrooms in which the teacher asks a student a question, the student answers, and the teacher evaluates the answer. Instantiation Identifying a general term with a specific meaning. Instant repair A form of Selfrepair in which the speaker traces back to an error that is then replaced with the correct word. See also anticipatory retracing and fresh start. Institutional setting A conversational setting in which participants engage in speech exchanges that resemble ordinary conversations but are limited by institutional rules. Interactional content Content of a sentence that conveys the speaker’s attitude toward the listener. Utterances that are high in interactional content include jokes, insults, and excessively polite speech. Interactive gesture A form of gesture used in conversation to convey interactional content, such as holding up one’s hands to indicate that one’s turn is not finished. Internal lexicon The storage of lexical information in memory. Interruption A period of simultaneous speech more than one word prior to the speaker’s projected completion point. See also overlap. Intersection search The process of retrieving information from a semantic network. Intonation The use of pitch to signal meaning. Intonational contour A pattern of pitch changes characteristic of an utterance as a whole, such as the rising intonation often found in questions. Intrinsic terms Spatial terms that refer to objects in relation to various object coordinates (such as behind the house, at the tip of the post). Ipsalateral The arrangement in the nervous system in which one half of the brain controls the same side of the body. Isolated children Children who have grown up without normal human interactions. Joint action An action carried out by an ensemble of people acting in coordination with one another. Examples include dancing and conversing. Kana Japanese syllabic symbols. Kanji Japanese logographic characters borrowed from Chinese. Lack of invariance The fact that there is no onetoone correspondence between speech cues and perception. Language Within linguistic theory, an infinite set of wellformed sentences. Language bioprogram A hypothesized innate grammar that is used by children whose environmental exposure to language is limited. The bioprogram is assumed to be suppressed in children whose language environment is normal. Language bioprogram hypothesis The hypothesis that children whose environmental exposure to language is limited use a backup linguistic system. Language transfer In secondlanguage acquisition, the process in which the first language influences the acquisition of a subsequent language. Laryngeal system The system of muscles that determines whether a speech sound is voiced or voiceless. GLOSSARY 427 Late closure strategy A strategy used in parsing that states that wherever possible we prefer to attach new items to the current constituent. Lateralization The extent to which a given psychological function is served by one hemisphere of the brain. Functions primarily served by one hemisphere are said to be lateralized to that hemisphere. Lemma Syntactic aspects of word knowledge. Letter level The level of written perception in which a visual stimulus is represented as a letter of the alphabet. Lexeme Phonological aspects of word knowledge. Lexical access The process of activating lexical items from semantic memory. Lexical ambiguity A form of ambiguity in which a word has more than one meaning. Lexical bias effect The finding that speech errors more commonly result in true words than would be expected by chance. Lexical cohesion The use of reiteration, synonymy, hyponymy, and other semantic relationships to link successive sentences in discourse. Lexical decision task An experimental task in which a subject sees a string of letters and must rapidly decide whether the string is a word. Lexicalfunctional grammar A grammar in which structural relationships are built into enriched lexical entries rather than with transformational rules. Lexicalinsertion rule A rule that governs how lexical entries are inserted into a tree structure during the derivation of a sentence. Lexicon The vocabulary of a language. See also internal lexicon. Linguistic creativity See linguistic productivity. Linguistic determinism The hypothesis that languages determine nonlinguistic cognitive processes such as the perception of shapes. Linguistic productivity The ability to create or comprehend an infinite number of new sentences that are grammatically correct; also called linguistic creativity. Linguistic relativity The hypothesis that the cognitive processes determined by language vary from language to language. Linguistics The branch of science that studies the origin, structure, and use of language. Local structure See microstructure. Locutionary act In speech act theory, the act of saying something. Logogen Structure in the internal lexicon that specifies the various attributes (semantic, orthographic, and so on) of a word. Logography An orthography in which spoken words are represented by visual symbols. Longitudinal investigation A method of studying child development in which a small number of children are studied over a period of years. Longterm memory See permanent memory. Macrostructure The global coherence relationships in discourse. Manner of articulation How a speech sound is articulated (for example, stop, fricative, and so on). Manual English A manual version of English, as in fingerspelling the letters of the English alphabet. See also American Sign Language. Mass noun A noun that does not take the plural morpheme and refers to objects without clear boundaries, such as air. Mean length of utterance in morphemes (MLU) An index of children’s language growth. It is computed by dividing the number of morphemes by the number of utterances. Mental model A mental representation of some aspect of the world. Meronymy A semantic relationship that pertains to the parts of an object referred to by a word; for example, for the word car, both engine and wheels are meronyms because they refer to parts of a car. Metalinguistic awareness The ability to think of language as an object. Metaphor A form of language in which a word or phrase that literally denotes one idea is interpreted to mean a different one and suggests a similarity between the two—for example, My head is an apple without a core. Microstructure The local coherence relationships in discourse. Minimal attachment strategy A principle used in parsing. It states that we prefer attaching new items into the phrase marker being constructed using the fewest syntactic nodes consistent with the rules of the language. Minimal response An utterance such as uhhuh or umhmm made by a listener during a conversation. Ordinarily minimal responses are taken as displays of interest in a speaker’s topic. Mispronunciation detection An experimental task in which subjects are presented auditorily with tapes that occasionally include mispronounced words. The subject’s task is to detect the mispronunciations. Modularity The degree to which language processing is independent of general cognitive processes such as memory and reasoning. Also refers to the degree to which an aspect of language is independent of other aspects of language. For example, parsing may be thought of as modular if there is a syntactic processor that operates independently of semantic and discourse processes. Morpheme The smallest unit of meaning in a language. Morphology The system of wordforming elements and processes in a language. Motherese A form of adulttochild speech characterized by relatively simple utterances, concrete referents, exaggerated intonation patterns, and a high proportion of directive utterances. Mutual exclusivity bias A cognitive constraint in which children assume that an object is ordinarily not given two different names. Narrative discourse A form of discourse in which settings, characters, and plot play a central role. Nasal A consonant in which air flows through the nasal cavity as in the n in nail. Nativism An approach to language acquisition that emphasizes the innate organization of language. Necessary condition A condition that must be present in order for a specified event to occur. Negative evidence Evidence that a particular linguistic expression (a word or sentence) is inappropriate or unacceptable. Negative evidence may be presented explicitly (No, that’s not a cow; that’s a dog) or implicitly (such as when adults repeat child utterances with corrections). Neurolinguistics The study of how linguistic information is processed in the brain. New information Information that the comprehender (reader or listener) is assumed not to know. Nonnutritive sucking A procedure used in research with infants in which sucks on a pacifier are recorded. Nullsubject parameter A grammatical feature that specifies whether a language permits sentences without subjects. Also called the prodrop parameter. Object permanence The awareness that objects that can no longer be seen still exist. Object relative clause A relative clause in which a wh clause modifies the object of a sentence. Observational adequacy The extent to which a grammar can distinguish between acceptable and unacceptable strings of words. See also descriptive adequacy and explanatory adequacy. Occipital lobe The visual center at the back of the brain. Openclass word See content word. Operating principle A preferred way of taking in or operating on information. Original word game A game in which adults teach children the names of words. Children point to an object and say, ‘‘What’s that?’’ and the adult supplies the name. Orthography The representation of a sound by written or printed symbols. Ostensive definition The process of defining a word by pointing to its referent. Overextension When a child uses a word to refer to a larger set of referents than an adult would—for example, calling a round clock a moon. Overhearers Individuals who are not part of a conversation. May be bystanders or eavesdroppers. Overlap A period of simultaneous speech during the last word of a speaker’s projected closing. See also interruption. Overregularization When a child applies a linguistic rule to cases that are exceptions to the rule—for example, saying goed instead of went. Paragrammatic speech Speech that is fluent but not coherent and that contains many irrelevant associations. Parallel distributed processing See connectionist model. Parallel processing When two or more processes take place at the same time. Parallel transmission The notion that different phonemes of the same syllable are encoded into the speech signal simultaneously. Parameter (1) In grammatical theory, a grammatical feature that is set in different ways in different languages. See also head parameter and nullsubject parameter. GLOSSARY 429 In American Sign Language, a dimension along which signs may differ, such as hand configuration, movement, and location. Parameter setting In grammatical theory, the notion that children are born with grammatical parameters that are preset to certain values. Language acquisition is seen as a matter of resetting these parameters to the values of one’s native language. Parietal lobe Middle brain region containing motor centers that control facial and speech muscles. Parsing The process of assigning words into grammatical categories. Partial report technique A method for studying the sensory stores. Subjects are briefly presented with an array of stimuli and asked to report only a portion of the array. Participants Individuals who are taking part in a conversation. Particlemovement transformation A transformational rule that accounts for the movement of particles such as up around noun phrases. Passive transformation A transformational rule that transforms the deep structure of an active sentence into the passive voice. Passive voice A sentence in which the surface structure subject is the deep structure or logical object of the action, such as in The child was scolded by the mother. Patient A thematic or semantic role corresponding to the individual acted on, such as the elderly man in The neighborhood frightened the elderly man. Pattern recognition A process of matching information in the sensory stores with information retrieved from permanent memory. Perceptual span The size of the area from which a reader picks up visual information. Perlocutionary effect In speech act theory, the effect of a speech act on a listener. Permanent memory Memory that is essentially permanent (also called longterm memory). Includes semantic and episodic memory. Perseveration A speech error in which an earlier word or sound intrudes on a later one. Perseveratory coarticulation The type of coarticulation in which the shape of the vocal tract for a given speech sound is influenced by previous sounds. Personal settings A conversational setting in which there is a free exchange of turns among two or more participants. Phone The minimal unit of sound. Phoneme The minimal unit of sound that contributes to meaning. Phoneme monitoring An experimental task in which subjects listen for a particular phoneme while comprehending a passage and being timed for how long it takes them to monitor the phoneme. Phonemic restoration A topdown process in which the listener uses the context to restore phonemes missing from the speech signal. Phonemic similarity effect The observation that speech errors and targets are phonemically similar. Phonetic level A level of speech perception in which the speech signal is represented in terms of acoustic cues, such as formant transitions. Phonetics The study of speech sounds. Phonetic trading relations The notion that different acoustic cues have tradeoff effects on speech perception. Phonological bias technique A method of inducing speech errors by having a subject read a series of words with similar phonological patterns. Phonological dyslexia A form of reading disability in which a person’s ability to read words aloud is disrupted. Phonological level A level of speech perception in which the speech signal is converted into a phoneme and phonological rules are applied to the sound sequence. Phonology The sound system of a language, including the rules determining how different phonemes may be arranged in a word. Phrase marker A tree diagram that represents the phrase structure of a sentence. Phrase structure The hierarchical organization of sentences into phrases. Phrasestructure ambiguity A form of ambiguity in which a sentence has multiple meanings that may be revealed by regrouping the sentence constituents. Phrasestructure rule A rule that rewrites one constituent into one or more constituents. For example, a verb phrase may be rewritten as a verb and a noun phrase. Pidgin An auxiliary language that is created when speakers of mutually unintelligible languages are in close contact. Place of articulation The location within the vocal tract where articulation of a speech sound is produced (for example, bilabial, alveolar, and so on). Planum temporale An area in the temporal lobe known to be related to language functioning. Positive evidence Evidence that a particular linguistic expression (a word or sentence) is appropriate or acceptable. Positive evidence may be presented explicitly (when someone approves of another’s word or utterance) or implicitly (for example, when a person responds to another’s utterance without explicitly commenting on its appropriateness). Poverty of stimulus argument The argument made by followers of nativism that the environmental input presented to children is too weak and degenerate to account for the child’s language acquisition. Pragmatics The social rules underlying language use. Pragmatic theory In figurative language comprehension, the position that we comprehend figurative language by considering the literal meaning, then rejecting it. Preemption principle The principle that the speech of a child’s linguistic environment preempts or suppresses the language bioprogram. Preoperational period The second of Piaget’s periods of cognitive development. Pretend play The use of an object in a playful or unconventional manner, such as using a toy rake to comb a doll’s hair. Processing capacity The overall amount of mental capacity available for various tasks or activities. Prodrop parameter See nullsubject parameter. Proposition A unit of meaning consisting of a predicate (verb, adjective, or conjunction) plus one or more arguments (noun or pronoun). Simple sentences express a single proposition, whereas complex sentences express more than one proposition. Propositional representation In sentence or discourse memory, memory for the meaning apart from the exact words used. Prosodic factors Factors such as intonation and stress that are superimposed on speech segments. Also called suprasegmentals. Psycholinguistics The study of the comprehension, production, and acquisition of language. Psychologically realistic grammar A grammar or theory of language that takes psychological or processing considerations into account. Pure word deafness An aphasia in which a person is unable to comprehend language in the auditory modality. Comprehension of visual language and production in both modalities are normal. Radical In a logography, a group of strokes related to meaning. Rate The speed at which speech is articulated. Rate normalization The process of taking the rate of speech into consideration when using acoustic cues during speech perception. Rationalism The philosophical tradition that emphasizes the use of argument and the belief that innate knowledge guides human behavior. Reading span task A measure of working memory capacity during reading. Subjects read aloud a series of sentences and then try to recall the last word in each sentence. The number of words recalled is the measure of the subject’s reading span. Receptive aphasia See Wernicke’s aphasia. Recipient A semantic or thematic role referring to the person to whom something is given—for example, Susan in John gave the flower to Susan. Reciprocity In American Sign Language, the distinction between whether the subject is the agent of the action and the object is the recipient (they pinched them) and whether there is mutual interchange between the subject and object (they pinched each other). Recognition point In auditory word recognition, the point at which a word diverges from other possible words. Recursive rule A rule that applies to its own output, such as a rule for selfembedded sentences. Reduction A phonological process in child language in which one or more phonemes are deleted. Also called cluster reduction because consonant clusters are often reduced, such as saying take for steak. Reduplicated babbling A form of babbling in which infants use the same sounds over and over, as in gagagaga. Reduplication A phonological process in which the repetition of one syllable is used to mark a multisyllabic word (for example, dada for daddy). Reference The relationship between a linguistic expression and a person, object, or event in the world. GLOSSARY 431 Reference cohesion A form of cohesion in which the information needed to interpret a linguistic expression is found elsewhere in the text. See also anaphoric reference and cataphoric reference. Referent The person, object, or event to which a linguistic expression refers. Referential communication task An experimental task in which the subject must formulate a message about an object in the environment (as opposed to one’s thoughts or feelings). Referential gesture A form of gesture used in conversation to refer to some aspect of the content of a conversation. Referential strategy The style of child language that emphasizes a high ratio of nouns to pronouns, clear articulation, and an emphasis on naming. Regression Backward eye movement during reading. Reinstatement The timeconsuming process in which antecedents are retrieved from permanent memory into working memory to comprehend a current sentence. Relational processing A style of processing, associated with the left hemisphere, which emphasizes the analysis of whole units into parts. Relative clause A wh clause that modifies a noun—for example, that you found in Show me the book that you found. Relative terms Spatial terms that indicate the relationship between an object in space and a person (for example, in front of me, to the left of her). Request A communicative act in which a person attempts to influence the behavior of another—for example, a child pointing at a milk bottle in order to be given some. Requests may occur in words or gestures. Respiratory system The system of muscles that regulates the flow of air from the lungs to the vocal tract. Retention interval The time between when information is presented and when it is to be recalled. Saccade An eye movement during reading. Sapir–Whorf hypothesis See Whorf hypothesis. Schema (plural, schemata) A structure in semantic memory that specifies the expected sequence of events. Secondlanguage acquisition When an individual (child or adult) acquires a second language after already acquiring a native language. Also called sequential bilingualism. Selfreference effect The tendency to remember information better when one relates it to oneself. Selfrepairs Selfcorrection of speech errors. Semantic bootstrapping The process of using semantics to acquire syntax. Semantic complexity The complexity of the ideas expressed in a sentence or phrase (also called conceptual complexity). See also syntactic complexity. Semantic differential A tool for measuring the associative meanings of words by asking people to rate words on dimensions such as good/bad and strong/weak. Semantic memory The portion of permanent memory that contains organized knowledge of words, concepts, symbols, and objects. See also internal lexicon. Semantic network A model of semantic memory in which words are represented as nodes and connected to other nodes by various semantic relationships. Semantic priming An experimental procedure in which one word is presented in advance of another, target word, which reduces the time needed to retrieve or activate the target word. Semantics The domain of language that pertains to the meanings of words and sentences. Semantic verification task An experimental task in which subjects view sentences of the form An A is a B and rapidly decide whether the sentence is true or false. Sense The relationship a word has with other words in the lexicon. Sensorimotor period The first of Piaget’s periods of cognitive development, characterized by sensory and motor development and the inability to fully represent objects symbolically. See object permanence. Sensory stores The initial memory system for sensory stimuli. There is a separate store for each sense (vision, audition, and so on). Sequential bilingualism See secondlanguage acquisition. Serial processing Processes that occur one at a time. Shadowing An experimental task in which subjects repeat what they hear. Shift A speech error in which a speech sound or word moves from one location to another. Shortterm memory The memory system that holds information for about 30 seconds. See also working memory. Side participant An individual who is taking part in a conversation but is not currently being addressed. Simultaneous bilingualism See bilingual firstlanguage acquisition. Situational model A mental model of discourse. Sociolinguistics The study of how language functions in social situations. Somatosensory regions Areas in the brain’s parietal lobe controlling the sense of touch. Sound spectrogram A visual representation of the speech signal. Sound spectrograph A device used to create a sound spectrogram. Speaker normalization The process of taking the pitch of the speaker into account when using acoustic cues during speech perception. Speech act An utterance with an illocutionary force. Speech perception The process of using acoustic information to arrive at a recognition of the speech sounds in a message. Spreading activation The process by which one node in a semantic network, when active, activates related nodes. Steady state The portion of a formant that is of relatively constant frequency. Stop A consonant in which the vocal tract is completely closed, building up air pressure, which is then abruptly released, such as in the b in bat. Story grammar The mental representation (schema) of an expected series of events in a story. Stress The emphasis given to a word or syllable during the articulation of a sentence (for example, blackBIRD versus BLACKbird ). Structure dependence The fact that linguistic rules apply to grammatical structures (or constituents) rather than to individual words. Subset principle The notion that languages may be considered as subsets of one another. Substitution A form of cohesion in which one word is replaced by another as an alternative to repeating the first word. Also, a speech error or phonological process in which one sound or word replaces another. Sufficient condition A condition that, if present, ensures that a specified event will occur. Supralaryngeal system The system of muscles that manipulates the size and shape of the vocal tract. Suprasegmentals Prosodic factors such as stress and intonational patterns that lie ‘‘on top of ’’ speech segments. Surface dyslexia A form of reading disability in which a person retains the ability to name nonwords but not words. Surface representation In sentence or discourse memory, representation of the exact words that were presented. Surface structure The level of syntactic structure assumed in transformational grammar that is closer to the phonetic specification of an utterance. Syllabary An orthography in which syllables are represented by visual symbols. Synonymy A semantic relationship in which two or more words have a similar meaning. Syntactic category Another term for part of speech, such as noun, verb, and so forth. Syntactic complexity The complexity of the grammatical operations required to express an idea in a given language; also called formal complexity. See also semantic complexity. Syntax The domain of language that pertains to the grammatical arrangement of words in a sentence. Syrinx The major structure in the vocal system of the chaffinch. Tachistoscope A machine that presents visual stimuli for very brief periods of time. Tacit knowledge Knowledge of how to perform an act. See also explicit knowledge. Tag question A question that is ‘‘tagged’’ onto a declarative sentence such as isn’t it in It sure is cold in here, isn’t it? Task specificity The notion that certain cognitive processes are restricted to language and are not employed in other intellectual domains. Taxonomic bias A cognitive constraint in which children assume that a word refers to a class of individuals rather than to a single person or animal. Taxonomic relations Relations among words that indicate the position of words in a taxonomy. For example, for the word dog, mammal is a superordinate term, cat is a coordinate term, and collie is a subordinate term. Temporal lobes Auditory regions at each side of the brain. GLOSSARY 433 Tenor The topic of a metaphor. Theory of mind The ability to view another person as an intentional being. For example, interpreting a person’s bumping into you as an intentional rather than an accidental act is an example of a theory of mind. Tipofthetongue (TOT) phenomenon When we know a word but are temporarily unable to retrieve it. Topdown processing A process in which higher levels influence lower levels of processing. For example, the perception of phonemes may be influenced by the words in which they appear. TRACE model A connectionist model of speech perception. Transformational rule A rule that transforms one phrase structure into another by adding, deleting, or moving grammatical constituents. Also called transformation. Truth conditions The conditions that need to be present in the world in order for a sentence to be true. Turnyielding signal A set of cues given by a speaker to indicate that he or she is ready to yield the floor. Typicality effect The fact that it takes longer to verify a statement of the form An A is a B when A is not typical or characteristic of B. Underextension When a child uses a word in a more limited way than adults do (for example, refusing to call a taxi a car). Undershooting In speech production, the tendency for articulators to fall short of target locations for different speech sounds, owing to coarticulation. Variegated babbling A form of babbling consisting of syllable strings with varying consonants and vowels. Vehicle What is predicated of the topic in a metaphor. Velar A consonant articulated at the velum, such as the c in collar. Visual field task An experimental task in which visual stimuli are presented to either the right or the left visual field. Vocal cords Two bands of muscular tissue in the larynx that vibrate during the production of speech sounds; also called vocal folds. Vocal tract The structures above the larynx that participate in speech production, principally the mouth (oral cavity) and nose (nasal cavity) regions. Voiced Speech sound in which the vocal cords are vibrating during the production of sound. Voiceless Speech sound in which the vocal cords are not vibrating during the production of sound. Voice onset time The period of time from when a consonant is released until the vocal cords vibrate. Voicing Whether or not the vocal cords are vibrating when air from the lungs passes over them. If the cords are vibrating, the speech sound is called voiced; if not, voiceless. Vowel A speech sound in which the vocal tract is open during production. Wernicke’s aphasia An aphasia characterized by fluent speech that is not informational and by disorders of comprehension. Also called receptive aphasia. Wernicke’s area A brain region in the temporal lobe of the left hemisphere. Damage to this region leads to Wernicke’s aphasia. Whole object bias A cognitive constraint in which children assume that a word refers to an entire object, not a part of it. Whorf hypothesis The hypothesis that languages shape thought processes; also called the Sapir–Whorf hypothesis. See also linguistic determinism and linguistic relativity. Whquestion A question beginning with a whword, such as who, what, where, or when. Word association test A test in which a person is presented with a word and asked to respond with the first word that comes to mind. Word initial cohort In auditory word recognition, the initial set of lexical candidates activated by the comprehender. Word level A level of written language perception in which a visual stimulus is represented as a familiar word. Wordsuperiority effect An experimental finding that it is easier to perceive a letter in a word context than in isolation. Working memory A form of memory with both storage and processing functions. Working memory is used to hold information for a short period of time as well as to perform various operations on the stored information. Yes/no question A question that can be answered with a yes or no answer. Zipf ’s law The fact that the length of a word is negatively correlated with its frequency of use.</p>
 ]]></content>
       <categories>
         <category>语言学</category>
