@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://nlpcourse.cn/syntax-main/</loc>
+    <loc>http://nlpcourse.cn/middle-test/</loc>
     
     <lastmod>2021-04-29</lastmod>
     
   </url>
   
   <url>
-    <loc>http://nlpcourse.cn/middle-test/</loc>
+    <loc>http://nlpcourse.cn/syntax-trees/</loc>
+    
+    <lastmod>2021-04-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nlpcourse.cn/syntax-main/</loc>
     
     <lastmod>2021-04-29</lastmod>
     
