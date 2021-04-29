@@ -1,143 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目前共有44篇文章</title>
-    <url>/all-posts/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2112262923&amp;auto=1&amp;height=90">
-</iframe>
-<center>
-『 好奇心造就诗人与科学家。』<br>Knowledge of languages is the doorway to wisdom. – Roger Bacon<br><br>
-<details class="category_1">
-<summary>
-人生规划
-</summary>
-<details open>
-<summary>
-毕业论文
-</summary>
-<br> <a href="graduation-thesis">毕业论文准备</a><br>
-</details>
-</details>
-<details class="category_1">
-<summary>
-代码
-</summary>
-<details open>
-<summary>
-Git
-</summary>
-<br> <a href="git">Git和Github常用操作大全</a><br>
-</details>
-<details open>
-<summary>
-文本处理
-</summary>
-<br> <a href="json">用python处理json数据</a><br> <a href="pdf">PDF文件处理大全</a><br> <a href="txt">纯文本文件的处理</a><br>
-</details>
-<details open>
-<summary>
-爬虫
-</summary>
-<br> <a href="scraping">Python爬虫代码-全</a><br>
-</details>
-<details open>
-<summary>
-编辑器
-</summary>
-<br> <a href="atom">从小白到起飞，一站解决Atom编辑器各种骚操作</a><br> <a href="programming-methodology">编程方法论</a><br>
-</details>
-</details>
-<details class="category_1">
-<summary>
-未分类
-</summary>
-<br><a href="all-posts">目前共有44篇文章</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
-</details>
-</details>
-<details class="category_1">
-<summary>
-网站开发
-</summary>
-<details open>
-<summary>
-django
-</summary>
-<br> <a href="django-1">Django网站开发全过程实录-1</a><br>
-</details>
-<details open>
-<summary>
-flask
-</summary>
-<br> <a href="flask-2">一文读懂Flask Web开发实战！</a><br> <a href="flask-api-1">基础：用flask搭建RESTful API</a><br> <a href="flask-api-2">部署Flask开发的API到Heroku</a><br> <a href="flask-api-3">如何在curl和python中使用API</a><br> <a href="flask-web">一个人开发信息检索与抽取网站的全过程</a><br> <a href="flask">flask干货总结</a><br>
-</details>
-</details>
-<details class="category_1">
-<summary>
-自然语言处理
-</summary>
-<details open>
-<summary>
-依存分析
-</summary>
-<br> <a href="dependency-parsing-1">《自然语言处理综论》第14章-依存分析（上）</a><br> <a href="dependency-parsing-2">《自然语言处理综论》第14章-依存分析（中）</a><br> <a href="dependency-parsing">英文依存句法分析</a><br> <a href="pos-tagging">英文词性标记（POS Tagging）</a><br>
-</details>
-<details open>
-<summary>
-信息抽取
-</summary>
-<br> <a href="information-retrieval-1">《自然语言处理综论》第17章-信息抽取（上）</a><br> <a href="information-retrieval-2">《自然语言处理综论》第17章-信息抽取（中）</a><br> <a href="information-retrieval-3">《自然语言处理综论》第17章-信息抽取（下）</a><br> <a href="information-retrieval-4">信息抽取</a><br> <a href="information-retrieval">信息抽取技术综述</a><br> <a href="named-entity-recognition">英文文献的命名实体识别（上）</a><br>
-</details>
-<details open>
-<summary>
-语料库
-</summary>
-<br> <a href="corpus">语料库资源大全</a><br>
-</details>
-<details open>
-<summary>
-预处理
-</summary>
-<br> <a href="encoding">文本编码格式大全</a><br> <a href="spacy-1">spaCy超强指南之文本预处理和语言特征表</a><br>
-</details>
-</details>
-<details class="category_1">
-<summary>
-计算机
-</summary>
-<details open>
-<summary>
-正则表达式
-</summary>
-<br> <a href="regex-1">正则表达式进阶</a><br>
-</details>
-<details open>
-<summary>
-算法
-</summary>
-<br> <a href="finite-state-machines">有限状态机</a><br>
-</details>
-</details>
-<details class="category_1">
-<summary>
-语言学
-</summary>
-<details open>
-<summary>
-心理语言学
-</summary>
-<br> <a href="psycho-linguistics">心理语言学：资源和知识整理</a><br> <a href="relation-extraction-0">心理语言学：资源和知识整理</a><br>
-</details>
-<details open>
-<summary>
-语言测试
-</summary>
-<br> <a href="language-assessment">语言测试Syllabus</a><br> <a href="language-assessment2">语言测试glossary</a><br>
-</details>
-</details>
-<br><br>关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
-</center>
-<p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
+    <title>语义学框架</title>
+    <url>/semantics-concepts/</url>
+    <content><![CDATA[<p><img src="https://i.loli.net/2021/04/29/cwbXFoxvJr14Wf5.png"/></p>
+<p>See <a href="https://share.mubu.com/doc/7e-TFn3zFCV">mubu</a> for more details.</p>
+<h1 id="chapter-1">Chapter 1</h1>
+<p>In this chapter we will introduce some important concepts for the study of semantics. In 1.1 we place the notion of linguistic meaning in the wider context of human communication and behaviour. Section 1.2 then examines some of the vocabulary that English and other languages use for ordinary talk about meaning in language and related phenomena. A consideration of how this everyday nontechnical vocabulary varies cross-linguistically can show some of the important different aspects of linguistic meaning. In section 1.3 the semiotic triangle of mind, world and language is discussed, followed in 1.4 by an introduction to five fundamental concepts:</p>
+<ul>
+<li><p>lexemes;</p></li>
+<li><p>sense and reference;</p></li>
+<li><p>denotation and connotation;</p></li>
+<li><p>compositionality; and</p></li>
+<li><p>levels of meaning.</p></li>
+</ul>
+<p>Next (1.5), we introduce the concepts of object language and metalanguage, and distinguish a number of different possible relations between the language in which meanings are described (the ‘metalanguage’) and the language whose meanings are described (the ‘object language’). We will then consider three different identifications of meaning: meanings as objects in the world (referents: 1.6.1), as objects in the mind (concepts: 1.6.2), and as brain states (1.6.3). An alternative identification is the notion of meanings as uses, discussed in 1.6.4. To end the chapter, we consider a view of meaning on which meanings are unobservable, hypothetical constructs posited to explain facts about language use (1.7).</p>
+<h1 id="chapter-2">Chapter 2</h1>
+<p>This chapter considers the role of definition in the description of meaning, through four main questions:</p>
+<ul>
+<li><p>What units need to receive definition?</p></li>
+<li><p>What forms should the definitions take?</p></li>
+<li><p>Can definitions be grounded in a set of semantic primitives?</p></li>
+<li><p>What is the place of definition in semantics generally?</p></li>
+</ul>
+<p>We begin by contrasting the types of definition that might appear in dictionaries from the types that interest a theoretical semantic analysis (2.1). Before any definition can begin, we have to confront an initial question: what are the meaning-bearing units of the language for which definitions are required? We explore this question by looking at meaning on, above and below the word level in 2.2, paying particular attention to certain problematic cases. The next section distinguishes definition of things (real definition) from definition of meanings (nominal definition), and cognitive from extensional definitions, and discusses some differences of opinion in linguistics as to what the proper objects of linguistic definition are (2.3.1). We then distinguish different possible definitional strategies, including</p>
+<ul>
+<li><p>definition by ostension (2.3.2)</p></li>
+<li><p>definition by synonymy (2.3.3)</p></li>
+<li><p>definition by context and typical exemplar (2.3.4)</p></li>
+<li><p>definition by genus and differentia (2.3.5).</p></li>
+</ul>
+<p>The test of truth preserving substitutability is introduced as a standard criterion of definitional adequacy (2.4), and we discuss the problem of definitional circularity and the question of semantic primitives (2.5).</p>
+<p>　We then exemplify the extreme difficulty involved in couching successful definitions of words (2.6), before finally devoting some discussion to the relationship between definition and understanding (2.7). 　</p>
+<h1 id="chapter-3">Chapter 3</h1>
+<p>Linguistic expressions can only occur in particular contexts; as a result, working out what role context plays in the determination of meaning is an important part of semantic analysis. This chapter considers one essential type of context: the external or real-world context to which linguistic expressions refer. 　We begin by discussing an important distinction: the distinction between what a word inherently means, and what it can be used to mean in a particular context, showing that this distinction is often not self-evident. We then distinguish the different types of task a hearer must perform to correctly understand a linguistic expression in its context (3.1).</p>
+<p>　In 3.2 we begin the treatment of external context by considering the relation between sense and reference, discussing - the origins of this distinction in Frege; - its applications in linguistics; and</p>
+<ul>
+<li>the nature of deictic expressions, which can be seen as a bridge between language and its surrounding external context.</li>
+</ul>
+<p>In 3.3. we discuss, and reject, a possible distinction between knowledge of a word’s inherent, linguistic meaning (dictionary knowledge) and knowledge of facts about the word’s external context (encyclopaedic knowledge).</p>
+<h1 id="chapter-4">Chapter 4</h1>
+<p>Following the treatment of external context in the previous chapter, this chapter considers the interpersonal context of linguistic action in which any utterance is placed.</p>
+<p>　Section 4.1 introduces the notion of illocutionary force, which refers to the different interpersonal functions or speech acts which a linguistic expression may be made to perform (stating, questioning, ordering, requesting, advising, warning, promising, etc.).</p>
+<p>　Section 4.2 considers the role of speaker’s intention and hearer’s inference in meaning: in general, the meaning of an expression can often be described as whatever it was that the speaker intended the hearer to understand in using the expression; the hearer’s task, on this picture, is to make inferences about what this intention was.</p>
+<p>　In 4.3 we discuss the Gricean theory of implicature, which is the theory of how meanings may be implied rather than explicitly stated. In 4.4 and 4.5 we turn to an exploration of the principles which have been proposed as governing the operation of implicature in conversation. Section 4.6 considers an important alternative tradition in the analysis of interpersonal context, Relevance Theory, and 4.7 discusses, in general terms, the interrelation between semantics and pragmatics, the branch of linguistics in which the relations between language and context are specifically studied. 　</p>
+<h1 id="chapter-5">Chapter 5</h1>
+<p>The different sections of this chapter follow three logical steps in meaning analysis. In 5.1, some of the different possible semantic relations among words are exemplified and discussed. We concentrate on those relations which are of most use for semantic description: - antonymy (oppositeness; 5.1.1), - meronymy ( part of-ness; 5.1.2),</p>
+<ul>
+<li><p>the class-inclusion relations of hyponymy and taxonomy (kind of-ness; 5.1.3–4) and</p></li>
+<li><p>synonymy (5.1.5).</p></li>
+</ul>
+<p>These meaning relations can be seen as reflecting the presence of various isolable components in the meanings of the related words; accordingly, Section 5.2 introduces the possibility of analysing senses as composed of bundles of semantic components, and considers the wider applicability of componential analysis as well as the problems it faces. The third section (5.3) discusses the necessity for a theory of meaning to specify the number of senses associated with a lexeme in a rigorous way. In 5.3.1 we distinguish the case where a single lexeme possesses several related meanings (polysemy) from two other cases: the case where it possesses only a single meaning (monosemy) and the case where it possesses two unrelated meanings (homonymy). Section 5.3.2 then shows that any attempt to make these definitions rigorous confronts serious problems, the implications of which are discussed in 5.3.3.</p>
+<h1 id="chapter-6">Chapter 6</h1>
+<p>Logic is the study of the nature of valid inferences and reasoning. The logical tradition constitutes one of the major strands in the study of meaning, and some knowledge of its background is indispensable in linguistic semantics. In this chapter we will study some basic logical tools and concepts. Our aim is twofold:</p>
+<ul>
+<li>first, to understand the ways in which some types of meaning can be represented in logical symbolism</li>
+<li>second, to appreciate the advantages and disadvantages of this type of representation.</li>
+</ul>
+<p>We begin by introducing the ideas of validity, soundness and logical form (6.1): these define the context and aims of a logical approach to language. In 6.2 we present an exposition of the basic principles of propositional logic, the logic of basic sentences, including a treatment of the principal logical operators: and, not, or and if . . . then. In 6.3 we discuss the extent to which these logical concepts overlap with the meanings of their ordinary language equivalents. Section 6.4 introduces predicate logic, the logic of expressions like some and all. In 6.5 we discuss the ways in which the concept of a model allows us to describe reference using logical techniques. Section 6.6 contains a discussion of the sentence relations of entailment, presupposition and contradiction. This leads to a discussion of meaning postulates in Section 6.7, which use the sentence relations introduced in 6.6 as part of a non-decompositional approach to meaning. In 6.8 Russell’s theory of descriptions is discussed. This is a proposal for the analysis of noun phrases containing the definite article, and provides an instructive example of the advantages and problems of applying logical tools to the analysis of natural language.</p>
+<p>　We end the chapter in 6.9 with a short discussion of the controversies surrounding the use of logic as an aid in the analysis of natural language. 　</p>
+<h1 id="chapter-7">Chapter 7</h1>
+<p>This chapter considers meaning from the perspective of the cognitive operations which the mind can be hypothesized to perform in using language. We begin by introducing the idea that words in natural language can be seen as categories, and discuss two different models of the way categories work, the classical view of categorization and the prototype view (7.1), exploring the advantages and problems of each. We then discuss cognitive approaches to meaning, which developed out of the prototypical model of categorization. These approaches have introduced a rich model of the cognitive architecture underlying language (7.2).</p>
+<h1 id="chapter-8">Chapter 8</h1>
+<p>In the previous chapter we looked at some proposals about the types of cognitive operation that underlie semantic ability. In this chapter, we examine some attempts to formalize and model the conceptual representations involved in language. In 8.1 we examine Jackendoff’s conceptual semantics, a theory about the cognitive structures behind language and the modes of their interaction. This is followed by a discussion of the treatment of meaning in computational linguistics, which uses computer models of language as an aid to understanding the mental processes involved in language production and understanding (8.2). We will concentrate on the aspects of computational linguistics which give insight into the nature of the task of meaning-processing. We specifically look at WordNet, an online lexical database, at the problems of word-sense disambiguation, and at Pustejovsky’s solution to this in his model of qualia structure.</p>
+<h1 id="chapter-9">Chapter 9</h1>
+<p>This chapter and the next investigate a range of semantic phenomena which are relevant to morphosyntax. This chapter focuses on morphosyntactic categories such as noun and verb and tense and aspect. The major questions are these: - Does a word’s meaning determine its grammatical category?</p>
+<ul>
+<li>How can we describe the meanings of major verbal categories like tense and aspect?</li>
+</ul>
+<p>We begin with a discussion of the meaning of lexical categories (parts of speech), exploring the possible semantic contribution made by a word’s categorization as noun, verb, adjective, and so on (9.1). Section 9.2 focuses on the verb, investigating the semantics of tense and aspect: two central dimensions of verb meaning with major consequences on the verbal and clausal levels.</p>
+<h1 id="chapter-10">Chapter 10</h1>
+<p>This chapter discusses the semantics of the clause, particularly the relationship between a verb and its noun participants. This relationship is called the verb’s argument structure. There are three basic questions:</p>
+<ul>
+<li><p>What principles determine which of the noun phrases associated with a transitive verb will be expressed as subject and which as object?</p></li>
+<li><p>Can verbs be grouped into classes about which argument structure generalizations can be made?</p></li>
+<li><p>Can constructions have meanings on their own?</p></li>
+</ul>
+<p>We begin by looking at the semantics of argument structure, a central topic in investigation of the way semantics and syntax are connected. We introduce and motivate the notion of thematic role, and go on to consider the modifications this notion has undergone in research into argument structure (10.1). We then consider argument structure alternations (10.2), the name for situations where a single verb can take several different argument structures. Lastly, we consider construction grammar, which attributes many apparently lexical meanings to the grammatical constructions in which they occur (10.3).</p>
+<h1 id="chapter-11">Chapter 11</h1>
+<p>Variation is one of the most immediately obvious facts about meaning. Everyone is aware of how the meaning of identical expressions can differ from one person to another, sometimes significantly. There are two aspects of meaning variation: a synchronic and a diachronic (historical) one; we examine each in turn in this chapter. After a quick tour of some important preliminary questions (11.1), we begin diachronically by illustrating the traditional categories with which meaning change has been described, and we consider some of the shortcomings of this approach (11.2.1). We then move on to more recent studies of the pathways and mechanisms of semantic change (11.2.2) and a brief discussion of grammaticalization, the process by which full lexical words are converted into grammatical morphemes (11.2.3). The second half of the chapter discusses synchronic meaning variation. We start by examining the subtle types of semantic variation which exist within a single language community at any one time. Powerful new tools developed within corpus linguistics allow this kind of variation to be studied in a way that was not previously available: these are illustrated in 11.3. We then look at the field of semantic typology, which studies possible constraints on meaning variation and seeks out possible semantic universals in various semantic fields such as the body, colour, space and motion (11.4). Lastly, we consider the implications of these studies for the question of the influences between language and cognition, discussing the famous Sapir–Whorf or linguistic relativity hypothesis (11.5).</p>
 ]]></content>
+      <categories>
+        <category>语言学</category>
+        <category>语义</category>
+      </categories>
+      <tags>
+        <tag>linguistics</tag>
+        <tag>semantics</tag>
+      </tags>
   </entry>
   <entry>
     <title>语义学术语大全</title>
@@ -442,29 +392,24 @@ flask
       </tags>
   </entry>
   <entry>
-    <title>PDF相关知识大全</title>
-    <url>/pdf-explained/</url>
-    <content><![CDATA[<h1 id="pdf是什么">Pdf是什么</h1>
-<p>Portable Document Format，由Adobe 公司于1993 年提出的一种文件规范，主要是为了让同一份文件在不同的装置、硬体或作业系统上皆有相同的呈现效果，达到跨平台皆可使用的目的。</p>
+    <title>中期考核的复习计划</title>
+    <url>/middle-test/</url>
+    <content><![CDATA[<h1>第一阶段：五一劳动节8天</h1>
+<p>三门必修课本+选修ppt全部过一遍，没有ppt的科目搭好框架，重点知识点的条目记下来</p>
+<h1>第二阶段：5月8-17号10天</h1>
+<p>每门课花2天背完</p>
 ]]></content>
-      <categories>
-        <category>代码</category>
-        <category>文本处理</category>
-      </categories>
-      <tags>
-        <tag>pdf</tag>
-      </tags>
   </entry>
   <entry>
-    <title>句法学术语大全</title>
+    <title>句法学框架及术语大全</title>
     <url>/syntax-1/</url>
-    <content><![CDATA[<h1 id="chapter-1">Chapter 1</h1>
+    <content><![CDATA[<p><img src="https://i.loli.net/2021/04/29/5UCyu3mlzBNXD8Y.png"/></p>
+<p>See <a href="https://share.mubu.com/doc/2aerL3sh4SV">mubu</a> for more details.</p>
+<h1 id="chapter-1">Chapter 1</h1>
 <ul>
 <li><p><strong>Syntax:</strong> The level of linguistic organization that mediates between sounds and meaning, where words are organized into phrases and sentences.</p></li>
 <li><p><strong>Language (capital L):</strong> The psychological ability of humans to produce and understand a particular language. Also called the Human Language Capacity or i-Language. This is the object of study in this book.</p></li>
-</ul>
-<p>language (lowercase l): A language like English or French. These are the particular instances of the human Language. The data sources we use to examine Language are languages. Also called e-language.</p>
-<ul>
+<li><p><strong>language (lowercase l)</strong>: A language like English or French. These are the particular instances of the human Language. The data sources we use to examine Language are languages. Also called e-language.</p></li>
 <li><p><strong>Generative Grammar:</strong> A theory of linguistics in which grammar is viewed as a cognitive faculty. Language is generated by a set of rules or procedures. The version of generative grammar we are looking at here is primarily the Principles and Parameters approach (P&amp;P) touching occasionally on Minimalism.</p></li>
 <li><p><strong>The Scientific Method:</strong> Observe some data, make generalizations about that data, draw a hypothesis, test the hypothesis against more data.</p></li>
 <li><p><strong>Falsifiable Prediction:</strong> To prove that a hypothesis is correct you have to look for the data that would prove it wrong. The prediction that might prove a hypothesis wrong is said to be falsifiable.</p></li>
@@ -473,18 +418,14 @@ flask
 <li><p><strong>Descriptive Grammar:</strong> A scientific grammar that describes, rather than prescribes, how people talk/write.</p></li>
 <li><p><strong>Anaphor:</strong> A word that ends in -self or -selves (a better definition will be given in chapter 5).</p></li>
 <li><p><strong>Antecedent:</strong> The noun an anaphor refers to.</p></li>
-</ul>
-<p>Asterisk (*): The mark used to mark syntactically ill-formed (unacceptable or ungrammatical) sentences. The hash mark, pound, or number sign (#) is used to mark semantically strange, but syntactically well-formed, sentences.</p>
-<ul>
+<li><p>**Asterisk (*)**: The mark used to mark syntactically ill-formed (unacceptable or ungrammatical) sentences. The hash mark, pound, or number sign (#) is used to mark semantically strange, but syntactically well-formed, sentences.</p></li>
 <li><p><strong>Gender (grammatical):</strong> Masculine vs. Feminine vs. Neuter. Does not have to be identical to the actual sex of the referent. For example, a dog might be female, but we can refer to it with the neuter pronoun it. Similarly, boats don’t have a sex, but are grammatically feminine.</p></li>
 <li><p><strong>Number:</strong> The quantity of individuals or things described by a noun. English distinguishes singular (e.g., a cat) from plural (e.g., cats). Other languages have more or less complicated number systems.</p></li>
 <li><p><strong>Person:</strong> The perspective of the participants in the conversation. The speaker or speakers (I, me, we, us) are called the first person. The addressee(s) (you) is called the second person. Anyone else (those not involved in the conversation) (he, him, she, her, it, they, them) is referred to as the third person.</p></li>
 <li><p><strong>Case:</strong> The form a noun takes depending upon its position in the sentence. We discuss this more in chapter 11.</p></li>
 <li><p><strong>Nominative:</strong> The form of a noun in subject position (I, you, he, she, it, we, they).</p></li>
 <li><p><strong>Accusative:</strong> The form of a noun in object position (me, you, him, her, it, us, them).</p></li>
-</ul>
-<p>Corpus (pl. Corpora): A collection of real-world language data.</p>
-<ul>
+<li><p><strong>Corpus</strong> (pl. Corpora): A collection of real-world language data.</p></li>
 <li><p><strong>Native Speaker Judgments (Intuitions):</strong> Information about the subconscious knowledge of a language. This information is tapped by means of the grammaticality judgment task.</p></li>
 <li><p><strong>Semantic Judgment:</strong> A judgment about the meaning of a sentence, often relying on our knowledge of the context in which the sentence was uttered.</p></li>
 <li><p><strong>Syntactic Judgment:</strong> A judgment about the form or structure of a sentence.</p></li>
@@ -508,41 +449,21 @@ flask
 </ul>
 <p>　</p>
 <h1 id="chapter-2">Chapter 2</h1>
-<p>Parts of Speech (a.k.a. Word Class, Syntactic Categories): The labels we give to constituents (N, V, Adj, Adv, D, P, C, T, Neg, Conj). These determine the position of the word in the sentence.</p>
 <ul>
+<li><p>Parts of Speech (a.k.a. Word Class, Syntactic Categories): The labels we give to constituents (N, V, Adj, Adv, D, P, C, T, Neg, Conj). These determine the position of the word in the sentence.</p></li>
 <li><p><strong>Distribution:</strong> Parts of speech are determined based on their distribution. We have both morphological distribution (what affixes are found on the word) and syntactic distribution (what other words are nearby).</p></li>
-<li><p><strong>Complementary Distribution:</strong> When you have two categories</p></li>
-</ul>
-<ol start="4" type="i">
-<li></li>
-</ol>
-<p>and they never appear in the same environment (context), you have</p>
-<p>complementary distribution. Typically complementary distribution</p>
-<p>means that the two categories are subtypes of a larger class.</p>
-<ul>
-<li>**Parts of speech that are Open Class can take new members</li>
-</ul>
-<p>or coinages:** N, V, Adj, Adv.</p>
-<ul>
-<li><strong>Parts of speech that are Closed Class don’t allow new coinages:</strong> D, P, Conj, C, T, Neg, and the pronoun and anaphor subcategories of N.</li>
-</ul>
-<p>Lexical Categories express the content of the sentence. N (including pronouns), V, Adj, Adv.</p>
-<ol start="7" type="i">
-<li></li>
-</ol>
-<ul>
+<li><p><strong>Complementary Distribution:</strong> When you have two categories and they never appear in the same environment (context), you have complementary distribution. Typically complementary distribution means that the two categories are subtypes of a larger class.</p></li>
+<li><p><strong>Parts of speech that are Open Class can take new members or coinages</strong>: N, V, Adj, Adv.</p></li>
+<li><p><strong>Parts of speech that are Closed Class don’t allow new coinages:</strong> D, P, Conj, C, T, Neg, and the pronoun and anaphor subcategories of N.</p></li>
+<li><p>Lexical Categories express the content of the sentence. N (including pronouns), V, Adj, Adv.</p></li>
 <li><p><strong>Functional Categories contain the grammatical information in a sentence:</strong> D, P, Conj, T, Neg, C.</p></li>
 <li><p><strong>Subcategories:</strong> The major parts of speech can often be divided up into subtypes. These are called subcategories.</p></li>
-</ul>
-<p>Feature Notations on major categories are a mechanism for indicating subcategories.</p>
-<p>Plurality refers to the number of nouns. It is usually indicated in English with an -s suffix. Plural nouns in English do not require a determiner.</p>
-<p>Count vs. Mass: Count nouns can appear with determiners and the quantifier many. Mass nouns appear with much and usually don’t have articles.</p>
-<p>The Predicate defines the relation between the individuals being talked about and some fact about them, as well as relations among the arguments.</p>
-<ul>
-<li><strong>Argument Structure:</strong> The number of arguments that a predicate takes.</li>
-</ul>
-<p>The Arguments are the entities that are participating in the predicate relation.</p>
-<ul>
+<li><p>Feature Notations on major categories are a mechanism for indicating subcategories.</p></li>
+<li><p>Plurality refers to the number of nouns. It is usually indicated in English with an -s suffix. Plural nouns in English do not require a determiner.</p></li>
+<li><p>Count vs. Mass: Count nouns can appear with determiners and the quantifier many. Mass nouns appear with much and usually don’t have articles.</p></li>
+<li><p>The Predicate defines the relation between the individuals being talked about and some fact about them, as well as relations among the arguments.</p></li>
+<li><p><strong>Argument Structure:</strong> The number of arguments that a predicate takes.</p></li>
+<li><p>The Arguments are the entities that are participating in the predicate relation.</p></li>
 <li><p><strong>Intransitive:</strong> A predicate that takes only one argument.</p></li>
 <li><p><strong>Transitive:</strong> A predicate that takes two arguments.</p></li>
 <li><p><strong>Ditransitive:</strong> A predicate that takes three arguments.</p></li>
@@ -600,10 +521,7 @@ flask
 <li><p><strong>Root Node (revised):</strong> The node that dominates everything, but is dominated by nothing. (The node that is no node’s daughter.)</p></li>
 <li><p><strong>Terminal Node (revised):</strong> A node that dominates nothing. (A node that is not a mother.)</p></li>
 <li><p><strong>Non-terminal Node (revised):</strong> A node that dominates something. (A node that is a mother.)</p></li>
-<li><p><strong>Exhaustive Domination:</strong> Node A exhaustively dominates a set of terminal nodes {B, C, ..., D} provided it dominates all the members of the set (so that there is no member of the set that is not dominated by</p></li>
-</ul>
-<p>and there is no terminal node G dominated by A that is not a member of the set.</p>
-<ul>
+<li><p><strong>Exhaustive Domination:</strong> Node A exhaustively dominates a set of terminal nodes {B, C, ..., D} provided it dominates all the members of the set (so that there is no member of the set that is not dominated by and there is no terminal node G dominated by A that is not a member of the set.</p></li>
 <li><p><strong>Constituent:</strong> A set of terminal nodes exhaustively dominated by a particular node.</p></li>
 <li><p><strong>Constituent of:</strong> A is a constituent of B if and only if B dominates A.</p></li>
 <li><p><strong>Immediate Constituent of:</strong> A is an immediate constituent of B if and only if B immediately dominates A.</p></li>
@@ -929,6 +847,1349 @@ flask
       <tags>
         <tag>linguistics</tag>
         <tag>syntax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目前共有60篇文章</title>
+    <url>/all-posts/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2112262923&amp;auto=1&amp;height=90">
+</iframe>
+<center>
+『 好奇心造就诗人与科学家。』<br>Knowledge of languages is the doorway to wisdom. – Roger Bacon<br><br>
+<details class="category_1">
+<summary>
+代码
+</summary>
+<details open>
+<summary>
+Git
+</summary>
+<br> <a href="git">Git和Github常用操作大全</a><br>
+</details>
+<details open>
+<summary>
+pandas
+</summary>
+<br> <a href="mind-graph">我的知识库</a><br> <a href="pandas">Pandas的一些常用操作</a><br>
+</details>
+<details open>
+<summary>
+文本处理
+</summary>
+<br> <a href="json">用python处理json数据</a><br> <a href="pdf-explained">PDF相关知识大全</a><br> <a href="pdf">PDF文件处理大全</a><br> <a href="txt">纯文本文件的处理</a><br>
+</details>
+<details open>
+<summary>
+爬虫
+</summary>
+<br> <a href="scraping">Python爬虫代码-全</a><br>
+</details>
+<details open>
+<summary>
+编辑器
+</summary>
+<br> <a href="atom">从小白到起飞，一站解决Atom编辑器各种骚操作</a><br> <a href="programming-methodology">编程方法论</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+数学
+</summary>
+<details open>
+<summary>
+微积分
+</summary>
+<br> <a href="calculus-I-0">第0章：为什么要学习微积分？</a><br>
+</details>
+<details open>
+<summary>
+方法
+</summary>
+<br> <a href="math-0">数学中的英语名词汇</a><br> <a href="math-1">如何学习数学</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+未分类
+</summary>
+<br><a href="all-posts">目前共有60篇文章</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+网站开发
+</summary>
+<details open>
+<summary>
+django
+</summary>
+<br> <a href="django-1">Django网站开发全过程实录-1</a><br>
+</details>
+<details open>
+<summary>
+flask
+</summary>
+<br> <a href="flask-2">一文读懂Flask Web开发实战！</a><br> <a href="flask-api-1">基础：用flask搭建RESTful API</a><br> <a href="flask-api-2">部署Flask开发的API到Heroku</a><br> <a href="flask-api-3">如何在curl和python中使用API</a><br> <a href="flask-web">一个人开发信息检索与抽取网站的全过程</a><br> <a href="flask">flask干货总结</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+自然语言处理
+</summary>
+<details open>
+<summary>
+依存分析
+</summary>
+<br> <a href="dependency-parsing-1">《自然语言处理综论》第14章-依存分析（上）</a><br> <a href="dependency-parsing-2">《自然语言处理综论》第14章-依存分析（中）</a><br> <a href="dependency-parsing">英文依存句法分析</a><br> <a href="pos-tagging">英文词性标记（POS Tagging）</a><br>
+</details>
+<details open>
+<summary>
+信息抽取
+</summary>
+<br> <a href="information-retrieval-1">《自然语言处理综论》第17章-信息抽取（上）</a><br> <a href="information-retrieval-2">《自然语言处理综论》第17章-信息抽取（中）</a><br> <a href="information-retrieval-3">《自然语言处理综论》第17章-信息抽取（下）</a><br> <a href="information-retrieval-4">信息抽取</a><br> <a href="information-retrieval">信息抽取技术综述</a><br> <a href="named-entity-recognition">英文文献的命名实体识别（上）</a><br>
+</details>
+<details open>
+<summary>
+句子切分
+</summary>
+<br> <a href="sentence-segmentation">英文句子切分的要点和工具</a><br>
+</details>
+<details open>
+<summary>
+语料库
+</summary>
+<br> <a href="corpus">语料库资源大全</a><br>
+</details>
+<details open>
+<summary>
+预处理
+</summary>
+<br> <a href="encoding">文本编码格式大全</a><br> <a href="spacy-1">spaCy超强指南之文本预处理和语言特征表</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+计算机
+</summary>
+<details open>
+<summary>
+正则表达式
+</summary>
+<br> <a href="regex-1">正则表达式进阶</a><br>
+</details>
+<details open>
+<summary>
+算法
+</summary>
+<br> <a href="finite-state-machines">有限状态机</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+语言学
+</summary>
+<details open>
+<summary>
+句法
+</summary>
+<br> <a href="syntax-1">句法学框架及术语大全</a><br> <a href="syntax">句法学超人大总结</a><br>
+</details>
+<details open>
+<summary>
+心理语言学
+</summary>
+<br> <a href="psycho-linguistics-terms">心理语言学：资源和知识整理</a><br> <a href="psycho-linguistics">心理语言学：资源和知识整理</a><br> <a href="relation-extraction-0">心理语言学：资源和知识整理</a><br>
+</details>
+<details open>
+<summary>
+语义
+</summary>
+<br> <a href="semantics-concepts">语义学框架</a><br> <a href="semantics-terms">语义学术语大全</a><br> <a href="semantics">语义学术语</a><br>
+</details>
+<details open>
+<summary>
+语言测试
+</summary>
+<br> <a href="language-assessment">语言测试Syllabus</a><br> <a href="language-assessment2">语言测试glossary</a><br>
+</details>
+</details>
+<details class="category_1">
+<summary>
+项目
+</summary>
+<details open>
+<summary>
+信息抽取
+</summary>
+<br> <a href="ir-project-1">信息抽取-Pilot Study</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br>
+</details>
+</details>
+<br><br>关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
+</center>
+<p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数学中的英语名词汇</title>
+    <url>/math-0/</url>
+    <content><![CDATA[<p><strong>微积分</strong></p>
+<p><strong>第一章</strong> <strong>函数与极限</strong></p>
+<p><strong>Chapter1 Function and Limit</strong></p>
+<p>集合 set</p>
+<p>元素 element</p>
+<p>子集 subset</p>
+<p>空集 empty set</p>
+<p>并集 union</p>
+<p>交集 intersection</p>
+<p>差集 difference of set</p>
+<p>基本集 basic set</p>
+<p>补集 complement set</p>
+<p>直积 direct product</p>
+<p>笛卡儿积 Cartesian product</p>
+<p>开区间 open interval</p>
+<p>闭区间 closed interval</p>
+<p>半开区间 half open interval</p>
+<p>有限区间 finite interval</p>
+<p>区间的长度 length of an interval</p>
+<p>无限区间 infinite interval</p>
+<p>领域 neighborhood</p>
+<p>领域的中心 centre of a neighborhood</p>
+<p>领域的半径 radius of a neighborhood</p>
+<p>左领域 left neighborhood</p>
+<p>右领域 right neighborhood</p>
+<p>映射 mapping</p>
+<p>X到Y的映射 mapping of X ontoY</p>
+<p>满射 surjection</p>
+<p>单射 injection</p>
+<p>一一映射 one-to-one mapping</p>
+<p>双射 bijection</p>
+<p>算子 operator</p>
+<p>变化 transformation</p>
+<p>函数 function</p>
+<p>逆映射 inverse mapping</p>
+<p>复合映射 composite mapping</p>
+<p>自变量 independent variable</p>
+<p>因变量 dependent variable</p>
+<p>定义域 domain</p>
+<p>函数值 value of function</p>
+<p>函数关系 function relation</p>
+<p>值域 range</p>
+<p>自然定义域 natural domain</p>
+<p>单值函数 single valued function</p>
+<p>多值函数 multiple valued function</p>
+<p>单值分支 one-valued branch</p>
+<p>函数图形 graph of a function</p>
+<p>绝对值函数 absolute value</p>
+<p>符号函数 sigh function</p>
+<p>整数部分 integral part</p>
+<p>阶梯曲线 step curve</p>
+<p>当且仅当 if and only if(iff)</p>
+<p>分段函数 piecewise function</p>
+<p>上界 upper bound</p>
+<p>下界 lower bound</p>
+<p>有界 boundedness</p>
+<p>无界 unbounded</p>
+<p>函数的单调性 monotonicity of a function</p>
+<p>单调增加的 increasing</p>
+<p>单调减少的 decreasing</p>
+<p>单调函数 monotone function</p>
+<p>函数的奇偶性 parity(odevity) of a function</p>
+<p>对称 symmetry</p>
+<p>偶函数 even function</p>
+<p>奇函数 odd function</p>
+<p>函数的周期性 periodicity of a function</p>
+<p>周期 period</p>
+<p>反函数 inverse function</p>
+<p>直接函数 direct function</p>
+<p>复合函数 composite function</p>
+<p>中间变量 intermediate variable</p>
+<p>函数的运算 operation of function</p>
+<p>基本初等函数 basic elementary function</p>
+<p>初等函数 elementary function</p>
+<p>幂函数 power function</p>
+<p>指数函数 exponential function</p>
+<p>对数函数 logarithmic function</p>
+<p>三角函数 trigonometric function</p>
+<p>反三角函数 inverse trigonometric function</p>
+<p>常数函数 constant function</p>
+<p>双曲函数 hyperbolic function</p>
+<p>双曲正弦 hyperbolic sine</p>
+<p>双曲余弦 hyperbolic cosine</p>
+<p>双曲正切 hyperbolic tangent</p>
+<p>反双曲正弦 inverse hyperbolic sine</p>
+<p>反双曲余弦 inverse hyperbolic cosine</p>
+<p>反双曲正切 inverse hyperbolic tangent</p>
+<p>极限 limit</p>
+<p>数列 sequence of number</p>
+<p>收敛 convergence</p>
+<p>收敛于 a converge to a</p>
+<p>发散 divergent</p>
+<p>极限的唯一性 uniqueness of limits</p>
+<p>收敛数列的有界性 boundedness of a convergent sequence</p>
+<p>子列 subsequence</p>
+<p>函数的极限 limits of functions</p>
+<p>函数 当x趋于x0时的极限 limit of functions as x approaches x0</p>
+<p>左极限 left limit</p>
+<p>右极限 right limit</p>
+<p>单侧极限 one-sided limits</p>
+<p>水平渐近线 horizontal asymptote</p>
+<p>无穷小 infinitesimal</p>
+<p>无穷大 infinity</p>
+<p>铅直渐近线 vertical asymptote</p>
+<p>夹逼准则 squeeze rule</p>
+<p>单调数列 monotonic sequence</p>
+<p>高阶无穷小 infinitesimal of higher order</p>
+<p>低阶无穷小 infinitesimal of lower order</p>
+<p>同阶无穷小 infinitesimal of the same order</p>
+<p>等阶无穷小 equivalent infinitesimal</p>
+<p>函数的连续性 continuity of a function</p>
+<p>增量 increment</p>
+<p>函数 在x0连续 the function is continuous at x0</p>
+<p>左连续 left continuous</p>
+<p>右连续 right continuous</p>
+<p>区间上的连续函数 continuous function</p>
+<p>函数 在该区间上连续 function is continuous on an interval</p>
+<p>不连续点 discontinuity point</p>
+<p>第一类间断点 discontinuity point of the first kind</p>
+<p>第二类间断点 discontinuity point of the second kind</p>
+<p>初等函数的连续性 continuity of the elementary functions</p>
+<p>定义区间 defined interval</p>
+<p>最大值 global maximum value (absolute maximum)</p>
+<p>最小值 global minimum value (absolute minimum)</p>
+<p>零点定理 the zero point theorem</p>
+<p>介值定理 intermediate value theorem</p>
+<p><strong>第二章</strong> <strong>导数与微分</strong></p>
+<p><strong>Chapter2 Derivative and Differential</strong></p>
+<p>速度 velocity</p>
+<p>匀速运动 uniform motion</p>
+<p>平均速度 average velocity</p>
+<p>瞬时速度 instantaneous velocity</p>
+<p>圆的切线 tangent line of a circle</p>
+<p>切线 tangent line</p>
+<p>切线的斜率 slope of the tangent line</p>
+<p>位置函数 position function</p>
+<p>导数 derivative</p>
+<p>可导 derivable</p>
+<p>函数的变化率问题 problem of the change rate of a function</p>
+<p>导函数 derived function</p>
+<p>左导数 left-hand derivative</p>
+<p>右导数 right-hand derivative</p>
+<p>单侧导数 one-sided derivatives</p>
+<p>在闭区间【a,b】上可导 is derivable on the closed interval [a,b]</p>
+<p>切线方程 tangent equation</p>
+<p>角速度 angular velocity</p>
+<p>成本函数 cost function</p>
+<p>边际成本 marginal cost</p>
+<p>链式法则 chain rule</p>
+<p>隐函数 implicit function</p>
+<p>显函数 explicit function</p>
+<p>二阶函数 second derivative</p>
+<p>三阶导数 third derivative</p>
+<p>高阶导数 nth derivative</p>
+<p>莱布尼茨公式 Leibniz formula</p>
+<p>对数求导法 log- derivative</p>
+<p>参数方程 parametric equation</p>
+<p>相关变化率 correlative change rata</p>
+<p>微分 differential</p>
+<p>可微的 differentiable</p>
+<p>函数的微分 differential of function</p>
+<p>自变量的微分 differential of independent variable</p>
+<p>微商 differential quotient</p>
+<p>间接测量误差 indirect measurement error</p>
+<p>绝对误差 absolute error</p>
+<p>相对误差 relative error</p>
+<p><strong>第三章</strong> <strong>微分中值定理与导数的应用</strong></p>
+<p><strong>Chapter3 MeanValue Theorem of Differentials and the Application of Derivatives</strong></p>
+<p>罗马定理 Rolle’s theorem</p>
+<p>费马引理 Fermat’s lemma</p>
+<p>拉格朗日中值定理 Lagrange’s mean value theorem</p>
+<p>驻点 stationary point</p>
+<p>稳定点 stable point</p>
+<p>临界点 critical point</p>
+<p>辅助函数 auxiliary function</p>
+<p>拉格朗日中值公式 Lagrange’s mean value formula</p>
+<p>柯西中值定理 Cauchy’s mean value theorem</p>
+<p>洛必达法则 L’Hospital’s Rule</p>
+<p>0/0型不定式 indeterminate form of type 0/0</p>
+<p>不定式 indeterminate form</p>
+<p>泰勒中值定理 Taylor’s mean value theorem</p>
+<p>泰勒公式 Taylor formula</p>
+<p>余项 remainder term</p>
+<p>拉格朗日余项 Lagrange remainder term</p>
+<p>麦克劳林公式 Maclaurin’s formula</p>
+<p>佩亚诺公式 Peano remainder term</p>
+<p>凹凸性 concavity</p>
+<p>凹向上的 concave upward, cancave up</p>
+<p>凹向下的，向上凸的 concave downward’ concave down</p>
+<p>拐点 inflection point</p>
+<p>函数的极值 extremum of function</p>
+<p>极大值 local(relative) maximum</p>
+<p>最大值 global(absolute) mximum</p>
+<p>极小值 local(relative) minimum</p>
+<p>最小值 global(absolute) minimum</p>
+<p>目标函数 objective function</p>
+<p>曲率 curvature</p>
+<p>弧微分 arc differential</p>
+<p>平均曲率 average curvature</p>
+<p>曲率园 circle of curvature</p>
+<p>曲率中心 center of curvature</p>
+<p>曲率半径 radius of curvature</p>
+<p>渐屈线 evolute</p>
+<p>渐伸线 involute</p>
+<p>根的隔离 isolation of root</p>
+<p>隔离区间 isolation interval</p>
+<p>切线法 tangent line method</p>
+<p><strong>第四章</strong> <strong>不定积分</strong></p>
+<p><strong>Chapter4 Indefinite Integrals</strong></p>
+<p>原函数 primitive function(antiderivative)</p>
+<p>积分号 sign of integration</p>
+<p>被积函数 integrand</p>
+<p>积分变量 integral variable</p>
+<p>积分曲线 integral curve</p>
+<p>积分表 table of integrals</p>
+<p>换元积分法 integration by substitution</p>
+<p>分部积分法 integration by parts</p>
+<p>分部积分公式 formula of integration by parts</p>
+<p>有理函数 rational function</p>
+<p>真分式 proper fraction</p>
+<p>假分式 improper fraction</p>
+<p><strong>第五章</strong> <strong>定积分</strong></p>
+<p><strong>Chapter5 Definite Integrals</strong></p>
+<p>曲边梯形 trapezoid with</p>
+<p>曲边 curve edge</p>
+<p>窄矩形 narrow rectangle</p>
+<p>曲边梯形的面积 area of trapezoid with curved edge</p>
+<p>积分下限 lower limit of integral</p>
+<p>积分上限 upper limit of integral</p>
+<p>积分区间 integral interval</p>
+<p>分割 partition</p>
+<p>积分和 integral sum</p>
+<p>可积 integrable</p>
+<p>矩形法 rectangle method</p>
+<p>积分中值定理 mean value theorem of integrals</p>
+<p>函数在区间上的平均值 average value of a function on an integvals</p>
+<p>牛顿－莱布尼茨公式 Newton-Leibniz formula</p>
+<p>微积分基本公式 fundamental formula of calculus</p>
+<p>换元公式 formula for integration by substitution</p>
+<p>递推公式 recurrence formula</p>
+<p>反常积分 improper integral</p>
+<p>反常积分发散 the improper integral is divergent</p>
+<p>反常积分收敛 the improper integral is convergent</p>
+<p>无穷限的反常积分 improper integral on an infinite interval</p>
+<p>无界函数的反常积分 improper integral of unbounded functions</p>
+<p>绝对收敛 absolutely convergent</p>
+<p><strong>第六章</strong> <strong>定积分的应用</strong></p>
+<p><strong>Chapter6 Applications of the Definite Integrals</strong></p>
+<p>元素法 the element method</p>
+<p>面积元素 element of area</p>
+<p>平面图形的面积 area of a luane figure</p>
+<p>直角坐标又称“笛卡儿坐标 (Cartesian coordinates)”</p>
+<p>极坐标 polar coordinates</p>
+<p>抛物线 parabola</p>
+<p>椭圆 ellipse</p>
+<p>旋转体的面积 volume of a solid of rotation</p>
+<p>旋转椭球体 ellipsoid of revolution, ellipsoid of rotation</p>
+<p>曲线的弧长 arc length of acurve</p>
+<p>可求长的 rectifiable</p>
+<p>光滑 smooth</p>
+<p>功 work</p>
+<p>水压力 water pressure</p>
+<p>引力 gravitation</p>
+<p>变力 variable force</p>
+<p><strong>第七章</strong> <strong>空间解析几何与向量代数</strong></p>
+<p><strong>Chapter7 Space Analytic Geometry and Vector Algebra</strong></p>
+<p>向量 vector</p>
+<p>自由向量 free vector</p>
+<p>单位向量 unit vector</p>
+<p>零向量 zero vector</p>
+<p>相等 equal</p>
+<p>平行 parallel</p>
+<p>向量的线性运算 linear poeration of vector</p>
+<p>三角法则 triangle rule</p>
+<p>平行四边形法则 parallelogram rule</p>
+<p>交换律 commutative law</p>
+<p>结合律 associative law</p>
+<p>负向量 negative vector</p>
+<p>差 difference</p>
+<p>分配律 distributive law</p>
+<p>空间直角坐标系 space rectangular coordinates</p>
+<p>坐标面 coordinate plane</p>
+<p>卦限 octant</p>
+<p>向量的模 modulus of vector</p>
+<p>向量a与b的夹角 angle between vector a and b</p>
+<p>方向余弦 direction cosine</p>
+<p>方向角 direction angle</p>
+<p>向量在轴上的投影 projection of a vector onto an axis</p>
+<p>数量积，外积，叉积 scalar product,dot product,inner product</p>
+<p>曲面方程 equation for a surface</p>
+<p>球面 sphere</p>
+<p>旋转曲面 surface of revolution</p>
+<p>母线 generating line</p>
+<p>轴 axis</p>
+<p>圆锥面 cone</p>
+<p>顶点 vertex</p>
+<p>旋转单叶双曲面 revolution hyperboloids of one sheet</p>
+<p>旋转双叶双曲面 revolution hyperboloids of two sheets</p>
+<p>柱面 cylindrical surface ,cylinder</p>
+<p>圆柱面 cylindrical surface</p>
+<p>准线 directrix</p>
+<p>抛物柱面 parabolic cylinder</p>
+<p>二次曲面 quadric surface</p>
+<p>椭圆锥面 dlliptic cone</p>
+<p>椭球面 ellipsoid</p>
+<p>单叶双曲面 hyperboloid of one sheet</p>
+<p>双叶双曲面 hyperboloid of two sheets</p>
+<p>旋转椭球面 ellipsoid of revolution</p>
+<p>椭圆抛物面 elliptic paraboloid</p>
+<p>旋转抛物面 paraboloid of revolution</p>
+<p>双曲抛物面 hyperbolic paraboloid</p>
+<p>马鞍面 saddle surface</p>
+<p>椭圆柱面 elliptic cylinder</p>
+<p>双曲柱面 hyperbolic cylinder</p>
+<p>抛物柱面 parabolic cylinder</p>
+<p>空间曲线 space curve</p>
+<p>空间曲线的一般方程 general form equations of a space curve</p>
+<p>空间曲线的参数方程 parametric equations of a space curve</p>
+<p>螺转线 spiral</p>
+<p>螺矩 pitch</p>
+<p>投影柱面 projecting cylinder</p>
+<p>投影 projection</p>
+<p>平面的点法式方程 pointnorm form eqyation of a plane</p>
+<p>法向量 normal vector</p>
+<p>平面的一般方程 general form equation of a plane</p>
+<p>两平面的夹角 angle between two planes</p>
+<p>点到平面的距离 distance from a point to a plane</p>
+<p>空间直线的一般方程 general equation of a line in space</p>
+<p>方向向量 direction vector</p>
+<p>直线的点向式方程 pointdirection form equations of a line</p>
+<p>方向数 direction number</p>
+<p>直线的参数方程 parametric equations of a line</p>
+<p>两直线的夹角 angle between two lines</p>
+<p>垂直 perpendicular</p>
+<p>直线与平面的夹角 angle between a line and a planes</p>
+<p>平面束 pencil of planes</p>
+<p>平面束的方程 equation of a pencil of planes</p>
+<p>行列式 determinant</p>
+<p>系数行列式 coefficient determinant</p>
+<p><strong>第八章</strong> <strong>多元函数微分法及其应用</strong></p>
+<p><strong>Chapter8 Differentiation of Functions of Several Variables and Its Application</strong></p>
+<p>一元函数 function of one variable</p>
+<p>多元函数 function of several variables</p>
+<p>内点 interior point</p>
+<p>外点 exterior point</p>
+<p>边界点 frontier point,boundary point</p>
+<p>聚点 point of accumulation</p>
+<p>开集 openset</p>
+<p>闭集 closed set</p>
+<p>连通集 connected set</p>
+<p>开区域 open region</p>
+<p>闭区域 closed region</p>
+<p>有界集 bounded set</p>
+<p>无界集 unbounded set</p>
+<p>n维空间 n-dimentional space</p>
+<p>二重极限 double limit</p>
+<p>多元函数的连续性 continuity of function of seveal</p>
+<p>连续函数 continuous function</p>
+<p>不连续点 discontinuity point</p>
+<p>一致连续 uniformly continuous</p>
+<p>偏导数 partial derivative</p>
+<p>对自变量x的偏导数 partial derivative with respect to independent variable x</p>
+<p>高阶偏导数 partial derivative of higher order</p>
+<p>二阶偏导数 second order partial derivative</p>
+<p>混合偏导数 hybrid partial derivative</p>
+<p>全微分 total differential</p>
+<p>偏增量 oartial increment</p>
+<p>偏微分 partial differential</p>
+<p>全增量 total increment</p>
+<p>可微分 differentiable</p>
+<p>必要条件 necessary condition</p>
+<p>充分条件 sufficient condition</p>
+<p>叠加原理 superpostition principle</p>
+<p>全导数 total derivative</p>
+<p>中间变量 intermediate variable</p>
+<p>隐函数存在定理 theorem of the existence of implicit function</p>
+<p>曲线的切向量 tangent vector of a curve</p>
+<p>法平面 normal plane</p>
+<p>向量方程 vector equation</p>
+<p>向量值函数 vector-valued function</p>
+<p>切平面 tangent plane</p>
+<p>法线 normal line</p>
+<p>方向导数 directional derivative</p>
+<p>梯度 gradient</p>
+<p>数量场 scalar field</p>
+<p>梯度场 gradient field</p>
+<p>向量场 vector field</p>
+<p>势场 potential field</p>
+<p>引力场 gravitational field</p>
+<p>引力势 gravitational potential</p>
+<p>曲面在一点的切平面 tangent plane to a surface at a point</p>
+<p>曲线在一点的法线 normal line to a surface at a point</p>
+<p>无条件极值 unconditional extreme values</p>
+<p>条件极值 conditional extreme values</p>
+<p>拉格朗日乘数法 Lagrange multiplier method</p>
+<p>拉格朗日乘子 Lagrange multiplier</p>
+<p>经验公式 empirical formula</p>
+<p>最小二乘法 method of least squares</p>
+<p>均方误差 mean square error</p>
+<p><strong>第九章</strong> <strong>重积分</strong></p>
+<p><strong>Chapter9 Multiple Integrals</strong></p>
+<p>二重积分 double integral</p>
+<p>可加性 additivity</p>
+<p>累次积分 iterated integral</p>
+<p>体积元素 volume element</p>
+<p>三重积分 triple integral</p>
+<p>直角坐标系中的体积元素 volume element in rectangular coordinate system</p>
+<p>柱面坐标 cylindrical coordinates</p>
+<p>柱面坐标系中的体积元素 volume element in cylindrical coordinate system</p>
+<p>球面坐标 spherical coordinates</p>
+<p>球面坐标系中的体积元素 volume element in spherical coordinate system</p>
+<p>反常二重积分 improper double integral</p>
+<p>曲面的面积 area of a surface</p>
+<p>质心 centre of mass</p>
+<p>静矩 static moment</p>
+<p>密度 density</p>
+<p>形心 centroid</p>
+<p>转动惯量 moment of inertia</p>
+<p>参变量 parametric variable</p>
+<p><strong>第十章</strong> <strong>曲线积分与曲面积分</strong></p>
+<p><strong>Chapter10 Line(Curve)Integrals and Surface Integrals</strong></p>
+<p>对弧长的曲线积分 line integrals with respect to arc hength</p>
+<p>第一类曲线积分 line integrals of the first type</p>
+<p>对坐标的曲线积分 line integrals with respect to x,y,and z</p>
+<p>第二类曲线积分 line integrals of the second type</p>
+<p>有向曲线弧 directed arc</p>
+<p>单连通区域 simple connected region</p>
+<p>复连通区域 complex connected region</p>
+<p>格林公式 Green formula</p>
+<p>第一类曲面积分 surface integrals of the first type</p>
+<p>对面的曲面积分 surface integrals with respect to area</p>
+<p>有向曲面 directed surface</p>
+<p>对坐标的曲面积分 surface integrals with respect to coordinate elements</p>
+<p>第二类曲面积分 surface integrals of the second type</p>
+<p>有向曲面元 element of directed surface</p>
+<p>高斯公式 gauss formula</p>
+<p>拉普拉斯算子 Laplace operator</p>
+<p>格林第一公式 Green’s first formula</p>
+<p>通量 flux</p>
+<p>散度 divergence</p>
+<p>斯托克斯公式 Stokes formula</p>
+<p>环流量 circulation</p>
+<p>旋度 rotation,curl</p>
+<p><strong>第十一章</strong> <strong>无穷级数</strong></p>
+<p><strong>Chapter11 Infinite Series</strong></p>
+<p>一般项 general term</p>
+<p>部分和 partial sum</p>
+<p>余项 remainder term</p>
+<p>等比级数 geometric series</p>
+<p>几何级数 geometric series</p>
+<p>公比 common ratio</p>
+<p>调和级数 harmonic series</p>
+<p>柯西收敛准则 Cauchy convergence criteria, Cauchy criteria for convergence</p>
+<p>正项级数 series of positive terms</p>
+<p>达朗贝尔判别法 D’Alembert test</p>
+<p>柯西判别法 Cauchy test</p>
+<p>交错级数 alternating series</p>
+<p>绝对收敛 absolutely convergent</p>
+<p>条件收敛 conditionally convergent</p>
+<p>柯西乘积 Cauchy product</p>
+<p>函数项级数 series of functions</p>
+<p>发散点 point of divergence</p>
+<p>收敛点 point of convergence</p>
+<p>收敛域 convergence domain</p>
+<p>和函数 sum function</p>
+<p>幂级数 power series</p>
+<p>幂级数的系数 coeffcients of power series</p>
+<p>阿贝尔定理 Abel Theorem</p>
+<p>收敛半径 radius of convergence</p>
+<p>收敛区间 interval of convergence</p>
+<p>泰勒级数 Taylor series</p>
+<p>麦克劳林级数 Maclaurin series</p>
+<p>二项展开式 binomial expansion</p>
+<p>近似计算 approximate calculation</p>
+<p>舍入误差 round-off error,rounding error</p>
+<p>欧拉公式 Euler’s formula</p>
+<p>魏尔斯特拉丝判别法 Weierstrass test</p>
+<p>三角级数 trigonometric series</p>
+<p>振幅 amplitude</p>
+<p>角频率 angular frequency</p>
+<p>初相 initial phase</p>
+<p>矩形波 square wave</p>
+<p>谐波分析 harmonic analysis</p>
+<p>直流分量 direct component</p>
+<p>基波 fundamental wave</p>
+<p>二次谐波 second harmonic</p>
+<p>三角函数系 trigonometric function system</p>
+<p>傅立叶系数 Fourier coefficient</p>
+<p>傅立叶级数 Forrier series</p>
+<p>周期延拓 periodic prolongation</p>
+<p>正弦级数 sine series</p>
+<p>余弦级数 cosine series</p>
+<p>奇延拓 odd prolongation</p>
+<p>偶延拓 even prolongation</p>
+<p>傅立叶级数的复数形式 complex form of Fourier series</p>
+<p><strong>第十二章</strong> <strong>微分方程</strong></p>
+<p><strong>Chapter12 Differential Equation</strong></p>
+<p>解微分方程 solve a dirrerential equation</p>
+<p>常微分方程 ordinary differential equation</p>
+<p>偏微分方程 partial differential equation,PDE</p>
+<p>微分方程的阶 order of a differential equation</p>
+<p>微分方程的解 solution of a differential equation</p>
+<p>微分方程的通解 general solution of a differential equation</p>
+<p>初始条件 initial condition</p>
+<p>微分方程的特解 particular solution of a differential equation</p>
+<p>初值问题 initial value problem</p>
+<p>微分方程的积分曲线 integral curve of a differential equation</p>
+<p>可分离变量的微分方程 variable separable differential equation</p>
+<p>隐式解 implicit solution</p>
+<p>隐式通解 inplicit general solution</p>
+<p>衰变系数 decay coefficient</p>
+<p>衰变 decay</p>
+<p>齐次方程 homogeneous equation</p>
+<p>一阶线性方程 linear differential equation of first order</p>
+<p>非齐次 non-homogeneous</p>
+<p>齐次线性方程 homogeneous linear equation</p>
+<p>非齐次线性方程 non-homogeneous linear equation</p>
+<p>常数变易法 method of variation of constant</p>
+<p>暂态电流 transient stata current</p>
+<p>稳态电流 steady state current</p>
+<p>伯努利方程 Bernoulli equation</p>
+<p>全微分方程 total differential equation</p>
+<p>积分因子 integrating factor</p>
+<p>高阶微分方程 differential equation of higher order</p>
+<p>悬链线 catenary</p>
+<p>高阶线性微分方程 linera differential equation of higher order</p>
+<p>自由振动的微分方程 differential equation of free vibration</p>
+<p>强迫振动的微分方程 differential equation of forced oscillation</p>
+<p>串联电路的振荡方程 oscillation equation of series circuit</p>
+<p>二阶线性微分方程 second order linera differential equation</p>
+<p>线性相关 linearly dependence</p>
+<p>线性无关 linearly independce</p>
+<p>二阶常系数齐次线性微分方程 second order homogeneour linear differential equation with constant coefficient</p>
+<p>二阶变系数齐次线性微分方程 second order homogeneous linear differential equation with variable coefficient</p>
+<p>特征方程 characteristic equation</p>
+<p>无阻尼自由振动的微分方程 differential equation of free vibration with zero damping</p>
+<p>固有频率 natural frequency</p>
+<p>简谐振动 simple harmonic oscillation,simple harmonic vibration</p>
+<p>微分算子 differential operator</p>
+<p>待定系数法 method of undetermined coefficient</p>
+<p>共振现象 resonance phenomenon</p>
+<p>欧拉方程 Euler equation</p>
+<p>幂级数解法 power series solution</p>
+<p>数值解法 numerial solution</p>
+<p>勒让德方程 Legendre equation</p>
+<p>微分方程组 system of differential equations</p>
+<p>常系数线性微分方程组 system of linera differential equations with constant coefficient</p>
+<p><strong>线性代数</strong></p>
+<p>A</p>
+<p>adjont(adjugate) of matrix A A 的伴随矩阵</p>
+<p>augmented matrix A 的增广矩阵</p>
+<p>B</p>
+<p>block diagonal matrix 块对角矩阵</p>
+<p>block matrix 块矩阵</p>
+<p>basic solution set 基础解系</p>
+<p>C</p>
+<p>Cauchy-Schwarz inequality 柯西-许瓦兹不等式</p>
+<p>characteristic equation 特征方程</p>
+<p>characteristic polynomial 特征多项式</p>
+<p>coffcient matrix 系数矩阵</p>
+<p>cofactor 代数余子式</p>
+<p>cofactor expansion 代数余子式展开</p>
+<p>column vector 列向量</p>
+<p>commuting matrices 交换矩阵</p>
+<p>consistent linear system 相容线性方程组</p>
+<p>Cramer’s rule 克莱姆法则</p>
+<p>Cross- product term 交叉项</p>
+<p>D</p>
+<p>Determinant 行列式</p>
+<p>Diagonal entries 对角元素</p>
+<p>Diagonal matrix 对角矩阵</p>
+<p>Dimension of a vector space V 向量空间V的维数</p>
+<p>E</p>
+<p>echelon matrix 梯形矩阵</p>
+<p>eigenspace 特征空间</p>
+<p>eigenvalue 特征值</p>
+<p>eigenvector 特征向量</p>
+<p>eigenvector basis 特征向量的基</p>
+<p>elementary matrix 初等矩阵</p>
+<p>elementary row operations 行初等变换</p>
+<p>F</p>
+<p>full rank 满秩</p>
+<p>fundermental set of solution 基础解系</p>
+<p>G</p>
+<p>[center]</p>
+<p>grneral solution 通解</p>
+<p>Gram-Schmidt process 施密特正交化过程</p>
+<p>H</p>
+<p>homogeneous linear equations 齐次线性方程组</p>
+<p>I</p>
+<p>identity matrix 单位矩阵</p>
+<p>inconsistent linear system 不相容线性方程组</p>
+<p>indefinite matrix 不定矩阵</p>
+<p>indefinit quatratic form 不定二次型</p>
+<p>infinite-dimensional space 无限维空间</p>
+<p>inner product 内积</p>
+<p>inverse of matrix A 逆矩阵</p>
+<p>L</p>
+<p>linear combination 线性组合</p>
+<p>linearly dependent 线性相关</p>
+<p>linearly independent 线性无关</p>
+<p>linear transformation 线性变换</p>
+<p>lower triangular matrix 下三角形矩阵</p>
+<p>M</p>
+<p>main diagonal of matrix A 矩阵的主对角</p>
+<p>matrix 矩阵</p>
+<p>N</p>
+<p>[center]</p>
+<p>negative definite quaratic form 负定二次型</p>
+<p>negative semidefinite quadratic form 半负定二次型</p>
+<p>nonhomogeneous equations 非齐次线性方程组</p>
+<p>nonsigular matrix 非奇异矩阵</p>
+<p>nontrivial solution 非平凡解</p>
+<p>norm of vector V 向量V的范数</p>
+<p>normalizing vector V 规范化向量</p>
+<p>O</p>
+<p>orthogonal basis 正交基</p>
+<p>orthogonal complement 正交补</p>
+<p>orthogonal decomposition 正交分解</p>
+<p>orthogonally diagonalizable matrix 矩阵的正交对角化</p>
+<p>orthogonal matrix 正交矩阵</p>
+<p>orthogonal set 正交向量组</p>
+<p>orthonormal basis 规范正交基</p>
+<p>orthonomal set 规范正交向量组</p>
+<p>[b]</p>
+<p>P</p>
+<p>partitioned matrix 分块矩阵</p>
+<p>positive definite matrix 正定矩阵</p>
+<p>positive definite quatratic form 正定二次型</p>
+<p>positive semidefinite matrix 半正定矩阵</p>
+<p>positive semidefinite quadratic form 半正定二次型</p>
+<p>Q</p>
+<p>quatratic form 二次型</p>
+<p>[center]R[/center]</p>
+<p>rank of matrix A 矩阵A的秩 r(A)</p>
+<p>reduced echelon matrix 最简梯形阵</p>
+<p>row vector 行向量</p>
+<p>S</p>
+<p>set spanned by { } 由向量{ }所生成</p>
+<p>similar matrices 相似矩阵</p>
+<p>similarity transformation 相似变换</p>
+<p>singular matrix 奇异矩阵</p>
+<p>solution set 解集合</p>
+<p>standard basis 标准基</p>
+<p>standard matrix 标准矩阵I</p>
+<p>submatrix 子矩阵</p>
+<p>subspace 子空间</p>
+<p>symmetric matrix 对称矩阵</p>
+<p>T</p>
+<p>trace of matrix A 矩阵A 的迹 tr(A)</p>
+<p>transpose of A 矩阵A的转秩</p>
+<p>triangle inequlity 三角不等式</p>
+<p>trivial solution 平凡解</p>
+<p>U</p>
+<p>unit vector 单位向量</p>
+<p>upper triangular matrix 上三角形矩阵</p>
+<p>V</p>
+<p>vandermonde matrix 范得蒙矩阵</p>
+<p>vector 向量</p>
+<p>vector space 向量空间</p>
+<p>Z</p>
+<p>zero subspace 零子空间</p>
+<p>zero vector 零空间 （本文已被浏览 133 次）</p>
+<p><strong>概率统计</strong></p>
+<p><strong>概率论与数理统计词汇英汉对照表</strong></p>
+<p>A</p>
+<p>absolute value 绝对值</p>
+<p>accept 接受</p>
+<p>acceptable region 接受域</p>
+<p>additivity 可加性</p>
+<p>adjusted 调整的</p>
+<p>alternative hypothesis 对立假设</p>
+<p>analysis 分析</p>
+<p>analysis of covariance 协方差分析</p>
+<p>analysis of variance 方差分析</p>
+<p>arithmetic mean 算术平均值</p>
+<p>association 相关性</p>
+<p>assumption 假设</p>
+<p>assumption checking 假设检验</p>
+<p>availability 有效度</p>
+<p>average 均值</p>
+<p>B</p>
+<p>balanced 平衡的</p>
+<p>band 带宽</p>
+<p>bar chart 条形图</p>
+<p>beta-distribution 贝塔分布</p>
+<p>between groups 组间的</p>
+<p>bias 偏倚</p>
+<p>binomial distribution 二项分布</p>
+<p>binomial test 二项检验</p>
+<p>C</p>
+<p>calculate 计算</p>
+<p>case 个案</p>
+<p>category 类别</p>
+<p>center of gravity 重心</p>
+<p>central tendency 中心趋势</p>
+<p>chi-square distribution 卡方分布</p>
+<p>chi-square test 卡方检验</p>
+<p>classify 分类</p>
+<p>cluster analysis 聚类分析</p>
+<p>coefficient 系数</p>
+<p>coefficient of correlation 相关系数</p>
+<p>collinearity 共线性</p>
+<p>column 列</p>
+<p>compare 比较</p>
+<p>comparison 对照</p>
+<p>components 构成，分量</p>
+<p>compound 复合的</p>
+<p>confidence interval 置信区间</p>
+<p>consistency 一致性</p>
+<p>constant 常数</p>
+<p>continuous variable 连续变量</p>
+<p>control charts 控制图</p>
+<p>correlation 相关</p>
+<p>covariance 协方差</p>
+<p>covariance matrix 协方差矩阵</p>
+<p>critical point 临界点</p>
+<p>critical value 临界值</p>
+<p>crosstab 列联表</p>
+<p>cubic 三次的，立方的</p>
+<p>cubic term 三次项</p>
+<p>cumulative distribution function 累加分布函数</p>
+<p>curve estimation 曲线估计</p>
+<p>D</p>
+<p>data 数据</p>
+<p>default 默认的</p>
+<p>definition 定义</p>
+<p>deleted residual 剔除残差</p>
+<p>density function 密度函数</p>
+<p>dependent variable 因变量</p>
+<p>description 描述</p>
+<p>design of experiment 试验设计</p>
+<p>deviations 差异</p>
+<p>df.(degree of freedom) 自由度</p>
+<p>diagnostic 诊断</p>
+<p>dimension 维</p>
+<p>discrete variable 离散变量</p>
+<p>discriminant function 判别函数</p>
+<p>discriminatory analysis 判别分析</p>
+<p>distance 距离</p>
+<p>distribution 分布</p>
+<p>D-optimal design D-优化设计</p>
+<p>E</p>
+<p>eaqual 相等</p>
+<p>effects of interaction 交互效应</p>
+<p>efficiency 有效性</p>
+<p>eigenvalue 特征值</p>
+<p>equal size 等含量</p>
+<p>equation 方程</p>
+<p>error 误差</p>
+<p>estimate 估计</p>
+<p>estimation of parameters 参数估计</p>
+<p>estimations 估计量</p>
+<p>evaluate 衡量</p>
+<p>exact value 精确值</p>
+<p>expectation 期望</p>
+<p>expected value 期望值</p>
+<p>exponential 指数的</p>
+<p>exponential distributon 指数分布</p>
+<p>extreme value 极值</p>
+<p>F</p>
+<p>factor 因素，因子</p>
+<p>factor analysis 因子分析</p>
+<p>factor score 因子得分</p>
+<p>factorial designs 析因设计</p>
+<p>factorial experiment 析因试验</p>
+<p>fit 拟合</p>
+<p>fitted line 拟合线</p>
+<p>fitted value 拟合值</p>
+<p>fixed model 固定模型</p>
+<p>fixed variable 固定变量</p>
+<p>fractional factorial design 部分析因设计</p>
+<p>frequency 频数</p>
+<p>F-test F检验</p>
+<p>full factorial design 完全析因设计</p>
+<p>function 函数</p>
+<p>G</p>
+<p>gamma distribution 伽玛分布</p>
+<p>geometric mean 几何均值</p>
+<p>group 组</p>
+<p>H</p>
+<p>harmomic mean 调和均值</p>
+<p>heterogeneity 不齐性</p>
+<p>histogram 直方图</p>
+<p>homogeneity 齐性</p>
+<p>homogeneity of variance 方差齐性</p>
+<p>hypothesis 假设</p>
+<p>hypothesis test 假设检验</p>
+<p>I</p>
+<p>independence 独立</p>
+<p>independent variable 自变量</p>
+<p>independent-samples 独立样本</p>
+<p>index 指数</p>
+<p>index of correlation 相关指数</p>
+<p>interaction 交互作用</p>
+<p>interclass correlation 组内相关</p>
+<p>interval estimate 区间估计</p>
+<p>intraclass correlation 组间相关</p>
+<p>inverse 倒数的</p>
+<p>iterate 迭代</p>
+<p>K</p>
+<p>kernal 核</p>
+<p>Kolmogorov-Smirnov test</p>
+<p>柯尔莫哥洛夫-斯米诺夫检验</p>
+<p>kurtosis 峰度</p>
+<p>L</p>
+<p>large sample problem 大样本问题</p>
+<p>layer 层</p>
+<p>least-significant difference 最小显著差数</p>
+<p>least-square estimation 最小二乘估计</p>
+<p>least-square method 最小二乘法</p>
+<p>level 水平</p>
+<p>level of significance 显著性水平</p>
+<p>leverage value 中心化杠杆值</p>
+<p>life 寿命</p>
+<p>life test 寿命试验</p>
+<p>likelihood function 似然函数</p>
+<p>likelihood ratio test 似然比检验</p>
+<p>linear 线性的</p>
+<p>linear estimator 线性估计</p>
+<p>linear model 线性模型</p>
+<p>linear regression 线性回归</p>
+<p>linear relation 线性关系</p>
+<p>linear term 线性项</p>
+<p>logarithmic 对数的</p>
+<p>logarithms 对数</p>
+<p>logistic 逻辑的</p>
+<p>lost function 损失函数</p>
+<p>M</p>
+<p>main effect 主效应</p>
+<p>matrix 矩阵</p>
+<p>maximum 最大值</p>
+<p>maximum likelihood estimation 极大似然估计</p>
+<p>mean squared deviation(MSD) 均方差</p>
+<p>mean sum of square 均方和</p>
+<p>measure 衡量</p>
+<p>media 中位数</p>
+<p>M-estimator M估计</p>
+<p>minimum 最小值</p>
+<p>missing values 缺失值</p>
+<p>mixed model 混合模型</p>
+<p>mode 众数</p>
+<p>model 模型</p>
+<p>Monte Carle method 蒙特卡罗法</p>
+<p>moving average 移动平均值</p>
+<p>multicollinearity 多元共线性</p>
+<p>multiple comparison 多重比较</p>
+<p>multiple correlation 多重相关</p>
+<p>multiple correlation coefficient 复相关系数</p>
+<p>multiple correlation coefficient 多元相关系数</p>
+<p>multiple regression analysis 多元回归分析</p>
+<p>multiple regression equation 多元回归方程</p>
+<p>multiple response 多响应</p>
+<p>multivariate analysis 多元分析</p>
+<p>N</p>
+<p>negative relationship 负相关</p>
+<p>nonadditively 不可加性</p>
+<p>nonlinear 非线性</p>
+<p>nonlinear regression 非线性回归</p>
+<p>noparametric tests 非参数检验</p>
+<p>normal distribution 正态分布</p>
+<p>null hypothesis 零假设</p>
+<p>number of cases 个案数</p>
+<p>O</p>
+<p>one-sample 单样本</p>
+<p>one-tailed test 单侧检验</p>
+<p>one-way ANOVA 单向方差分析</p>
+<p>one-way classification 单向分类</p>
+<p>optimal 优化的</p>
+<p>optimum allocation 最优配制</p>
+<p>order 排序</p>
+<p>order statistics 次序统计量</p>
+<p>origin 原点</p>
+<p>orthogonal 正交的</p>
+<p>outliers 异常值</p>
+<p>P</p>
+<p>paired observations 成对观测数据</p>
+<p>paired-sample 成对样本</p>
+<p>parameter 参数</p>
+<p>parameter estimation 参数估计</p>
+<p>partial correlation 偏相关</p>
+<p>partial correlation coefficient 偏相关系数</p>
+<p>partial regression coefficient 偏回归系数</p>
+<p>percent 百分数</p>
+<p>percentiles 百分位数</p>
+<p>pie chart 饼图</p>
+<p>point estimate 点估计</p>
+<p>poisson distribution 泊松分布</p>
+<p>polynomial curve 多项式曲线</p>
+<p>polynomial regression 多项式回归</p>
+<p>polynomials 多项式</p>
+<p>positive relationship 正相关</p>
+<p>power 幂</p>
+<p>P-P plot P-P概率图</p>
+<p>predict 预测</p>
+<p>predicted value 预测值</p>
+<p>prediction intervals 预测区间</p>
+<p>principal component analysis 主成分分析</p>
+<p>proability 概率</p>
+<p>probability density function 概率密度函数</p>
+<p>probit analysis 概率分析</p>
+<p>proportion 比例</p>
+<p>Q</p>
+<p>qadratic 二次的</p>
+<p>Q-Q plot Q-Q概率图</p>
+<p>quadratic term 二次项</p>
+<p>quality control 质量控制</p>
+<p>quantitative 数量的，度量的</p>
+<p>quartiles 四分位数</p>
+<p>R</p>
+<p>random 随机的</p>
+<p>random number 随机数</p>
+<p>random number 随机数</p>
+<p>random sampling 随机取样</p>
+<p>random seed 随机数种子</p>
+<p>random variable 随机变量</p>
+<p>randomization 随机化</p>
+<p>range 极差</p>
+<p>rank 秩</p>
+<p>rank correlation 秩相关</p>
+<p>rank statistic 秩统计量</p>
+<p>regression analysis 回归分析</p>
+<p>regression coefficient 回归系数</p>
+<p>regression line 回归线</p>
+<p>reject 拒绝</p>
+<p>rejection region 拒绝域</p>
+<p>relationship 关系</p>
+<p>reliability 可靠性</p>
+<p>repeated 重复的</p>
+<p>report 报告，报表</p>
+<p>residual 残差</p>
+<p>residual sum of squares 剩余平方和</p>
+<p>response 响应</p>
+<p>risk function 风险函数</p>
+<p>robustness 稳健性</p>
+<p>root mean square 标准差</p>
+<p>row 行</p>
+<p>run 游程</p>
+<p>run test 游程检验</p>
+<p>S</p>
+<p>sample 样本</p>
+<p>sample size 样本容量</p>
+<p>sample space 样本空间</p>
+<p>sampling 取样</p>
+<p>sampling inspection 抽样检验</p>
+<p>scatter chart 散点图</p>
+<p>S-curve S形曲线</p>
+<p>separately 单独地</p>
+<p>sets 集合</p>
+<p>sign test 符号检验</p>
+<p>significance 显著性</p>
+<p>significance level 显著性水平</p>
+<p>significance testing 显著性检验</p>
+<p>significant 显著的，有效的</p>
+<p>significant digits 有效数字</p>
+<p>skewed distribution 偏态分布</p>
+<p>skewness 偏度</p>
+<p>small sample problem 小样本问题</p>
+<p>smooth 平滑</p>
+<p>sort 排序</p>
+<p>soruces of variation 方差来源</p>
+<p>space 空间</p>
+<p>spread 扩展</p>
+<p>square 平方</p>
+<p>standard deviation 标准离差</p>
+<p>standard error of mean 均值的标准误差</p>
+<p>standardization 标准化</p>
+<p>standardize 标准化</p>
+<p>statistic 统计量</p>
+<p>statistical quality control 统计质量控制</p>
+<p>std. residual 标准残差</p>
+<p>stepwise regression analysis 逐步回归</p>
+<p>stimulus 刺激</p>
+<p>strong assumption 强假设</p>
+<p>stud. deleted residual 学生化剔除残差</p>
+<p>stud. residual 学生化残差</p>
+<p>subsamples 次级样本</p>
+<p>sufficient statistic 充分统计量</p>
+<p>sum 和</p>
+<p>sum of squares 平方和</p>
+<p>summary 概括，综述</p>
+<p>T</p>
+<p>table 表</p>
+<p>t-distribution t分布</p>
+<p>test 检验</p>
+<p>test criterion 检验判据</p>
+<p>test for linearity 线性检验</p>
+<p>test of goodness of fit 拟合优度检验</p>
+<p>test of homogeneity 齐性检验</p>
+<p>test of independence 独立性检验</p>
+<p>test rules 检验法则</p>
+<p>test statistics 检验统计量</p>
+<p>testing function 检验函数</p>
+<p>time series 时间序列</p>
+<p>tolerance limits 容许限</p>
+<p>total 总共，和</p>
+<p>transformation 转换</p>
+<p>treatment 处理</p>
+<p>trimmed mean 截尾均值</p>
+<p>true value 真值</p>
+<p>t-test t检验</p>
+<p>two-tailed test 双侧检验</p>
+<p>U</p>
+<p>unbalanced 不平衡的</p>
+<p>unbiased estimation 无偏估计</p>
+<p>unbiasedness 无偏性</p>
+<p>uniform distribution 均匀分布</p>
+<p>V</p>
+<p>value of estimator 估计值</p>
+<p>variable 变量</p>
+<p>variance 方差</p>
+<p>variance components 方差分量</p>
+<p>variance ratio 方差比</p>
+<p>various 不同的</p>
+<p>vector 向量</p>
+<p>W</p>
+<p>weight 加权，权重</p>
+<p>weighted average 加权平均值</p>
+<p>within groups 组内的</p>
+<p>Z</p>
+<p>Z score Z分数</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>方法</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何学习数学</title>
+    <url>/math-1/</url>
+    <content><![CDATA[<h1 id="相关资源">相关资源</h1>
+<p>网络资源</p>
+<h2 id="课本">课本</h2>
+<p>同济的《高等数学》《线性代数》《概率与数理统计》</p>
+<p>国外的《托马斯微积分》《线性代数及其应用》《离散数学及其应用》</p>
+<span id="more"></span>
+<h1 id="学习方法">学习方法</h1>
+<ul>
+<li>双语阅读课本和资料，记笔记</li>
+<li>外国课本的优势在于思维和本质的通透，联系生活实际，把抽象的数学具象化。中国课本的优势在于知识密集。</li>
+<li>其实和语言学一样，也是记术语、符号、公式的过程</li>
+</ul>
+<h1 id="具体实施">具体实施</h1>
+<p>5.17中期考核过后每天阅读微信读书/京东读书《高等数学》一章，完成练习题</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>方法</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第0章：为什么要学习微积分？</title>
+    <url>/calculus-I-0/</url>
+    <content><![CDATA[<h1 id="简介">简介</h1>
+<p>本章的目的是诱使你学习一些微积分。</p>
+<p><strong>主题</strong></p>
+<p>0.1 你应该知道什么</p>
+<p>0.2 什么是微积分，我们为什么要学习它？</p>
+<span id="more"></span>
+<h1 id="你应该知道什么">0.1 你应该知道什么</h1>
+<p>要学习微积分，你必须要有呼吸的能力。没有这种能力，你很快就会死亡，无法继续下去。 除此之外，你还需要熟悉两个概念：一个是数的概念，一个是函数的概念。</p>
+<p><strong>假设我已经忘记了我所知道的关于数字和函数的一切？</strong> 不要担心。我们将回顾它们的属性。</p>
+<p><strong>如果我知道所有关于数和函数的知识呢？</strong> 那么你已经了解了微积分，不需要再继续了。</p>
+<p>在提醒自己关于数和函数的知识之前，你可以问以下问题。</p>
+<p><strong>什么是微积分？</strong> <strong>我为什么要学习它？</strong></p>
+<h1 id="什么是微积分为什么我们要研究它">0.2 什么是微积分，为什么我们要研究它？</h1>
+<p>微积分是关于事物如何变化的研究。它提供了一个对存在变化的系统进行建模的框架，以及一种推导这种模型的预测的方法。</p>
+<p><strong>我已经待了一段时间，或多或少知道事物是如何变化的。微积分能给我带来什么？</strong></p>
+<p>我确信你对事物的变化有很多了解。而且你对微积分有一个定性的概念。例如，运动速度的概念是一个直接来自微积分的概念，尽管它肯定在微积分之前就已经存在了，而且你对它了解很多。</p>
+<p><strong>那么，微积分为我增加了什么？</strong></p>
+<p>它为我们提供了一种方法来构建相对简单的变化的定量模型，并推断其结果。</p>
+<p><strong>达到什么目的呢？</strong></p>
+<p>有了它，你就有能力找到变化的条件对正在研究的系统的影响。通过研究这些，你可以学习如何控制系统，使其做你想做的事情。微积分使工程师和你有能力对系统进行建模和控制，从而使他们（以及可能是你）对物质世界拥有非凡的力量。</p>
+<p>微积分的发展及其在物理学和工程学中的应用，可能是现代科学发展的最重要因素，超过了阿基米德时代的水平。而这也是工业革命以及随之而来的一切，包括过去几个世纪几乎所有的重大进步的原因。</p>
+<p><strong>你是否试图声称我将知道足够的微积分来建立系统模型，并推导出足够的控制它们的方法？</strong></p>
+<p>如果你在1990年问我这个问题，我会说没有。现在，对于一些非微不足道的系统，在你使用你的笔记本电脑或台式电脑的情况下，它是在可能的范围内。</p>
+<p><strong>好吧，但是微积分模型是如何变化的？微积分是什么样子的？</strong></p>
+<p>微积分的基本思想是通过研究“瞬时”变化来研究变化，我们指的是微小时间间隔内的变化。</p>
+<p><strong>这有什么好处呢？</strong></p>
+<p>事实证明，这种变化往往比有限时间间隔的变化要简单得多。这意味着它们更容易建模。事实上，微积分是由牛顿发明的，他发现加速度，也就是物体的速度变化，可以通过他相对简单的运动定律来建模。</p>
+<p><strong>那又如何？</strong></p>
+<p>这就给我们留下了一个问题，即从物体的速度或加速度的信息中推导出关于物体运动的信息。而微积分的细节涉及速度和加速度所代表的概念与位置所代表的概念之间的相互关系。</p>
+<p><strong>那么，在学习微积分的过程中，我们要学习什么呢？</strong></p>
+<p>首先，你必须有一个框架来描述诸如位置、速度和加速度等概念。</p>
+<p>单变量微积分，也就是我们开始学习的，可以处理一个物体沿固定路径的运动。更普遍的问题是，当运动可以发生在表面或空间时，可以用多变量微积分处理。我们研究这后一个主题时，要找到使用一维思想和方法来处理更普遍问题的巧妙技巧。所以单变量微积分也是一般问题的关键。</p>
+<p>当我们处理一个沿着路径运动的物体时，它的位置随时间变化，我们可以用一个单一的数字来描述它在任何时候的位置，这个数字可以是距离该路径上的某个固定点（称为我们坐标系的原点）的一些单位。我们在这个距离上加一个符号，如果物体在原点后面，这个符号将是负的）。</p>
+<p>然后，物体的运动由其在相关时间点的数字位置集来描述。</p>
+<p>我们用来描述运动的位置和时间集合就是我们所说的函数。在所有应用微积分的系统中，类似的函数被用来描述所关注的量。</p>
+<p>这里的课程从回顾数字和函数及其属性开始。毫无疑问，你对其中的大部分内容都很熟悉，所以我们试图增加一些不熟悉的材料，让你在看的时候保持注意力。</p>
+<p><strong>如果我读到这样的东西，我就会陷入困境。我必须这样做吗？</strong></p>
+<p>我很想让你看看，因为这是我写的，但如果你不愿意，你无疑可以跳过它，在需要时再参考它。但是你会错过新的信息，这样做可能会使你永远受到困扰。（虽然我对此表示怀疑）。</p>
+<p><strong>那么在数字和函数之后是什么呢</strong>？</p>
+<p>一个典型的微积分课程包括以下主题。</p>
+<ol type="1">
+<li>如何找到各种函数的瞬时变化（称为 "导数"）。这样做的过程被称为 "微分"）。</li>
+<li>如何使用导数来解决各种问题。</li>
+<li>如何从一个函数的导数回到函数本身。这个过程被称为 "积分"）。</li>
+<li>研究某些种类的函数积分的详细方法。</li>
+<li>如何使用积分来解决各种几何问题，如某些区域的面积和体积的计算。</li>
+</ol>
+<p>在这样的课程中还有一些其他的标准课题。其中包括用幂级数来描述函数，以及研究无限级数何时 "收敛 "到一个数字。</p>
+<p><strong>那么，这让我有什么权力去做什么呢？</strong></p>
+<p>它并没有真正这样做。问题是，这些课程最初是在几个世纪前设计的，它们的目的不是增强能力（在当时是完全不可能的），而是让听众熟悉一些思想、概念和符号，以便理解更高级的工作。数学家、科学家和工程师在各种背景下使用微积分的概念，并使用行话和符号，如果你不学习微积分，你将完全无法理解。学习微积分的目的通常是让你具备 "数学素养"，以便与这些更高级的工作联系起来。</p>
+<p><strong>那么，为什么要对赋权一统胡说八道呢？</strong></p>
+<p>本课程将努力做到与众不同，在实现其他通常目标的同时，也致力于增强能力。它可能不会成功，但至少会尝试。</p>
+<p><strong>那么，它将如何尝试演绎这一奇迹呢？</strong></p>
+<p>传统的微积分课程强调用代数方法进行微分和积分。我们将描述这些方法，但也将展示如何在计算机电子表格上以可接受的工作量进行微分和积分（以及普通微分方程的解法）。我们还将提供一些小程序，这些小程序可以自动进行同样的操作，而且工作量更小。通过这些小程序或电子表格，你可以比以前更容易和更灵活地应用微积分的工具。</p>
+<p>还有一些更高级的程序，如MAPLE和Mathematica，它们可以让你以类似的方式做更多的事情。有了它们，你可以在各种各样的背景下推导出各种模型的结果。一旦你理解了微积分，它们可以使微积分的使用变得更加容易，但它们提供的答案是给定的输入，这并不提供对它们如何做的理解)。</p>
+<p>另外，我们将更多地强调建模系统。有了关于建模的想法和解决它们导致的微分方程的方法，你可以实现我们所声称的授权。</p>
+<p><strong>我将能够利用这一点达到一些有价值的目的？</strong></p>
+<p>好吧，可能不会。但你可能会。还有，你可能会被激起去学习更多关于你想研究的系统或数学的知识，以提高你这样做的机会。另外，你可能会比现在更好地理解模型的可能后果。另外你可能会爱上微积分的概念和思想。</p>
+<p><strong>那么，关于数字的介绍性章节有哪些内容呢？</strong></p>
+<p>我们从自然数<span class="math inline">\((1,2,3,...)\)</span>开始，并注意到减法、除法和取平方根的运算是如何引导我们将数系统扩展到包括负数、分数（称为有理数）和复数。我们还描述了十进制扩展（描述 "实数"），并研究了可数性的概念。我们也嘀咕了复数。</p>
+<p><strong>在关于函数的章节里呢？</strong></p>
+<p>我们从函数的抽象定义开始（作为一组参数-值对），然后描述标准函数。这些是通过从同一函数（值=参数）和指数函数开始，并对它们进行各种运算得到的。</p>
+<p><strong>运算，什么运算？</strong></p>
+<p>这些是加法、减法、乘法、除法、替换和反转。</p>
+<p><strong>但什么是指数函数，什么是置换和反转？</strong></p>
+<p>这里有一句话的答案：如果你想知道更多的内容，请阅读本章!</p>
+<p>指数函数是用微积分神秘地定义的：它是自己的导数的函数，定义为在参数0处的值为1，然而，它原来是你以前见过的东西。而且，它与三角学的正弦函数有着密切的关系。</p>
+<p>将一个函数<span class="math inline">\(f\)</span>替换成另一个函数<span class="math inline">\(g\)</span>，会产生一个新的函数，这个函数被定义为在参数<span class="math inline">\(x\)</span>处有<span class="math inline">\(f\)</span>的值，而<span class="math inline">\(f\)</span>在参数<span class="math inline">\(x\)</span>处的值就是<span class="math inline">\(g\)</span>的值，这比听起来要简单。例如，假设<span class="math inline">\(y=x^2\)</span>，而<span class="math inline">\(x=2z\)</span>，那么<span class="math inline">\(y(x(z))\)</span>就是<span class="math inline">\((2z)^2\)</span>。</p>
+<p>一个函数的逆函数是通过将其值与参数交换而得到的函数。例如平方函数，通常写成<span class="math inline">\(x^2\)</span>有一个平方根函数作为其逆函数。</p>
+<p>用路易斯-卡罗尔（Lewis Carroll）写给他侄子的威廉神父的不朽名言来说，他是一位数学家：</p>
+<blockquote>
+<p>我已经回答了三个问题，这就够了。</p>
+<p>圣人说，不要给自己找借口。</p>
+<p>你认为我可以整天听这些东西吗？</p>
+<p>快走吧，否则我就把你踢下楼去！</p>
+</blockquote>
+<h1 id="原文链接">原文链接</h1>
+<p>http://www-math.mit.edu/~djk/calculus_beginners/index.html</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+      </categories>
+      <tags>
+        <tag>calculus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PDF相关知识大全</title>
+    <url>/pdf-explained/</url>
+    <content><![CDATA[<h1 id="pdf是什么">Pdf是什么</h1>
+<p>Portable Document Format，由Adobe 公司于1993 年提出的一种文件规范，主要是为了让同一份文件在不同的装置、硬体或作业系统上皆有相同的呈现效果，达到跨平台皆可使用的目的。</p>
+]]></content>
+      <categories>
+        <category>代码</category>
+        <category>文本处理</category>
+      </categories>
+      <tags>
+        <tag>pdf</tag>
       </tags>
   </entry>
   <entry>

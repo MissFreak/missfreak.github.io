@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="从课本摘录的每章重点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语义学框架">
+<meta property="og:url" content="http://nlpcourse.cn/semantics-concepts/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="从课本摘录的每章重点。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/04/29/cwbXFoxvJr14Wf5.png">
+<meta property="article:published_time" content="2021-04-29T07:47:10.492Z">
+<meta property="article:modified_time" content="2021-04-29T09:47:49.508Z">
+<meta property="article:author" content="鸽鸽">
+<meta property="article:tag" content="linguistics">
+<meta property="article:tag" content="semantics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/04/29/cwbXFoxvJr14Wf5.png">
+
+<link rel="canonical" href="http://nlpcourse.cn/semantics-concepts/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>语义学框架 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/semantics-concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          语义学框架
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-29 15:47:10 / 修改时间：17:47:49" itemprop="dateCreated datePublished" datetime="2021-04-29T15:47:10+08:00">2021-04-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">语言学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E8%AF%AD%E4%B9%89/" itemprop="url" rel="index"><span itemprop="name">语义</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+            <div class="post-description">从课本摘录的每章重点。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://i.loli.net/2021/04/29/cwbXFoxvJr14Wf5.png"/></p>
+<p>See <a target="_blank" rel="noopener" href="https://share.mubu.com/doc/7e-TFn3zFCV">mubu</a> for more details.</p>
+<h1 id="chapter-1">Chapter 1</h1>
+<p>In this chapter we will introduce some important concepts for the study of semantics. In 1.1 we place the notion of linguistic meaning in the wider context of human communication and behaviour. Section 1.2 then examines some of the vocabulary that English and other languages use for ordinary talk about meaning in language and related phenomena. A consideration of how this everyday nontechnical vocabulary varies cross-linguistically can show some of the important different aspects of linguistic meaning. In section 1.3 the semiotic triangle of mind, world and language is discussed, followed in 1.4 by an introduction to five fundamental concepts:</p>
+<ul>
+<li><p>lexemes;</p></li>
+<li><p>sense and reference;</p></li>
+<li><p>denotation and connotation;</p></li>
+<li><p>compositionality; and</p></li>
+<li><p>levels of meaning.</p></li>
+</ul>
+<p>Next (1.5), we introduce the concepts of object language and metalanguage, and distinguish a number of different possible relations between the language in which meanings are described (the ‘metalanguage’) and the language whose meanings are described (the ‘object language’). We will then consider three different identifications of meaning: meanings as objects in the world (referents: 1.6.1), as objects in the mind (concepts: 1.6.2), and as brain states (1.6.3). An alternative identification is the notion of meanings as uses, discussed in 1.6.4. To end the chapter, we consider a view of meaning on which meanings are unobservable, hypothetical constructs posited to explain facts about language use (1.7).</p>
+<h1 id="chapter-2">Chapter 2</h1>
+<p>This chapter considers the role of definition in the description of meaning, through four main questions:</p>
+<ul>
+<li><p>What units need to receive definition?</p></li>
+<li><p>What forms should the definitions take?</p></li>
+<li><p>Can definitions be grounded in a set of semantic primitives?</p></li>
+<li><p>What is the place of definition in semantics generally?</p></li>
+</ul>
+<p>We begin by contrasting the types of definition that might appear in dictionaries from the types that interest a theoretical semantic analysis (2.1). Before any definition can begin, we have to confront an initial question: what are the meaning-bearing units of the language for which definitions are required? We explore this question by looking at meaning on, above and below the word level in 2.2, paying particular attention to certain problematic cases. The next section distinguishes definition of things (real definition) from definition of meanings (nominal definition), and cognitive from extensional definitions, and discusses some differences of opinion in linguistics as to what the proper objects of linguistic definition are (2.3.1). We then distinguish different possible definitional strategies, including</p>
+<ul>
+<li><p>definition by ostension (2.3.2)</p></li>
+<li><p>definition by synonymy (2.3.3)</p></li>
+<li><p>definition by context and typical exemplar (2.3.4)</p></li>
+<li><p>definition by genus and differentia (2.3.5).</p></li>
+</ul>
+<p>The test of truth preserving substitutability is introduced as a standard criterion of definitional adequacy (2.4), and we discuss the problem of definitional circularity and the question of semantic primitives (2.5).</p>
+<p>　We then exemplify the extreme difficulty involved in couching successful definitions of words (2.6), before finally devoting some discussion to the relationship between definition and understanding (2.7). 　</p>
+<h1 id="chapter-3">Chapter 3</h1>
+<p>Linguistic expressions can only occur in particular contexts; as a result, working out what role context plays in the determination of meaning is an important part of semantic analysis. This chapter considers one essential type of context: the external or real-world context to which linguistic expressions refer. 　We begin by discussing an important distinction: the distinction between what a word inherently means, and what it can be used to mean in a particular context, showing that this distinction is often not self-evident. We then distinguish the different types of task a hearer must perform to correctly understand a linguistic expression in its context (3.1).</p>
+<p>　In 3.2 we begin the treatment of external context by considering the relation between sense and reference, discussing - the origins of this distinction in Frege; - its applications in linguistics; and</p>
+<ul>
+<li>the nature of deictic expressions, which can be seen as a bridge between language and its surrounding external context.</li>
+</ul>
+<p>In 3.3. we discuss, and reject, a possible distinction between knowledge of a word’s inherent, linguistic meaning (dictionary knowledge) and knowledge of facts about the word’s external context (encyclopaedic knowledge).</p>
+<h1 id="chapter-4">Chapter 4</h1>
+<p>Following the treatment of external context in the previous chapter, this chapter considers the interpersonal context of linguistic action in which any utterance is placed.</p>
+<p>　Section 4.1 introduces the notion of illocutionary force, which refers to the different interpersonal functions or speech acts which a linguistic expression may be made to perform (stating, questioning, ordering, requesting, advising, warning, promising, etc.).</p>
+<p>　Section 4.2 considers the role of speaker’s intention and hearer’s inference in meaning: in general, the meaning of an expression can often be described as whatever it was that the speaker intended the hearer to understand in using the expression; the hearer’s task, on this picture, is to make inferences about what this intention was.</p>
+<p>　In 4.3 we discuss the Gricean theory of implicature, which is the theory of how meanings may be implied rather than explicitly stated. In 4.4 and 4.5 we turn to an exploration of the principles which have been proposed as governing the operation of implicature in conversation. Section 4.6 considers an important alternative tradition in the analysis of interpersonal context, Relevance Theory, and 4.7 discusses, in general terms, the interrelation between semantics and pragmatics, the branch of linguistics in which the relations between language and context are specifically studied. 　</p>
+<h1 id="chapter-5">Chapter 5</h1>
+<p>The different sections of this chapter follow three logical steps in meaning analysis. In 5.1, some of the different possible semantic relations among words are exemplified and discussed. We concentrate on those relations which are of most use for semantic description: - antonymy (oppositeness; 5.1.1), - meronymy ( part of-ness; 5.1.2),</p>
+<ul>
+<li><p>the class-inclusion relations of hyponymy and taxonomy (kind of-ness; 5.1.3–4) and</p></li>
+<li><p>synonymy (5.1.5).</p></li>
+</ul>
+<p>These meaning relations can be seen as reflecting the presence of various isolable components in the meanings of the related words; accordingly, Section 5.2 introduces the possibility of analysing senses as composed of bundles of semantic components, and considers the wider applicability of componential analysis as well as the problems it faces. The third section (5.3) discusses the necessity for a theory of meaning to specify the number of senses associated with a lexeme in a rigorous way. In 5.3.1 we distinguish the case where a single lexeme possesses several related meanings (polysemy) from two other cases: the case where it possesses only a single meaning (monosemy) and the case where it possesses two unrelated meanings (homonymy). Section 5.3.2 then shows that any attempt to make these definitions rigorous confronts serious problems, the implications of which are discussed in 5.3.3.</p>
+<h1 id="chapter-6">Chapter 6</h1>
+<p>Logic is the study of the nature of valid inferences and reasoning. The logical tradition constitutes one of the major strands in the study of meaning, and some knowledge of its background is indispensable in linguistic semantics. In this chapter we will study some basic logical tools and concepts. Our aim is twofold:</p>
+<ul>
+<li>first, to understand the ways in which some types of meaning can be represented in logical symbolism</li>
+<li>second, to appreciate the advantages and disadvantages of this type of representation.</li>
+</ul>
+<p>We begin by introducing the ideas of validity, soundness and logical form (6.1): these define the context and aims of a logical approach to language. In 6.2 we present an exposition of the basic principles of propositional logic, the logic of basic sentences, including a treatment of the principal logical operators: and, not, or and if . . . then. In 6.3 we discuss the extent to which these logical concepts overlap with the meanings of their ordinary language equivalents. Section 6.4 introduces predicate logic, the logic of expressions like some and all. In 6.5 we discuss the ways in which the concept of a model allows us to describe reference using logical techniques. Section 6.6 contains a discussion of the sentence relations of entailment, presupposition and contradiction. This leads to a discussion of meaning postulates in Section 6.7, which use the sentence relations introduced in 6.6 as part of a non-decompositional approach to meaning. In 6.8 Russell’s theory of descriptions is discussed. This is a proposal for the analysis of noun phrases containing the definite article, and provides an instructive example of the advantages and problems of applying logical tools to the analysis of natural language.</p>
+<p>　We end the chapter in 6.9 with a short discussion of the controversies surrounding the use of logic as an aid in the analysis of natural language. 　</p>
+<h1 id="chapter-7">Chapter 7</h1>
+<p>This chapter considers meaning from the perspective of the cognitive operations which the mind can be hypothesized to perform in using language. We begin by introducing the idea that words in natural language can be seen as categories, and discuss two different models of the way categories work, the classical view of categorization and the prototype view (7.1), exploring the advantages and problems of each. We then discuss cognitive approaches to meaning, which developed out of the prototypical model of categorization. These approaches have introduced a rich model of the cognitive architecture underlying language (7.2).</p>
+<h1 id="chapter-8">Chapter 8</h1>
+<p>In the previous chapter we looked at some proposals about the types of cognitive operation that underlie semantic ability. In this chapter, we examine some attempts to formalize and model the conceptual representations involved in language. In 8.1 we examine Jackendoff’s conceptual semantics, a theory about the cognitive structures behind language and the modes of their interaction. This is followed by a discussion of the treatment of meaning in computational linguistics, which uses computer models of language as an aid to understanding the mental processes involved in language production and understanding (8.2). We will concentrate on the aspects of computational linguistics which give insight into the nature of the task of meaning-processing. We specifically look at WordNet, an online lexical database, at the problems of word-sense disambiguation, and at Pustejovsky’s solution to this in his model of qualia structure.</p>
+<h1 id="chapter-9">Chapter 9</h1>
+<p>This chapter and the next investigate a range of semantic phenomena which are relevant to morphosyntax. This chapter focuses on morphosyntactic categories such as noun and verb and tense and aspect. The major questions are these: - Does a word’s meaning determine its grammatical category?</p>
+<ul>
+<li>How can we describe the meanings of major verbal categories like tense and aspect?</li>
+</ul>
+<p>We begin with a discussion of the meaning of lexical categories (parts of speech), exploring the possible semantic contribution made by a word’s categorization as noun, verb, adjective, and so on (9.1). Section 9.2 focuses on the verb, investigating the semantics of tense and aspect: two central dimensions of verb meaning with major consequences on the verbal and clausal levels.</p>
+<h1 id="chapter-10">Chapter 10</h1>
+<p>This chapter discusses the semantics of the clause, particularly the relationship between a verb and its noun participants. This relationship is called the verb’s argument structure. There are three basic questions:</p>
+<ul>
+<li><p>What principles determine which of the noun phrases associated with a transitive verb will be expressed as subject and which as object?</p></li>
+<li><p>Can verbs be grouped into classes about which argument structure generalizations can be made?</p></li>
+<li><p>Can constructions have meanings on their own?</p></li>
+</ul>
+<p>We begin by looking at the semantics of argument structure, a central topic in investigation of the way semantics and syntax are connected. We introduce and motivate the notion of thematic role, and go on to consider the modifications this notion has undergone in research into argument structure (10.1). We then consider argument structure alternations (10.2), the name for situations where a single verb can take several different argument structures. Lastly, we consider construction grammar, which attributes many apparently lexical meanings to the grammatical constructions in which they occur (10.3).</p>
+<h1 id="chapter-11">Chapter 11</h1>
+<p>Variation is one of the most immediately obvious facts about meaning. Everyone is aware of how the meaning of identical expressions can differ from one person to another, sometimes significantly. There are two aspects of meaning variation: a synchronic and a diachronic (historical) one; we examine each in turn in this chapter. After a quick tour of some important preliminary questions (11.1), we begin diachronically by illustrating the traditional categories with which meaning change has been described, and we consider some of the shortcomings of this approach (11.2.1). We then move on to more recent studies of the pathways and mechanisms of semantic change (11.2.2) and a brief discussion of grammaticalization, the process by which full lexical words are converted into grammatical morphemes (11.2.3). The second half of the chapter discusses synchronic meaning variation. We start by examining the subtle types of semantic variation which exist within a single language community at any one time. Powerful new tools developed within corpus linguistics allow this kind of variation to be studied in a way that was not previously available: these are illustrated in 11.3. We then look at the field of semantic typology, which studies possible constraints on meaning variation and seeks out possible semantic universals in various semantic fields such as the body, colour, space and motion (11.4). Lastly, we consider the implications of these studies for the question of the influences between language and cognition, discussing the famous Sapir–Whorf or linguistic relativity hypothesis (11.5).</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">猜你喜欢</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\semantics-terms\" rel="bookmark">语义学术语大全</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\syntax-1\" rel="bookmark">句法学框架及术语大全</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\cognitive-linguistics\" rel="bookmark">认知语言学大纲</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/semantics-concepts/" title="语义学框架">http://nlpcourse.cn/semantics-concepts/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linguistics/" rel="tag"><i class="fa fa-tag"></i> linguistics</a>
+              <a href="/tags/semantics/" rel="tag"><i class="fa fa-tag"></i> semantics</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/math-0/" rel="prev" title="数学中的英语名词汇">
+      <i class="fa fa-chevron-left"></i> 数学中的英语名词汇
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-1"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-2"><span class="nav-number">2.</span> <span class="nav-text">Chapter 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-3"><span class="nav-number">3.</span> <span class="nav-text">Chapter 3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-4"><span class="nav-number">4.</span> <span class="nav-text">Chapter 4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-5"><span class="nav-number">5.</span> <span class="nav-text">Chapter 5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-6"><span class="nav-number">6.</span> <span class="nav-text">Chapter 6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-7"><span class="nav-number">7.</span> <span class="nav-text">Chapter 7</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-8"><span class="nav-number">8.</span> <span class="nav-text">Chapter 8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-9"><span class="nav-number">9.</span> <span class="nav-text">Chapter 9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-10"><span class="nav-number">10.</span> <span class="nav-text">Chapter 10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-11"><span class="nav-number">11.</span> <span class="nav-text">Chapter 11</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">244k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:42</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
