@@ -1,6 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>句法学主要内容</title>
+    <url>/syntax-main/</url>
+    <content><![CDATA[<h1 id="chapter-1">Chapter 1</h1>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After reading chapter 1 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Explain why Language is a psychological property of humans.</p></li>
+<li><p>Distinguish between prescriptive and descriptive rules.</p></li>
+<li><p>Explain the scientific method as it applies to syntax.</p></li>
+<li><p>Explain the differences between the kinds of data gathering, including corpora and linguistic judgments.</p></li>
+<li><p>Explain the difference between competence and performance.</p></li>
+<li><p>Provide at least three arguments for Universal Grammar.</p></li>
+<li><p>Explain the logical problem of language acquisition.</p></li>
+<li><p>Distinguish between learning and acquisition.</p></li>
+<li><p>Distinguish among observational, descriptive and explanatory adequacy.</p></li>
+</ul>
+<h2 id="conclusions">Conclusions</h2>
+<p>In this chapter, we’ve done very little syntax but talked a lot about the assumptions underlying the approach we’re going to take to the study of sentence structure. The basic approach to syntax that we’ll be using here is generative grammar; we’ve seen that this approach is scientific in that it uses the scientific method. It is descriptive and rule-based. Further, it assumes that a certain amount of grammar is built in and the rest is acquired.</p>
+<h1 id="chapter-2">Chapter 2</h1>
+<h2 id="learning-objectives-1">Learning Objectives</h2>
+<p>After reading chapter 2 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Distinguish between distributional and semantic definitions of parts of speech.</p></li>
+<li><p>Identify a part of speech by its distribution.</p></li>
+<li><p>Identify cases of complementary distribution.</p></li>
+<li><p>Know the difference between an open-class and a closed-class part of speech.</p></li>
+<li><p>Explain the difference between lexical and functional categories.</p></li>
+<li><p>Identify different subcategories using feature notations.</p></li>
+<li><p>Identify plural nouns, mass nouns and count nouns and distinguish them with features.</p></li>
+<li><p>Explain the difference between predicates and arguments.</p></li>
+<li><p>Categorize verbs according to their argument structure (intransitive, transitive, ditransitive) and represent this using features.</p></li>
+</ul>
+<h2 id="conclusions-1">Conclusions</h2>
+<p>In this chapter, we’ve surveyed the parts of speech categories that we will use in this book. We have the lexical parts of speech N, V, Adj, and Adv, and the functional categories D, P, C, Conj, Neg, and T. Determining part of speech is done not by traditional semantic criteria, but by using morphological and syntactic distribution tests. We also looked at distributional evidence for various subcategories of nouns and verbs, and represented these distinctions as feature notations on the major categories.</p>
+<h1 id="chapter-3">Chapter 3</h1>
+<h2 id="learning-objectives-2">Learning Objectives</h2>
+<p>After reading chapter 3 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Be able to explain what a constituent is.</p></li>
+<li><p>Show whether a string of words is a constituent or not.</p></li>
+<li><p>Using phrase structure rules, draw the trees for English sentences.</p></li>
+<li><p>Explain and apply the Principle of Modification.</p></li>
+<li><p>Produce paraphrases for ambiguous sentences and draw trees for each meaning.</p></li>
+<li><p>Using data, be able to extract a set of phrase structure rules for another language.</p></li>
+<li><p>Define recursion and give an example.</p></li>
+</ul>
+<h2 id="conclusions-2">Conclusions</h2>
+<p>We’ve done a lot in this chapter. We looked at the idea that sentences are hierarchically organized into constituent structures. We represented these constituent structures in trees and bracketed diagrams. We also developed a set of rules to generate those structures. We looked at constituency tests that can be used to test the structures. And finally we looked at the way constituent structure can vary across languages.</p>
+<h1 id="chapter-4">Chapter 4</h1>
+<h2 id="learning-objectives-3">Learning Objectives</h2>
+<p>After reading chapter 4 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Identify dominance in a tree.</p></li>
+<li><p>Distinguish dominance from immediate dominance.</p></li>
+<li><p>Understand the relationship between exhaustive domination and constituency.</p></li>
+<li><p>Identify precedence in a tree.</p></li>
+<li><p>Understand the constraint against crossing lines.</p></li>
+<li><p>Identify c-command in a tree.</p></li>
+<li><p>Distinguish symmetric from asymmetric c-command.</p></li>
+<li><p>Identify different government relations.</p></li>
+<li><p>Define structurally subject, object, oblique, object of a preposition and indirect object.</p></li>
+</ul>
+<h2 id="conclusions-3">Conclusions</h2>
+<p>This chapter has been a bit different from the rest of this book. It hasn’t been about Language per se, but rather about the mathematical properties of the system we use to describe language. We looked at the various parts of a syntactic tree and then at the three relations that can hold between these parts: domination, precedence, and c-command. In all the subsequent chapters of this book, you’ll find much utility for the terms and the relations described here.</p>
+<h1 id="chapter-5">Chapter 5</h1>
+<h2 id="learning-objectives-4">Learning Objectives</h2>
+<p>After reading chapter 5 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Identify and distinguish R-expressions, pronouns and anaphors.</p></li>
+<li><p>Understand antecedent and anaphor.</p></li>
+<li><p>Distinguish coindexing from binding.</p></li>
+<li><p>Define and apply binding to a tree.</p></li>
+<li><p>Apply principles A, B, C to a tree.</p></li>
+<li><p>Identify binding domains.</p></li>
+</ul>
+<h2 id="conclusions-4">Conclusions</h2>
+<p>In this chapter, we looked at a very complex set of data concerning the distribution of different kinds of NPs. We saw that these different kinds of NPs can appear in different syntactic positions. A simple set of binding</p>
+<p>principles (A, B, and C) governs the distribution of NPs. This set of binding principles is built upon the structural relations developed in the last chapter.</p>
+<p>　　In the next chapter, we are going to look at how we can develop a similarly simple set of revisions to the phrase structure rules. The constraints developed in this chapter have the shape of locality constraints (in that they require local, or nearness, relations between certain syntactic objects). In later chapters, we’ll see a trend towards using locality constraints in other parts of the grammar.</p>
+<p>　　The constraints developed in this chapter account for a wide range of data, but there are many cases that don’t work. In particular there is a problem with our definition of binding domain. You can see some of these problems by trying some of the Challenge Problem Sets at the end of this chapter. We return to a more sophisticated version of the binding theory in chapter 17 in the last part of this book.</p>
+<h1 id="chapter-6">Chapter 6</h1>
+<h2 id="learning-objectives-5">Learning Objectives</h2>
+<p>After reading chapter 6, you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Explain the motivation for simplifying the PSRs into X-bar theory.</p></li>
+<li><p>Apply the notation of X-bar theory using variables.</p></li>
+<li><p>Be able to draw a tree in X-bar theory.</p></li>
+<li><p>Apply tests to distinguish complements from adjuncts.</p></li>
+<li><p>Draw trees correctly placing modifiers as complements, adjuncts, and specifiers.</p></li>
+<li><p>Describe the notion of a parameter.</p></li>
+<li><p>Be able to correctly set the complement, adjunct, and specifier parameters for any foreign language data.</p></li>
+</ul>
+<h2 id="conclusions-5">Conclusions</h2>
+<h1 id="chapter-7">Chapter 7</h1>
+<h2 id="learning-objectives-6">Learning Objectives</h2>
+<p>After reading chapter 7 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Identify and distinguish subjects from predicate phrases.</p></li>
+<li><p>Identify various kinds of T and C nodes.</p></li>
+<li><p>Distinguish finite from non-finite clauses, using tests.</p></li>
+<li><p>Identify embedded and root clauses, and distinguish specifier, adjunct or complement clauses.</p></li>
+<li><p>Correctly use X-bar format for DPs, TPs, and CPs in tree drawing.</p></li>
+<li><p>Explain the arguments for DPs, TPs, and CPs.</p></li>
+<li><p>Identify subjects in all types of clauses and correctly place them in the specifier position of TP.</p></li>
+</ul>
+<h2 id="conclusions-6">Conclusions</h2>
+<h1 id="chapter-8">Chapter 8</h1>
+<h2 id="learning-objectives-7">Learning Objectives</h2>
+<p>After reading chapter 8 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Distinguish between thematic relation and theta role.</p></li>
+<li><p>Identify the thematic relations agent, theme, goal, source, experiencer, location, instrument, recipient, benefactor.</p></li>
+<li><p>Explain how X-bar theory over-generates.</p></li>
+<li><p>Explain the structure of the lexicon.</p></li>
+<li><p>Draw the theta grids for a predicate.</p></li>
+<li><p>Apply the theta criterion to a sentence as a filter to X-bar theory.</p></li>
+<li><p>Distinguish sentences with expletive subjects from ones with theta-role-bearing subjects.</p></li>
+<li><p>Explain the Extended Projection Principle and how it accounts for expletives.</p></li>
+<li><p>Explain the ordering of the EPP with the theta criterion in the context of the model we are developing.</p></li>
+</ul>
+<h2 id="conclusions-7">Conclusions</h2>
+<p>We started this chapter off with the observation that while X-bar rules capture important facts about constituency and cross-categorial generalizations, they over-generate (that is, they generate ungrammatical sentences). One way of constraining X-bar theory is by invoking lexical restrictions on sentences, such that particular predicates have specific argument structures, in the form of theta grids. The theta criterion rules out</p>
+<p>any sentence where the number and type of arguments don’t match up one to one with the number and type of theta roles in the theta grid.</p>
+<p>　　We also looked at one apparent exception to the theta criterion: theta-role-less expletive pronouns. These pronouns only show up when there is no other subject, and are forced by the EPP. They escape the theta criterion by being inserted after the theta criterion has filtered out the output of X-bar rules.</p>
+<p>　　By using lexical information (like theta roles) we’re able to stop the X-bar rules from generating sentences that are ungrammatical. Unfortunately, as we’ll see in the next chapter, there are also many sentences that the X-bar rules cannot generate. In order to account for these, we’ll introduce a further theoretical tool: the movement rule.</p>
+<h1 id="chapter-9">Chapter 9</h1>
+<h2 id="learning-objectives-8">Learning Objectives</h2>
+<p>After reading chapter 9 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Using theta grids, explain the restrictions that various kinds of C, T, and D nodes impose on their complements.</p></li>
+<li><p>Learn to distinguish the various tense, aspect, voice, and mood properties of English verbal constructions.</p></li>
+<li><p>Learn to identify the modals and various auxiliaries.</p></li>
+<li><p>Identify participles, gerunds, bare forms, preterites, and present tense forms of verbs.</p></li>
+<li><p>Demonstrate the similarities and differences between main verbs, auxiliaries, and modals.</p></li>
+<li><p>Draw trees showing stacked VPs.</p></li>
+<li><p>Discuss the properties of do-support.</p></li>
+</ul>
+<h2 id="conclusions-8">Conclusions</h2>
+<p>In this chapter, we’ve extended the use of theta grids to explain other kinds of restrictions on X-bar-theoretic trees. We saw that VPs not only select for specific theta roles, they also select for various features of CPs (such as finiteness). Complementizers themselves select for specific kinds of TPs. For example, that can’t have a TP headed by to as its complement. We also looked at several kinds of determiners, all of which place restrictions on the kinds of nouns they can take as complements. Finally we examined the scary world of English modals and auxiliaries. After breaking down all the parts of</p>
+<p>a complex verb string in English into its component modal, tense, aspectual, and voice parts, we saw how various auxiliaries select for both the range of possible auxiliary and verbal complements (perfect, progressive, passive, main verbs) and for the form that complement takes (bare, preterite, present, participle, or gerund). This gives us an explanation for the ordering and realization of each of these auxiliaries in sentences like “the grand slam” given in section 4.7 above.</p>
+<p>　　There are a number of issues that remain unaddressed here. The bulk of this chapter has been on English, but other languages function very differently in how they represent this kind of morphology. We also have left unexplained the situations where certain modals and tensed auxiliaries behave as a class. Both modals and tensed auxiliaries precede negation, as in the examples (79a and b), and both tensed auxiliaries and modals can undergo subject/auxiliary inversion to form yes/no questions as in (79c and d).</p>
+<ul>
+<li><ol type="a">
+<li>Fiona must not eat the sautéed candy canes.</li>
+</ol></li>
+</ul>
+<p>Fiona has not eaten the sautéed candy canes.</p>
+<p>Can Fiona eat sautéed candy canes?</p>
+<p>Has Fiona eaten sautéed candy canes?</p>
+<p>The account of auxiliaries given in this chapter is completely silent on the behaviors in (79). In order to account for these facts as well as for patterns in other languages, we need the additional technology afforded us by movement. This is discussed in the next few chapters.</p>
+<h1 id="chapter-10">Chapter 10</h1>
+<h2 id="learning-objectives-9">Learning Objectives</h2>
+<p>After reading chapter 10 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Understand the distinction between D-structure and S-structure.</p></li>
+<li><p>Determine whether a language is verb-raising or not.</p></li>
+<li><p>Discuss the interaction between V T and T C.</p></li>
+<li><p>Explain the evidence for V T movement in French and Irish.</p></li>
+<li><p>Discuss the position of tensed English auxiliaries as compared to main verbs.</p></li>
+<li><p>Explain how the VP-internal subject hypothesis accounts for VSO languages.</p></li>
+<li><p>Discuss the whens, wheres, and whys of do-support.</p></li>
+</ul>
+<h2 id="conclusions-9">Conclusions</h2>
+<h1 id="chapter-11">Chapter 11</h1>
+<h2 id="learning-objectives-10">Learning Objectives</h2>
+<p>After reading chapter 11 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Draw the theta grids of raising predicates like is likely and seem.</p></li>
+<li><p>Draw trees indicating DP movement of embedded subjects.</p></li>
+<li><p>Explain how the Case filter motivates the movement of NPs out of infinitival clauses into main clauses.</p></li>
+<li><p>Describe how the passive voice head affects the introduction of external arguments and Case assignment by verbs.</p></li>
+<li><p>Show passive DP movement in a tree.</p></li>
+</ul>
+<h2 id="conclusions-10">Conclusions</h2>
+<p>In this chapter, we’ve looked at situations where DPs don’t appear in the positions we expect them to (given our knowledge of theta theory). We have argued that these sentences involve movement of DPs to various specifier positions. The motivation for this comes from Case. The Case filter requires all DPs to check a Case in a specific structural position. We looked at two situations where DPs don’t get Case in their D-structure position. In raising structures, a DP is in the specifier of an embedded clause with non-finite T. In this position, it can’t receive Case so it raises to the specifier of the finite T in the higher clause. We also looked at passive structures. The passive morpheme does two things: it takes the role of external argument and it absorbs the verb’s ability to assign accusative Case. This results in a structure where there is no subject DP, and the object cannot receive Case in its base position. The DP must move to the specifier of T to get Case.</p>
+<h1 id="chapter-12">Chapter 12</h1>
+<h2 id="learning-objectives-11">Learning Objectives</h2>
+<p>After reading chapter 12 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Explain the motivation for wh-movement.</p></li>
+<li><p>Draw the tree indicating wh-movement.</p></li>
+<li><p>Identify various complementizer types.</p></li>
+<li><p>Draw a tree for a relative clause.</p></li>
+<li><p>Identify various island types.</p></li>
+<li><p>Explain why wh-island sentences are ungrammatical according to the Minimal Link Condition.</p></li>
+<li><p>Explain, using the MLC, why certain instances of DP movement and head-to-head movement are ungrammatical.</p></li>
+</ul>
+<h2 id="conclusions-11">Conclusions</h2>
+<p>In this chapter, we looked at a third kind of movement transformation: Wh-movement. This process targets wh-phrases and moves them to the specifier of CPs. This movement is triggered by the presence of a [+WH] feature in C. Wh-movement of a DP is always from a Case position to the specifier of CP. Wh-movement is not totally unrestricted; there is a locality constraint on the movement: the MLC. Movement must be local, where local is defined in terms of closest potential landing site. We saw further that the MLC might be extended to other types of movement.</p>
+<p>　　In the next chapter, we’re going to continue this trend and look at movement processes in general and the similarities between them, as well as briefly delve into the interaction between the syntax and the formal interpretation (semantics) of the sentence.</p>
+<p>　　</p>
+<h1 id="chapter-13">Chapter 13</h1>
+<h2 id="learning-objectives-12">Learning Objectives</h2>
+<p>After reading chapter 13 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Understand and apply the Y-model of grammar.</p></li>
+<li><p>Explain and apply the Principle of Full Interpretation.</p></li>
+<li><p>Distinguish between overt and covert movement.</p></li>
+<li><p>Identify whether a language has overt or covert movement for any given movement type.</p></li>
+<li><p>Explain the difference between LF and PF.</p></li>
+<li><p>Understand scope and how it applies to the universal and existential quantifiers.</p></li>
+</ul>
+<h2 id="conclusions-12">Conclusions</h2>
+<p>In this chapter we made the big jump from three movement rules with different but similar motivations to a single rule with a single motivation (Full Interpretation). We also claimed that cross-linguistic variation in movement, when we assume a universal semantics, requires that movement can both be overt (before SPELLOUT) and covert (after SPELLOUT). The Y model with Saussurean interface levels (LF and PF) allows this to occur. We also looked very briefly at an example from quantifier scope that provides independent support for the notion of covert movement.</p>
+<h1 id="chapter-14">Chapter 14</h1>
+<h2 id="learning-objectives-13">Learning Objectives</h2>
+<p>After reading chapter 14 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Identify shifted objects, and explain how split VPs account for them.</p></li>
+<li><p>Draw the tree for particle constructions, prepositional ditransitives and double object ditransitives.</p></li>
+<li><p>Explain how passives and actives have different selectional properties for the functional category that assigns accusative Case.</p></li>
+</ul>
+<h2 id="conclusions-13">Conclusions</h2>
+<h1 id="chapter-15">Chapter 15</h1>
+<h2 id="learning-objectives-14">Learning Objectives</h2>
+<p>After reading chapter 15 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Distinguish between raising and control predicates.</p></li>
+<li><p>Distinguish between subject-to-subject raising (SSR) and subject control constructions.</p></li>
+<li><p>Distinguish between subject-to-object raising (SOR) and object control constructions.</p></li>
+<li><p>Apply the idiom, clausal subject, and expletive tests.</p></li>
+<li><p>Draw theta grids and trees of SSR, SOR, OC, and SC sentences.</p></li>
+<li><p>Describe the restrictions on control of PRO.</p></li>
+<li><p>Explain why PRO is null.</p></li>
+<li><p>Distinguish between PRO and pro.</p></li>
+<li><p>Determine how a language has set the null subject parameter.</p></li>
+</ul>
+<h2 id="conclusions-14">Conclusions</h2>
+<p>　We started this chapter with the observation that certain sentences, even though they look alike on the surface, can actually have very different syntactic trees. We compared subject-to-subject raising constructions to subject control constructions, and subject-to-object raising constructions to object control constructions. You can test for these various construction types by working out their argument structure, and using the idiom test. Next under consideration was the issue of what kind of DP PRO is. We claimed that it only showed up in Caseless positions. We also saw that it didn’t meet any of the binding conditions, and suggested it is subject, instead, to control theory. Control theory is a bit of a mystery, but may involve syntactic, thematic, and pragmatic features. We closed the chapter by comparing two different kinds of null subject categories: PRO and pro. PRO is Caseless and is subject to the theory of control. On the other hand, pro takes Case and is often “licensed” by rich agreement morphology on the verb.</p>
+<ul>
+<li>This is not a universally true statement. Many Asian languages allow pro-drop even though they don’t have rich agreement systems. For discussion, see Huang (1989).</li>
+</ul>
+<h1 id="chapter-16">Chapter 16</h1>
+<h2 id="learning-objectives-15">Learning Objectives</h2>
+<p>After reading chapter 16 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Identify cases of VP ellipsis (including antecedent-contained deletion and pseudogapping) and sluicing.</p></li>
+<li><p>Explain the licensing conditions on ellipsis and sluicing.</p></li>
+<li><p>Provide arguments for and against the PF-deletion hypothesis and for and against the LF-copying analysis of ellipsis.</p></li>
+<li><p>Explain the difference between strict and sloppy pronoun identity and why it occurs.</p></li>
+<li><p>Demonstrate how movement of a DP through either QR or DP movement explains antecedent-contained deletion.</p></li>
+<li><p>Show how DP movement of objects explains the non-constituent deletion effects in pseudogapping.</p></li>
+</ul>
+<h2 id="conclusions-15">Conclusions</h2>
+<p>Ellipsis, the syntax of missing elements, is a tempting playground for syntacticians. What could be more appealing than trying to deduce the properties of something you know has to be there because you can interpret it, but at the same time has no overt expression in what we see or write? We’ve looked at a few different kinds of ellipsis (VP ellipsis, ACD, pseudogapping, and sluicing) and investigated what they have in common and what they don’t.</p>
+<p>　　In the chapters leading up to this one, I’ve tried to give you a consistent set of analyses that follow from a sequence of hypothesis testing and hypothesis revision, building from phrase structure to X-bar theory to movement rules. This chapter has been deliberately different. Here, I’ve tried to give you a taste of what a working syntactician faces each day. We’ve looked at a series of phenomena and for each one posited a couple of conflicting hypotheses. So for example, looking at how elided material gets its meaning we considered two different hypotheses: LF copying and PF deletion. We looked at conflicting evidence that shows that either of them might be right or wrong. We did the same with ACD and pseudogapping. This kind of investigation is the bread and butter of what syntacticians do each day. They look at a puzzling set of data, consider different hypotheses and the predictions they make and weigh the evidence one way or another.</p>
+<p>　　</p>
+<h1 id="chapter-17">Chapter 17</h1>
+<h2 id="learning-objectives-16">Learning Objectives</h2>
+<p>After reading chapter 17 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Explain why the binding conditions appear to hold both before and after movement.</p></li>
+<li><p>Describe the copy theory of movement.</p></li>
+<li><p>Explain how the copy theory of movement explains the ordering paradox.</p></li>
+<li><p>Explain the data that shows that pronouns and anaphors seem to have different binding domains.</p></li>
+<li><p>Be able to identify the new binding domains for pronouns and anaphors making reference to “potential antecedents”.</p></li>
+</ul>
+<h2 id="conclusions-16">Conclusions</h2>
+<h1 id="chapter-18">Chapter 18</h1>
+<h2 id="learning-objectives-17">Learning Objectives</h2>
+<p>After reading chapter 18 you should walk away having mastered the following ideas and skills:</p>
+<ul>
+<li><p>Compare and contrast the syntax-free and radical pro-drop hypotheses approaches to polysynthesis.</p></li>
+<li><p>Identify data that supports the movement analysis of incorporation.</p></li>
+<li><p>Explain the movement approach to scrambling.</p></li>
+<li><p>Compare and contrast the three approaches to non-configurationality (the dual-structure approach, the pronominal argument hypothesis, and the movement approach).</p></li>
+</ul>
+<h2 id="conclusions-17">Conclusions</h2>
+<p>Polysynthesis, incorporation, scrambling, and non-configurationality are certainly serious challenges to innate generative grammar. But they aren’t insurmountable ones. A nuanced approach to investigating languages with these phenomena shows that they might have more in common with more familiar languages than we might think at first glance. For each phenomenon, I have given brief sketches of some common analyses within generative grammar. As in the previous few chapters, I’ve left it open as to whether these analyses are right or not. I encourage you to discuss these phenomena and the hypotheses about them with your fellow students and professors and try to figure out what parts of them are right and what are wrong. We started this book with the observation that syntax was a science. We propose hypotheses, test them, revise them in some cases and discard them in others. As in any other science there are plenty of open questions and unresolved issues. I hope the past few chapters have given you a taste for this.</p>
+<p>　　In part 5 of this book – which is only available on the website for this book, I offer a brief description of two alternative approaches to syntax. Again like any science, we have competing approaches to difficult questions. As you work your way to becoming a syntactician, it’s worth taking your time to consider alternatives and test your hypotheses against new and challenging data like that found in this chapter.</p>
+]]></content>
+      <categories>
+        <category>语言学</category>
+        <category>句法</category>
+      </categories>
+      <tags>
+        <tag>linguistics</tag>
+        <tag>syntax</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>语义学框架</title>
     <url>/semantics-concepts/</url>
     <content><![CDATA[<p><img src="https://i.loli.net/2021/04/29/cwbXFoxvJr14Wf5.png"/></p>
@@ -402,7 +683,7 @@
   </entry>
   <entry>
     <title>句法学框架及术语大全</title>
-    <url>/syntax-1/</url>
+    <url>/syntax-terms/</url>
     <content><![CDATA[<p><img src="https://i.loli.net/2021/04/29/5UCyu3mlzBNXD8Y.png"/></p>
 <p>See <a href="https://share.mubu.com/doc/2aerL3sh4SV">mubu</a> for more details.</p>
 <h1 id="chapter-1">Chapter 1</h1>
