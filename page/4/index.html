@@ -128,12 +128,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">50</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -183,6 +183,383 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/dependency-parsing-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/dependency-parsing-1/" class="post-title-link" itemprop="url">《自然语言处理综论》第14章-依存分析（上）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-22 21:32:47" itemprop="dateModified" datetime="2021-03-22T21:32:47+08:00">2021-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BE%9D%E5%AD%98%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">依存分析</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center>
+<i>英文原文链接：https://web.stanford.edu/~jurafsky/slp3/14.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+</center>
+<hr />
+<p>前两章的重点是<strong>上下文无关语法</strong>（context-free grammars）<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>，及其用于自动生成基于成分的表征。 我们在这里介绍另一种称为<strong>依存语法</strong>（dependency grammars）的语法形式主义派系，它在当代语音和语言处理系统中极其重要。 在这些形式主义中，短语成分（phrasal constituents）和短语结构规则（phrase-structure rules）并不直接发挥作用。相反，一个句子的句法结构，仅根据句中单词（或词元lemmas）以及单词间存在的一组关联的有向二元语法关系来描述。</p>
+下图展示了标准的依存分析风格的句法图示。
+<center>
+<img src="https://i.loli.net/2021/03/17/3XaE6umlQIgpZrs.png"  alt="" width="700" />
+</center>
+<p>在句子上方，用从<strong>头部</strong>（heads）到<strong>依存项</strong>（dependents）的有向的标记弧来表示单词之间的关系。我们称之为<strong>类型依存结构</strong>（typed dependency structure），因为标签是从固定的语法关系清单中提取的。它还包括一个根（root）节点，显式地标记句法树的根，即整个结构的中心。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/dependency-parsing-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/dependency-parsing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/dependency-parsing/" class="post-title-link" itemprop="url">英文依存句法分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-17 22:17:02" itemprop="dateModified" datetime="2021-03-17T22:17:02+08:00">2021-03-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BE%9D%E5%AD%98%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">依存分析</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>依存分析是根据句子中单词之间的依存关系来分析句子语法结构的过程。</p>
+</blockquote>
+<p>在依存分析中，各种标签代表了一个句子中两两词语之间的关系。例如，在'rainy weather'这个短语中，rainy是修饰名词weather的形容词。weather -&gt; rainy 形成了依存关系，其中weather是head（中心词），而rainy则是dependent（依赖）。该依存关系用amod标签表示，即形容词修饰语。我们可以用依存关系箭头标注语法关系： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">     root</span><br><span class="line">      |</span><br><span class="line">      | +-------dobj---------+</span><br><span class="line">      | |                    |</span><br><span class="line">nsubj | |   +------det-----+ | +-----nmod------+</span><br><span class="line">+--+  | |   |              | | |               |</span><br><span class="line">|  |  | |   |      +-nmod-+| | |      +-case-+ |</span><br><span class="line">+  |  + |   +      +      || + |      +      | |</span><br><span class="line">I  prefer  the  morning   flight  through  Denver</span><br></pre></td></tr></table></figure></p>
+<p>也可以表示为依存句法树（Dependency Tree Graph）：</p>
+<p><img src="https://i.loli.net/2021/03/16/JtlAKsfoXhZwLjP.png" /></p>
+<p>图片来源：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/66268929">CS224N笔记(五):Dependency Parsing</a></p>
+<h1 id="通用依存关系">通用依存关系</h1>
+<p>截至目前，UD项目的通用依存关系共有37个，这些关系的完整<a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/">列表</a>可以在这里查看并深入研究。</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Nominals</strong></th>
+<th><strong>Clauses</strong></th>
+<th><strong>Modifier words</strong></th>
+<th><strong>Function Words</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Core arguments</strong></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/nsubj.html">nsubj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/obj.html">obj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/iobj.html">iobj</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/csubj.html">csubj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/ccomp.html">ccomp</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/xcomp.html">xcomp</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Non-core dependents</strong></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/obl.html">obl</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/vocative.html">vocative</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/expl.html">expl</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/dislocated.html">dislocated</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/advcl.html">advcl</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/advmod.html">advmod</a>* <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/discourse.html">discourse</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/aux_.html">aux</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/cop.html">cop</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/mark.html">mark</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Nominal dependents</strong></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/nmod.html">nmod</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/appos.html">appos</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/nummod.html">nummod</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/acl.html">acl</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/amod.html">amod</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/det.html">det</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/clf.html">clf</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/case.html">case</a></td>
+</tr>
+<tr class="even">
+<td><strong>Coordination</strong></td>
+<td><strong>MWE</strong></td>
+<td><strong>Loose</strong></td>
+<td><strong>Special</strong></td>
+<td><strong>Other</strong></td>
+</tr>
+<tr class="odd">
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/conj.html">conj</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/cc.html">cc</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/fixed.html">fixed</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/flat.html">flat</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/compound.html">compound</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/list.html">list</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/parataxis.html">parataxis</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/orphan.html">orphan</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/goeswith.html">goeswith</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/reparandum.html">reparandum</a></td>
+<td><a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/punct.html">punct</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/root.html">root</a> <a target="_blank" rel="noopener" href="https://universaldependencies.org/u/dep/dep.html">dep</a></td>
+</tr>
+</tbody>
+</table>
+<p>此外还有一些基于特定语言的依存关系。斯坦福依存分析定义了接近50个依存关系，具体的定义可参考：<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/dependencies_manual.pdf">Stanford typed dependencies manual</a>。</p>
+<p>关于依存句法分析，也可以参考Daniel Jurafsky的经典NLP书籍Speech and Language Processing相关<a target="_blank" rel="noopener" href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">章节</a>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/dependency-parsing/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/regex-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/regex-1/" class="post-title-link" itemprop="url">正则表达式进阶</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-15 21:20:31" itemprop="dateModified" datetime="2021-04-15T21:20:31+08:00">2021-04-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>至此，我们已经建立了正则表达式的思维框架（参见「<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIzMDY0NDQ1Ng==&amp;mid=2247484919&amp;idx=1&amp;sn=7309a9bf1be78ea3250838724ebaa81c&amp;chksm=e8b10a70dfc683666f6d87e6fda6f51863dbaf565ac522b6d01d80059c01a821af70bc279438&amp;scene=21#wechat_redirect">正则表达式入门</a>」），以及如何用python中的re模块编译正则表达式来匹配文本（参见「<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ibNb0rOSnBr4YC0PzCyIBA">Python实操篇</a>」）。尽管此时我们已经可以流畅地编写和使用它，但我们需要一些进阶知识，让我们的正则表达式更准确和精练。本文使用的语言依然是python。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/regex-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -876,320 +1253,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/json/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="鸽鸽">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鸽婆打字机">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/json/" class="post-title-link" itemprop="url">用python处理json数据</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-16 20:00:10" itemprop="dateModified" datetime="2021-04-16T20:00:10+08:00">2021-04-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BB%A3%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">代码</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BB%A3%E7%A0%81/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文本处理</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/JSON">JSON</a>(<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/JavaScript">JavaScript</a> Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ECMAScript">ECMAScript</a> (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。——百度百科</p>
-</blockquote>
-<p>编码和解码JSON数据的过程相当于把同一样东西翻译成中文和日语。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">json_str = &#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;example&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="comment"># 序列化json</span></span><br><span class="line">json_str = json.dumps(params, sort_keys=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 反序列化json</span></span><br><span class="line">dict_json = json.loads(json_str)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/json/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/named-entity-recognition/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="鸽鸽">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鸽婆打字机">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/named-entity-recognition/" class="post-title-link" itemprop="url">英文文献的命名实体识别（上）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-15 21:22:17" itemprop="dateModified" datetime="2021-04-15T21:22:17+08:00">2021-04-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" itemprop="url" rel="index"><span itemprop="name">信息抽取</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>924</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>命名实体识别（NER）是指自动识别文本中的命名实体并将其分类为预定义的类别。实体可以是人员、组织、位置、时间、数量、货币价值、百分比等的名称。作为信息抽取的基础步骤，NER从非结构化文本中提取关键元素，因此它是一项至关重要的技术。</p>
-<p>我们可以创建自己的实体类别以适应不同的任务。现在有许多出色的开源库，包括<a target="_blank" rel="noopener" href="https://www.nltk.org/">NLTK</a>，<a target="_blank" rel="noopener" href="https://spacy.io/">SpaCy</a>和<a target="_blank" rel="noopener" href="https://nlp.stanford.edu/software/CRF-NER.shtml">Stanford NER</a>。如何用这些工具实现，参考<a target="_blank" rel="noopener" href="https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html">命名实体识别：NLP从业人员指南</a>和<a target="_blank" rel="noopener" href="https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da">NLTK和SpaCy命名实体识别</a>。也可以参考<a target="_blank" rel="noopener" href="https://monkeylearn.com/blog/named-entity-recognition/">这篇</a>文章。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/named-entity-recognition/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/pdf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="鸽鸽">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鸽婆打字机">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pdf/" class="post-title-link" itemprop="url">PDF文件处理大全</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 09:46:05" itemprop="dateCreated datePublished" datetime="2021-03-18T09:46:05+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-17 22:23:11" itemprop="dateModified" datetime="2021-03-17T22:23:11+08:00">2021-03-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BB%A3%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">代码</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BB%A3%E7%A0%81/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文本处理</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="pdfplumberpdf文件预处理">Pdfplumber：PDF文件预处理</h1>
-<h2 id="用pdfminer把pdf转为txt">用pdfminer把pdf转为txt</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pdfminer.high_level <span class="keyword">import</span> extract_text</span><br><span class="line">file_path = <span class="string">r&#x27;D:\pdf-file\Psychology_of_Language.pdf&#x27;</span></span><br><span class="line">text = extract_text(file_path, page_numbers=<span class="built_in">range</span>(<span class="number">33</span>,<span class="number">35</span>))</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/pdf/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1257,14 +1324,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1328,13 +1395,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">264k</span>
+    <span title="站点总字数">277k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:01</span>
+    <span title="站点阅读时长">4:12</span>
 </div>
 
         
