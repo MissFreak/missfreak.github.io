@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="What role does priming play in normal language comprehension&#x2F;production? Yuge Tu, Yuqi Li Structural priming&#x2F;syntactic priming&#x2F;lexical priming&#x2F;semantic priming 问题 首先，我们可以把priming分为语义的理解（词汇、句子层面）和句法结构的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鸽婆打字机">
+<meta property="og:url" content="http://nlpcourse.cn/priming-pre/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="What role does priming play in normal language comprehension&#x2F;production? Yuge Tu, Yuqi Li Structural priming&#x2F;syntactic priming&#x2F;lexical priming&#x2F;semantic priming 问题 首先，我们可以把priming分为语义的理解（词汇、句子层面）和句法结构的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-01T05:07:13.622Z">
+<meta property="article:modified_time" content="2021-05-01T09:47:40.828Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/priming-pre/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">30</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">61</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/priming-pre/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-01 13:07:13 / 修改时间：17:47:40" itemprop="dateCreated datePublished" datetime="2021-05-01T13:07:13+08:00">2021-05-01</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1>What role does priming play in normal language comprehension/production?</h1>
+<p>Yuge Tu, Yuqi Li</p>
+<p>Structural priming/syntactic priming/lexical priming/semantic priming</p>
+<h1>问题</h1>
+<p>首先，我们可以把priming分为语义的理解（词汇、句子层面）和句法结构的生成两方面。这就涉及语言的理解和产生机制本身，因此我要补下这个背景知识。</p>
+<p>结构：</p>
+<ul>
+<li>
+<p>priming的学术定义和特点（unaware）</p>
+</li>
+<li>
+<p>priming的种类（不同语言水平syntactic priming/lexical priming/semantic priming，不同形式Perceptual/Conceptual Priming/Repetition Priming/Associative Priming……）</p>
+</li>
+<li>
+<p>对理解和产生的作用机制（和词汇句法表征，implicit memory和implicit learning有关）</p>
+</li>
+<li>
+<p>以及positive和negative effect（Positive and Negative Priming）</p>
+</li>
+<li>
+<p>实验范式：句子层面sentence-completion paradigm，sentence-recall  paradigm，visual-world eye-movement paradigm；词汇层面……（相关学者有哪些）</p>
+</li>
+<li>
+<p>最后重点讲syntactic/structural priming，为后面的论文提供背景</p>
+</li>
+</ul>
+<h2 id="语义启动">语义启动</h2>
+<h2 id="句法-结构启动">句法/结构启动</h2>
+<p>词汇本身也是语义上或结构上的。</p>
+<h3 id="Perceptual-and-conceptual-priming">Perceptual and conceptual priming</h3>
+<h1>priming</h1>
+<h2 id="syntactic-priming">syntactic priming</h2>
+<p>Branigan et al. (1995: 490): “We define syntactic priming as the proposal that processing a particular syntactic structure within a sentence affects the processing of the same (or a related) syntactic structure within a subsequently presented sentence”;</p>
+<h3 id=""></h3>
+<h3 id="Syntactic-Priming">Syntactic Priming</h3>
+<p>A heavily investigated phenomenon in sentence production that does not fit as neatly into Garrett’s framework is termed syntactic priming (sometimes called structural or syntactic persistence). When a speaker produces or comprehends a sentence with a particular syntactic structure, the speaker is then more likely to use that structure rather than a reasonable alternative. For example, after hearing a prepositional dative structure (‘The doctor gave the hat to the sailor’), speakers are likely to use another prepositional dative (‘The ballerina showed the cake to the boxer’) rather than a double-object structure (‘The ballerina showed the boxer the cake’).</p>
+<p>Evidence has shown that at core, syntactic priming reflects the repetition of the syntactic structures of sentences. Properties correlated with syntactic structure either do not affect priming or affect priming independent of syntactic repetition. Such inconsequential properties include aspects of meaning (e.g., the order of agents and themes and recipients), sounds (e.g., rhythm or auditory structure), or words (especially syntactically relevant words like ‘to’) of sentences. Syntactic priming is enhanced by repeating meaningful words (especially verbs) in sentences but is reliable even without such repetition.</p>
+<p>Three different theories of syntactic priming dominate current scientific discourse. One views priming as implicit learning, such that comprehending or producing particular structures (quasi-) permanently strengthens the knowledge of those structures, thereby resulting in repetition. Supporting this view are the observations that priming can be notably long-lived (surviving the comprehension and production of at least ten intervening neutral trials), is independent of explicit memory, and is evident in patients with anterograde amnesia. Another views priming as reflecting recent shorter-term activation of knowledge structures representing syntax. Supporting this is the observation that priming can be short-lived, especially when meaningful words are repeated from prime to target sentences. A third view is that priming is a force to coordinate knowledge structures among interlocutors in order to promote communicative success. Supporting this is the finding that priming is sensitive to conversational variables (such as the linguistic capabilities of the participants or whether participants are speakers, hearers, or side participants).</p>
+<p>Earlier, syntactic priming was described as ill-fitting with respect to Garrett’s framework. The reason is that priming operates similarly at both functional and positional processing. For example, the selection of an active rather than a passive sentence form – a sentence choice involving different assignments of grammatical functions – is influenced by priming in the same way as the selection of ‘on the table is a book’ versus ‘the book is on the table’ – a function-independent structure choice. Furthermore, to date, no aspect of priming has been revealed to dissociate along functional–positional lines (unlike accessibility effects, as noted earlier). Thus, though priming might affect the two separate processing stages identically, a more parsimonious proposal might be that the two stages should be collapsed into one.</p>
+<h3 id="18-2-2-Structural-Priming">18.2.2 Structural Priming</h3>
+<p>One of the classic findings in psycholinguistics is structural priming, also known as syntactic priming, or structural repetition. Structural priming is the tendency for speakers to reuse recently experienced structures. Bock (1986a) gave experimental participants pictures that can be described with either of the two kinds of dative structures (double objects, “The woman handed the boy the paint brush,” versus prepositional datives, “The woman handed the paint brush to the boy”). Participants described these pictures after saying an unrelated prime sentence that used either a double-object or prepositional dative structure. Priming was seen in the tendency for speakers to use the structure of the prime when describing the picture. Similar effects were seen for other structural alternations such as active transitive sentences (“Lightning is striking the church”) versus passives (“The church is struck by lightning”). The important aspect of this priming is that it appears to be the persistence of an abstract syntactically characterized structure (e.g., the frame: <em>Noun_phrase Auxillary_verb Main_verb Prepositional_phrase</em> for a full passive), and not the lexical content of the utterance, its meaning, or its intonational properties (Bock &amp; Loebell, 1990). As such, structural priming provides evidence for a production process that uses structural abstractions during grammatical encoding.</p>
+<p>Bock and Griffin (2000) claimed that structural priming is not just a temporary change to the system, but instead it is a form of implicit learning, akin to the connection weight changes that characterize learning in connectionist models. They provided evidence for this claim by showing that the effect of a prime persists undiminished over at least 10 unrelated sentences (several minutes). If priming were due to temporary activation of a structure, then the prime’s influence would rapidly decay. The evidence that the learning is implicit is that it occurs in brain-damaged speakers who have no explicit memory of the prime sentence (Ferreira, Bock, Wilson, &amp; Cohen, 2008).</p>
+<p>Chang et al. (2006) created a computational model that reflected the idea that structural priming is implicit learning. They trained a connectionist model to simulate a child experiencing sentences one word at a time. The model was also given a representation of the intended meaning of some of the sentences that it experienced, with this meaning presumably having been inferred by the child from context. The model learned by “listening” to each sentence and trying to predict each word. When the actual next word was heard, the model then compared its prediction to that word, thus generating a prediction error signal. This error signal was the impetus for the model to change its connection weights so that its future predictions were more accurate. By using prediction error, the model learned the linguistic patterns in the language (e.g., syntactic structures) and how those patterns mapped onto meaning (e.g., Elman, 1993). After this learning, the model was able to produce because “prediction is production” (Dell &amp; Chang, 2014); generating the next word from a representation of previous words and intended meaning is, computationally, a production process. When given a representation of intended meaning, the model’s sequence of word predictions constituted the production of a sentence. The key aspect of this model, for our purposes, is that it accounted for structural priming through learning. Even after the model attained “adult” status, it continued to learn. When a prime sentence was experienced, the model’s connection weights were changed ever so slightly to favor the subsequent production of sentences with the same structure. Experiencing, for example, a double-object dative inclined the model to produce that structure later. Because the priming was based on weight change, it is a form of learning, thus accounting for Bock and Griffin’s finding that structural priming is undiminished over time. Also, the evidence that the implicit learning that characterizes structural priming is based on prediction error comes from demonstrations that less common, and hence more surprising, prime structures lead to more priming than common ones (e.g., Jaeger &amp; Snider, 2013).</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/priming-pre/" title="">http://nlpcourse.cn/priming-pre/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/sla/" rel="prev" title="二语习得">
+      <i class="fa fa-chevron-left"></i> 二语习得
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/prime-citation/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">What role does priming play in normal language comprehension&#x2F;production?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%90%AF%E5%8A%A8"><span class="nav-number">2.1.</span> <span class="nav-text">语义启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A5%E6%B3%95-%E7%BB%93%E6%9E%84%E5%90%AF%E5%8A%A8"><span class="nav-number">2.2.</span> <span class="nav-text">句法&#x2F;结构启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Perceptual-and-conceptual-priming"><span class="nav-number">2.2.1.</span> <span class="nav-text">Perceptual and conceptual priming</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">priming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#syntactic-priming"><span class="nav-number">3.1.</span> <span class="nav-text">syntactic priming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntactic-Priming"><span class="nav-number">3.1.2.</span> <span class="nav-text">Syntactic Priming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-2-2-Structural-Priming"><span class="nav-number">3.1.3.</span> <span class="nav-text">18.2.2 Structural Priming</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">328k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:58</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
