@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.3 抽取时间 时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推理。在本节">
+  <meta name="description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.3 抽取时间 时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《自然语言处理综论》第17章-信息抽取（下）">
 <meta property="og:url" content="http://nlpcourse.cn/information-retrieval-3/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.3 抽取时间 时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推理。在本节">
+<meta property="og:description" content="英文原文链接：https:&#x2F;&#x2F;web.stanford.edu&#x2F;~jurafsky&#x2F;slp3&#x2F;17.pdf  译者：鸽鸽（自己学习使用，非商业用途）   17.3 抽取时间 时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-22T13:36:16.758Z">
 <meta property="article:modified_time" content="2021-04-13T12:18:23.652Z">
@@ -129,17 +129,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">30</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">61</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -273,125 +273,123 @@
 
       
         <center>
-<i>英文原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i>
-<br>
-<i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+<i>英文原文链接：https://web.stanford.edu/~jurafsky/slp3/17.pdf</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
 </center>
-<hr>
-<h1>17.3 抽取时间</h1>
+<hr />
+<h1 id="抽取时间">17.3 抽取时间</h1>
 <p>时间和日期是一种特别重要的命名实体，它在自动问答、日历和私人助理应用中起着重要的作用。为了对时间和日期进行推理，在我们提取了这些时间表达式后，必须对它们进行归一化处理——将其转换为标准格式，这样我们才能对它们进行推理。在本节中，我们将同时考虑时间表达式的提取和归一化。</p>
 <span id="more"></span>
-<h2 id="17-3-1-时间表达式的提取">17.3.1 时间表达式的提取</h2>
+<h2 id="时间表达式的提取">17.3.1 时间表达式的提取</h2>
 <p>时间表达式是指绝对时间点、相对时间、持续时间以及这些的集合。<strong>绝对</strong>（absolute）时间表达式是指那些可以直接相对映射到日历日期、一天中的时间或两者都有的表达式。<strong>相对</strong>（Relative）时间表达式通过其他一些参考点映射到特定的时间（如从上周二开始一周的持续时间）。最后，<strong>持续时间</strong>（durations）表示不同粒度的时间跨度（秒、分、天、周、世纪等）。图17.11列出了这些类别中的一些时间表达式样本。</p>
 <table>
+<caption>Figure 17.11 Examples of absolute, relational and durational temporal expressions.</caption>
 <thead>
-<tr>
+<tr class="header">
 <th>Absolute</th>
 <th>Relative</th>
 <th>Durations</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>April 24, 1916</td>
 <td>yesterday</td>
 <td>four hours</td>
 </tr>
-<tr>
+<tr class="even">
 <td>The summer of ’77</td>
 <td>next semester</td>
 <td>three weeks</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>10:15 AM</td>
 <td>two weeks from yesterday</td>
 <td>six days</td>
 </tr>
-<tr>
+<tr class="even">
 <td>The 3rd quarter of 2006</td>
 <td>last quarter</td>
 <td>the last three quarters</td>
 </tr>
 </tbody>
 </table>
-<p>: Figure 17.11 Examples of absolute, relational and durational temporal expressions.</p>
 <p>时间表达式是以时间词汇触发器<u>lexical triggers</u>为中心的语法结构。词汇触发器可以是名词、专有名词、形容词和副词；完整的时间表达式由它们的短语投射组成：名词短语、形容词短语和副词短语。图17.12提供了示例。</p>
 <table>
+<caption>Figure 17.12 Examples of temporal lexical triggers.</caption>
 <thead>
-<tr>
+<tr class="header">
 <th>Category</th>
 <th>Examples</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Noun</td>
 <td>morning, noon, night, winter, dusk, dawn</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Proper Noun</td>
 <td>January, Monday, Ides, Easter, Rosh Hashana, Ramadan, Tet</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Adjective</td>
 <td>recent, past, annual, former</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Adverb</td>
 <td>hourly, daily, monthly, yearly</td>
 </tr>
 </tbody>
 </table>
-<p>: Figure 17.12 Examples of temporal lexical triggers.</p>
 <p>让我们看看TimeML标注方案，其中时间表达式用XML标签、TIMEX3和该标签的各种属性进行标注（Pustejovsky et al.2005，Ferro et al.2005）。下面的示例说明了此方案的基本用法（我们将对属性的讨论推迟到第17.3.2节）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A fare increase initiated &lt;TIMEX3&gt;last week&lt;&#x2F;TIMEX3&gt; by UAL Corp’s United Airlines was matched by competitors over &lt;TIMEX3&gt;the weekend&lt;&#x2F;TIMEX3&gt;, marking the second successful fare increase in &lt;TIMEX3&gt;two weeks&lt;&#x2F;TIMEX3&gt;.</span><br></pre></td></tr></table></figure>
 <p>时间表达式识别任务包括查找与这些时间表达式对应的所有文本跨度的开始和结束。基于规则的时间表达式识别方法使用级联自动机来识别复杂度不断提高的模式。首先标记词性，然后根据包含触发词（如二月）或类（如月份）的模式，从前一阶段的结果中识别出越来越大的语块。图17.13给出了一个基于规则的系统的片段。</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yesterday/today/tomorrow</span></span><br><span class="line">$string =˜ s/((($OT+the$CT+\s+)?$OT+day$CT+\s+$OT+(before|after)$CT+\s+)?$OT+$TERelDayExpr$CT+</span><br><span class="line">(\s+$OT+(morning|afternoon|evening|night)$CT+)?)/&lt;TIMEX$tever TYPE=\<span class="string">&quot;DATE\&quot;&gt;$1</span></span><br><span class="line"><span class="string">&lt;\/TIMEX$tever&gt;/gio;</span></span><br><span class="line"><span class="string">$string =˜ s/($OT+\w+$CT+\s+)&lt;TIMEX$tever TYPE=\&quot;DATE\&quot;[ˆ&gt;]*&gt;($OT+(Today|Tonight)$CT+)</span></span><br><span class="line"><span class="string">&lt;\/TIMEX$tever&gt;/$1$4/gso;</span></span><br><span class="line"><span class="string"># this (morning/afternoon/evening)</span></span><br><span class="line"><span class="string">$string =˜ s/(($OT+(early|late)$CT+\s+)?$OT+this$CT+\s*$OT+(morning|afternoon|evening)$CT+)/</span></span><br><span class="line"><span class="string">&lt;TIMEX$tever TYPE=\&quot;DATE\&quot;&gt;$1&lt;\/TIMEX$tever&gt;/gosi;</span></span><br><span class="line"><span class="string">$string =˜ s/(($OT+(early|late)$CT+\s+)?$OT+last$CT+\s*$OT+night$CT+)/&lt;TIMEX$tever</span></span><br><span class="line"><span class="string">TYPE=\&quot;DATE\&quot;&gt;$1&lt;\/TIMEX$tever&gt;/gsio;</span></span><br></pre></td></tr></table></figure>
 <p>: Figure 17.13 Perl fragment from the GUTime temporal tagging system in Tarsqi (Verhagen et al., 2005).</p>
 <p>序列标记方法遵循与命名实体标记相同的IOB方案，使用I、O和B标签标记TIMEX3分隔的时间表达式的内部、外部或开头的单词，如下所示：</p>
-<p>A O fare O increase O initiated O last B week I by O UAL O Corp’s… O</p>
+<p>A O fare O increase O initiated O last B week I by O UAL O Corp’s... O</p>
 <p>从标记（token）及其上下文中提取特征，并训练统计序列标注器（可以使用任何序列模型）。图17.14列出了时间标注中使用的标准特征。时间表达式识别器使用通常的recall、precision和F-measure进行评估。所有这些非常词汇化的方法的一个主要困难是避免触发假阳性的表达式：</p>
 <blockquote>
-<p>(17.15) 1984 tells the story of Winston Smith…</p>
-<p>(17.16) …U2’s classic Sunday Bloody Sunday</p>
+<p>(17.15) 1984 tells the story of Winston Smith...</p>
+<p>(17.16) ...U2’s classic Sunday Bloody Sunday</p>
 </blockquote>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Feature</th>
 <th>Explanation</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Token</td>
 <td>The target token to be labeled</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Tokens in window</td>
 <td>Bag of tokens in the window around a target</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Shape</td>
 <td>Character shape features</td>
 </tr>
-<tr>
+<tr class="even">
 <td>POS</td>
 <td>Parts of speech of target and window words</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Chunk tags</td>
 <td>Base phrase chunk tag for target and words in a window</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Lexical triggers</td>
 <td>Presence in a list of temporal terms</td>
 </tr>
 </tbody>
 </table>
-<hr>
+<hr />
 <p>: Figure 17.14 Typical features used to train IOB-style temporal expression taggers.</p>
-<h2 id="17-3-2-时间归一化">17.3.2 时间归一化</h2>
+<h2 id="时间归一化">17.3.2 时间归一化</h2>
 <p>时间归一化是将时间表达式映射到特定时间点或持续时间的时间规范化的过程。时间点与日历日期、一天中的时间或两者都对应。持续时间主要由时间长度组成，但也可能包括关于起点和终点的信息。标准化时间用ISO 8601标准中的值属性表示，该标准用于编码时间值（ISO86012004）。图17.15再现了我们前面的示例，其中添加了值属性。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;TIMEX3 i d &#x3D; ’ ’ t 1 ’ ’ t y p e &#x3D;”DATE” v a l u e &#x3D;” 2007 −07 −02 ” f u n cti o n I n D o c u m e nt &#x3D;”CREATION TIME”</span><br><span class="line">&gt; J u l y 2 , 2007 &lt;&#x2F;TIMEX3&gt; A f a r e i n c r e a s e i n i t i a t e d &lt;TIMEX3 i d &#x3D;” t 2 ” t y p e &#x3D;”DATE”</span><br><span class="line">v a l u e &#x3D;” 2007 −W26” a nc h o rTime ID &#x3D;” t 1 ”&gt;l a s t week&lt;&#x2F;TIMEX3&gt; by U nit e d A i r l i n e s was</span><br><span class="line">matc he d by c o m p e t i t o r s o v e r &lt;TIMEX3 i d &#x3D;” t 3 ” t y p e &#x3D;”DURATION” v a l u e &#x3D;”P1WE”</span><br><span class="line">a nc h o rTime ID &#x3D;” t 1 ”&gt; t h e weekend &lt;&#x2F;TIMEX3&gt; , ma r ki n g t h e s e c o n d s u c c e s s f u l f a r e</span><br><span class="line">i n c r e a s e i n &lt;TIMEX3 i d &#x3D;” t 4 ” t y p e &#x3D;”DURATION” v a l u e &#x3D;”P2W” a nc h o rTime ID &#x3D;” t 1 ”&gt; two</span><br><span class="line">weeks &lt;&#x2F;TIMEX3&gt;.</span><br></pre></td></tr></table></figure>
 <p>: Figure 17.15 TimeML markup including normalized values for temporal expressions.</p>
@@ -539,7 +537,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">17.3 抽取时间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#17-3-1-%E6%97%B6%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%8F%90%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">17.3.1 时间表达式的提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-3-2-%E6%97%B6%E9%97%B4%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">17.3.2 时间归一化</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%BD%E5%8F%96%E6%97%B6%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">17.3 抽取时间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%8F%90%E5%8F%96"><span class="nav-number">1.1.</span> <span class="nav-text">17.3.1 时间表达式的提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">17.3.2 时间归一化</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -555,20 +553,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -626,13 +624,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">328k</span>
+    <span title="站点总字数">302k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:58</span>
+    <span title="站点阅读时长">4:34</span>
 </div>
 
         

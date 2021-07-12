@@ -21,17 +21,19 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="这个周末要把项目雏形做出来，在这里记录实验全过程、用到的资料和数据等，代码我放到了github。 第一步：建立学术文献语料库 1.1 下载pdf文件 在pilot study中我们只选取ACL中前100篇top cited papers，获取文章列表及pdf的完整代码。        title citation     Neural Machine Transl">
+  <meta name="description" content="2021年暑假，我将花大量时间精力用于开展毕业论文相关的项目，并研究算法，预计暑假结束前完成数学模型的搭建。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息抽取-Pilot Study">
+<meta property="og:title" content="爬虫构建语料库的方法">
 <meta property="og:url" content="http://nlpcourse.cn/ir-project-1/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="这个周末要把项目雏形做出来，在这里记录实验全过程、用到的资料和数据等，代码我放到了github。 第一步：建立学术文献语料库 1.1 下载pdf文件 在pilot study中我们只选取ACL中前100篇top cited papers，获取文章列表及pdf的完整代码。        title citation     Neural Machine Transl">
+<meta property="og:description" content="2021年暑假，我将花大量时间精力用于开展毕业论文相关的项目，并研究算法，预计暑假结束前完成数学模型的搭建。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-16T12:47:37.903Z">
-<meta property="article:modified_time" content="2021-04-18T13:57:24.150Z">
+<meta property="og:image" content="https://i.loli.net/2021/07/02/l8Vqe4Uv2ZBMkAO.png">
+<meta property="article:published_time" content="2021-07-12T15:31:28.518Z">
+<meta property="article:modified_time" content="2021-07-12T15:40:52.867Z">
 <meta property="article:author" content="鸽鸽">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/02/l8Vqe4Uv2ZBMkAO.png">
 
 <link rel="canonical" href="http://nlpcourse.cn/ir-project-1/">
 
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>信息抽取-Pilot Study | 鸽婆打字机</title>
+  <title>爬虫构建语料库的方法 | 鸽婆打字机</title>
   
 
 
@@ -127,17 +129,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">30</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">61</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -205,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          信息抽取-Pilot Study
+          爬虫构建语料库的方法
         </h1>
 
         <div class="post-meta">
@@ -214,16 +216,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-04-16 20:47:37" itemprop="dateCreated datePublished" datetime="2021-04-16T20:47:37+08:00">2021-04-16</time>
+              <time title="创建时间：2021-07-12 23:31:28 / 修改时间：23:40:52" itemprop="dateCreated datePublished" datetime="2021-07-12T23:31:28+08:00">2021-07-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-18 21:57:24" itemprop="dateModified" datetime="2021-04-18T21:57:24+08:00">2021-04-18</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,15 +247,16 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>527</span>
+              <span>6.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>6 分钟</span>
             </span>
+            <div class="post-description">2021年暑假，我将花大量时间精力用于开展毕业论文相关的项目，并研究算法，预计暑假结束前完成数学模型的搭建。</div>
 
         </div>
       </header>
@@ -270,49 +267,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这个周末要把项目雏形做出来，在这里记录实验全过程、用到的资料和数据等，代码我放到了github。</p>
-<h1 id="第一步建立学术文献语料库">第一步：建立学术文献语料库</h1>
-<h2 id="下载pdf文件">1.1 下载pdf文件</h2>
-<p>在pilot study中我们只选取ACL中前100篇top cited papers，获取文章列表及pdf的<a target="_blank" rel="noopener" href="https://github.com/MissFreak/academic-information-retrieval/blob/main/corpus/get-papers.py">完整代码</a>。</p>
-<table>
-<colgroup>
-<col style="width: 88%" />
-<col style="width: 11%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>title</th>
-<th>citation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Neural Machine Translation of Rare Words with Subword Units</td>
-<td>3461</td>
-</tr>
-<tr class="even">
-<td>Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks.</td>
-<td>2405</td>
-</tr>
-<tr class="odd">
-<td>End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF.</td>
-<td>1823</td>
-</tr>
-<tr class="even">
-<td>Get To The Point: Summarization with Pointer-Generator Networks.</td>
-<td>1351</td>
-</tr>
-<tr class="odd">
-<td>OpenNMT: Open-Source Toolkit for Neural Machine Translation.</td>
-<td>1286</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-<h2 id="格式转化与数据清洗">1.2 格式转化与数据清洗</h2>
-<p>把pdf转化为txt，去掉hyphen和newline。</p>
-<p>然后切分句子，把这些句子保存在csv中。</p>
-<h1 id="第二步抽取术语">第二步：抽取术语</h1>
+        <blockquote>
+<p>Scrapy 是用 Python 实现的一个为了爬取网站数据、提取结构性数据而编写的应用框架。</p>
+<p>Scrapy 常应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。</p>
+<p>通常我们可以很简单的通过 Scrapy 框架实现一个爬虫，抓取指定网站的内容或图片。</p>
+</blockquote>
+<p>由于<code>scrapy</code>在结构化数据提取中的重要作用，我将用它实现一个功能全面的学术文章信息采集的工具，并搭建为语料库。事实上，整套程序完全可以利用requests、beautifulsoup等实现（我会提供相关代码），但是利用scrapy框架会更高效、简洁，不用重复造轮子。而且，对于下载失败的URL，Scrapy也会重新下载。</p>
+<p>预计2~3天完成这个项目，除了用于毕业论文的语料库，还将帮助我更好地巩固Python基础。2021年暑假，我将花大量时间精力用于开展毕业论文相关的项目，并研究算法，预计暑假结束前完成数学模型的搭建。这是我的第一个项目，所有项目都在<code>pycharm</code>进行（<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36147819">快捷键</a>）。</p>
+<p>关于scrapy的详细介绍和架构图见<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/scrapy-detail.html">菜鸟教程</a>。我也会按照这个教程描述的步骤完成整个项目。</p>
+<h1 id="一新建项目">一、新建项目</h1>
+<p>我们在pycharm的terminal中<code>pip install scrapy</code>并新建项目：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject paperscraper</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44322399/article/details/104439555">Bash指令：windows下使用tree指令快速查看文件目录树_10 DAY'S-CSDN博客</a></p>
+<p>使用上述方式得到项目的文件结构，其中settings.py和spiders比较重要：</p>
+<ul>
+<li><strong>settings.py –</strong>该文件包含项目设置。</li>
+<li><strong>Spiders/ –</strong>此文件夹将存储自定义spider，每次scrapy 运行一个spider，它都会在这个文件夹中寻找它。</li>
+</ul>
+<h2 id="如何防止反爬虫">1.1 如何防止反爬虫？</h2>
+<p>由于可能出现403错误（无权限访问），如何避免爬虫被网站识别出来导致被禁呢？我们需要伪装浏览器，设置request headers，在settings.py中进行如下修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">ua = UserAgent()</span><br><span class="line"><span class="comment"># Override the default request headers:</span></span><br><span class="line">DEFAULT_REQUEST_HEADERS = &#123;</span><br><span class="line">  <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Accept-Language&#x27;</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;User-Agent&#x27;</span>: ua.random</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同时要保证：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建paperbot-spider">1.2 创建paperbot spider</h2>
+<p>我们使用基本模板在<strong>spiders/</strong>文件夹中创建一个新的spider“paperbot.py”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider paperbot www.sciencedirect.com&#x2F;journal&#x2F;journal-of-memory-and-language</span><br></pre></td></tr></table></figure>
+<p>生成内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PaperbotSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    name = <span class="string">&#x27;paperbot&#x27;</span></span><br><span class="line">    allowed_domains = [<span class="string">&#x27;www.sciencedirect.com/journal/journal-of-memory-and-language&#x27;</span>]</span><br><span class="line">    start_urls = [<span class="string">&#x27;http://www.sciencedirect.com/journal/journal-of-memory-and-language/&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>allowed_domains是是过滤爬取的域名，限制爬虫爬取当前域名下的网页。</li>
+<li>start_urls是起始爬取页面。</li>
+</ul>
+<h2 id="背后的逻辑">1.3 背后的逻辑</h2>
+<p>这段代码其实是简化版的，我们可以看下面的代码实例来弄清楚背后的逻辑：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuotesSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    name = <span class="string">&quot;quotes&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">start_requests</span>(<span class="params">self</span>):</span></span><br><span class="line">        urls = [</span><br><span class="line">            <span class="string">&#x27;http://quotes.toscrape.com/page/1/&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://quotes.toscrape.com/page/2/&#x27;</span>,</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">            <span class="keyword">yield</span> scrapy.Request(url=url, callback=self.parse)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        page = response.url.split(<span class="string">&quot;/&quot;</span>)[-<span class="number">2</span>]</span><br><span class="line">        filename = <span class="string">f&#x27;quotes-<span class="subst">&#123;page&#125;</span>.html&#x27;</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.body)</span><br><span class="line">        self.log(<span class="string">f&#x27;Saved file <span class="subst">&#123;filename&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li>start_requests()：必须返回一个请求的迭代器 (iterable) （您可以返回一个请求列表或编写一个生成器函数），爬行器将从中开始爬行。随后的请求将从这些初始请求依次生成。</li>
+<li>parse()：将调用该方法来处理为每个请求下载的响应。response参数是TextResponse的一个实例，它保存页面内容，并有更多有用的方法来处理它。并查找要跟踪的新url并从中创建新请求（Request）。</li>
+</ul>
+<p>可以简化成：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuotesSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    name = <span class="string">&quot;quotes&quot;</span></span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="string">&#x27;http://quotes.toscrape.com/page/1/&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;http://quotes.toscrape.com/page/2/&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        page = response.url.split(<span class="string">&quot;/&quot;</span>)[-<span class="number">2</span>]</span><br><span class="line">        filename = <span class="string">f&#x27;quotes-<span class="subst">&#123;page&#125;</span>.html&#x27;</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.body)</span><br></pre></td></tr></table></figure>
+<h1 id="二明确目标">二、明确目标</h1>
+<p>我们打算抓取https://www.sciencedirect.com/journal/journal-of-memory-and-language/issues期刊2010-2021年间的所有文章的题目、年份、doi、作者、Highlights、摘要和关键词（可能的话还有全文）。</p>
+<ol type="1">
+<li>打开 mySpider 目录下的 items.py。</li>
+<li>创建一个 ItcastItem 类，定义类型为 scrapy.Field 的类属性</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PaperscraperItem</span>(<span class="params">scrapy.Item</span>):</span></span><br><span class="line">    <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    year = scrapy.Field()</span><br><span class="line">    doi = scrapy.Field()</span><br><span class="line">    author = scrapy.Field()</span><br></pre></td></tr></table></figure>
+<p>这个我们稍后修改，</p>
+<h1 id="三搭建spider">三、搭建spider</h1>
+<p>下面是项目的关键部分——spider的搭建，负责提取信息。</p>
+<blockquote>
+<p>Spider（爬虫）：它负责处理所有Responses，从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给引擎，再次进入Scheduler(调度器)。</p>
+</blockquote>
+<h2 id="使用scrapy-shell调试选择器">3.1 使用scrapy shell调试选择器</h2>
+<p>Scrapy提取数据有自己的一套机制，被称做选择器（Selector类），它能够自由“选择”由XPath或CSS表达式指定的HTML文档的某些部分。</p>
+<p>为了获得每期的文章ID，我们打开scrapy shell调试和验证选择器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scrapy shell</span><br><span class="line">fetch(<span class="string">&quot;https://www.sciencedirect.com/journal/journal-of-memory-and-language/vol/120/suppl/C&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>在调试过程中，我们发现可以在该页面确定发表时间，并找到所有文章标题，由于标题可能存在内部标签，所以用正则表达式提取；以及作者（editorial board没有作者）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">response.css(<span class="string">&#x27;.js-issue-status.text-s::text&#x27;</span>).get()</span><br><span class="line">response.css(<span class="string">&#x27;span.js-article-title&#x27;</span>).re(<span class="string">r&#x27;&lt;span[^&gt;]*&gt;([\s\S]*?)&lt;/span&gt;&#x27;</span>)</span><br><span class="line"><span class="comment"># &#x27;Revealing pragmatic processes through a one-word answer: When the French reply &lt;em&gt;Si&lt;/em&gt;&#x27;，</span></span><br><span class="line"><span class="comment"># 得到12条类似的标题，其中第一个Editorial Board要去掉</span></span><br><span class="line">response.css(<span class="string">&#x27;div.u-clr-grey8.text-s::text&#x27;</span>).getall()</span><br></pre></td></tr></table></figure>
+<p>但要模仿浏览器点击才能获取摘要，因此我们换种方式，首先获取每篇文章的doi，然后去每篇文章的页面爬取信息。 ## 3.2 爬虫逻辑</p>
+<p>如果用doi来构建每篇文章的url，还是会出现版本不同时url规则不同的情况：</p>
+<p><img src="https://i.loli.net/2021/07/02/l8Vqe4Uv2ZBMkAO.png"/></p>
+<p>因此，我们发现最好的方式是模拟浏览器进行操作，不断爬取链接并下载内容。在这里我们重新创建一个<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a6a08b4f7c04">crawlspider</a>，来抓取链接，我们取名为paperbot2。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider -t crawl paperbot2 www.sciencedirect.com</span><br></pre></td></tr></table></figure>
+<p>生成新的文件paperbot2.py，我们继续调试代码，这时可能出现403错误，<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011781521/article/details/70211474">我们使用这篇文章的第二个办法</a>，把scrapy package里面的user-agent换掉。 ## 3.3 代码</p>
+<p>在paperbot2.py写入如下内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> scrapy.linkextractors <span class="keyword">import</span> LinkExtractor</span><br><span class="line"><span class="keyword">from</span> scrapy.spiders <span class="keyword">import</span> CrawlSpider, Rule</span><br><span class="line"><span class="keyword">from</span> paperscraper.items <span class="keyword">import</span> AbstractItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Paperbot2Spider</span>(<span class="params">CrawlSpider</span>):</span></span><br><span class="line">    name = <span class="string">&#x27;paperbot2&#x27;</span></span><br><span class="line">    issue_urls = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">70</span>, <span class="number">121</span>):</span><br><span class="line">        issue_urls.append(<span class="string">&#x27;https://www.sciencedirect.com/journal/journal-of-memory-and-language/vol/&#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;/suppl/C&#x27;</span>)</span><br><span class="line">    start_urls = issue_urls</span><br><span class="line"></span><br><span class="line">    rules = (</span><br><span class="line">        Rule(LinkExtractor(restrict_css=<span class="string">&#x27;.article-content-title&#x27;</span>), callback=<span class="string">&#x27;parse_item&#x27;</span>, follow=<span class="literal">False</span>),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_item</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        self.logger.info(<span class="string">&#x27;Hi, this is an item page! %s&#x27;</span>, response.url)</span><br><span class="line">        item = AbstractItem()</span><br><span class="line">        item[<span class="string">&#x27;title&#x27;</span>] = response.css(<span class="string">&#x27;.title-text&#x27;</span>).re(<span class="string">r&#x27;&lt;span[^&gt;]*&gt;([\s\S]*?)&lt;/span&gt;&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        item[<span class="string">&#x27;year&#x27;</span>] = response.css(<span class="string">&#x27;.publication-volume .text-xs&#x27;</span>).re(<span class="string">r&#x27;[^\d](\d&#123;4&#125;)[^\d]&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        item[<span class="string">&#x27;link&#x27;</span>] = response.url</span><br><span class="line">        item[<span class="string">&#x27;highlights&#x27;</span>] = <span class="string">&#x27;\n&#x27;</span>.join(response.css(<span class="string">&#x27;.author-highlights .list p::text&#x27;</span>).getall()) <span class="comment"># 这里用\n分割每一句话</span></span><br><span class="line">        item[<span class="string">&#x27;abstract&#x27;</span>] = <span class="string">&#x27;\n&#x27;</span>.join(response.css(<span class="string">&#x27;#abstracts p::text&#x27;</span>).getall())</span><br><span class="line">        item[<span class="string">&#x27;keywords&#x27;</span>] = <span class="string">&#x27;\n&#x27;</span>.join(response.css(<span class="string">&#x27;.keyword span::text&#x27;</span>).getall()</span><br><span class="line">)</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<p>在settings.py中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">BOT_NAME = <span class="string">&#x27;paperscraper&#x27;</span></span><br><span class="line"></span><br><span class="line">SPIDER_MODULES = [<span class="string">&#x27;paperscraper.spiders&#x27;</span>]</span><br><span class="line">NEWSPIDER_MODULE = <span class="string">&#x27;paperscraper.spiders&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">ua = UserAgent()</span><br><span class="line"><span class="comment"># Override the default request headers:</span></span><br><span class="line">DEFAULT_REQUEST_HEADERS = &#123;</span><br><span class="line">  <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Accept-Language&#x27;</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;User-Agent&#x27;</span>: ua.random</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在items.py：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AbstractItem</span>(<span class="params">scrapy.Item</span>):</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    year = scrapy.Field()</span><br><span class="line">    link = scrapy.Field()</span><br><span class="line">    highlights = scrapy.Field()</span><br><span class="line">    abstract = scrapy.Field()</span><br><span class="line">    keywords = scrapy.Field()</span><br></pre></td></tr></table></figure>
+<p>由于我们定义了两个items，需要定制写入不同CSV文件的<a target="_blank" rel="noopener" href="https://blog.csdn.net/sc_lilei/article/details/79590696">Pipeline</a>，并且在setting中激活该pipeline。</p>
+<p>参照<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58944212">这篇文章</a>，我们也可以直接在输出的时候写入csv：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl paperbot2 -o jml.csv </span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p>https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/</p>
+<p>https://www.bookstack.cn/read/piaosanlang-spiders/fbe165cd1d0be224.md</p>
+<p>https://docs.scrapy.org/en/latest/intro/tutorial.html</p>
 
     </div>
 
@@ -330,7 +363,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://nlpcourse.cn/ir-project-1/" title="信息抽取-Pilot Study">http://nlpcourse.cn/ir-project-1/</a>
+    <a href="http://nlpcourse.cn/ir-project-1/" title="爬虫构建语料库的方法">http://nlpcourse.cn/ir-project-1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -366,13 +399,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/spacy-1/" rel="prev" title="spaCy超强指南之文本预处理和语言特征表">
-      <i class="fa fa-chevron-left"></i> spaCy超强指南之文本预处理和语言特征表
+    <a href="/syntax-final/" rel="prev" title="句法学最终">
+      <i class="fa fa-chevron-left"></i> 句法学最终
     </a></div>
-      <div class="post-nav-item">
-    <a href="/sentence-segmentation/" rel="next" title="英文句子切分的要点和工具">
-      英文句子切分的要点和工具 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -431,7 +461,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%BB%BA%E7%AB%8B%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E8%AF%AD%E6%96%99%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">第一步：建立学术文献语料库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDpdf%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 下载pdf文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 格式转化与数据清洗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%8A%BD%E5%8F%96%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.</span> <span class="nav-text">第二步：抽取术语</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">一、新建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%98%B2%E6%AD%A2%E5%8F%8D%E7%88%AC%E8%99%AB"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 如何防止反爬虫？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BApaperbot-spider"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 创建paperbot spider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%90%8E%E7%9A%84%E9%80%BB%E8%BE%91"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 背后的逻辑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E6%98%8E%E7%A1%AE%E7%9B%AE%E6%A0%87"><span class="nav-number">2.</span> <span class="nav-text">二、明确目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E6%90%AD%E5%BB%BAspider"><span class="nav-number">3.</span> <span class="nav-text">三、搭建spider</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8scrapy-shell%E8%B0%83%E8%AF%95%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 使用scrapy shell调试选择器</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,20 +477,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -518,13 +548,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">328k</span>
+    <span title="站点总字数">302k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:58</span>
+    <span title="站点阅读时长">4:34</span>
 </div>
 
         
