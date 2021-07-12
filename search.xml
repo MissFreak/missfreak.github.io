@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目前共有60篇文章</title>
+    <title>目前共有71篇文章</title>
     <url>/all-posts/</url>
-    <content><![CDATA[<center>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2112262923&amp;auto=1&amp;height=90">
+</iframe>
+<center>
 『 好奇心造就诗人与科学家。』<br>Knowledge of languages is the doorway to wisdom. – Roger Bacon<br><br>
 <details class="category_1">
 <summary>
@@ -61,7 +63,7 @@ pandas
 <summary>
 未分类
 </summary>
-<br><a href="all-posts">目前共有60篇文章</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
+<br><a href="all-posts">目前共有60篇文章</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
 </details>
 </details>
 <details class="category_1">
@@ -139,21 +141,27 @@ flask
 </summary>
 <details open>
 <summary>
+二语习得
+</summary>
+<br> <a href="sla-3">二语习得课本</a><br> <a href="sla-4">二语习得最终</a><br> <a href="sla">二语习得</a><br>
+</details>
+<details open>
+<summary>
 句法
 </summary>
-<br> <a href="syntax-1">句法学框架及术语大全</a><br> <a href="syntax">句法学超人大总结</a><br>
+<br> <a href="syntax-final">句法学最终</a><br> <a href="syntax-main">句法学主要内容</a><br> <a href="syntax-terms">句法学框架及术语大全</a><br> <a href="syntax-trees">句法树大全</a><br> <a href="syntax">句法学超人大总结</a><br>
 </details>
 <details open>
 <summary>
 心理语言学
 </summary>
-<br> <a href="psycho-linguistics-terms">心理语言学：资源和知识整理</a><br> <a href="psycho-linguistics">心理语言学：资源和知识整理</a><br> <a href="relation-extraction-0">心理语言学：资源和知识整理</a><br>
+<br> <a href="psycho-linguistics-content">心理语言学：资源和知识整理</a><br> <a href="psycho-linguistics">心理语言学：资源和知识整理</a><br>
 </details>
 <details open>
 <summary>
 语义
 </summary>
-<br> <a href="semantics-concepts">语义学框架</a><br> <a href="semantics-terms">语义学术语大全</a><br> <a href="semantics">语义学术语</a><br>
+<br> <a href="semantics-concepts">语义学框架</a><br> <a href="semantics-final">语义学最终</a><br> <a href="semantics-terms">语义学术语大全</a><br> <a href="semantics">语义学术语</a><br>
 </details>
 <details open>
 <summary>
@@ -170,13 +178,29 @@ flask
 <summary>
 信息抽取
 </summary>
-<br> <a href="ir-project-1">信息抽取-Pilot Study</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br>
+<br> <a href="ir-project-0">信息抽取-Pilot Study</a><br> <a href="ir-project-1">爬虫构建语料库的方法</a><br> <a href="ir-project-2">根据POS生成候选词</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br>
 </details>
 </details>
 <br><br>关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
 </center>
 <p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>根据POS生成候选词</title>
+    <url>/ir-project-2/</url>
+    <content><![CDATA[<h1 id="候选词满足的要求">候选词满足的要求</h1>
+<p>我们先查看keywords的特点：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line">nlp = spacy.load(<span class="string">&quot;en_core_web_sm&quot;</span>)</span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;D:/毕业论文/academic-information-retrieval/corpus/jml-dataset.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line">keyword_list = []</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> df[<span class="string">&#x27;keywords&#x27;</span>]:</span><br><span class="line">    keyword_list.extend(<span class="built_in">str</span>(row).split(<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">sorted_keyword_list = Counter(keyword_list).most_common()</span><br><span class="line"></span><br><span class="line">gram_count = [<span class="built_in">len</span>(w.split()) <span class="keyword">for</span> w <span class="keyword">in</span> keyword_list]</span><br><span class="line">sorted_gram_count = Counter(gram_count).most_common()</span><br><span class="line"></span><br><span class="line">pos_tags = [<span class="string">&#x27; &#x27;</span>.join(tok.tag_ <span class="keyword">for</span> tok <span class="keyword">in</span> nlp(keyword[<span class="number">0</span>])) <span class="keyword">for</span> keyword <span class="keyword">in</span> sorted_keyword_list]</span><br><span class="line">sorted_pos_tags = Counter(pos_tags)</span><br><span class="line">print(sorted_pos_tags)</span><br></pre></td></tr></table></figure>
+<p>然后把数据集分开保存为txt文件：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;D:/毕业论文/academic-information-retrieval/corpus/jml-dataset.csv&#x27;</span>)</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    os.mkdir(<span class="string">r&#x27;D:/毕业论文/academic-information-retrieval/corpus/jml&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> FileExistsError <span class="keyword">as</span> error:</span><br><span class="line">    print(error)</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> abstract <span class="keyword">in</span> df[<span class="string">&#x27;abstract&#x27;</span>]:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&#x27;D:/毕业论文/academic-information-retrieval/corpus/jml/&#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(abstract.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27; &#x27;</span>))</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>从中抽取出pos满足规则的词组。要注意的是，这里的词组不影响后续的ranking 算法所以先把这一步做出来就行。要注意抽取的是meaningful的词组。相关的是text chunking (syntactic constituents), collocation extraction. 事实上这一步要做的就是分块，我们抽取出所有的名词词组！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">from</span> spacy.matcher <span class="keyword">import</span> Matcher</span><br><span class="line">nlp = spacy.load(<span class="string">&quot;en_core_web_sm&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&#x27;D:/毕业论文/academic-information-retrieval/corpus/jml/0.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    text = f.read()</span><br><span class="line">doc = nlp(text)</span><br><span class="line"></span><br><span class="line">chunks = <span class="built_in">list</span>(doc.noun_chunks)</span><br><span class="line">print(chunks)</span><br><span class="line"><span class="comment"># [a focused element, a focus particle, recall, alternatives, Recall benefit, both inclusive (even) and exclusive (only) particles, Particles, the relevance, alternatives, discourse interpretation, Higher discourse relevance, improved memory encoding, the alternatives, Focus sensitive particles, the relevance, contextual alternatives, the interpretation, a sentence, Two experiments, better encoding, focus alternatives, Participants, auditory stimuli, a set, elements, three different versions, the critical sentences, the inclusive particle, no particle, (control condition, blocks, ten trials, participants, the elements, the context sentence, The results, both particles, memory performance, the alternatives, the focused element, the control condition, The results, the assumption, information-structural alternatives, memory, the presence, a focus sensitive particle]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>信息抽取</category>
+      </categories>
   </entry>
   <entry>
     <title>爬虫构建语料库的方法</title>
@@ -5017,6 +5041,20 @@ hyponym(Gelidium,red algae)
       </tags>
   </entry>
   <entry>
+    <title>一文读懂Flask Web开发实战！</title>
+    <url>/flask-2/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>网站开发</category>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>flask</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础：用flask搭建RESTful API</title>
     <url>/flask-api-1/</url>
     <content><![CDATA[<p><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>是目前发展最迅速的 Python 框架之一，它是一个微型的 Python 开发的 Web 框架，基于<a href="https://www.oschina.net/p/werkzeug">Werkzeug</a> WSGI工具箱和<a href="https://www.oschina.net/p/jinja">Jinja2</a> 模板引擎。以下是用flask来构建 RESTful API 的全过程实录，力求完整、准确、无误地记录每个操作步骤与细节。我用的是windows系统，但我也会提到其他系统的操作。 <span id="more"></span> # 环境搭建与工具安装</p>
@@ -5073,20 +5111,6 @@ hyponym(Gelidium,red algae)
       <tags>
         <tag>flask</tag>
         <tag>api</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一文读懂Flask Web开发实战！</title>
-    <url>/flask-2/</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>网站开发</category>
-        <category>flask</category>
-      </categories>
-      <tags>
-        <tag>web</tag>
-        <tag>flask</tag>
       </tags>
   </entry>
   <entry>
