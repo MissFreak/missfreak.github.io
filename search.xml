@@ -191,6 +191,24 @@ flask
 ]]></content>
   </entry>
   <entry>
+    <title>BERT和SentenceBERT</title>
+    <url>/bert/</url>
+    <content><![CDATA[<h1 id="参考">参考</h1>
+<h2 id="经典讲解">经典讲解</h2>
+<p>https://jalammar.github.io/illustrated-transformer/</p>
+<p>https://zhuanlan.zhihu.com/p/47063917</p>
+<p>https://zhuanlan.zhihu.com/p/47282410</p>
+<h2 id="视频">视频</h2>
+<p>唐宇迪：基本就是按照上面的文献来。</p>
+<h2 id="其他">其他</h2>
+<p>https://zhuanlan.zhihu.com/p/113133510</p>
+<p>https://arxiv.org/pdf/1908.10084.pdf</p>
+<p>https://www.gushiciku.cn/pl/pWzZ</p>
+<p>https://zhuanlan.zhihu.com/p/49271699</p>
+<p>https://zhuanlan.zhihu.com/p/51337063</p>
+]]></content>
+  </entry>
+  <entry>
     <title>句子嵌入技术笔记</title>
     <url>/sentence-embedding/</url>
     <content><![CDATA[<p>学习并实现Doc2Vec、SentenceBert、InferSent、Universal Sentence Encoder，并计算余弦相似度。</p>
@@ -256,6 +274,7 @@ flask
 <p>sentence embedding</p>
 <p>https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/</p>
 <p>https://towardsdatascience.com/paper-summary-evaluation-of-sentence-embeddings-in-downstream-and-linguistic-probing-tasks-5e6a8c63aab1</p>
+<p>https://medium.com/huggingface/universal-word-sentence-embeddings-ce48ddc8fc3a</p>
 <p>双塔模型</p>
 <p>https://zhuanlan.zhihu.com/p/166469248</p>
 <p>https://zhuanlan.zhihu.com/p/97821040</p>
