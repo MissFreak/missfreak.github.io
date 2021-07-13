@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目前共有71篇文章</title>
+    <title>目前共有75篇文章</title>
     <url>/all-posts/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2112262923&amp;auto=1&amp;height=90">
-</iframe>
-<center>
+    <content><![CDATA[<center>
 『 好奇心造就诗人与科学家。』<br>Knowledge of languages is the doorway to wisdom. – Roger Bacon<br><br>
 <details class="category_1">
 <summary>
@@ -63,7 +61,7 @@ pandas
 <summary>
 未分类
 </summary>
-<br><a href="all-posts">目前共有60篇文章</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
+<br><a href="all-posts">目前共有73篇文章</a><br> <a href="bert">BERT和SentenceBERT</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="KG-1">知识图谱与知识表示</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
 </details>
 </details>
 <details class="category_1">
@@ -104,6 +102,12 @@ flask
 句子切分
 </summary>
 <br> <a href="sentence-segmentation">英文句子切分的要点和工具</a><br>
+</details>
+<details open>
+<summary>
+表示学习
+</summary>
+<br> <a href="sentence-embedding">句子嵌入技术笔记</a><br>
 </details>
 <details open>
 <summary>
@@ -178,13 +182,158 @@ flask
 <summary>
 信息抽取
 </summary>
-<br> <a href="ir-project-0">信息抽取-Pilot Study</a><br> <a href="ir-project-1">爬虫构建语料库的方法</a><br> <a href="ir-project-2">根据POS生成候选词</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br>
+<br> <a href="ir-project-0">信息抽取-Pilot Study</a><br> <a href="ir-project-1">爬虫构建语料库的方法</a><br> <a href="ir-project-2">根据POS生成候选词</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br> <a href="papers">文献整理</a><br>
 </details>
 </details>
 <br><br>关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
 </center>
 <p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>句子嵌入技术笔记</title>
+    <url>/sentence-embedding/</url>
+    <content><![CDATA[<p>学习并实现Doc2Vec、SentenceBert、InferSent、Universal Sentence Encoder，并计算余弦相似度。</p>
+<span id="more"></span>
+<p>机器所能理解的语言是数字，因此需要把文本表示为数字或嵌入，包括单词、短语、句子、段落、文档的嵌入。流行的词嵌入技术包括 Word2Vec、GloVe、ELMo、FastText 等，由此衍生出句子嵌入技术，将整个句子及其语义信息表示为向量。</p>
+<h1 id="doc2vec-2014">Doc2Vec (2014)</h1>
+<p>这是<a href="http://see%20here%20https//arxiv.org/pdf/1405.4053v2.pdf"><strong>M</strong></a><strong>ikilov 和 Le</strong>于2014 年在<a href="https://arxiv.org/abs/1405.4053">本文中</a>提出的概念，有两种训练方法：</p>
+<h2 id="pv-dmdistributed-memory-version-of-paragraph-vector">1.1) PV-DM(Distributed Memory version of Paragraph Vector)</h2>
+<p>分配一个段落向量句子，同时在所有句子中共享单词向量。然后，我们要么average（平均）或concatenate（连接）（段落向量和单词向量）得到最终的句子表示。如果你注意到了，它是Word2Vec的单词类型的连续包的一个扩展，在这里我们预测给定一组单词的下一个单词。只是在PVDM中，我们通过一组句子来预测下一个句子。</p>
+<p>Mikilov 和 Le 的方法很简单但很聪明：他们使用了<strong>word2vec</strong>模型，并添加了另一个特征向量（下面的Paragraph ID），如下所示：</p>
+<p><img src="https://i.loli.net/2021/07/13/nI5lpW4GCzYeHFS.png"/></p>
+<p>因此，在训练词向量 W 时，也训练了文档向量 D。</p>
+<p>上面的模型称为<em>段落向量的分布式内存版本</em>（PV-DM）。它作为一种记忆，可以记住当前上下文中缺少的内容——或者作为段落的主题。 词向量表示词的概念，而文档向量则是表示文档的概念。</p>
+<h2 id="distributed-bag-of-words-version-of-paragraph-vector-pv-dbow">1.2) Distributed Bag of Words version of Paragraph Vector (PV-DBOW)</h2>
+<p>和 word2vec 一样，可以使用另一种类似于 skip-gram 的算法<strong>段落向量的</strong>分布式<strong>词</strong>袋<strong>版本</strong>（PV-DBOW）。</p>
+<p><img src="https://i.loli.net/2021/07/13/lsuf736PxSErCaI.png"/></p>
+<p>在这里，这个算法实际上更快（与word2vec相反），而且占用的内存更少，因为不需要保存单词向量。该论文的作者建议将两者结合使用，但表示通常 PV-DM 表现更好，对大多数任务来说已经绰绰有余。</p>
+<p>Doc2Vec模型可以通过以下方式使用：训练需要一组文档，为每个单词生成一个词向量W，并且为每个文档生成文档向量D。该模型还训练softmax隐藏层的权重。在inference阶段，可以提供一个新的文档，通过固定所有权重来计算文档向量。</p>
+<h2 id="gensim-实现"><strong>Gensim</strong> <a href="https://rare-technologies.com/doc2vec-tutorial/"><strong>实现</strong></a></h2>
+<h4 id="步骤1">步骤1</h4>
+<p>我们将使用<em>Gensim</em>来展示如何使用 Doc2Vec ，并且我们已经有了一个句子列表。我们将首先导入模型和其他库，然后构建一个带标签的句子语料库。每个句子现在都表示为一个 TaggedDocument，其中包含一个单词列表和一个与之关联的标签。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># import</span></span><br><span class="line"><span class="keyword">from</span> gensim.models.doc2vec <span class="keyword">import</span> Doc2Vec, TaggedDocument</span><br><span class="line">tagged_data = [TaggedDocument(d, [i]) <span class="keyword">for</span> i, d <span class="keyword">in</span> <span class="built_in">enumerate</span>(tokenized_sent)]</span><br><span class="line">tagged_data</span><br></pre></td></tr></table></figure>
+<h4 id="步骤2">步骤2</h4>
+<p>然后我们用参数训练模型：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Train doc2vec model</span></span><br><span class="line">model = Doc2Vec(tagged_data, vector_size = <span class="number">20</span>, window = <span class="number">2</span>, min_count = <span class="number">1</span>, epochs = <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">vector_size = Dimensionality of the feature vectors.</span></span><br><span class="line"><span class="string">window = The maximum distance between the current and predicted word within a sentence.</span></span><br><span class="line"><span class="string">min_count = Ignores all words with total frequency lower than this.</span></span><br><span class="line"><span class="string">alpha = The initial learning rate.</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Print model vocabulary</span></span><br><span class="line">model.wv.vocab</span><br></pre></td></tr></table></figure>
+<h4 id="步骤3">步骤3</h4>
+<p>采用一个新的测试句子，并从我们的数据中找到前 5 个最相似的句子。我们还将按相似度递减的顺序显示它们。infer_vector 方法返回测试句子的向量化形式（包括段落向量），most_similar 方法返回相似的句子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">test_doc = word_tokenize(<span class="string">&quot;I had pizza and pasta&quot;</span>.lower())</span><br><span class="line">test_doc_vector = model.infer_vector(test_doc)</span><br><span class="line">model.docvecs.most_similar(positive = [test_doc_vector])</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">positive = List of sentences that contribute positively.</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="sentencebert">SentenceBERT</h1>
+<h2 id="实现">实现</h2>
+<p>我们可以使用以下方法安装 Sentence BERT：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">!pip install sentence-transformers</span><br></pre></td></tr></table></figure>
+<h4 id="步骤1-1">步骤1</h4>
+<p>然后我们将加载预训练的 BERT 模型。还有许多其他预训练模型可用。您可以在<a href="https://github.com/UKPLab/sentence-transformers/blob/master/docs/pretrained-models/sts-models.md">此处</a>找到完整的模型列表<a href="https://github.com/UKPLab/sentence-transformers/blob/master/docs/pretrained-models/sts-models.md">。</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sentence_transformers <span class="keyword">import</span> SentenceTransformer</span><br><span class="line">sbert_model = SentenceTransformer(<span class="string">&#x27;bert-base-nli-mean-tokens&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="步骤2-1">步骤2</h4>
+<p>然后我们将对提供的句子进行编码。我们还可以显示句子向量（只需取消注释下面的代码）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sentence_embeddings = model.encode(sentences)</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(&#x27;Sample BERT embedding vector - length&#x27;, len(sentence_embeddings[0]))</span></span><br><span class="line"><span class="comment">#print(&#x27;Sample BERT embedding vector - note includes negative values&#x27;, sentence_embeddings[0])</span></span><br></pre></td></tr></table></figure>
+<h4 id="步骤3-1">步骤3</h4>
+<p>然后我们将定义一个测试查询并对其进行编码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">query = <span class="string">&quot;I had pizza and pasta&quot;</span></span><br><span class="line">query_vec = model.encode([query])[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="步骤4">步骤4</h4>
+<p>然后我们将使用 scipy 或 sklearn 计算余弦相似度。我们将检索句子和我们的测试查询之间的相似度值：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics.pairwise <span class="keyword">import</span> cosine_similarity</span><br><span class="line">cos_lib = cosine_similarity(vectors[<span class="number">1</span>,:],vectors[<span class="number">2</span>,:])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> sent <span class="keyword">in</span> sentences:</span><br><span class="line">  sim = cosine(query_vec, model.encode([sent])[<span class="number">0</span>])</span><br><span class="line">  print(<span class="string">&quot;Sentence = &quot;</span>, sent, <span class="string">&quot;; similarity = &quot;</span>, sim)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/07/13/Nf2A38mDtx6JKBb.png"/></p>
+<p>好了，我们已经获得了文本中的句子和我们的测试句子之间的相似性。需要注意的一个关键点是，如果您想从头开始训练 SentenceBERT，它会非常慢。</p>
+<h1 id="推荐系统的借鉴">推荐系统的借鉴</h1>
+<h2 id="双塔模型召回">双塔模型召回</h2>
+<p>两侧分别对user和item特征通过DNN输出向量，并在最后一层计算二个输出向量的内积。</p>
+<p><img src="https://i.loli.net/2021/07/13/v1FNUWnmD3HJbRp.png"/></p>
+<blockquote>
+<p>例如YouTube今年刚发的一篇文章就应用了经典的双塔结构：</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/07/13/4rMjtYQ7iLSHOIF.png"/></p>
+<h2 id="dssm">DSSM</h2>
+<p>通过对用户的Query历史和Document进行embedding编码，使用余弦相似度计算用户query的embedding和document的相似度，继而达到语义相似度计算的目的。</p>
+<p><img src="https://i.loli.net/2021/07/13/KkiU41uEOLWHz7I.png"/></p>
+<p>从上图可以看出，输入DSSM的是一个高维的向量，经过若干层的神经网络，输出一个低维的向量，分别用来表示user的query意图和document，最后通过余弦相似度计算Q和D的相似度。</p>
+<p>论文的另一个出色的点在于抛弃了传统的Bag-of-word模型，因为其会带来高维度的向量特征，这里使用word hashing技术来代替词袋模型，word hashing基于n-gram，比如一个单词<img src="https://www.zhihu.com/equation?tex=good" alt="[公式]" />，使用word hashing技术进行拆分，首先在其两端补充标记符 “#”，假设n=3，则“#good#” 可以表示为：#go、goo、ood、od#。</p>
+<p>但采用word hashing技术会带来一个问题就是：词汇冲突，即两个表达含义不同的词拥有相同的n-gram向量表示。但是论文作者也提到了这种概率很小，冲突的概率在0.0044%，如下图所示：</p>
+<p><img src="https://i.loli.net/2021/07/13/j76c5AT9Sh1Irnm.png"/></p>
+<p><strong>参考：</strong></p>
+<p>sentence embedding</p>
+<p>https://www.analyticsvidhya.com/blog/2020/08/top-4-sentence-embedding-techniques-using-python/</p>
+<p>https://towardsdatascience.com/paper-summary-evaluation-of-sentence-embeddings-in-downstream-and-linguistic-probing-tasks-5e6a8c63aab1</p>
+<p>双塔模型</p>
+<p>https://zhuanlan.zhihu.com/p/166469248</p>
+<p>https://zhuanlan.zhihu.com/p/97821040</p>
+]]></content>
+      <categories>
+        <category>自然语言处理</category>
+        <category>表示学习</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+        <tag>embedding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献整理</title>
+    <url>/papers/</url>
+    <content><![CDATA[<h1 id="information-extraction">Information Extraction</h1>
+<table>
+<colgroup>
+<col style="width: 78%" />
+<col style="width: 5%" />
+<col style="width: 10%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Title</th>
+<th>Year</th>
+<th>Author</th>
+<th>Mark</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://research.google/pubs/pub49122/">Representation Learning for Information Extraction from Form-like Documents</a></td>
+<td></td>
+<td><code>Google</code></td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><a href="https://ai.googleblog.com/2020/06/extracting-structured-data-from.html">Extracting Structured Data from Templatic Documents</a></td>
+<td></td>
+<td><code>Google</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="https://aclanthology.org/E17-2074.pdf">Real-Time Keyword Extraction from Conversations</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="https://aclanthology.org/P17-1102.pdf">PositionRank: An Unsupervised Approach to Keyphrase Extraction from Scholarly Documents</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="https://aclanthology.org/N13-1109.pdf">A Just-In-Time Keyword Extraction from Meeting Transcripts</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>A Graph Degeneracy-based Approach to Keyword Extraction</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="organizations-conferences">Organizations &amp; Conferences</h1>
+<p><a href="https://research.google/pubs/">Google Research Publications</a></p>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>信息抽取</category>
+      </categories>
   </entry>
   <entry>
     <title>根据POS生成候选词</title>
@@ -3704,8 +3853,8 @@ hyponym(Gelidium,red algae)
         <category>依存分析</category>
       </categories>
       <tags>
-        <tag>dependency</tag>
         <tag>nlp</tag>
+        <tag>dependency</tag>
       </tags>
   </entry>
   <entry>
@@ -3990,8 +4139,8 @@ hyponym(Gelidium,red algae)
         <category>依存分析</category>
       </categories>
       <tags>
-        <tag>dependency</tag>
         <tag>nlp</tag>
+        <tag>dependency</tag>
       </tags>
   </entry>
   <entry>
@@ -5324,8 +5473,8 @@ hyponym(Gelidium,red algae)
         <category>依存分析</category>
       </categories>
       <tags>
-        <tag>dependency</tag>
         <tag>nlp</tag>
+        <tag>dependency</tag>
       </tags>
   </entry>
   <entry>
