@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目前共有75篇文章</title>
+    <title>目前共有76篇文章</title>
     <url>/all-posts/</url>
     <content><![CDATA[<center>
 『 好奇心造就诗人与科学家。』<br>Knowledge of languages is the doorway to wisdom. – Roger Bacon<br><br>
@@ -61,7 +61,7 @@ pandas
 <summary>
 未分类
 </summary>
-<br><a href="all-posts">目前共有73篇文章</a><br> <a href="bert">BERT和SentenceBERT</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="KG-1">知识图谱与知识表示</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
+<br><a href="all-posts">目前共有75篇文章</a><br> <a href="bert">BERT和SentenceBERT</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="KG-1">知识图谱与知识表示</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
 </details>
 </details>
 <details class="category_1">
@@ -114,6 +114,12 @@ flask
 语料库
 </summary>
 <br> <a href="corpus">语料库资源大全</a><br>
+</details>
+<details open>
+<summary>
+语言模型
+</summary>
+<br> <a href="transformer">Transformer详解</a><br>
 </details>
 <details open>
 <summary>
@@ -189,6 +195,171 @@ flask
 </center>
 <p><img align="center" width="120" height="120" alt="微信公众号：鸽婆打字机" src="https://i.loli.net/2021/03/04/dXVUZiRfW2o7wCy.jpg"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Transformer详解</title>
+    <url>/transformer/</url>
+    <content><![CDATA[<center>
+<i>英文原文链接：https://jalammar.github.io/illustrated-transformer/</i> <br> <i>译者：鸽鸽（自己学习使用，非商业用途）</i>
+</center>
+<hr />
+<p>上一篇文章中，我们了解了<a href="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">注意力</a>——现代深度学习模型中无处不用的方法，它有助于提高神经机器翻译应用性能。在这篇文章中，我们将介绍<strong>The Transformer</strong>——一个使用注意力来提升这些模型训练速度的模型，它在特定任务中的表现优于谷歌神经机器翻译模型，然而其最大的好处来自于并行化。事实上，谷歌云建议使用The Transformer作为参考模型来使用他们的<a href="https://cloud.google.com/tpu/">TPU云产品</a>。那么，让我们试着把这个模型拆开，看看它是如何运作的。</p>
+<p>The Transformer是在论文<a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a>中提出的，其TensorFlow实现作为<a href="https://github.com/tensorflow/tensor2tensor">Tensor2Tensor</a>包的一部分提供。哈佛大学的NLP小组创建了一个<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">指南</a>，用PyTorch实现对该论文进行注释。在这篇文章中，我们将尝试把一切充分简化，并逐一介绍这些概念，希望能让没有深入了解这一主题的人更容易理解。</p>
+<span id="more"></span>
+<h1 id="高层视角">高层视角</h1>
+<p>我们先把这个模型看成一个黑盒子，在机器翻译应用中，它将接受一种语言的句子，并输出另一种语言的翻译。打开盒子之后，我们看到一个<strong>编码组件</strong>（encoding component）、一个解码组件（decoding component）、以及它们之间的连接。编码组件是一摞<strong>编码器</strong>（encoders ），文中把六个编码器堆在一起——6这个数字并不神奇，人们绝对可以尝试其他的数字）；解码组件则是一摞相同数量的<strong>解码器</strong>（decoders）。</p>
+<p>所有编码器（encoders）具有相同结构（但并不共享权重），每一个都被分解成两个子层（sub-layers）：编码器的输入（inputs）首先流经一个<strong>自注意力层</strong>（self-attention layer）——该层帮助编码器在对特定单词进行编码时查看输入句子中的其他单词（本文后面将详细研究自注意力）；然后，自注意力层的输出（outputs ）被送入<strong>前馈神经网络</strong>（feed-forward neural network），完全相同的前馈网络被独立地应用于每个位置。</p>
+<p>所有解码器也有这两个层，但它们之间有一个<strong>注意力层</strong>（attention layer），帮助解码器专注于输入句子的相关部分（类似于<a href="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">seq2seq</a>模型中注意力的作用）。</p>
+<p><img src="https://i.loli.net/2021/07/14/Pg4KWoZxGwcY7ds.png"/></p>
+<h1 id="引入张量">引入张量</h1>
+<p>现在我们已经看到了模型的主要组成部分，让我们开始看看各种<strong>向量</strong>/<strong>张量</strong>（vectors/tensors），以及它们如何在这些组成部分之间流动，将训练过的模型的输入转化为输出。</p>
+<p>正如NLP应用中的一般情况一样，我们首先使用<strong>嵌入算法</strong>（<a href="https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca">embedding algorithm</a>）将每个输入词变成一个向量。每个词都被嵌入到一个大小为512的向量中。</p>
+<p>嵌入只发生在最底层的编码器中。所有编码器都有一个共同的抽象，那就是它们收到一个大小为512的向量的列表——在最底层的编码器中就是单词嵌入，但在其他编码器中，接收的是正下方编码器的输出。这个列表的大小是我们可以设置的超参数--基本上就是我们训练数据集中最长的句子的长度。</p>
+<p>在输入序列中嵌入单词后，每个单词都流经编码器的两层中的每一层。</p>
+<p><img src="https://i.loli.net/2021/07/14/M2rwFeYzuvLZgRy.png"/></p>
+<p>在这里，我们开始看到Transformer的一个关键属性，即每个位置的词在编码器中流经它自己的路径。在自注意力层的这些路径之间存在着依赖关系。然而，前馈层没有这些依赖关系，因此在流经前馈层时，各种路径可以<strong>并行</strong>地执行。</p>
+<p>接下来，我们将把这个例子换成一个较短的句子，看看在编码器的每个子层中会发生什么。</p>
+<h1 id="开始编码">开始编码</h1>
+<p>正如我们提到的，一个编码器接收一个向量列表作为输入。它通过将这些向量传入自注力意层，然后传入前馈神经网络（完全相同的网络）来处理这个列表，然后将输出向上发送到下一个编码器。</p>
+<p><img src="https://i.loli.net/2021/07/14/LVtNTB1AlhmFnzQ.png"/></p>
+<h2 id="self-attention初窥">Self-attention初窥</h2>
+<p>不要被 <strong>self-attention</strong> 这个词所迷惑，好像它是一个人人都应该熟悉的概念。我个人从来没有接触过这个概念，直到读了 Attention is All You Need 这篇文章。让我们来提炼一下它的作用。</p>
+<p>假设下面这个句子是我们要翻译的输入句：</p>
+<p>”<code>The animal didn't cross the street because it was too tired</code>”</p>
+<p>这句话中的 “it” 指的是什么？street 还是 animal ？对人来说，这是一个简单的问题，但对算法来说就不那么简单了。</p>
+<p>当模型处理 “it” 这个词时，自注意使它将 “it” 与 animal 联系起来。</p>
+<p>当模型处理每个词（输入序列中的每个位置）时，self-attention 使它能够查看输入序列中的其他位置，以寻找有助于更好地编码这个词的线索。</p>
+<p>如果你熟悉<strong>RNN</strong>，就会想到维持一个<strong>隐藏状态</strong>（hidden state）是如何让RNN把它以前处理过的词/向量的表征与它现在处理的词/向量结合起来的。Self-attention 是 Transformer 用来将其他相关词语的“理解”融入我们当前处理的词语的方法。</p>
+<p><img src="https://i.loli.net/2021/07/14/TEPi7XZChFIuMkv.png"/> 请务必查看<a href="https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb">Tensor2Tensor Notebook</a>，在那里你可以加载一个Transformer模型，并使用这个交互式可视化来检查它。</p>
+<h2 id="self-attention细节">Self-attention细节</h2>
+<p>让我们先看看如何使用向量来计算自注意力，然后继续看看它实际是如何使用矩阵实现的。</p>
+<h3 id="第一步">第一步</h3>
+<p>计算自注意力的第一步是，从编码器的每个输入向量（在这种情况下，每个词的嵌入）中创建三个向量。因此，对于每个词，我们创建一个<strong>查询向量</strong>（Query vector）、一个<strong>键向量</strong>（Key vector）和一个<strong>值向量</strong>（Value vector）。这些向量是通过将嵌入与我们将要训练的三个矩阵相乘而创建的。</p>
+<p>请注意，这些新向量的维度比嵌入向量小。它们的维数是64，而嵌入和编码器输入/输出向量的维数是512。它们不是非要小一点，这是一个架构上的选择，以使多头注意力的计算（大部分）恒定。</p>
+<p><img src="https://i.loli.net/2021/07/14/sJ26uACO9WIYHoP.png"/></p>
+<p>x1与WQ权重矩阵相乘产生q1，即与该词相关的 <strong>Query vector</strong> 。类似的，我们最终为输入句子中的每个词创建了一个 "query "、一个 "key" 和一个 "value" 的投影。</p>
+<p>什么是 <strong>query</strong> 、 <strong>key</strong> 和 <strong>value</strong> 向量？</p>
+<p>它们是抽象的，对计算和思考注意力很有用。一旦你继续阅读下面的注意力计算方法，你就会知道几乎所有你需要知道的这些向量中每一个所起的作用。</p>
+<h3 id="第二步">第二步</h3>
+<p>计算自注意力的第二步是计算一个分数。比如我们要计算本例中第一个词 "think" 的自注意力。我们需要对输入句子中的每个词与这个词进行评分，分数决定了当我们在某个位置对一个词进行编码时，要对输入句子的其他部分给予多大的关注。</p>
+<p>分数的计算方法是取查询向量（query vector）与我们要打分的各个单词的键向量（key vector）的<strong>点积</strong>（dot product）。因此，如果我们正在处理1号位置的单词的自注意力，第一个分数将是q1和k1的点积。第二个分数将是q1和k2的点积。</p>
+<p><img src="https://i.loli.net/2021/07/14/vP6BlLpwnWV8Qcy.png"/></p>
+<h3 id="剩余步骤">剩余步骤</h3>
+<ul>
+<li><p>第三和第四步是将该分数除以8（论文中使用的键向量尺寸是64的平方根），这导致拥有更稳定的梯度（gradients）。可以设定其他值，但这是默认值。然后将结果通过softmax操作，将分数归一化，使得它们都是正数且和为1。Softmax分数决定了每个词在这个位置被表达出来的程度。显然，这个位置上的词将有最高的softmax分数，但有时关注另一个与当前词相关的词也是有用的。</p></li>
+<li><p>第五步是将每个值向量乘以softmax得分（准备将它们加起来）。这里的直觉是保持我们想要关注的单词的完整价值，并淹没不相关的词（例如，通过将它们乘以0.001这样的微小数字）。</p></li>
+<li><p>第六步是将加权的值向量相加。这就产生了自注意力层在这个位置上的输出（对于第一个词）。</p></li>
+</ul>
+<p><img src="https://i.loli.net/2021/07/14/uwKaQPAS98MLkv1.png"/></p>
+<p>这就结束了自注意力的计算，得到的<strong>向量</strong>是可以发送给前馈神经网络的。然而在实际执行中，这个计算是以<strong>矩阵</strong>形式进行的，以加快处理速度。所以，现在我们来看看单词层面上的矩阵计算。</p>
+<h2 id="self-attention-的矩阵计算">self-attention 的矩阵计算</h2>
+<p>第一步是计算查询、键和值矩阵。我们将embeddings打包成一个矩阵X，并将其与我们训练的权重矩阵（WQ、WK、WV）相乘。</p>
+<p><img src="https://i.loli.net/2021/07/14/CUYO9ZEsryHmFd7.png"/></p>
+<p>X矩阵中的每一行都对应于输入句子中的一个词。我们再次看到嵌入向量（512，即图中的4个方框）和q/k/v向量（64，即图中的3个方框）的大小差异。</p>
+<p>最后，由于我们在处理矩阵，我们可以将第二至第六步浓缩在一个公式中，以计算自注意层的输出。</p>
+<p><img src="https://i.loli.net/2021/07/14/3MtVGoElqOB6NXF.png"/></p>
+<h1 id="多头的猛兽">多头的猛兽</h1>
+<p>该论文进一步完善了自注意力层，增加了一种叫做 <strong>multi-headed attention</strong> 的机制。这在两个方面提高了注意力层的性能：</p>
+<ul>
+<li><p>它扩大了模型对不同位置的关注能力。在上面的例子中，z1包含一点其他的编码，但它可能被真正的单词本身所支配。当我们翻译 “The animal didn’t cross the street because it was too tired” 这样的句子，就会想知道 it 指的是哪个词。</p></li>
+<li><p>它给了注意力层多个“<strong>表征子空间</strong>”（representation subspaces）。正如我们接下来要看到的，在多头注意力下，我们不是只有一个，而是有多组查询/键/值权重矩阵（Transformer 使用了八个attention head，所以我们最终为每个编码器/解码器提供了八组矩阵），每一组都是随机初始化的。在训练之后，每一组都被用来将输入embedding（或来自下级编码器/解码器的向量）投射到不同的表征子空间。</p></li>
+</ul>
+<p>如果我们做上面概述的那样的自注意力计算，只是用不同的权重矩阵做了八次不同的计算，我们最终会得到八个不同的Z矩阵。</p>
+<p><img src="https://i.loli.net/2021/07/14/A9nBYVEXt1jfpdQ.png"/></p>
+<p>这给我们留下了一点挑战。前馈层不希望有八个矩阵——它希望有一个单一的矩阵（每个词的一个向量）。因此，我们需要一种方法，将这八个矩阵浓缩为一个单一的矩阵。</p>
+<p>我们如何做到这一点呢？我们把这些矩阵连接起来，然后用一个额外的权重矩阵WO将它们相乘。</p>
+<p><img src="https://i.loli.net/2021/07/14/SgGK3uz4lq8NMvL.png"/></p>
+<p>这就是多头自注意力的几乎全部内容。看起来有相当多的矩阵，我试着把它们放在一张图片来看。</p>
+<p><img src="https://i.loli.net/2021/07/14/mdZFGayVzXB4Ewn.png"/></p>
+<p>现在我们已经接触到了注意力头，让我们重温一下之前的例子，看看在我们的例句中对 "it" 这个词进行编码时，不同的注意力头都集中在哪里（"animal"和"tired"）。</p>
+<p><img src="https://i.loli.net/2021/07/14/HIOlYz3wKTNtdJZ.png"/></p>
+<p>然而，如果我们把所有的注意力都展示出来上，解释起来会更难。</p>
+<p><img src="https://i.loli.net/2021/07/14/j1LdSFCuciZ6DqY.png"/></p>
+<h1 id="用位置编码表示序列的顺序">用位置编码表示序列的顺序</h1>
+<p>目前为止，我们所描述的模型中缺少的是说明输入序列中的单词顺序的方法（因为每个词无论位置在哪里都跟其他词计算了attention）。</p>
+<p>为了解决这个问题，Transformer 为每个输入嵌入添加一个向量。这些向量遵循模型学习的特定模式，这有助于它确定每个词的位置，或序列中不同词之间的距离。这里的直觉是，一旦嵌入向量被投射到Q/K/V向量中，在点乘 attention 时，将这些值添加到嵌入向量中，就能提供嵌入向量之间有意义的距离。</p>
+<p><img src="https://i.loli.net/2021/07/14/N2ksImilp6vKQE8.png"/></p>
+<p>为了让模型对单词的顺序有一个感觉，我们添加了位置编码向量——其值遵循一个特定的模式。</p>
+<p>如果我们假设嵌入的维度为4，那么实际的位置编码看起来像这样：（一个玩具嵌入尺寸为4的位置编码的实际例子）</p>
+<figure>
+<img src="https://jalammar.github.io/images/t/transformer_positional_encoding_example.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>这个模式可能是什么样子的呢？</p>
+<p>在下图中，每一行都对应一个向量的位置编码。所以第一行是我们添加到输入序列中第一个词的嵌入的向量。每一行包含512个值——每个值在1和-1之间。我们对它们进行了颜色编码，所以模式是可见的。</p>
+<p>一个位置编码的真实例子，20个词（行）的嵌入大小为512（列）。你可以看到，它在中心位置被分成了两半。这是因为左半部分的值是由一个函数（使用正弦）生成的，而右半部分是由另一个函数（使用余弦）生成的。然后将它们串联起来，形成每个位置编码向量。</p>
+<p><img src="https://i.loli.net/2021/07/14/XM1JChujV3weSrZ.png"/></p>
+<p>原论文中描述了位置编码的公式（3.5节）。你可以在<a href="https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py"><code>get_timing_signal_1d()</code></a>中看到生成位置编码的代码。这并不是唯一的位置编码的方法，然而它的优点是能够扩展成未见过的长度的序列（例如，如果我们的训练模型被要求翻译一个比我们训练集中的任何句子都长的句子）。</p>
+<p>2020年7月更新：上面显示的位置编码是来自Tranformer2Transformer的实现。论文中显示的方法略有不同，它不是直接串联，而是将两个信号交织在一起。下图显示了这是什么样子的。<a href="https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb">下面是生成它的代码</a>。</p>
+<h1 id="残差连接">残差连接</h1>
+<p>在继续之前，我们需要提到编码器架构中的一个细节，那就是每个编码器中的每个子层（自我注意，ffnn）都有一个围绕它的<strong>残差连接</strong> (residual connection)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>，并在其后有一个<a href="https://arxiv.org/abs/1607.06450">层规范化</a>的步骤。</p>
+<p><img src="https://i.loli.net/2021/07/14/AGNjYMK3dzasCZn.png"/></p>
+<p>如果我们要把向量和与自注意力相关的层规范化操作可视化，它看起来是这样的：</p>
+<p><img src="https://i.loli.net/2021/07/14/u1eOTkfJDQAxzva.png"/></p>
+<p>这对解码器的子层也是如此。如果我们要考虑一个由2个堆叠的编码器和解码器组成的Transformer，它看起来会是这样的：</p>
+<p><img src="https://jalammar.github.io/images/t/transformer_resideual_layer_norm_3.png" /></p>
+<h1 id="解码器">解码器</h1>
+<p>现在我们已经涵盖了编码器方面的大部分概念，我们基本上也知道了解码器的组件如何工作。但让我们来看看它们是如何一起工作的。</p>
+<p>编码器开始处理输入序列，然后顶部编码器的输出被转化为一组注意力向量K和V，这些将被每个解码器用于其编码器-解码器注意力层，帮助解码器关注输入序列中的适当位置：</p>
+<p><img src="https://jalammar.github.io/images/t/transformer_decoding_1.gif" /></p>
+<p>在完成编码阶段后，我们开始解码阶段。解码阶段的每一步都从输出序列（本例中为英语翻译句子）中输出一个元素。</p>
+<p>下面的步骤重复这个过程，直到达到一个特殊的符号，表明Transformer解码器已经完成了它的输出。每个步骤的输出都被送入下一个时间步骤中的底层解码器，解码器就像编码器那样冒出它们的解码结果。而且，就像我们对编码器输入所做的那样，我们在这些解码器输入中embed并添加位置编码，以表明每个词的位置。</p>
+<p>解码器中的self-attention layer的操作方式与编码器中的略有不同。</p>
+<p>在解码器中，self-attention layer只被允许关注输出序列中靠前的位置。这是通过在自注意力计算的softmax步骤之前屏蔽之后的位置（将它们设置为<code>-inf</code>）来实现的。</p>
+<p>“Encoder-Decoder Attention” layer的工作方式与multiheaded self-attention一样，只是它从下面的层创建其查询矩阵，并从编码器栈的输出中获取键和值矩阵。</p>
+<h1 id="最后的linear和softmax层">最后的Linear和Softmax层</h1>
+<p>解码器栈输出一个浮点数的向量，我们如何把它变成一个词？这就是最后的线性层的工作，它的后面是一个Softmax层。</p>
+<p>线性层是一个简单的全连接神经网络，它将解码器堆栈产生的向量投射到一个大得多的向量中，称为<strong>logits vector</strong>。</p>
+<p>让我们假设我们的模型知道10,000个不同的英语单词（我们模型的 "输出词汇"），这是它从训练数据集中学到的。这将使logits向量有10,000个单元格宽——每个单元格对应于一个独特的单词的得分。这就是我们如何解释线性层之后的模型输出。</p>
+<p>然后，softmax层将这些分数转化为概率（全部为正数，全部加起来为1.0），选择概率最高的单元，并产生与之相关的词作为这个时步的输出。</p>
+<p><img src="https://i.loli.net/2021/07/14/A6N9nMfmJLDxGV8.png"/></p>
+<p>该图从底部开始，产生的向量作为解码器栈的输出，并被转化为一个输出词。</p>
+<h1 id="训练的总结">训练的总结</h1>
+<p>现在，我们已经通过一个经过训练的Transformer涵盖了整个前向传递过程，有必要再看一下训练模型的直觉。</p>
+<p>在训练过程中，一个未经训练的模型会经历完全相同的前向传递。但由于我们是在一个有标签的训练数据集上训练它，我们可以将其输出与实际的正确输出进行比较。</p>
+<p>为了形象化这一点，我们假设我们的输出词汇只包含六个词（"a"、"am"、"i"、"thanks"、"student "和<code>"&lt;eos&gt;"</code>("句末 "的缩写)。</p>
+<p>我们模型的输出词汇是在开始训练之前的预处理阶段创建的。</p>
+<p>一旦我们定义了输出词汇，就可以用一个相同宽度的向量来表示我们词汇中的每个词，这也被称为独热编码 (one-hot encoding）。例如，我们可以用下面的向量来表示 "am "这个词：</p>
+<p><img src="https://jalammar.github.io/images/t/one-hot-vocabulary-example.png" /></p>
+<p>例子：对我们的输出词汇进行独热编码</p>
+<p>在总结之后，让我们讨论一下模型的损失函数——我们在训练阶段要优化的指标，以形成一个经过训练的、有望惊人般准确的模型。</p>
+<h1 id="损失函数">损失函数</h1>
+<p>假设我们正在训练模型。假设这是训练阶段的第一步，我们在一个简单的例子上训练它——把 "merci "翻译成 "thanks"。</p>
+<p>这意味着，我们希望输出是一个表示 "谢谢 "这个词的概率分布。但是，由于这个模型还没有被训练过，这不太现实。</p>
+<p>由于模型的参数（权重）都是随机初始化的，（未经训练的）模型为每个单元格/单词产生一个具有任意值的概率分布。我们可以将其与实际输出进行比较，然后用<strong>反向传播法</strong>调整模型的所有权重，使输出更接近于期望的输出。</p>
+<p>你如何比较两个概率分布？我们只需把它们相减。更多细节，请看<a href="https://colah.github.io/posts/2015-09-Visual-Information/">交叉熵</a>（cross-entropy）和<a href="https://www.countbayesie.com/blog/2017/5/9/kullback-leibler-divergence-explained">Kullback–Leibler divergence</a>。</p>
+<p>但请注意，这是一个过于简化的例子。更现实的是，我们将使用一个长于1个单词的句子。比如——输入"je suis étudiant"，预期输出 "我是一个学生"。这实际上意味着，我们希望模型能够连续地输出概率分布，其中每个概率分布由一个宽度为vocab_size的向量表示（在我们的玩具例子中为6，但更现实的是一个像30,000或50,000的数字）。</p>
+<p>第一个概率分布在与单词 "i "相关的单元格中的概率最高。</p>
+<p>第二个概率分布在与单词 "am "相关的单元格中的概率最高。</p>
+<p>以此类推，直到第五个输出分布表示"<句末>"（<code>&lt;end of sentence&gt;</code>）符号，它也有一个与之相关的10,000元素词汇的单元。</p>
+<p><img src="https://jalammar.github.io/images/t/output_target_probability_distributions.png" /></p>
+<p>我们将在训练实例中针对一个样本句子的目标概率分布来训练我们的模型。</p>
+<p>在一个足够大的数据集上训练模型足够长的时间后，我们希望产生的概率分布看起来像这样:</p>
+<p><img src="https://jalammar.github.io/images/t/output_trained_model_probability_distributions.png" /></p>
+<p>希望在训练后，模型能输出我们期望的正确翻译。当然，如果这个短语是训练数据集的一部分，那就没有真正的迹象（见：<a href="https://www.youtube.com/watch?v=TIgfjmp-4BA">交叉验证</a>）。请注意，每个位置都有一点概率，即使它不可能成为该时步的输出——这是softmax的一个非常有用的属性，有助于训练过程。</p>
+<p>现在，由于该模型一次产生一个输出，我们可以假设该模型是从该概率分布中选择概率最高的词，并丢弃其余的。这是一种方法（称为贪婪解码greedy decoding）。另一种方法是保留，比如说，前两个词（比如说，'I'和'a'），然后在下一步，运行模型两次：一次假设第一个输出位置是'I'，另一次假设第一个输出位置是'a'，考虑到1号和2号位置，哪个版本产生的误差小就保留。我们对2号和3号位置重复这样做......等等。这种方法被称为 "波束搜索" （beam search），在我们的例子中，beam_size是两个（意味着在任何时候，两个部分假设（未完成的翻译）都被保留在内存中），top_beams也是两个（意味着我们会返回两个翻译）。这两个都是超参数，你可以进行实验。</p>
+<h2 id="go-forth-and-transform">Go Forth And Transform</h2>
+<p>I hope you've found this a useful place to start to break the ice with the major concepts of the Transformer. If you want to go deeper, I'd suggest these next steps:</p>
+<ul>
+<li>Read the <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> paper, the Transformer blog post (<a href="https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html">Transformer: A Novel Neural Network Architecture for Language Understanding</a>), and the <a href="https://ai.googleblog.com/2017/06/accelerating-deep-learning-research.html">Tensor2Tensor announcement</a>.</li>
+<li>Watch <a href="https://www.youtube.com/watch?v=rBCqOTEfxvg">Łukasz Kaiser’s talk</a> walking through the model and its details</li>
+<li>Play with the <a href="https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb">Jupyter Notebook provided as part of the Tensor2Tensor repo</a></li>
+<li>Explore the <a href="https://github.com/tensorflow/tensor2tensor">Tensor2Tensor repo</a>.</li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><em>Residual</em> neural networks do this by utilizing skip <em>connections</em>, or shortcuts to jump over some layers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>自然语言处理</category>
+        <category>语言模型</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+        <tag>Transformer</tag>
+      </tags>
   </entry>
   <entry>
     <title>BERT和SentenceBERT</title>
