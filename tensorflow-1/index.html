@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="翻译自tensorflow官方教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 BERT 对文本进行分类">
+<meta property="og:url" content="http://nlpcourse.cn/tensorflow-1/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="翻译自tensorflow官方教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-15T06:14:18.125Z">
+<meta property="article:modified_time" content="2021-07-18T14:27:18.724Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/tensorflow-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用 BERT 对文本进行分类 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/tensorflow-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 BERT 对文本进行分类
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-15 14:14:18" itemprop="dateCreated datePublished" datetime="2021-07-15T14:14:18+08:00">2021-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-18 22:27:18" itemprop="dateModified" datetime="2021-07-18T22:27:18+08:00">2021-07-18</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+            <div class="post-description">翻译自tensorflow官方教程</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本教程包含微调 BERT 以对纯文本 IMDB 电影评论数据集执行情感分析的完整代码。除了训练模型之外，您还将学习如何将文本预处理为适当的格式。</p>
+<span id="more"></span>
+<p>在本笔记本中，您将：</p>
+<ul>
+<li>加载 IMDB 数据集</li>
+<li>从 TensorFlow Hub 加载 BERT 模型</li>
+<li>通过将 BERT 与分类器相结合来构建您自己的模型</li>
+<li>训练你自己的模型，微调 BERT 作为其中的一部分</li>
+<li>保存模型并使用它对句子进行分类</li>
+</ul>
+<p>如果您不熟悉 IMDB 数据集，请参阅<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/tutorials/keras/text_classification?hl=zh-cn">基本文本分类</a>以了解更多详细信息。</p>
+<h2 id="关于bert">关于BERT</h2>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1810.04805">BERT</a>和其他 Transformer 编码器架构在 NLP（自然语言处理）中的各种任务上取得了巨大成功。他们计算适用于深度学习模型的自然语言的向量空间表示。BERT 系列模型使用 Transformer 编码器架构在前后所有标记的完整上下文中处理输入文本的每个标记，因此得名：Bidirectional Encoder Representations from Transformers。</p>
+<p>BERT 模型通常在大型文本语料库上进行预训练，然后针对特定任务进行微调。</p>
+<h2 id="设置">设置</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A dependency of the preprocessing for BERT inputs</span></span><br><span class="line">pip install -q -U tensorflow-text</span><br></pre></td></tr></table></figure>
+<p>您将使用<a target="_blank" rel="noopener" href="https://github.com/tensorflow/models">tensorflow/models 中</a>的 AdamW 优化器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> tensorflow_hub <span class="keyword">as</span> hub</span><br><span class="line"><span class="keyword">import</span> tensorflow_text <span class="keyword">as</span> text</span><br><span class="line"><span class="keyword">from</span> official.nlp <span class="keyword">import</span> optimization  <span class="comment"># to create AdamW optimizer</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">tf.get_logger().setLevel(<span class="string">&#x27;ERROR&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="情感分析">情感分析</h2>
+<p>这个笔记本训练了一个情感分析模型，根据评论的文本将电影评论分为<em>正面</em>或<em>负面</em>。</p>
+<p>您将使用包含来自<a target="_blank" rel="noopener" href="https://www.imdb.com/">Internet 电影数据库</a>的 50,000 条电影评论的文本的<a target="_blank" rel="noopener" href="https://ai.stanford.edu/~amaas/data/sentiment/">大型电影评论数据集</a>。</p>
+<h3 id="下载-imdb-数据集">下载 IMDB 数据集</h3>
+<p>让我们下载并提取数据集，然后探索目录结构。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">&#x27;https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz&#x27;</span></span><br><span class="line"></span><br><span class="line">dataset = tf.keras.utils.get_file(<span class="string">&#x27;aclImdb_v1.tar.gz&#x27;</span>, url,</span><br><span class="line">                                  untar=<span class="literal">True</span>, cache_dir=<span class="string">&#x27;.&#x27;</span>,</span><br><span class="line">                                  cache_subdir=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">dataset_dir = os.path.join(os.path.dirname(dataset), <span class="string">&#x27;aclImdb&#x27;</span>)</span><br><span class="line"></span><br><span class="line">train_dir = os.path.join(dataset_dir, <span class="string">&#x27;train&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># remove unused folders to make it easier to load the data</span></span><br><span class="line">remove_dir = os.path.join(train_dir, <span class="string">&#x27;unsup&#x27;</span>)</span><br><span class="line">shutil.rmtree(remove_dir)</span><br><span class="line">Downloading data <span class="keyword">from</span> https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz</span><br><span class="line"><span class="number">84131840</span>/<span class="number">84125825</span> [==============================] - 7s 0us/step</span><br></pre></td></tr></table></figure>
+<p>接下来，您将使用该<code>text_dataset_from_directory</code>实用程序创建一个带标签的<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/api_docs/python/tf/data/Dataset?hl=zh-cn"><code>tf.data.Dataset</code></a>.</p>
+<p>IMDB 数据集已经分为训练和测试，但缺少验证集。让我们使用以下<code>validation_split</code>参数使用 80:20 的训练数据拆分创建验证集。</p>
+<p><strong>注意：</strong> 使用<code>validation_split</code>和<code>subset</code>参数时，请确保指定随机种子或通过<code>shuffle=False</code>，以便验证和训练分割没有重叠。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">AUTOTUNE = tf.data.AUTOTUNE</span><br><span class="line">batch_size = <span class="number">32</span></span><br><span class="line">seed = <span class="number">42</span> <span class="comment"># 随机种子</span></span><br><span class="line"></span><br><span class="line">raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory(</span><br><span class="line">    <span class="string">&#x27;aclImdb/train&#x27;</span>,</span><br><span class="line">    batch_size=batch_size,</span><br><span class="line">    validation_split=<span class="number">0.2</span>,</span><br><span class="line">    subset=<span class="string">&#x27;training&#x27;</span>,</span><br><span class="line">    seed=seed)</span><br><span class="line"></span><br><span class="line">class_names = raw_train_ds.class_names</span><br><span class="line">train_ds = raw_train_ds.cache().prefetch(buffer_size=AUTOTUNE)</span><br><span class="line"></span><br><span class="line">val_ds = tf.keras.preprocessing.text_dataset_from_directory(</span><br><span class="line">    <span class="string">&#x27;aclImdb/train&#x27;</span>,</span><br><span class="line">    batch_size=batch_size,</span><br><span class="line">    validation_split=<span class="number">0.2</span>,</span><br><span class="line">    subset=<span class="string">&#x27;validation&#x27;</span>,</span><br><span class="line">    seed=seed)</span><br><span class="line"></span><br><span class="line">val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)</span><br><span class="line"></span><br><span class="line">test_ds = tf.keras.preprocessing.text_dataset_from_directory(</span><br><span class="line">    <span class="string">&#x27;aclImdb/test&#x27;</span>,</span><br><span class="line">    batch_size=batch_size)</span><br><span class="line"></span><br><span class="line">test_ds = test_ds.cache().prefetch(buffer_size=AUTOTUNE)</span><br><span class="line">Found <span class="number">25000</span> files belonging to <span class="number">2</span> classes.</span><br><span class="line">Using <span class="number">20000</span> files <span class="keyword">for</span> training.</span><br><span class="line">Found <span class="number">25000</span> files belonging to <span class="number">2</span> classes.</span><br><span class="line">Using <span class="number">5000</span> files <span class="keyword">for</span> validation.</span><br><span class="line">Found <span class="number">25000</span> files belonging to <span class="number">2</span> classes.</span><br></pre></td></tr></table></figure>
+<p>让我们来看看一些评论。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> text_batch, label_batch <span class="keyword">in</span> train_ds.take(<span class="number">1</span>):</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    print(<span class="string">f&#x27;Review: <span class="subst">&#123;text_batch.numpy()[i]&#125;</span>&#x27;</span>)</span><br><span class="line">    label = label_batch.numpy()[i]</span><br><span class="line">    print(<span class="string">f&#x27;Label : <span class="subst">&#123;label&#125;</span> (<span class="subst">&#123;class_names[label]&#125;</span>)&#x27;</span>)</span><br><span class="line">Review: <span class="string">b&#x27;&quot;Pandemonium&quot; is a horror movie spoof that comes off more stupid than funny. Believe me when I tell you, I love comedies. Especially comedy spoofs. &quot;Airplane&quot;, &quot;The Naked Gun&quot; trilogy, &quot;Blazing Saddles&quot;, &quot;High Anxiety&quot;, and &quot;Spaceballs&quot; are some of my favorite comedies that spoof a particular genre. &quot;Pandemonium&quot; is not up there with those films. Most of the scenes in this movie had me sitting there in stunned silence because the movie wasn\&#x27;t all that funny. There are a few laughs in the film, but when you watch a comedy, you expect to laugh a lot more than a few times and that\&#x27;s all this film has going for it. Geez, &quot;Scream&quot; had more laughs than this film and that was more of a horror film. How bizarre is that?&lt;br /&gt;&lt;br /&gt;*1/2 (out of four)&#x27;</span></span><br><span class="line">Label : <span class="number">0</span> (neg)</span><br><span class="line">Review: <span class="string">b&quot;David Mamet is a very interesting and a very un-equal director. His first movie &#x27;House of Games&#x27; was the one I liked best, and it set a series of films with characters whose perspective of life changes as they get into complicated situations, and so does the perspective of the viewer.&lt;br /&gt;&lt;br /&gt;So is &#x27;Homicide&#x27; which from the title tries to set the mind of the viewer to the usual crime drama. The principal characters are two cops, one Jewish and one Irish who deal with a racially charged area. The murder of an old Jewish shop owner who proves to be an ancient veteran of the Israeli Independence war triggers the Jewish identity in the mind and heart of the Jewish detective.&lt;br /&gt;&lt;br /&gt;This is were the flaws of the film are the more obvious. The process of awakening is theatrical and hard to believe, the group of Jewish militants is operatic, and the way the detective eventually walks to the final violent confrontation is pathetic. The end of the film itself is Mamet-like smart, but disappoints from a human emotional perspective.&lt;br /&gt;&lt;br /&gt;Joe Mantegna and William Macy give strong performances, but the flaws of the story are too evident to be easily compensated.&quot;</span></span><br><span class="line">Label : <span class="number">0</span> (neg)</span><br><span class="line">Review: <span class="string">b&#x27;Great documentary about the lives of NY firefighters during the worst terrorist attack of all time.. That reason alone is why this should be a must see collectors item.. What shocked me was not only the attacks, but the&quot;High Fat Diet&quot; and physical appearance of some of these firefighters. I think a lot of Doctors would agree with me that,in the physical shape they were in, some of these firefighters would NOT of made it to the 79th floor carrying over 60 lbs of gear. Having said that i now have a greater respect for firefighters and i realize becoming a firefighter is a life altering job. The French have a history of making great documentary\&#x27;s and that is what this is, a Great Documentary.....&#x27;</span></span><br><span class="line">Label : <span class="number">1</span> (pos)</span><br></pre></td></tr></table></figure>
+<h2 id="从-tensorflow-hub-加载模型">从 TensorFlow Hub 加载模型</h2>
+<p>您可以在此处选择将从 TensorFlow Hub 加载的 BERT 模型并进行微调。有多种 BERT 模型可用。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/tensorflow/bert_en_uncased_L-12_H-768_A-12/3?hl=zh-cn">BERT-Base</a>、<a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/tensorflow/bert_en_uncased_L-12_H-768_A-12/3?hl=zh-cn">Uncased</a>和另外<a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/bert/1?hl=zh-cn">七个</a>具有训练权重的<a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/bert/1?hl=zh-cn">模型</a>，<a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/bert/1?hl=zh-cn">这些模型</a>由 BERT 的原始作者发布。</li>
+<li><a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/bert/1?hl=zh-cn">小型 BERT</a>具有相同的通用架构，但具有更少和/或更小的 Transformer 块，这让您可以探索速度、大小和质量之间的权衡。</li>
+<li><a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/albert/1?hl=zh-cn">ALBERT</a>：四种不同大小的“A Lite BERT”，通过在层之间共享参数来减少模型大小（但不是计算时间）。</li>
+<li><a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/experts/bert/1?hl=zh-cn">BERT 专家</a>：八个模型都具有 BERT 基础架构，但提供不同预训练域之间的选择，以更紧密地与目标任务保持一致。</li>
+<li><a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/electra/1?hl=zh-cn">Electra</a>具有与 BERT 相同的架构（具有三种不同的大小），但在类似于生成对抗网络 (GAN) 的设置中作为鉴别器进行了预训练。</li>
+<li>带有 Talking-Heads Attention 和 Gated GELU [ <a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/tensorflow/talkheads_ggelu_bert_en_base/1?hl=zh-cn">base</a> , <a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/tensorflow/talkheads_ggelu_bert_en_large/1?hl=zh-cn">large</a> ] 的BERT对 Transformer 架构的核心有两个改进。</li>
+</ul>
+<p>TensorFlow Hub 上的模型文档有更多详细信息和对研究文献的参考。按照上面的链接，或单击<a target="_blank" rel="noopener" href="http://hub.tensorflow.google.cn/?hl=zh-cn"><code>hub.tensorflow.google.cn</code></a>下一个单元格执行后打印的URL。</p>
+<p>建议从小型 BERT（参数较少）开始，因为它们可以更快地进行微调。如果您喜欢小模型但精度更高，ALBERT 可能是您的下一个选择。如果您想要更高的准确性，请选择经典的 BERT 大小之一或其最近的改进，例如 Electra、Talking Heads 或 BERT Expert。</p>
+<p>除了下面可用的模型之外，还有<a target="_blank" rel="noopener" href="https://hub.tensorflow.google.cn/google/collections/transformer_encoders_text/1?hl=zh-cn">多个版本</a>的模型更大，可以产生更高的精度，但它们太大而无法在单个 GPU 上进行微调。您将能够<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/text/tutorials/bert_glue?hl=zh-cn">在 TPU colab 上使用 BERT 在 Solve GLUE 任务</a>上做到这<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/text/tutorials/bert_glue?hl=zh-cn">一点</a>。</p>
+<p>您将在下面的代码中看到，切换 hub.tensorflow.google.cn URL 足以尝试这些模型中的任何一个，因为它们之间的所有差异都封装在来自 TF Hub 的 SavedModels 中。</p>
+<h3 id="选择一个-bert-模型进行微调">选择一个 BERT 模型进行微调</h3>
+<p>切换代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BERT model selected           : https:&#x2F;&#x2F;hub.tensorflow.google.cn&#x2F;tensorflow&#x2F;small_bert&#x2F;bert_en_uncased_L-4_H-512_A-8&#x2F;1</span><br><span class="line">Preprocess model auto-selected: https:&#x2F;&#x2F;hub.tensorflow.google.cn&#x2F;tensorflow&#x2F;bert_en_uncased_preprocess&#x2F;3</span><br></pre></td></tr></table></figure>
+<h2 id="预处理模型">预处理模型</h2>
+<p>在输入到 BERT 之前，文本输入需要转换为数字标记 id 并排列在几个 Tensor 中。TensorFlow Hub 为上面讨论的每个 BERT 模型提供了一个匹配的预处理模型，它使用来自 TF.text 库的 TF ops 来实现这种转换。无需在 TensorFlow 模型之外运行纯 Python 代码来预处理文本。</p>
+<p>预处理模型必须是 BERT 模型文档中引用的模型，您可以在上面打印的 URL 中阅读该文档。对于上面下拉列表中的 BERT 模型，会自动选择预处理模型。</p>
+<p><strong>注意：</strong>您将预处理模型加载到<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/hub/api_docs/python/hub/KerasLayer?hl=zh-cn">hub.KerasLayer</a>以组成您的微调模型。这是将 TF2 样式的 SavedModel 从 TF Hub 加载到 Keras 模型的首选 API。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bert_preprocess_model = hub.KerasLayer(tfhub_handle_preprocess)</span><br></pre></td></tr></table></figure>
+<p>让我们在一些文本上尝试预处理模型并查看输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">text_test = [<span class="string">&#x27;this is such an amazing movie!&#x27;</span>]</span><br><span class="line">text_preprocessed = bert_preprocess_model(text_test)</span><br><span class="line"></span><br><span class="line">print(<span class="string">f&#x27;Keys       : <span class="subst">&#123;<span class="built_in">list</span>(text_preprocessed.keys())&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Shape      : <span class="subst">&#123;text_preprocessed[<span class="string">&quot;input_word_ids&quot;</span>].shape&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Word Ids   : <span class="subst">&#123;text_preprocessed[<span class="string">&quot;input_word_ids&quot;</span>][<span class="number">0</span>, :<span class="number">12</span>]&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Input Mask : <span class="subst">&#123;text_preprocessed[<span class="string">&quot;input_mask&quot;</span>][<span class="number">0</span>, :<span class="number">12</span>]&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Type Ids   : <span class="subst">&#123;text_preprocessed[<span class="string">&quot;input_type_ids&quot;</span>][<span class="number">0</span>, :<span class="number">12</span>]&#125;</span>&#x27;</span>)</span><br><span class="line">Keys       : [<span class="string">&#x27;input_type_ids&#x27;</span>, <span class="string">&#x27;input_mask&#x27;</span>, <span class="string">&#x27;input_word_ids&#x27;</span>]</span><br><span class="line">Shape      : (<span class="number">1</span>, <span class="number">128</span>)</span><br><span class="line">Word Ids   : [ <span class="number">101</span> <span class="number">2023</span> <span class="number">2003</span> <span class="number">2107</span> <span class="number">2019</span> <span class="number">6429</span> <span class="number">3185</span>  <span class="number">999</span>  <span class="number">102</span>    <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span>]</span><br><span class="line">Input Mask : [<span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>]</span><br><span class="line">Type Ids   : [<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>如您所见，现在您拥有 BERT 模型将使用的预处理的 3 个输出（<code>input_words_id</code>、<code>input_mask</code>和<code>input_type_ids</code>）。</p>
+<p>其他一些要点：</p>
+<ul>
+<li>输入被截断为 128 个标记。令牌的数量可以自定义，您可以<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/text/tutorials/bert_glue?hl=zh-cn">在 TPU colab 上</a>查看有关<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/text/tutorials/bert_glue?hl=zh-cn">使用 BERT 解决 GLUE 任务的</a>更多详细信息。</li>
+<li>在<code>input_type_ids</code>仅具有一个值（0），因为这是一个简单的句子的输入。对于多句输入，每个输入都有一个数字。</li>
+</ul>
+<p>由于这个文本预处理器是一个 TensorFlow 模型，它可以直接包含在你的模型中。</p>
+<h2 id="使用-bert-模型">使用 BERT 模型</h2>
+<p>在将 BERT 放入您自己的模型之前，让我们先看看它的输出。您将从 TF Hub 加载它并查看返回值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">bert_model = hub.KerasLayer(tfhub_handle_encoder)</span><br><span class="line">bert_results = bert_model(text_preprocessed)</span><br><span class="line"></span><br><span class="line">print(<span class="string">f&#x27;Loaded BERT: <span class="subst">&#123;tfhub_handle_encoder&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Pooled Outputs Shape:<span class="subst">&#123;bert_results[<span class="string">&quot;pooled_output&quot;</span>].shape&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Pooled Outputs Values:<span class="subst">&#123;bert_results[<span class="string">&quot;pooled_output&quot;</span>][<span class="number">0</span>, :<span class="number">12</span>]&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Sequence Outputs Shape:<span class="subst">&#123;bert_results[<span class="string">&quot;sequence_output&quot;</span>].shape&#125;</span>&#x27;</span>)</span><br><span class="line">print(<span class="string">f&#x27;Sequence Outputs Values:<span class="subst">&#123;bert_results[<span class="string">&quot;sequence_output&quot;</span>][<span class="number">0</span>, :<span class="number">12</span>]&#125;</span>&#x27;</span>)</span><br><span class="line">Loaded BERT: https://hub.tensorflow.google.cn/tensorflow/small_bert/bert_en_uncased_L-4_H-512_A-<span class="number">8</span>/<span class="number">1</span></span><br><span class="line">Pooled Outputs Shape:(<span class="number">1</span>, <span class="number">512</span>)</span><br><span class="line">Pooled Outputs Values:[ <span class="number">0.76262873</span>  <span class="number">0.99280983</span> -<span class="number">0.1861186</span>   <span class="number">0.36673835</span>  <span class="number">0.15233682</span>  <span class="number">0.65504444</span></span><br><span class="line">  <span class="number">0.9681154</span>  -<span class="number">0.9486272</span>   <span class="number">0.00216158</span> -<span class="number">0.9877732</span>   <span class="number">0.0684272</span>  -<span class="number">0.9763061</span> ]</span><br><span class="line">Sequence Outputs Shape:(<span class="number">1</span>, <span class="number">128</span>, <span class="number">512</span>)</span><br><span class="line">Sequence Outputs Values:[[-<span class="number">0.28946388</span>  <span class="number">0.3432126</span>   <span class="number">0.33231565</span> ...  <span class="number">0.21300787</span>  <span class="number">0.7102078</span></span><br><span class="line">  -<span class="number">0.05771166</span>]</span><br><span class="line"> [-<span class="number">0.28742015</span>  <span class="number">0.31981024</span> -<span class="number">0.2301858</span>  ...  <span class="number">0.58455074</span> -<span class="number">0.21329722</span></span><br><span class="line">   <span class="number">0.7269209</span> ]</span><br><span class="line"> [-<span class="number">0.66157013</span>  <span class="number">0.6887685</span>  -<span class="number">0.87432927</span> ...  <span class="number">0.10877253</span> -<span class="number">0.26173282</span></span><br><span class="line">   <span class="number">0.47855264</span>]</span><br><span class="line"> ...</span><br><span class="line"> [-<span class="number">0.2256118</span>  -<span class="number">0.28925604</span> -<span class="number">0.07064401</span> ...  <span class="number">0.4756601</span>   <span class="number">0.8327715</span></span><br><span class="line">   <span class="number">0.40025353</span>]</span><br><span class="line"> [-<span class="number">0.29824278</span> -<span class="number">0.27473143</span> -<span class="number">0.05450511</span> ...  <span class="number">0.48849759</span>  <span class="number">1.0955356</span></span><br><span class="line">   <span class="number">0.18163344</span>]</span><br><span class="line"> [-<span class="number">0.44378197</span>  <span class="number">0.00930723</span>  <span class="number">0.07223766</span> ...  <span class="number">0.1729009</span>   <span class="number">1.1833246</span></span><br><span class="line">   <span class="number">0.07897988</span>]]</span><br></pre></td></tr></table></figure>
+<p>BERT 模型返回一个带有 3 个重要键的映射：<code>pooled_output</code>、<code>sequence_output</code>、<code>encoder_outputs</code>：</p>
+<ul>
+<li><code>pooled_output</code>将每个输入序列表示为一个整体。形状是<code>[batch_size, H]</code>。您可以将其视为整个电影评论的嵌入。</li>
+<li><code>sequence_output</code>表示上下文中的每个输入标记。形状是<code>[batch_size, seq_length, H]</code>。您可以将其视为电影评论中每个标记的上下文嵌入。</li>
+<li><code>encoder_outputs</code>是<code>L</code>Transformer 模块的中间激活。<code>outputs["encoder_outputs"][i]</code>是具有<code>[batch_size, seq_length, 1024]</code>第 i 个 Transformer 模块输出的形状张量，对于<code>0 &lt;= i &lt; L</code>。列表的最后一个值等于<code>sequence_output</code>。</li>
+</ul>
+<p>对于微调，您将使用<code>pooled_output</code>数组。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/tensorflow-1/" title="使用 BERT 对文本进行分类">http://nlpcourse.cn/tensorflow-1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/transformer/" rel="prev" title="Transformer详解">
+      <i class="fa fa-chevron-left"></i> Transformer详解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/tensorflow-0/" rel="next" title="tensorflow基础知识">
+      tensorflow基础知识 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ebert"><span class="nav-number">1.</span> <span class="nav-text">关于BERT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">情感分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-imdb-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">3.1.</span> <span class="nav-text">下载 IMDB 数据集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-tensorflow-hub-%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">从 TensorFlow Hub 加载模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA-bert-%E6%A8%A1%E5%9E%8B%E8%BF%9B%E8%A1%8C%E5%BE%AE%E8%B0%83"><span class="nav-number">4.1.</span> <span class="nav-text">选择一个 BERT 模型进行微调</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">预处理模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-bert-%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.</span> <span class="nav-text">使用 BERT 模型</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">366k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">5:33</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

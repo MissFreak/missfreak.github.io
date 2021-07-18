@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="用于从文本中提取关系的半监督性引导技术，在限制语义漂移的同时，反复扩展一组初始种子关系。我们研究了使用词嵌入来寻找类似关系的关系提取的引导技术。实验结果表明，与使用TFIDF寻找相似关系的基线相比，依靠词嵌入在从新闻网文档集合中提取四种关系的任务上取得了更好的性能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="具有分布式语义的关系提取器的半监督性引导">
+<meta property="og:url" content="http://nlpcourse.cn/paper-2/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="用于从文本中提取关系的半监督性引导技术，在限制语义漂移的同时，反复扩展一组初始种子关系。我们研究了使用词嵌入来寻找类似关系的关系提取的引导技术。实验结果表明，与使用TFIDF寻找相似关系的基线相比，依靠词嵌入在从新闻网文档集合中提取四种关系的任务上取得了更好的性能。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/07/18/hGfrd9seWMLuaAQ.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/18/p39NkE5SMrHYgCb.png">
+<meta property="article:published_time" content="2021-07-18T13:02:41.346Z">
+<meta property="article:modified_time" content="2021-07-18T13:58:15.276Z">
+<meta property="article:author" content="鸽鸽">
+<meta property="article:tag" content="期刊翻译">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/18/hGfrd9seWMLuaAQ.png">
+
+<link rel="canonical" href="http://nlpcourse.cn/paper-2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>具有分布式语义的关系提取器的半监督性引导 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/paper-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          具有分布式语义的关系提取器的半监督性引导
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-18 21:02:41 / 修改时间：21:58:15" itemprop="dateCreated datePublished" datetime="2021-07-18T21:02:41+08:00">2021-07-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" itemprop="url" rel="index"><span itemprop="name">信息抽取</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>用于从文本中提取关系的半监督性引导技术，在限制语义漂移的同时，反复扩展一组初始种子关系。我们研究了使用词嵌入来寻找类似关系的关系提取的引导技术。实验结果表明，与使用TFIDF寻找相似关系的基线相比，依靠词嵌入在从新闻网文档集合中提取四种关系的任务上取得了更好的性能。</p>
+<span id="more"></span>
+<h1 id="用词嵌入引导关系提取器">3 用词嵌入引导关系提取器</h1>
+<p>BREDS遵循Snowball的架构，具有相同的处理阶段：寻找种子匹配，生成提取模式，寻找关系实例，以及检测语义漂移。然而，它的不同之处在于，它试图使用词嵌入来寻找类似的关系，而不是依赖TF-IDF表示。</p>
+<h2 id="寻找种子匹配">3.1 寻找种子匹配</h2>
+<p>BREDS扫描文档集，如果一个种子实例的两个实体在一个句子中的文本片段中共同出现，那么该片段就会被考虑，BREDS会像Snowball一样提取三个文本语境。BEF, BET, 和AFT。在BET语境中，BREDS试图根据最初在ReVerb（Fader等人，2011）中提出的浅层启发式方法来识别一个关系模式。<strong>该模式将关系语境限制在一个动词（如invented），一个动词后跟一个介词（如located in），或一个动词后跟名词、形容词或以介词结尾的副词（如has atomic weight of）</strong>。尽管如此，这些模式将只考虑动词介导的关系 (verb mediated relationships) 。<strong>如果两个实体之间不存在动词，BREDS会提取两个实体之间的所有词，以建立BET语境的表示。</strong></p>
+<p>每个上下文都被一个简单的合成函数转化为一个单一的向量，该函数首先去除停止词和形容词，然后对每个单独的词的词嵌入向量进行求和。<strong>通过对每个单独的词的嵌入相加来表示小短语</strong>，可以很好地表示小短语中的语义（Mikolov等人，2013b）。</p>
+<p>一个关系实例<span class="math inline">\(i\)</span>由三个嵌入向量表示：<span class="math inline">\(V_{BEF}\)</span> , $V_{BET} $, 和 <span class="math inline">\(V_{AFT}\)</span> 。考虑到这个句子：</p>
+<p>The tech company Soundcloud is based in Berlin, capital of Germany.</p>
+<p>BREDS生成的关系实例有：</p>
+<p><span class="math display">\[V_{BEF}  = E(&quot;tech&quot;) + E(&quot;company&quot;) \]</span></p>
+<p><span class="math display">\[V_{BET}  = E(&quot;is&quot;) + E(&quot;based&quot;) \]</span></p>
+<p><span class="math display">\[V_{AFT}  = E(&quot;capital&quot;) \]</span></p>
+<p>其中，<span class="math inline">\(E(x)\)</span>是词<span class="math inline">\(x\)</span>的词嵌入。</p>
+<p>BREDS还尝试使用词性标记（PoS）来识别被动语态，这可以帮助检测关系三元组中实体的正确顺序。BREDS通过考虑任何形式的动词be，后面跟一个过去式或过去分词的动词，并以单词by结尾，来识别被动语态的存在。</p>
+<p>例如，种子<span class="math inline">\(&lt;Google, owns, DoubleClick&gt;\)</span>指出，Google拥有DoubleClick这个组织。使用这个种子，如果BREDS检测到类似 "agreed to be acquired by " 这样的模式，它将在产生一个关系三元组时调换实体的顺序，输出三元组<span class="math inline">\(&lt;ORG2, owns, ORG1&gt;\)</span>，而不是三元组<span class="math inline">\(&lt;ORG1, owns, ORG2&gt;\)</span>。</p>
+<h2 id="提取模式的生成">3.2 提取模式的生成</h2>
+<p>与Snowball一样，BREDS通过对上一步收集到的关系实例应用单程聚类算法来生成提取模式。每个产生的聚类包含一组关系实例，由它们的三个上下文向量表示。</p>
+<p>算法1描述了BREDS采取的聚类方法，它将关系实例的列表作为输入，并将第一个实例分配到一个新的空簇中。接下来，它在实例列表中进行迭代，计算实例<span class="math inline">\(i_n\)</span>和每个簇<span class="math inline">\(Cl_j\)</span>之间的相似度。该实例被分配到第一个相似度高于或等于阈值<span class="math inline">\(τ_{sim}\)</span>的聚类。如果所有聚类的相似度都低于阈值<span class="math inline">\(τ_{sim}\)</span> ，那么就会创建一个新的聚类C<span class="math inline">\(_m\)</span>，其中包含实例$i_n $。</p>
+<p>算法1： <img src="https://i.loli.net/2021/07/18/hGfrd9seWMLuaAQ.png" width="400"/></p>
+<p>在实例$i_n <span class="math inline">\(和聚类\)</span>Cl_j <span class="math inline">\(之间的相似性函数\)</span>Sim(i_n, Cl_j )<span class="math inline">\(，如果大多数相似性分数高于阈值\)</span>τ_{sim}$ ，则返回实例$i_n <span class="math inline">\(和聚类\)</span>Cl_j $ 中的任何实例之间的最大相似性。否则就会返回一个0的值。两个实例之间的相似性是根据公式（1）计算的。因此，算法1中的聚类与原来的Snowball方法不同，它是朝着聚类中心点计算相似度的。</p>
+<h2 id="查找关系实例">3.3 查找关系实例</h2>
+<p>在提取模式生成之后，BREDS用算法2找到关系实例。它再次扫描文档，收集所有包含实体对的文本片段，这些实体对的语义类型与种子实例中的相同。对于每个片段，按照第3.1节所述，生成一个实例i，并计算与所有先前生成的提取模式（即集群）的相似度。如果i和一个模式<span class="math inline">\(Cl_j\)</span>之间的相似度等于或高于<span class="math inline">\(τ_{sim}\)</span> ，那么<span class="math inline">\(i\)</span>就被认为是一个候选实例，并且根据公式（2）更新该模式的置信度分数。具有最高相似度的模式（patternbest）和相应的相似度分数（simbest）一起与i相关联。这些信息被保存在候选者的历史中。请注意，"候选人 "和 "关注点 "的历史在所有的自举迭代中都被保留下来，新的模式或实例可以被添加，或者现有模式或实例的分数可以改变。</p>
+<p>算法2：<img src="https://i.loli.net/2021/07/18/p39NkE5SMrHYgCb.png" width="400"/></p>
+<h2 id="语义漂移检测">3.4 语义漂移检测</h2>
+<p>与Snowball一样，BREDS在每次迭代结束时，根据用公式（3）计算的分数对候选实例进行排名。得分等于或高于阈值<span class="math inline">\(τ_t\)</span>的实例被添加到种子集，用于引导算法的下一次迭代。</p>
+<h1 id="引言">1 引言</h1>
+<p>关系提取（RE）将非结构化文本转化为关系三要素，每个三要素代表两个命名实体之间的关系。A 的引导系统从一系列的文档和一些种子实例开始。该 系统扫描文件集，收集 种子实例的发生语境。然后。基于这些语境，系统生成提取模式。文件被扫描 再次使用这些模式来匹配新的关系实例。这些新提取的实例 然后被添加到种子集中，这个过程被重复进行 重复这个过程，直到达到一定的停止标准。因此，引导的目的是用新的关系实例扩展 的目标是用新的关系实例扩大种子集，同时 限制语义漂移，即提取的关系的语义逐渐偏离种子关系的语义。最先进的方法依赖于具有TF-IDF权重的词向量表示（Salton and Buckley, 1988）。) 然而，依靠TF-IDF权重扩大种子 依靠TF-IDF表示法来扩大种子集，以找到 类似的实例有局限性，因为任何两个关系实例向量之间的相似性 只有当实例至少共享一个术语时，TF-IDF权重的任何两个关系实例向量之间的相似性才是正的。例如， 短语是由和是联合创始人的 没有任何共同的词，但它们有 相同的语义。词根技术可以帮助解决 这些情况，但只适用于同一词根的变体（Porter, 1980）。(Porter, 1980)。我们建议用一种基于词嵌入的方法来应对这一挑战 我们建议用一种基于词嵌入的方法来解决这一难题（Mikolov et al., 2013a）。) 依靠词的嵌入，两个短语的相似性可以被发现。两个短语的相似性可以被捕捉到，即使不存在共同的词。即使没有共同的词汇存在。联合创始人和创立者的词嵌入应该是相似的，因为这些词往往出现在相同的 语境中出现。然而，词嵌入也可能 引入语义漂移。当使用词嵌入时，像在大学学习历史这样的短语可以 的短语有很高的相似性，例如 历史教授在。在我们的方法中，我们通过对 在我们的方法中，我们通过对提取的关系实例进行排序，以及对生成的提取模式进行评分来控制语义漂移。提取模式。我们在BREDS中实现了这些想法，这是一个基于词嵌入的RE的引导系统。我们对BREDS进行了评估，该系统收集了120万条来自新闻的句子。对BREDS进行了评估，该系统收集了120万篇新闻文章的句子。实验结果表明，我们的方法优于基于Agichtein和Jonathan的观点的基线引导系统。的想法，该系统依赖于TF-IDF表示。实验结果表明，我们的方法优于基于Agichtein和Gravano(2000)思想的基准引导系统，该系统依赖于TF-IDF表示。</p>
+<h1 id="引导关系提取器">2 引导关系提取器</h1>
+<p>Brin(1999)开发了DIPRE，这是第一个将引导法用于RE的系统。的第一个系统，该系统将种子的发生率表示为 该系统将种子的出现表现为三个上下文的字符串。在第一个实体之前的词(BEF)，两个实体之间的词（BET），以及第二个实体之后的词（AFT）。实体(AFT)。DIPRE生成提取模式 通过在字符串匹配的基础上对上下文进行分组。并通过限制一个模式可以提取的实例数量来控制语义漂移。语义漂移，并通过限制一个模式可以提取的实例数量来控制语义漂移。Agichtein和Gravano（2000）开发了 Snowball，其灵感来自于DIPRE的方法 该方法的灵感来自于DIPRE的方法，即为每个出现的情况收集三个语境。但对每个上下文计算一个TF-IDF表示。语境。种子语境的聚类是通过一个基于 单程算法，基于三个向量表示的上下文之间的余弦相似度。</p>
+<p><span class="math display">\[ \begin{aligned} \operatorname{Sim}\left(S_{n}, S_{j}\right)=&amp; \alpha \cdot \cos \left(B E F_{i}, B E F_{j}\right) +\beta \cdot \cos \left(B E T_{i}, B E T_{j}\right) +\gamma \cdot \cos \left(A F T_{i}, A F T_{j}\right) \end{aligned} \]</span></p>
+<p>在该公式中，参数α、β和γ对每个向量进行加权。一个提取模式由形成一个聚类的向量的中心点来表示。这些模式被用来再次扫描文本，对于任何一对与种子具有相同语义类型的实体共同出现的每个文本片段，都会产生三个向量。如果上下文向量与提取模式的相似度大于阈值τsim，则该实例被提取。Snowball对模式进行评分，并对提取的实例进行排名，以控制语义漂移。一个模式的评分是基于它所提取的实例，这些实例可以包括在三个集合中。如果一个提取的实例包含一个实体e1，而这个实体是种子的一部分，并且如果实例中的相关实体e2与种子中的实体相同，那么这个提取被认为是积极的（包括在集合P中）。如果该关系与种子集中的关系相矛盾（即e2不匹配），那么该提取被认为是负面的（包含在一个集合N中）。如果这个关系不是种子集的一部分，那么这个提取就被认为是未知的（包括在一个U集里）。根据以下情况给每个模式p分配一个分数。 <span class="math display">\[
+\operatorname{Conf}_{\rho}(p)=\frac{|P|}{|P|+W_{n g t} \cdot|N|+W_{u n k} \cdot|U|}
+\]</span> Wngt和Wunk分别是与消极提取和未知提取相关的权重。一个实例的置信度是根据对提取它的模式的相似度得分计算的，并以模式的置信度为权重。$Confι(i) = 1 - Y |ξ| j=0 (1 - Confρ(ξj ) × Sim(Ci , ξj )) $(3) 其中，ξ是提取了i的模式集，Ci是i发生的文本语境。信度高于阈值τt的实例被用作下一次迭代的种子。</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">猜你喜欢</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-3\" rel="bookmark">用分布式语义bootstrap关系</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\pyperclip\" rel="bookmark">利用python监听剪贴板内容并修改-工具开发</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-1\" rel="bookmark">数值开放信息抽取的自助法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-0\" rel="bookmark">SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/paper-2/" title="具有分布式语义的关系提取器的半监督性引导">http://nlpcourse.cn/paper-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%9F%E5%88%8A%E7%BF%BB%E8%AF%91/" rel="tag"><i class="fa fa-tag"></i> 期刊翻译</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/pyperclip/" rel="prev" title="利用python监听剪贴板内容并修改-工具开发">
+      <i class="fa fa-chevron-left"></i> 利用python监听剪贴板内容并修改-工具开发
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/paper-3/" rel="next" title="用分布式语义bootstrap关系">
+      用分布式语义bootstrap关系 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E8%AF%8D%E5%B5%8C%E5%85%A5%E5%BC%95%E5%AF%BC%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">3 用词嵌入引导关系提取器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%A7%8D%E5%AD%90%E5%8C%B9%E9%85%8D"><span class="nav-number">1.1.</span> <span class="nav-text">3.1 寻找种子匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">3.2 提取模式的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%85%B3%E7%B3%BB%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.3.</span> <span class="nav-text">3.3 查找关系实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E6%BC%82%E7%A7%BB%E6%A3%80%E6%B5%8B"><span class="nav-number">1.4.</span> <span class="nav-text">3.4 语义漂移检测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">1 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E5%85%B3%E7%B3%BB%E6%8F%90%E5%8F%96%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">2 引导关系提取器</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">366k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">5:33</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

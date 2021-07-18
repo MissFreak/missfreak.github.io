@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="我们描述了SemEval任务，即从科学文献中提取关键词和它们之间的关系，这对了解哪些出版物描述了哪些过程、任务和材料至关重要。尽管这是一项新的任务，但我们在3个评估方案中共收到26份提交的材料。我们希望这项任务和本文所报告的研究结果对从事理解科学内容的研究人员，以及更广泛的知识库群体和信息提取社区都有意义。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系">
+<meta property="og:url" content="http://nlpcourse.cn/semeval/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="我们描述了SemEval任务，即从科学文献中提取关键词和它们之间的关系，这对了解哪些出版物描述了哪些过程、任务和材料至关重要。尽管这是一项新的任务，但我们在3个评估方案中共收到26份提交的材料。我们希望这项任务和本文所报告的研究结果对从事理解科学内容的研究人员，以及更广泛的知识库群体和信息提取社区都有意义。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/07/17/mTzI62CiqE1ca9H.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/16/A4qHBYorOTtwDVz.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/16/GRyNZjHQ2p9vKku.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/16/ny6tr5ajlPvK9u4.png">
+<meta property="article:published_time" content="2021-07-16T11:28:09.798Z">
+<meta property="article:modified_time" content="2021-07-16T16:11:10.674Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/17/mTzI62CiqE1ca9H.png">
+
+<link rel="canonical" href="http://nlpcourse.cn/semeval/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/semeval/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-16 19:28:09" itemprop="dateCreated datePublished" datetime="2021-07-16T19:28:09+08:00">2021-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-17 00:11:10" itemprop="dateModified" datetime="2021-07-17T00:11:10+08:00">2021-07-17</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我们描述了SemEval任务，即从科学文献中提取关键词和它们之间的关系，这对了解哪些出版物描述了哪些过程、任务和材料至关重要。尽管这是一项新的任务，但我们在3个评估方案中共收到26份提交的材料。我们希望这项任务和本文所报告的研究结果对从事理解科学内容的研究人员，以及更广泛的知识库群体和信息提取社区都有意义。</p>
+<span id="more"></span>
+<p><img src="https://i.loli.net/2021/07/17/mTzI62CiqE1ca9H.png"/></p>
+<p>原文：https://aclanthology.org/S17-2091.pdf</p>
+<h1 id="引言">1 引言</h1>
+<p>经验性研究需要获得并保持对特定领域工作的理解。例如，研究人员面临的典型问题是哪些论文描述了哪些任务和过程，使用了哪些材料，以及这些材料之间的关系如何。虽然有些领域有综述论文，但如果不阅读大量的出版物，一般很难获得这样的信息。</p>
+<p>目前解决这个问题的努力是搜索引擎，如谷歌学术<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>、Scopus<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>或语义学<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>，它们主要集中在浏览作者和引文图谱。</p>
+<p>这里解决的任务是关键词的提及级识别和分类，如关键词提取（TASK），以及提取关键词之间的语义关系，如关键词提取HYPONYM-OF信息提取。这些任务与命名实体识别、命名实体分类和关系提取等任务相关。然而，关键词的识别要比人名等更具挑战性，因为它们在不同的领域有很大的不同，缺乏明确的标志物 (signifiers) 和语境，而且可能由许多标记 (tokens) 组成。为此，我们制作了一个由500个出版物组成的双标注语料库，其中包括计算机科学、材料科学和物理学领域的科学文章。</p>
+<p>提取关键词和它们之间的关系对科学出版商来说是非常有意义的，因为它有助于向读者推荐文章，向作者强调缺失的引文，确定潜在的审稿人，并分析一段时间内的研究趋势。请注意，根据同义词和超近义词关系来组织关键词对搜索场景特别有用，例如，读者可能会搜索有关信息提取的文章，通过超近义词预测也会收到有关命名实体识别或关系提取的文章。</p>
+<p>我们希望该任务的结果与更广泛的信息提取、知识库扩展（KBP, Knowledge base population）和知识库建设社区相关，因为它为该领域研究的方法提供了一个新的应用领域，同时还提供了与领域相关的挑战。由于该数据集被标注为三个相互依赖的任务，它也可以被用作联合学习（joint learning）或结构化预测信息提取方法的测试平台（Kate和Mooney，2010；Singh等人，2013；Augenstein等人，2015；Goyal和Dyer，2016）。此外，我们希望这项任务对研究旨在理解科学内容的任务的研究人员来说是有趣的，比如关键词提取（Kim等人，2010b；Hasan和Ng，2014；Sterckx等人，2016；Augenstein和Søgaard，2017），语义关系提取（Tateisi等人，2014年；Gupta和Manning，2011年；Marsi和Ozt ¨ urk ¨，2015年），科学文章的主题分类（O S ´ eaghdha和Teufel ´，2014年），引文背景提取（Teufel，2006年；Kaplan等人。2009），提取作者和引文图谱（Peng和McCallum，2006；Chaimongkol等人，2014；Sim等人，2015）或这些的组合（Radev和Abu-Jbara，2012；Gollapalli和Li，2015；Guo等人，2015）。</p>
+<p>该任务的预期影响是，由于新语料库的发布，上述研究团体对该任务之外的兴趣，导致从科学文献中提取信息的新型研究方法。提出的语料库特别有用的是对提及层面的上下位和同义词关系的标注，因为现有的上下位和同义词关系资源是在类型层面的，例如WordNet。此外，我们预计这些方法将直接影响到使出版物有意义的工业解决方案，部分原因是任务组织者与Elsevier的合作。</p>
+<h1 id="任务描述">2 任务描述</h1>
+<p>该任务分为三个子任务。</p>
+<ul>
+<li><ol type="A">
+<li>提及层面的关键短语识别</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>提及层面的关键短语分类。关键词类型有PROCESS（包括方法、设备）、TASK和MATERIAL（包括语料库、物理材料）</li>
+</ol></li>
+<li>C）具有相同关键词类型的关键词之间的提及级语义关系提取。</li>
+</ul>
+<p>使用的关系类型是HYPONYM-OF和SYNONYM-OF。我们将上述子任务分别称为副任务A、副任务B和副任务C。例1中显示了计算机科学领域数据实例的一个简短的（人工）例子，材料科学和物理学的例子在附录中。第一部分是纯文本段落（为提高可读性，关键词用斜体表示），然后是基于字符偏移的远程（stand-off）关键词标注，接着是关系标注。</p>
+<blockquote>
+<p><strong>Example 1.</strong></p>
+<p><strong>Text:</strong> <em>Information extraction</em> is the process of extracting structured data from unstructured text, which is relevant for several end-to-end tasks, including <em>question answering</em>. This paper addresses the tasks of <em>named entity recognition (NER)</em>, a subtask of <em>information extraction,</em> using <em>conditional random fields (CRF)</em>. Our method is evaluated on the <em>ConLL-2003 NER corpus</em>.</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/07/16/A4qHBYorOTtwDVz.png" width="300"/></p>
+<p><img src="https://i.loli.net/2021/07/16/GRyNZjHQ2p9vKku.png" width="500"/></p>
+<h1 id="semeval-2017任务的资源">3 SemEval-2017任务的资源</h1>
+<h2 id="语料库">3.1 语料库</h2>
+<p>该任务的语料库是由ScienceDirect<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>的开放性出版物建立的，参与者可以免费使用，无需签署版权协议。每个数据实例由一段文字组成，取自一篇科学论文。出版物以纯文本形式提供，此外还有xml格式，其中包括出版物的全文以及其他元数据。从计算机科学、材料科学和物理学等领域均匀分布的期刊文章中选择了500个段落。</p>
+<p>语料库的训练数据部分包括350个文件，50个用于开发，100个用于测试。这与第5节中描述的试验任务类似，其中144篇文章被用于训练，40篇文章用于开发，100篇文章用于测试。</p>
+<p>我们在表1中列出了关于该数据集的统计数据。值得注意的是，该数据集包含许多长的关键词。训练集中22%的关键词由5个或更多的词组成。这使得关键词识别的任务变得非常具有挑战性。然而，这些关键词中有93%是名词短语[^7]，这对于简单的启发式方法识别关键词候选来说是很有价值的信息。最后，训练数据集中包含的31%的关键词只出现过一次，系统必须对未见过的关键词进行良好的归纳。</p>
+<p>[^7 ]: POS是自动确定的，使用nltk POS标记器</p>
+<p><img src="https://i.loli.net/2021/07/16/ny6tr5ajlPvK9u4.png"/></p>
+<h2 id="标注过程">3.2 标注过程</h2>
+<p>提及层面的标注非常耗时，而且每份出版物中只能找到少量的语义关系，如hypernymy和synonymy。因此，我们只对可能包含关系的出版物的段落进行标注。</p>
+<p>为了识别适合的文档，我们最初打算通过使用Hearst风格的模式（Hearst, 1991; Snow et al., 2005）从大型科学数据集中自动提取关系的知识图谱，然后使用这些知识图谱在一组不同的文档中寻找潜在的关系，类似于遥远的监督（Mintz et al., 2009; Snow et al., 2005）启发法。然后，含有大量这种潜在关系的文档将被选中。然而，这需要自动学习识别这些潜在关系之间的关键词，并要求关系在数据集中出现几次，这样的知识图谱才会有用。</p>
+<p>最后，由于学习自动检测关键词的难度，以及不同文档中的关系只有少量的重叠，这种策略是不可行的。取而代之的是，使用一个粗略的无监督方法自动检测出关键词的段落（Mikolov等人，2013），并手动选择那些可能包含关系的段落进行标注。</p>
+<p>在标注方面，学习计算机科学、材料科学或物理学的本科生志愿者通过UCL的学生通讯接受雇佣，该通讯覆盖所有的学生。我们向学生们展示了标注的例子和标注指南，如果他们仍然对参与标注活动感兴趣，就要求他们事先选择要标注的文件数量。大约50%的学生在看过标注的文件和阅读了标注指南后仍然感兴趣。然后，他们有两周的时间使用BRAT工具（Stenetorp等人，2012）来标注文件，该工具作为网络服务托管在亚马逊EC2实例上。学生们对每份文件的标注得到了补偿。每个文档和标注者的标注时间估计约为12分钟，在此基础上，他们的报酬约为每小时10英镑。他们只有在完成所有标注后才能得到补偿，也就是说，补偿是以标注所有文件为条件的。标注的费用由爱思唯尔公司承担。为了制定标注指南，我们用一位标注者对20份文献进行了小规模的试验性标注，之后对标注指南进行了完善。<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>我们原本打算让学生标注者对文献进行三重标注，并对标注进行多数投票，但由于难以招募到高质量的标注者，我们选择了对文献进行双重标注，其中第二位标注者是一位专家标注者。在标注不一致的情况下，我们选择了专家的标注。表2显示了用Cohen's kappa衡量的学生标注者和专家标注者之间的成对标注协议。表中的*表示标注质量随着时间的推移而下降，最后标注者没有完成对所有文件的标注。为了说明这一点，在计算标注者之间的一致性时，没有给出标注的文档被排除在外。在完成标注工作的标注者中，Cohen's kappa在0.45和0.85之间，其中一半的标注者有0.6或更高的实质性一致。对于这项任务的未来迭代，我们建议投入大量精力来招募高质量的标注者，或许可以进行更多的标注前质量筛选。</p>
+<h1 id="评价">4 评价</h1>
+<p>SemEval 2017任务10提供三种不同的评价方案。</p>
+<ul>
+<li>1）只给出纯文本（副任务A、B、C）。</li>
+<li>2）给出带有人工标注的关键词边界的纯文本（副任务B、C）。</li>
+<li>3）给出带有人工标注的关键词及其类型的纯文本（副任务C）。</li>
+</ul>
+<p>我们将上述情况分别称为情景1、情景2和情景3。</p>
+<h2 id="衡量标准">4.1 衡量标准</h2>
+<p>关键词识别（副任务A）传统上是通过计算与黄金标准的精确匹配来评估的。现有的工作是捕捉语义相似的关键词（Zesch和Gurevych，2009；Kim等人，2010a），但是由于这些关键词是用关系来捕捉的，与关键词提取的试验任务类似（第5节），我们用精确匹配标准来评估关键词、关键词类型和关系。系统的输出与黄金标准完全匹配。我们计算了传统上使用的精度、召回率和F1分数等指标，并计算了三种类型的出版物中这些指标的微观平均数。此外，对于副任务B和C，参与者可以选择使用人工标注的关键词提及和类型的文本。</p>
+<h1 id="试行任务">5 试行任务</h1>
+<p>在SemEval 2010上，其他组织者进行了一项从科学文献中提取关键词的试行任务（Kim等人，2010b）。该任务是要从科学文献中提取代表关键主题的关键词列表，即类似于我们提议的副任务A的第一部分，只是在类型层面。参与者最多可以提交3次，并被要求为每份文件提交一份由15个关键短语组成的清单，按照读者指定的短语的概率进行排序。数据是从ACM数字图书馆收集的，研究领域包括分布式系统、信息搜索和检索、分布式人工智能多代理系统以及社会和行为科学经济学。</p>
+<p>参与者获得了144篇训练文章、40篇开发文章和100篇测试文章，每组文章都包含了不同研究领域的文章组合。数据以纯文本形式提供，用pdftotext从pdf转换。50名计算机科学专业的学生对出版物进行了关键词标注，并将其添加到作者提供的他们所发表的期刊所要求的关键词中。准则是关键词要准确出现在在论文文本中的任何地方，实际上15%的标注者提供的关键词没有，19%的作者提供的关键词也没有。作者指定的关键词的数量平均为4个，而标注者平均确定了12个。如果返回的短语与标注者或作者指定的关键词完全匹配，则被认为是正确的，允许有微小的句法变化（B的A→B的A；A的B→A的B）。精度、召回率和F1是针对前5名、前10名和所有关键词计算的。19个系统被提交到该任务中，最好的一个系统在作者指定和标注者指定的综合关键词上获得了27.5%的F1。</p>
+<p>从这项任务中得到的教训是，性能的好坏取决于要提取多少个关键词，任务组织者建议不要为提取的关键词数量设定一个阈值。他们进一步建议采用一个更有语义的任务，考虑到关键词的同义词，而不是要求完全匹配。这两个建议都将在未来的任务设计中得到考虑。为了实现后者，我们将要求标注者为确定的关键词分配类型（过程、任务、材料），并确定它们之间的语义关系（上下位、同义词）。</p>
+<h1 id="现有资源">6 现有资源</h1>
+<p>作为与IARPA合作的FUSE项目的一部分，我们创建了一个由100个名词短语组成的小型标注语料库，这些名词短语是从物理学、计算机科学、化学和计算机科学等领域的Web Of Science语料库<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>中产生的标题和摘要。这些语料库不能公开发布，而是由IARPA资助机构提供的。标注是由3位标注者使用14种细粒度的类型进行的，包括PROCESS。</p>
+<p>我们用Fleiss'Kappa来衡量这14种类型的三个标注者之间的一致性。发现K值为0.28，这意味着他们之间有相当的一致性，然而区分细粒度的类型大大增加了标注的时间。因此，我们在SemEval 2017任务10中只使用三种主要类型。</p>
+<p>有一些现有的关键词提取语料库，然而，它们与提议的任务不够相似，无法证明重复使用。以下是对现有语料库的描述。</p>
+<p>SemEval 2010关键词提取语料库（Kim等人，2010b）<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>由每篇文章的少数几个文档级关键词组成。与我们提出的任务相比，这些关键词是在类型层面上被标注的，没有被进一步分类为过程、任务或材料，也没有被标注为语义关系。此外，所考虑的领域是不同的，大多是计算机科学的子领域。</p>
+<p>Tateisi等人（2014）<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>发布的语料库包含了230篇日文出版物摘要和400篇英文出版物摘要的句子级细粒度语义标注。与我们提出的相比，这些标注更加细化，而且标注只针对摘要。</p>
+<p>Gupta和Manning（2011）研究了从ACL文集的文章中提取关键词的问题，应用了基于模式的引导方法，基于15016个文档，并分配了FOCUS、TECHNIQUE和DOMAIN类型。在30个人工标注的文档上评估了性能。尽管后者的语料库与我们提出的建议有关，但人工标注只适用于少量的文件，而且只适用于自然语言处理领域。</p>
+<p>ACL RD-TEC 2.0数据集（QasemiZadeh和Schumann，2016年）由300个ACL文集摘要组成，在提及层面上有7种不同类型的关键词标注。与我们的数据集不同，它不包含关系标注。请注意，这个语料库是与SemEval 2017 Task 10数据集同时创建的，因此我们没有机会在其基础上进行研究。Augenstein和Søgaard（2017）对这两个数据集以及在其上评估的关键词识别和分类方法进行了更深入的比较。</p>
+<h2 id="基线">6.1 基线</h2>
+<p>我们将任务设定为一个序列到序列的预测任务。我们对文件进行预处理，将文件分割成句子，用nltk对其进行标记，然后将.ann文件的跨度标注与标记对齐。每个句子都被视为一个序列。</p>
+<p>然后，我们将任务分成三个子任务，即关键词边界识别、关键词分类和关系分类，并增加三个输出层。我们对这三个子任务分别预测以下类型。副任务A：tA = O, B, I，表示标记在关键词之外、开始或内部；副任务B：tB = O, M, P, T，表示标记在关键词之外，或属于材料、过程或任务；副任务C：tC = O, S, H，表示同义词和次义词的关系。对于副任务A和B，我们为每个输入标记预测一个输出标签。对于副任务C，我们为每个标记预测一个向量，编码该标记与序列中其他每个标记之间的关系，即每个关键词中的第一个标记。在获得对标记的预测后，在后处理步骤中，这些标记又被转换为跨度和它们之间的关系。</p>
+<p>我们报告了两个简单模型的结果：一个用于估计上界，将.ann文件转换为实例，如上所述，然后将其转换回.ann文件。接下来，估计一个下限，一个随机基线，对于每个标记为每个子任务分配一个随机标签。上限 span-token-span往返转换性能，F1为0.84，表明我们已经由于单独的句子分割和标记化而损失了大量的性能。随机基线进一步显示了关键词边界识别任务的艰难，尤其是整体任务，因为子任务之间相互依赖。对于副任务A，随机基线达到了0.03的F1。如果给出关键词边界，整体任务会变得更容易，关键词分类的F1为0.23，如果给出关键词类型，随机基线对副任务C的F1为0.04。</p>
+<h1 id="参赛系统总结">7 参赛系统总结</h1>
+<p>在这一部分，我们总结了比赛的结果。更多细节请参考各自的系统描述文件和任务网站https://scienceie. github.io/。我们有三个子任务，在第2节中描述，它们被归入三个评估场景，在第4节中描述。比赛分两个阶段在CodaLab<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>举办。(i) 开发阶段和(ii) 测试阶段。有54个团队参加了开发阶段，其中有26个团队参加了最后的比赛。比赛的主要成功之一是由于广泛的参与和各种不同技术的应用，从神经网络、带有仔细特征工程的监督分类到基于规则的简单方法。我们在下文中对任务参与者使用的方法进行了总结。</p>
+<h2 id="评估方案1">7.1 评估方案1</h2>
+<p>在这个方案中，参赛队需要解决所有三个子任务A、B和C；其中没有给出注释信息。有些团队只参加了副任务A或B；但各副任务的总体微观F1性能被考虑用于团队的排名。17个团队参加了这个方案。F1得分从0.04到0.43不等。完整的结果在表3中给出。不同的团队采用了各种不同类型的方法，有不同程度的监督。</p>
+<p>最好的三个团队TTI COIN、TIAL UW和s2 end2end使用了基于循环神经网络（RNN）的方法，分别获得0.38、0.42和0.43的F1分数。然而，与TTI COIN相比，TIAL UW和s2 end2end通过在RNN之上使用条件随机场（CRF）层，在副任务A中取得了更高的F1分数。第四组PKU ICL的F1为0.37，他们发现基于随机森林和支持向量机（SVM）的分类模型非常有用，其特点是在一个非常大的外部语料库上使用TF-IDF，IDF加权的词缀等，同时还有一个现有的分类法。</p>
+<p>另一方面，SciX使用名词短语分块，并在提供的训练数据上训练一个SVM分类器来对短语进行分类，并使用CRF来预测短语的标签。一些团队（NTNU、SZTE-NLP、WING-NUS）已经尝试了基于CRF的方法，包括语篇（POS）标记和正字法特征，如符号和大写字母的存在，它们导致了合理的性能（F1：0.23、0.26和0.27，分别）。HCC-NLP的带长度限制的名词短语提取，以及NITK IT PG的使用全局关键词列表，都没有令人满意的表现（F1：分别为0.16和0.14）。</p>
+<p>前者令人惊讶，因为关键词绝大多数是名词短语，后者则不尽然，许多关键词在数据集中只出现一次（见表1）。GMBUAP进一步尝试使用通过观察副任务A的训练数据获得的经验规则，以及根据副任务B的训练数据训练的Naive Bayes分类器。这样的尝试让我们对问题的难易程度和简单方法对任务的适用性有了更多的了解。</p>
+<h2 id="评价方案2">7.2 评价方案2</h2>
+<p>在这个方案中，各小组需要解决子任务B和C。向各小组提供了部分注释，即子任务A的解决方案。完整的结果请参考表4。除了MayoNLP，其他三个团队只参加了B小任务。虽然排名是根据整体表现进行的，但在这个场景下，UKP/EELECTION团队在评估期结束后发现这些结果是基于开发集的训练。对于在训练集上的训练，他们的结果是。0.69 F1总分和0.72 F1的副任务B在每个类别中的排名是一致的。BUAP在副任务B中的F1得分最差（0.45），但仍比情景1中副任务B的最佳团队s2 end2end（0.44）好。</p>
+<p>事实证明，副任务A的部分注释或准确性至关重要，再次强化了识别关键词边界是共享任务中最困难的部分。与情景1不同的是，在这种情况下，排名前两位的团队使用了带有词汇特征的分类器（F1：0.64）以及神经网络（F1：0.63）。第一支队伍MayoNLP使用了具有丰富特征集的SVM，如n-grams、词法特征、正字法特征，而第二支队伍UKP/EELECTION则使用了三种不同的神经网络方法，随后通过多数投票将它们结合起来。这两种方法的表现都很相似。然而，由LABDA和BUAP两个团队尝试的基于CRF的方法和具有更简单特征集的SVM在这种情况下被发现不太有效。MayoNLP应用了一个简单的基于规则的方法来提取同义词-关系，并应用Hearst模式来检测超义词-关系。同义词检测的规则是基于诸如in terms of, equivalently，which are called等在两个关键词之间的文本存在的短语。有趣的是，场景1中基于RNN的s2 end2end方法在不使用副任务A的部分注释的情况下比MayoNLP表现更好。</p>
+<h2 id="评估场景3">7.3 评估场景3</h2>
+<p>在这个场景中，团队只需要解决副任务C，副任务B和C的部分注释提供给团队。完整的结果请参考表5。在这个场景中，基于神经网络（NN）的模型被发现比其他方法表现更好。麻省理工学院的最佳方法使用卷积NN（CNN）。另一种方法使用了两个阶段的NN，并被认为是相当有效的（F1：0.54）。另一方面，应用五种不同的分类器（SVM、决策树、随机森林、多项式天真15A在评估期结束后，TTI COIN rel团队发现了预处理中的一个错误，导致了低结果。在纠正了这个错误后，他们的总体结果是Macro F1为0.48。Bayes和k-nearest neighbour）使用三种不同的特征选择技术（Chi square, decision tree, and recursive feature elimination）发现了与表现最好的技术接近的准确性（F1: 0.5）。LaBDA也使用了一个基于CNN的方法。然而，麻省理工学院应用的基于规则的后处理和参数排序策略似乎带来了额外的优势，他们也观察到了这一点。然而，这个场景中的大多数团队在关系预测方面超过了其他场景中的所有团队（他们没有获得B和C小任务的部分信息）。这也证明了要想在副任务C中表现准确，在副任务A和B中的准确性是非常重要的。</p>
+<h1 id="结论">8 结论</h1>
+<p>在本文中，我们介绍了SemEval 2017任务10的设置并讨论了参与系统，该任务是对科学文章中的关键词和它们之间的关系进行识别和分类，共有26个系统提交。成功的系统在其方法上有所不同。他们中的大多数使用RNN，通常与CRF以及CNN相结合，然而，在评估场景1中表现最好的系统使用SVM与精心设计的词汇特征集。识别关键词是最具挑战性的子任务，因为数据集包含许多长而不常出现的关键词，而依靠记忆这些关键词的系统表现不佳。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>https://scholar.google.co.uk/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>http://www.scopus.com/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>https://www.semanticscholar.org/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>http://www.sciencedirect.com/<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>我们向任务参与者提供了标注指南，它们可以在这里找到：https://scienceie. github.io/resources.html<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>http://thomsonreuters.com/en/products-services/scholarly-scientific-research/scholarly-search-and-discovery/web-of-science.html<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>https://github.com/snkim/AutomaticKeyphraseExtraction<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>https://github.com/mynlp/raniscompetitions/15898<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>https://competitions.codalab.org/<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/semeval/" title="SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系">http://nlpcourse.cn/semeval/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/tensorflow-0/" rel="prev" title="tensorflow基础知识">
+      <i class="fa fa-chevron-left"></i> tensorflow基础知识
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/paper-0/" rel="next" title="SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系">
+      SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">2 任务描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#semeval-2017%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%B5%84%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">3 SemEval-2017任务的资源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%96%99%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 语料库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E6%B3%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 标注过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7"><span class="nav-number">4.</span> <span class="nav-text">4 评价</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A1%E9%87%8F%E6%A0%87%E5%87%86"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 衡量标准</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%95%E8%A1%8C%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.</span> <span class="nav-text">5 试行任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%B0%E6%9C%89%E8%B5%84%E6%BA%90"><span class="nav-number">6.</span> <span class="nav-text">6 现有资源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%BA%BF"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 基线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%B5%9B%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">7 参赛系统总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0%E6%96%B9%E6%A1%881"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 评估方案1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%96%B9%E6%A1%882"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 评价方案2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0%E5%9C%BA%E6%99%AF3"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 评估场景3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">8.</span> <span class="nav-text">8 结论</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">366k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">5:33</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
