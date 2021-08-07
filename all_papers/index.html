@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="原文链接https:&#x2F;&#x2F;note.youdao.com&#x2F;ynoteshare1&#x2F;index.html?id&#x3D;be5b7fb27eebe336fc1f6fa30c348379&amp;type&#x3D;note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLP领域经典论文">
+<meta property="og:url" content="http://nlpcourse.cn/all_papers/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="原文链接https:&#x2F;&#x2F;note.youdao.com&#x2F;ynoteshare1&#x2F;index.html?id&#x3D;be5b7fb27eebe336fc1f6fa30c348379&amp;type&#x3D;note">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-19T12:31:10.196Z">
+<meta property="article:modified_time" content="2021-07-19T12:33:07.686Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/all_papers/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>NLP领域经典论文 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/all_papers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NLP领域经典论文
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-19 20:31:10 / 修改时间：20:33:07" itemprop="dateCreated datePublished" datetime="2021-07-19T20:31:10+08:00">2021-07-19</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+            <div class="post-description">原文链接https://note.youdao.com/ynoteshare1/index.html?id=be5b7fb27eebe336fc1f6fa30c348379&type=note</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>NLP paper</strong></p>
+<p><strong>1、baseline paper（文本分类）</strong></p>
+<ol type="1">
+<li>ICLR2013，Word2Vec 词向量扛鼎之作</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Efficient Estimation of Word Representation in Vector Space</li>
+</ol></li>
+</ul>
+<p>https://arxiv.org/pdf/1301.3781v3.pdf</p>
+<ol type="1">
+<li>EMNLP2014，Glove：最出名的词向量训练方法之一</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>GloVe: Global Vectors for Word Representation</li>
+</ol></li>
+</ul>
+<p>http://emnlp2014.org/papers/pdf/EMNLP2014162.pdf</p>
+<ol type="1">
+<li>EMNLP2015，Char Embedding 第一篇介绍字符嵌入的论文</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Compositional character models for open vocabulary word representation</li>
+</ol></li>
+</ul>
+<p>https://arxiv.org/pdf/1508.02096.pdf</p>
+<ol type="1">
+<li>EMNLP2014，TextCNN 第一篇CNN用于文本分类的文章</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Convolutional Neural Network for Sentence Classification</li>
+</ol></li>
+</ul>
+<p>https://arxiv.org/pdf/1408.5882.pdf</p>
+<ol type="1">
+<li>NIPS2015，CharTextCNN 第一篇字符级别文本分类模型</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Character-level Convolutional Networks for Text Classification</li>
+</ol></li>
+</ul>
+<p>https://proceedings.neurips.cc/paper/2015/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf</p>
+<ol type="1">
+<li>EACL2017，FastText 细粒度的文本分类</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Bag of Tricks for Efficient Text Classification</li>
+</ol></li>
+</ul>
+<p>https://arxiv.org/pdf/1607.01759v2.pdf</p>
+<ol type="1">
+<li>NLPS 2014，Deep_NMT 使用LSTM解决机器翻译问题</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Sequence to Sequence Learning with Neural Networks</li>
+</ol></li>
+</ul>
+<p>https://arxiv.org/pdf/1409.3215.pdf</p>
+<ol type="1">
+<li>ICLR2015，Bahdanau_NMT 第一篇介绍attention的论文</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Neural Machine Translation by Jointly Learning to Align and Translate</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>NAACL2016，Han_Attention attention用于文本分类</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Hierarchical Attention Networks for Document</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>Coling2018，SGM 第一篇使用序列生成做多标签文本分类</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>SGM: Sequence Generation Model for Multi-label Classification</li>
+</ol></li>
+</ul>
+<p><strong>2、细分领域</strong></p>
+<p><strong>① 信息抽取</strong></p>
+<p><strong>命名实体识别</strong></p>
+<ol type="1">
+<li>Bidirectional LSTM-CRF Models for Sequence Tagging</li>
+</ol>
+<p>​ 深度学习应用NER的经典模型</p>
+<ol type="1">
+<li>Chinese NER Using Lattice LSTM</li>
+</ol>
+<p>​ 融合字词向量的中文NER</p>
+<ol type="1">
+<li>CNN-Based Chinese NER with Lexicon Rethinking</li>
+</ol>
+<p>​ Rethinking机制的CNN网络解决中文NER问题</p>
+<ol type="1">
+<li>A Lexicon-Based Graph Neural Network for Chinese NER</li>
+</ol>
+<p>​ 图神经网络解决中文NER任务</p>
+<ol type="1">
+<li>TENER- Adapting Transformer Encoder for Named Entity Recognition</li>
+</ol>
+<p>​ 改进Transformer应用在NER任务</p>
+<ol type="1">
+<li>2020ACL，Simplify the Usage of Lexicon in Chinese NER</li>
+</ol>
+<p>​ 自适应Embedding融合词典信息解决中文NER任务</p>
+<p><strong>关系抽取</strong></p>
+<ol type="1">
+<li>Relation Classification via Convolutional Deep Neural Network(2014,cnn)</li>
+<li>CNN识别改进 CRCNN+PCNN一起(2015ACL,rank loss)</li>
+<li>Attention-based bidirectional long short-term memory networks for relation classification(2016ACL,lstm+att)</li>
+<li>joint extractions of entities and relations based on a novel tagging scheme(标注转换,将分类任务转换为序列任务ACL2017)</li>
+<li>A Novel Cascade Binary Tagging Framework for Relational Triple Extraction.(2020ACL实体+关系识别统一训练,半指针半标注解决标签重合问题)</li>
+</ol>
+<p><strong>② 预训练模型</strong></p>
+<ol type="1">
+<li>2017 NIPS，transformer：预训练模型的基石</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Attention is all your need</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2017 ICLR，transformer-xl:文本生成任务经典模型</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2018 NAACL，elmo：经典动态词向量，预训练模型三巨头之一</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Deep contextualized word representations------&gt;elmo</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2018 gpt：文本生成任务上的巨人</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Improving Language Understanding by Generative Pre-Training-----&gt;gpt</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2018 ACL，bert:预训练模型最耀眼的那颗星，基于Transformer 的双向深度语言模型</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Pre-training of Deep Bidirectional Transformers for Language Understanding------&gt;bert</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2018，ACL，ulmfit：少量样本训练的预训练模型</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Universal Language Model Fine-tuning for Text Classification-------&gt;ulmfit</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2018 ICLR，albert：轻量级bert的代表之作</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS----&gt;albert</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2019 PMLR，mass：包含gpt和bert的预训练模型</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>MASS: Masked Sequence to Sequence Pre-training for Language Generation-------------&gt;mass</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2019 NeurIPS，xlnet:自回归预训练模型代表之作</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>XLNet: Generalized Autoregressive Pretraining for Language Understanding--------&gt;xlnet</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>2020 ICLR，electra:轻量级新生代预训练模型</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>ELECTRA: PRE-TRAINING TEXT ENCODERS AS DISCRIMINATORS RATHER THAN GENERATORS---&gt;electra</li>
+</ol></li>
+</ul>
+<p><strong>③ 图神经网络</strong></p>
+<ol type="1">
+<li>KDD 2016，Node2vec 经典必读第一篇，平衡同质性和结构性</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《node2vec: Scalable Feature Learning for Networks》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>WWW2015，LINE 1阶+2阶相似度</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Line: Large-scale information network embedding》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>KDD 2016，SDNE 多层自编码器</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Structural deep network embedding》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>KDD 2017，metapath2vec 异构图网络</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《metapath2vec: Scalable representation learning for heterogeneous networks》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>NIPS 2013，TransE 知识图谱奠基</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Translating Embeddings for Modeling Multi-relational Data》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>ICLR 2018，GAT attention机制</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Graph Attention Network》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>NIPS 2017，GraphSAGE 归纳式学习框架</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Inductive Representation Learning on Large Graphs 》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>ICLR 2017，GCN 图神经开山之作</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>ICLR 2016，GGNN 门控图神经网络</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Gated Graph Sequence Neural Networks》</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>ICML 2017，MPNN 空域卷积消息传递框架</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>《Neural Message Passing for Quantum Chemistry》</li>
+</ol></li>
+</ul>
+<p><strong>④ 文本匹配</strong></p>
+<ol type="1">
+<li>DSSM：第一篇深度学习领域文本匹配文章</li>
+<li>SiamseNet：利用孪生网络计算文本相似度</li>
+<li>Compare-Aggreaget：多角度提取文本特征，利用CNN进行特征融合</li>
+<li>ESIM：最流行、经典的文本匹配模型，优秀的baseline</li>
+<li>BiMPM：多通道、多角度匹配，充分挖掘文本特征</li>
+<li>RE2, acl 2019，基于更丰富特征对齐结构的简单高效文本匹配</li>
+</ol>
+<p>《imple and Effective Text Matching with Richer Alignment Features》</p>
+<p>https://www.aclweb.org/anthology/P19-1465.pdf</p>
+<ol type="1">
+<li>ICLR 2020，BERT/Poly-encoders, 基于BERT的高效文本匹配模型</li>
+</ol>
+<p>《Poly-encoders: Transformer Architectures and Pre-training Strategies for Fast and Accurate Multi-sentence Scoring》</p>
+<p>https://arxiv.org/pdf/1905.01969v2.pdf</p>
+<ol type="1">
+<li>AAAI 2016，MatchPyramid，用图像识别的思路进行文本匹配</li>
+</ol>
+<p>《Text Matching as Image Recognition》</p>
+<p>https://arxiv.org/pdf/1602.06359.pdf</p>
+<ol type="1">
+<li>MGCN,acl 2019，基于图形分解和卷积匹配的长文档匹配</li>
+</ol>
+<p>《Matching Article Pairs with Graphical Decomposition and Convolutions》</p>
+<p>https://arxiv.org/pdf/1802.07459.pdf</p>
+<ol type="1">
+<li>SemBERT,AAAI 2020，使用BERT融合上下文语义信息实现文本匹配的模型</li>
+</ol>
+<p>《Semantics-aware BERT for Language Understanding》</p>
+<p>https://arxiv.org/pdf/1909.02209.pdf</p>
+<p><strong>⑤ 机器翻译</strong></p>
+<ol type="1">
+<li>EMNLP 2015， <strong>Luong NMT，</strong>经典的使用attention做神经机器翻译文章。</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1508.04025">Effective Approaches to Attention-based Neural Machine Translation</a>.</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>ACL 2016， <strong>Coverage NMT</strong>，解决过度翻译和漏翻译问题。</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Modeling Coverage for Neural Machine Translation 在nmt中使用coverage</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>EMNLP 2017，<strong>Google NMT，</strong> 神经机器翻译中的参数设置</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Massive Exploration of Neural Machine Translation Architectures</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>ACL 2016，<strong>BPE NMT</strong>， Bpe子词的方法做机器翻译</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1508.07909.pdf">Neural Machine Translation of Rare Words with Subword Units</a></li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>EMNLP 2017，<strong>Recon MNT</strong>，一种新奇的加上一个auto-encoder解决机器翻译中的漏翻问题的论文</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Neural Machine Translation with Reconstruction</li>
+</ol></li>
+</ul>
+<ol type="1">
+<li>EMNLP 2018，<strong>Back-Translation</strong>，机器翻译数据增强方法</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Back-Translation Sampling by Targeting Difficult Words in Neural Machine Translation.</li>
+</ol></li>
+</ul>
+<p><strong>⑥ 情感分析</strong></p>
+<p>\1. 1 TextRNN,Recurrent Neural Network for Text Classification-使用循环神经网络进行句子的情感分类.2014——为主</p>
+<p>1.2. FastText，Bag of Tricks for Efficient Text Classification-基于FastText的快速情感分类方法。2016</p>
+<p>1.3. TextCNN,Convolutional Neural Networks for Sentence Classification-使用卷积神经网络进行句子的情感分类.2014</p>
+<p>\2. TreeLSTM,Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks-基于树结构的长短期记忆网络进行的语义表示上的改进.2015</p>
+<p>3.1. TD-LSTM,Effective LSTMs for Target-Dependent Sentiment Classification-基于LSTM进行目标依赖的情感分类。2016——为主5</p>
+<p>3.2. AT-LSTM,Attention-based lstm for aspect-level sentiment classification.-基于Attention的LSTM模型用于aspect-level的情感分类。2016</p>
+<p>4.1. MemNet,Aspect Level Sentiment Classification with Deep Memory Network.-深度记忆网络在用于aspect-level情感分类.2016——为主</p>
+<p>4.2. IAN,Interactive Attention Networks for Aspect-Level Sentiment Classification.-交互式注意力网络用于aspect-level情感分类.2017</p>
+<p>5.1. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.基于Bert模型进行情感分类。2018——为主</p>
+<p>5.2. ERNIE 2.0: A Continual Pre-training Framework for Language Understanding.最大语义评测SemEval 2020上，ERNIE摘得5项世界冠军。2019</p>
+<p><strong>⑦ 阅读理解</strong></p>
+<p>\1. Teaching Machines to Read and Comprehend（<strong>完形填空</strong>）</p>
+<p>论文以及机构：2015 nips Google DeepMind</p>
+<p>文章提供一个比较大的数据集，同时首次给了三个 baseline 神经网络模型。从此基于神经网络的MRC任务开始迅速发展。</p>
+<p>\2. Bi-Directional Attention Flow for Machine Comprehension（<strong>抽取式问答</strong>）</p>
+<p>论文以及机构：2017 ICLR Allen实验室和University of Washington</p>
+<p>首次提出了双向的attention流应用在MRC任务，在SQuAD数据上取得sota的结果，后面的许多论文都是在此基础上进行的。</p>
+<p>\3. Get To The Point: Summarization with Pointer-Generator Networks（<strong>答案生成</strong>）</p>
+<p>论文机构：斯坦福和谷歌</p>
+<p>从文本摘要中借鉴过来的，主要解决的是生成任务中OOV等问题，在生成式阅读理解任务里可以通过引入PG-Net来达到更好的效果。</p>
+<p>\4. Improving the Robustness of Question Answering Systems to Question Paraphrasing（考察模型的抗干扰能力）</p>
+<p>论文和机构：2019ACL新加坡国立大学</p>
+<p>研究发现很多模型在问题被攻击之后（即替换问题中的某些词语造成干扰），效果会大大降低。针对这类问题，主要从数据增强以及对抗训练的角度出发，提升模型抗干扰的能力。</p>
+<p>5.XLNet: Generalized Autoregressive Pretraining for Language Understanding</p>
+<p>论文和机构：2020 Google 卡内基梅隆大学</p>
+<p>结合了自回归和自编码与训练语言模型的优势，提出双流自注意力机制，本次主要聚焦在中文的XLNet，也会对原文进行简单的核心介绍</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/all_papers/" title="NLP领域经典论文">http://nlpcourse.cn/all_papers/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bert-keyword/" rel="prev" title="使用 BERT 提取关键字">
+      <i class="fa fa-chevron-left"></i> 使用 BERT 提取关键字
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/constituency/" rel="next" title="提取句子中的每个子树">
+      提取句子中的每个子树 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">475k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:12</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

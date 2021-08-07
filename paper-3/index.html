@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/07/18/Va759Zqi8CkhQ2B.png">
 <meta property="article:published_time" content="2021-07-18T13:26:59.383Z">
-<meta property="article:modified_time" content="2021-07-18T14:23:46.675Z">
+<meta property="article:modified_time" content="2021-07-24T05:47:32.453Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="期刊翻译">
 <meta name="twitter:card" content="summary">
@@ -135,12 +135,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -217,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-07-18 21:26:59 / 修改时间：22:23:46" itemprop="dateCreated datePublished" datetime="2021-07-18T21:26:59+08:00">2021-07-18</time>
+              <time title="创建时间：2021-07-18 21:26:59" itemprop="dateCreated datePublished" datetime="2021-07-18T21:26:59+08:00">2021-07-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-24 13:47:32" itemprop="dateModified" datetime="2021-07-24T13:47:32+08:00">2021-07-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.2k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -328,15 +334,23 @@
 <p>关系模式将对应于：是基于，而在句子中：谷歌总部在山景城，该模式将是：总部在。</p>
 <p>每个上下文都被一个简单的合成函数转化为一个单一的向量，该函数首先去除停顿词和形容词，然后对每个单独的词的词嵌入向量进行求和。Mikolov等人(2013a,b)表明，通过对每个单独的词的嵌入相加来表示小短语，可以很好地表示短语中的语义。</p>
 <h3 id="关系表示法">关系表示法</h3>
-<p>一个关系实例i因此由三个嵌入向量表示：VBEF, VBET, VAFT。例如，在这个句子中。科技公司Soundcloud的总部设在德国首都柏林。该句子所表达的关系实例将由以下嵌入向量表示：</p>
+<p>一个关系实例<span class="math inline">\(i\)</span>因此由三个嵌入向量表示：VBEF, VBET, VAFT。例如，在这个句子中。科技公司Soundcloud的总部设在德国首都柏林。该句子所表达的关系实例将由以下嵌入向量表示：</p>
 <p><span class="math display">\[ VBEF = embedding(&quot;tech&quot;) + embedding(&quot;company&quot;) - VBET = embedding(&quot;is&quot;) + \\embedding(&quot;based&quot;) - VAFT = embedding(&quot;capital&quot;) \]</span></p>
-<p>其中，embedding(x)是一个函数，表示单词x的嵌入向量。对于BET语境，BREDS还尝试使用部分语音（PoS）标签来识别被动语态，这可以帮助检测关系三元组中实体的正确顺序。例如，使用种子&lt;Google, DoubleClick&gt;表达组织Google拥有组织DoubleClick的关系，如果BREDS提取两个组织之间的关系实例，并检测出这样的模式。ORG1同意被ORG2收购 ORG1被ORG2收购，当从短语中表达的实例中产生一个关系三重时，它将调换实体的顺序。因此，它将输出&lt;ORG2, owns, ORG1&gt;这个三重词，而不是&lt;ORG1, owns, ORG2&gt;。BREDS通过考虑任何形式的动词be，后面跟一个过去式或过去分词的动词，并以单词by结尾，后面跟一个命名的实体，来识别被动语态的存在。这种限制被放宽了，允许在两个动词和介词by之间出现副词、形容词或名词。</p>
+<p>其中，<span class="math inline">\(embedding(x)\)</span>是一个函数，表示单词<span class="math inline">\(x\)</span>的嵌入向量。对于BET语境，BREDS还尝试使用部分语音（PoS）标签来识别被动语态，这可以帮助检测关系三元组中实体的正确顺序。例如，使用种子<span class="math inline">\(&lt;Google, DoubleClick&gt;\)</span>表达组织Google拥有组织DoubleClick的关系，如果BREDS提取两个组织之间的关系实例，并检测出这样的模式。ORG1同意被ORG2收购 ORG1被ORG2收购，当从短语中表达的实例中产生一个关系三重时，它将调换实体的顺序。因此，它将输出<span class="math inline">\(&lt;ORG2, owns, ORG1&gt;\)</span>这个三重词，而不是<span class="math inline">\(&lt;ORG1, owns, ORG2&gt;\)</span>。BREDS通过考虑任何形式的动词be，后面跟一个过去式或过去分词的动词，并以单词by结尾，后面跟一个命名的实体，来识别被动语态的存在。这种限制被放宽了，允许在两个动词和介词by之间出现副词、形容词或名词。</p>
 <h2 id="提取模式">5.1.2 提取模式</h2>
-<p>在从文档集合中收集所有的种子语境并生成实例之后，BREDS通过对上一步收集的关系实例应用单程聚类算法来生成提取模式。每个产生的聚类包含一组关系实例，其中每个实例由三个嵌入向量表示。算法1描述了聚类方法，它将关系实例的列表作为输入，并将第一个实例分配给一个新的空聚类。接下来，它通过实例列表进行迭代，计算一个实例x和每个聚类Cl之间的相似性。实例x被分配到第一个相似度高于或等于τsim的聚类。如果所有聚类的相似度都低于τsim，就会创建一个新的聚类Clnew，其中包含实例x。</p>
-<p>实例in和聚类Clj之间的相似度函数Sim(in, Clj )，如果大多数相似度分数高于τsim，则返回实例in和聚类Clj中任何一个实例之间相似度的最大值。否则就会返回一个0的值。因此，算法1中的聚类与原来的Snowball方法不同，它计算的是聚类中心点的相似度。图5.2说明了相似性的计算。一个实例与集群内的其他每个实例进行比较，分数的多数决定了该实例是否被添加到集群中。102 5.1 BREDS i 3 ... i 1 i 2 i k Cl 1 Cl 2 Clj Sim(i1 ,Cl1 ) Sim(i1 ,Clj ) Sim(i1 ,Cl2 ) 图5.2：一个实例和一个实例集群的比较。任何两个关系实例之间的相似性是通过测量每个实例的上下文嵌入向量之间的余弦相似度来计算的。Sim(Sn, Sj ) = α - cos(BEFi , BEFj ) (5.1) + β - cos(BETi , BETj ) + γ - cos(AF Ti , AF Tj ) 其中参数α、β和γ定义了与每个上下文的嵌入向量相关的权重。5.1.3 寻找关系实例 在提取模式生成之后，BREDS再次扫描文档，收集所有包含实体对的文本片段，这些实体对的语义类型与种子实例的语义类型相匹配。例如，对于种子&lt;Google, DoubleClick&gt;，BREDS收集了所有包含一对被标记为组织的命名实体的文本片段。对于每一个收集到的语段，都会提取BEF、BET、AFT这三个语境，并生成一个实例x，如5.1.1所述。然后，计算与所有先前生成的提取模式（即聚类）的相似性。如果x和一个模式Cl之间的相似度等于或高于τsim，那么x就被认为是一个候选实例，并且模式Cl的置信度分数被更新。103 5. 用分布式语义引导关系 一个模式的置信度分数是根据提取的关系实例来计算的。如果一个提取的关系实例包含一个实体e1，它是种子集中实例的一部分，并且相关的实体e2与种子集中的实体相同，那么这个提取被认为是肯定的（即包含在集合P中）。如果该关系与种子集中的关系相矛盾（即e2不匹配），则该提取被认为是负面的（即包括在集合N中）；如果该关系不是种子集的一部分，则该提取被认为是未知的（即包括在集合U中）。如公式5.2所定义的，根据每个模式p的提取情况，给每个模式分配一个置信度分数。</p>
+<p>在从文档集合中收集所有的种子语境并生成实例之后，BREDS通过对上一步收集的关系实例应用单程聚类算法来生成提取模式。每个产生的聚类包含一组关系实例，其中每个实例由三个嵌入向量表示。算法1描述了聚类方法，它将关系实例的列表作为输入，并将第一个实例分配给一个新的空聚类。接下来，它通过实例列表进行迭代，计算一个实例<span class="math inline">\(x\)</span>和每个聚类<span class="math inline">\(C_l\)</span>之间的相似性。实例<span class="math inline">\(x\)</span>被分配到第一个相似度高于或等于<span class="math inline">\(τ_{sim}\)</span>的聚类。如果所有聚类的相似度都低于<span class="math inline">\(τ_{sim}\)</span>，就会创建一个新的聚类Clnew，其中包含实例x。</p>
+<p>实例in和聚类Clj之间的相似度函数<span class="math inline">\(Sim(i_n, Cl_j )\)</span>，如果大多数相似度分数高于<span class="math inline">\(τ_{sim}\)</span>，则返回$i_n <span class="math inline">\(和聚类\)</span>Cl_j $ 中任何一个实例之间相似度的最大值。否则就会返回一个0的值。因此，算法1中的聚类与原来的Snowball方法不同，它计算的是聚类中心点的相似度。图5.2说明了相似性的计算，一个实例与集群内的其他每个实例进行比较，分数的多数决定了该实例是否被添加到集群中。</p>
+<p>图5.2：一个实例和一个实例集群的比较。</p>
+<p>任何两个关系实例之间的相似性是通过测量每个实例的上下文嵌入向量之间的余弦相似度来计算的。</p>
+<p><span class="math display">\[Sim(Sn, Sj ) = α - cos(BEFi , BEFj ) (5.1) + β - cos(BETi , BETj ) + γ - cos(AF Ti , AF Tj ) \]</span></p>
+<p>其中参数α、β和γ定义了与每个上下文的嵌入向量相关的权重。</p>
+<h2 id="寻找关系实例">5.1.3 寻找关系实例</h2>
+<p>在提取模式生成之后，BREDS再次扫描文档，收集所有包含实体对的文本片段，这些实体对的语义类型与种子实例的语义类型相匹配。例如，对于种子&lt;Google, DoubleClick&gt;，BREDS收集了所有包含一对被标记为组织的命名实体的文本片段。对于每一个收集到的语段，都会提取BEF、BET、AFT这三个语境，并生成一个实例x，如5.1.1所述。然后，计算与所有先前生成的提取模式（即聚类）的相似性。如果<span class="math inline">\(x\)</span>和一个模式<span class="math inline">\(C_l\)</span>之间的相似度等于或高于<span class="math inline">\(τ_{sim}\)</span>，那么x就被认为是一个候选实例，并且模式Cl的置信度分数被更新。</p>
+<p>一个模式的置信度分数是根据提取的关系实例来计算的。如果一个提取的关系实例包含一个实体<span class="math inline">\(e_1\)</span>，它是种子集中实例的一部分，并且相关的实体<span class="math inline">\(e_2\)</span>与种子集中的实体相同，那么这个提取被认为是肯定的（即包含在集合P中）。如果该关系与种子集中的关系相矛盾（即<span class="math inline">\(e_2\)</span>不匹配），则该提取被认为是负面的（即包括在集合N中）；如果该关系不是种子集的一部分，则该提取被认为是未知的（即包括在集合U中）。如公式5.2所定义的，根据每个模式p的提取情况，给每个模式分配一个置信度分数。</p>
 <p>在该等式中，Wngt和Wunk分别是与负数和未知数提取相关的权重。具有最高相似度的模式（即patternbest）与i相关联，同时还有相似度得分（即simbest）。这些信息被保存在候选者的历史中。算法2详细描述了这个过程。请注意，由于 "候选人 "和 "关注点 "的历史在所有的自举迭代中被保留下来，新的模式或实例可以被添加，或者现有模式或实例的分数可以改变。</p>
 <h2 id="处理语义漂移">5.1.4 处理语义漂移</h2>
-<p>为了控制语义漂移，BREDS遵循 "滚雪球 "的框架，对提取的实例进行排名，并抛弃排名最低的实例。在每个迭代结束时，候选的所有实例都根据它们当前的置信度分数进行排名。一个实例的置信度分数是基于对提取它的模式的所有分数的相似性，并以该模式的置信度分数加权。<span class="math inline">\(Confι(i) = 1 - Y |ξ| j=0 (1 - Confρ(ξj ) × Sim(Ci , ξj ))\)</span> (5.3) 在上述公式中，ξ是提取了i的模式集，Ci是i发生的文本语境。只有置信度等于或高于τmin的关系实例被添加到种子集，并随后用于下一次引导迭代。</p>
+<p>为了控制语义漂移，BREDS遵循 "滚雪球 "的框架，对提取的实例进行排名，并抛弃排名最低的实例。在每个迭代结束时，候选的所有实例都根据它们当前的置信度分数进行排名。一个实例的置信度分数是基于对提取它的模式的所有分数的相似性，并以该模式的置信度分数加权。<span class="math inline">\(Confι(i) = 1 - Y |ξ| j=0 (1 - Confρ(ξj ) × Sim(Ci , ξj ))\)</span> (5.3)</p>
+<p>在上述公式中，ξ是提取了i的模式集，Ci是i发生的文本语境。只有置信度等于或高于τmin的关系实例被添加到种子集，并随后用于下一次引导迭代。</p>
 
     </div>
 
@@ -346,6 +360,9 @@
       
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-5\" rel="bookmark">用于从文本中半监督的网络论点语料库的清洗</a></div>
+    </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\paper-2\" rel="bookmark">具有分布式语义的关系提取器的半监督性引导</a></div>
     </li>
@@ -412,7 +429,10 @@
     <a href="/paper-2/" rel="prev" title="具有分布式语义的关系提取器的半监督性引导">
       <i class="fa fa-chevron-left"></i> 具有分布式语义的关系提取器的半监督性引导
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/bert-keyword/" rel="next" title="使用 BERT 提取关键字">
+      使用 BERT 提取关键字 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -471,7 +491,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#breds"><span class="nav-number">1.</span> <span class="nav-text">5.1 BREDS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%A7%8D%E5%AD%90%E5%8C%B9%E9%85%8D"><span class="nav-number">1.1.</span> <span class="nav-text">5.1.1 寻找种子匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">关系表示法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">5.1.2 提取模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E8%AF%AD%E4%B9%89%E6%BC%82%E7%A7%BB"><span class="nav-number">1.3.</span> <span class="nav-text">5.1.4 处理语义漂移</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#breds"><span class="nav-number">1.</span> <span class="nav-text">5.1 BREDS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%A7%8D%E5%AD%90%E5%8C%B9%E9%85%8D"><span class="nav-number">1.1.</span> <span class="nav-text">5.1.1 寻找种子匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">关系表示法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">5.1.2 提取模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E5%85%B3%E7%B3%BB%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.3.</span> <span class="nav-text">5.1.3 寻找关系实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E8%AF%AD%E4%B9%89%E6%BC%82%E7%A7%BB"><span class="nav-number">1.4.</span> <span class="nav-text">5.1.4 处理语义漂移</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -487,14 +507,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -558,13 +578,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">366k</span>
+    <span title="站点总字数">475k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:33</span>
+    <span title="站点阅读时长">7:12</span>
 </div>
 
         

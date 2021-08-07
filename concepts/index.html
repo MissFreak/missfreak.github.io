@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="故事说的是一位物理学家应奶农协会的邀请，告诉他们如何从奶牛身上获得更多的牛奶。物理学家开始说：&quot;首先我们从球形的奶牛开始。&quot;这被当作一个笑话来讲! 然而，更奇怪的是，认知主义对本应是研究人类思想和人类生活的东西做了什么。本章是关于概念的，即认知主义理论的核心构件。我将首先说明认知主义如何必然不能对概念进行充分的处理，然后，更重要的是（谁会注意批评呢？），我将概述一种新的非表征性的概念观的基础，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reclaiming Concepts，Eleanor Rosch">
+<meta property="og:url" content="http://nlpcourse.cn/concepts/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="故事说的是一位物理学家应奶农协会的邀请，告诉他们如何从奶牛身上获得更多的牛奶。物理学家开始说：&quot;首先我们从球形的奶牛开始。&quot;这被当作一个笑话来讲! 然而，更奇怪的是，认知主义对本应是研究人类思想和人类生活的东西做了什么。本章是关于概念的，即认知主义理论的核心构件。我将首先说明认知主义如何必然不能对概念进行充分的处理，然后，更重要的是（谁会注意批评呢？），我将概述一种新的非表征性的概念观的基础，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-03T02:20:46.664Z">
+<meta property="article:modified_time" content="2021-08-07T02:56:05.707Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/concepts/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Reclaiming Concepts，Eleanor Rosch | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Reclaiming Concepts，Eleanor Rosch
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-03 10:20:46" itemprop="dateCreated datePublished" datetime="2021-08-03T10:20:46+08:00">2021-08-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-07 10:56:05" itemprop="dateModified" datetime="2021-08-07T10:56:05+08:00">2021-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">语言学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/%E8%AE%A4%E7%9F%A5%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">认知语言学</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>18k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>16 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>故事说的是一位物理学家应奶农协会的邀请，告诉他们如何从奶牛身上获得更多的牛奶。物理学家开始说："首先我们从球形的奶牛开始。"这被当作一个笑话来讲! 然而，更奇怪的是，认知主义对本应是研究人类思想和人类生活的东西做了什么。本章是关于概念的，即认知主义理论的核心构件。我将首先说明认知主义如何必然不能对概念进行充分的处理，然后，更重要的是（谁会注意批评呢？），我将概述一种新的非表征性的概念观的基础，它应该把对概念的研究放在真实（而不是球状牛）的基础上。</p>
+</blockquote>
+<span id="more"></span>
+<p>如果说有一个领域你认为认知主义可以把它搞对的话，那就是概念。人们不一定期望认知主义能照亮生物学、艺术、质感、直觉或灵性。但概念是认知主义理论的基本组成部分。因此，概念是本卷的一个特别恰当的案例研究，因为研究概念的案例就是在认知主义的本土上穿透它。</p>
+<p>为什么概念应该被期望成为认知主义的必要条件？要回答这个问题需要一些背景：我们所说的概念以及认知主义是什么意思？</p>
+<p>概念是分类研究的一个方面。生物最基本的功能之一就是分类，也就是把可区分的物体和事件当作等同物。人类生活在一个分类的世界里；从家庭用品到情感到性别到民主，物体和事件虽然是独特的，但却被当作类别的成员来对待。一些理论会说，如果没有这种能力，就不可能从经验中学习，因此，分类是生命的基本功能之一。至少从十九世纪开始，人们就普遍把类别的认知或心理方面称为概念。</p>
+<p>概念有哪些认知主义无法探究的东西呢？在本文中，我将论证。概念是心灵与世界之间的自然桥梁，以至于它们要求我们改变我们认为是心灵的东西和我们认为是世界的东西；概念只发生在实际情境中，在这种情境中它们作为参与的部分发挥作用，而不是作为表征或作为识别对象的机制；概念是开放的系统，生物可以通过它来学习新的东西，可以进行发明创造；概念存在于一个更大的背景中——它们不是生物认识和行动的唯一形式。 另一方面，在认知主义的机器中，概念本质上是唯我论的；概念的性质只能是封闭的分析性定义，既不允许有参与性功能，也不允许有新颖性；不可能有其他形式的认识的背景，而概念的认识可以位于其中。那么，认知主义是什么，它从哪里来，以至于它有这些局限性？</p>
+<p>在处理概念和范畴方面有一个长期的哲学传统，被称为 "普遍性问题"，认知科学也继承了这个传统。问题在于，当感官提供的东西看起来如此多变和不可靠的时候，如何能有一个坚实的知识基础。但认知主义还受到另一组限制。正如本卷中的其他论文所指出的(也见Johnson和Erneling, 1997)，实际上有两种相当不同的努力被称为认知科学：一种只是人工智能、心理学、哲学、语言学、神经生理学和人类学之间跨学科合作的尝试。另一种形式的认知科学则额外假定了现在被称为认知主义的特殊哲学立场。</p>
+<p>认知主义中概念的中心地位与它在哲学和心理学传统中的起源有些不同。认知主义把心当做一台机器，更准确地说，是一个计算机程序，更准确地说，是那种在符号表征上作为一系列计算(即规则控制的变化)发挥作用的程序。心灵被认为是一个心理表征的集合，与计算机的符号表征完全相似。我们可以对这样的模型或机器提出的唯一问题，即对它的唯一适当的测试，只是经典的图灵测试--它的输出与人的输出无法区分。Fodor(1998)称这种模型为 "心灵的表征理论(RTM)"，并指出它对认知主义的重要性："没有表征就没有认知"(第26页)。</p>
+<p>表征在这里有一个技术含义；它不是指心灵和世界事物之间的关系，而是指机器的封闭系统中的符号。认知论者（Carnap, Chomsky, Fodor等）长期以来一直认为，虽然语言和思想可能有语义内容（有意义的现实世界的参考），但认知科学所能接触到的只是语法（形式操作）。Fodor(1982)称这为 "方法论的孤独主义"。<strong>概念是RTM的核心，因为它们是制定规则的单位，也是规则运作的基础。</strong>因此，在某种意义上，概念已经从哲学上的角色转移到技术上的角色--一种深层的技术，其中在机器的符号表征上设置机器的计算的要求成为我们的心智理论。</p>
+<p>上述模式可能被称为哲学的认知主义或严格的认知主义。实践者研究者们习惯于忽略认知主义的方法论上的唯我论方面，而<strong>把认知表征当作是对世界的镜像，或者至少是对世界的信息的恢复。</strong>在其他方面，这些研究者可以保持认知主义模型的其余部分。我们将称它为工作中的认知主义。由于概念是认知主义心智表征模型的核心，认知主义非常需要一个关于概念的理论。Fodor(1998)又说："如果没有一个可行的概念理论，RTM就根本没有用"(第39页)。那么，有哪些可能的概念理论呢？</p>
+<p>人们普遍认为，目前对概念有三种主要的方法。(1）所谓的经典观点（2）分级结构和/或原型观点，以及（3）各种理论观点。这些都像许多牛人的道路一样，从哲学和心理学传统中生长出来。尽管没有任何一种观点起源于认知主义的立场本身，但认知主义已经详细地采用或批判了这些观点，因为它需要一个关于其核心构件的理论。本文的一个论点是，认知主义因其自身的信条而被迫严重误解和曲解了这些概念的每一种方法，因此，它对这些传统的批判实际上是对其自身架构的尖锐批判。在下面的章节中，我将从每一种观点自身的传统出发，说明认知主义是如何被迫曲解这一传统的，指出每一种观点的局限性和（有时并不明显的）智慧，并将在最后提出一种非认知主义的替代性观点。</p>
+<h1 id="i-目前对概念和类别的方法">I: 目前对概念和类别的方法</h1>
+<h2 id="a.-古典观点">A. 古典观点</h2>
+<p>古典观点是源自西方哲学史的对概念的方法。当人类开始用理性来观察他们的经验时，关于感官的可靠性和知识的基础的问题就自然而然地产生了，关于范畴如何具有一般性，词语如何具有意义，以及头脑中的概念如何与世界中的范畴相联系的更具体的问题也自然而然地产生了。希腊人和此后的大多数西方哲学家都认为，通过感官一刻不停地体验特定事物是不可靠的，因此，只有稳定的、抽象的、逻辑的、普遍的范畴才能作为知识的对象和词语意义的参照对象。这在历史上是一个重要的选择。希腊并不是唯一做出这种转向本质主义思维的文化；印度的梵语传统也是如此（Chakrabarti, 1975; Radhakrishnan and Moore, 1957）。然而，中国的辩证法思维却采取了相当不同的方向（Nisbett等人，正在审查；Peng和Nisbett，1999）。为了给知识提供一个适当的基础，柏拉图认为他必须引入形而上学的实体，即形式，它们是经验的基础，人们通过回忆来认识它们。对亚里士多德来说，普遍性存在于特定的物体中，并且是通过对物体的经验来了解。普遍性是特定事物中的共同要素；也就是说，一个普遍性的X是所有X所共有的，或共享的。单个物体将被分为具有相同属性的种类，而种类将根据它们之间的属性差异被细分为属和种。自然科学的主要任务之一是将自然对象按属和种划分为它们在本质上属于的真正的种类，并将其分类。亚里士多德的系统对我们来说应该听起来非常熟悉。我们的字典就是这样组织的，更不用说我们的大部分思维了。(作为对比，早期的汉语词典只包含同义词和对汉语表意文字的分析性剖析--贝克，未发表）。) 关于类别的下一个主要历史学派被称为概念主义，归因于从约翰-洛克开始的英国经验主义者。实际上，概念主义并不是希腊现实主义的对手理论，而是一个重点不同的问题--心灵究竟是如何形成一般概念的？洛克认为，这是通过从特定概念中抽象出来的过程发生的；每当人们遇到一个类别的成员时，就会从自己对该类别的概念中减去该类别所有成员所不具备的特征，直到只剩下对该类别成员来说必要且充分的特征。洛克、伯克利和休谟之间随后的争论涉及所产生的心理抽象的性质。洛克被认为（有点不公平），他声称这是一个一般的、抽象的观念或形象；伯克利的论点是，这是一个特殊的观念，通过代表同类事物而成为一般的观念，而休谟的反对意见（一般被忽视）是，这根本不是一个观念，只是习惯或习俗。请注意，在对概念和范畴的总体描述方面，经验主义思想与亚里士多德是多么的相似。</p>
+<p>心理学从哲学史中继承了对范畴的一种特殊看法。为了作为知识的适当的本质主义基础，类别被要求做到 (1) 是准确的，而不是模糊的--即有明确定义的边界，以及(2) 有共同的属性，这些属性是类别成员的必要和充分条件。由此可见，（3）一个类别的所有成员在成员资格方面必须是同样好的；要么他们有必要的共同特征，要么他们没有。因此，类别和概念被看作是逻辑集合。哲学家的类别观在20世纪50年代以概念学习研究的形式明确地进入心理学。在Jerome Bruner和他的同事们（Bruner et al., 1956）的带领下，受试者被要求学习类别，这些类别是由明确的属性定义的逻辑集合，比如红色和方形，由逻辑规则结合，比如和。理论兴趣集中在受试者如何学习哪些属性是相关的以及哪些规则将它们结合起来。在发展心理学中，皮亚杰和维果茨基的理论与概念学习范式相结合，研究儿童的非结构化、主题化的概念如何发展为成人的逻辑模式。人工刺激通常被用于各级实验研究，结构化的微观世界中，关于类别性质的普遍信念已经建立起来。如Fodor（1998）所述，经典观点的认知主义版本是，概念是定义，这意味着等同和可替换的符号串。单身汉是一个未婚的人 "就是一个典型的例子。认知主义机器的确是通过可替代的符号串来工作的，但是对于任何一个古典观点的支持者来说，这真的是概念的意义吗？当亚里士多德用属相和区别来定义物体时，他明确地打算描述经验性的内容。在学习理论中的标准概念实现范式中，心理学家试图找出生物如何学习哪些属性与概念相关，以及哪些规则将它们连接起来；受试者并没有被训练去替代彼此的符号串。类别可能被视为逻辑集合，但它们是旨在反映心灵和世界之间的映射的集合。因此，认知主义者对经典观点的解释有一个问题，即类别是基于可替代的符号串的定义，它实际上并没有描述经典观点。但是，认知论者是否可以争辩说这就是经典观点应该是的样子？当我们说某人拥有或理解一个概念时，我们是否意味着他所拥有的只是一串可替换的符号？这个问题类似于一直流行的关于计算机是否能思考的辩论。计算机是通过可替换的符号串来工作的。但考虑到约翰-塞尔现在著名的中文64 E. ROSCH 版权(c) Imprint Academic 2013 仅供个人使用 -- 不得复制房间的例子：一个不会说或不懂中文的人坐在一个孤立的房间里。有人把中文句子传给他，他在对照表上查找这些句子，然后把列出的答案传出去。这就是他所做的一切。他的回答通过了图灵测试，也就是说，与懂中文的人的回答没有区别。他懂中文吗？他是在用中文的概念和类别工作吗？没有！没有 然而，这个人所做的正是用符号串相互替代。中国房间的例子在几个方面唤起了我们对概念的直觉。其中一个方面似乎是固有的错误，即唯我论；另一个方面是交流的贫乏性。概念似乎不仅需要我们的字典，还需要有经验的人类知识百科全书的全部内容，更不用说与物质和社会世界的互动了（关于这些问题的背景见Dreyfus and Hall, 1982）。类别的经典观点可能没有提供足以满足这些要求的说明（正如将在后面的章节中显示的那样），但它至少在西方思想史所寻求答案的领域中提出了问题。</p>
+<p>事实上，即使是认知论者也不接受通过可替换的符号串来定义，当它被直截了当地说成是一种充分的概念理论。这种说法实际上是唯名论的一种形式，这种哲学立场断言一般性只存在于词语之中。名词主义从来没有被哲学认真对待过，在那里它被视为一个不连贯的立场，很容易被拆穿(Woozley, 1967)。即使是Fodor，这位老牌的认知主义者，也不接受对概念的充分的定义性说明；事实上，他觉得所有现存的概念理论都是 "从根本上和实践上看都是不真实的，对此需要采取一些激烈的行动"(Fodor, 1998, p. viii)。那么，认知论者，比如Fodor，为什么可以简单地认为经典观点的定义解释是理所当然的呢？也许这是因为机器的概念是可替换的符号串；这就是它们唯一可以成为的东西。这在心灵表征理论的基于规则的计算系统中尤其明显。就福多的批判成功而言，他的批判可以被看作是对认知主义本身而不是对概念的经典观点的影响。</p>
+<h2 id="b.-分级结构原型观点">B. 分级结构/原型观点</h2>
+<p>考虑红色：红色的头发和红色的消防车一样是你对红色的想法或形象的一个好例子吗？牙医的椅子和餐厅的椅子一样是椅子的一个好例子吗？这样的问题在经典的范畴观中是无稽之谈，因为在经典的范畴观中，某物要么是范畴成员，要么不是，所有成员都是等同的。对经典观点的挑战来自心理学内部，首先是关于颜色类别的工作（Rosch, 1973）。颜色类别没有任何明显的可分析的标准属性、形式结构或明确的边界，它们有一个内部结构，根据人们判断颜色在其类别中的典范程度进行分级。此外，那些被判断为颜色类别的最佳范例的颜色空间区域似乎起着特殊的作用；它们是最稳定的、跨文化认同的，甚至可能是颜色类别的生理起源（Berlin and Kay, 1969; Hardin and Maffi, 1997; Rosch, 1977）。其他种类的类别是否也是以类似的方式结构的？重新定义概念 65 Copyright (c) Imprint Academic 2013 For personal use only - not for reproduction 一项广泛的研究计划建立了一个经验性的核心发现（Rosch, 1978; 1994）。首先，所有的类别都显示出成员的梯度；也就是说，受试者很容易地、迅速地、有意义地评价一个特定的项目在多大程度上符合他们对该项目所属类别的想法或印象。这种判断是分级结构/原型观点的标志。请注意，这些不是概率判断，而是成员程度的判断。成员的梯度判断适用于最多样化的类别：如红色的感知类别，如家具的语义类别，如女人的生物类别，如职业的社会类别，如民主的政治类别，有经典定义的形式类别，如奇数，以及临时的、源于目标的类别，如火灾中要带出屋外的东西。成员的梯度必须被视为心理学上的重要因素，因为这种措施已被证明会影响心理学研究中使用的几乎所有主要的研究和测量方法。我将对这一点进行一些赘述，作为与认知主义对待分级结构/原型观点的方式的对比，这一点将在不久后描述。(除非另有说明，以下研究都是在Markman, 1989; Mervis and Rosch, 1981; Rosch, 1973; 1978; 1987; Rosch and Lloyd, 1978; or Smith and Medin, 1981中报道或引用的）。) 学习：类别的好例子在实验中被受试者学习，儿童在自然中获得的时间比差的例子早，而且当先呈现更好的例子时，类别可以更容易被学习--这些发现对教育有影响。处理速度：一个例子在其类别中越好，受试者就越能迅速判断该物品是否属于该类别。这很重要，因为反应时间通常被认为是学习心理过程的皇家道路。期待：当受试者在对该类别进行一些快速判断之前被告知一个类别名称时，其表现对该类别中的好成员有帮助，对坏成员有阻碍。这一发现在心理学中被称为 "启动 "或 "设定"，它被用来论证（并非无可争辩地）该类别的心理表征在某些方面更像好的例子而不是差的例子。联想：当被要求列出该类别的成员时，受试者比较差的例子更早、更频繁地产生更好的例子。推断：受试者从更有代表性的类别成员推断到较无代表性的类别成员，比反过来更容易，而且项目的代表性影响了形式逻辑任务中的判断，如Syllogisms。概率判断：代表性强烈影响概率判断（Kahneman等人，1982），这很重要，因为概率被认为是归纳推理的基础，因此也是我们学习世界的方式。分级结构的自然语言指标：自然语言本身包含了各种承认和指向分级结构的装置，比如像technically和really这样的对冲词（Lakoff, 1987; Rosch, 1975）。对相似性的判断：类别中不太好的例子被判断为与好的例子更相似，反之亦然。这违反了逻辑学中处理相似性的方式，在逻辑学中相似性关系是对称的和可逆的。其他研究直接挑战了经典观点的要求，即类别具有定义性特征。Rosch和Mervis(1975)发现，当被试被要求列出类别成员的属性时，许多类别显示出很少或没有66 E. ROSCH Copyright (c) Imprint Academic 2013 For personal use only - not for reproduction attributes in common. 属性似乎具有家族相似性（Wittgenstein, 1953），而不是必要和充分的结构。</p>
+<p><strong>判断出的概念类别的最佳例子被称为原型。</strong>虽然有些可能是基于统计学上的频率，如各种属性的平均值或模式（或家族相似性结构），但其他似乎是由生理学（好的颜色、好的形式）、社会结构（总统、教师）、文化（圣人）、目标（饮食中的理想食物）等因素使之突出的理想。形式结构（十进制系统中十的倍数），因果理论（"看起来 "随机的序列），以及个人经验（最初学到的或最近遇到的项目，或者因为它们有感情、生动、具体、有意义或有趣而变得特别突出的项目）。</p>
+<p>原型在哲学上最有说服力的一个方面是，它们远不是几个定义属性的抽象，它们似乎是丰富的、想象的、感觉的、完整的心理事件，在上述所有种类的研究效果中作为参考点。关于原型和分级结构的一个非常重要的发现是它们对背景有多敏感。例如，狗或猫可能被作为宠物动物的原型，而狮子或大象则更有可能被作为马戏团动物的原型。在默认的语境中（没有指定语境），咖啡或茶或可乐可能被列为典型的饮料，但葡萄酒更有可能在晚宴的背景下被选中。此外，人们对特设的目标衍生的类别（如躲避黑手党的好地方）表现出完全良好的类别效应，并具有分级结构。</p>
+<p>事实上，背景对分级结构的影响是无处不在的（Barsalou, 1987）。在古典观点中，从其起源于希腊思想的时候起，如果一个知识的对象随着环境的每一次心血来潮而改变，那么它就不是一个知识的对象，一个词的意义一定不会随着它的使用条件而改变。对其支持者来说，标准属性假设的一个最大优点是，假设的标准属性就是不随语境变化的东西。Barsalou认为，语境效应表明，类别原型和分级结构并不是预先储存在头脑中的，而是每次从更基本的特征或其他心理结构中 "临时 "创造出来的。类别对环境影响的极端灵活性可能有更根本的影响。认知论者通常将分级结构/原型观点定义为一种统计理论。Smith和Medin（1981）称其为概率论观点。Fodor(1998)将其定义为一种基于 "概念外延中的东西具有[某个]特征所表达的属性的可能性有多大 "的统计理论（第92页）。但是，这样定义它就错过了分级结构在哲学上最有预见性的一面。对于所有的概念类别，所有的人都判断类别的成员具有不同程度的成员资格，即使在没有关于项目是否被判断为类别成员的问题或统计学上的变化。(例如，判断8421是明确的奇数的人也判断7是他们对奇数类别概念的一个更好的例子)。事实上，判断不同程度的成员的现象是如此普遍，以至于通过一个奇怪的逻辑转折，它被用作对分级结构影响的反驳（Gleitman等人，1983）。此外，正如前面所指出的，许多原型来自于统计频率以外的来源。仅仅从统计学的角度来定义分级结构是在逃避解决分级结构和原型效应给经典观点和认知主义带来的基本挑战之一，67 Copyright (c) Imprint Academic 2013 For personal use only - not for reproduction. 我们将在后面讨论为什么认知主义必须这样定义它。</p>
+<p>严格的和工作的认知论者都对原型和分级结构作为概念或分类的说明持高度批评态度，即使他们接受了实验结果。在认知主义中，原型能够代表概念的唯一合法方式是，原型可以替代定义并进行相应操作。原型能否替代正式语义模型中的定义特征，从而说明同义词、矛盾和联结类别等逻辑和语言功能？这就是所谓的成分性问题。在一篇有影响力的论文中，Osherson和Smith（1981）使用Zadeh（1965）的模糊集合逻辑对原型理论进行了建模，其中共轭类别是通过最大化规则来计算的，并表明原型并不遵循这一规则；例如，guppy既不是宠物类别的一个很好的例子，也不是鱼类别的一个很好的例子，而是宠物鱼类别的一个很好的例子。(当然，这实际上是对一个特定的形式模型，即Zadeh的模糊集合逻辑的批评，而不是对原型和分级结构的批评。目前还不清楚哪一个（如果有的话）形式模型适合于原型和分级结构，甚至不清楚原则上是否有任何经验证据可以区分对立的模型（因为每一个存储模型总是以互补的处理假设呈现，使其可以匹配任何一种实验数据；Barsalou, 1990）。</p>
+<p>为什么认知主义要求概念在形式模型中是构成性的？在严格的认知主义的符号系统中，人们必须能够通过纯粹的句法手段--即通过形式规则对形式符号的操作--从宠物和鱼到宠物鱼，因为不可能有相应的现实世界语义可以依赖。但是我们不能通过对宠物和鱼的符号的任何操作来推导出宠物鱼的原型。因此，我们不能把分级结构变成一个形式化的定义。认知主义认为这是对原型和分级结构的破坏性证据；但同样地，它也可以被视为对认知主义的批判。工作认知主义试图与原型和分级结构的经验证据达成一致的一种方式是将分类分为核心概念和处理启发式。这体现在一类模型中，其中类别术语的实际意义是一个经典的定义，在此基础上加上一个处理启发式或识别程序，以说明分级结构的方面（Osherson and Smith, 1981; Smith et al., 1974）。这样一来，奇数可以同时 "拥有 "一个经典定义和一个原型。这是一个危险的举动，因为它将理论与任何经验性的参照物脱钩。这样一来，一个范畴术语的 "实际意义 "就可以成为一种仅由逻辑知道的形而上学实体，这种实体也许适合于方法论上的唯我论、人工智能、认知主义系统，但不是我们的经验科学可能想要接纳的实体。总而言之：分级结构和原型的证据违反了经典观点和严格的、有效的认知主义的信条。(1) 分级结构类别没有明确的界限。这不仅仅是物品被归类为类别成员的概率问题，因为对于许多类别，如颜色，受试者会断言一些物品确实在类别之间。(2) 许多类别没有，而且任何类别也不需要有任何必要和充分的. 相反，类别原型包含大量丰富的信息，如完整的图像和关于特定情况的许多细节，这些信息对类别的所有成员来说并不常见。简而言之，当概念被用于执行大多数活动时，骨架式的必要和充分属性的想法似乎与概念无关。(3) 一个类别中的项目在成员资格方面是不等价的，而是拥有不同等级的成员资格。这也不仅仅是一个概率问题，因为人们会直接断言一个类别的一个成员比另一个成员是该类别更好的例子。(所有的曲线不一定是概率分布。) (4) 分级结构不是形式系统，分级结构中的任何项目也不一定是结构中任何其他项目的暗示或生产，分级结构中的任何东西也不需要填补可替代的符号串的作用。分级结构和原型不需要被形式化系统（如Zadeh的模糊逻辑）所模拟，就可以存在。(5) 分级结构和原型，尽管它们有默认的上下文，但在其他方面都是灵活的，因为它们可以不断地进行调整。 它们不能被方法论或其他方面的唯心主义所模拟，因为它们必须考虑到那些不断变化的现实世界的情况。出于同样的原因，不清楚它们如何能在工作认知主义的意义上成为表征性的；现实世界中什么稳定的东西，无论是底层的还是表面的，它们能代表什么？</p>
+<p>C. 理论</p>
+<p>当今对概念的第三种方法是以理论为基础的。实际上有两组理论家，很多人把它们混为一谈：以认知主义为导向的认知心理学家，他们主要解决分类问题；"理论学派 "的发展心理学家，他们解决概念的变化。第一组（Medin，1989；Medin和Wattenmaker，1987；Murphy和Medin，1985）把理论的概念主要作为对以前分类研究的批评。通常，他们在所谓的基于相似性的分类理论和他们的新理论观点之间建立了对立，他们把分级结构/原型观点（以及可能的其他一切）置于其中。相似性观点被批评的依据是 (1)他们依赖于计算属性，但不能解释属性，(2)相似性不能被现有的形式模型（即Tversky, 1977）所解释，(3)关于原型和分级结构的各种实验显示了背景效应。然后他们断言，属性、相似性和所有关于分类的实验结果都来自于 "理论"，并由其解释。的确，我们现在的说法都没有对属性、相似性或语境的性质提供充分的理解，这些都是老生常谈的问题。但理论的观点是什么，它是如何解释这些问题的？值得注意的是，第一组理论家从来没有定义或描述他们的理论是什么意思，而且在他们所有的文献中，从来没有提供过一个实际理论的例子，分类研究中的发现，哪怕是一个发现，都可以从中得出。也没有试图说明属性、相似性或背景是如何从理论中得出的，无论是抽象的还是具体的理论。这种作为理论的类别理论是一种新的实质主张，还是仅仅是一种战斗口号？理论的含义是什么？可以被带入意识的明确的陈述？世界知识的任何项目？完整的字典和百科全书？重新定义概念 69 版权(c) Imprint Academic 2013 仅供个人使用 -- 不得复制 任何期望或习惯？脑海中或书中的任何东西？任何背景？很难摆脱这样的印象：对于认知心理学将类别作为理论的方法来说，目前绝对任何东西都可以算作一个理论，而且理论这个词可以被援引来解释任何关于相似性、属性或背景的发现。如果有知觉限制，人们就会谈论知觉理论（并援引进化论）--有点像早期心理学中的本能和驱动力的扩散。有趣的是，许多用来支持理论观点的论据（例如要求人们把世界知识带入解释的例子）正是海德格尔现象学传统中用来反对理论的问题，并支持有必要提出一个非理论基础的习惯和技能的背景，它是人类生活类别和活动的基础。为什么一个如此依赖挥手的观点被证明如此具有诱惑力呢？我相信这是因为理论这个词能够唤起并给人以满足对世界的两种有问题的矛盾的理解的印象。一方面，人们（甚至是心理学家）非常清楚地知道，生命活动发生在一个比我们的实验室实验所提供的大得多的背景中。经验是在相互依存的有意义的整体中呈现的，而不是在孤立的单元中。有意义的整体包括：世界知识、信仰（通常不会被组织成任何类似于连贯的理论）、期望、欲望、习惯、技能、直觉、身体、感官的运作、隐性知识、一切无意识或非意识的东西、习俗、价值观、环境等等。另一方面，我们觉得科学知识必须以有界限的、明确的（最好是正式的）结构出现。理论这个词既暗示了背景，也暗示了形式主义。但这是一个幻觉。有意义的整体的大背景并不是由理论组成的，而我们称之为理论的东西本身（正如科学哲学家之间的辩论所说明的那样）远不是无可争辩的可规定性。如果试图执行理论方案，就会遇到同样的限制，并受到它对其他说法的同样批评。理论观点之所以能保持可行的假象，只是因为它没有内容。因此，它具有严重的误导性。然而，理论的流行是一个信号，表明人们对概念和背景有重要的直觉，这些直觉应该被进一步探索，这项任务将在本文的第二部分进行。</p>
+<p>与认知心理学家对理论的含义缺乏具体说明相比，发展心理学的 "理论学派"(见Gopnik和Meltzoff, 1997)明确地将理论定义为类似于科学理论，很像Kuhnian的范式，并认为认知发展应该被看作是儿童持有的一个范式理论被另一个范式理论的连续替换。对概念的兴趣倾向于从儿童（而不是研究者）对概念是什么的理论变化的角度出发。当研究具体的概念时（如生物类型--Carey，1985；Keil，1979），其主旨是将它们作为更大的理论单位的一部分。代表严格的认知主义的Fodor(1998)将 "理论 "理论定义为概念整体主义，并以这样的指控来否定它：如果一个概念是根据它所处的理论来定义的，那么心理学家所讨论的那种概念变化是不可能的，因为在一个系统中引入一个新的术语或者改变一个已经纳入的术语的意义，将改变这个系统中所有其他术语的意义。事实上，用这样一个版本的认知主义机器编程，70 E. ROSCH Copyright (c) Imprint Academic 2013 For personal use only -- not for reproduction conceptual holism会有这个困难。在现实中，根据实验的要求，发展论者的理论被以许多不同的方式处理--例如，作为结构松散的暗示性信念陈述的集合，其中一个信念的变化，例如活着意味着什么，会导致某些其他信念的变化，例如死亡意味着什么（Slaughter等人，在出版中）。Fodor会称这是对 "理论 "理论的不连贯的表述。Fodor在最后的分析中所做的，以及任何严格的认知论者都必须做的，就是把分级结构/原型和理论都还原为以可替换的符号串为单位的概念的定义性说明。认知主义必须这样做，因为那是认知主义机器所能处理的全部问题。然而，正如我们以前所看到的，这完全不能令人满意，甚至对认知主义者来说也是如此。(Fodor, 1998, 认识到了这个问题，并试图在不改变认知主义世界观的任何信条的情况下，通过......是的......一套新的定义来补救它--关于批评，见Rosch, 1999。) 要从认知主义手中夺回概念，乃至整个认知科学，需要比这更激进的东西。这需要对心灵、世界、概念及其关系进行真正的重新思考。</p>
+<p>二：新概念观的基础</p>
+<p>A. 概念是心灵和世界之间的桥梁</p>
+<p>我们把心灵和世界看成是独立的东西1。这是因为我们以某种方式来看待它们。从另一个角度看（Rosch, in press），这显然是错误的。用Skarda（本卷）的术语来说，被感知或分类的世界是一个无缝的整体或无缝的网络，其中感知者/分类者和被感知/分类者只是同一事件的两极。在意识中，这些极点似乎被划分为实际的独立事物。概念的第一个功能是把这些对立的两极重新连接起来，成为有效的、即使是表面上独立的单元。以这种方式来看，概念部分地恢复了一种状态，这种状态比我们通常看世界的方式更真实，因此可能更科学。第一个阐明类似这种观点的认知科学家是J.J. Gibson。对世界的感知就是对自己的感知......。指明自我的光学信息......伴随着指明环境的光学信息。. . . 一个不可能没有另一个而存在。主观和客观的所谓独立领域实际上只是注意力的两极。观察者和环境的二元论是不必要的。对 "这里 "的感知的信息与对 "那里 "的感知的信息是同类的，而且一个连续的表面布局从一个延伸到另一个（Gibson, 1979, p. 116）。这种东西在感知自己的位置时可能是最直接明显的。一个人只有相对于其他事物的位置才知道自己在哪里，反之亦然；也就是说，一个人对自己的位置的判断和对相关环境参考点的位置的判断是同一个包容性的方面，RECLAIMING CONCEPTS 71 [1] 请注意，我是从通常使用的心智和世界开始的，并试图引导读者对这些事情有一个不同（可以说是更好）的理解。如果读者觉得有必要从心智、世界、有机体、环境、意识等的经典定义开始，可以在这里暂停一下，思考一下本文第一部分的重要性。Copyright (c) Imprint Academic 2013 仅供个人使用 -- 不可用于复制信息领域。新兴的生态心理学学科包含了许多关于这一事实如何影响行为的实验证明（见Neisser, 1993）。同样，人与人之间的互动也是共同定义、体验和行动的；这被称为主体间性，也是目前许多研究的动力（Trevarthen, 1993 - 也见Rosch, 1996）。在微观层面上，Skarda（本卷）详细而清晰地展示了二元知觉是如何从一个知觉事件的不间断领域中产生的。Jarvilehto（1998年a，1998年b）认为有必要在微观（神经）和宏观（行为）层面上将有机体和环境之间的关系重新概念化为一个单一系统。然而，在有意识的感知水平上，非常明显的是，感知者和被感知的世界被体验为不同的和独立的。因此概念。前面讨论的所有关于概念和类别的方法都在努力解决如何把感知者/认知者和被感知/认知的世界放在一起的问题。看看这些说法：世界包含认识者回忆或发现的真正的普遍性；或者世界包含被分类的对象（类别的延伸），而认识者的头脑包含概念；或者世界和认识者一起产生了突出物，这些突出物成为类别形成的原型；或者世界和认识者一起产生了发生灵活分类的情况；或者世界以某种方式运作，认识者通过理论映射；等等。所有这些说法都有一个共同的基本直觉，即是概念跨越了心智-世界的鸿沟。只有严格的认知主义及其方法论上的唯我论否认了这一点，或者至少否认了科学可以在此基础上进行。推论A：概念不是表征 由于概念和范畴的主观和客观方面是作为同一认知行为的不同两极一起出现的，并且是同一信息场的一部分，所以它们在开始时就已经结合在一起了。它们不需要通过心智的表征理论，如工作认知主义的理论，来进一步结合，它们也不能被严格认知主义的心智的唯物主义表征理论所分离。概念和范畴并不代表心智中的世界；它们是心智世界整体的一个参与部分，心智的感觉（有一个正在看或正在想的心智）是其中的一极，心智的对象（如可见的物体、声音、思想、情绪等等）是另一极。概念--红色、椅子、害怕、美味、犰狳等等--以许多不同的运作方式，将这种存在或拥有心灵的感觉与心灵对象的感觉不可分割地结合起来。</p>
+<p>B. 概念和分类只存在于具体的复杂情况中</p>
+<p>无论一个概念看起来多么抽象和普遍（例如平方根），该概念实际上只出现在具体的，具体的情况中。真实情境是信息丰富的完整事件。</p>
+<p>人们不会像在哲学例子中那样站在稀薄的空气中对着一棵树张望；总是有一个丰富的背景，丰富到有人认为它永远无法被完全指定（Searle, 1983）。情境/背景是整个生命形式的心智世界的结合部分。在心理学研究中，情境效应往往只被当作负面因素来研究，即使某人的实验或理论无效的人工制品。但可能背景或情境才是分类研究真正需要研究的单位。72 E. ROSCH Copyright (c) Imprint Academic 2013 For personal use -- not for reproduction</p>
+<p>推论B-1：概念和分类永远不会孤立地出现</p>
+<p>概念只会作为由其他概念和相互关联的生活活动提供的意义网络的一部分出现。</p>
+<p>想想大这个概念；它只有在与小相关的情况下才有意义。此外，我们知道一只大跳蚤比一只小象小。建立实际的人工智能系统和故事理解器的人知道，教机器一个词的意义意味着必然要教它许多其他词的意义；同样，对于那些其他的词，也是一个指数级的爆炸，只能通过人工手段来限制。仅仅有单词是不够的。在一本外国词典中查找一个外国单词；如果你不了解这门语言，其定义对你没有好处。教会一个词的意思也意味着要教会机器许多事实，这就是问题的百科全书部分。正如前面所指出的，正是概念和世界理解的相互关联方面使理论观点具有明显的合理性。但是，理解的相互关联的网络并没有被可指定的理论所限定。事实，如词语，需要无数的其他事实。苏尔的等价交换论证指出，这些事实确实是无数的：当你订购汉堡包时，你不会规定它不能被包裹在透明材料中，不能有一英里长。这是对意义和语境的无限多的假设，而这些假设永远不可能被正式地规定。此外，对于所有提供给他们的信息，机器故事理解者仍然做得很蹩脚；他们不理解故事的意义。这是因为概念（以及人类其他的思维方式）本身并不是抽象的信息性的；它们是参与性的。推论B-2：概念在各种情况下具有参与性而非识别性的功能 一件事是什么，已经预先被赋予了它所发生的整个心灵世界的一部分。</p>
+<p>概念的基本功能不是识别事物（正如它不是代表）；概念的功能不是我们不断地对自己说：'瞧，那边的物体有四条腿，会叫；它一定是条狗！' 相反，概念以无数种灵活的方式参与到情境中。许多关于概念和类别的实验研究，当然还有大多数模型，都假定要解释、争议或建模的是识别功能。可以肯定的是，我们可以参与专门的识别活动（比如参加植物学考试，玩20个问题，或者成为概念学习实验的主体），但这些活动最好被视为特殊的语言游戏（如维特根斯坦，1953），而不是原型的概念活动。(类似地，还有一些特殊的表征形式，如建筑图纸等。甚至创造形式系统也可以被看作是某些文化在某些情况下所珍视和奖励的活动）。) 由于概念是基于情境和参与性的，而不是识别功能，所以可以从新的角度来看待定义。在我们的文化中，人们发现自己所处的情况之一是被问及一个概念的定义。在这种情况下，我们从小到大的整个实践背景、理解和明确的教义都会发挥作用，而正确的答案通常是亚里士多德式的经典范畴定义。这是另一种形式的语言游戏。通过原型和分级结构的 "定义 "可以起到不同的作用。原型以其丰富的非标示性信息和意象，可以在许多不同的层面上表明在复杂情境中自我定位和导航的可能方式。</p>
+<p>情境的重要性超出了分类研究。因为心智和世界只有在实际的复杂情境中才会出现，所以情境是RECLAIMING CONCEPTS 73 版权(c) Imprint Academic 2013 仅供个人使用--不得复制，其中人类的解释、情感和动机起着支配作用。(例如，令人费解的所谓意志薄弱的情况就是动机不能跨情况转移的情况）。) 情境也是行动的领域（人格心理学中的一个老问题，见Buss和Cantor, 1989）。因此，情境肯定是一般心理学需要研究的单位。如何研究？什么是情境？有哪些类型的情境？情境是如何关联和分类的？它们是如何被组织成生活形式的？- 以及概念和类别可能与所有这些有什么关系？由于概念和分类在连接心智世界单元和揭示情境背景方面发挥着重要作用，它们或许能够为情境研究提供一个切入点。与其问类别如何能够普遍，或者概念如何能够在内部思维中代表外部世界，我们不如问类别和类别系统首先来自哪里？(为什么椅子与桌子或沙发是不同的类别？为什么椅子看起来更像是这个物体的真实名字，而不是家具、物质物体或办公椅？为什么体重在1.3到2.9磅之间的袋鼠这个类别看起来既不基本，也不连贯，更不可能？) 在严格的认知主义和经典观点中，类别也可以是任意的属性集合，事实上，在传统的实验室概念学习任务中也是如此。就工作认知主义只关注表征问题而言，它不能提供关于现实世界范畴形成的生态条件的线索（除了对一般的进化理论进行必要的挥手之外）。解决这些问题的一个尝试（Rosch等人，1976）提出，在自然条件下，感知、行动和生活活动之间存在着大量的关系结构，而类别的形成是为了最大限度地映射这种结构。2对于普通物体的分类法，他们把这个层次称为基本层次，表明它是解释类别的默认层次，并提供证据表明它具有感知、语言和发展的优先权。</p>
+<p>由于物体是情境中的 "道具"，这样的研究能否为情境的基本分类水平提供线索？(见Cantor等人，1982；Rifkin，1985；Rosch，1978。)富含信息的概念是否可以作为情境的模拟器(Barsalou, in press; Kahneman等人，1982)？是否有其他的情境方法可以将概念置于其自然环境中？认知主义不能处理这样的问题；它甚至不能提出这些问题。C. 心灵-世界非表征单位的 "因果 "规律 当心灵和世界被认为是分开的时候，因果或解释的效力就被归于心灵或世界。世界上发生的事情可能被认为是有机体或人所回应的刺激，或者心灵或人可能被视为欲望、意图、理论或对世界事物的行动的来源。这些极端的两极分化导致了理论和研究项目的流行和淘汰，但却没有进展。最多只能说心灵和世界是相互作用的。新的观点要求重新思考我们要如何完全建立因果关系和预测的模型。心灵和世界在一连串的情况下一起发生，这些情况在某种程度上是合法的和可预测的。我们希望能够找到这些规律和74 E. ROSCH [2] 将某物视为椅子或阿斯雷德，同样是一种感知和分类的行为。更广泛地说，认知和感知可能比我们目前的理论，特别是认知主义，愿意承认的要密切得多（例如，见Barsalou，出版中）。Copyright (c) Imprint Academic 2013 For personal use only -- not for reproduction to find a level of description which neither turns human action into something mechanical like engineering nor something mental like fantasy. 吉布森的生态心理学也面临类似的问题。他的生态光学被指责为将环境置于生物体内部的一种隐蔽方式。然而，观察他在讨论人的手的动作时是如何避免掉下二元论的钢丝的任何一边的。手的运动并不包括对刺激的反应......。. . . 难道唯一的选择就是把手看作是心灵的工具吗？例如，皮亚杰有时似乎在暗示，手是儿童智力的工具。但这就好比说，手是内在儿童的工具....。这无疑是一个错误。另一个选择不是回到精神主义。我们应该认为手既不是被触发的也不是被命令的，而是被控制的（Gibson, 1979, p. 235）。吉布森正试图发展一种对感知和行动的分析，而这种分析恰恰抓住了主体和客体之间功能描述的那个层面。在这一点上，他没有被追随。虽然研究者们蜂拥而至，发展他关于感知中高阶不变性的想法，这些想法可以在不改变人的思维方式的情况下进行，但在实施一种新的描述形式方面却没有什么作为。</p>
+<p>D. 新颖性</p>
+<p>认知主义的机器是确定的。当一台机器只是简单地操纵符号串，用一个符号替换另一个符号时，任何出来的东西都是以某种形式放进去的。归根结底，它是由人类程序员放进去的。在严格认知主义的规则驱动系统中对概念和类别的描述不允许有任何新意。概念和类别运作的实际情况是独特的，而且彼此之间有无限的不同。工作认知主义只能描绘出概念在各种情况下对一些共同点的反应，以产生经典观点中的骨架式抽象概念。在新的观点中，概念不是表征，而是运作的、参与整个情境的部分。</p>
+<p>因此，概念允许情况本身的所有新颖性，而且可以有真正的惊喜、学习和发明。</p>
+<p>E. 非概念背景</p>
+<p>概念只存在于非概念的背景中。如果不对它们不是什么进行一些对比，我们甚至无法想到要谈论概念和概念化。除了认知主义之外，所有的系统都有某种方式来承认并至少试图接近非概念性。一些例子："如何知道 "与 "如何知道"，海德格尔的习惯和实践背景，私人经验及其所谓的质点，基于身体的认识，塞尔的等价交换，直觉，所有艺术的经验，以及在爱、悲伤、做数学、宗教和其他一切方面的不可言说的经验。但在认知主义中，一路都是概念! - 认知主义系统不可能处理非概念性的东西。然而，正是在这些经验中，人们找到了他们生活的意义和完整性。在认知主义中，这些东西必须被归入一个单独的领域，在那里它们要么被否认存在，要么被从根本上置于认知科学的范围之外。在这里提出的新观点中，非概念性的东西本来就是心灵世界情境的一部分，也许是每个情境的一部分。任何关于人类存在的科学都不能直截了当地排除对人最有意义的东西。重新认识概念 75 版权(c) Imprint Academic 2013 仅供个人使用--不得转载 结论 认知主义系统是由概念构成的。如果认知主义不能充分说明它的基本构件，它就有麻烦了。我试图说明认知主义如何必然误解了以前关于概念的理论和研究，以及它如何无法应对关于概念的基本事实。我已经概述了对概念和范畴的新观点的基础，这应该把它们的研究放在真实的（而不是幻想的球形牛）基础上。概念和范畴的逻辑必须是一个开放的系统，而不是一个封闭的逻辑。只有这样，对概念的研究才能从定义和可替代的符号串的无意义的范围内重新获得，成为人类认识的真正科学。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/concepts/" title="Reclaiming Concepts，Eleanor Rosch">http://nlpcourse.cn/concepts/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/courses/" rel="prev" title="计算机公开课目录">
+      <i class="fa fa-chevron-left"></i> 计算机公开课目录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/word_embeddings2/" rel="next" title="认知语言学论文代码">
+      认知语言学论文代码 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#i-%E7%9B%AE%E5%89%8D%E5%AF%B9%E6%A6%82%E5%BF%B5%E5%92%8C%E7%B1%BB%E5%88%AB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">I: 目前对概念和类别的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a.-%E5%8F%A4%E5%85%B8%E8%A7%82%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">A. 古典观点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b.-%E5%88%86%E7%BA%A7%E7%BB%93%E6%9E%84%E5%8E%9F%E5%9E%8B%E8%A7%82%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">B. 分级结构&#x2F;原型观点</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">475k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:12</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

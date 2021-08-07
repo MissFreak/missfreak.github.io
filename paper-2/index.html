@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/07/18/hGfrd9seWMLuaAQ.png">
 <meta property="og:image" content="https://i.loli.net/2021/07/18/p39NkE5SMrHYgCb.png">
 <meta property="article:published_time" content="2021-07-18T13:02:41.346Z">
-<meta property="article:modified_time" content="2021-07-18T13:58:15.276Z">
+<meta property="article:modified_time" content="2021-07-24T15:05:58.854Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="期刊翻译">
 <meta name="twitter:card" content="summary">
@@ -136,12 +136,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -218,10 +218,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-07-18 21:02:41 / 修改时间：21:58:15" itemprop="dateCreated datePublished" datetime="2021-07-18T21:02:41+08:00">2021-07-18</time>
+              <time title="创建时间：2021-07-18 21:02:41" itemprop="dateCreated datePublished" datetime="2021-07-18T21:02:41+08:00">2021-07-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-24 23:05:58" itemprop="dateModified" datetime="2021-07-24T23:05:58+08:00">2021-07-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -249,7 +255,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.4k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -290,18 +296,24 @@
 <p>算法1： <img src="https://i.loli.net/2021/07/18/hGfrd9seWMLuaAQ.png" width="400"/></p>
 <p>在实例$i_n <span class="math inline">\(和聚类\)</span>Cl_j <span class="math inline">\(之间的相似性函数\)</span>Sim(i_n, Cl_j )<span class="math inline">\(，如果大多数相似性分数高于阈值\)</span>τ_{sim}$ ，则返回实例$i_n <span class="math inline">\(和聚类\)</span>Cl_j $ 中的任何实例之间的最大相似性。否则就会返回一个0的值。两个实例之间的相似性是根据公式（1）计算的。因此，算法1中的聚类与原来的Snowball方法不同，它是朝着聚类中心点计算相似度的。</p>
 <h2 id="查找关系实例">3.3 查找关系实例</h2>
-<p>在提取模式生成之后，BREDS用算法2找到关系实例。它再次扫描文档，收集所有包含实体对的文本片段，这些实体对的语义类型与种子实例中的相同。对于每个片段，按照第3.1节所述，生成一个实例i，并计算与所有先前生成的提取模式（即集群）的相似度。如果i和一个模式<span class="math inline">\(Cl_j\)</span>之间的相似度等于或高于<span class="math inline">\(τ_{sim}\)</span> ，那么<span class="math inline">\(i\)</span>就被认为是一个候选实例，并且根据公式（2）更新该模式的置信度分数。具有最高相似度的模式（patternbest）和相应的相似度分数（simbest）一起与i相关联。这些信息被保存在候选者的历史中。请注意，"候选人 "和 "关注点 "的历史在所有的自举迭代中都被保留下来，新的模式或实例可以被添加，或者现有模式或实例的分数可以改变。</p>
+<p>在提取模式生成之后，BREDS用算法2找到关系实例。它再次扫描文档，收集所有包含实体对的文本片段，这些实体对的语义类型与种子实例中的相同。对于每个片段，按照第3.1节所述，生成一个实例i，<strong>并计算与所有先前生成的提取模式（即集群）的相似度</strong>。如果<span class="math inline">\(i\)</span>和一个模式<span class="math inline">\(Cl_j\)</span>之间的相似度等于或高于<span class="math inline">\(τ_{sim}\)</span> ，那么<span class="math inline">\(i\)</span>就被认为是一个候选实例，并且根据公式（2）更新该模式的置信度分数。具有最高相似度的模式（patternbest）和相应的相似度分数（simbest）一起与<span class="math inline">\(i\)</span>相关联。这些信息被保存在候选者的历史中。请注意，"候选人 "和 "关注点 "的历史在所有的自举迭代中都被保留下来，新的模式或实例可以被添加，或者现有模式或实例的分数可以改变。</p>
 <p>算法2：<img src="https://i.loli.net/2021/07/18/p39NkE5SMrHYgCb.png" width="400"/></p>
 <h2 id="语义漂移检测">3.4 语义漂移检测</h2>
 <p>与Snowball一样，BREDS在每次迭代结束时，根据用公式（3）计算的分数对候选实例进行排名。得分等于或高于阈值<span class="math inline">\(τ_t\)</span>的实例被添加到种子集，用于引导算法的下一次迭代。</p>
 <h1 id="引言">1 引言</h1>
-<p>关系提取（RE）将非结构化文本转化为关系三要素，每个三要素代表两个命名实体之间的关系。A 的引导系统从一系列的文档和一些种子实例开始。该 系统扫描文件集，收集 种子实例的发生语境。然后。基于这些语境，系统生成提取模式。文件被扫描 再次使用这些模式来匹配新的关系实例。这些新提取的实例 然后被添加到种子集中，这个过程被重复进行 重复这个过程，直到达到一定的停止标准。因此，引导的目的是用新的关系实例扩展 的目标是用新的关系实例扩大种子集，同时 限制语义漂移，即提取的关系的语义逐渐偏离种子关系的语义。最先进的方法依赖于具有TF-IDF权重的词向量表示（Salton and Buckley, 1988）。) 然而，依靠TF-IDF权重扩大种子 依靠TF-IDF表示法来扩大种子集，以找到 类似的实例有局限性，因为任何两个关系实例向量之间的相似性 只有当实例至少共享一个术语时，TF-IDF权重的任何两个关系实例向量之间的相似性才是正的。例如， 短语是由和是联合创始人的 没有任何共同的词，但它们有 相同的语义。词根技术可以帮助解决 这些情况，但只适用于同一词根的变体（Porter, 1980）。(Porter, 1980)。我们建议用一种基于词嵌入的方法来应对这一挑战 我们建议用一种基于词嵌入的方法来解决这一难题（Mikolov et al., 2013a）。) 依靠词的嵌入，两个短语的相似性可以被发现。两个短语的相似性可以被捕捉到，即使不存在共同的词。即使没有共同的词汇存在。联合创始人和创立者的词嵌入应该是相似的，因为这些词往往出现在相同的 语境中出现。然而，词嵌入也可能 引入语义漂移。当使用词嵌入时，像在大学学习历史这样的短语可以 的短语有很高的相似性，例如 历史教授在。在我们的方法中，我们通过对 在我们的方法中，我们通过对提取的关系实例进行排序，以及对生成的提取模式进行评分来控制语义漂移。提取模式。我们在BREDS中实现了这些想法，这是一个基于词嵌入的RE的引导系统。我们对BREDS进行了评估，该系统收集了120万条来自新闻的句子。对BREDS进行了评估，该系统收集了120万篇新闻文章的句子。实验结果表明，我们的方法优于基于Agichtein和Jonathan的观点的基线引导系统。的想法，该系统依赖于TF-IDF表示。实验结果表明，我们的方法优于基于Agichtein和Gravano(2000)思想的基准引导系统，该系统依赖于TF-IDF表示。</p>
+<p>关系提取（RE）将非结构化文本转化为关系三要素，每个三要素代表两个命名实体之间的关系。一个关系提取的引导系统从一系列的文档和一些种子实例开始。该系统扫描文件集，收集种子实例的发生语境。然后基于这些语境，系统生成提取模式。文件再次被扫描，使用这些模式来匹配新的关系实例。这些新提取的实例 然后被添加到种子集中，这个过程被重复进行 重复这个过程，直到达到一定的停止标准。</p>
+<p>因此，引导的目标是用新的关系实例扩大种子集，同时限制语义漂移，即提取的关系的语义逐渐偏离种子关系的语义。最先进的方法依赖于具有TF-IDF权重的词向量表示（Salton and Buckley, 1988）。然而，依靠TF-IDF权重扩大种子 依靠TF-IDF表示法来扩大种子集，以找到 类似的实例有局限性，因为任何两个关系实例向量之间的相似性 只有当实例至少共享一个术语时，TF-IDF权重的任何两个关系实例向量之间的相似性才是正的。例如， 短语是由和是联合创始人的 没有任何共同的词，但它们有 相同的语义。词根技术可以帮助解决 这些情况，但只适用于同一词根的变体（Porter, 1980）。(Porter, 1980)。</p>
+<p>我们建议用一种基于词嵌入的方法来解决这一难题（Mikolov et al., 2013a）。依靠词的嵌入，两个短语的相似性可以被发现。两个短语的相似性可以被捕捉到，即使不存在共同的词。即使没有共同的词汇存在。联合创始人和创立者的词嵌入应该是相似的，因为这些词往往出现在相同的 语境中出现。然而，词嵌入也可能引入语义漂移。当使用词嵌入时，像在大学学习历史这样的短语有很高的相似性，例如 历史教授在。在我们的方法中，我们通过对提取的关系实例进行排序，以及对生成的提取模式进行评分来控制语义漂移。</p>
+<p>我们在BREDS中实现了这些想法，这是一个基于词嵌入的RE的引导系统。我们对BREDS进行了评估，该系统收集了120万条来自新闻的句子。对BREDS进行了评估，该系统收集了120万篇新闻文章的句子。实验结果表明，我们的方法优于基于Agichtein和Jonathan的观点的基线引导系统。的想法，该系统依赖于TF-IDF表示。实验结果表明，我们的方法优于基于Agichtein和Gravano(2000)思想的基准引导系统，该系统依赖于TF-IDF表示。</p>
 <h1 id="引导关系提取器">2 引导关系提取器</h1>
-<p>Brin(1999)开发了DIPRE，这是第一个将引导法用于RE的系统。的第一个系统，该系统将种子的发生率表示为 该系统将种子的出现表现为三个上下文的字符串。在第一个实体之前的词(BEF)，两个实体之间的词（BET），以及第二个实体之后的词（AFT）。实体(AFT)。DIPRE生成提取模式 通过在字符串匹配的基础上对上下文进行分组。并通过限制一个模式可以提取的实例数量来控制语义漂移。语义漂移，并通过限制一个模式可以提取的实例数量来控制语义漂移。Agichtein和Gravano（2000）开发了 Snowball，其灵感来自于DIPRE的方法 该方法的灵感来自于DIPRE的方法，即为每个出现的情况收集三个语境。但对每个上下文计算一个TF-IDF表示。语境。种子语境的聚类是通过一个基于 单程算法，基于三个向量表示的上下文之间的余弦相似度。</p>
-<p><span class="math display">\[ \begin{aligned} \operatorname{Sim}\left(S_{n}, S_{j}\right)=&amp; \alpha \cdot \cos \left(B E F_{i}, B E F_{j}\right) +\beta \cdot \cos \left(B E T_{i}, B E T_{j}\right) +\gamma \cdot \cos \left(A F T_{i}, A F T_{j}\right) \end{aligned} \]</span></p>
-<p>在该公式中，参数α、β和γ对每个向量进行加权。一个提取模式由形成一个聚类的向量的中心点来表示。这些模式被用来再次扫描文本，对于任何一对与种子具有相同语义类型的实体共同出现的每个文本片段，都会产生三个向量。如果上下文向量与提取模式的相似度大于阈值τsim，则该实例被提取。Snowball对模式进行评分，并对提取的实例进行排名，以控制语义漂移。一个模式的评分是基于它所提取的实例，这些实例可以包括在三个集合中。如果一个提取的实例包含一个实体e1，而这个实体是种子的一部分，并且如果实例中的相关实体e2与种子中的实体相同，那么这个提取被认为是积极的（包括在集合P中）。如果该关系与种子集中的关系相矛盾（即e2不匹配），那么该提取被认为是负面的（包含在一个集合N中）。如果这个关系不是种子集的一部分，那么这个提取就被认为是未知的（包括在一个U集里）。根据以下情况给每个模式p分配一个分数。 <span class="math display">\[
-\operatorname{Conf}_{\rho}(p)=\frac{|P|}{|P|+W_{n g t} \cdot|N|+W_{u n k} \cdot|U|}
-\]</span> Wngt和Wunk分别是与消极提取和未知提取相关的权重。一个实例的置信度是根据对提取它的模式的相似度得分计算的，并以模式的置信度为权重。$Confι(i) = 1 - Y |ξ| j=0 (1 - Confρ(ξj ) × Sim(Ci , ξj )) $(3) 其中，ξ是提取了i的模式集，Ci是i发生的文本语境。信度高于阈值τt的实例被用作下一次迭代的种子。</p>
+<p>Brin(1999)开发了DIPRE，这是第一个将引导法用于RE的系统，该系统将种子的出现表现为三个上下文的字符串：在第一个实体之前的词(BEF)，两个实体之间的词（BET），以及第二个实体之后的词（AFT）。实体(AFT)。DIPRE通过在字符串匹配的基础上对上下文进行分组来生成提取模式，并通过限制一个模式可以提取的实例数量来控制语义漂移。Agichtein和Gravano（2000）开发了 Snowball，该方法的灵感来自于DIPRE的方法，即为每个出现的情况收集三个语境，但对每个上下文计算一个TF-IDF表示。种子语境的聚类是通过一个基于三个向量表示的上下文之间的余弦相似度的单程算法：</p>
+<p><span class="math display">\[ \begin{aligned} \operatorname{Sim}\left(S_{n}, S_{j}\right)=&amp; \alpha \cdot \cos \left(B E F_{i}, B E F_{j}\right) +\beta \cdot \cos \left(B E T_{i}, B E T_{j}\right) +\gamma \cdot \cos \left(A F T_{i}, A F T_{j}\right) \end{aligned} \]</span> (1)</p>
+<p>在该公式中，参数α、β和γ对每个向量进行加权<strong>。一个提取模式由形成一个聚类的向量的中心点来表示。</strong>这些模式被用来再次扫描文本，对于任何一对与种子具有相同语义类型的实体共同出现的每个文本片段，都会产生三个向量。如果上下文向量与提取模式的相似度大于阈值<span class="math inline">\(τ_{sim}\)</span>，则该实例被提取。</p>
+<p>Snowball对模式进行评分，并对提取的实例进行排名，以控制语义漂移。<strong>一个模式的评分是基于它所提取的实例，这些实例可以包括在三个集合中</strong>：如果一个提取的实例包含一个实体e1，而这个实体是种子的一部分，并且如果实例中的相关实体e2与种子中的实体相同，那么这个提取被认为是积极的（包括在集合<span class="math inline">\(P\)</span>中）。如果该关系与种子集中的关系相矛盾（即e2不匹配），那么该提取被认为是负面的（包含在一个集合<span class="math inline">\(N\)</span>中）。如果这个关系不是种子集的一部分，那么这个提取就被认为是未知的（包括在一个<span class="math inline">\(U\)</span>集里）。<strong>根据以下情况给每个模式<span class="math inline">\(p\)</span>分配一个分数：</strong> <span class="math display">\[
+\operatorname{Conf}_{\rho}(p)=\frac{|P|}{|P|+W_{n g t} \cdot|N|+W_{u n k} \cdot|U|} (2)
+\]</span> <span class="math inline">\(W_{ngt}\)</span>和<span class="math inline">\(W_{unk}\)</span>分别是与消极提取和未知提取相关的权重。<strong>一个实例的置信度是根据对提取它的模式的相似度得分计算的，并以模式的置信度为权重：</strong> <span class="math display">\[
+\operatorname{Conf}_{\iota}(i)=1-\prod_{j=0}^{|\xi|}\left(1-\operatorname{Conf}_{\rho}\left(\xi_{j}\right) \times \operatorname{Sim}\left(C_{i}, \xi_{j}\right)\right) (3)
+\]</span> 其中，<span class="math inline">\(ξ\)</span>是提取了i的模式集，<span class="math inline">\(C_i\)</span>是i发生的文本语境。信度高于阈值<span class="math inline">\(τ_t\)</span>的实例被用作下一次迭代的种子。</p>
 
     </div>
 
@@ -311,6 +323,9 @@
       
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-5\" rel="bookmark">用于从文本中半监督的网络论点语料库的清洗</a></div>
+    </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\paper-3\" rel="bookmark">用分布式语义bootstrap关系</a></div>
     </li>
@@ -455,14 +470,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -526,13 +541,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">366k</span>
+    <span title="站点总字数">475k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:33</span>
+    <span title="站点阅读时长">7:12</span>
 </div>
 
         

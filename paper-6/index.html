@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="没有经过专门的自然语言处理培训的社会科学家在分析文本语料库时经常使用unigram词袋（BOW）表示。我们提供了一种新的基于短语的方法，即NPFST，用于丰富unigram词袋的内容。NPFST使用一个POS标记器和一个有限状态转换器来提取多词短语，并将其添加到unigram词袋中。我们将NPFST与Ngram和解析方法在产量（yield）、召回率（recall）和效率（efficiency）方面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一袋什么？用于文本分析的简单名词短语抽取">
+<meta property="og:url" content="http://nlpcourse.cn/paper-6/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="没有经过专门的自然语言处理培训的社会科学家在分析文本语料库时经常使用unigram词袋（BOW）表示。我们提供了一种新的基于短语的方法，即NPFST，用于丰富unigram词袋的内容。NPFST使用一个POS标记器和一个有限状态转换器来提取多词短语，并将其添加到unigram词袋中。我们将NPFST与Ngram和解析方法在产量（yield）、召回率（recall）和效率（efficiency）方面">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/07/28/VL1TDYsoCdqhuSa.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/28/q6TMGZVjut4wOes.png">
+<meta property="article:published_time" content="2021-07-28T05:33:20.238Z">
+<meta property="article:modified_time" content="2021-08-07T03:02:30.576Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/28/VL1TDYsoCdqhuSa.png">
+
+<link rel="canonical" href="http://nlpcourse.cn/paper-6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>一袋什么？用于文本分析的简单名词短语抽取 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/paper-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一袋什么？用于文本分析的简单名词短语抽取
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-28 13:33:20" itemprop="dateCreated datePublished" datetime="2021-07-28T13:33:20+08:00">2021-07-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-07 11:02:30" itemprop="dateModified" datetime="2021-08-07T11:02:30+08:00">2021-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" itemprop="url" rel="index"><span itemprop="name">信息抽取</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>没有经过专门的自然语言处理培训的社会科学家在分析文本语料库时经常使用unigram词袋（BOW）表示。我们提供了一种新的基于短语的方法，即NPFST，用于丰富unigram词袋的内容。NPFST使用一个POS标记器和一个有限状态转换器来提取多词短语，并将其添加到unigram词袋中。我们将NPFST与Ngram和解析方法在产量（yield）、召回率（recall）和效率（efficiency）方面进行比较。然后我们演示了如何使用NPFST进行探索性分析；它在许多不同种类的英语文本上表现良好，无需配置。最后，我们介绍了一个使用NPFST分析美国国会法案(congressional bills ) 新语料库的案例研究。关于我们的开源实现，见http://slanglab.cs.umass.edu/phrases/。</p>
+<span id="more"></span>
+<h1 id="引言">1 引言</h1>
+<p>社会科学家在分析文本语料库时通常使用unigram表示法；每个文档被表示为一个unigram词袋（BOW），而语料库本身被表示为一个计数（count）的文档-术语矩阵。例如，Quinn等人（2010）和Grimmer（2010）使用unigram词袋作为主题模型的输入，而Monroe等人（2008）使用unigram词袋来报告政治演说中最有党派性的术语。虽然unigram词袋的简单性很吸引人，但unigram分析不能保留有意义的多词短语，如 "医疗保健 "或 "社会保障"，也不能区分共享一个词的政治意义的短语，如 "非法移民 "和 "无证移民"。为了解决这些限制，我们引入了NPFST，它提取多词短语来充实unigram词袋，作为文档-术语矩阵的附加列。NPFST适用于许多不同种类的英语文本；它使用适度的计算资源，不需要任何专门的配置或标注。</p>
+<h1 id="背景">2 背景</h1>
+<p>我们将NPFST与其他几种方法在产量、召回率、效率和可解释性方面进行比较。产量指的是提取短语的数量--较低的产量需要较少的计算资源和人力资源来处理这些短语。召回率是指一种方法恢复最相关或最重要的短语的能力，由人决定。一个好的方法应该有较低的产量，但有较高的召回率。</p>
+<h2 id="n-grams">2.1 n-grams</h2>
+<p>我们最简单的基线是 <strong>AllNGrams（K）</strong>。这个方法从标记化的句子分段的文本中提取所有的n-grams，长度不超过K，但不包括跨越句子边界的ngrams。这种方法通常用于提取文本分类的特征（例如，Yogatama等人（2015）），但在社会科学背景下有几个缺点。首先，社会科学家经常想对单个短语进行实质性的解释，但跨越句子成分的零散短语可能没有意义。例如，《平价医疗法案》包括难以解释的4-gram，"the Internet website of"。其次，尽管AllNGrams(K)有很高的召回率（只要K足够大），<strong>但它的产量较高，因此需要大量资源来处理提取的短语。</strong></p>
+<h2 id="解析">2.2 解析</h2>
+<p>另一种方法<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>是使用语法将提取的短语限制在成分上，如名词短语（NPs）。与动词、介词或形容词短语不同，NPs即使从其周围的语境中剥离出来也常常是有意义的——例如，<span class="math inline">\([Barack Obama]_{NP}\)</span>与<span class="math inline">\([was inaugurated in 2008]_{V P}\)</span>。 有许多方法可以提取NPs。鉴于NLP中成分分析研究的悠久历史，一种明显的方法是运行一个现成的成分分析器 (constituent parser )，然后从树中检索所有的NP non-terminals <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>。我们称这种方法为 <strong>ConstitParse</strong>。不幸的是，英语训练数据的主要来源，如Penn Treebank（Marcus等人，1993），包括NP内的定语和 non-nested flat NP标注<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>，导致在我们的背景下召回率低（见§4）。由于现代解析器依赖于这些训练数据的来源，所以要改变这种行为是非常困难的。</p>
+<h2 id="pos语法">2.3 POS语法</h2>
+<p>另一种方法，由Justeson和Katz提出 (1995)提出的另一种方法是使用 POS 模式来寻找和提取NP--一种浅层部分解析的形式（Abney, 1997）。研究人员已经在各种不同的背景下使用这种方法（Benoit和 Nulty, 2015; Frantzi等人, 2000; Kim等人, 2010; Chuang等人，2012；Bamman和Smith，2014）。) 一个基于模式的方法可以用三组参数来指定：(G, K, M)，其中G是一个语法，K是一个最大长度，而M是一个匹配策略。语法G是一个非递归的正则表达式，定义了一个无限的POS标签序列（即正则语言）；最大长度K将提取的n-grams的长度限制在n≤K；而匹配策略M指定了如何提取符合语法的文本跨度。 我们考虑的最简单的语法是：</p>
+<p><span class="math inline">\((A | N) ∗ N(P D ∗ (A | N) ∗ N)∗\)</span></p>
+<p>在一个由形容词、名词（包括普通名词和专有名词）、介词和定语词组成的粗略的标签集上定义。我们把这种语法称为<strong>SimpleNP</strong>。与这种语法相匹配的成分是 bare NPs（ with optional PP attachments ）、N-bar和名字。我们在root NP上不包括任何定语。</p>
+<p>我们还考虑了三个基线匹配策略，每个匹配策略可以（理论上）与任何G和K一起使用。第一个FilterEnum用正则语言枚举所有可能的字符串，最大长度为K，作为预处理步骤。然后，在运行时，它检查语料库中的每个n-gram是否存在于这个枚举中。这种匹配策略实现简单，可以提取长度为K的所有匹配，但是如果K较大，则在计算上是不可行的。第二种是filtersa，它将G编译成一个有限状态自动机（FSA）作为预处理步骤。然后，在运行时，它检查每个n-gram是否与这个FSA匹配。像FilterEnum一样，这种匹配策略提取所有长度为K的匹配；然而，如果K很大，它可能是低效的。第三个GreedyFSA也将G编译成FSA，但在运行时使用标准的贪婪匹配方法来提取与G匹配的ngram。与其他两种匹配策略不同，它不能提取重叠或嵌套的匹配，但可以提取很长的匹配。4</p>
+<p>Justeson和Katz（1995）在他们最初的陈述中定义了一种与SimpleNP非常相似的语法，并建议使用2-gram和3-gram（即K=3）。在这种限制下，他们的语法由七种独特的模式组成。他们还建议使用FilterEnum来提取与这些模式匹配的文本跨度。我们将此方法称为JK=（SimpleNP，K=3，FilterEnum）。许多研究人员使用这种方法，也许是因为曼宁和舒茨（1999）在NLP教科书中描述了这种方法。</p>
+<p>我们的贡献是一种新的基于模式的提取方法：NPFST =（FullNP，<span class="math inline">\(K=∞\)</span>, RewriteFST ）。在§3.1中，我们定义了FullNP语法，在§3.2中，我们定义了RewriteFST匹配策略。</p>
+<h2 id="fullnp语法">3.1 FullNP语法</h2>
+<p>FullNP扩展SimpleNP，通过添加具有相同标记的成对单词的coordination（例如，（VB CC VB）在 (cease and desist) order) ；名词短语的coordination ；parenthetical post-modifiers 插入式后置修饰语（例如<span class="math inline">\(401(k)\)</span>，由于通常的NLP标记化约定，它是4-gram）；数字修饰符和名词；支持Penn Treebank标签集， 粗糙的通用标签集（Petrov等人，2011）和Gimpel等人（2011）的Twitter特定粗糙标签集。我们在附录中提供了完整的定义 。</p>
+<p><img src="https://i.loli.net/2021/07/28/VL1TDYsoCdqhuSa.png" width="400"/></p>
+<h2 id="rewritefst匹配策略">3.2 RewriteFST匹配策略</h2>
+<p>RewriteFST使用a finite-state transducer 有限状态转换器（FST）快速提取与G匹配的文本spans ，包括overlapping 和nested spans 。这种匹配策略是有限状态NLP的一种形式（Roche和Schabes，1997），因此建立在FST算法和工具的大量前期工作的基础上。</p>
+<p>RewriteFST的输入是标记I的POS-tagged5序列，表示为FSA。对于一个简单的标记序列，这个FSA是一个线性链，但是，如果标记器的输出有不确定性，它可以是一个每个位置有多个标记的晶格。</p>
+<p>语法G首先被编译成一个短语转换器P，6，它接受一个输入序列I并输出相同的序列，但是分别插入一对开始和结束符号-[S]和[E]，以指示可能的np（参见图1）。在运行时，RewriteFST计算输出晶格L=I◦ P采用FST合成；7因为它是不确定的，所以L包括所有重叠和嵌套的跨距，而不仅仅是最长的匹配。最后，FilterFST遍历L以找到带有[S]符号的所有边。从每一条路径开始，它都执行深度优先搜索，以找到指向带有[E]符号的边的所有路径，累加所有[S]和[E]分隔的跨距。8</p>
+<p>在表1中，我们提供了FilterFST和§2.3中描述的三种匹配策略的比较。</p>
+<p><img src="https://i.loli.net/2021/07/28/q6TMGZVjut4wOes.png" width="400"/></p>
+<h1 id="实验结果">4 实验结果</h1>
+<p>在本节中，我们提供了实验结果，将NPFST与第2节中描述的基线在产量、召回率、效率和可解释性方面进行比较。正如我们所期望的那样，NPFST具有较低的产量和较高的召回率，并且有效地提取了高度可解释的短语。</p>
+<h2 id="产量和召回率">4.1 产量和召回率</h2>
+<p>产量是指一种方法所提取的短语的数量，而召回率是指一种方法恢复最相关或最重要的短语的能力，由人类来决定。因为相关性和重要性是特定领域的概念，不容易定义，所以我们用三个命名实体识别（NER）数据集来比较这些方法：来自WNUT 2015共享任务（Baldwin等人，2015）的Twitter上提到的十种实体；来自BioNLP共享任务2011（Kim等人，2011）的生物医学文章中提到的蛋白质；以及使用斯坦福NER（Manning等人，2014）识别的纽约时报文章（Sandhaus，2008）中命名实体的合成数据集。命名实体无疑是这三个不同领域中的相关重要短语。9 对于每个数据集，我们将方法的收益率定义为其提取的跨度总数，将方法的召回率定义为其提取的跨度列表中存在的（标记的）命名实体跨度的百分比。</p>
+<p>图2描述了NPFST和以下基线方法的召回率与收益率11。不同K值的AllNGrams(K)、ConstitParse、12 JK和(SimpleNP, K =∞, GreedyFSA)。因为(SimpleNP, K = 3, FilterFSA)的收益率和召回率与JK相同，我们在图2中省略了这些数值。我们还省略了(FullNP, K = ∞, FilterEnum)和(FullNP, K = ∞, FilterFSA)的产量和召回率，因为它们与NPFST的产量和召回率相同。最后，我们省略了(FullNP, K = ∞, GreedyFSA)的收益率和召回率，因为我们对GreedyFSA的实现（使用标准的Python库）太慢，无法与FullNP一起使用。</p>
+<p>一个好的方法应该有较低的收益率，但有较高的召回率--也就是说，最好的方法是在每个图的左上角。基于模式的方法都取得了较高的召回率，但产量比AllNGrams(K)低得多。ConstitParse取得了比NPFST更低的产量，但也取得了更低的召回率。JK的表现比NPFST差，部分原因是它只能提取2-和3-grams，例如，BioNLP数据集中提到的蛋白质长达十一个tokens（例如，"Ca2+/钙调蛋白依赖性蛋白激酶（CaMK）类型IV/Gr"）。最后，（SimpleNP, K =∞, GreedyFSA）的表现比JK差很多，因为它不能提取重叠或嵌套的跨度。</p>
+<p>对于WNUT的数据集，NPFST的召回率相对较低（91.8%）。为了测试它的一些假阴性是否是由于POS标签错误造成的，我们利用NPFST对每个位置有多个标签的输入格子的操作能力。具体来说，我们用每个位置的标签构建了一个输入网格I，其后验概率至少为t。我们试验了t=0.01和t=0.001。这些值分别将召回率提高到96.2%和98.3%，但只换来了稍高的产量（低于AllNGrams(2)的产量）。我们怀疑我们没有看到产量的更大增加，即使是t=0.001，也是因为后验校准的原因（Nguyen和O'Connor，2015；Kuleshov和Liang，2015）。</p>
+<h2 id="效率">4.2 效率</h2>
+<p>我们用BioNLP数据集中的十篇文章来比较这些方法的预处理和运行时间成本。表2包含了AllNGrams(∞), ConstitParse, JK, (SimpleNP, K = 3, FilterFSA), and (SimpleNP, K = ∞, GreedyFSA), 和NPFST的计时结果13。我们省略了（FullNP, K =∞, FilterEnum）、（FullNP, K =∞, FilterFSA）和（FullNP, K =∞, GreedyFSA）的结果，因为它们太慢了，无法与其他方法竞争。POS标签比解析快20倍左右，这对可能没有快速服务器的社会科学家很有帮助。NPFST比更简单的基于模式的方法稍慢；然而，它的80%的时间花在构建输入I和遍历输出格子L上，这两个过程都是用Python实现的，可以做得更快。</p>
+<h2 id="可解释性">4.3 可解释性</h2>
+<p>在分析文本语料库时，社会科学家经常检查术语的排名列表，其中每个术语根据一些分数进行排名。我们认为，当把多词短语从其周围的语境中剥离出来并以列表的形式呈现时，多词短语比单词短语更具有可解释性。在第4.3.1节中，我们解释了如何合并相关术语，在第4.3.2节中，我们提供了排名列表，证明NPFST比其他方法提取了更多可解释的短语。</p>
+<h3 id="合并相关术语">4.3.1 合并相关术语</h3>
+<p>如第3.2节所述，NPFST提取了重叠和嵌套的跨度。例如，当在一个关于犯罪的国会法案数据集上运行时，NPFST提取了 "综合犯罪控制和安全街道法案"，以及嵌套的短语 "犯罪控制 "和 "安全街道法案"。虽然这种行为通常是可取的，但它也会导致排名列表中的重复。因此，我们概述了一种高层次的算法，用于合并排名列表中排名最高的术语。我们的算法的输入是一个术语列表L。算法在列表中迭代，从排名最高的术语开始，根据一些用户定义的标准（例如，术语是否共享一个子串）聚合类似的术语，直到它产生了C个不同的术语集群。然后，该算法选择一个术语来代表每个集群。最后，算法13我们使用Python的timeit模块，对集群中的代表术语进行排序，形成一个长度为C的排名列表。</p>
+<h3 id="排名列表">4.3.2 排名列表</h3>
+<p>为了评估NPFST提取的短语的可解释性，我们使用了三个数据集：由（人工识别的）气候否认者撰写的关于气候变化的推文；18世纪伦敦老贝利法庭的刑事审判记录；15以及1993年9月的《纽约时报》文章。对于每个数据集，我们使用ConstitParse、JK和NPFST提取短语，并为每种方法生成一个术语列表，按计数排序。最后，我们用我们的术语合并算法合并了相关的术语，只有当一个术语是另一个术语的子串时才进行合并，以产生五个代表性术语的排名列表。表4.3包含这些列表，表明NPFST产生了高度可解释的短语。5 案例研究。寻找美国国会立法中的党派术语 许多政治学家研究了语言使用和党派之间的关系（Laver等人，2003；Monroe等人，2008；Slapin和Proksch，2008；Quinn等人，2010；Grimmer和Stewart，2013）。我们提出了一个案例研究，我们使用NPFST来探索美国国会关于法律和犯罪的立法中的党派差异。在第5.1节，我们描述了我们的数据集，在第5.2节，我们解释了我们的方法并介绍了我们的结果。</p>
+<h2 id="国会法案语料库">5.1 国会法案语料库</h2>
+<p>我们使用了一个新的数据集，其中包括1993年至2014年间在众议院和参议院提出的97,221项美国国会法案。我们通过刮取国会图书馆的网站来创建这个数据集。17 我们使用斯坦福大学的CoreNLP对法案进行标记和POS标签。我们删除了数字和标点符号，并丢弃了所有出现在少于五个法案中的术语。我们还从国会法案项目（Adler和Wilkerson，2014年）中为每个法案增加了其作者、最终结果（例如，它是否通过了委员会的审议，是否通过了参议院的投票）以及其主要议题领域（Purpura和Hillard，2006年）。在我们的案例研究中，我们专注于2013年和2014年之间提出的488项法案中的一个子集，这些法案主要是关于法律和犯罪。我们选择这个子集是因为我们预计它将清楚地突出党派的政策差异。例如，这些法案包括有关移民执法和监禁低级别罪犯的立法--在这两个领域，民主党人和共和党人往往有非常不同的政策偏好。</p>
+<h2 id="党派术语">5.2 党派术语</h2>
+<p>我们使用NPFST从法案中提取短语，然后使用信息量大的Dirichlet18特征选择17http://congress.gov/，为每个党派创建了术语的排名列表。18为了降低无信息量的高频术语的z-cores，我们将Dirichlet超参数设置为与我们完整的法案数据集的术语计数成比例。Monroe等人（2008）的方法。该方法为每个术语计算了一个z分数，反映了该术语与民主党人而非共和党人的关联程度--正z分数表示民主党人更有可能使用该术语，而负z分数表示共和党人更有可能使用该术语。我们合并了每个党派排名最高的术语，只有在一个术语是另一个术语的子串，以及这些术语很可能在一个法案中共同出现的情况下，才将这些术语汇总起来，19 以形成代表性术语的排名表。最后，为了进行比较，我们还使用了同样的方法来创建单字词的排名列表，每个党派都有一个。图3描述了z-score与术语数的关系，而表4列出了排名最高的20个术语。单词列表表明，民主党立法者更关注与精神健康、少年犯和可能的家庭暴力有关的立法，而共和党立法者更关注非法移民。然而，许多排名最高的单字在脱离其周围环境后是非常模糊的。例如，我们不知道 "国内 "是指 "家庭暴力"、"国内恐怖主义 "还是 "国内项目"，如果不对原始资料进行人工审查，我们就不知道这些术语是指什么。</p>
+<p>https://aclanthology.org/W16-5615.pdf</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>统计学的collocation方法提供了另一种方法（例如Dunning（1993），Hannah和Wallach（2014））。这些方法专注于within-n-gram statistical dependence。在非正式分析中，我们发现它们对低频短语的召回率并不令人满意，但将全面比较推迟到未来的工作中。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>句法结构预测的另一种类型是NP chunking。这产生了一个较浅的、non-nested的表示法<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>英语网络树库（LDC2012T13）有一些更多的嵌套结构，OntoNotes（第5版，LDC2013T19）包括一个带有Vadas和Curran（2011）的nested NP标注的Penn树库变体。我们期待着在这些数据源上训练的成分分析器的出现。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/paper-6/" title="一袋什么？用于文本分析的简单名词短语抽取">http://nlpcourse.cn/paper-6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/stopwords/" rel="prev" title="计算stopwords">
+      <i class="fa fa-chevron-left"></i> 计算stopwords
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/noun-chunks/" rel="next" title="名词短语抽取方法汇总和比较">
+      名词短语抽取方法汇总和比较 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">2 背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#n-grams"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 n-grams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pos%E8%AF%AD%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 POS语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fullnp%E8%AF%AD%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">3.1 FullNP语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rewritefst%E5%8C%B9%E9%85%8D%E7%AD%96%E7%95%A5"><span class="nav-number">2.5.</span> <span class="nav-text">3.2 RewriteFST匹配策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">4 实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A7%E9%87%8F%E5%92%8C%E5%8F%AC%E5%9B%9E%E7%8E%87"><span class="nav-number">3.1.</span> <span class="nav-text">4.1 产量和召回率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E7%8E%87"><span class="nav-number">3.2.</span> <span class="nav-text">4.2 效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">4.3 可解释性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="nav-number">3.3.1.</span> <span class="nav-text">4.3.1 合并相关术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%90%8D%E5%88%97%E8%A1%A8"><span class="nav-number">3.3.2.</span> <span class="nav-text">4.3.2 排名列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BD%E4%BC%9A%E6%B3%95%E6%A1%88%E8%AF%AD%E6%96%99%E5%BA%93"><span class="nav-number">3.4.</span> <span class="nav-text">5.1 国会法案语料库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%9A%E6%B4%BE%E6%9C%AF%E8%AF%AD"><span class="nav-number">3.5.</span> <span class="nav-text">5.2 党派术语</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">475k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:12</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

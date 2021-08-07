@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="翻译自https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2011.01798.pdf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用于从文本中半监督的网络论点语料库的清洗">
+<meta property="og:url" content="http://nlpcourse.cn/paper-5/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="翻译自https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2011.01798.pdf">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-25T14:16:43.639Z">
+<meta property="article:modified_time" content="2021-07-26T08:41:50.116Z">
+<meta property="article:author" content="鸽鸽">
+<meta property="article:tag" content="期刊翻译">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/paper-5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>用于从文本中半监督的网络论点语料库的清洗 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/paper-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用于从文本中半监督的网络论点语料库的清洗
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-25 22:16:43" itemprop="dateCreated datePublished" datetime="2021-07-25T22:16:43+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-26 16:41:50" itemprop="dateModified" datetime="2021-07-26T16:41:50+08:00">2021-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">自然语言处理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" itemprop="url" rel="index"><span itemprop="name">信息抽取</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>10 分钟</span>
+            </span>
+            <div class="post-description">翻译自https://arxiv.org/pdf/2011.01798.pdf</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>辩论门户网站和类似的网络平台构成了计算论点研究及其应用的主要文本来源之一。虽然建立在这些来源上的语料库具有丰富的论点相关的内容和结构，但它们也包括与它们的目的不相关的，甚至是有害的文本。在本文中，我们提出了一种以精度为导向的方法，以半监督的方式检测这种不相关的文本。给出一些种子例子，该方法自动学习相关和不相关的基本词汇模式，然后从与这些模式匹配的句子中逐步引导出新的模式。在现有的有40万个争论性文本的args.me语料库中，我们的方法检测出了近87000个不相关的句子，根据人工评估，其精确度为0.97。只需较少的努力，该方法就可以适用于其他网络论点语料库，为提高语料库质量提供了一种通用方法。</p>
+<h1 id="引言">1 引言</h1>
+<p>计算论点研究为支持意见形成的应用奠定了基础，包括论点搜索引擎（Wachsmuth等人，2017b）、集体商议（Uszkoreit等人，2017）和辩论技术（Toledo等人，2019）。这类应用依赖于大量最新的论据库，除了在网络上几乎找不到其他地方。最常用的网络论据来源之一是辩论门户网站，人们在那里共同收集论据或就确定的问题相互辩论。辩论门户网站和类似的网络平台有丰富的论点相关内容和结构，包括论点以及事实、背景信息和类似内容。这使得研究人员能够以远距离监督的方式抓取大规模的论点语料（Al-Khatib等人，2016）。</p>
+<p>然而，在辩论门户网站上发现的文本也包括辩论专用语言和模板文本，这些文本很可能与上述应用无关，甚至是有害的。例如，在图1的文本中，作者定义了辩论的问题（第2句），陈述了一个论点（第3-5句），并提出了两个论点（第6-8句，第9-13句）--所有这些都可以被认为是与辩论有关的。相比之下，#1、#14和#15句子没有增加任何重要内容，只是做了元评论和表达了感激之情。在其他情况下，不相关的文本包括敬语、侮辱、纯粹的修辞动作和垃圾邮件。正如第2节所详述的，寻找这类文本与寻找非论点文本片段不同，因为后者可能仍然与论点片段的背景有关，如图1中的第2句。许多现有的依靠辩论门户网站的方法并没有将抓取的论据从不相关的文本中清除。例如，到目前为止，论点搜索引擎args.me（Wachsmuth等人，2017b）只是将完整的显示文本作为查询 "同性恋婚姻 "的一个支持性论点返回。这至少损害了用户体验，在某些情况下，它甚至可能腐蚀意见形成的支持。</p>
+<p>在本文中，我们研究了如何在网络论点中找到不相关的文本，如来自辩论门户网站的论点，以便在此基础上清理各自的语料库。特别是，我们开发了一种半监督的学习方法，旨在以非常高的精度检测尽可能多的不相关的句子，也就是说，几乎没有任何相关的句子应该被归类为不相关（第3节）。给定一个种子句子集，该方法学习基本的词汇n-gram模式，这些模式经常与相关或不相关的句子匹配文本，并保留所有具有某种最小精度的模式（根据所有匹配句子估计）。基于给定语料库中的所有匹配句子，它将引导新的模式，修改以前的模式，并逐步重复这个过程。最后一组不相关模式被用来清理语料库。</p>
+<p>我们在args.me语料库（Ajjour等人，2019）上分析了我们的方法，该语料库由来自四个辩论门户网站的387,606个论据组成，比我们所知的任何其他可用语料库都多（第4节）。在探索不同类型的词汇模式时，我们发现忽略停止词的单词n-grams在区分相关句子和不相关句子方面作用最大。我们从最频繁的此类n-grams中，手动选择了一组种子句子。然后，我们运行引导过程，分析该方法在不同迭代中发现的模式，并以自动方式和与三位人类标注者对600个句子进行的人工标注研究来评估其精确度（第5节）。在Fleiss'κ协议为0.50的情况下，我们的方法以0.97的精度检测出不相关的句子，在来自args.me语料库的68,814个论据中共有86,916个。我们向社区提供一个经过清理的语料库版本。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>最后，我们讨论了如何采用我们的方法来提高网络论点语料库的质量，而不仅仅是所研究的那个（第6节）。总的来说，本文的贡献有三个方面：</p>
+<ul>
+<li>一种半监督的方法来检测网络论点中的不相关句子。</li>
+<li>网络论点中的几个常见的相关和不相关的词汇模式。</li>
+<li>一个最大的可用论点语料库的清洁版本，其中的不相关文本明显减少。</li>
+</ul>
+<h1 id="相关工作">2 相关工作</h1>
+<p>最初，关于论点挖掘等任务的研究主要是在小型的、精心策划的文本集上进行的，包括维基百科文章（Aharoni等人，2014）、学生作文（Stab和Gurevych，2014）、纯论点（Peldszus和Stede，2015）和总统辩论（Lawrence和Reed，2017）。然而，计算论点的主要现实世界应用，需要扩展到网络背景下才能实现其目的。这包括在有争议的问题上反对正反双方论点的搜索引擎（Wachsmuth等人，2017b），与人类辩论的技术（Toledo等人，2019），等等。</p>
+<p>为了获得网络论点，许多工作都依赖于抓取的辩论门户网站和类似的网络平台，通常是以远程监督的方式，论点结构和类似的标注直接来自可用的元信息（Al-Khatib等人，2016）。以这种方式建立的语料库基于几个辩论门户网站，包括4forums.com（Walker等人，2012）、idebate.org（Cabrio和Villata，2012）、createebate.com（Habernal和Gurevych，2016）、debate.org（Durmus和Cardie，2019）和reddit.com/r/changemyview（Egawa等人，2020）。自然，减少对所获得的网络文本的策划是以更多的噪音为代价的，这反过来要求对所获得的语料库进行清洗。</p>
+<p>一些关于论点语料库的出版物描述了清理过程，但大多只提到了获得的标注（Habernal和Gurevych，2016；Toledo等人，2019；Gretz等人，2020）。相比之下，本文的目标是对语料库文本本身进行清理。只有少数作品详细描述了各自的清理步骤。其中，Al-Khatib等人（2016）从抓取的论据中删除了特殊符号和辩论中的特定短语，如 "this house"，Habernal和Gurevych（2017）删除了辩论帖中对以前帖子的引用。Wachsmuth等人（2017b）为争论搜索引擎args.me完全摒弃了某些类型的噪音实例，但原始相关语料库（Ajjour等人，2019）中的文本仍然包含许多不相关的文本，正如我们的实验将揭示的那样。应用我们的方法导致了该语料库的改进版本。在本文中，我们介绍了一种用于语料库清理的半监督学习方法。一般来说，我们遵循成功的模式挖掘方法的引导思想，比如<strong>DIPRE（Brin，1998）、Snowball（Agichtein和Gravano，2000）和Espresso（Pantel和Pennacchiotti，2006）</strong>。虽然这些方法的目标是语义上的相关信息，但我们在作者的论点话语中区分了实用性相关和不相关的文本。我们不知道在这个方向上有什么其他的方法。在这方面值得注意的是，目前的清理任务与论点性文本的单元分割有明显的不同（Ajjour等人，2017）。虽然所有的论点单元都符合这里考虑的相关性概念（在第3节中定义），但如果非论点单元提供事实、定义或其他背景信息作为论点单元的背景，也可以被视为相关。因此，我们的相关性概念涉及到与某些结论有关的局部相关性，而不是论点性陈述在讨论问题时的整体相关性（Wachsmuth等人，2017a）。 # 3 方法 本节介绍了我们<strong>检测网络论点中不相关文本的半监督学习方法</strong>，以及在此基础上清理各自的语料库。该方法旨在以超过阈值<span class="math inline">\(τ\)</span>（在第5节中，我们使用τ=0.95）的估计精度找到尽可能多的不相关文本单元。为此，<strong>它学习了经常出现在不相关单元中而很少出现在相关单元中的语言模式</strong>（或者相反）。<strong>之后，我们将每个句子视为一个单元</strong>，但其他粒度原则上也可以。图2概述了该方法的三个主要阶段，下面将详细介绍每个阶段：</p>
+<p><strong>(a) 种子模式选择。</strong>给定一个语料库作为输入，从它的单元中挖掘出一个常见的语言模式库，从中手动选择表示不相关和相关的种子模式。</p>
+<p><strong>(b) 模式引导。</strong>检索所有与任何种子不相关（相关）模式相匹配的单元，从这些单元中挖掘新的候选模式，并将其添加到池中。然后，只有高精度的无关性（相关性）模式被保留在池中，即那些几乎只在不相关（相关）单元中发现的模式。这个过程重复进行，直到没有发现新的模式或经过k次迭代。</p>
+<p><strong>(c) 语料库清洗。</strong>最后的不相关模式库被用来自动从语料库中删除不相关的单元。重要的是要看到，相关性模式最终并不用于实际的清理工作。它们只是用来区分相关和不相关的单元，从而帮助识别高精度的不相关模式。虽然我们特别为网络论点设计了我们的方法，但请注意，我们所设计的方法在很大程度上是通用的，可以很容易地转移到其他可以区分相关和不相关单元的清理任务上。使我们的方法特别适用于网络论点的是我们所说的论点相关性和不相关性。</p>
+<h2 id="论点的相关性和非相关性">3.1 论点的相关性和非相关性</h2>
+<p>我们在这里从使用语料库中的单个论点来对人们如何论点进行实证分析或用于论点搜索和辩论技术等应用的角度考虑相关性。对于这样的用例，从论点序列中出现的特定门户辩论结构以及与基本辩论相关的纯粹修辞动作都不值得关注。因此，我们将无关性定义如下：</p>
+<p><strong>论点的无关性</strong>。当且仅当网络论点的一个单元不代表任何主张、证据、事实、背景信息或与文本作者所讨论的问题相关的类似声明时，就可以说它是不相关的。不相关单位的例子包括对辩论的元评论、敬语、感谢的表达、个人侮辱、纯粹的修辞动作和垃圾邮件。任何不符合定义的单位都被认为是相关的。虽然我们也可以定义论点的相关性，但我们决定把重点放在不相关的单元上，因为它们构成了要检测的目标概念。换句话说，鉴于我们的目标是论点语料，我们希望不相关的单元是例外而不是默认。第4节将对我们实验中处理的数据的不相关单元的比例进行估计。</p>
+<h2 id="种子模式的选择">3.2 种子模式的选择</h2>
+<p>阶段（a）的目标是获得一个与文本单元相匹配的语言模式库，这些单元可以被认为是不相关或相关的。所有与这些种子模式相匹配的单元的集合就代表了模式引导开始的基础真实数据。在我们的方法中，种子模式的选择是唯一需要一定程度监督的步骤。为了最大限度地减少人工劳动，我们建议半自动地进行选择，<strong>也就是说，我们首先从样本数据中自动挖掘最有希望的候选模式（我们在第5节中使用给定语料库的10%的随机样本）</strong>。然后，我们<strong>手动将其中的一个子集分类为不相关或相关的种子模式</strong>。然而，要做到这一点，我们需要首先定义什么是候选模式。</p>
+<p><strong>候选模式</strong>。一般来说，任何类型的语言模式都可以从语料库文本中挖掘出来，对于这些文本有相应的挖掘方法。由于我们希望给定的相关性概念在很大程度上可以只根据一个单元的词来评估，所以我们在这里把我们的观点限制在基本的词汇模式上。为了简单起见，我们只寻找n-grams，但我们探讨了在做出两种选择后出现的四种模式。</p>
+<ul>
+<li><p><strong>数值与TF-IDF。</strong>在计数的情况下，我们只是看到m个最频繁的n-grams作为每个n的候选人。在TF-IDF的情况下，我们采取那些在样本数据中具有最高TF-IDF得分的n-grams（每个单元是一个文档）。在我们的实验中，我们使用m=100，n∈{1, . . . , 5}.</p></li>
+<li><p><strong>有/无停止词与有/无停止词</strong>。我们要么根据完整的单元文本确定n-grams（w/ stopwords），要么在之前应用停止词去除（w/o stopwords）。</p></li>
+</ul>
+<p>由于高的TF-IDF分数通常表示内容，各自的模式可能对相关句子比不相关句子更有用。不过，它们是否比基于计数的模式更有优势还很难预测。在第5节中，我们将这四种模式相互比较。给出每个n的首选模式类型的所有m个候选模式（例如，<span class="math inline">\(Counts \space w/o \space stopwords\)</span>），然后本文的作者就每个候选模式手动同意是否将其选为不相关模式、相关模式，或者两者都不选。</p>
+<h2 id="模式引导">3.3 模式引导</h2>
+<p>阶段（b）的目标是使用引导法逐步扩展无关性和相关性模式库，即通过从与池中当前模式相匹配的单元中推导出新的模式。这个全自动的过程一直持续到不再有新的模式被发现，或者直到最大的迭代次数<span class="math inline">\(k\)</span>过去，例如，如果运行时间是一个因素的话（在第5节，我们一直持续到最后）。</p>
+<p>特别是，第一步是检索所有与任何无关模式相匹配的单元集，以及从语料库中检索所有与任何相关模式相匹配的单元集2，如图2所示，这些单元集用于两个目的。首先，从不相关（相关）单元的集合中挖掘新的候选不相关（相关）模式，并添加到模式库中。第二，只有那些表示不相关（相关）单元的模式被过滤并保留在池中，其估计精度p≥τ。我们对p的估计如下：</p>
+<p><strong>估算的精确度</strong>。让tp是所有检索到的与特定不相关（相关）模式相匹配的不相关（相关）单元的数量，让f p是所有与该模式相匹配的相关（不相关）单元的数量。然后，该模式的精度被估计为p = tp / （tp + f p）。</p>
+<p>对于挖掘步骤，需要决定的一个参数是一个模式的最小频率，以便将其视为一个候选人。我们建议从种子模式的频率中得出这个参数的值。例如，如果所有的种子模式在样本中至少有20个匹配，而完整的语料库有10倍的样本量，那么一个合理的值可能是20 - 10 = 200。对于过滤步骤，两个单元集的大小保持平衡是有利的，因为不平衡的大小会降低tp和f p值的可比性。因此，我们建议根据不相关单元的估计比例来调整最小数字。例如，如果相关单位的数量是不相关单位的10倍，那么合理的数值可能是200个不相关单位，200-10=2000个相关单位（这里给出的数字是我们在第4和第5节中使用的示例）。另一种方法是根据经验来测试和调整这些参数。</p>
+<p>概述的引导过程的一个重要特点是，在以前的迭代中加入到池中的模式可能会在以后再次从池中删除。这是因为在这个过程中，检索到的相关单位和不相关单位的集合发生了变化，这反过来又可能改变模式的精度估计。这可以理解为我们的方法的内部修订机制，以优化最终池的精度。我们在第5节的实验中看到了这一机制的效果。</p>
+<h2 id="语料库清理">3.4 语料库清理</h2>
+<p>阶段（c）的目标是根据最终的非相关模式库，实际清理给定的语料库。相关性模式在这个阶段不再发挥任何作用；它们只是在之前被使用，以便能够帮助以高精确度识别不相关模式，如前所述。一个简单的清理方法是直接从语料库中删除所有与任何无关性模式相匹配的单元。然而，我们建议将删除的范围限制在第一个和最后一个相关单元之前的不相关单元。只要只删除那些真正不相关的单元，我们就可以避免对论点的连贯性产生负面影响。此外，就图1的例子而言，我们将看到大多数不相关的单元确实存在于文本的开头和结尾，也就是说，建议的限制只在一定程度上减少了回忆。请注意，这并不意味着开头和结尾的大多数单元是不相关的；根据我们上面的讨论，我们期望大多数文本根本不包含不相关的单元。下一节将证明，对于我们手头的语料库来说，这一点是真实的。</p>
+<h1 id="数据">4 数据</h1>
+<p>所提出的方法针对的是不同质量的争论性语言，正如在网络语料库中经常看到的那样。下面，我们评估它对args.me语料库（Ajjour等人，2019）的影响，据我们所知，这是迄今为止最大的可用论点语料库，文件大小约为7.3GB。该语料库代表了参数搜索引擎args.me（Wachsmuth等人，2017b）的基础数据库。它包含387,606个</p>
+<p>这些论据是通过远程监督从四个辩论门户网站挖掘出来的：debate.org、debatewise.org、idebate.org和debatepedia.org。每个论点都由一个非常简短的结论和一个明显较长的前提组成，后者包含实际的论点文本。总的来说，这个语料库跨越了大约七百万个句子。在我们的方法中，我们将每个句子视为一个单元。args.me语料库中的许多文本包括与实际论点无关的句子，如图1中的例子。不用说，虽然没有给出关于无关性的基础真实信息。为了粗略估计不相关句子的比例，我们进行了一项试验性研究，本文的两位作者按照第3节的定义，独立决定一组句子的相关性。特别是，我们考虑了Alshomary等人（2020）之前使用的语料库样本，其中包含了前10个查询中的前5个正方和前5个反方论据。在这100个样本论据的1294个句子中，我们中的一个人将147个（11.3%）归为不相关，另一个人将139个（10.7%）归为不相关。就Cohen's κ而言，我们的标注者之间的一致性达到了0.75。总共有175个句子（13.5%）被我们中的任何一个人认为是不相关的，111个（8.5%）被我们两个人认为是不相关的。由于我们认为，在有疑问的情况下，一个句子应该被认为是相关的，我们把8.5%作为我们的估计。因此，在整个语料库中，我们预计大约有60万个句子是不相关的。这111个句子只来自100个论据中的39个。假设这个数字是有代表性的，那么语料库中大约有15万个论据应该包含不相关的句子。在下面的实验中，这些数字将使我们对我们的方法的召回率有一个大致的了解。在这里，我们使用所有语料库论据的10%的随机样本进行种子模式选择，并在所有后续步骤中使用整个语料库。</p>
+<h1 id="评估">5 评估</h1>
+<p>我们现在报告将第3节中的方法逐步应用于第4节中的语料库，并对获得的结果进行人工评估。我们的目标是评估该方法对基于网络的论点语料库的质量的影响。我们假设，该方法能够检测出大量的不相关的句子，其精度与内部精度阈值τ一样高。</p>
+<h2 id="对种子模式选择的启示">5.1 对种子模式选择的启示</h2>
+<p>为了了解哪种模式类型最适合检测不相关的句子，我们比较了第3节中讨论的两种选择（Counts vs. TF-IDF，w/ or w/o stopwords）中出现的所有四个候选模式。对于每种类型，我们检索了前100个n-grams，n∈{1, . . . , 5}，涵盖了基本论点中争论的大量问题。然后，本文的两位作者都对所有2000个结果模式进行了判断，以确定它们是否可能表示总是不相关的句子或总是相关的句子。根据我们都同意的模式，选择最有希望的类型作为种子模式。例如，表1列出了每个模式类型中分别表示相关或不相关的前1-5个词组。我们排除了诸如 "wonyou wonyou wonyou "和 "kfc kfc "这样的垃圾模式，因为它们会限制人们的洞察力，占据最重要的位置；每种模式类型的完整列表在补充材料中给出。对于这两种TF-IDF模式类型，我们发现相关性模式明显地达到了它们的目的，与论据的内容有关。在完整的列表中发现了许多这样的模式。然而，很少有TF-IDF模式似乎能可靠地表明不相关。这符合人们的直觉，即具有高TF-IDF分数的短语是针对文档内容的，而不是反映一般的语言。相比之下，两种计数模式产生了几种不相关模式，如表所示。我们决定采用Counts w/o Stopwords，因为它产生的模式澄清了许多Counts w/ Stopwords留下的模糊不清的情况。例如，"想感谢对手 "揭示了与源辩论门户（这里是debate.org）的无关性，而相应的带停止词的模式（"想感谢"，"想感谢我的"）则对相应句子的无关性留下了更多疑问。表2列出了38个相关类型和17个不相关类型的种子模式。如果一个模式是多余的，也就是说，如果它已经被一个更短的模式所覆盖，例如，"第一轮接受 "已经被 "第一轮 "所覆盖，则该模式不包括在内。我们观察到，没有一个1-gram进入不相关模式库；一个词似乎不足以确定不相关。然而，从长度2来看，我们判断有几个模式是足够可靠的无关性指标，最频繁的模式在语料库中出现了超过10,000次，即 "第一轮 "和 "感谢对手"。</p>
+<h2 id="对模式引导的启示">5.2 对模式引导的启示</h2>
+<p>如第3节所述，我们将τ设定为0.95，保留所有挖掘出来的至少有2000个匹配的相关模式作为候选，以及所有挖掘出来的至少有200个匹配的不相关模式。给出种子模式后，我们运行引导过程，直到不再有新的模式被发现，这发生在迭代6。在一台标准的计算机上（英特尔酷睿i7，2.7GHz，16GB内存），整个过程大约需要两个小时。表3显示了每个迭代（和种子模式选择）的关键统计数据。在相关性的情况下 这38个种子模式已经匹配了超过60万个不同的句子，平均估计精度为1.00，也就是说，它们几乎从未与为种子无关模式检索到的任何句子相匹配。在迭代2中，第3节中讨论的修订效应已经开始：57个相关句子被删除，因为它们也与新挖掘的不相关模式相匹配。尽管如此，相关模式的集合仍然是稳定的，而且这种行为在随后的迭代中继续。对于不相关模式，我们观察到在前五次迭代中模式库的单调增长，除了种子句子之外，在迭代1-5中还有超过1万个不同的句子被检测为不相关。总共发现了122个模式；它们的平均估计精度在所有迭代中至少保持在0.97。为了分析我们的方法在引导过程中的行为，我们随机选择了600个不相关的句子进行人工评估（见补充材料）：100个与种子不相关模式相匹配的句子，以及五个迭代中的不相关模式各100个。相关模式被忽略了，因为它们不需要用于语料库的清理。我们将所有句子的排序随机化，并将它们独立交给三位具有计算论点背景的标注者，他们都不是本文的作者（一位硕士生和两位博士生；两位男性，一位女性；欧洲、中东和东亚各一位）。我们要求标注者根据第3节的定义，将每个句子分类为相关或不相关。批注者得到了一些直观的指导（见补充材料），并可以事先提出问题。我们观察到，就Fleiss'κ而言，标注者之间的一致性为0.50，这似乎是合理的，因为相关性评估本身就是主观的（Croft等人，2009）。考虑到标注，我们计算了我们的方法在每个迭代中检测不相关句子的平均精度，一次是多数人同意（如果两个标注者这么说，则不相关正确），一次是完全同意（所有三个人都这么说）。表3的最右边一栏显示了结果，揭示了多数人同意的精确度在迭代2结束前是完美的。虽然接下来的两次迭代仍然很有希望，但在最后一次迭代中，精度下降到0.88（完全一致时为0.79），这表明模式会随着时间的推移而变差。因此，早期终止可能是有利的，但最佳时刻在实践中自然是未知的。52,849个不同的句子最终被检测出的无关性模式所匹配，总体精度为0.97。其中有些句子出现了多次，导致总共有86,916个不相关的句子，来自68,814个论点。根据第4节中粗略估计的不相关比例，不相关句子的召回率约为0.15，不相关句子的论据约为0.46。仅仅种子步骤就发现了71,926个不相关的句子，也就是说，召回率大约为0.12。如果我们将种子步骤视为完整方法的基线，我们会发现精确度下降了3%（1.00到0.97），但是召回率增加了20%（0.12到0.15）。虽然可以说还有优化的余地，但我们仍然得出结论，这些结果支持了我们的方法的影响，并由此支持了我们的假设。</p>
+<h2 id="对语料库清洗的启示">5.3 对语料库清洗的启示</h2>
+<p>基于最终的122个无关性模式，我们探索了对给定语料库的清洗潜力。图3(a)显示了具有一定数量被检测到的不相关句子的语料库文本的柱状图。我们看到，大多数文本只包含一个这样的句子，除了六种情况外，其余都是七个或更少。这些六个案例都有超过30个不相关的句子；人工检查发现，这些句子都含有相同词序重复的垃圾邮件。在图3(b)中，我们绘制了不相关句子在语料库文本中的位置。正如预期的那样，它们中的大多数都出现在开头或结尾。由于我们讨论过的只丢弃这些句子的限制，最终从args.me语料库中删除的句子数量达到了53,502个（在48,089个论据中发现）。除了原始的args.me语料库之外，我们现在还提供了经过清理的语料库版本，网址是：https://webis.de/data.html#args-me-corpus。</p>
+<h1 id="结论">6 结论</h1>
+<p>基于网络的论点语料库在计算论点研究及其应用中发挥了重要作用。不过，这种语料库中并非所有的文本都与论点有关。在本文中，我们提出了一种方法，可以在低监督下检测出论点文本中的不相关文本单元。该方法从匹配已知模式的单元中反复引导出不相关和相关的语言模式。在args.me语料库中的387k个论据中，该方法检测出87k个不相关的句子，精确度为0.97，其中至少有53k个句子可以被删除，而不会明显降低论据的一致性。这些结果证明了我们的方法在提高语料库质量方面的潜力。当然，该方法也有局限性。一方面，结果显示，在所采用的配置下，很大一部分检测到的句子来自于种子模式。为了获得好的种子模式，需要人工努力。另一方面，我们的方法的召回率似乎并不高，就我们从检查的数据中可以估计到。虽然不是所有的不相关单元都能被我们考虑的简单模式所捕获，但另一个原因可能在于我们的限制，即只发现新的候选模式出现在与先前模式相匹配的句子中。特别是那些只出现在短单元中的模式，如果它们没有被种子模式所覆盖，就可能会被忽略掉。改进措施可以考虑与不相关单元相邻的单元，但是这可能要以降低精确度为代价。在这方面，请注意我们的方法的影响在某种程度上取决于是否有可靠的单元边界检测器（例如，句子分割器），这对嘈杂的网络数据来说不是一个简单的要求。最后，一个产生的问题可能是将该方法应用于这里处理的数据之外的其他数据有多复杂。按照我们提出的自动获得频繁的候选种子模式的过程，主要的人工努力可以归结为在这些候选模式中找到可靠的种子模式。在我们的案例中，这只花了几个小时，鉴于对语料库质量的潜在影响，这似乎可以忽略不计。此外，只需要根据手头的数据对方法的参数进行一些初步的调整。因此，我们相信该方法可以很容易地被用于清理其他论点语料（包括口语论点语料的转录语料），以及其他许多清理任务，其中文本单元的无关性可以用一种可衡量的方式来定义。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Both the original and the cleaned args.me corpus are found at: https://webis.de/data.html#args-me-corpus<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">猜你喜欢</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-3\" rel="bookmark">用分布式语义bootstrap关系</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-2\" rel="bookmark">具有分布式语义的关系提取器的半监督性引导</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\pyperclip\" rel="bookmark">利用python监听剪贴板内容并修改-工具开发</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-1\" rel="bookmark">数值开放信息抽取的自助法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\paper-0\" rel="bookmark">SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/paper-5/" title="用于从文本中半监督的网络论点语料库的清洗">http://nlpcourse.cn/paper-5/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%9F%E5%88%8A%E7%BF%BB%E8%AF%91/" rel="tag"><i class="fa fa-tag"></i> 期刊翻译</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bootstrap-2/" rel="prev" title="Bootstrapping 2.0">
+      <i class="fa fa-chevron-left"></i> Bootstrapping 2.0
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/visualization/" rel="next" title="计算语言学文献语料库的可视化">
+      计算语言学文献语料库的可视化 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">2 相关工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E7%82%B9%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7%E5%92%8C%E9%9D%9E%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">3.1 论点的相关性和非相关性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%8D%E5%AD%90%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">2.2.</span> <span class="nav-text">3.2 种子模式的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%BC%95%E5%AF%BC"><span class="nav-number">2.3.</span> <span class="nav-text">3.3 模式引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%96%99%E5%BA%93%E6%B8%85%E7%90%86"><span class="nav-number">2.4.</span> <span class="nav-text">3.4 语料库清理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">4 数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0"><span class="nav-number">4.</span> <span class="nav-text">5 评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%8D%E5%AD%90%E6%A8%A1%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E5%90%AF%E7%A4%BA"><span class="nav-number">4.1.</span> <span class="nav-text">5.1 对种子模式选择的启示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%A8%A1%E5%BC%8F%E5%BC%95%E5%AF%BC%E7%9A%84%E5%90%AF%E7%A4%BA"><span class="nav-number">4.2.</span> <span class="nav-text">5.2 对模式引导的启示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%AF%AD%E6%96%99%E5%BA%93%E6%B8%85%E6%B4%97%E7%9A%84%E5%90%AF%E7%A4%BA"><span class="nav-number">4.3.</span> <span class="nav-text">5.3 对语料库清洗的启示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">6 结论</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">475k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:12</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

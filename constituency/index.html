@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="记录7.22-7.23的代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提取句子中的每个子树">
+<meta property="og:url" content="http://nlpcourse.cn/constituency/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="记录7.22-7.23的代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/07/17/BrqQVJfDI8yaU5K.png">
+<meta property="article:published_time" content="2021-07-22T03:29:41.901Z">
+<meta property="article:modified_time" content="2021-07-24T02:55:47.268Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/17/BrqQVJfDI8yaU5K.png">
+
+<link rel="canonical" href="http://nlpcourse.cn/constituency/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>提取句子中的每个子树 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/constituency/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          提取句子中的每个子树
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-22 11:29:41" itemprop="dateCreated datePublished" datetime="2021-07-22T11:29:41+08:00">2021-07-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-24 10:55:47" itemprop="dateModified" datetime="2021-07-24T10:55:47+08:00">2021-07-24</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>13 分钟</span>
+            </span>
+            <div class="post-description">记录7.22-7.23的代码。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="画句法树并保存">画句法树并保存</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">from</span> spacy <span class="keyword">import</span> displacy</span><br><span class="line">svg = displacy.render(doc, style=<span class="string">&quot;dep&quot;</span>)</span><br><span class="line"></span><br><span class="line">output_path = Path(<span class="string">&quot;dependency_plot.svg&quot;</span>) <span class="comment"># you can keep there only &quot;dependency_plot.svg&quot; if you want to save it in the same folder where you run the script</span></span><br><span class="line">output_path.<span class="built_in">open</span>(<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>).write(svg)</span><br></pre></td></tr></table></figure>
+<h1 id="提取名词短语constituency">提取名词短语constituency</h1>
+<p>我们找到句中作为主语、宾语、介宾、be动词补语、连词的名词，然后提取该名词的subtree也就是名词短语。条件是，名词短语内不出现标点，名词短语重合出现时取较短的短语。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="comment"># from io import StringIO</span></span><br><span class="line"><span class="comment"># import re</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./corpus/abstracts.txt&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    corpus_list = f.read().splitlines()</span><br><span class="line"></span><br><span class="line">nlp = spacy.load(<span class="string">&quot;en_core_web_sm&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> corpus <span class="keyword">in</span> corpus_list[:<span class="number">5</span>]:</span><br><span class="line">    print(corpus)</span><br><span class="line">    doc = nlp(corpus)</span><br><span class="line">    keywords = []</span><br><span class="line">    <span class="keyword">for</span> token <span class="keyword">in</span> doc:</span><br><span class="line">        <span class="keyword">if</span> token.pos_ == <span class="string">&#x27;NOUN&#x27;</span>:</span><br><span class="line">            <span class="keyword">if</span> token.dep_ <span class="keyword">in</span> [<span class="string">&#x27;dobj&#x27;</span>, <span class="string">&#x27;nsubj&#x27;</span>, <span class="string">&#x27;pobj&#x27;</span>, <span class="string">&#x27;conj&#x27;</span>, <span class="string">&#x27;attr&#x27;</span>, <span class="string">&#x27;pcomp&#x27;</span>]:</span><br><span class="line">                subtree_list_new = []</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">list</span>(token.subtree)) &lt; <span class="number">10</span>:</span><br><span class="line">                    <span class="keyword">for</span> t <span class="keyword">in</span> token.subtree:</span><br><span class="line">                        <span class="keyword">if</span> t.is_punct <span class="keyword">and</span> t.text != <span class="string">&quot;-&quot;</span>:</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">                        subtree_list_new.append(t)</span><br><span class="line">                    subtree_list_new = <span class="string">&#x27; &#x27;</span>.join(t.text <span class="keyword">for</span> t <span class="keyword">in</span> subtree_list_new).replace(<span class="string">r&#x27; - &#x27;</span>, <span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">                    <span class="comment"># print(token.head.head, &#x27; + &#x27;, &#x27; &#x27;.join(t.text for t in token.head.subtree), &#x27; + &#x27;, token.head, &#x27; | &#x27;, token.head.tag_, &#x27; | &#x27;, token.head.dep_, &#x27; + &#x27;,token.dep_)</span></span><br><span class="line">                    <span class="keyword">if</span> keywords:</span><br><span class="line">                        <span class="keyword">if</span> subtree_list_new <span class="keyword">in</span> keywords[-<span class="number">1</span>]:</span><br><span class="line">                            keywords.pop(-<span class="number">1</span>)</span><br><span class="line">                            keywords.append(subtree_list_new)</span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            keywords.append(subtree_list_new)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        keywords.append(subtree_list_new)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">&#x27;, &#x27;</span>.join(keywords)+<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>输入结果：</p>
+<blockquote>
+<p>Sarcasm is a linguistic expression often used to communicate the opposite of what is said, usually something that is very unpleasant with an intention to insult or ridicule. Inherent ambiguity in sarcastic expressions makes sarcasm detection very difficult. In this work, we focus on detecting sarcasm in textual conversations, written in English, from various social networking platforms and online media. To this end, we develop an interpretable deep learning model using multi-head self-attention and gated recurrent units. We show the effectiveness and interpretability of our approach by achieving state-of-the-art results on datasets from social networking platforms, online discussion forums, and political dialogues.</p>
+<p><strong>ridicule, sarcastic expressions, sarcasm detection, this work, sarcasm, online media, this end, interpretability, our approach, the-art, social networking platforms, online discussion forums, political dialogues</strong></p>
+<p>While emotions are universal aspects of human psychology, they are expressed differently across different languages and cultures. We introduce a new data set of over 530k anonymized public Facebook posts across 18 languages, labeled with five different emotions. Using multilingual BERT embeddings, we show that emotions can be reliably inferred both within and across languages. Zero-shot learning produces promising results for low-resource languages. Following established theories of basic emotions, we provide a detailed analysis of the possibilities and limits of cross-lingual emotion classification. We find that structural and typological similarity between languages facilitates cross-lingual learning, as well as linguistic diversity of training data. Our results suggest that there are commonalities underlying the expression of emotion in different languages. We publicly release the anonymized data for future research.</p>
+<p><strong>emotions, human psychology, cultures, a new data set of over 530k, public Facebook posts, 18 languages, five different emotions, multilingual BERT embeddings, languages, Zero-shot learning, low-resource languages, basic emotions, limits, cross-lingual emotion classification, languages, training data, Our results, emotion, different languages, future research</strong></p>
+<p>Customers of machine learning systems demand accountability from the companies employing these algorithms for various prediction tasks. Accountability requires understanding of system limit and condition of erroneous predictions, as customers are often interested in understanding the incorrect predictions, and model developers are absorbed in finding methods that can be used to get incremental improvements to an existing system. Therefore, we propose an accountable error characterization method, AEC, to understand when and where errors occur within the existing black-box models. AEC, as constructed with human-understandable linguistic features, allows the model developers to automatically identify the main sources of errors for a given classification system. It can also be used to sample for the set of most informative input points for a next round of training. We perform error detection for a sentiment analysis task using AEC as a case study. Our results on the sample sentiment task show that AEC is able to characterize erroneous predictions into human understandable categories and also achieves promising results on selecting erroneous samples when compared with the uncertainty-based sampling. <strong>machine learning systems, these algorithms, various prediction tasks, Accountability, erroneous predictions, customers, the incorrect predictions, an existing system, an accountable error characterization method, errors, the existing black-box models, human-understandable linguistic features, the model developers, errors, a given classification system, most informative input points, training, error detection, a case study, the sample sentiment task, erroneous predictions, human understandable categories, erroneous samples, the uncertainty-based sampling</strong></p>
+<p>Understanding and executing natural language instructions in a grounded domain is one of the hallmarks of artificial intelligence. In this paper, we focus on instruction understanding in the blocks world domain and investigate the language understanding abilities of two top-performing systems for the task. We aim to understand if the test performance of these models indicates an understanding of the spatial domain and of the natural language instructions relative to it, or whether they merely over-fit spurious signals in the dataset. We formulate a set of expectations one might have from an instruction following model and concretely characterize the different dimensions of robustness such a model should possess. Despite decent test performance, we find that state-of-the-art models fall short of these expectations and are extremely brittle. We then propose a learning strategy that involves data augmentation and show through extensive experiments that the proposed learning strategy yields models that are competitive on the original test set while satisfying our expectations much better. <strong>natural language instructions, a grounded domain, artificial intelligence, this paper, instruction understanding, the blocks world domain, two top-performing systems, the task, these models, the spatial domain, the natural language instructions relative to it, the dataset, expectations, model, robustness, such a model, decent test performance, the-art, state-of-the-art models, these expectations, data augmentation, extensive experiments, our expectations</strong></p>
+<p>State-of-the-art neural machine translation methods employ massive amounts of parameters. Drastically reducing computational costs of such methods without affecting performance has been up to this point unsuccessful. To this end, we propose <u>FullyQT</u>: an all-inclusive quantization strategy for the Transformer. To the best of our knowledge, we are the first to show that it is possible to avoid any loss in translation quality with a fully quantized Transformer. Indeed, compared to full-precision, our 8-bit models score greater or equal BLEU on most tasks. Comparing ourselves to all previously proposed methods, we achieve state-of-the-art quantization results. <strong>the-art, parameters, such methods, performance, this point, this end, an all-inclusive quantization strategy for the Transformer, our knowledge, translation quality, full-precision, our 8-bit models, most tasks, all previously proposed methods, the-art, state-of-the-art quantization results</strong></p>
+</blockquote>
+<p>现在的问题是怎么自动识别patterns，这个pattern应该怎么表示？</p>
+<h1 id="方法一">方法一</h1>
+<p>每个<strong>语义模式</strong>都是<span class="math inline">\(T→d\)</span>的形式，其中<span class="math inline">\(T\)</span>是一个触发词（如'使用'、'展示'），<span class="math inline">\(d\)</span>是一个依存关系（如'直接-宾语'）</p>
+<p><img src="https://i.loli.net/2021/07/17/BrqQVJfDI8yaU5K.png" width="400"/></p>
+<p>因此每个模式由两部分组成：</p>
+<p>触发词（要是名词或动词）+子树（宾语、主语、补语）</p>
+<p>然后我们把这些模式放进svm分类器中学习，但是这样就是有监督，为了半监督我们还是bootstraping。</p>
+<p>遇到and conjunction我们直接拆分，例如：</p>
+<p>multi-head self-attention and gated recurrent units拆成multi-head self-attention 和gated recurrent units，因为前面是using所以是方法。</p>
+<p>我们第一步先只抽方法：</p>
+<ul>
+<li><p>有一堆种子之后，我们把这些种子的名词中心词的head和它们所处的dep_找到，作为新的pattern再继续抽。</p></li>
+<li><p>我们把每个&lt;模式, 关键短语, 关键短语的pos&gt;保存为三元组，作为候选词。</p></li>
+<li><p>我们按照这个模式抽取新的种子，抽取的方式是找到head的subtree并且是名词，把得到的名词短语再次加入；</p></li>
+<li><p>循环迭代；</p></li>
+</ul>
+<h1 id="方法二">方法二</h1>
+<p>先把所有候选的名词短语都抽取出来，然后用bootstrap方法得到关键短语。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 摘要列表</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;../corpus/abstracts.txt&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    corpus_list = f.read().splitlines()</span><br><span class="line"></span><br><span class="line">nlp = spacy.load(<span class="string">&quot;en_core_web_sm&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract_candidates</span>(<span class="params">i</span>):</span></span><br><span class="line">    <span class="comment">#对于每个摘要，把所有keywords的pattern保存在列表</span></span><br><span class="line">    doc = nlp(corpus_list[i])</span><br><span class="line">    keywords = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> token <span class="keyword">in</span> doc:</span><br><span class="line">        <span class="comment"># 找到名词短语的head</span></span><br><span class="line">        <span class="keyword">if</span> token.pos_ == <span class="string">&#x27;NOUN&#x27;</span> <span class="keyword">and</span> token.dep_ <span class="keyword">in</span> [<span class="string">&#x27;dobj&#x27;</span>, <span class="string">&#x27;nsubj&#x27;</span>, <span class="string">&#x27;pobj&#x27;</span>, <span class="string">&#x27;conj&#x27;</span>, <span class="string">&#x27;attr&#x27;</span>, <span class="string">&#x27;pcomp&#x27;</span>]:</span><br><span class="line">            subtree_list = []</span><br><span class="line">            <span class="comment"># 找到名词短语head的子树</span></span><br><span class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> token.subtree:</span><br><span class="line">                <span class="comment"># 名词短语head的子树中不能存在&quot;,&quot;</span></span><br><span class="line">                <span class="keyword">if</span> t.is_punct <span class="keyword">and</span> t.text != <span class="string">&quot;-&quot;</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                subtree_list.append(t)</span><br><span class="line"></span><br><span class="line">            pattern = [i, <span class="built_in">str</span>(token.head.head), token.head.head.lemma_, token.head.head.tag_, <span class="built_in">str</span>(token.head), token.head.tag_, token.head.dep_, token.dep_]</span><br><span class="line">            subtree_list_new = <span class="string">&#x27; &#x27;</span>.join(t.text <span class="keyword">for</span> t <span class="keyword">in</span> subtree_list).replace(<span class="string">r&#x27; - &#x27;</span>, <span class="string">&#x27;-&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;and&quot;</span> <span class="keyword">in</span> subtree_list_new:</span><br><span class="line">                keyword_1 = (subtree_list_new.split(<span class="string">&quot;and&quot;</span>)[<span class="number">0</span>]).strip()</span><br><span class="line">                keyword_2 = (subtree_list_new.split(<span class="string">&quot;and&quot;</span>)[<span class="number">1</span>]).strip()</span><br><span class="line"></span><br><span class="line">                pattern_new = pattern.copy()</span><br><span class="line"></span><br><span class="line">                pattern.append(keyword_1)</span><br><span class="line">                keywords.append(pattern)</span><br><span class="line">                pattern_new.append(keyword_2)</span><br><span class="line">                keywords.append(pattern_new)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">elif</span> <span class="string">&quot;PRON&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> [t.pos_ <span class="keyword">for</span> t <span class="keyword">in</span> subtree_list] <span class="keyword">and</span> <span class="string">&quot;this&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> subtree_list_new:</span><br><span class="line">                pattern.append(subtree_list_new)</span><br><span class="line">                keywords.append(pattern)</span><br><span class="line">    <span class="keyword">return</span> keywords</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> concurrent.futures</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = time.perf_counter()</span><br><span class="line">    keywords_list = []</span><br><span class="line">    <span class="keyword">with</span> concurrent.futures.ProcessPoolExecutor() <span class="keyword">as</span> executor:</span><br><span class="line">        <span class="keyword">for</span> keywords <span class="keyword">in</span> executor.<span class="built_in">map</span>(extract_candidates, <span class="built_in">range</span>(<span class="built_in">len</span>(corpus_list))):</span><br><span class="line">            keywords_list.extend(keywords)</span><br><span class="line">    print(keywords_list)</span><br><span class="line">    df = pd.DataFrame(keywords_list)</span><br><span class="line">    df.columns = [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;head_head&#x27;</span>, <span class="string">&#x27;head_head_lemma&#x27;</span>, <span class="string">&#x27;head_head_tag&#x27;</span>, <span class="string">&#x27;head&#x27;</span>, <span class="string">&#x27;head_tag&#x27;</span>, <span class="string">&#x27;head_dep&#x27;</span>, <span class="string">&#x27;dep&#x27;</span>, <span class="string">&#x27;candidates&#x27;</span>]</span><br><span class="line">    df.drop_duplicates(inplace=<span class="literal">True</span>, subset=[<span class="string">&quot;candidates&quot;</span>])</span><br><span class="line">    df.to_csv(<span class="string">&#x27;../result/candidates.csv&#x27;</span>)</span><br><span class="line">    t2 = time.perf_counter()</span><br><span class="line">    print(<span class="string">f&#x27;Finished in <span class="subst">&#123;t2-t1&#125;</span> seconds&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后根据seed找到pattern:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;../result/candidates.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 此处仅仅是方法的种子</span></span><br><span class="line">seed_list = [<span class="string">&quot;multi-head self-attention&quot;</span>, <span class="string">&quot;gated recurrent units&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果种子出现在文章中，就把种子所在的pattern提取出来</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_pattern</span>(<span class="params">i</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        item_json = &#123;&#125;</span><br><span class="line">        f = <span class="built_in">open</span>(<span class="string">&#x27;seeds.txt&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">        seed_list = pickle.load(f)</span><br><span class="line">        f.close()</span><br><span class="line">        tokenized_candidates = re.split(<span class="string">r&quot;[^0-9a-z]&quot;</span>, <span class="built_in">str</span>(df[<span class="string">&#x27;candidates&#x27;</span>][i].lower()))</span><br><span class="line">        <span class="keyword">for</span> seed <span class="keyword">in</span> seed_list:</span><br><span class="line">            same = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> token <span class="keyword">in</span> re.split(<span class="string">r&quot;[^0-9a-z]&quot;</span>, seed.lower()):</span><br><span class="line">                <span class="keyword">if</span> token <span class="keyword">in</span> tokenized_candidates:</span><br><span class="line">                    same += <span class="number">1</span></span><br><span class="line">            different = <span class="built_in">len</span>(tokenized_candidates) - same</span><br><span class="line">            <span class="keyword">if</span> same &gt; <span class="number">1</span> <span class="keyword">and</span> different &lt; <span class="number">3</span>:</span><br><span class="line">                item_json[<span class="string">&quot;paper_id&quot;</span>] = i</span><br><span class="line">                item_json[<span class="string">&quot;keyword&quot;</span>] =  df[<span class="string">&#x27;candidates&#x27;</span>][i]</span><br><span class="line">                item_json[<span class="string">&quot;relationship&quot;</span>] = <span class="string">&quot;method&quot;</span></span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> concurrent.futures</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t1 = time.perf_counter()</span><br><span class="line">    index_list = []</span><br><span class="line">    <span class="keyword">with</span> concurrent.futures.ProcessPoolExecutor() <span class="keyword">as</span> executor:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> executor.<span class="built_in">map</span>(find_pattern, <span class="built_in">range</span>(df.shape[<span class="number">0</span>])):</span><br><span class="line">            index_list.append(i)</span><br><span class="line">    index_list = [i <span class="keyword">for</span> i <span class="keyword">in</span> index_list <span class="keyword">if</span> i]</span><br><span class="line">    df.loc[index_list].to_csv(<span class="string">&#x27;../result/patterns.csv&#x27;</span>)</span><br><span class="line">    t2 = time.perf_counter()</span><br><span class="line">    print(<span class="string">f&#x27;Finished in <span class="subst">&#123;t2-t1&#125;</span> seconds&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>为了构建知识图谱，我们把关键短语和所在的文档分别保存在json文件中：</p>
+<p>首先是keyword.json：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;gated recurrent units&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;multi-head self-attention&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;sarcasm detection&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;social networking platforms&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;mateiral&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;multilingual BERT embeddings&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;public Facebook posts&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;material&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;Zero-shot learning&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;material&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;low-resource languages&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;material&quot;</span>       </span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;cross-lingual emotion classification&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span> </span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">5</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;reinforcement learning&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">11</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;distantly supervised relation extraction&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span>        </span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">13</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;grounded embeddings&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">13</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;ungrounded embeddings&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">15</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;argument mining&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">15</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;a human-generated dataset&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;material&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">16</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;CoNLL-14 benchmark datasets&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;material&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;	</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">16</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;adversarial learning&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;method&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;visual question answering&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;supervised domain adaptation&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;pre-trained source model&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;task&quot;</span>     </span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;paper_id&quot;</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">&quot;keyword&quot;</span>: <span class="string">&quot;the benchmark VQA 2.0&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;relationship&quot;</span>: <span class="string">&quot;material&quot;</span>       </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>然后是paper.json：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123;</span><br><span class="line">        <span class="attr">&quot;title&quot;</span>: <span class="string">&quot;英格兰&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;abstract&quot;</span>: <span class="string">&quot;麻瓜&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;已婚&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;authors&quot;</span>: <span class="string">&quot;人类&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;year&quot;</span>: <span class="string">&quot;男&quot;</span></span><br><span class="line"> 	&#125;,</span><br><span class="line"> 	&#123;</span><br><span class="line">     	<span class="attr">&quot;title&quot;</span>: <span class="string">&quot;英格兰&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;abstract&quot;</span>: <span class="string">&quot;麻瓜&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;已婚&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;authors&quot;</span>: <span class="string">&quot;人类&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;year&quot;</span>: <span class="string">&quot;男&quot;</span></span><br><span class="line"> 	&#125;</span><br><span class="line">]</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p>https://shyambhu20.blogspot.com/2020/09/dependency-parsing-using-spacy-spacy.html</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/constituency/" title="提取句子中的每个子树">http://nlpcourse.cn/constituency/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/all_papers/" rel="prev" title="NLP领域经典论文">
+      <i class="fa fa-chevron-left"></i> NLP领域经典论文
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/bootstrap/" rel="next" title="Bootstrapping 1.0">
+      Bootstrapping 1.0 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E5%8F%A5%E6%B3%95%E6%A0%91%E5%B9%B6%E4%BF%9D%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">画句法树并保存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%90%E5%8F%96%E5%90%8D%E8%AF%8D%E7%9F%AD%E8%AF%ADconstituency"><span class="nav-number"></span> <span class="nav-text">提取名词短语constituency</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number"></span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number"></span> <span class="nav-text">方法二</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">475k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:12</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
