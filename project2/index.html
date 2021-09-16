@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <meta name="baidu-site-verification" content="code-FTCajqaAZT" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="全部词性获取代码 1234import spacynlp &#x3D; spacy.load(&quot;en_core_web_sm&quot;)for label in nlp.get_pipe(&quot;parser&quot;).labels:    print(&amp;#x27;&#96;&amp;#x27;+label+&amp;#x27;&#96;: &amp;#x27;+str(spacy.explain(label)))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="英文词性标记汇总">
+<meta property="og:url" content="http://nlpcourse.cn/project2/index.html">
+<meta property="og:site_name" content="鸽婆打字机">
+<meta property="og:description" content="全部词性获取代码 1234import spacynlp &#x3D; spacy.load(&quot;en_core_web_sm&quot;)for label in nlp.get_pipe(&quot;parser&quot;).labels:    print(&amp;#x27;&#96;&amp;#x27;+label+&amp;#x27;&#96;: &amp;#x27;+str(spacy.explain(label)))">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-07T03:53:04.687Z">
+<meta property="article:modified_time" content="2021-08-11T02:48:46.691Z">
+<meta property="article:author" content="鸽鸽">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nlpcourse.cn/project2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>英文词性标记汇总 | 鸽婆打字机</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鸽婆打字机</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">自然语言处理笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">93</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nlpcourse.cn/project2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="鸽鸽">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鸽婆打字机">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          英文词性标记汇总
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-07 11:53:04" itemprop="dateCreated datePublished" datetime="2021-08-07T11:53:04+08:00">2021-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-11 10:48:46" itemprop="dateModified" datetime="2021-08-11T10:48:46+08:00">2021-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" itemprop="url" rel="index"><span itemprop="name">信息抽取</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="全部词性获取代码">全部词性获取代码</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> spacy</span><br><span class="line">nlp = spacy.load(<span class="string">&quot;en_core_web_sm&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> label <span class="keyword">in</span> nlp.get_pipe(<span class="string">&quot;parser&quot;</span>).labels:</span><br><span class="line">    print(<span class="string">&#x27;`&#x27;</span>+label+<span class="string">&#x27;`: &#x27;</span>+<span class="built_in">str</span>(spacy.explain(label)))</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h1 id="所有universal-pos标签">所有universal pos标签</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># POS tags</span></span><br><span class="line">    <span class="comment"># Universal POS Tags</span></span><br><span class="line">    <span class="comment"># http://universaldependencies.org/u/pos/</span></span><br><span class="line">    <span class="string">&quot;ADJ&quot;</span>: <span class="string">&quot;adjective&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ADP&quot;</span>: <span class="string">&quot;adposition&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ADV&quot;</span>: <span class="string">&quot;adverb&quot;</span>,</span><br><span class="line">    <span class="string">&quot;AUX&quot;</span>: <span class="string">&quot;auxiliary&quot;</span>,</span><br><span class="line">    <span class="string">&quot;CONJ&quot;</span>: <span class="string">&quot;conjunction&quot;</span>,</span><br><span class="line">    <span class="string">&quot;CCONJ&quot;</span>: <span class="string">&quot;coordinating conjunction&quot;</span>,</span><br><span class="line">    <span class="string">&quot;DET&quot;</span>: <span class="string">&quot;determiner&quot;</span>,</span><br><span class="line">    <span class="string">&quot;INTJ&quot;</span>: <span class="string">&quot;interjection&quot;</span>,</span><br><span class="line">    <span class="string">&quot;NOUN&quot;</span>: <span class="string">&quot;noun&quot;</span>,</span><br><span class="line">    <span class="string">&quot;NUM&quot;</span>: <span class="string">&quot;numeral&quot;</span>,</span><br><span class="line">    <span class="string">&quot;PART&quot;</span>: <span class="string">&quot;particle&quot;</span>,</span><br><span class="line">    <span class="string">&quot;PRON&quot;</span>: <span class="string">&quot;pronoun&quot;</span>,</span><br><span class="line">    <span class="string">&quot;PROPN&quot;</span>: <span class="string">&quot;proper noun&quot;</span>,</span><br><span class="line">    <span class="string">&quot;PUNCT&quot;</span>: <span class="string">&quot;punctuation&quot;</span>,</span><br><span class="line">    <span class="string">&quot;SCONJ&quot;</span>: <span class="string">&quot;subordinating conjunction&quot;</span>,</span><br><span class="line">    <span class="string">&quot;SYM&quot;</span>: <span class="string">&quot;symbol&quot;</span>,</span><br><span class="line">    <span class="string">&quot;VERB&quot;</span>: <span class="string">&quot;verb&quot;</span>,</span><br><span class="line">    <span class="string">&quot;X&quot;</span>: <span class="string">&quot;other&quot;</span>,</span><br><span class="line">    <span class="string">&quot;EOL&quot;</span>: <span class="string">&quot;end of line&quot;</span>,</span><br><span class="line">    <span class="string">&quot;SPACE&quot;</span>: <span class="string">&quot;space&quot;</span>,</span><br></pre></td></tr></table></figure>
+<h1 id="所有细粒度pos标签">所有细粒度pos标签</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;.&quot;</span>: <span class="string">&quot;punctuation mark, sentence closer&quot;</span>,</span><br><span class="line">   <span class="string">&quot;,&quot;</span>: <span class="string">&quot;punctuation mark, comma&quot;</span>,</span><br><span class="line">   <span class="string">&quot;-LRB-&quot;</span>: <span class="string">&quot;left round bracket&quot;</span>,</span><br><span class="line">   <span class="string">&quot;-RRB-&quot;</span>: <span class="string">&quot;right round bracket&quot;</span>,</span><br><span class="line">   <span class="string">&quot;``&quot;</span>: <span class="string">&quot;opening quotation mark&quot;</span>,</span><br><span class="line">   <span class="string">&#x27;&quot;&quot;&#x27;</span>: <span class="string">&quot;closing quotation mark&quot;</span>,</span><br><span class="line">   <span class="string">&quot;&#x27;&#x27;&quot;</span>: <span class="string">&quot;closing quotation mark&quot;</span>,</span><br><span class="line">   <span class="string">&quot;:&quot;</span>: <span class="string">&quot;punctuation mark, colon or ellipsis&quot;</span>,</span><br><span class="line">   <span class="string">&quot;$&quot;</span>: <span class="string">&quot;symbol, currency&quot;</span>,</span><br><span class="line">   <span class="string">&quot;#&quot;</span>: <span class="string">&quot;symbol, number sign&quot;</span>,</span><br><span class="line">   <span class="string">&quot;AFX&quot;</span>: <span class="string">&quot;affix&quot;</span>,</span><br><span class="line">   <span class="string">&quot;CC&quot;</span>: <span class="string">&quot;conjunction, coordinating&quot;</span>,</span><br><span class="line">   <span class="string">&quot;CD&quot;</span>: <span class="string">&quot;cardinal number&quot;</span>,</span><br><span class="line">   <span class="string">&quot;DT&quot;</span>: <span class="string">&quot;determiner&quot;</span>,</span><br><span class="line">   <span class="string">&quot;EX&quot;</span>: <span class="string">&quot;existential there&quot;</span>,</span><br><span class="line">   <span class="string">&quot;FW&quot;</span>: <span class="string">&quot;foreign word&quot;</span>,</span><br><span class="line">   <span class="string">&quot;HYPH&quot;</span>: <span class="string">&quot;punctuation mark, hyphen&quot;</span>,</span><br><span class="line">   <span class="string">&quot;IN&quot;</span>: <span class="string">&quot;conjunction, subordinating or preposition&quot;</span>,</span><br><span class="line">   <span class="string">&quot;JJ&quot;</span>: <span class="string">&quot;adjective (English), other noun-modifier (Chinese)&quot;</span>,</span><br><span class="line">   <span class="string">&quot;JJR&quot;</span>: <span class="string">&quot;adjective, comparative&quot;</span>,</span><br><span class="line">   <span class="string">&quot;JJS&quot;</span>: <span class="string">&quot;adjective, superlative&quot;</span>,</span><br><span class="line">   <span class="string">&quot;LS&quot;</span>: <span class="string">&quot;list item marker&quot;</span>,</span><br><span class="line">   <span class="string">&quot;MD&quot;</span>: <span class="string">&quot;verb, modal auxiliary&quot;</span>,</span><br><span class="line">   <span class="string">&quot;NIL&quot;</span>: <span class="string">&quot;missing tag&quot;</span>,</span><br><span class="line">   <span class="string">&quot;NN&quot;</span>: <span class="string">&quot;noun, singular or mass&quot;</span>,</span><br><span class="line">   <span class="string">&quot;NNP&quot;</span>: <span class="string">&quot;noun, proper singular&quot;</span>,</span><br><span class="line">   <span class="string">&quot;NNPS&quot;</span>: <span class="string">&quot;noun, proper plural&quot;</span>,</span><br><span class="line">   <span class="string">&quot;NNS&quot;</span>: <span class="string">&quot;noun, plural&quot;</span>,</span><br><span class="line">   <span class="string">&quot;PDT&quot;</span>: <span class="string">&quot;predeterminer&quot;</span>,</span><br><span class="line">   <span class="string">&quot;POS&quot;</span>: <span class="string">&quot;possessive ending&quot;</span>,</span><br><span class="line">   <span class="string">&quot;PRP&quot;</span>: <span class="string">&quot;pronoun, personal&quot;</span>,</span><br><span class="line">   <span class="string">&quot;PRP$&quot;</span>: <span class="string">&quot;pronoun, possessive&quot;</span>,</span><br><span class="line">   <span class="string">&quot;RB&quot;</span>: <span class="string">&quot;adverb&quot;</span>,</span><br><span class="line">   <span class="string">&quot;RBR&quot;</span>: <span class="string">&quot;adverb, comparative&quot;</span>,</span><br><span class="line">   <span class="string">&quot;RBS&quot;</span>: <span class="string">&quot;adverb, superlative&quot;</span>,</span><br><span class="line">   <span class="string">&quot;RP&quot;</span>: <span class="string">&quot;adverb, particle&quot;</span>,</span><br><span class="line">   <span class="string">&quot;TO&quot;</span>: <span class="string">&#x27;infinitival &quot;to&quot;&#x27;</span>,</span><br><span class="line">   <span class="string">&quot;UH&quot;</span>: <span class="string">&quot;interjection&quot;</span>,</span><br><span class="line">   <span class="string">&quot;VB&quot;</span>: <span class="string">&quot;verb, base form&quot;</span>,</span><br><span class="line">   <span class="string">&quot;VBD&quot;</span>: <span class="string">&quot;verb, past tense&quot;</span>,</span><br><span class="line">   <span class="string">&quot;VBG&quot;</span>: <span class="string">&quot;verb, gerund or present participle&quot;</span>,</span><br><span class="line">   <span class="string">&quot;VBN&quot;</span>: <span class="string">&quot;verb, past participle&quot;</span>,</span><br><span class="line">   <span class="string">&quot;VBP&quot;</span>: <span class="string">&quot;verb, non-3rd person singular present&quot;</span>,</span><br><span class="line">   <span class="string">&quot;VBZ&quot;</span>: <span class="string">&quot;verb, 3rd person singular present&quot;</span>,</span><br><span class="line">   <span class="string">&quot;WDT&quot;</span>: <span class="string">&quot;wh-determiner&quot;</span>,</span><br><span class="line">   <span class="string">&quot;WP&quot;</span>: <span class="string">&quot;wh-pronoun, personal&quot;</span>,</span><br><span class="line">   <span class="string">&quot;WP$&quot;</span>: <span class="string">&quot;wh-pronoun, possessive&quot;</span>,</span><br><span class="line">   <span class="string">&quot;WRB&quot;</span>: <span class="string">&quot;wh-adverb&quot;</span>,</span><br><span class="line">   <span class="string">&quot;SP&quot;</span>: <span class="string">&quot;space (English), sentence-final particle (Chinese)&quot;</span>,</span><br><span class="line">   <span class="string">&quot;ADD&quot;</span>: <span class="string">&quot;email&quot;</span>,</span><br><span class="line">   <span class="string">&quot;NFP&quot;</span>: <span class="string">&quot;superfluous punctuation&quot;</span>,</span><br><span class="line">   <span class="string">&quot;GW&quot;</span>: <span class="string">&quot;additional word in multi-word expression&quot;</span>,</span><br><span class="line">   <span class="string">&quot;XX&quot;</span>: <span class="string">&quot;unknown&quot;</span>,</span><br><span class="line">   <span class="string">&quot;BES&quot;</span>: <span class="string">&#x27;auxiliary &quot;be&quot;&#x27;</span>,</span><br><span class="line">   <span class="string">&quot;HVS&quot;</span>: <span class="string">&#x27;forms of &quot;have&quot;&#x27;</span>,</span><br></pre></td></tr></table></figure>
+<h1 id="所有dependency标签">所有dependency标签</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dependency Labels (English)</span></span><br><span class="line">    <span class="comment"># ClearNLP / Universal Dependencies</span></span><br><span class="line">    <span class="comment"># https://github.com/clir/clearnlp-guidelines/blob/master/md/specifications/dependency_labels.md</span></span><br><span class="line">    <span class="string">&quot;acl&quot;</span>: <span class="string">&quot;clausal modifier of noun (adjectival clause)&quot;</span>,</span><br><span class="line">    <span class="string">&quot;acomp&quot;</span>: <span class="string">&quot;adjectival complement&quot;</span>,</span><br><span class="line">    <span class="string">&quot;advcl&quot;</span>: <span class="string">&quot;adverbial clause modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;advmod&quot;</span>: <span class="string">&quot;adverbial modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;agent&quot;</span>: <span class="string">&quot;agent&quot;</span>,</span><br><span class="line">    <span class="string">&quot;amod&quot;</span>: <span class="string">&quot;adjectival modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;appos&quot;</span>: <span class="string">&quot;appositional modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;attr&quot;</span>: <span class="string">&quot;attribute&quot;</span>,</span><br><span class="line">    <span class="string">&quot;aux&quot;</span>: <span class="string">&quot;auxiliary&quot;</span>,</span><br><span class="line">    <span class="string">&quot;auxpass&quot;</span>: <span class="string">&quot;auxiliary (passive)&quot;</span>,</span><br><span class="line">    <span class="string">&quot;case&quot;</span>: <span class="string">&quot;case marking&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cc&quot;</span>: <span class="string">&quot;coordinating conjunction&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ccomp&quot;</span>: <span class="string">&quot;clausal complement&quot;</span>,</span><br><span class="line">    <span class="string">&quot;clf&quot;</span>: <span class="string">&quot;classifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;complm&quot;</span>: <span class="string">&quot;complementizer&quot;</span>,</span><br><span class="line">    <span class="string">&quot;compound&quot;</span>: <span class="string">&quot;compound&quot;</span>,</span><br><span class="line">    <span class="string">&quot;conj&quot;</span>: <span class="string">&quot;conjunct&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cop&quot;</span>: <span class="string">&quot;copula&quot;</span>,</span><br><span class="line">    <span class="string">&quot;csubj&quot;</span>: <span class="string">&quot;clausal subject&quot;</span>,</span><br><span class="line">    <span class="string">&quot;csubjpass&quot;</span>: <span class="string">&quot;clausal subject (passive)&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dative&quot;</span>: <span class="string">&quot;dative&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dep&quot;</span>: <span class="string">&quot;unclassified dependent&quot;</span>,</span><br><span class="line">    <span class="string">&quot;det&quot;</span>: <span class="string">&quot;determiner&quot;</span>,</span><br><span class="line">    <span class="string">&quot;discourse&quot;</span>: <span class="string">&quot;discourse element&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dislocated&quot;</span>: <span class="string">&quot;dislocated elements&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dobj&quot;</span>: <span class="string">&quot;direct object&quot;</span>,</span><br><span class="line">    <span class="string">&quot;expl&quot;</span>: <span class="string">&quot;expletive&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fixed&quot;</span>: <span class="string">&quot;fixed multiword expression&quot;</span>,</span><br><span class="line">    <span class="string">&quot;flat&quot;</span>: <span class="string">&quot;flat multiword expression&quot;</span>,</span><br><span class="line">    <span class="string">&quot;goeswith&quot;</span>: <span class="string">&quot;goes with&quot;</span>,</span><br><span class="line">    <span class="string">&quot;hmod&quot;</span>: <span class="string">&quot;modifier in hyphenation&quot;</span>,</span><br><span class="line">    <span class="string">&quot;hyph&quot;</span>: <span class="string">&quot;hyphen&quot;</span>,</span><br><span class="line">    <span class="string">&quot;infmod&quot;</span>: <span class="string">&quot;infinitival modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;intj&quot;</span>: <span class="string">&quot;interjection&quot;</span>,</span><br><span class="line">    <span class="string">&quot;iobj&quot;</span>: <span class="string">&quot;indirect object&quot;</span>,</span><br><span class="line">    <span class="string">&quot;list&quot;</span>: <span class="string">&quot;list&quot;</span>,</span><br><span class="line">    <span class="string">&quot;mark&quot;</span>: <span class="string">&quot;marker&quot;</span>,</span><br><span class="line">    <span class="string">&quot;meta&quot;</span>: <span class="string">&quot;meta modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;neg&quot;</span>: <span class="string">&quot;negation modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nmod&quot;</span>: <span class="string">&quot;modifier of nominal&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nn&quot;</span>: <span class="string">&quot;noun compound modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;npadvmod&quot;</span>: <span class="string">&quot;noun phrase as adverbial modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nsubj&quot;</span>: <span class="string">&quot;nominal subject&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nsubjpass&quot;</span>: <span class="string">&quot;nominal subject (passive)&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nounmod&quot;</span>: <span class="string">&quot;modifier of nominal&quot;</span>,</span><br><span class="line">    <span class="string">&quot;npmod&quot;</span>: <span class="string">&quot;noun phrase as adverbial modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;num&quot;</span>: <span class="string">&quot;number modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;number&quot;</span>: <span class="string">&quot;number compound modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nummod&quot;</span>: <span class="string">&quot;numeric modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;oprd&quot;</span>: <span class="string">&quot;object predicate&quot;</span>,</span><br><span class="line">    <span class="string">&quot;obj&quot;</span>: <span class="string">&quot;object&quot;</span>,</span><br><span class="line">    <span class="string">&quot;obl&quot;</span>: <span class="string">&quot;oblique nominal&quot;</span>,</span><br><span class="line">    <span class="string">&quot;orphan&quot;</span>: <span class="string">&quot;orphan&quot;</span>,</span><br><span class="line">    <span class="string">&quot;parataxis&quot;</span>: <span class="string">&quot;parataxis&quot;</span>,</span><br><span class="line">    <span class="string">&quot;partmod&quot;</span>: <span class="string">&quot;participal modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;pcomp&quot;</span>: <span class="string">&quot;complement of preposition&quot;</span>,</span><br><span class="line">    <span class="string">&quot;pobj&quot;</span>: <span class="string">&quot;object of preposition&quot;</span>,</span><br><span class="line">    <span class="string">&quot;poss&quot;</span>: <span class="string">&quot;possession modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;possessive&quot;</span>: <span class="string">&quot;possessive modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;preconj&quot;</span>: <span class="string">&quot;pre-correlative conjunction&quot;</span>,</span><br><span class="line">    <span class="string">&quot;prep&quot;</span>: <span class="string">&quot;prepositional modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;prt&quot;</span>: <span class="string">&quot;particle&quot;</span>,</span><br><span class="line">    <span class="string">&quot;punct&quot;</span>: <span class="string">&quot;punctuation&quot;</span>,</span><br><span class="line">    <span class="string">&quot;quantmod&quot;</span>: <span class="string">&quot;modifier of quantifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;rcmod&quot;</span>: <span class="string">&quot;relative clause modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;relcl&quot;</span>: <span class="string">&quot;relative clause modifier&quot;</span>,</span><br><span class="line">    <span class="string">&quot;reparandum&quot;</span>: <span class="string">&quot;overridden disfluency&quot;</span>,</span><br><span class="line">    <span class="string">&quot;root&quot;</span>: <span class="string">&quot;root&quot;</span>,</span><br><span class="line">    <span class="string">&quot;vocative&quot;</span>: <span class="string">&quot;vocative&quot;</span>,</span><br><span class="line">    <span class="string">&quot;xcomp&quot;</span>: <span class="string">&quot;open clausal complement&quot;</span>,</span><br></pre></td></tr></table></figure>
+<h1 id="链接">链接</h1>
+<p>https://github.com/explosion/spaCy/blob/master/spacy/glossary.py</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>鸽鸽
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://nlpcourse.cn/project2/" title="英文词性标记汇总">http://nlpcourse.cn/project2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/word_embeddings2/" rel="prev" title="认知语言学论文代码">
+      <i class="fa fa-chevron-left"></i> 认知语言学论文代码
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/project-3/" rel="next" title="候选词过滤停用词">
+      候选词过滤停用词 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E8%AF%8D%E6%80%A7%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">全部词性获取代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%80%E6%9C%89universal-pos%E6%A0%87%E7%AD%BE"><span class="nav-number">2.</span> <span class="nav-text">所有universal pos标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E7%BB%86%E7%B2%92%E5%BA%A6pos%E6%A0%87%E7%AD%BE"><span class="nav-number">3.</span> <span class="nav-text">所有细粒度pos标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%80%E6%9C%89dependency%E6%A0%87%E7%AD%BE"><span class="nav-number">4.</span> <span class="nav-text">所有dependency标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="鸽鸽"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">鸽鸽</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MissFreak" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MissFreak" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1360759791@qq.com" title="E-Mail → mailto:1360759791@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/tuyuge/" title="cnblogs → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;tuyuge&#x2F;" rel="noopener" target="_blank"><i class="fa fa-blog fa-fw"></i>cnblogs</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/tu-tu-70-60-86" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;tu-tu-70-60-86" rel="noopener" target="_blank"><i class="fa fa-book fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸽鸽</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">500k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:34</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
