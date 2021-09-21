@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Transformer模型于2017年在论文Attention is All You Need中提出，但我是近期才真正开始研究其内部架构，在本文中我将记录阅读相关资料及论文的心得。参考文献包括Transformers — Let’s Dive Deeeep!以及The Illustrated Transformer。  研究一种模型  1. Transformer的特点及优点  使用注">
+  <meta name="description" content="Transformer模型于2017年在论文Attention is All You Need中提出，但我是近期才真正开始研究其内部架构，在本文中我将记录阅读相关资料及论文的心得。参考文献包括Transformers — Let’s Dive Deeeep!以及The Illustrated Transformer。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Transformer的总结与感悟">
 <meta property="og:url" content="http://nlpcourse.cn/transformer-summary/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="Transformer模型于2017年在论文Attention is All You Need中提出，但我是近期才真正开始研究其内部架构，在本文中我将记录阅读相关资料及论文的心得。参考文献包括Transformers — Let’s Dive Deeeep!以及The Illustrated Transformer。  研究一种模型  1. Transformer的特点及优点  使用注">
+<meta property="og:description" content="Transformer模型于2017年在论文Attention is All You Need中提出，但我是近期才真正开始研究其内部架构，在本文中我将记录阅读相关资料及论文的心得。参考文献包括Transformers — Let’s Dive Deeeep!以及The Illustrated Transformer。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-06T06:15:25.791Z">
-<meta property="article:modified_time" content="2021-09-16T13:19:50.960Z">
+<meta property="article:modified_time" content="2021-09-21T02:24:11.105Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="nlp">
 <meta property="article:tag" content="Transformer">
@@ -134,12 +134,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">36</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">96</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-16 21:19:50" itemprop="dateModified" datetime="2021-09-16T21:19:50+08:00">2021-09-16</time>
+                <time title="修改时间：2021-09-21 10:24:11" itemprop="dateModified" datetime="2021-09-21T10:24:11+08:00">2021-09-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,6 +273,7 @@
 
       
         <p>Transformer模型于2017年在论文<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a>中提出，但我是近期才真正开始研究其内部架构，在本文中我将记录阅读相关资料及论文的心得。参考文献包括<a target="_blank" rel="noopener" href="https://medium.com/analytics-vidhya/transformers-lets-dive-deeeep-7784bdb20807">Transformers — Let’s Dive Deeeep!</a>以及<a target="_blank" rel="noopener" href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a>。</p>
+<span id="more"></span>
 <ul>
 <li>研究一种模型</li>
 </ul>
@@ -312,9 +313,6 @@
       <div class="popular-posts-title"><a href="\transformer\" rel="bookmark">Transformer详解</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\wechat-1\" rel="bookmark">生成式文本摘要初探</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\paper-9\" rel="bookmark">我们能否实现科学评审的自动化？</a></div>
     </li>
     <li class="popular-posts-item">
@@ -322,6 +320,9 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\paper-7\" rel="bookmark">Summarization with Pointer-Generator Networks</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\pointer\" rel="bookmark">PtrNet知识梳理</a></div>
     </li>
   </ul>
 
@@ -456,14 +457,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">94</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -533,7 +534,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:35</span>
+    <span title="站点阅读时长">7:34</span>
 </div>
 
         

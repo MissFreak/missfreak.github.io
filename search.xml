@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目前共有108篇文章</title>
+    <title>目前共有128篇文章</title>
     <url>/all-posts/</url>
     <content><![CDATA[<center>
 『 好奇心造就诗人与科学家。』<br>Knowledge of languages is the doorway to wisdom. – Roger Bacon<br><br>
@@ -61,7 +61,7 @@ pandas
 <summary>
 未分类
 </summary>
-<br><a href="all-posts">目前共有88篇文章</a><br> <a href="all_papers">NLP领域经典论文</a><br> <a href="bert-keyword">使用 BERT 提取关键字</a><br> <a href="bert">BERT和SentenceBERT</a><br> <a href="bootstrap-2">Bootstrapping 2.0</a><br> <a href="bootstrap">Bootstrapping 1.0</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="constituency">提取句子中的每个子树</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="excel">python批量处理Excel表格</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="KG-1">知识图谱与知识表示</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="paper-3">用分布式语义bootstrap关系</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="pyperclip">利用python监听剪贴板内容并修改-工具开发</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="semeval">SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系</a><br> <a href="tensorflow-0">tensorflow基础知识</a><br> <a href="tensorflow-1">使用 BERT 对文本进行分类</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br>
+<br><a href="all-posts">目前共有108篇文章</a><br> <a href="all_papers">NLP领域经典论文</a><br> <a href="bert-keyword">使用 BERT 提取关键字</a><br> <a href="bert">BERT和SentenceBERT</a><br> <a href="bootstrap-2">Bootstrapping 2.0</a><br> <a href="bootstrap">Bootstrapping 1.0</a><br> <a href="cognitive-linguistics">认知语言学大纲</a><br> <a href="constituency">提取句子中的每个子树</a><br> <a href="content">我的电脑文件目录管理</a><br> <a href="diary-1">心怀热爱的人，有梦去追</a><br> <a href="excel">python批量处理Excel表格</a><br> <a href="hello-world">Hello World</a><br> <a href="hexo-next">Hexo博客Next主题搭建全过程</a><br> <a href="information-theory-1">信息论知识与资源汇总</a><br> <a href="KG-1">知识图谱与知识表示</a><br> <a href="knowledge-graph-1">knowledge-graph-1</a><br> <a href="knowledge-graph-2">用Python搭建学术知识图谱</a><br> <a href="middle-test">中期考核的复习计划</a><br> <a href="paper-3">用分布式语义bootstrap关系</a><br> <a href="prime-citation">priming</a><br> <a href="priming-content">syntactic priming-2</a><br> <a href="priming-pre">syntactic priming</a><br> <a href="pyperclip">利用python监听剪贴板内容并修改-工具开发</a><br> <a href="resources">免费好用网站软件资源集锦：从学习、办公到娱乐</a><br> <a href="semeval">SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系</a><br> <a href="tensorflow-0">tensorflow基础知识</a><br> <a href="tensorflow-1">使用 BERT 对文本进行分类</a><br> <a href="web-dev-all">网站开发需要的工具：前端和后端</a><br> <a href="wiki-api">好用的API集锦</a><br> <a href="wikipedia">wikipedia API</a><br>
 </details>
 </details>
 <details class="category_1">
@@ -95,13 +95,25 @@ flask
 <summary>
 信息抽取
 </summary>
-<br> <a href="information-retrieval-1">《自然语言处理综论》第17章-信息抽取（上）</a><br> <a href="information-retrieval-2">《自然语言处理综论》第17章-信息抽取（中）</a><br> <a href="information-retrieval-3">《自然语言处理综论》第17章-信息抽取（下）</a><br> <a href="information-retrieval-4">信息抽取</a><br> <a href="information-retrieval">信息抽取技术综述</a><br> <a href="named-entity-recognition">英文文献的命名实体识别（上）</a><br> <a href="paper-0">SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系</a><br> <a href="paper-1">数值开放信息抽取的自助法</a><br> <a href="paper-2">具有分布式语义的关系提取器的半监督性引导 </a><br> <a href="paper-4">数值开放信息抽取的自助法</a><br> <a href="paper-5">用于从文本中半监督的网络论点语料库的清洗 </a><br> <a href="phd">数值开放信息抽取的自助法</a><br>
+<br> <a href="information-retrieval-1">《自然语言处理综论》第17章-信息抽取（上）</a><br> <a href="information-retrieval-2">《自然语言处理综论》第17章-信息抽取（中）</a><br> <a href="information-retrieval-3">《自然语言处理综论》第17章-信息抽取（下）</a><br> <a href="information-retrieval-4">信息抽取</a><br> <a href="information-retrieval">信息抽取技术综述</a><br> <a href="LR-1">一键文献综述的文献回顾</a><br> <a href="named-entity-recognition">英文文献的命名实体识别（上）</a><br> <a href="paper-0">SemEval 2017任务10：ScienceIE--从科学出版物中提取关键词和关系</a><br> <a href="paper-1">数值开放信息抽取的自助法</a><br> <a href="paper-2">具有分布式语义的关系提取器的半监督性引导 </a><br> <a href="paper-4">数值开放信息抽取的自助法</a><br> <a href="paper-5">用于从文本中半监督的网络论点语料库的清洗 </a><br> <a href="paper-9">我们能否实现科学评审的自动化？</a><br> <a href="phd">数值开放信息抽取的自助法</a><br> <a href="wechat-2">抽取式文本摘要初探</a><br>
 </details>
 <details open>
 <summary>
 句子切分
 </summary>
 <br> <a href="sentence-segmentation">英文句子切分的要点和工具</a><br>
+</details>
+<details open>
+<summary>
+文本摘要
+</summary>
+<br> <a href="text-summarization">文本摘要任务最新进展</a><br>
+</details>
+<details open>
+<summary>
+文本生成
+</summary>
+<br> <a href="wechat-1">生成式文本摘要初探</a><br>
 </details>
 <details open>
 <summary>
@@ -137,7 +149,7 @@ flask
 <summary>
 语言模型
 </summary>
-<br> <a href="transformer">Transformer详解</a><br>
+<br> <a href="paper-7">Summarization with Pointer-Generator Networks</a><br> <a href="paper-8">PEGASUS: 用提取的gap-sentences进行预训练，用于生成式摘要</a><br> <a href="pointer">PtrNet知识梳理</a><br> <a href="pre-training">预训练模型</a><br> <a href="pytorch">pytorch 笔记</a><br> <a href="transformer-summary">关于Transformer的总结与感悟</a><br> <a href="transformer">Transformer详解</a><br>
 </details>
 <details open>
 <summary>
@@ -166,7 +178,7 @@ flask
 <summary>
 课程
 </summary>
-<br> <a href="courses">计算机公开课目录</a><br>
+<br> <a href="courses-1">计算机知识</a><br> <a href="courses">计算机公开课目录</a><br>
 </details>
 </details>
 <details class="category_1">
@@ -218,7 +230,7 @@ flask
 <summary>
 信息抽取
 </summary>
-<br> <a href="attention">Attention模型中注意力的多尺度视觉化 </a><br> <a href="dataset">10000篇计算语言学文献语料库搭建</a><br> <a href="ir-project-0">信息抽取-Pilot Study</a><br> <a href="ir-project-1">爬虫构建语料库的方法</a><br> <a href="ir-project-2">根据POS生成候选词</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br> <a href="noun-chunks">名词短语抽取方法汇总和比较</a><br> <a href="paper-6">一袋什么？用于文本分析的简单名词短语抽取</a><br> <a href="papers">文献整理</a><br> <a href="pattern_match">用模式匹配的方法抽取关键词</a><br> <a href="pattern_mining">用bootstrapping迭代的方式发掘新的模式</a><br> <a href="project">项目最终使用代码汇总与实时更新</a><br> <a href="stopwords">计算stopwords</a><br> <a href="visualization">计算语言学文献语料库的可视化</a><br>
+<br> <a href="attention">Attention模型中注意力的多尺度视觉化 </a><br> <a href="dataset">10000篇计算语言学文献语料库搭建</a><br> <a href="ir-project-0">信息抽取-Pilot Study</a><br> <a href="ir-project-1">爬虫构建语料库的方法</a><br> <a href="ir-project-2">根据POS生成候选词</a><br> <a href="ir-project">信息抽取的毕业论文准备</a><br> <a href="links">一些链接</a><br> <a href="noun-chunks">名词短语抽取方法汇总和比较</a><br> <a href="paper-6">一袋什么？用于文本分析的简单名词短语抽取</a><br> <a href="papers">文献整理</a><br> <a href="pattern_match">用模式匹配的方法抽取关键词</a><br> <a href="pattern_mining">用bootstrapping迭代的方式发掘新的模式</a><br> <a href="project-3">候选词过滤停用词</a><br> <a href="project-V1">项目最终使用代码汇总与实时更新</a><br> <a href="project-V2">画关键词共现图谱</a><br> <a href="project">项目最终使用代码汇总与实时更新</a><br> <a href="project2">英文词性标记汇总</a><br> <a href="stopwords">计算stopwords</a><br> <a href="translation">一袋什么？用于文本分析的简单名词短语抽取</a><br> <a href="visualization">计算语言学文献语料库的可视化</a><br>
 </details>
 </details>
 <br><br>关注公众号：鸽婆打字机！风里雨里，鸽鸽陪你~
@@ -227,26 +239,11 @@ flask
 ]]></content>
   </entry>
   <entry>
-    <title>生成式文本摘要初探</title>
-    <url>/wechat-1/</url>
-    <content><![CDATA[<p>这段时间刚入门文本摘要，在此总结几篇适合小白阅读的论文。</p>
-<h2 id="summarization-with-pointer-generator-networks">Summarization with Pointer-Generator Networks</h2>
-<p>首先，我们使用一个混合的<strong>指针-生成器网络</strong>，它可以通过指针<u>从源文本中复制单词</u>，这有助于准确地再现信息，<u>处理OOV单词</u>，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用<strong>覆盖率</strong>来跟踪已总结的内容，这<u>阻止了重复</u>。我们将我们的模型应用于CNN/《每日邮报》的总结任务。</p>
-<p>万小军的报告<a href="http://www.nlpr.ia.ac.cn/cip/Zhangworkshop/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3%E7%9A%84%E6%96%87%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%91%98%E8%A6%81.pdf">《大数据时代的文本自动摘要》</a>，</p>
-]]></content>
-      <categories>
-        <category>自然语言处理</category>
-        <category>文本生成</category>
-      </categories>
-      <tags>
-        <tag>nlp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我们能否实现科学评审的自动化？</title>
     <url>/paper-9/</url>
     <content><![CDATA[<h1 id="任务">任务</h1>
 <p>作为应对这一挑战的一个步骤，我们认为可以将评论的生成看作是一项基天方面的科学论文总结的任务，其中总结不仅要试图总结一篇论文的核心思想，还要评估该论文的具体方面（如新颖性或潜在影响）。我们从多个角度来评估评论的质量，其中我们声称一个好的评论不仅应该对论文进行良好的总结，而且还包括来自不同方面的事实正确和公正的评论，同时还包括有信息的证据。</p>
+<span id="more"></span>
 <h1 id="数据集">数据集</h1>
 <p>我们从机器学习领域建立了一个名为 ASAP-Review 的评论数据集，并对每条评论的aspect信息进行了精细的注释, 这为对生成的评论进行更丰富的评价提供了可能。</p>
 <h1 id="模型">模型</h1>
@@ -265,6 +262,7 @@ flask
     <url>/pytorch/</url>
     <content><![CDATA[<h1 id="autograd自动梯度">Autograd自动梯度</h1>
 <p>梯度下降是深度学习中常用的优化方法，在pytorch里面，我们无法直接定义函数，也无法直接求得梯度向量的表达式。更多的时候，我们其实只是求得了函数的在某一个点处相对于自变量的偏导。反向传播来计算梯度（loss对于参数）。</p>
+<span id="more"></span>
 <h2 id="jacobian-matrix">jacobian matrix</h2>
 <p><img src="https://i.loli.net/2021/09/17/LcvDFKk1jzYuZlw.png" width="400"/></p>
 <p><img src="https://i.loli.net/2021/09/17/mwp1iN4YUFIhHTv.png" width="400"/></p>
@@ -283,6 +281,7 @@ flask
     <url>/paper-7/</url>
     <content><![CDATA[<h1 id="pointer-networks">Pointer Networks</h1>
 <p>首先，我们使用一个混合的<strong>指针-生成器网络</strong>，它可以通过指针<u>从源文本中复制单词</u>，这有助于准确地再现信息，<u>处理OOV单词</u>，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用<strong>覆盖率</strong>来跟踪已总结的内容，这<u>阻止了重复</u>。我们将我们的模型应用于CNN/《每日邮报》的总结任务。</p>
+<span id="more"></span>
 <h1 id="具有注意力的序列到序列模型"><em>具有注意力</em>的<em>序列到序列模型</em></h1>
 <p>在此示例中，我们的源文本是一篇新闻文章，开头是<em>德国在周六以 2-0 战胜阿根廷的比赛中获胜</em>，我们正在生成<em>德国 2-0 击败阿根廷</em>的抽象摘要。首先，<em>编码器 RNN</em>逐字读取源文本，生成<em>编码器隐藏状态</em>序列。（两个方向都有箭头，因为我们的编码器是<em>双向的</em>，但这在这里并不重要）。</p>
 <p><img src="https://i.loli.net/2021/09/17/7KAfGkjoC2E4gTt.png"/></p>
@@ -330,6 +329,7 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
     <content><![CDATA[<h1 id="pointer-networks">Pointer Networks</h1>
 <p>《Pointer Networks》论文是PtrNet模型的开山之作，发表于2015年。</p>
 <p>让decoder输出一个由目标序列指向源序列的指针序列，而如何去选择这个指针，就是论文的主要内容。</p>
+<span id="more"></span>
 <p>PtrNet利用了Attention模型的一个中间变量：对齐系数a。因为对齐系数a表示目标序列当前step和源序列所有step之间的相关性大小，所以我们可以通过选取对齐系数向量a（向量a长度为源序列的step长度）中数值最大的那个维度（每个维度指向源序列的一个step），实现一个从目标序列step到源序列step的指针。最后，根据这个指针指向的源序列的词，直接提取这个词进行输出。</p>
 <p>通过以上方法，就能够在decoder的每一个step，从源序列的所有step中抽取出一个，进行输出。这样，由于decoder输出的是一个指针序号的序列，而不是具体的词，也就没有了OOV问题；同时，因为不需要构建词表，就从根本上解决了词表内容和词表长度的问题。</p>
 <p>PtrNet可以在翻译任务中提取命名实体，在摘要任务中提取关键词。</p>
@@ -348,6 +348,7 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
     <url>/pre-training/</url>
     <content><![CDATA[<p>预训练模型分为自编码、自回归、编码解码。</p>
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/80377698">【全】一文带你了解自编码器（AutoEncoder）</a>(这篇文章很赞！)</p>
+<span id="more"></span>
 <h1 id="自编码器">自编码器</h1>
 <p>自编码器可以理解为一个试图去还原其原始输入的系统。</p>
 <p>https://zhuanlan.zhihu.com/p/75580708</p>
@@ -452,6 +453,7 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
     <title>关于Transformer的总结与感悟</title>
     <url>/transformer-summary/</url>
     <content><![CDATA[<p>Transformer模型于2017年在论文<a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a>中提出，但我是近期才真正开始研究其内部架构，在本文中我将记录阅读相关资料及论文的心得。参考文献包括<a href="https://medium.com/analytics-vidhya/transformers-lets-dive-deeeep-7784bdb20807">Transformers — Let’s Dive Deeeep!</a>以及<a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a>。</p>
+<span id="more"></span>
 <ul>
 <li>研究一种模型</li>
 </ul>
@@ -555,16 +557,6 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">USE | EMPLOY | PROPOSE | PRESENT | APPLY (DOBJ)</span><br><span class="line">TRAINED WITH (POBJ)</span><br><span class="line">BASED ON (POBJ)</span><br><span class="line">PERFORMANCE OF (POBJ)</span><br><span class="line">FASTER | BETTER | MORE THAN</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ON (POBJ) NSUBJ ACHIEVE</span><br><span class="line">SCORE | EXPERIMENTS | RESULTS | PERFORMANCE ON (POBJ)</span><br><span class="line">DATASET LIKE | AS | (POBJ)</span><br><span class="line">DATASETS APPOS</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GAIN ON (DOBJ)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>项目</category>
-        <category>信息抽取</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>候选词过滤停用词</title>
-    <url>/project-3/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&quot;D:\毕业论文\visualization\data\papers.json&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> read_file:</span><br><span class="line">    papers_dict = json.load(read_file)</span><br><span class="line">doc = papers_dict[<span class="number">0</span>][<span class="string">&#x27;abstract&#x27;</span>]</span><br><span class="line">print(doc)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">candidates = re.findall(<span class="string">r&#x27;&lt;span class=&quot;noun&quot;&gt;.*?&lt;/span&gt;&#x27;</span>, doc, re.M)</span><br><span class="line">candidates = [keyword[<span class="number">19</span>:-<span class="number">7</span>] <span class="keyword">for</span> keyword <span class="keyword">in</span> candidates]</span><br><span class="line">print(candidates)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>项目</category>

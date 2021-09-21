@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"nlpcourse.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Pointer Networks 首先，我们使用一个混合的指针-生成器网络，它可以通过指针从源文本中复制单词，这有助于准确地再现信息，处理OOV单词，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用覆盖率来跟踪已总结的内容，这阻止了重复。我们将我们的模型应用于CNN&#x2F;《每日邮报》的总结任务。 具有注意力的序列到序列模型 在此示例中，我们的">
+  <meta name="description" content="Pointer Networks 首先，我们使用一个混合的指针-生成器网络，它可以通过指针从源文本中复制单词，这有助于准确地再现信息，处理OOV单词，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用覆盖率来跟踪已总结的内容，这阻止了重复。我们将我们的模型应用于CNN&#x2F;《每日邮报》的总结任务。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Summarization with Pointer-Generator Networks">
 <meta property="og:url" content="http://nlpcourse.cn/paper-7/index.html">
 <meta property="og:site_name" content="鸽婆打字机">
-<meta property="og:description" content="Pointer Networks 首先，我们使用一个混合的指针-生成器网络，它可以通过指针从源文本中复制单词，这有助于准确地再现信息，处理OOV单词，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用覆盖率来跟踪已总结的内容，这阻止了重复。我们将我们的模型应用于CNN&#x2F;《每日邮报》的总结任务。 具有注意力的序列到序列模型 在此示例中，我们的">
+<meta property="og:description" content="Pointer Networks 首先，我们使用一个混合的指针-生成器网络，它可以通过指针从源文本中复制单词，这有助于准确地再现信息，处理OOV单词，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用覆盖率来跟踪已总结的内容，这阻止了重复。我们将我们的模型应用于CNN&#x2F;《每日邮报》的总结任务。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/17/7KAfGkjoC2E4gTt.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/17/O5SUGqcYVvhQIe8.png">
 <meta property="og:image" content="http://abigailsee.com/img/coverage.gif">
 <meta property="article:published_time" content="2021-09-17T02:03:48.084Z">
-<meta property="article:modified_time" content="2021-09-17T02:50:19.323Z">
+<meta property="article:modified_time" content="2021-09-21T02:22:57.423Z">
 <meta property="article:author" content="鸽鸽">
 <meta property="article:tag" content="nlp">
 <meta name="twitter:card" content="summary">
@@ -137,12 +137,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">36</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">96</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -219,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-17 10:03:48 / 修改时间：10:50:19" itemprop="dateCreated datePublished" datetime="2021-09-17T10:03:48+08:00">2021-09-17</time>
+              <time title="创建时间：2021-09-17 10:03:48" itemprop="dateCreated datePublished" datetime="2021-09-17T10:03:48+08:00">2021-09-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-21 10:22:57" itemprop="dateModified" datetime="2021-09-21T10:22:57+08:00">2021-09-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -271,6 +277,7 @@
       
         <h1 id="pointer-networks">Pointer Networks</h1>
 <p>首先，我们使用一个混合的<strong>指针-生成器网络</strong>，它可以通过指针<u>从源文本中复制单词</u>，这有助于准确地再现信息，<u>处理OOV单词</u>，同时保留了通过生成器产生新单词的能力。这个网络可以被看作是提取性和抽象性方法之间的平衡。第二，我们使用<strong>覆盖率</strong>来跟踪已总结的内容，这<u>阻止了重复</u>。我们将我们的模型应用于CNN/《每日邮报》的总结任务。</p>
+<span id="more"></span>
 <h1 id="具有注意力的序列到序列模型"><em>具有注意力</em>的<em>序列到序列模型</em></h1>
 <p>在此示例中，我们的源文本是一篇新闻文章，开头是<em>德国在周六以 2-0 战胜阿根廷的比赛中获胜</em>，我们正在生成<em>德国 2-0 击败阿根廷</em>的抽象摘要。首先，<em>编码器 RNN</em>逐字读取源文本，生成<em>编码器隐藏状态</em>序列。（两个方向都有箭头，因为我们的编码器是<em>双向的</em>，但这在这里并不重要）。</p>
 <p><img src="https://i.loli.net/2021/09/17/7KAfGkjoC2E4gTt.png"/></p>
@@ -313,9 +320,6 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
   <div class="popular-posts-header">猜你喜欢</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\wechat-1\" rel="bookmark">生成式文本摘要初探</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\paper-9\" rel="bookmark">我们能否实现科学评审的自动化？</a></div>
     </li>
     <li class="popular-posts-item">
@@ -326,6 +330,9 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\pre-training\" rel="bookmark">预训练模型</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\transformer-summary\" rel="bookmark">关于Transformer的总结与感悟</a></div>
     </li>
   </ul>
 
@@ -459,14 +466,14 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">94</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -536,7 +543,7 @@ P_{\mathrm{final}}(w)=p_{\mathrm{gen}} P_{\mathrm{vocab}}(w)+\left(1-p_{\mathrm{
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:35</span>
+    <span title="站点阅读时长">7:34</span>
 </div>
 
         
